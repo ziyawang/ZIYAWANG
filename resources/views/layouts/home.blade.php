@@ -8,6 +8,8 @@
         <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css')}}" />
         <link rel="stylesheet" href="{{asset('/css/ziyawang.css')}}" />
         <script src="{{asset('/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('/js/Area.js')}}"></script>
+        <script src="{{asset('/js/AreaData_min.js')}}"></script>
     </head>
 <body>
 <header>
@@ -39,17 +41,17 @@
                             <a href="javascript:" id="logout">退出</a>
                         </li>
                         <li>
-                            <a href="/">
+                            <a href="{{url('/')}}">
                                 首页
                             </a>
                         </li>
                         <li>
-                            <a href="/">
+                            <a href="{{url('/project')}}">
                                 找信息
                             </a>
                         </li>
                         <li>
-                            <a href="/">
+                            <a href="{{url('/service')}}">
                                 找服务
                             </a>
                         </li>
@@ -89,6 +91,7 @@
         $.session.clear();
         $('#unlogin').show();
         $('#haslogin').hide();
+        window.location = "{{url('/')}}";
     });
 </script>
     @yield('content')

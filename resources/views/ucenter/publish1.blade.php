@@ -2,14 +2,54 @@
 @section('content')
 <div class="container">
 	<form action="">
-		<p>地区：<input type="text" name="ProArea" id=""></p>
+<select id="seachprov" name="seachprov" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');"></select>&nbsp;&nbsp;
+<select id="seachcity" name="homecity" onChange="changeCity(this.value,'seachdistrict','seachdistrict');"></select>&nbsp;&nbsp;
+<span id="seachdistrict_div"><select id="seachdistrict" name="seachdistrict"></select></span>
+
+
+
 		<p>来源：<input type="text" name="FromWhere" id=""></p>
 		<p>总金额：<input type="text" name="TotalMoney" id=""></p>
 		<p>转让价：<input type="text" name="TransferMoney" id=""></p>
 		<p>资产包类型：<input type="text" name="AssetType" id=""></p>
 		<p>文字描述：<input type="text" name="WordDes" id=""></p>
 		<p>语音描述：<input type="text" name="VoiceDes" id=""></p>
-		<p>凭证上传：<input type="text" name="PictureDes" id=""></p>
+<script src="{{asset('/org/uploadify/jquery.uploadify.min.js')}}" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{{asset('/org/uploadify/uploadify.css')}}">
+<style>
+.uploadify{display:inline-block;}
+.uploadify-button{border:none; border-radius:5px; margin-top:8px;}
+table.add_tab tr td span.uploadify-button-text{color: #FFF; margin:0;}
+</style>
+<th>上传凭的：</th>
+<td>
+    <input type="text" class="lg" id="filepath" name="art_thumb">
+    <input id="file_upload" name="file_upload" type="file" multiple="true">
+</td>
+<img src="" id="thumb" alt="">
+<script type="text/javascript">
+    <?php $timestamp = time();?>
+    $(function() {
+        $('#file_upload').uploadify({
+        	'fileTypeExts' : '*.gif; *.jpg; *.png',
+            'buttonText' : '+',
+            'formData'     : {
+                'timestamp' : '<?php echo $timestamp;?>',
+                '_token'     : "{{csrf_token()}}"
+            },
+            'swf'      : "{{asset('/org/uploadify/uploadify.swf')}}",
+            'uploader' : "{{url('/ucenter/upload')}}",
+            'onUploadSuccess' : function(file, data, response) {
+                $('#filepath').val(data);
+                $('#thumb').attr('src', data);
+                console.log(data);
+            }
+        });
+    });
+</script>
+
+
+
 		<p>上传资产包清单：<input type="text" name="AssetList" id=""></p>
 		<p><input type="hidden" name="TypeID" id="TypeID" value="1"></p>
 		<p><input type="hidden" name="access_token" value="token"></p>
@@ -18,6 +58,10 @@
 	<p><button id="pub">确认上传</button></p>
 </div>
 <script>
+$(function (){
+	initComplexArea('seachprov', 'seachcity', 'seachdistrict', area_array, sub_array);
+});
+
 	function getNum(text){
 		var value = text.replace(/[^0-9]/ig,"");
 		return value;

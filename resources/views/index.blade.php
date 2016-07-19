@@ -62,6 +62,8 @@
         </div>
     	
     </div>
+
+    <h2>优质服务</h2>
 </div>
 
 <script>
@@ -97,13 +99,15 @@
              $("#spec01").html('');
   
              var json = eval(tt); //数组 
-             console.log(json);        
-             $.each(json, function (index, item) {  
+             var data = json.data;        
+
+             console.log(data);        
+             $.each(data, function (index, item) {  
                  //循环获取数据    
-                 var ProjectID = "编号：1000" + json[index].ProjectID;  
-                 var ProArea = "地区：" + json[index].ProArea;  
-                 var TotalMoney = "转让金额：" + json[index].TotalMoney;  
-                 $("#spec01").html($("#spec01").html() + "<a href='http://ziyawang.com/project/" + json[index].ProjectID + "'>aaa<tr><td>" + ProjectID + "</td><td>" + ProArea + "</td><td>" + TotalMoney + "</td></tr></a>");  
+                 var ProjectID = "编号：1000" + data[index].ProjectID;  
+                 var ProArea = "地区：" + data[index].ProArea;  
+                 var TotalMoney = "转让金额：" + data[index].TotalMoney;  
+                 $("#spec01").html($("#spec01").html() + "<a href='http://ziyawang.com/project/" + data[index].ProjectID + "'>aaa<tr><td>" + ProjectID + "</td><td>" + ProArea + "</td><td>" + TotalMoney + "</td></tr></a>");  
              });
              console.log($("#spec01"));  
          }  

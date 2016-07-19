@@ -15,10 +15,9 @@ class UserLogin
      */
     public function handle($request, Closure $next)
     {   
-        // if(!session('user')){
-        //     return redirect('admin/login');
-        // }
-        dd($request);
+        if(!session('phonenumber')){
+            return redirect('/login');
+        }
 
         return $next($request);
     }

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
+
 
 class IndexController extends Controller
 {         
@@ -53,10 +55,10 @@ class IndexController extends Controller
         return view('smslogin');
     }
 
-    //项目列表
+    //项目列表 找信息
     public function proList()
     {
-
+        return view('prolist');
     }
 
     //项目详情
@@ -95,6 +97,25 @@ class IndexController extends Controller
         require('/org/code/Code.class.php');
         $code = new \Code();
         $code->make();
+    }
+
+    //文件上传
+    public function upload(){
+        $file = Input::file('Filedata');
+        $clientName = $file->getClientOriginalName();//获取文件名
+        $tmpName = $file->getFileName();//获取临时文件名
+        $realPath = $file->getRealPath();//缓存文件的绝对路径
+        $extension = $file->getClientOriginalExtension();//获取文件的后缀
+        $mimeType = $file->getMimeType();//文件类型
+        $newName = date('Ymd'). mt_rand(1000,9999). '.'. $extension;//新文件名
+        $path = $file->move(base_path().'/public/upload/images/',$newName);//移动绝对路径
+        $filePath = '/upload/images/'.$newName;//存入数据库的相对路径
+
+        return $filePath;
+        // $res = Article::thumb($realPath, $filePath);
+        // if($res){
+        //     return $filePath;
+        // } 
     }
 
 }

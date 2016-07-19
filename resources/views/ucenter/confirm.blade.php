@@ -1,6 +1,6 @@
 @extends('layouts.home')
 @section('content')
-<div class="container">
+<div class="container" style="display:none">
 	<form action="">
 		<p>我的头像：<input type="file" name="ProArea" id=""></p>
 		<p>姓名：<input type="text" name="ConnectPerson" id=""></p>
@@ -19,6 +19,16 @@
 	<p><button id="pub">提交</button></p>
 </div>
 <script>
+$(function () {
+	var token = $.session.get('token');
+	if(!token){
+		window.location = "{{url('/login')}}";
+		return false;
+	}
+
+	$('.container').show();
+});
+
 	$('#pub').click(function(){
 		var token = $.session.get('token');
 		// var TypeID = getNum(window.location.pathname);

@@ -9,7 +9,32 @@
 		<p>佣金比例：<input type="text" name="Rate" id=""></p>
 		<p>文字描述：<input type="text" name="WordDes" id=""></p>
 		<p>语音描述：<input type="text" name="VoiceDes" id=""></p>
-		<p>凭证上传：<input type="text" name="PictureDes" id=""></p>
+
+<!-- 图片上传 -->
+<script src="{{asset('/org/uploadifive/jquery.uploadifive.min.js')}}" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="{{asset('/org/uploadifive/uploadifive.css')}}">
+
+<div id="queue"></div>
+<input id="file_upload" name="file_upload" type="file" multiple="true">
+<a style="position: relative; top: 8px;" href="javascript:$('#file_upload').uploadifive('upload')">Upload Files</a>
+
+	<script type="text/javascript">
+		<?php $timestamp = time();?>
+		$(function() {
+			$('#file_upload').uploadifive({
+				'auto'             : false,
+				'formData'         : {
+									   'timestamp' : '<?php echo $timestamp;?>',
+									   'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
+				                     },
+				'queueID'          : 'queue',
+				'uploadScript'     : "{{url('/ucenter/upload')}}",
+				'onUploadComplete' : function(file, data) { console.log(data); }
+			});
+		});
+	</script>
+<!-- 图片上传 -->
+
 		<p><input type="hidden" name="TypeID" id="TypeID" value=""></p>
 		<p><input type="hidden" name="access_token" value="token"></p>
 		<p><input type="hidden" name="token" id="token" value=""></p>
