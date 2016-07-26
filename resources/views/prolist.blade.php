@@ -255,7 +255,7 @@
 <script>
     $(function () {
         $.ajax({  
-            url: 'http://api.ziyawang.com/api/project/list?pagecount=10&startpage=1&access_token=token',  
+            url: 'http://api.ziyawang.com/v1/project/list?pagecount=10&startpage=1&access_token=token',  
             type: 'GET',  
             dataType: 'json',  
             timeout: 1000,  
@@ -370,7 +370,7 @@
                 console.log(data);
 
                 $.ajax({              
-                    url: 'http://api.ziyawang.com/api/project/list?access_token=token&pagecount=10&' + data,  
+                    url: 'http://api.ziyawang.com/v1/project/list?access_token=token&pagecount=10&' + data,  
                     type: 'GET',  
                     dataType: 'json',  
                     timeout: 1000,  

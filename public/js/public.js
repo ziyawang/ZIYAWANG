@@ -113,4 +113,27 @@ $(function(){
 	$('.star').click(function(event) {
 		$(this).toggleClass('star_cl');
 	});
+	//视频划过
+    $('.vc ul li').hover(function(){
+    	$(this).find('.zhezhao').stop().fadeIn(500);
+    	$(this).children('.vc_icon').stop().fadeIn(500);
+    	$(this).stop().animate({'top':'-5px'},300);
+    },function(){
+    	$(this).find('.zhezhao').stop().fadeOut(500);
+    	$(this).children('.vc_icon').stop().fadeOut(500);
+    	$(this).stop().animate({'top':'0px'},300);
+    })
+//视频种类切换
+	$('.vs_a a').click(function(){
+		$(this).addClass('current').siblings().removeClass('current');
+		var cont = $(this).index();
+		$('.video_content').eq(cont).addClass('on').siblings().removeClass('on');
+	})
+// 视频时间切换
+	$('.list_video a').click(function(event) {
+		$(this).addClass('current').siblings().removeClass('current');
+		var ind = $(this).index();
+
+		$(this).closest('h3').next('.time_choice').children('ul').eq(ind).addClass('current').siblings().removeClass('current');
+	});
 })

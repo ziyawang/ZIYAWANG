@@ -99,7 +99,7 @@
             }
             token = token.replace(/\'/g,"");
             $.ajax({
-                url:'http://api.ziyawang.com/api/collect?access_token=token&token='+token,
+                url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
                 type:'POST',
                 data:'itemID=' + ServiceID + '&type=4',
                 dataType:'json',
@@ -110,7 +110,7 @@
         }
 
         $.ajax({  
-         url: 'http://api.ziyawang.com/api/service/list/'+ ServiceID +'?access_token=token&token=' + token,  
+         url: 'http://api.ziyawang.com/v1/service/list/'+ ServiceID +'?access_token=token&token=' + token,  
          type: 'GET',  
          dataType: 'json',  
          timeout: 1000,  

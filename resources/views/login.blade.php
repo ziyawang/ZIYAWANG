@@ -47,7 +47,7 @@
     		var password = $(".sec_pwd").val();
 
     		$.ajax({
-    			url:"http://api.ziyawang.com/api/auth/login",
+    			url:"http://api.ziyawang.com/v1/auth/login",
     			type:"POST",
     			data:"phonenumber=" + phonenumber + "&password=" + password  + "&access_token=token",
     			dataType:'json',

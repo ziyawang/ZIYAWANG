@@ -120,7 +120,7 @@
         function collect() {
             token = token.replace(/\'/g,"");
             $.ajax({
-                url:'http://api.ziyawang.com/api/collect?access_token=token&token='+token,
+                url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
                 type:'POST',
                 data:'itemID=' + ServiceID + '&type=1',
                 dataType:'json',
@@ -133,7 +133,7 @@
         function rush() {
             token = token.replace(/\'/g,"");
             $.ajax({
-                url:'http://api.ziyawang.com/api/project/rush?access_token=token&token='+token,
+                url:'http://api.ziyawang.com/v1/project/rush?access_token=token&token='+token,
                 type:'POST',
                 data:'ProjectID=' + ProjectID,
                 dataType:'json',
@@ -144,7 +144,7 @@
         }
 
         $.ajax({  
-         url: 'http://api.ziyawang.com/api/project/list/'+ ProjectID +'?access_token=token&token=' + token,  
+         url: 'http://api.ziyawang.com/v1/project/list/'+ ProjectID +'?access_token=token&token=' + token,  
          type: 'GET',  
          dataType: 'json',  
          timeout: 1000,  

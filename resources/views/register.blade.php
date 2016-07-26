@@ -48,7 +48,7 @@
     		var phonenumber = $(".sec_tel").val();
 
     		$.ajax({
-    			url:"http://api.ziyawang.com/api/auth/getsmscode",
+    			url:"http://api.ziyawang.com/v1/auth/getsmscode",
     			type:"POST",
         		data:"phonenumber=" + phonenumber + "&access_token=token&action=register",
         		dataType:"json",
@@ -74,7 +74,7 @@
     			return false;
     		}
     		$.ajax({
-    			url:"http://api.ziyawang.com/api/auth/register",
+    			url:"http://api.ziyawang.com/v1/auth/register",
     			type:"POST",
     			data:"phonenumber=" + phonenumber + "&password=" + password + "&smscode=" + smscode + "&access_token=token",
     			dataType:'json',

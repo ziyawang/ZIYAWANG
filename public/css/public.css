@@ -42,9 +42,10 @@ header .nav{margin-right: 42px;}
 .page .first{width: 42px;}
 .page .last{background: none;}
 /*收藏*/
-.lo_collect .star_cl{background:url(../img/xing_b.png) no-repeat 0 -3px;}
-.abstract .share a em.star_cl{background:url(../img/xing_b.png) no-repeat 0 -3px;}
-.collect .star_cl{background:url(../img/xing_b.png) no-repeat 0 -3px;}
+.lo_collect .star_cl,.abstract .share a em.star_cl,.collect .star_cl,.think .th_right .collect .star_cl{background:url(../img/xing_b.png) no-repeat 0 -3px;}
+/*{background:url(../img/xing_b.png) no-repeat 0 -3px;}
+{background:url(../img/xing_b.png) no-repeat 0 -3px;}
+{}*/
 /*分页插件*/
 .pages {
   float: right;

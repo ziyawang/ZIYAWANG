@@ -53,7 +53,7 @@
         var token = $.session.get('token');
 
         $.ajax({  
-            url: 'http://api.ziyawang.com/api/project/rushlist/' + ProjectID + '?pagecount=6&startpage=1&access_token=token&token=' + token,  
+            url: 'http://api.ziyawang.com/v1/project/rushlist/' + ProjectID + '?pagecount=6&startpage=1&access_token=token&token=' + token,  
             type: 'GET',  
             dataType: 'json',  
             timeout: 1000,  

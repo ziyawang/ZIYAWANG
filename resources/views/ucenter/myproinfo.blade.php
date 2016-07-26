@@ -37,7 +37,7 @@ $(function(){
     var ProjectID = window.location.pathname.replace(/[^0-9]/ig,"");
     var token = $.session.get('token');
     $.ajax({  
-         url: 'http://api.ziyawang.com/api/project/list/'+ ProjectID +'?access_token=token&token=' + token,  
+         url: 'http://api.ziyawang.com/v1/project/list/'+ ProjectID +'?access_token=token&token=' + token,  
          type: 'GET',  
          dataType: 'json',  
          timeout: 1000,  

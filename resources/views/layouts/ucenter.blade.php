@@ -232,7 +232,7 @@
         console.log(data);
 
         // $.ajax({
-        //     url:"http://api.ziyawang.com/api/project/create?token="+token,
+        //     url:"http://api.ziyawang.com/v1/project/create?token="+token,
         //     type:"POST",
         //     data:data,
         //     dataType:"json",

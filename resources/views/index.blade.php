@@ -750,7 +750,7 @@ $(function () {
 
 
     $.ajax({  
-        url: 'http://api.ziyawang.com/api/service/list?ServiceType=1&access_token=token',  
+        url: 'http://api.ziyawang.com/v1/service/list?ServiceType=1&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 1000,  
@@ -760,7 +760,7 @@ $(function () {
         success: succFunction1 //成功执行方法    
     })
     $.ajax({  
-        url: 'http://api.ziyawang.com/api/service/list?ServiceType=3&access_token=token',  
+        url: 'http://api.ziyawang.com/v1/service/list?ServiceType=3&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 1000,  
@@ -770,7 +770,7 @@ $(function () {
         success: succFunction3 //成功执行方法    
     }) 
     $.ajax({  
-        url: 'http://api.ziyawang.com/api/service/list?ServiceType=13&access_token=token',  
+        url: 'http://api.ziyawang.com/v1/service/list?ServiceType=13&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 1000,  

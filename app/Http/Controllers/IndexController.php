@@ -75,13 +75,13 @@ class IndexController extends Controller
     //视频列表
     public function videoList()
     {
-        return view('vidlist');
+        return view('videolist');
     }
 
     //视频详情
     public function videoInfo()
     {
-        return view('vidinfo');
+        return view('videoinfo');
     }    
 
     //新闻列表

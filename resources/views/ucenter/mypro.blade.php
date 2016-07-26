@@ -26,7 +26,7 @@
             return false;
         }
         $.ajax({  
-            url: 'http://api.ziyawang.com/api/project/mypro?pagecount=6&startpage=1&access_token=token&token=' + token,  
+            url: 'http://api.ziyawang.com/v1/project/mypro?pagecount=6&startpage=1&access_token=token&token=' + token,  
             type: 'GET',  
             dataType: 'json',  
             timeout: 1000,  
@@ -138,7 +138,7 @@
                 console.log(data);
 
                 $.ajax({              
-                    url: 'http://api.ziyawang.com/api/project/mypro?pagecount=6&access_token=token&token=' + token + data,  
+                    url: 'http://api.ziyawang.com/v1/project/mypro?pagecount=6&access_token=token&token=' + token + data,  
                     type: 'GET',  
                     dataType: 'json',  
                     timeout: 1000,  

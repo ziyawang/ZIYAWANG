@@ -18,7 +18,7 @@
 	 	console.log(data);
 // return false;
 		$.ajax({
-			url:"http://api.ziyawang.com/api/auth/chpwd?token="+token,
+			url:"http://api.ziyawang.com/v1/auth/chpwd?token="+token,
 			type:"POST",
 			data:data,
 			dataType:"json",
