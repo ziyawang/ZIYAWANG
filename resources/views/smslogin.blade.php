@@ -14,7 +14,7 @@
     		var phonenumber = $("input[name='phonenumber']").val();
 
     		$.ajax({
-    			url:"http://api.ziyawang.com/api/auth/getsmscode",
+    			url:"http://api.ziya.zll.science/api/auth/getsmscode",
     			type:"POST",
         		data:"phonenumber=" + phonenumber + "&access_token=token",
         		dataType:"json",
@@ -29,7 +29,7 @@
     		var smscode = $("input[name='smscode']").val();
 
     		$.ajax({
-    			url:"http://api.ziyawang.com/api/auth/smslogin",
+    			url:"http://api.ziya.zll.science/api/auth/smslogin",
     			type:"POST",
     			data:"phonenumber=" + phonenumber + "&smscode=" + smscode + "&access_token=token",
     			dataType:'json',

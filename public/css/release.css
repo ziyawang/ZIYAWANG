@@ -1,0 +1,9 @@
+.find_service ul li{background:#ffda3f url(../img/junior_banner.jpg) no-repeat center top;height: 296px;overflow: hidden;}
+.mr_para{color:#999;}
+.main_right .warning{color:#f00;}
+.mr_para{padding:20px 28px;border-bottom: 1px solid #ededed;}
+.icon_menu{overflow: hidden;padding-left: 18px;padding-bottom: 24px;border-bottom: 1px solid #ededed;margin-bottom: 30px;}
+.icon_menu a{display: block;float: left;width: 146px;margin-left: 16px;text-align: center;margin-top: 20px;color:#333;-webkit-transition: all 0.5s;-moz-transition: all 0.5s;-ms-transition: all 0.5s;}
+.icon_menu a:hover{color:#61c3d0;}
+.icon_menu a span{display: block;width: 146px;height: 128px;background:#e5e5e5;margin-bottom: 14px;-webkit-transition: all 0.5s;-moz-transition: all 0.5s;-ms-transition: all 0.5s;}
+.icon_menu a:hover span{background:#61c3d0;}

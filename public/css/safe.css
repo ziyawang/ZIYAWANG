@@ -1,0 +1,21 @@
+.find_service ul li{background:#ffda3f url(../img/junior_banner.jpg) no-repeat center top;height: 296px;overflow: hidden;}
+.safe_user{padding:50px 205px 0px 52px;}
+.main_right h2{font-size: 18px;border-bottom: 1px solid #d3e5e7;}
+.su_pic,.linkman,.linktel,.linkaddr{overflow: hidden;margin-bottom: 15px;}
+.su_pic img{width: 60px;height: 60px;border-radius: 50%;border: 1px solid #999;}
+.su_pic a{display: block;float: left;}
+.su_pic span{float: left;width: 105px;text-align: right;margin:40px 15px 0 0;}
+.linkman span,.linktel span,.linkaddr span,.changepwd span,.changepwd a{float: left;}
+.linkman .authen,.linktel .authen,.linkaddr .authen{float: right;}
+.linkman .authen em,.linktel .authen em,.linkaddr .authen em{color:#e48013;}
+.linkman span:first-child,.linktel span:first-child,.linkaddr span:first-child,.changepwd span{width: 105px;text-align: right;margin-right: 15px;}
+.linktel span a{margin-left: 30px;}
+.linktel span a,.changepwd a{color:#61c3d0;}
+/*完善资料*/
+.perfect,.perfect_illu,.linkaddr,.service_zone,.service_type{overflow: hidden;margin-bottom: 15px;}
+.perfect span:first-child,.perfect_illu span:first-child,.service_zone span:first-child,.service_type span:first-child,.up_ceti span:first-child{float: left;width: 105px;text-align: right;margin-right: 15px;}
+.perfect span:nth-child(2),.perfect_illu textarea,.linkaddr .sel_city,.service_zone .zone,.service_type .st_details{float: left;}
+.perfect_illu textarea{width:898px;}
+.please{border: 1px solid #ededed;}
+.province{background:#ccc;}
+.prov table tr td{padding:5px 10px;}

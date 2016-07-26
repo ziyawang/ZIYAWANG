@@ -1,6 +1,5 @@
 /*
 Ajax 三级省市联动
-http://code.ciaoca.cn/
 日期：2012-7-18
 
 settings 参数说明
@@ -18,7 +17,7 @@ required:必选项
 
 		// 默认值
 		settings=$.extend({
-			url:"<?php echo base_path()?>/public/js/city.min.js",
+			url:"js/city.min.js",
 			prov:null,
 			city:null,
 			dist:null,

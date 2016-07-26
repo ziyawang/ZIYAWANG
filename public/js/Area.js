@@ -1,9 +1,8 @@
 ﻿
-function initComplexArea(a, k, h, p, q, d, b, l) {
+function initComplexArea(a, k, p, q, d, b, l) {
     var f = initComplexArea.arguments;
     var m = document.getElementById(a);
     var o = document.getElementById(k);
-    var n = document.getElementById(h);
     var e = 0;
     var c = 0;
     if (p != undefined) {
@@ -25,7 +24,7 @@ function initComplexArea(a, k, h, p, q, d, b, l) {
         else {
             l = 0
         }
-        n[0] = new Option("请选择 ", 0);
+       
         for (e = 0; e < p.length; e++) {
             if (p[e] == undefined) {
                 continue;
@@ -66,7 +65,7 @@ function changeComplexProvince(f, k, e, d) {
             h[a] = new Option(k[f][b], b); a++
         }
     }
-    removeOptions(g); g[0] = new Option("请选择 ", 0);
+    removeOptions(g);
     if (f == 11 || f == 12 || f == 31 || f == 71 || f == 50 || f == 81 || f == 82) {
         if ($("#" + d + "_div"))
         { $("#" + d + "_div").hide(); }

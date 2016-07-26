@@ -27,13 +27,6 @@ class IndexController extends Controller
     //首页
     public function index()
     {   
-        $url = 'http://api.ziyawang.com/api/project/list';
-        $data = ['TypeID'=>1, 'access_token'=>'token'];
-
-           
-   // $tmp = $this->postData($url, $data);          
-// $tmp = file_get_contents('http://api.ziyawang.com/api/project/list?TypeID=1&access_token=token');
-// var_dump($tmp);
         return view('index');
     }
 
@@ -67,28 +60,52 @@ class IndexController extends Controller
         return view('proinfo');
     }
 
+    //服务商列表 找服务
+    public function serList()
+    {
+        return view('serlist');
+    }
+
+    //服务详情
+    public function serInfo()
+    {
+        return view('serinfo');
+    }
+
     //视频列表
     public function videoList()
     {
-
+        return view('vidlist');
     }
 
     //视频详情
     public function videoInfo()
     {
-        
+        return view('vidinfo');
     }    
 
     //新闻列表
     public function newsList()
     {
-
+        return view('newslist');
     }
 
     //新闻详情
     public function newsInfo()
     {
-        
+        return view('newsinfo');
+    }
+
+    //合同列表
+    public function contractList()
+    {
+        return view('contractlist');
+    }
+
+    //合同详情
+    public function contractInfo($id)
+    {
+        return view('contarct.contract'.$id);
     }
 
     //获取图形验证码

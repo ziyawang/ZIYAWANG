@@ -1,0 +1,23 @@
+.find_service ul li{background:#ffda3f url(../img/junior_banner.jpg) no-repeat center top;height: 296px;overflow: hidden;}
+
+.systeminfo span em{color:#f00;}
+.info_bar{padding: 15px 0 15px 52px;background:#d3e5e7;position: relative;}
+.info_bar button{border:0 none;border: 1px solid #d2d2d2;background:url(../img/gray_bgx.gif) repeat-x 0 -3px;height:22px;line-height: 15px;padding:0 2px;}
+.info_bar .all,.info_bar button{margin-right: 15px;}
+.sys_time{position: absolute;top: 15px;right:20px;background:url(../img/up_arr.png) no-repeat right center;padding-right: 20px;}
+.info_list .day{border-bottom: 1px solid #b2b2b2;padding:15px 0 5px 52px;}
+.td_check{width: 64px;text-align: right;}
+.td_email{width:40px; background:url(../img/email.png) no-repeat 15px -32px;}
+.td_word{white-space: nowrap;
+word-break: break-all;
+overflow: hidden;}
+table{width:100%;border:0;}
+table .read{background:url(../img/email.png) no-repeat 15px 10px;}
+table tr{padding:10px 0;font-weight: bold;}
+table tr td{border-bottom: 1px solid #ededed;padding-top: 10px;padding-bottom: 10px;}
+table tr td a{color:#333;display: block;width: 840px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+table tr td a:hover{color:#333;}
+table tr:hover{background:#ffffe1;}
+.haveread{font-weight: normal;}
+.td_word{width: 840px;}
+.td_time{}

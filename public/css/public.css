@@ -1,0 +1,140 @@
+
+/*公共部分*/
+header{height: 95px;background: #000;}
+header .login{height: 145px;width: 238px;}
+header .brum_login{margin-right: 50px;}
+header .guide{margin-right: 155px;}
+header .logo_word{font-size: 12px;letter-spacing: 2px;}
+header .nav{margin-right: 42px;}
+.guide{height: 40px;line-height:40px;position: absolute;top: 0;right:0;margin-right: 100px;}
+.guide a{margin-left: 50px;color:#999;font-size: 14px;}
+.brum_login{float: right;margin-top: 56px;}
+.brum_login a{color:#fff;display:inline-block;width:75px;height: 23px;padding-left: 30px;margin-left: 20px;}
+.brum_login .viplog{background:url(../img/icon.png) no-repeat 0 0;}
+.brum_login .freereg{background:url(../img/icon.png) no-repeat 0 -29px;}
+.nav{float:right;overflow: hidden;margin-top: 40px;height:55px;line-height: 55px;}
+.nav li{float:left;color:#fff;font-size: 16px;}
+.nav li a{color:#fff;margin:0 10px;}
+.login{position: absolute;top: 0;left:133px;background:#fff;border-radius: 0 0 15px 15px;box-shadow: 0px 0px 15px #333;z-index: 2;width: 340px;height: 390px;}
+.logo img{display: block;margin: 14px auto;}
+.logo_word{text-align: center;font-size: 15px;color:#000;word-spacing: 3px;word-spacing:5px; letter-spacing: 3px;}
+.nav li.current a,.nav li a:hover{color:#fecf3d;}
+.hotline{position: absolute;left: 20px;top: 45px;color: #fff;}
+.hotline span{color: #f3c91f;}
+.arr{width:0; height:0; border-top:40px solid transparent;border-bottom: 40px solid transparent;border-left: 40px solid #fff;position: absolute;bottom: -24px;right: 20px;z-index: -1;}
+/*二级侧边栏*/
+.main{overflow: hidden;}
+.main_left{float: left;width: 150px;background:#f9f8f8;}
+.main_right{float: right;width: 1020px;}
+.main_left h2,.main_right h2{height:54px;line-height:54px;color:#333;font-weight: normal;padding-top: 36px;}
+.main_left h2{font-size: 20px;background:url(../img/ziya.png) no-repeat 15px 41px;padding-left: 50px;border-bottom: 2px solid #c7caca;}
+.main_left ul li:first-child{border-top: none;}
+.main_left ul li{text-align: center;letter-spacing: 2px;border-top: 1px dashed #e5e5e5;height:40px;line-height: 40px;}
+.main_left ul li a{font-size: 16px;color:#333;display: block;}
+.main_left ul li.current{background:url(../img/li_bg.png) no-repeat center top;border-top: none;}
+.main_left ul li a:hover,.main_left ul li.current a{color:#e48013;}
+.main_right h2{font-size: 18px;border-bottom: 1px solid #d3e5e7;padding-left:52px;position: relative;}
+/*页码*/
+.page{width: 284px;height: 40px;line-height:40px;background: url(../img/page.png) no-repeat center top;text-align: center;margin: 52px 0 52px 356px;}
+.page a{font-size: 18px;color: #ad8e00;display: block;float: left;width: 50px;background: url(../img/line0.png) no-repeat right 4px;position: relative;}
+.page a.current span{display: block;}
+.page a span{position: absolute;bottom: 5px;left: 4px;width: 42px;height: 2px; background:#fdd000;display: none;}
+.page .first{width: 42px;}
+.page .last{background: none;}
+/*收藏*/
+.lo_collect .star_cl{background:url(../img/xing_b.png) no-repeat 0 -3px;}
+.abstract .share a em.star_cl{background:url(../img/xing_b.png) no-repeat 0 -3px;}
+.collect .star_cl{background:url(../img/xing_b.png) no-repeat 0 -3px;}
+/*分页插件*/
+.pages {
+  float: right;
+  margin: 30px 0 26px;
+}
+.pages #Pagination {
+  float: left;
+  overflow: hidden;
+}
+.pages #Pagination .pagination {
+  height: 32px;
+  text-align: right;
+  font-family: \u5b8b\u4f53,Arial;
+}
+.pages #Pagination .pagination a,
+.pages #Pagination .pagination span {
+  float: left;
+  display: inline;
+  padding: 2px 9px;
+  border: 1px solid #e6e6e6;
+  border-right: none;
+  background: #f6f6f6;
+  color: #666666;
+  font-family: \u5b8b\u4f53,Arial;
+  font-size: 14px;
+  cursor: pointer;
+}
+.pages #Pagination .pagination .current {
+  background: #ffac59;
+  color: #fff;
+}
+.pages #Pagination .pagination .prev,
+.pages #Pagination .pagination .next {
+  float: left;
+  padding: 2px 9px;
+  border: 1px solid #e6e6e6;
+  background: #f6f6f6;
+  color: #666666;
+  cursor: pointer;
+}
+.pages #Pagination .pagination .prev i,
+.pages #Pagination .pagination .next i {
+  display: inline-block;
+  width: 4px;
+  height: 11px;
+  margin-right: 5px;
+  background: url(../images/icon.fw.png) no-repeat;
+}
+.pages #Pagination .pagination .prev {
+  border-right: none;
+}
+.pages #Pagination .pagination .pagination-break {
+  padding: 3px 5px;
+  border: none;
+  border-left: 1px solid #e6e6e6;
+  background: none;
+  cursor: default;
+}
+.pages .searchPage {
+  float: left;
+  
+}
+.pages .searchPage .page-sum {
+  padding: 11px 13px;
+  color: #999999;
+  font-family: \u5b8b\u4f53,Arial;
+  font-size: 14px;
+}
+.pages .searchPage .page-go {
+  padding: 8px 0;
+  color: #999999;
+  font-family: \u5b8b\u4f53,Arial;
+  font-size: 14px;
+  padding: 10px 0\9;
+  *padding: 6px 0;
+}
+.pages .searchPage .page-go input {
+  width: 21px;
+  height: 20px;
+  margin: 0 5px;
+  padding-left: 5px;
+  border: 1px solid #e4e4e4;
+}
+.pages .searchPage .page-btn {
+  margin: 9px 0 5px 5px;
+  padding: 2px 5px;
+  background: #ffac59;
+  border-radius: 2px;
+  color: #ffffff;
+  font-family: Arial, 'Microsoft YaHei';
+  font-size: 14px;
+  text-decoration: none;
+}

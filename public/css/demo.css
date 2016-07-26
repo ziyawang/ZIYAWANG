@@ -1,0 +1,16 @@
+.demo{width: 100%;overflow: hidden;position: relative;height: 400px;}
+.demo ul{width: 400%;height: 400px;position: absolute;top: 0;left: 0;}
+.demo ul li{width: 25%;height: 400px;float: left;}
+.demo ul .l1{background: #ffcdcd;}
+.demo ul .l2{background: #d857fd;}
+.demo ul .l3{background: #5f57fd;}
+.demo ul .l4{background: #57fd9a;}
+.demo ul .l5{background: #e8fd57;}
+.demo ul .l6{background: #fdb957;}
+.demo ul .l7{background: #fd7e57;}
+.demo ul .l8{background: #816c08;}
+.demo ul .l9{background: #388108;}
+.demo ul .l10{background:#08815b;}
+.demo ul .l11{background:#084f81;}
+.demo ul .l12{background:#1f0881;}
+
