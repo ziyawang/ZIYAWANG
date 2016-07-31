@@ -1,7 +1,7 @@
 .find_service ul li{background:#ffda3f url(../img/junior_banner.jpg) no-repeat center top;height: 296px;overflow: hidden;}
-.illustrate{color: #999;padding: 20px 0 20px 55px;line-height: 27px;}
+.illustrate{color: #999;padding: 20px 0 0px 55px;line-height: 27px;}
 .illustrate span{color: #f00;}
-.main_right .explain{border-bottom: 1px solid #e5e5e5;}
+.main_right .explain{border-bottom: 1px solid #e5e5e5;padding-top:0px;}
 /*列表框*/
 .explain_choices{padding: 20px 0 45px;margin-bottom: 45px;border-bottom: 1px solid #e5e5e5;}
 .ec{margin-bottom: 20px;}
@@ -17,7 +17,7 @@
 .ecp_text{width: 270px;}
 .ec_right .enter_box{width: 156px;height: 36px;margin-right: 20px;}
 .upload{height: auto;}
-.ec .ecp_word{margin-left: 165px;}
+.ec .ecp_word{margin-left: 67px;margin-top: 1px;}
 .image_container{display: none;}
 .up_pic,.uf_file{position: absolute;left: 0;top: 0;}
 .up_pic2,.uf_file2{opacity: 0;}
@@ -26,4 +26,4 @@
 .upfile .enter_box{background: #eeeeee;box-shadow: 0 1px 3px #ccc inset;height:30px; }
 .ecp_last{margin-top: -7px;}
 .city select{height: 32px;line-height: 32px;width: 108px;border: 1px solid #e5e5e5;color: #999;}
-.fabu{display: block;width: 134px;height: 42px;border-radius: 30px;line-height: 42px;letter-spacing: 3px;color: #fff;background: #ffca00;margin: 0 auto 45px;border:0 none;font-size: 16px;}
+.fabu{display: block;width: 154px;height: 42px;border-radius: 30px;line-height: 42px;letter-spacing: 3px;color: #fff;background: #e48013;margin: 0 auto 45px;border:0 none;font-size: 16px;}

@@ -8,50 +8,64 @@
 
         <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}" />
         <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}" />
         <link type="text/css" rel="stylesheet" href="{{asset('/css/fsdetails.css')}}" />
         <link type="text/css" rel="stylesheet" href="{{url('/css/relinfo.css')}}" />
-
+<style>
+    #uploadifive-picture_upload{height: 30px!important;line-height: 30px!important;border-radius: 25px;background: #e48013;color: #fff;}
+    .img_box{padding-left: 170px;}
+    #queue{width: 600px;margin-left: 170px;position: relative;}
+</style>
         <script src="{{asset('/js/jquery.js')}}"></script>
         <script src="{{asset('/js/fs.js')}}"></script>
         <script src="{{asset('/js/jquery-session.js')}}"></script>
+        <script src="{{asset('/js/public.js')}}"></script>
     </head>
     <body>
-    <header>
+    <div class="header">
         <div class="wrap">
                 <div class="guide">
-                    <span id="haslogin" style="display:none;font:white;">
-                        <a href="{{url('/ucenter')}}" id="phone"></a>
-                        <a href="javascript:" id="logout">退出</a>
-                    </span>
-                    <a href="#">我的收藏</a>
-                    <a href="#">联系客服</a>
+                    <a href="{{url('/ucenter/index')}}" class="personal">个人中心</a>
+                    <a href="javascript:;" class="weixin1">微信<span class="wx_ma"><img src="/img/wx.jpg" /></span></a>
+                    <a href="#" class="weibo1">微博<span class="wb_ma"><img src="/img/wb.png" /></span></a>
+                    <a href="{{url('/ucenter/mycollect')}}" class="mycol">我的收藏</a>
                 </div>
                 <div class="brum_login">
-                    <div id="unlogin" style="display:none;font:white;">
-                        <a href="{{url('/login')}}" class="viplog">会员登录</a>
-                        <a href="{{url('/register')}}" class="freereg">免费注册</a>
-                    </div>
+                        <a href="{{url('/login')}}" class="viplog" target="_blank">会员登录</a>
+                        <a href="{{url('/register')}}" class="freereg" target="_blank">免费注册</a>
+                </div>
+                <!-- 登录后内容 -->
+                <div class="after_login">
+                    <a href="{{url('/ucenter/index')}}" class="number" id="phone"></a><a href="javascript:;" id="logout" class="back">退出</a>
                 </div>
 <!-- 登录退出状态 -->
 <script>
     $(document).ready(function(){
-        var phonenumber = $.session.get('phonenumber');
+         var phonenumber = $.session.get('phonenumber');
         // console.log(typeof(phonenumber));
         if(typeof(phonenumber)!="undefined") {
             phonenumber = phonenumber.replace(/\'/g,"");
             $('#unlogin').hide();
-            $('#haslogin').show();
+            $('.brum_login').hide();
+            $('.personal').show();
+            $('.after_login').show();
             $('#phone').text(phonenumber);
+            $('.login').addClass('after');
         } else {
             $('#unlogin').show();
-            $('#haslogin').hide();
+            $('.brum_login').show();
+            $('.after_login').hide();
+            $('.personal').hide();
         }
     });
 
     $('#logout').click(function(){
         $.session.clear();
         $('#unlogin').show();
-        $('#haslogin').hide();
+        $('#after_login').hide();
+        $('.personal').hide();
+        $('.login').removeClass('after');
+        $('')
         window.location = "{{url('/')}}";
     });
 </script>
@@ -64,7 +78,7 @@
                     <li id="video"><a href="{{url('/video')}}">资芽视频</a>|</li>
                     <li id="contract"><a href="{{url('/contract')}}">合同下载</a></li>
                 </ul>
-                <div class="login">
+                <div class="login after">
                     <h1 class="logo"><a href="index.html"><img src="/img/logo.png" height="68" width="172" alt="首页" /></a></h1>
                     <p class="logo_word">全球不良资产超级综服平台<p>
                     
@@ -72,10 +86,10 @@
                 </div>
                 <div class="arrow"></div>
                 <div class="hotline">服务热线：<br/>
-                    <span>400-000-9999</span>
+                    <span>400-898-8557</span>
                 </div>
         </div>
-    </header>
+    </div>
     <link type="text/css" rel="stylesheet" href="{{url('/css/relinfo.css')}}" />
 <!-- 二级banner -->
 <div class="find_service">
@@ -90,13 +104,13 @@
         <h2>个人中心</h2>
         <ul>
             <li><a href="{{url('/ucenter')}}">系统消息</a></li>
-            <li><a href="#">资芽助手</a></li>
+            <li><a href="{{url('/ucenter/helper')}}">资芽助手</a></li>
             <li class="current"><a href="{{url('/ucenter/pubpro')}}">发布信息</a></li>
-            <li><a href="{{url('/ucenter/published')}}">我发布的</a></li>
-            <li><a href="{{url('/ucenter/cooperated')}}">我合作的</a></li>
-            <li><a href="{{url('/ucenter/collected')}}">我收藏的</a></li>
-            <li><a href="{{url('/ucenter/confirm')}}">完善资料</a></li>
-            <li><a href="{{url('/ucenter/myrush')}}">我的抢单</a></li>
+            <li><a href="{{url('/ucenter/mypro')}}">我发布的</a></li>
+            <li><a href="{{url('/ucenter/mycoo')}}">我合作的</a></li>
+            <li><a href="{{url('/ucenter/mycollect')}}">我收藏的</a></li>
+            <li><a href="{{url('/ucenter/confirm')}}">服务方认证</a></li>
+            <li id="myrush" style="display:none"><a href="{{url('/ucenter/myrush')}}">我的抢单</a></li>
             <li><a href="{{url('/ucenter/safe')}}">安全中心</a></li>
         </ul>
     </div>
@@ -116,10 +130,10 @@
             <!-- 语音描述 -->
             <div class="ec clearfix">
                 <span class="ec_left">
-                    <em>*</em>语音描述：
+                    语音描述：
                 </span>
                 <div class="ec_right">
-                    <button class="add_voice">添加语音</button>
+                    <button class="add_voice" type="button">添加语音</button>
                 </div>
                 <p class="ec_pleft">注：语音描述仅限于手机app</p>
             </div>
@@ -130,39 +144,42 @@
 
             <div class="ec clearfix">
                 <span class="ec_left">
-                    <em>*</em>上传相关凭证：
+                    上传相关凭证：
                 </span>
                 <div class="ec_right upload">
-                    <input id="file_upload" name="file_upload" type="file" multiple="true">
-                    <a style="position: relative; top: 8px;" href="javascript:$('#file_upload').uploadifive('upload')">上传凭证</a>
-                    
-                        <img class="preview" id="PictureDes1" src="" style="width:60px;height:60px;display:none">
-                        <img class="preview" id="PictureDes2" src="" style="width:60px;height:60px;display:none">
-                        <img class="preview" id="PictureDes3" src="" style="width:60px;height:60px;display:none">
-                    
+                    <input id="picture_upload" name="picture_upload" type="file" multiple="true">
+                    <a style="position: relative; top: 8px;" href="javascript:$('#picture_upload').uploadifive('upload')"></a>
+                    <style>
+                        .preview {float: left;margin-right: 20px;}
+                    </style>                  
                 </div>
                 <p class="ec_pleft ecp_word">@yield('tips')</p>
+            </div>
+                <p id="nopz" style="margin-left:170px;" class="error"></p>
+            <div class="ec clearfix img_box">
+                <img class="preview" id="PictureDes1" src="" style="width:150px;height:150px;display:none">
+                <img class="preview" id="PictureDes2" src="" style="width:150px;height:150px;display:none">
+                <img class="preview" id="PictureDes3" src="" style="width:150px;height:150px;display:none">
             </div>
 <div id="queue"></div>
 
     <script type="text/javascript">
         <?php $timestamp = time();?>
         $(function() {
-            $('#file_upload').uploadifive({
+            $('#picture_upload').uploadifive({
                 'buttonText'       : '选择图片',
                 'removeCompleted'  : true,
-                'auto'             : false,
+                'auto'             : true,
                 'fileSizeLimit'    : 2048,
                 'uploadLimit'      : 3,
                 'queueID'          : 'queue',
                 'uploadScript'     : "{{url('/ucenter/upload')}}",
                 'onUploadComplete' : function(file, data) {
-                    console.log(data); 
                     $('input[name=PictureDes]').val(data);
-                    var name = $(".preview[src='']:first").attr('name');
-                    $('form').append("<input type='hidden' name='"+ name +"' value='"+ data +"' />");
-                    $(".preview[src='']:first").attr('src', data).show();
-                    alert($('#preview').attr('src')); 
+                    var name = $(".preview[src='']:first").attr('id');
+                    $("input[name='" + name + "']").val(data);
+                    $(".preview[src='']:first").attr('src', 'http://images.ziyawang.com/'+data).show();
+                    $('#nopz').html('');
                 }
             });
         });
@@ -176,9 +193,13 @@
 @yield('list')
 
             <p><input type="hidden" name="TypeID" id="TypeID" value="1"></p>
+            <p><input type="hidden" name="VoiceDes" id="VoiceDes" value=""></p>
             <p><input type="hidden" name="ProArea" id="ProArea" value=""></p>
             <p><input type="hidden" name="access_token" value="token"></p>
             <p><input type="hidden" name="token" id="token" value=""></p>
+            <p><input type="hidden" name="PictureDes1" value="" id="pz"></p>
+            <p><input type="hidden" name="PictureDes2" value=""></p>
+            <p><input type="hidden" name="PictureDes3" value=""></p>
 
         </form>
         </div>
@@ -190,6 +211,76 @@
 <script src="{{asset('/js/select.js')}}"></script>
 <script>
     //得到地区码
+var permission = 0;
+$('.ec_input').blur(function(event) {
+    $parent=$(this).parent();
+    $success="输入正确";
+    $parent.find("p").remove();
+    if($(this).val()==""){
+        $parent.append("<p class='error'>您还没填呢~</p>");
+        return;
+    }
+})
+
+$('textarea').blur(function(envet){
+    $parent=$(this).parent();
+    $parent.find("p").remove();
+    if($(this).val()==""){
+        $parent.append("<p class='error'>您还没填呢~</p>");
+        return;
+    }
+})
+
+$('select').change(function(){
+    $(this).parent().find("p").remove();
+})
+
+function _checkInput(){
+var stop = false;
+
+    $("select").each(function(){
+        $parent=$(this).parent();
+        $parent.find("p").remove();
+        if($(this).val()=='null' || $(this).val()==0 || $(this).val()==undefined){
+            $parent.append("<p class='error'>您还没选呢~</p>");
+            stop = true;
+        }
+    })
+    
+    if(stop){
+        return;
+    }
+
+    $(".ec_input").each(function(){
+        $parent=$(this).parent();
+        $parent.find("p").remove();
+        if($(this).val()==""){
+            $parent.append("<p class='error'>您还没填呢~</p>");
+            stop = true;
+        } 
+    });
+
+    if(stop){
+        return;
+    }
+    
+    $("textarea").parent().find("p").remove();
+    if($("textarea").val() == ''){
+        $("textarea").parent().append("<p class='error'>您还没填呢~</p>");
+        return;
+    }
+
+    // $("#nopz").html('');
+    // if($('#pz').val() == ''){
+    //     $("#nopz").html('你还没有上传凭证呢~');
+    //     return;
+    // }
+@yield('pingzheng')
+
+@yield('qingdan')
+    permission = 1;
+}
+
     function getAreaID(){
         var area = 0;          
         if ($("#seachcity").val() != "0"){
@@ -203,7 +294,6 @@
     function getAreaNamebyID(areaID){
         var areaName = "";
         if(!areaID){
-            alert('请选择地区！');
             return false;
         } if(areaID.length == 2){
             areaName = area_array[areaID];
@@ -220,6 +310,11 @@
     }
 
     $('#pub').click(function(){
+        _checkInput();
+
+        if( permission != 1){
+            return false;
+        }
         var token = $.session.get('token');
         token = token.replace(/\'/g,"");
         $('#TypeID').val(getNum(window.location.pathname));
@@ -231,36 +326,36 @@
         var data = $('form').serialize();
         console.log(data);
 
-        // $.ajax({
-        //     url:"http://api.ziyawang.com/v1/project/create?token="+token,
-        //     type:"POST",
-        //     data:data,
-        //     dataType:"json",
-        //     success:function(msg){
-        //         console.log(msg);
-        //     }
-        // });
+        $.ajax({
+            url:"http://api.ziyawang.com/v1/project/create?token="+token,
+            type:"POST",
+            data:data,
+            dataType:"json",
+            success:function(msg){
+                window.location = "{{url('/ucenter/pubpro')}}"
+            }
+        });
     });
 
 
 </script>
 
     <!-- 底部 -->
-    <footer>
+    <div class="foot">
         <div class="footer">
             <div class="nav_foot">
-                <a href="#">首页</a>|<a href="#">关注我们</a>|<a href="#">联系我们</a>|<a href="#">人才招聘</a>|<a href="#">商务合作</a>|<a href="#">法律声明</a>|<a href="#">意见反馈</a>
-                <p>经营许可证：京ICP证150904号  Copyright      2016 ziyawang.com</p>
+                <a href="{{url('/')}}">首页</a>|<a href="{{url('/aboutus')}}">关于我们</a>|<a href="{{url('/connectus')}}">联系我们</a>|<a href="javascript:;">人才招聘</a>|<a href="javascript:;">商务合作</a>|<a href="{{url('/legal')}}">法律声明</a>
+                <p>京ICP备16037201号  Copyright      2016 ziyawang.com</p>
             </div>
             <div class="conection">
                 <p class="con_ziya">联系资芽</p>
-                <p class="tel"><span></span>Tel：400 - 000 - 9999</p>
-                <p class="fax"><span></span>Fax：+86 10 - 1234 5678</p>
-                <p class="address">总部地址：<br>北京市海淀区中关村国际创客中心A座725</p>
+                <p class="tel"><span></span>Tel：400 - 898 - 8557</p>
+                <p class="fax"><span></span>Mail：ziyawang@ziyawang.com</p>
+                <p class="address">总部地址：<br>北京市海淀区中关村大街15-15号创<br>业公社·中关村国际创客中心B2-C15</p>
             </div>
             <img src="/img/footer.png" class="erwei">
         </div>
-    </footer>
+    </div>
     <!-- // <script type="text/javascript" src="js/jquery.min.js"></script>
     // <script type="text/javascript" src="js/fs.js"></script> -->
     </body>
@@ -273,6 +368,12 @@ $(function () {
     if(!token){
         window.location = "{{url('/login')}}";
         return false;
+    }
+
+    var role = $.session.get('role');
+    console.log(role);
+    if(role.indexOf('1') > 0){
+        $("#myrush").show();
     }
 
     $('#container').show();

@@ -7,14 +7,16 @@
         <li></li>
     </ul>
     <div class="prompt_text">
-        <h2 class="wrap pt_word">处置服务&nbsp;&nbsp;搜索引擎</h2>
+        <div class="wrap bg">
         <div class="wrap prompt_text_content">
-            <div class="enter_input"><input type="text" placeholder="输入你想选择的服务" /><span><img src="img/search_yel.png" /></span></div>
-            <input class="free_issue" type="button" value="免费发布信息" />
+            <div class="enter_input"><input type="text" id="sercontent" placeholder="处置服务  搜索引擎" /><span id="searchser"><img src="img/search_yel.png" /></span></div>
+            <input id="pubpro" class="free_issue" type="button" value="免费发布信息" />
+        </div>
         </div>
     </div>
 </div>
-<div class="wrap description">
+<div class="description">
+    <div class="wrap">
     <div class="service_type">
         <span>服务方类型：</span>
         <a type="null" href="javascript:;">不限</a>
@@ -44,8 +46,10 @@
         <a href="javascript:;" area="湖南">湖南</a>
     </div>
     <div class="zhedie">
-        <div><span href="#" class="more active">更多></span>
-        <span href="#" class="more">收起</span></div>
+        <div class="hs_change">
+            <span href="#" class="more m1 active">更多></span>
+            <span href="#" class="more m2">收起</span>
+        </div>
         <div class="hide">
             <a href="javascript:;" area="福建">福建</a>
             <a href="javascript:;" area="安徽">安徽</a>
@@ -69,9 +73,10 @@
         </div>
     </div>
 </div>
+</div>
 <div class="selected_serve wrap">
     <div class="service_info">
-        <h2><i></i>精选服务<span></span></h2>
+        <h2><i></i>优质服务方<span></span></h2>
         <ul class="service_ul">
 
         </ul>
@@ -140,7 +145,7 @@
 <script>
     $(function () {
         $.ajax({  
-            url: 'http://api.ziyawang.com/v1/service/list?pagecount=6&startpage=1&access_token=token',  
+            url: 'http://api.ziyawang.com/v1/service/list?pagecount=10&startpage=1&access_token=token',  
             type: 'GET',  
             dataType: 'json',  
             timeout: 1000,  
@@ -150,10 +155,10 @@
             success: succFunction //成功执行方法    
         });  
         function LoadFunction() {  
-            $("#list").html('加载中...');  
+            $(".service_ul").html('加载中...');  
         }  
         function erryFunction() {  
-            alert("error");  
+             $(".service_ul").html('加载异常，请刷新重试！');  
         }  
         function succFunction(tt) {  
             $(".service_ul").html('');
@@ -181,7 +186,7 @@
                 var ServiceType = data[index].ServiceType;    //服务类型
                 var CoNumber = data[index].CoNumber;    //已接单数
                 var ServiceID = data[index].ServiceID;    //服务商ID
-                $(".service_ul").html($(".service_ul").html() + "<li><a href='#' class='head_pic'><img src='"+ UserPicture +"' alt='' /></a><div class='company_info'><a href='http://ziyawang.com/service/"+ ServiceID +"' class='blue_color'>" + ServiceName + "</a><p class='visited'>浏览数：<em class='yellow_color'>" + ViewCount + "</em>人</p><dl><dt>编号：</dt><dd>" + ServiceNumber + "</dd><dt>所在地：</dt><dd>" + ServiceLocation + "</dd><dt>服务等级：</dt><dd class='yellow_color'>" + ServiceLevel + "</dd></dl><p>服务地区：" + ServiceArea + "</p><p>服务类型：" + ServiceType + "</p></div><div class='orders'><a href='#'>已接" + CoNumber + "单</a></div></li>");  
+                $(".service_ul").html($(".service_ul").html() + "<li><a href='#' class='head_pic'><img src='http://images.ziyawang.com/" + UserPicture + "' alt='' /></a><div class='company_info company_name'><a href='http://test.ziyawang.com/service/"+ ServiceID +"' class='blue_color'>" + ServiceName + "</a><p class='visited'>浏览数：<em class='yellow_color'>" + ViewCount + "</em>人</p></div><div class='company_info company_details'><dl><dt>编号：</dt><dd>" + ServiceNumber + "</dd><dt>所在地：</dt><dd>" + ServiceLocation + "</dd><dt>服务等级：</dt><dd class='yellow_color'>" + ServiceLevel + "</dd></dl><p class='service_area'>服务地区：" + ServiceArea + "</p><p class='service_classify'>服务类型：" + ServiceType + "</p></div><div class='orders'><a href='#'>已接" + CoNumber + "单</a></div></li>"); 
             });
             
             if(counts == 0){
@@ -194,7 +199,7 @@
                 var data = 'startpage=' + startpage + '&ServiceType=' + ServiceType + '&ServiceArea=' + ServiceArea;
 
                 $.ajax({  
-                    url: 'http://api.ziyawang.com/v1/service/list?access_token=token&pagecount=6&' + data,  
+                    url: 'http://api.ziyawang.com/v1/service/list?access_token=token&pagecount=10&' + data,  
                     type: 'GET',  
                     dataType: 'json',  
                     timeout: 1000,  
@@ -225,7 +230,8 @@
                             var ServiceType = data[index].ServiceType;    //服务类型
                             var CoNumber = data[index].CoNumber;    //已接单数
                             var ServiceID = data[index].ServiceID;    //服务商ID
-                            $(".service_ul").html($(".service_ul").html() + "<li><a href='#' class='head_pic'><img src='"+ UserPicture +"' alt='' /></a><div class='company_info'><a href='http://ziyawang.com/service/"+ ServiceID +"' class='blue_color'>" + ServiceName + "</a><p class='visited'>浏览数：<em class='yellow_color'>" + ViewCount + "</em>人</p><dl><dt>编号：</dt><dd>" + ServiceNumber + "</dd><dt>所在地：</dt><dd>" + ServiceLocation + "</dd><dt>服务等级：</dt><dd class='yellow_color'>" + ServiceLevel + "</dd></dl><p>服务地区：" + ServiceArea + "</p><p>服务类型：" + ServiceType + "</p></div><div class='orders'><a href='#'>已接" + CoNumber + "单</a></div></li>");  
+                             $(".service_ul").html($(".service_ul").html() + "<li><a href='#' class='head_pic'><img src='http://images.ziyawang.com" + UserPicture + "' alt='' /></a><div class='company_info company_name'><a href='http://test.ziyawang.com/service/"+ ServiceID +"' class='blue_color'>" + ServiceName + "</a><p class='visited'>浏览数：<em class='yellow_color'>" + ViewCount + "</em>人</p></div><div class='company_info company_details'><dl><dt>编号：</dt><dd>" + ServiceNumber + "</dd><dt>所在地：</dt><dd>" + ServiceLocation + "</dd><dt>服务等级：</dt><dd class='yellow_color'>" + ServiceLevel + "</dd></dl><p class='service_area'>服务地区：" + ServiceArea + "</p><p class='service_classify'>服务类型：" + ServiceType + "</p></div><div class='orders'><a href='javascript:;' dd style='cursor:pointer'>已接" + CoNumber + "单</a></div></li>");
+
                         });
 
                         if(counts == 0){
@@ -249,6 +255,23 @@
                 ajax();
             });
         }  
-     });  
+     }); 
+
+     $('#pubpro').click(function(){
+        var token = $.session.get('token');
+        if(!token){
+            window.location = "{{url('/login')}}";
+            return false;
+        }
+
+        window.location = "{{url('/ucenter/pubpro')}}";
+    }) 
     </script>
+
+<script>
+    $('#searchser').click(function(){
+        var content = $('#sercontent').val();
+        window.location = "{{url('/search/service')}}?type=4&content=" + content;
+    })
+</script>
 @endsection

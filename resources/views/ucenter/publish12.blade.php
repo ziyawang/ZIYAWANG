@@ -16,18 +16,19 @@
         <h2 class="explain">介绍说明</h2>
         <div class="explain_choices">
         	<!-- 状态 -->
+            <form action="">
         	<div class="ec clearfix">
         		<span class="ec_left">
         			<em>*</em>类型：
         		</span>
         		<div class="ec_right">
-        			<select name="" id="">
-	        			<option value="1">请选择</option>
-	        			<option value="2">土地</option>
-	        			<option value="3">房产</option>
-                        <option value="4">汽车</option>
-                        <option value="5">项目</option>
-                        <option value="6">其他</option>
+        			<select name="AssetType" id="">
+	        			<option value="null">请选择</option>
+	        			<option value="土地">土地</option>
+	        			<option value="房产">房产</option>
+                        <option value="汽车">汽车</option>
+                        <option value="项目">项目</option>
+                        <option value="其他">其他</option>
 	        		</select>
 	        	</div>
         	</div>
@@ -48,7 +49,7 @@
                     <em>*</em>转让价：
                 </span>
                 <div class="ec_right">
-                    <input type="text" class="ec_input">
+                    <input name="TransferMoney" placeholder="单位：万元" type="number" class="ec_input">
                 </div>
             </div>
 @endsection
@@ -56,4 +57,13 @@
 
 @section('tips')
 如土地使用权证、房屋所有权证、发票等的原件扫描件或实物照片。
+@endsection
+
+
+@section('pingzheng')
+    $("#nopz").html('');
+    if($('#pz').val() == ''){
+        $("#nopz").html('你还没有上传凭证呢~');
+        return;
+    }
 @endsection

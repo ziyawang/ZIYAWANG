@@ -16,16 +16,17 @@
         <h2 class="explain">介绍说明</h2>
         <div class="explain_choices">
         	<!-- 状态 -->
+            <form action="">
         	<div class="ec clearfix">
         		<span class="ec_left">
         			<em>*</em>求购类型：
         		</span>
         		<div class="ec_right">
-        			<select name="" id="">
-	        			<option value="1">请选择</option>
-	        			<option value="2">土地</option>
-	        			<option value="3">房产</option>
-                        <option value="4">汽车</option>
+        			<select name="AssetType" id="">
+	        			<option value="null">请选择</option>
+	        			<option value="土地">土地</option>
+	        			<option value="房产">房产</option>
+                        <option value="汽车">汽车</option>
 	        		</select>
 	        	</div>
         	</div>
@@ -45,10 +46,10 @@
                     <em>*</em>求购方：
                 </span>
                 <div class="ec_right">
-                    <select name="" id="">
-                        <option value="1">请选择</option>
-                        <option value="2">个人</option>
-                        <option value="3">企业</option>
+                    <select name="Buyer" id="">
+                        <option value="null">请选择</option>
+                        <option value="个人">个人</option>
+                        <option value="企业">企业</option>
                     </select>
                 </div>
             </div>

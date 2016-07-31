@@ -19,7 +19,7 @@
 			<h2><em></em>会员信息</h2>
 			<span class="toux_pic"><img src="/img/defaltoux.jpg" id="userpicture"></span>
 			<a href="javascript:;" id="check">查看联系方式</a>
-			<a href="#" class="chat"><i></i>私聊</a>
+			<a href="javascript:;" class="chat" onclick="alert('下载资芽APP可在线私聊留言')" ><i></i>私聊</a>
 		</div>
 	</div>
 	<div class="content_bottom">
@@ -94,6 +94,7 @@
         var token = $.session.get('token');
 
         function collect() {
+
             if(!token){
                 window.location = "{{url('/login')}}";
             }
@@ -105,6 +106,13 @@
                 dataType:'json',
                 success:function(msg){
                     console.log(msg);
+                    if($(".collect").children('span').html()=='收藏'||$(".collect").children('span').html()=='取消收藏'){
+                        $(".collect").children('em').addClass('star_cl');
+                        $(".collect").children('span').html('已收藏');
+                    }else{
+                        $(".collect").children('em').removeClass('star_cl');
+                        $(".collect").children('span').html('收藏');
+                    }
                 }
             });
         }
@@ -112,7 +120,8 @@
         $.ajax({  
          url: 'http://api.ziyawang.com/v1/service/list/'+ ServiceID +'?access_token=token&token=' + token,  
          type: 'GET',  
-         dataType: 'json',  
+         dataType: 'json',
+         asycn: true,  
          timeout: 1000,  
          cache: false,
          beforeSend: LoadFunction, //加载执行方法    
@@ -148,19 +157,19 @@
             var ConnectPhone = json.ConnectPhone;    //服务商联系方式
             //  var HideNumber = PhoneNumber.replace(reg, "$1****$2"); 
 
-            $('#userpicture').attr('src',UserPicture);
+            $('#userpicture').attr('src','http://images.ziyawang.com'+UserPicture);
             $("#servicename").html(ServiceName); 
-            $(".abstract").html("<div class='abstract_info'><a href='http://ziyawang.com/service/" + ServiceID + "' class='blue_color'>" + ServiceName + "</a><p class='visited'>浏览数：<em class='yellow_color'>" + ViewCount + "</em>人</p><dl><dt>编号：</dt><dd>" + ServiceNumber + "</dd><dt>所在地：</dt><dd>" + ServiceLocation + "</dd><dt>服务级别：</dt><dd class='yellow_color'>" + ServiceLevel + "</dd></dl><p>服务地区：" + ServiceArea + "</p><p>服务类型：" + ServiceType + "</p></div><a href='#' class='much'>已接" + CoNumber + "单</a><div class='share'><a href='javascript:;' class='collect'><em></em>收藏</a><a href='#'><em></em>分享</a></div>");  
+            $(".abstract").html("<div class='abstract_info'><a href='http://test.ziyawang.com/service/" + ServiceID + "' class='blue_color'>" + ServiceName + "</a><p class='visited'>浏览数：<em class='yellow_color'>" + ViewCount + "</em>人</p><dl><dt>编号：</dt><dd>" + ServiceNumber + "</dd><dt>所在地：</dt><dd>" + ServiceLocation + "</dd><dt>服务等级：</dt><dd class='yellow_color'>" + ServiceLevel + "</dd></dl><p>服务地区：" + ServiceArea + "</p><p>服务类型：" + ServiceType + "</p></div><a href='#' class='much'>已接" + CoNumber + "单</a><div class='share'><a href='javascript:;' class='collect'><em></em><span>收藏</span></a><a href='javascript:;'><em></em>分享</a></div>");  
             $(".service_details").html("<p>" + ServiceIntroduction + "</p>");
             //  $("#member").html("<p>会员信息</p><p>"+ HideNumber +"</p><p>查看联系方式</p>")
             if(ConfirmationP1.length >0 ) {
-                $('#ConfirmationP1').attr('src', ConfirmationP1).show();
+                $('#ConfirmationP1').attr('src', 'http://images.ziyawang.com'+ConfirmationP1).show();
             }
             if(ConfirmationP2.length >0 ) {
-                $('#ConfirmationP2').attr('src', ConfirmationP2).show();
+                $('#ConfirmationP2').attr('src', 'http://images.ziyawang.com'+ConfirmationP2).show();
             }
             if(ConfirmationP3.length >0 ) {
-                $('#ConfirmationP3').attr('src', ConfirmationP3).show();
+                $('#ConfirmationP3').attr('src', 'http://images.ziyawang.com'+ConfirmationP3).show();
             }
 
             // console.log($("#spec01"));  

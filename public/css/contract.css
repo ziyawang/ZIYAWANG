@@ -1,5 +1,6 @@
 .find_service ul li{background:#ffda3f url(../img/junior_banner.jpg) no-repeat center top;height: 296px;overflow: hidden;}
 
+.contract{margin-bottom: 60px;}
 .contract_bread{padding-top: 40px;color: #333;font-size: 20px;padding-bottom: 15px;}
 .contract_bread a{color:#999;}
 .con_first,.con_twith,.con_third{overflow: hidden;border-top: 1px solid #ededed;}
@@ -12,6 +13,7 @@
 .cl_lawfile{overflow: hidden;position: relative;left:0;}
 .cl_lawfile ul{float: left;width: 660px;}
 .cl_lawfile ul li,.pre_right ul li{height: 36px;line-height: 36px;border-bottom: 1px dotted #bfbfbf;background:url(../img/word.png) no-repeat 0 0;padding-left: 42px;position: relative;}
+.cl_lawfile ul li>a:first-child{display: inline-block;width: 540px;}
 .cl_lawfile ul li span{position: absolute;right:0;top: 0;color:#999;}
 .cl_lawfile ul li span a{margin-left: 5px;}
 .cl_lawfile ul li span a.current{color:#61c3d0;}

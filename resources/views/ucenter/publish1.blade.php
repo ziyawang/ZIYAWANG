@@ -4,14 +4,13 @@
 @endsection
 @section('content')
 <!-- 右侧详情 -->
+<style>
+    #uploadifive-list_upload{height: 30px!important;line-height: 30px!important;border-radius: 25px;background: #e48013;color: #fff;}
+</style>
     <div class="main_right">
         <h2>资产包转让</h2>
         <p class="illustrate">
-        	请认真阅读以下文字：<br>
-			处置方需要全面了解您的资产情况，请您认真填写。我们会保护您的隐私，关键信息我们会做模糊处理。带星号（*）的为必填项；您的信息填写越完整，系统模拟评级越高，将会吸引更多处置方为您服务！<br>
-			<span>建议：根据对处置方式的不同需求进行分类或分地域打包</span><br>
-			请认真阅读以下文字：<br>
-			<span>资产包信息 ( 选择处置方时，如被要求支付前期费用，请慎重 )</span>
+        	<span>请认真阅读以下文字：</span><br>服务方需要全面了解您发布的信息，请您认真填写。我们会保护您的隐私，关键信息我们会做模糊处理。带星号（*）的为必填项；您的信息填写越完整， 将会吸引更多服务方为您服务！<br>
         </p>
         <h2 class="explain">介绍说明</h2>
         <div class="explain_choices">
@@ -22,7 +21,7 @@
         			<em>*</em>资产包类型：
         		</span>
         		<div class="ec_right">
-        			<select name="AssetType" id="">
+        			<select name="AssetType" id="" >
 	        			<option value="null">请选择</option>
 	        			<option value="抵押">抵押</option>
 	        			<option value="信用">信用</option>
@@ -60,7 +59,7 @@
         			<em>*</em>总金额：
         		</span>
         		<div class="ec_right">
-        			<input type="number" class="ec_input" name="TotalMoney">
+        			<input type="number" placeholder="单位：万元" class="ec_input" name="TotalMoney">
         		</div>
         	</div>
         	<!-- 转让价 -->
@@ -69,31 +68,66 @@
         			<em>*</em>转让价：
         		</span>
                 <div class="ec_right">
-                    <input type="number" class="ec_input" name="TransferMoney">
+                    <input type="number" placeholder="单位：万元" class="ec_input" name="TransferMoney">
                 </div>
-                <span class="ec_pleft ecp_last">
+                <span class="ec_pleft">
                     注：请输入具体价格
                 </span>
         	</div>
 @endsection
-
 @section('list')
+<!-- 资产包清单上传 -->
+<input type="hidden" name="AssetList" id="qd">
+            <div class="ec clearfix">
+                <span class="ec_left">
+                    <em>*</em>上传资产包清单：
+                </span>
+                <div class="ec_right upload">
+                    <input id="list_upload" name="list_upload" type="file" multiple="true">
+                    <a style="position: relative; top: 8px;" href="javascript:$('#list_upload').uploadifive('upload')"></a>
+                </div>
+                <p class="ec_pleft ecp_word">文件要求：<br>支持word 文档和excel 表格格式，文件大小不超过6M，如果有多个文件，请上传压缩包</p>
+            </div>
+            <p id="noqd" style="margin-left:170px;" class="error"></p>
 
-        	<!-- 上传资产包清单 -->
-        	<div class="ec clearfix">
-        		<span class="ec_left">
-        			<em>*</em>上传资产包清单：
-        		</span>
-        		<div class="ec_right upfile">
-        			<input type="text" class="enter_box">
-        			<input type="button" value="浏览..." class="uf_file" />
-        			<input type="file" class="uf_file2 uf_file" >
-        		</div>
-        		<p class="ec_pleft ecp_last">文件要求：<br>支持word 文档和excel 表格格式，文件大小不超过6M</p>
-        	</div>
+    <script type="text/javascript">
+        <?php $timestamp = time();?>
+        $(function() {
+            $('#list_upload').uploadifive({
+                'buttonText'       : '选择文件',
+                'removeCompleted'  : false,
+                'auto'             : true,
+                'fileSizeLimit'    : 6144,
+                'uploadLimit'      : 1,
+                'uploadScript'     : "{{url('/ucenter/uploadfile')}}",
+                'onUploadComplete' : function(file, data) {
+                    console.log(data); 
+                    $('input[name=AssetList]').val(data);
+                }
+            });
+        });
+    </script>
+<!-- 资产包清单上传 -->
 
 @endsection
 
 @section('tips')
-合同/协议、借条/欠条、判决书原件的扫描件或照片
+部分清单复印件或照片
+@endsection
+
+
+@section('qingdan')
+    $("#noqd").html('');
+    if($('#qd').val() == ''){
+        $("#noqd").html('你还没有上传清单呢~');
+        return;
+    }
+@endsection
+
+@section('pingzheng')
+    $("#nopz").html('');
+    if($('#pz').val() == ''){
+        $("#nopz").html('你还没有上传凭证呢~');
+        return;
+    }
 @endsection

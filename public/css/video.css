@@ -3,7 +3,7 @@
 .search_bar input{height: 48px;border: 2px solid #fff;border-radius: 30px;width: 613px;background:none;padding:0 0 0 30px;font-size: 18px;color:#fff;}
 .search_bar .search_btn{border:0 none;position: absolute;top: 6px;right: 284px;width: 40px;height: 40px;border-radius: 50%;background: #fff url(../img/search_yel.png) no-repeat 10px center;}
 /*tab*/
-.video_content{margin-bottom: 80px;display: none;}
+.video_content1{margin-bottom: 80px;display: none;}
 .vs_type .on{display: block;}
 .video_sel{background:#eee;padding:20px 0 14px;text-align: center;}
 .video_sel a{padding:1px 28px;font-size: 18px;}
@@ -14,7 +14,8 @@
 .vc .new{background:url(../img/video_icon3.png) no-repeat left 3px;}
 .vc .tuijian a{position: absolute;right: 0;top: 3px;color:#333;font-size: 18px;}
 .vc .tuijian a:hover{color:#fecf3d;}
-.vc ul{overflow: hidden;padding-top: 28px;}
+.vc #recommend{overflow: hidden;padding-top: 28px;width: auto;}
+#hot,#latest{width:auto;}
 .vc ul li{width:280px;position: relative;float: left;margin-right: 26px;}
 .vc ul li:nth-child(4n){margin-right: 0;}
 .vc ul li img{width:280px;height:190px;}

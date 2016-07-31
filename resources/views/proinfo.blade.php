@@ -32,7 +32,7 @@
                 <div id="status">
                 </div>
                 <div class="share fi_share">
-                    <a href="javascript:;" class="collect"><em></em>收藏</a><a href="#"><em></em>分享</a>
+                    <a href="javascript:;" class="collect"><em></em><span>收藏</span></a><a href="#"><em></em>分享</a>
                 </div>
             </div>
             <div class="cb_intro">
@@ -50,7 +50,7 @@
                 <h2><em></em>会员信息</h2>
                 <span class="toux_pic"><img src="" id="userpicture"></span>
                 <a href="javascript:;" id="check">查看联系方式</a>
-                <a href="#" class="chat"><i></i>私聊</a>
+                <a href="javascript:;" onclick="alert('下载资芽APP可在线私聊留言')" class="chat"><i></i>私聊</a>
             </div>
             <div class="pic_info cbi_picinfo">
                 <h2><em></em>相关信息</h2>
@@ -117,15 +117,23 @@
             }
         }
 
+        function checkService(){
+            var role = $.session.get('role');
+            if( role != 1) {
+                alert('请先认证成为服务方，即可查看联系方式！')
+                window.location = "{{url('/ucenter/confirm')}}";
+            }
+        }
+
         function collect() {
             token = token.replace(/\'/g,"");
             $.ajax({
                 url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
                 type:'POST',
-                data:'itemID=' + ServiceID + '&type=1',
+                data:'itemID=' + ProjectID + '&type=1',
                 dataType:'json',
                 success:function(msg){
-                    console.log(msg);
+                    // alert(msg.msg);
                 }
             });
         }
@@ -138,7 +146,7 @@
                 data:'ProjectID=' + ProjectID,
                 dataType:'json',
                 success:function(msg){
-                    console.log(msg);
+                    alert(msg.msg)
                 }
             });
         }
@@ -157,7 +165,7 @@
          $("#spec01").html('加载中...');  
         }  
         function erryFunction() {  
-         alert("error");  
+          
         }  
         function succFunction(tt) {  
          $("#spec01").html('');
@@ -168,7 +176,7 @@
             var TypeID        = json.TypeID;
             var ProjectID     = json.ProjectID;
             var TypeName      = json.TypeName;
-            var ViewCount     = json.TypeID;
+            var ViewCount     = json.ViewCount;
             var ProjectNumber = json.ProjectNumber;
             var ProArea       = json.ProArea;
             var PublishState  = json.PublishState;
@@ -182,13 +190,13 @@
             var UserPicture   = json.UserPicture;
             var ConnectPhone  = json.PhoneNumber;
             if(PublishState == '0'){
-                PublishState = "<a href='javascript:;' class='much applyorder' id=rush>申请抢单</a>";
+                PublishState = "<a href='javascript:;' class='much applyorder' id='rush'>申请抢单</a>";
             } else if ( PublishState == '1') {
-                PublishState = "<a href='javascript:;' class='combine'>已合作</a>";
+                PublishState = "<a href='javascript:;' class='much applyorder'>已合作</a>";
             }
             var PublishTime = json.PublishTime;
-            var common = "<a href='#' class='blue_color'>信息类型：" + TypeName + "</a><div class='fi_time'>" + PublishTime + "</div><p class='people fi_people'><span class='grab'><em>" + RushCount + "</em>人已抢单</span><span class='visited'>浏览数：<em class='yellow_color'>" + ViewCount + "</em>人</span><span>信息完整度：<em class='degree'></em></span></p>";
-            var des = "<dl><dt>语音信息：</dt><dd class='voice_info'><a href='#'></a><span>5分22秒</span></dd><dt>文字信息：</dt><dd>" + WordDes + "</dd></dl>";
+            var common = "<a href='javascript:;' class='blue_color'>信息类型：" + TypeName + "</a><div class='fi_time'>" + PublishTime + "</div><p class='people fi_people'><span class='grab'><em>" + RushCount + "</em>人已抢单</span><span class='visited'>浏览数：<em class='yellow_color'>" + ViewCount + "</em>人</span><span>信息完整度：<em class='degree'></em></span></p>";
+            var des = "<dl><dt>语音信息：</dt><dd class='voice_info'><a href='javascript:;'></a><span>0分0秒</span></dd><dt>文字信息：</dt><dd>" + WordDes + "</dd></dl>";
 
             var FromWhere     = ('FromWhere' in json)     ? json.FromWhere : null;
             var TotalMoney    = ('TotalMoney' in json)    ? json.TotalMoney : null;
@@ -204,46 +212,45 @@
 
             switch(TypeID)
                 {
-                    case 1:
-                        var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>总金额：<em class='yellow_color'>" + TotalMoney + "万</em></span><span>资产包类型：" + AssetType + "</span></p><p class='line_info'><span>地区：" + ProArea + "</span><span>转让价：<em class='yellow_color'>" + TransferMoney + "万</em></span><span>来源：" + FromWhere + "</span></p>";
-                        des = "<dl><dt>语音信息：</dt><dd class='voice_info'><a href='#'></a><span>5分22秒</span></dd><dt>文字信息：</dt><dd>" + WordDes + "</dd><dt>清单下载：</dt><dd><button>下载</button></dd></dl>";
+                    case "1":
+                        var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>总金额：<em class='yellow_color'>" + TotalMoney + "万</em></span><span>资产包类型：" + AssetType + "</span></p><p class='line_info'><span>地区：" + ProArea + "</span><span>转让价：<em class='yellow_color'>" + TransferMoney + "万</em></span><span>来源：" + FromWhere + "</span></p>";des = "<dl><dt>语音信息：</dt><dd class='voice_info'><a href='#'></a><span>0分0秒</span></dd><dt>文字信息：</dt><dd>" + WordDes + "</dd><dt>清单下载：</dt><dd><button><a href='http://files.ziyawang.com/" + AssetList + "'>下载</a></button></dd></dl>";
                         break;
-                    case 2:
+                    case "2":
                         var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>债权人所在地：" + ProArea + "</span><span>金额：<em class='yellow_color'>" + TotalMoney + "万</em></span></p><p class='line_info'><span>状态：" + Status + "</span><span>佣金比例：" + Rate + "</span><span>类型：" + AssetType + "</span></p>";
                         break;
-                    case 3:
+                    case "3":
                         var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>类型：" + AssetType + "</span><span>地区：" + ProArea + "</span></p><p class='line_info'><span>需求：" + Requirement + "</span></p>";
                         break;
 
-                    case 4:
+                    case "4":
                         var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>合同金额：<em class='yellow_color'>" + TotalMoney + "万</em></span><span>地区：" + ProArea + "</span></p><p class='line_info'><span>买方性质：" + BuyerNature + "</span></p>";
                         break;
 
-                    case 5:
+                    case "5":
                         var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>类型：" + AssetType + "</span><span>地区：" + ProArea + "</span></p><p class='line_info'><span>金额：<em class='yellow_color'>" + TotalMoney + "万</em></span></p>";
                         break;
 
-                    case 6:
+                    case "6":
                         var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>方式：" + AssetType + "</span><span>地区：" + ProArea + "</span></p><p class='line_info'><span>金额：<em class='yellow_color'>" + TotalMoney + "万</em></span><span>回报率：" + Rate + "%</span></p>";
                         break;
 
-                    case 9:
+                    case "9":
                         var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>类型：" + AssetType + "</span><span>目标地区：" + ProArea + "</span></p><p class='line_info'><span>金额：<em class='yellow_color'>" + TotalMoney + "万</em></span></p>";
                         break;
 
-                    case 10:
+                    case "10":
                         var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>类型：" + AssetType + "</span><span>地区：" + ProArea + "</span></p><p class='line_info'><span>被调查方：" + Informant + "</span></p>";
                         break;
 
-                    case 12:
+                    case "12":
                         var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>类型：" + AssetType + "</span><span>地区：" + ProArea + "</span></p><p class='line_info'><span>转让价：<em class='yellow_color'>" + TransferMoney + "万</em></span></p>";
                         break;
 
-                    case 13:
+                    case "13":
                         var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>类型：" + AssetType + "</span><span>地区：" + ProArea + "</span></p><p class='line_info'><span>求购方：" + Buyer + "</span></p>";
                         break;
 
-                    case 14:
+                    case "14":
                         var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>金额：<em class='yellow_color'>" + TotalMoney + "万</em></span><span>地区：" + ProArea + "</span></p><p class='line_info'><span>类型：" + AssetType + "</span><span>转让价：<em class='yellow_color'>" + TransferMoney + "万</em></span></p>";
                         break;
 
@@ -256,13 +263,13 @@
             $(".ai_info").html(des);
             //  $("#member").html("<p>会员信息</p><p>"+ HideNumber +"</p><p>查看联系方式</p>")
             if(PictureDes1.length >0 ) {
-                $('#PictureDes1').attr('src', PictureDes1).show();
+                $('#PictureDes1').attr('src', 'http://images.ziyawang.com'+PictureDes1).show();
             }
             if(PictureDes2.length >0 ) {
-                $('#PictureDes2').attr('src', PictureDes2).show();
+                $('#PictureDes2').attr('src', 'http://images.ziyawang.com'+PictureDes2).show();
             }
             if(PictureDes3.length >0 ) {
-                $('#PictureDes3').attr('src', PictureDes3).show();
+                $('#PictureDes3').attr('src', 'http://images.ziyawang.com'+PictureDes3).show();
             }
   
             $("#rush").click(function(){
@@ -277,6 +284,7 @@
 
             $("#check").click(function(){
                 checkLogin();
+                checkService();
                 $("#check").html(ConnectPhone);
             });
         } 

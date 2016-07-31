@@ -47,10 +47,10 @@
         		</span>
         		<div class="ec_right">
 	        		<select name="AssetType" id="sel" onChange="getCity()">
-	        			<option value="1">请选择</option>
-	        			<option value="2">个人债权</option>
-	        			<option value="3">银行贷款</option>
-	        			<option value="4">企业商帐</option>
+	        			<option value="null">请选择</option>
+	        			<option value="个人债权">个人债权</option>
+	        			<option value="银行贷款">银行贷款</option>
+	        			<option value="企业商帐">企业商帐</option>
 	        		</select>
         		</div>
         	</div>
@@ -61,11 +61,11 @@
                     <em>*</em>佣金比例：
                 </span>
                 <div class="ec_right">
-                    <select name="city" id="choose">
+                    <select name="Rate" id="choose">
                         <option value="1">请选择</option>
                     </select>
                 </div>
-                <span class="ec_left">
+                <span class="ec_pleft">
                     注：支付服务方费用
                 </span>
             </div>
@@ -76,7 +76,7 @@
         			<em>*</em>金额：
         		</span>
         		<div class="ec_right">
-        			<input type="text" class="ec_input">
+        			<input type="number" name="TotalMoney" placeholder="单位：万元" class="ec_input">
         		</div>
         	</div>
 @endsection
@@ -84,4 +84,13 @@
 
 @section('tips')
 合同/协议、借条/欠条、判决书原件的扫描件或照片
+@endsection
+
+
+@section('pingzheng')
+    $("#nopz").html('');
+    if($('#pz').val() == ''){
+        $("#nopz").html('你还没有上传凭证呢~');
+        return;
+    }
 @endsection

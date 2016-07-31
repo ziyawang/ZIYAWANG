@@ -16,18 +16,19 @@
         <h2 class="explain">介绍说明</h2>
         <div class="explain_choices">
         	<!-- 状态 -->
+            <form action="">
         	<div class="ec clearfix">
         		<span class="ec_left">
         			<em>*</em>方式：
         		</span>
         		<div class="ec_right">
-        			<select name="" id="">
-	        			<option value="1">请选择</option>
-	        			<option value="2">抵押</option>
-                        <option value="3">质押</option>
-                        <option value="3">租赁</option>
-                        <option value="3">过桥</option>
-	        			<option value="3">信用</option>
+        			<select name="AssetType" id="">
+	        			<option value="null">请选择</option>
+	        			<option value="抵押">抵押</option>
+                        <option value="质押">质押</option>
+                        <option value="租赁">租赁</option>
+                        <option value="过桥">过桥</option>
+	        			<option value="信用">信用</option>
 	        		</select>
 	        	</div>
         	</div>
@@ -48,7 +49,7 @@
         			<em>*</em>金额：
         		</span>
         		<div class="ec_right">
-        			<input type="number" class="ec_input">
+        			<input name="TotalMoney" type="number" placeholder="单位：万元" class="ec_input">
         		</div>
         	</div>
         	<!-- 回报率 -->
@@ -57,14 +58,14 @@
                     <em>*</em>回报率：
                 </span>
                 <div class="ec_right">
-                    <input type="number" placeholder="%" class="ec_input">
+                    <input name="Rate" type="number" placeholder="单位：%" class="ec_input">
                 </div>
-                <span class="ec_left">
+                <span class="ec_pleft">
                     注：可接受的月化利息
                 </span>
             </div>
 @endsection
 
 @section('tips')
-合同/协议、借条/欠条、判决书原件的扫描件或照片
+相关凭证或照片
 @endsection

@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>资芽网</title>
         <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}" />
         <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}" /> 
 
         <script src="{{asset('/js/jquery.js')}}"></script>
@@ -14,22 +15,23 @@
         <script type="text/javascript" src="{{url('/js/jquery.pagination.js')}}"></script>
     </head>
     <body>
-    <header>
+    <div class="header">
         <div class="wrap">
                 <div class="guide">
-                    <span id="haslogin" style="display:none;font:white;">
-                        <a href="{{url('/ucenter/index')}}" id="phone"></a>
-                        <a href="javascript:" id="logout">退出</a>
-                    </span>
-                    <a href="#">我的收藏</a>
-                    <a href="#">联系客服</a>
+                    <a href="{{url('/ucenter/index')}}" class="personal">个人中心</a>
+                    <a href="javascript:;" class="weixin1">微信<span class="wx_ma"><img src="/img/wx.jpg" /></span></a>
+                    <a href="#" class="weibo1">微博<span class="wb_ma"><img src="/img/wb.png" /></span></a>
+                    <a href="{{url('/ucenter/mycollect')}}" class="mycol">我的收藏</a>
                 </div>
                 <div class="brum_login">
-                    <div id="unlogin" style="display:none;font:white;">
-                        <a href="{{url('/login')}}" class="viplog">会员登录</a>
-                        <a href="{{url('/register')}}" class="freereg">免费注册</a>
-                    </div>
+                        <a href="{{url('/login')}}" class="viplog" target="_blank">会员登录</a>
+                        <a href="{{url('/register')}}" class="freereg" target="_blank">免费注册</a>
                 </div>
+                <!-- 登录后内容 -->
+                <div class="after_login">
+                    <a href="{{url('/ucenter/index')}}" class="number" id="phone"></a><a href="javascript:;" id="logout" class="back">退出</a>
+                </div>
+
 <!-- 登录退出状态 -->
 <script>
     $(document).ready(function(){
@@ -38,18 +40,26 @@
         if(typeof(phonenumber)!="undefined") {
             phonenumber = phonenumber.replace(/\'/g,"");
             $('#unlogin').hide();
-            $('#haslogin').show();
+            $('.brum_login').hide();
+            $('.personal').show();
+            $('.after_login').show();
             $('#phone').text(phonenumber);
+            $('.login').addClass('after');
         } else {
             $('#unlogin').show();
-            $('#haslogin').hide();
+            $('.brum_login').show();
+            $('.after_login').hide();
+            $('.personal').hide();
         }
     });
 
     $('#logout').click(function(){
         $.session.clear();
         $('#unlogin').show();
-        $('#haslogin').hide();
+        $('#after_login').hide();
+        $('.personal').hide();
+        $('.login').removeClass('after');
+        $('')
         window.location = "{{url('/')}}";
     });
 </script>
@@ -62,7 +72,7 @@
                     <li id="video"><a href="{{url('/video')}}">资芽视频</a>|</li>
                     <li id="contract"><a href="{{url('/contract')}}">合同下载</a></li>
                 </ul>
-                <div class="login">
+                <div class="login after">
                     <h1 class="logo"><a href="{{url('/')}}"><img src="/img/logo.png" height="68" width="172" alt="首页" /></a></h1>
                     <p class="logo_word">全球不良资产超级综服平台<p>
                     
@@ -70,29 +80,29 @@
                 </div>
                 <div class="arrow"></div>
                 <div class="hotline">服务热线：<br/>
-                    <span>400-000-9999</span>
+                    <span>400-898-8557</span>
                 </div>
         </div>
-    </header>
+    </div>
 
     @yield('content')
 
     <!-- 底部 -->
-    <footer>
+    <div class="foot">
         <div class="footer">
             <div class="nav_foot">
-                <a href="#">首页</a>|<a href="#">关注我们</a>|<a href="#">联系我们</a>|<a href="#">人才招聘</a>|<a href="#">商务合作</a>|<a href="#">法律声明</a>|<a href="#">意见反馈</a>
-                <p>经营许可证：京ICP证150904号  Copyright      2016 ziyawang.com</p>
+                <a href="{{url('/')}}">首页</a>|<a href="{{url('/aboutus')}}">关于我们</a>|<a href="{{url('/connectus')}}">联系我们</a>|<a href="javascript:;">人才招聘</a>|<a href="javascript:;">商务合作</a>|<a href="{{url('/legal')}}">法律声明</a>
+                <p>京ICP备16037201号  Copyright      2016 ziyawang.com</p>
             </div>
             <div class="conection">
                 <p class="con_ziya">联系资芽</p>
-                <p class="tel"><span></span>Tel：400 - 000 - 9999</p>
-                <p class="fax"><span></span>Fax：+86 10 - 1234 5678</p>
-                <p class="address">总部地址：<br>北京市海淀区中关村国际创客中心A座725</p>
+                <p class="tel"><span></span>Tel：400 - 898 - 8557</p>
+                <p class="fax"><span></span>Mail：ziyawang@ziyawang.com</p>
+                <p class="address">总部地址：<br>北京市海淀区中关村大街15-15号创<br>业公社·中关村国际创客中心B2-C15</p>
             </div>
             <img src="/img/footer.png" class="erwei">
         </div>
-    </footer>
+    </div>
     <!-- // <script type="text/javascript" src="js/jquery.min.js"></script>
     // <script type="text/javascript" src="js/fs.js"></script> -->
     </body>

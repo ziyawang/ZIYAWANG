@@ -18,11 +18,12 @@ a,button{cursor:pointer;}
 body{overflow-x: hidden;}
 .wrap{width: 1200px;margin:0 auto;position: relative;}
 /*footer*/
-footer{border-top:2px solid #F5D346;background: #3a3a3b;padding: 30px 0;}
+
+/*.foot,footer{border-top:2px solid #F5D346;background: #3a3a3b;padding: 30px 0;}
 .footer{width: 1200px;margin: 0 auto;position: relative;overflow: hidden;}
 .nav_foot{float: left;padding: 82px 185px 0 0;}
 .conection{float: left;color: #fff;}
-.con_ziya{border-bottom: 1px solid #848485;margin-left: 25px;width: 190px;font-size: 12px;}
+.con_ziya{border-bottom: 1px solid #848485;margin-left: 25px;width: 218px;font-size: 12px;}
 .erwei{position: absolute;bottom:0px;right: 20px;}
 .tel,.fax{line-height: 20px;}
 .tel{padding-top: 12px;}
@@ -37,26 +38,26 @@ footer{border-top:2px solid #F5D346;background: #3a3a3b;padding: 30px 0;}
 .login_tab_content .psd{background:#d4d3d3 url(../img/password1.png) no-repeat 0 top;}
 .login_tab_content .keydown_tel{background:#d4d3d3 url(../img/reg_user.png) no-repeat 0 top;}
 .login_tab_content .confirm_code{background:#d4d3d3 url(../img/gou.png) no-repeat 0 top;}
-.login_tab_content .psd2{background:#d4d3d3 url(../img/lock.png) no-repeat 0 top;}
+.login_tab_content .psd2{background:#d4d3d3 url(../img/lock.png) no-repeat 0 top;}*/
 .agree{font-size: 12px;color: #3a3a3a;}
 .agree a,.freelog{display: inline-block;width: 12px;height: 12px;background: url(../img/right.png) no-repeat;margin-right: 5px;}
 .agree a{margin-left:10px;}
 .agree .on,.forget .on{background: url(../img/right_cl.png) no-repeat;}
 .white_cube{position: absolute;width: 24px;height: 24px;background: url(../img/white.png) no-repeat;bottom: 0;right: 0;}
 .enter_input input:-moz-placeholder,.login_tab_content input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: #fff;  
+    color: #e48013;  
 }
 
 .enter_input input::-moz-placeholder,.login_tab_content input::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: #fff;
+    color: #e48013;
 }
 
 .enter_input input:-ms-input-placeholder,
 textarea:-ms-input-placeholder,.login_tab_content input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-    color: #fff;
+    color: #e48013;
 }
 
 .enter_input input::-webkit-input-placeholder,.login_tab_content input::-webkit-input-placeholder {
-    color: #fff;
+    color: #e48013;
 }

@@ -60,15 +60,24 @@ class UCenterController extends Controller
         return view('ucenter.myrush');
     }
 
+    public function mycollect()
+    {
+        return view('ucenter.mycollect');
+    }
 
     public function safe()
     {
         return view('ucenter.safe');
     }
 
-    public function restpwd()
+    public function resetpwd()
     {
-        return view('ucenter.restpwd');
+        return view('ucenter.resetpwd');
+    }
+
+    public function redirect()
+    {
+        return view('ucenter.redirect');
     }    
 
 

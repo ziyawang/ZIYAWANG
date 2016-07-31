@@ -60,7 +60,7 @@ function getCity(){
 	$(function(){
 		//点击语音
 		$('.add_voice').click(function(){
-			alert('请下载APP！');
+			alert('下载资芽APP可在线私聊留言');
 		})
 		//城市级联
 		initComplexArea('seachprov', 'seachcity', area_array, sub_array, '0', '0', '0');
@@ -94,4 +94,45 @@ function getCity(){
 			 
 			}
 		});
+        //点击服务地区
+        $('.please').click(function(event) {
+            $('.coverpop,.province').show();
+        });
+        //取值
+        $('.sure').click(function(event) {
+            var temp = "";
+            var arr=[];
+            var inum=0;
+            $('.prov tr td input').each(function(index, element) {
+                //var inp = $(element).children('input');
+                // if($(inp).is(':checked')){
+                //     var val = $(element).children('input').val();
+                //     $('.please').html(val);
+                // }
+                var val = $(element).val();
+
+                if($(element).is(':checked')){
+                    inum=index;
+                    arr.push(inum);
+                    //alert(val);
+                    //temp +=val;
+                    temp = temp + val +",";
+                    //temp=temp.substring(0,temp.length-1)
+                    $('.please').html(temp);
+                    $('#ServiceArea').val(temp);
+                }
+            });
+            if(arr.length==0){
+                temp ='';
+                $('.please').html('请选择');
+            }
+
+            $('.coverpop,.province').hide();
+        });
+        $('.revoke').click(function(event) {
+            $('.coverpop,.province').hide();
+            return false;
+
+        });
+
 	});

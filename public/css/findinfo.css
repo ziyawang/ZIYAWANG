@@ -12,3 +12,7 @@
 .aa a.current,.aa a:hover{background:#f0a22d;border-radius: 5px;color:#fff;}
 #defa01.bind,.aa .bind:hover{background:#ccc;border-radius: 5px;color:#666;cursor:default;}
 .service_ul .company_info{width:140px;}
+.selected_serve .info_ul li{background:none;padding:24px 0;}
+.info_ul li .visited{font-size: 12px;}
+.info_ul li .blue_color{margin-bottom: 6px;}
+.info_ul li .head_pic img{border-radius: 5px;}

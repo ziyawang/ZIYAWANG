@@ -48,6 +48,12 @@ class IndexController extends Controller
         return view('smslogin');
     }
 
+    //找回密码
+    public function resetpwd()
+    {
+        return view('resetpwd');
+    }
+
     //项目列表 找信息
     public function proList()
     {
@@ -70,24 +76,30 @@ class IndexController extends Controller
     public function serInfo()
     {
         return view('serinfo');
-    }
-
-    //视频列表
-    public function videoList()
-    {
-        return view('videolist');
-    }
-
-    //视频详情
-    public function videoInfo()
-    {
-        return view('videoinfo');
-    }    
+    } 
 
     //新闻列表
     public function newsList()
     {
         return view('newslist');
+    }
+
+    //资芽新闻
+    public function zynewsList()
+    {
+        return view('zynewslist');
+    }
+
+    //行业新闻
+    public function hynewsList()
+    {
+        return view('hynewslist');
+    }
+
+    //财经新闻
+    public function cjnewsList()
+    {
+        return view('cjnewslist');
     }
 
     //新闻详情
@@ -108,6 +120,42 @@ class IndexController extends Controller
         return view('contarct.contract'.$id);
     }
 
+    //联系我们
+    public function connectus()
+    {
+        return view('static.connectus');
+    }
+
+    //法律声明
+    public function legal()
+    {
+        return view('static.legal');
+    }
+
+    //关于我们
+    public function aboutus()
+    {
+        return view('static.aboutus');
+    }
+
+    //搜索信息
+    public function searchProject()
+    {
+        return view('search.project');
+    }    
+
+    //搜索服务方
+    public function searchService()
+    {
+        return view('search.service');
+    }    
+
+    //搜索视频
+    public function searchVideo()
+    {
+        return view('search.video');
+    }
+
     //获取图形验证码
     public function code()
     {   
@@ -116,7 +164,7 @@ class IndexController extends Controller
         $code->make();
     }
 
-    //文件上传
+    //图片上传
     public function upload(){
         $file = Input::file('Filedata');
         $clientName = $file->getClientOriginalName();//获取文件名
@@ -124,15 +172,26 @@ class IndexController extends Controller
         $realPath = $file->getRealPath();//缓存文件的绝对路径
         $extension = $file->getClientOriginalExtension();//获取文件的后缀
         $mimeType = $file->getMimeType();//文件类型
-        $newName = date('Ymd'). mt_rand(1000,9999). '.'. $extension;//新文件名
-        $path = $file->move(base_path().'/public/upload/images/',$newName);//移动绝对路径
-        $filePath = '/upload/images/'.$newName;//存入数据库的相对路径
+        $newName = time(). mt_rand(1000,9999). '.'. $extension;//新文件名
+        $path = $file->move(dirname(base_path()).'/ziyaupload/images/user/',$newName);//移动绝对路径
+        $filePath = '/user/'.$newName;//存入数据库的相对路径
 
         return $filePath;
-        // $res = Article::thumb($realPath, $filePath);
-        // if($res){
-        //     return $filePath;
-        // } 
+    }
+
+    //文件
+    public function uploadFile(){
+        $file = Input::file('Filedata');
+        $clientName = $file->getClientOriginalName();//获取文件名
+        $tmpName = $file->getFileName();//获取临时文件名
+        $realPath = $file->getRealPath();//缓存文件的绝对路径
+        $extension = $file->getClientOriginalExtension();//获取文件的后缀
+        $mimeType = $file->getMimeType();//文件类型
+        $newName = time(). mt_rand(1000,9999). '.'. $extension;//新文件名
+        $path = $file->move(dirname(base_path()).'/ziyaupload/files/',$newName);//移动绝对路径
+        $filePath = $newName;//存入数据库的相对路径
+
+        return $filePath;
     }
 
 }

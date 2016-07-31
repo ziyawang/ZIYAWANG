@@ -16,18 +16,19 @@
         <h2 class="explain">介绍说明</h2>
         <div class="explain_choices">
         	<!-- 状态 -->
+            <form action="">
         	<div class="ec clearfix">
         		<span class="ec_left">
         			<em>*</em>类型：
         		</span>
         		<div class="ec_right">
-        			<select name="" id="">
-	        			<option value="1">请选择</option>
-	        			<option value="2">法律</option>
-	        			<option value="3">财务</option>
-                        <option value="4">税务</option>
-                        <option value="5">商业</option>
-                        <option value="6">其他</option>
+        			<select name="AssetType" id="">
+	        			<option value="null">请选择</option>
+	        			<option value="法律">法律</option>
+	        			<option value="财务">财务</option>
+                        <option value="税务">税务</option>
+                        <option value="商业">商业</option>
+                        <option value="其他">其他</option>
 	        		</select>
 	        	</div>
         	</div>
@@ -47,15 +48,15 @@
                     <em>*</em>被调查方：
                 </span>
                 <div class="ec_right">
-                    <select name="" id="">
-                        <option value="1">请选择</option>
-                        <option value="2">企业</option>
-                        <option value="3">个人</option>
+                    <select name="Informant" id="">
+                        <option value="null">请选择</option>
+                        <option value="企业">企业</option>
+                        <option value="个人">个人</option>
                     </select>
                 </div>
             </div>
 @endsection
 
 @section('tips')
-合同/协议、借条/欠条、判决书原件的扫描件或照片
+相关凭证或照片
 @endsection

@@ -16,15 +16,16 @@
         <h2 class="explain">介绍说明</h2>
         <div class="explain_choices">
         	<!-- 状态 -->
+            <form action="">
         	<div class="ec clearfix">
         		<span class="ec_left">
         			<em>*</em>类型：
         		</span>
         		<div class="ec_right">
-        			<select name="" id="">
-	        			<option value="1">请选择</option>
-	        			<option value="2">找人</option>
-	        			<option value="3">找财产</option>
+        			<select name="AssetType" id="">
+	        			<option value="null">请选择</option>
+	        			<option value="找人">找人</option>
+	        			<option value="找财产">找财产</option>
 	        		</select>
 	        	</div>
         	</div>
@@ -45,9 +46,9 @@
         			<em>*</em>金额：
         		</span>
         		<div class="ec_right">
-        			<input type="text" class="ec_input">
+        			<input name="TotalMoney" placeholder="单位：万元" type="number" class="ec_input">
         		</div>
-                <span class="ec_left">
+                <span class="ec_pleft">
                     注：悬赏佣金
                 </span>
         	</div>
@@ -56,4 +57,13 @@
 
 @section('tips')
 合同/协议、借条/欠条、判决书原件的扫描件或照片
+@endsection
+
+
+@section('pingzheng')
+    $("#nopz").html('');
+    if($('#pz').val() == ''){
+        $("#nopz").html('你还没有上传凭证呢~');
+        return;
+    }
 @endsection

@@ -1,35 +1,73 @@
 
 /*公共部分*/
-header{height: 95px;background: #000;}
-header .login{height: 145px;width: 238px;}
-header .brum_login{margin-right: 50px;}
-header .guide{margin-right: 155px;}
-header .logo_word{font-size: 12px;letter-spacing: 2px;}
-header .nav{margin-right: 42px;}
-.guide{height: 40px;line-height:40px;position: absolute;top: 0;right:0;margin-right: 100px;}
-.guide a{margin-left: 50px;color:#999;font-size: 14px;}
-.brum_login{float: right;margin-top: 56px;}
-.brum_login a{color:#fff;display:inline-block;width:75px;height: 23px;padding-left: 30px;margin-left: 20px;}
-.brum_login .viplog{background:url(../img/icon.png) no-repeat 0 0;}
-.brum_login .freereg{background:url(../img/icon.png) no-repeat 0 -29px;}
-.nav{float:right;overflow: hidden;margin-top: 40px;height:55px;line-height: 55px;}
-.nav li{float:left;color:#fff;font-size: 16px;}
-.nav li a{color:#fff;margin:0 10px;}
-.login{position: absolute;top: 0;left:133px;background:#fff;border-radius: 0 0 15px 15px;box-shadow: 0px 0px 15px #333;z-index: 2;width: 340px;height: 390px;}
-.logo img{display: block;margin: 14px auto;}
-.logo_word{text-align: center;font-size: 15px;color:#000;word-spacing: 3px;word-spacing:5px; letter-spacing: 3px;}
-.nav li.current a,.nav li a:hover{color:#fecf3d;}
-.hotline{position: absolute;left: 20px;top: 45px;color: #fff;}
-.hotline span{color: #f3c91f;}
+.header{height: 84px;background: #000;width:100%;}
+/*顶部小条*/
+.guide{height: 40px;line-height:40px;position: absolute;top: 0;right:-63px;}
+.guide a{margin-left: 15px;color:#999;font-size: 12px;}
+.guide a:hover{color:#fff;}
+.personal{background:url(../img/user.png) no-repeat left 3px;padding-left: 14px;display: none;}
+/*登录后显示个人中心*/
+.guide .personal.appear{display: block;}
+.weixin{background:url(../img/weixin.png) no-repeat left 3px;padding-left: 19px;}
+.weibo{background:url(../img/weibo.png) no-repeat left 3px;padding-left: 19px;}
+.mycol{background:url(../img/shouc.png) no-repeat left 3px;padding-left: 19px;}
+.wx_ma{position: absolute;top: 30px;right:123px;display: none;z-index: 10;}
+/*会员登录*/
+.brum_login{position: absolute;margin-top: 50px;right: -63px;top: 0;}
+.brum_login a{color:#fff;display:inline-block;width:60px;height: 19px;padding-left: 25px;margin-left: 9px;line-height: 19px;font-size: 12px;}
+.brum_login .viplog{background:url(../img/index_log.png) no-repeat;}
+.brum_login .freereg{background:url(../img/index_reg.png) no-repeat;}
+/*登陆后状态*/
+.after_login{background:url(../img/user_tel.png) no-repeat;position: absolute;margin-top: 50px;right: -63px;top: 3px;width: 140px;height: 19px;font-size: 12px;padding: 0 15px 0 24px;display: none;}
+.after_login a{color:#fff;}
+.after_login .number{float: left;}
+.after_login .back{float: right;}
+/*导航条*/
+.nav{float:right;overflow: hidden;margin: 40px 318px 0 0;height:44px;line-height: 44px;}
+.nav li{float:left;color:#fff;font-size: 14px;}
+.nav li a{color:#fff;margin:0 20px;}
+/*登录注册框*/
+.login{position: absolute;top: 0;left:6px;background:#fff;border-radius: 0 0 15px 15px;box-shadow: 0px 0px 15px #333;z-index: 2;width: 279px;height: 360px;}
+/*登录后栏目高度*/
+.header .after{height: 144px;}
+.header .after .login_tab{display: none;}
+/**/
+.logo img{display: block;margin: 20px auto 15px;}
+.logo_word{text-align: center;font-size: 14px;color:#000;word-spacing: 3px;word-spacing:5px; letter-spacing: 3px;}
+.nav li.current a{color:#fecf3d;}
+.hotline{position: absolute;left: -137px;top: 34px;color: #fff;font-size: 11px;}
+.hotline span{color: #f3c91f;font-size: 14px;}
 .arr{width:0; height:0; border-top:40px solid transparent;border-bottom: 40px solid transparent;border-left: 40px solid #fff;position: absolute;bottom: -24px;right: 20px;z-index: -1;}
+/*登陆注册*/
+.login_tab{border-radius: 10px;background:#f7f6f6;margin:22px 27px 0;}
+.login_tab ul{overflow:hidden;background:#5a5c5c;border-radius: 10px 10px 0 0;}
+.login_tab ul li{float:left;width:50%;text-align: center;height: 32px;line-height: 32px;color:#fff;cursor: pointer;word-spacing:5px; letter-spacing: 3px;}
+.login_tab ul li.current{background:#f2c920;border-radius: 10px 10px 0 0;color:#000;}
+.login_tab .login_enter{padding:12px 15px 20px;}
+.login_tab_content{display:none;padding:8px 20px 13px;}
+.login_tab .login_enter input{width:150px;height: 26px;line-height: 26px;background:url(../img/index_user.png) no-repeat left top;padding-left: 42px;margin:6px 0;}
+.login_tab .login_enter input.psd{background:url(../img/index_lock.png) no-repeat left top;}
+.login_tab .login_enter .btn{display: block;width:100%;background:url(../img/index_logbtn.png) no-repeat;margin:15px 0 0;cursor: pointer;width: 191px;height: 28px;}
+.forget{position: relative;font-size: 12px;}
+.forget .forget_pwd{position: absolute;right:0;}
+/*注册*/
+.login_tab_content p{overflow: hidden;margin:4px 0;}
+.login_tab_content p .keydown_tel{float: left;width: 92px;height: 22px;background:url(../img/index_reg11.png) no-repeat;font-size: 12px;padding-left: 32px;}
+.login_tab_content p .testcode{float: right;/*margin: 12px 0 0;*/width: 60px;height: 22px;line-height:22px;border-radius: 20px;background: #f3c91f;text-align: center;color: #fff;font-size: 12px;}
+.confirm_code,.psd2{width: 155px;height: 22px;background:url(../img/index_reg2.png) no-repeat;margin:4px 0;padding-left: 32px;}
+.login_tab_content .psd2{background:url(../img/index_reg3.png) no-repeat;}
+.freelog,.agree a{width:14px;height: 14px;background: url(../img/right.png) no-repeat;vertical-align: middle;display: inline-block;margin-right: 5px;}
+.agree,.btn2{font-size: 12px;}
+.ltc_show{display:block;}
+.login_tab_content .btn2{background: #f3c91f;color: #fff;display: block;width:100%;height:22px;border-radius: 20px;margin-top: 5px;}
 /*二级侧边栏*/
 .main{overflow: hidden;}
-.main_left{float: left;width: 150px;background:#f9f8f8;}
+.main_left{float: left;width: 150px;background:#f2f2f2;min-height: 500px;}
 .main_right{float: right;width: 1020px;}
 .main_left h2,.main_right h2{height:54px;line-height:54px;color:#333;font-weight: normal;padding-top: 36px;}
 .main_left h2{font-size: 20px;background:url(../img/ziya.png) no-repeat 15px 41px;padding-left: 50px;border-bottom: 2px solid #c7caca;}
 .main_left ul li:first-child{border-top: none;}
-.main_left ul li{text-align: center;letter-spacing: 2px;border-top: 1px dashed #e5e5e5;height:40px;line-height: 40px;}
+.main_left ul li{text-align: center;letter-spacing: 2px;border-top: 1px dashed #d8d8d8;height:40px;line-height: 40px;}
 .main_left ul li a{font-size: 16px;color:#333;display: block;}
 .main_left ul li.current{background:url(../img/li_bg.png) no-repeat center top;border-top: none;}
 .main_left ul li a:hover,.main_left ul li.current a{color:#e48013;}
@@ -46,6 +84,12 @@ header .nav{margin-right: 42px;}
 /*{background:url(../img/xing_b.png) no-repeat 0 -3px;}
 {background:url(../img/xing_b.png) no-repeat 0 -3px;}
 {}*/
+/*资芽助手*/
+.help{position: relative;height:510px;border-bottom: none!important;padding-bottom: 0px!important;height:417px;margin-bottom: 0!important;}
+.ziya_help{position: absolute;left:77px;top: 165px;}
+.app{font-size: 32px;color:#e48013;display: block;text-align: center;margin-top: 130px;}
+.saoma{position: absolute;width: 120px;text-align: center;top: 205px;right:135px;font-size: 12px;color:#090404;}
+.saoma img{display: block;margin:0 auto;}
 /*分页插件*/
 .pages {
   float: right;
@@ -139,3 +183,37 @@ header .nav{margin-right: 42px;}
   font-size: 14px;
   text-decoration: none;
 }
+/*底部*/
+.foot,footer{border-top:4px solid #F5D346;background: #3a3a3b;padding: 30px 0;}
+.footer{width: 1200px;margin: 0 auto;position: relative;overflow: hidden;}
+.nav_foot{float: left;padding: 82px 185px 0 0;}
+.conection{float: left;color: #fff;}
+.con_ziya{border-bottom: 1px solid #848485;margin-left: 25px;width: 218px;font-size: 12px;}
+.erwei{position: absolute;bottom:0px;right: 20px;}
+.tel,.fax{line-height: 20px;}
+.tel{padding-top: 12px;}
+.tel span,.fax span{display: inline-block;width: 16px;height: 16px;margin-right: 10px;}
+.tel span{background: url(../img/icon.png) no-repeat 0 -352px;}
+.fax span{background: url(../img/email_icon.png) no-repeat 0px 3px;}
+.address{padding: 25px 0 0 28px;font-size: 12px;}
+.nav_foot,.nav_foot a{color: #fff;}
+.nav_foot a{margin:0 10px 15px;}
+.nav_foot p{margin: 10px 10px 0;}
+
+.foot{height:176px;padding:32px 0 28px;}
+.footer{height:176px;}
+.conection{margin-left: 230px;}
+.tel,.fax{line-height: 26px;font-size: 18px;}
+.address{padding: 25px 0 0 28px;font-size: 14px;}
+.con_ziya {padding-bottom: 7px;}
+.nav_foot{padding:130px 0 0 24px;font-size: 12px;}
+/*屏幕尺寸变化热线位置*/
+
+@media (max-width:1490px){
+    .hotline{position: absolute;left: 364px;top: 3px;}
+    .hotline span{font-size: 12px;}
+}
+/*错误信息*/
+.error{color: #f00;padding: 4px 0 0 5px;}
+/*分页*/
+.prev,.next{display: none!important;}

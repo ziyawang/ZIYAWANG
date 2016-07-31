@@ -16,17 +16,18 @@
         <h2 class="explain">介绍说明</h2>
         <div class="explain_choices">
         	<!-- 状态 -->
+            <form action="">
         	<div class="ec clearfix">
         		<span class="ec_left">
         			<em>*</em>类型：
         		</span>
         		<div class="ec_right">
-        			<select name="" id="">
-	        			<option value="1">请选择</option>
-	        			<option value="2">民事</option>
-	        			<option value="3">刑事</option>
-                        <option value="4">经济</option>
-                        <option value="5">公司类</option>
+        			<select name="AssetType" id="">
+	        			<option value="null">请选择</option>
+	        			<option value="民事">民事</option>
+	        			<option value="刑事">刑事</option>
+                        <option value="经济">经济</option>
+                        <option value="公司类">公司类</option>
 	        		</select>
 	        	</div>
         	</div>
@@ -47,21 +48,12 @@
         			<em>*</em>需求：
         		</span>
         		<div class="ec_right">
-	        		<select name="" id="">
-	        			<option value="1">请选择</option>
-	        			<option value="2">咨询</option>
-	        			<option value="3">诉讼</option>
-	        			<option value="4">其他</option>
+	        		<select name="Requirement" id="">
+	        			<option value="null">请选择</option>
+	        			<option value="咨询">咨询</option>
+	        			<option value="诉讼">诉讼</option>
+	        			<option value="其他">其他</option>
 	        		</select>
-        		</div>
-        	</div>
-        	<!-- 金额 -->
-        	<div class="ec clearfix">
-        		<span class="ec_left">
-        			<em>*</em>金额：
-        		</span>
-        		<div class="ec_right">
-        			<input type="text" class="ec_input">
         		</div>
         	</div>
 @endsection
