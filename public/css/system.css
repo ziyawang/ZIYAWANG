@@ -1,0 +1,28 @@
+.find_service ul li{background:#ffda3f url(../img/junior_banner.jpg) no-repeat center top;height: 296px;overflow: hidden;width:100%;}
+
+.systeminfo span em{color:#f00;}
+.info_bar{padding: 15px 0 15px 52px;background:#d3e5e7;position: relative;}
+.info_bar button{border:0 none;border: 1px solid #d2d2d2;background:url(../img/gray_bgx.gif) repeat-x 0 -3px;height:22px;line-height: 15px;padding:0 2px;}
+.info_bar .all,.info_bar button{margin-right: 15px;}
+.sys_time{position: absolute;top: 15px;right:20px;background:url(../img/up_arr.png) no-repeat right center;padding-right: 20px;}
+.info_list .day,.info_list .week,.info_list .long{border-bottom: 1px solid #b2b2b2;padding:15px 0 5px 52px;}
+.info_list ul li{padding: 10px 0;border-bottom: 1px solid #ededed;}
+.line_info{overflow: hidden;font-weight: bold;}
+.line_info .td_word{color: #333;}
+.td_check{width: 64px;text-align: right;float: left;margin-top: 2px;}
+.td_email{width:40px; background:url(../img/email.png) no-repeat 15px -44px;float: left;height: 20px;}
+.td_word{white-space: nowrap;word-break: break-all;overflow: hidden;float: left;}
+.system_details{padding: 0 0 0 52px;line-height: 26px;color: #666;display: none;}
+/*table{width:100%;border:0;}
+table .read{background:url(../img/email.png) no-repeat 15px 10px;}
+table tr{padding:10px 0;font-weight: bold;}
+table tr td{border-bottom: 1px solid #ededed;padding-top: 10px;padding-bottom: 10px;}
+table tr td a{color:#333;display: block;width: 840px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+table tr td a:hover{color:#333;}
+table tr:hover{background:#ffffe1;}*/
+.haveread{font-weight: normal;color: #666;}
+.haveread .td_email{background:url(../img/email.png) no-repeat 15px -2px;}
+.haveread .td_word{color: #666;}
+.td_word{width: 840px;}
+.td_time{}
+b{font-weight: normal;}

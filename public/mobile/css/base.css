@@ -1,0 +1,45 @@
+/*初始化 reset*/
+body,button,dd,dl,dt,form,h1,h2,h3,h4,h5,h6,hr,input,li,ol,p,td,textarea,th,ul{margin:0;padding:0;}
+body,button,input,select,textarea{font:14px/1.5 "Microsoft Yahei" ,\5b8b\4f53,sans-serif;}
+h1,h2,h3,h4,h5,h6,button,input,select,textarea{font-size:100%;}
+em,i{font-style:normal;}
+ol,ul{list-style:none;}
+a{text-decoration:none; color:#666666;}
+a:hover{text-decoration:none; color:#f3c91f;}
+img,input{border:none;}
+img{ display:block;}
+textarea{resize:none;}
+a,input,button,select,textarea{outline:none;}
+a,button{cursor:pointer;}
+/*清除浮动*/
+.clearfix:before,.clearfix:after{display:table;content:"";}
+.clearfix:after{clear:both;}
+.clearfix{zoom:1;}
+/*公共样式*/
+/*头部*/
+.top{height: 44px;background:#000;width:100%;}
+.top h1 a{display: block;padding:4px 0 0 12px;}
+.top h1 a img{width:97px;height: 35px;}
+.banner img{margin:0 auto;width:100%;max-width: 100%;}
+.breadNav{padding:10px 0 10px 10px;}
+/*底部*/
+.bottom{width:100%;height: 50px;background:#3a3a3a;position: fixed;bottom:0;left: 0;overflow: hidden;}
+.bottom a{display:block;float: left;width:33.333333%;text-align: center;color:#fff;}
+.bottom a span{display: block;margin:7px auto 0;width: 32px;height: 19px;background-size: cover;}
+.bottom a .connect{background-image:url(../img/connect.png);}
+.bottom a .about{background-image:url(../img/about.png);}
+.bottom a .main{background-image:url(../img/main.png);}
+.bottom a.current{color:#f3ac1d;}
+.bottom a.current .connect{background-image:url(../img/connect1.png);}
+.bottom a.current .about{background-image:url(../img/about1.png);}
+.bottom a.current .main{background-image:url(../img/main1.png);}
+/*联系我们*/
+.addr{background:#eee;height: 40px;line-height: 40px;font-size: 18px;padding:0 10px;}
+.roundDot{display:inline-block;width: 4px;height: 4px;border-radius: 50%;background:#f3ac1d;vertical-align: middle;margin-right: 5px;}
+.addrDetails{padding:10px 18px;}
+.last{padding-bottom:54px;}
+/*关于我们*/
+.aboutDetails{line-height: 24px;}
+/*主要业务*/
+.mainDetails{line-height: 24px;}
+.mainDetails p{text-indent: 2em;}
