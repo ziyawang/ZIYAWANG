@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=1492">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script src="{{asset('/js/jquery.js')}}"></script>
+    <script src="{{asset('/js/jquery-session.js')}}"></script>
+    <script src="{{asset('/js/fs.js')}}"></script>
     <script src="http://libs.cncdn.cn/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script>
 </head>
 <body>
@@ -42,9 +45,6 @@
         </div>
         <p>Copyright&copy;ziyawang.com<a href="#">资芽网</a>京ICP备16037201号</p>
     </div>
-    <script src="{{asset('/js/jquery.js')}}"></script>
-    <script src="{{asset('/js/jquery-session.js')}}"></script>
-    <script src="{{asset('/js/fs.js')}}"></script>
 </body>
 </html>
 <script>

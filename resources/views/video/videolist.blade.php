@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts.vhome')
 @section('content')
 <link type="text/css" rel="stylesheet" href="{{url('/css/video.css')}}" />
 <!-- 二级banner -->
@@ -15,7 +15,7 @@
 </div> -->
 <div class="wrap videobg">
     <div class="video_search">
-        <div class="video_searchinp"><input type="text" placeholder="输入你想选择的视频，快来试试吧..." /><span><img src="/img/search_yel.png" /></span></div>
+        <div class="video_searchinp"><input type="text" id="content" placeholder="输入你想选择的视频，快来试试吧..." /><span id='search'><img src="/img/search_yel.png" /></span></div>
         <input class="video_searchbtn" type="button" value="搜索视频" />
     </div>
 </div>
@@ -24,9 +24,8 @@
     <div class="wrap video_sel">
         <div class="vs_a">
             <a href="{{url('/video')}}" class="current">推荐</a>
-            <a href="{{url('/video/homemade')}}">自制剧</a>
+            <a href="{{url('/video/homemade')}}">资芽哈哈哈</a>
             <a href="{{url('/video/profession')}}">行业说</a>
-            <a href="{{url('/video/star')}}">大咖秀</a>
             <a href="{{url('/video/omeminu')}}">资芽一分钟</a>      
         </div>
     </div>
@@ -61,8 +60,6 @@
 
 <script>
 $(function(){
-
-    document.title = '资芽视频';
 
     function LoadFunction() {  
         $("#spec01").html('加载中...');  
@@ -169,5 +166,29 @@ $(function(){
 })
 
 
+</script>
+
+<script>
+    $('#search,.video_searchbtn').click(function(){
+        var content = $('#content').val();
+        if(content.length < 1){
+            window.open("http://ziyawang.com/video","status=yes,toolbar=yes, menubar=yes,location=yes");
+            return false;
+        }
+        window.open("http://ziyawang.com/search/video?type=2&content=" + content,"status=yes,toolbar=yes, menubar=yes,location=yes"); 
+    })
+    $('#content').focus(function(event){
+        $('#content').bind('keydown', function (e) {
+            var key = e.which;
+            if (key == 13) {
+                var content = $('#content').val();
+                if(content.length < 1){
+                    window.open("http://ziyawang.com/video","status=yes,toolbar=yes, menubar=yes,location=yes");
+                    return false;
+                }
+                window.open("http://ziyawang.com/search/video?type=2&content=" + content,"status=yes,toolbar=yes, menubar=yes,location=yes"); 
+            }
+        });
+    });
 </script>
 @endsection

@@ -6,10 +6,12 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="360-site-verification" content="9cf7e1f19377e601e73d8371f618374f" />
+	<meta name="baidu-tc-verification" content="f3b0a4c29cc8db2908b39b13b5844097" />
 	<title>资芽网-全球不良资产超级综服平台</title>
 	<meta name="Keywords" content="资芽网,不良资产,不良资产处置,不良资产处置平台" />
 	<meta name="Description" content="资芽网吸引全国各类不良资产持有者，汇集各类不良资产信息及相关需求,整合海量不良资产处置服务机构与投资方,搭建多样化处置通道和不良资产综服生态产业体系,嵌入移动社交与视频直播,兼具媒体属性,实现大数据搜索引擎和人工智能,打造共享开放的全球不良资产超级综服平台。" />
 	<meta name="baidu-site-verification" content="g4AlAGeFKg" />
+	<script type="text/javascript" src="//s.union.360.cn/53727.js"></script>
 	<link type="text/css" rel="stylesheet" href="{{url('/css/index.css')}}" />
 </head>
 <body>
@@ -111,9 +113,9 @@
 					<h3>信息类型</h3>
 					<ul>
 						<li><a href="{{url('/project')}}">资产包转让</a><a href="{{url('/project')}}">资产求购</a><a href="{{url('/project')}}">尽职调查</a></li>
-						<li><a href="{{url('/project')}}">债权转让</a><a href="{{url('/project')}}">融资借贷</a><a href="{{url('/project')}}">委外催收</a></li>
+						<li><a href="{{url('/project')}}">债权转让</a><!-- <a href="{{url('/project')}}">融资借贷</a> --><a href="{{url('/project')}}">委外催收</a><a href="{{url('/project')}}">担保信息</a></li>
 						<li><a href="{{url('/project')}}">固产转让</a><a href="{{url('/project')}}">法律服务</a><a href="{{url('/project')}}">典当信息</a></li>
-						<li><a href="{{url('/project')}}">商业保理</a><a href="{{url('/project')}}">悬赏信息</a><a href="{{url('/project')}}">担保信息</a></li> 
+						<li><a href="{{url('/project')}}">商业保理</a><a href="{{url('/project')}}">悬赏信息</a></li> 
 					</ul>
 				</div>
 				<div class="classify_right">
@@ -138,7 +140,7 @@
 				<div class="classify_left">
 					<h3>服务方类型</h3>
 					<ul>
-						<li><a href="{{url('/service')}}">资产包收购</a><a href="{{url('/service')}}">投资借贷</a><a href="{{url('/service')}}">资产收购</a></li>
+						<li><a href="{{url('/service')}}">资产包收购</a><a href="{{url('/service')}}">投资贷款</a><a href="{{url('/service')}}">资产收购</a></li>
 						<li><a href="{{url('/service')}}">催收机构</a><a href="{{url('/service')}}">尽职调查</a><a href="{{url('/service')}}">债权收购</a></li>
 						<li><a href="{{url('/service')}}">律师事务所</a><a href="{{url('/service')}}">典当公司</a></li>
 						<li><a href="{{url('/service')}}">保理公司</a><a href="{{url('/service')}}">担保公司</a></li>
@@ -1453,6 +1455,17 @@ $(function () {
         }
         window.location = "{{url('/search/project')}}?type=1&content=" + content;
     })
+    	$('#infocontent').bind('keydown', function (e) {
+            var key = e.which;
+            if (key == 13) {
+                var content = $('#infocontent').val();
+		        if(content.length < 1){
+		            window.open("http://ziyawang.com/project","status=yes,toolbar=yes, menubar=yes,location=yes");
+		            return false;
+		        }
+		        window.location = "{{url('/search/project')}}?type=1&content=" + content;
+            }
+        });
 
     $('#searchser').click(function(){
         var content = $('#sercontent').val();
@@ -1462,6 +1475,17 @@ $(function () {
         }
         window.location = "{{url('/search/service')}}?type=4&content=" + content;
     })
+    	$('#sercontent').bind('keydown', function (e) {
+            var key = e.which;
+            if (key == 13) {
+                var content = $('#sercontent').val();
+		        if(content.length < 1){
+		            window.open("http://ziyawang.com/service","status=yes,toolbar=yes, menubar=yes,location=yes");
+		            return false;
+		        }
+		        window.location = "{{url('/search/service')}}?type=4&content=" + content;
+            }
+        });
 </script>
 <script type="text/javascript">
 	//获取验证码60秒倒计时

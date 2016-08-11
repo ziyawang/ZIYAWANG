@@ -100,8 +100,6 @@
                 'auto'             : true,
                 'fileSizeLimit'    : 6144,
                 'uploadLimit'      : 1,
-                
-'fileType'     : 'image/*',
                 'uploadScript'     : "{{url('/ucenter/uploadfile')}}",
                 'onUploadComplete' : function(file, data) {
                     console.log(data); 

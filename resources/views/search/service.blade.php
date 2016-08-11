@@ -89,12 +89,13 @@
             return result?decodeURIComponent(result[2]):null;
         }
         var content = getQueryString("content");
+        var startpage = getQueryString("startpage")?getQueryString("startpage"):'1';
         $('#content').val(content);
         $.ajax({  
             url: 'http://api.ziyawang.com/v1/search?access_token=token',  
             type: 'POST',  
             dataType: 'json',  
-            data: {'type':'4', 'content': content},
+            data: {'type':'4', 'content': content, 'startpage': startpage},
             timeout: 1000,  
             cache: false,  
             beforeSend: LoadFunction, //加载执行方法    
@@ -111,6 +112,7 @@
             $(".service_ul").html('');
 
             var json = eval(tt); //数组 
+            console.log(json)
             var counts = json.counts;
             var pages = json.pages;
             var current = json.currentpage-1;
@@ -119,8 +121,7 @@
             $(".page-sum").html("共<strong class='allPage'>" + pages + "</strong>页");
             $('.pagination a').click(function(){
                 startpage = $(this).html();
-                ajax();
-
+                ajax(startpage);
             });
 
             $('.service_info h2 span').html('共有' + counts + '条信息');
@@ -147,74 +148,10 @@
         }
     })
 
-var startpage = 1;
-var ServiceArea = null;
-var ServiceType = null;
-function ajax() {
-    var data = 'startpage=' + startpage + '&ServiceType=' + ServiceType + '&ServiceArea=' + ServiceArea;
-
-    $.ajax({  
-        url: 'http://api.ziyawang.com/v1/service/list?access_token=token&pagecount=10&' + data,  
-        type: 'GET',  
-        dataType: 'json',  
-        timeout: 1000,  
-        cache: false,  
-        beforeSend: function(){$("#list").html('加载中...');}, //加载执行方法    
-        error: function(){alert("error");},  //错误执行方法    
-        success: function(msg){
-            $(".service_ul").html('');
-
-            var json = eval(msg); //数组 
-            var counts = json.counts;
-            var pages = json.pages;
-            var current = json.currentpage-1;
-            //分页
-            $("#Pagination").pagination(pages,{current_page:current});
-            $(".page-sum").html("共<strong class='allPage'>" + pages + "</strong>页");
-            $('.pagination a').click(function(){
-                startpage = $(this).html();
-                ajax();
-
-            });
-            $('.service_info h2 span').html('共有' + counts + '条信息');
-            var data = json.data;        
-            $.each(data, function (index, item) {  
-                //循环获取数据
-                var UserPicture = data[index].UserPicture;   //服务方名称 
-                var ServiceName = data[index].ServiceName;   //服务方头像 
-                var ViewCount = data[index].ViewCount;    //浏览次数
-                var ServiceNumber = data[index].ServiceNumber;    //编号
-                var ServiceLocation = data[index].ServiceLocation;    //公司所在地 
-                var ServiceLevel = data[index].ServiceLevel;    //服务等级 
-                var ServiceArea = data[index].ServiceArea;    //服务地区
-                var ServiceType = data[index].ServiceType;    //服务类型
-                var CoNumber = data[index].CoNumber;    //已接单数
-                var ServiceID = data[index].ServiceID;    //服务商ID
-                 $(".service_ul").html($(".service_ul").html() + "<li><a href='#' class='head_pic'><img src='http://images.ziyawang.com" + UserPicture + "' alt='' /></a><div class='company_info company_name'><a href='http://ziyawang.com/service/"+ ServiceID +"' class='blue_color'>" + ServiceName + "</a><p class='visited'>浏览数：<em class='yellow_color'>" + ViewCount + "</em>人</p></div><div class='company_info company_details'><dl><dt>编号：</dt><dd>" + ServiceNumber + "</dd><dt>所在地：</dt><dd>" + ServiceLocation + "</dd><dt>服务等级：</dt><dd class='yellow_color'>" + ServiceLevel + "</dd></dl><p class='service_area'>服务地区：" + ServiceArea + "</p><p class='service_classify'>服务类型：" + ServiceType + "</p></div><div class='orders'><a href='#'>已接" + CoNumber + "单</a></div></li>");
-
-            });
-
-            if(counts == 0){
-                $(".service_ul").html('抱歉没有找到您想要的结果！');
-            }
-        }   
-    });
-}
-$('.page').click(function(){
-    startpage = $(this).html();
-    ajax();
-});
-$('.service_type a').click(function(){
-    startpage = 1;
-    ServiceType = $(this).attr('type');
-    ajax();
-});
-$('.area a, .zhedie a').click(function(){
-    startpage = 1;
-    ServiceArea = $(this).attr('area');
-    ajax();
-});
-
+    function ajax(startpage){
+        var content = $('#content').val();
+        window.open("http://ziyawang.com/search/service?type=4&startpage=" + startpage + "&content=" + content,"status=yes,toolbar=yes, menubar=yes,location=yes"); 
+    }
 
      $('#pubpro').click(function(){
         var token = $.session.get('token');
@@ -232,5 +169,12 @@ $('.area a, .zhedie a').click(function(){
             var content = $('#content').val();
             window.location = "{{url('/search/service')}}?type=4&content=" + content;
         })
+        $('#content').bind('keydown', function (e) {
+            var key = e.which;
+            if (key == 13) {
+                var content = $('#content').val();
+                window.location = "{{url('/search/service')}}?type=4&content=" + content;
+            }
+        });
     </script>
 @endsection

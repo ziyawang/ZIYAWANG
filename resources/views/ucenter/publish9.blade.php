@@ -39,13 +39,12 @@
         	<!-- 金额 -->
         	<div class="ec clearfix">
         		<span class="ec_left">
-        			<em>*</em>金额：
+        			<em>*</em>悬赏佣金：
         		</span>
         		<div class="ec_right">
         			<input name="TotalMoney" placeholder="单位：万元" type="number" class="ec_input">
         		</div>
                 <span class="ec_pleft">
-                    注：悬赏佣金
                 </span>
         	</div>
 @endsection

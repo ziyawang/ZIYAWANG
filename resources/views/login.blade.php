@@ -32,7 +32,7 @@
 						<p><input type="text" placeholder="请输入手机号" class="sec_tel" ><span class="error"></span></p>
 						<p><input type="password" placeholder="请输入密码" class="sec_pwd"><span class="error"></span></p>
 						<p class="freelog"><a href="{{url('/resetpwd')}}" class="forg">忘记密码？</a></p>
-						<p><input type="button" value="登录" class="reg_btn btn" id="login" style="margin-top:20px"></p>
+						<p><span class="error" id='wrong'></span><input type="button" value="登录" class="reg_btn btn" id="login" style="margin-top:20px"></p>
 					</form>
 				</div>
 			</div>
@@ -65,17 +65,52 @@
     					$.session.set('phonenumber', "'"+ phonenumber +"'");
     					window.location = "{{url('/ucenter/index')}}";
     				} else {
-    					$('.red').html('帐号或者密码不正确');
+    					$('#wrong').html('帐号或者密码不正确');
     					$('#login').val('登录');
     					// $(this).removeAttr('disabled');
     				}
     			},
-    			error:function(a,b,c){
-    				console.log(password)
-    				alert(a.readyState);
-    			}
+    			// error:function(a,b,c){
+    			// 	console.log(password)
+    			// 	alert(a.readyState);
+    			// }
     		});
     	});
+
+		document.onkeydown = function(e){
+			var ev = document.all ? window.event : e;
+			if(ev.keyCode==13) {
+				var phonenumber = $(".sec_tel").val();
+	    		var password = $(".sec_pwd").val();
+
+	    		// $(this).prop('disabled',true);
+	    		$('#login').val('登陆中...');
+	    		$.ajax({
+	    			url:"http://api.ziyawang.com/v1/auth/login",
+	    			// url:"http://api.ziyawang.com/v1/auth/login",
+	    			type:"POST",
+	    			data:"phonenumber=" + phonenumber + "&password=" + password  + "&access_token=token",
+	    			dataType:'json',
+	    			success:function(msg){
+	    				if(msg.token){
+	    					// console.log(msg.token);
+	    					$.session.set('token', "'"+msg.token+"'");
+	    					$.session.set('role', "'"+msg.role+"'");
+	    					$.session.set('phonenumber', "'"+ phonenumber +"'");
+	    					window.location = "{{url('/ucenter/index')}}";
+	    				} else {
+	    					$('#wrong').html('帐号或者密码不正确');
+	    					$('#login').val('登录');
+	    					// $(this).removeAttr('disabled');
+	    				}
+	    			},
+	    			// error:function(a,b,c){
+	    			// 	console.log(password)
+	    			// 	alert(a.readyState);
+	    			// }
+	    		});
+			}
+		};
     </script>
 </body>
 </html>

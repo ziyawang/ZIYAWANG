@@ -23,6 +23,7 @@
 	        			<option value="土地">土地</option>
 	        			<option value="房产">房产</option>
                         <option value="汽车">汽车</option>
+                        <option value="其他">其他</option>
 	        		</select>
 	        	</div>
         	</div>

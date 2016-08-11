@@ -2,12 +2,13 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>资芽网</title>
-        <meta name="Keywords" content="资芽网,不良资产,不良资产处置,不良资产处置平台" />
-        <meta name="Description" content="资芽网是全球不良资产智能综服超级平台,吸引全国各类不良资产持有者，汇集各类不良资产信息及相关需求,整合海量不良资产处置服务机构与投资方,搭建多样化处置通道和不良资产综服生态产业体系,嵌入移动社交与视频直播,兼具媒体属性,实现大数据搜索引擎和人工智能,打造共享开放的全球不良资产智能综服超级平台。" />
+        <title>资芽视频-不良资产领域第一视频平台</title>
+        <meta name="Keywords" content="资芽视频,不良资产视频,不良资产行业视频,资芽网视频" />
+        <meta name="Description" content="资芽视频是资芽网第一视频,行业专家释疑解惑,分享经验,培训学习,剖析热点话题;线上线下活动,同业互动,探索分析,交流共享,协作共赢,鼓励创新,普及法律常识,降低法律风险.推动不良资产行业,金融领域健康有序发展." />
         <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}" /> 
         <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}" /> 
+
 
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -17,10 +18,24 @@
         <script src="{{asset('/js/fs.js')}}"></script>
         <script src="{{asset('/js/jquery-session.js')}}"></script>
         <script type="text/javascript" src="{{url('/js/public.js')}}"></script>
-    <script src="http://libs.cncdn.cn/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script>
+        <script type="text/javascript" src="{{url('/js/contract.js')}}"></script>
         <script type="text/javascript" src="{{url('/js/jquery.pagination.js')}}"></script>
+        
+    <script src="http://libs.cncdn.cn/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?68b543fbd583e0bc6eccb7d2adee8156";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
     </head>
     <body>
+        <div class="rec" style="width:0;height:0;overflow:hidden;">
+        <img src="/img/rec.jpg" height="420" width="420" alt="" />
+        </div>
     <div class="header">
         <div class="wrap">
                 <div class="guide">
@@ -37,10 +52,11 @@
                 <div class="after_login">
                     <a href="{{url('/ucenter/index')}}" class="number" id="phone"></a><a href="javascript:;" id="logout" class="back">退出</a>
                 </div>
+
 <!-- 登录退出状态 -->
 <script>
     $(document).ready(function(){
-         var phonenumber = $.session.get('phonenumber');
+        var phonenumber = $.session.get('phonenumber');
         // console.log(typeof(phonenumber));
         if(typeof(phonenumber)!="undefined") {
             phonenumber = phonenumber.replace(/\'/g,"");
@@ -58,7 +74,7 @@
         }
     });
 
-     $('#logout').click(function(){
+    $('#logout').click(function(){
         $.session.clear();
         $('#unlogin').show();
         $('#after_login').hide();
@@ -67,21 +83,6 @@
         $('')
         window.location = "{{url('/')}}";
     });
-$(function () {
-    var token = $.session.get('token');
-    if(!token){
-        window.location = "{{url('/login')}}";
-        return false;
-    }
-
-    var role = $.session.get('role');
-    console.log(role);
-    if(role.indexOf('1') > 0){
-        $("#myrush").show();
-    }
-
-    $('#container').show();
-});
 </script>
 <!-- 登录退出状态 -->
                 <ul class="nav">
@@ -104,71 +105,6 @@ $(function () {
                 </div>
         </div>
     </div>
-    <!-- 二级banner -->
-    <div class="find_service">
-        <ul>
-            <li></li>
-        </ul>
-    </div>
-    <!-- 主体 -->
-    <div class="main wrap">
-    <!-- 左侧导航 -->
-        <div class="main_left">
-            <h2>个人中心</h2>
-            <ul>
-                <li id="index1"><a href="{{url('/ucenter/index')}}">系统消息</a></li>
-                <li id="helper"><a href="{{url('/ucenter/helper')}}">资芽助手</a></li>
-                <li id="pubpro"><a href="{{url('/ucenter/pubpro')}}">发布信息</a></li>
-                <li id="mypro"><a href="{{url('/ucenter/mypro')}}">我发布的</a></li>
-                <li id="mycoo"><a href="{{url('/ucenter/mycoo')}}">我合作的</a></li>
-                <li id="confirm"><a href="{{url('/ucenter/confirm')}}">服务方认证</a></li>
-                <li id="mycollect"><a href="{{url('/ucenter/mycollect')}}">我收藏的</a></li>
-                <li id="myrush" style="display:none"><a href="{{url('/ucenter/myrush')}}">我的抢单</a></li>
-                <li id="safe"><a href="{{url('/ucenter/safe')}}">安全中心</a></li>
-            </ul>
-<script>
-    //导航样式
-    $(function(){
-        var Url = window.location.pathname;
-        var index1 = $('#index1');
-        var helper = $('#helper');
-        var pubpro = $('#pubpro');
-        var mypro = $('#mypro');
-        var mycoo = $('#mycoo');
-        var confirm = $('#confirm');
-        var myrush = $('#myrush');
-        var safe = $('#safe');
-        var mycollect = $('#mycollect');
-        if (Url.indexOf("index") >= 0) {
-            index1.addClass("current");
-        } else if (Url.indexOf("helper") >= 0 ) {
-            helper.addClass("current");
-            
-        } else if (Url.indexOf("pubpro") >= 0) {
-            pubpro.addClass("current");
-            
-        } else if (Url.indexOf("mypro") >= 0) {
-            mypro.addClass("current");
-            
-        } else if (Url.indexOf("mycoo") >= 0) {
-            mycoo.addClass("current");
-            
-        } else if (Url.indexOf("confirm") >= 0) {
-            confirm.addClass("current");
-            
-        } else if (Url.indexOf("myrush") >= 0) {
-            myrush.addClass("current");
-            
-        } else if (Url.indexOf("safe") >= 0) {
-            safe.addClass("current");
-            
-        } else if (Url.indexOf("mycollect") >= 0) {
-            mycollect.addClass("current");
-            
-        }
-    }); 
-</script>
-        </div>
 
     @yield('content')
 
@@ -188,8 +124,32 @@ $(function () {
             <img src="/img/footer.png" class="erwei">
         </div>
     </div>
+    <!-- // <script type="text/javascript" src="js/jquery.min.js"></script>
+    // <script type="text/javascript" src="js/fs.js"></script> -->
     </body>
 
-
-
 </html>
+
+
+<script>
+    //导航样式
+    $(function(){
+        var Url = window.location.pathname;
+        var project = $('#project');
+        var service = $('#service');
+        var news = $('#news');
+        var video = $('#video');
+        var contract = $('#contract');
+        if (Url.indexOf("project") >= 0) {
+            project.addClass("current");
+        } else if (Url.indexOf("service") >= 0 ) {
+            service.addClass("current");
+        }else if (Url.indexOf("news") >= 0) {
+            news.addClass("current");
+        } else if (Url.indexOf("video") >= 0) {
+            video.addClass("current");
+        } else if (Url.indexOf("contract") >= 0) {
+            contract.addClass("current");
+        }
+    }); 
+</script>

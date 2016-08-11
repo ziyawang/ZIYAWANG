@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <script type="text/javascript" src="//s.union.360.cn/53727.js"></script>
         <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}" />
         <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}" />
         <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}" />

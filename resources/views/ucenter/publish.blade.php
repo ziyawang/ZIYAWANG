@@ -16,7 +16,7 @@
             <a href="{{url('/ucenter/pubpro/12')}}"><span class="sp3"></span>固产转让</a>
             <a href="{{url('/ucenter/pubpro/4')}}"><span class="sp4"></span>商业保理</a>
             <a href="{{url('/ucenter/pubpro/13')}}"><span class="sp5"></span>资产求购</a>
-            <a href="{{url('/ucenter/pubpro/6')}}"><span class="sp6"></span>融资借贷</a>
+            <!-- <a href="{{url('/ucenter/pubpro/6')}}"><span class="sp6"></span>融资借贷</a> -->
             <a href="{{url('/ucenter/pubpro/3')}}"><span class="sp7"></span>法律服务</a>
             <a href="{{url('/ucenter/pubpro/9')}}"><span class="sp8"></span>悬赏信息</a>
             <a href="{{url('/ucenter/pubpro/10')}}"><span class="sp9"></span>尽职调查</a>

@@ -5,6 +5,7 @@
 /*新闻左侧列表*/
 .news{overflow: hidden;padding-top: 40px;}
 .news_left1{float: left;width: 750px;}
+.newsDetails .news_left1{margin-bottom: 30px;}
 .nl_content ul{width: 750px;}
 .nl_content ul li{padding:20px 10px 20px 145px;position: relative;line-height: 26px;border-bottom: 1px solid #ededed;height: 132px;}
 .nl_content ul li .nlc_img{width: 128px;height: 128px;border: 1px solid #ededed;position: absolute;top: 20px;left: 0;}

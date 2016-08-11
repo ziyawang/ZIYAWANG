@@ -110,7 +110,7 @@ $(function(){
                         des = "<dl><dt>语音信息：</dt><dd class='voice_info'><a href='#'></a><span>5分22秒</span></dd><dt>文字信息：</dt><dd>" + WordDes + "</dd><dt>清单下载：</dt><dd><button><a href='http://files.ziyawang.com/" + AssetList + "'>下载</a></button></dd></dl>";
                         break;
                     case "2":
-                        var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>债权人所在地：" + ProArea + "</span><span>金额：<em class='yellow_color'>" + TotalMoney + "万</em></span></p><p class='line_info'><span>状态：" + Status + "</span><span>佣金比例：" + Rate + "</span><span>类型：" + AssetType + "</span></p>";
+                        var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>债务人所在地：" + ProArea + "</span><span>金额：<em class='yellow_color'>" + TotalMoney + "万</em></span></p><p class='line_info'><span>状态：" + Status + "</span><span>佣金比例：" + Rate + "</span><span>类型：" + AssetType + "</span></p>";
                         break;
                     case "3":
                         var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>类型：" + AssetType + "</span><span>地区：" + ProArea + "</span></p><p class='line_info'><span>需求：" + Requirement + "</span></p>";

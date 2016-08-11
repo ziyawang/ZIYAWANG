@@ -28,7 +28,7 @@
 $(function(){
     var token = $.session.get('token');
         if(!token){
-            window.location = "http://ziyawang.com/ucenter";
+            window.location = "http://ziyawang.com/login";
             return false;
         }
         $.ajax({  

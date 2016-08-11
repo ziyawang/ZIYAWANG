@@ -26,9 +26,8 @@ Route::get('/service', 'IndexController@serList');//找信息
 Route::get('/service/{id}', 'IndexController@serInfo');//信息详情
 
 Route::get('/video', 'VideoController@videoList');//视频首页
-Route::get('/video/homemade', 'VideoController@homemade');//自制剧视频列表
+Route::get('/video/homemade', 'VideoController@homemade');//资芽哈哈哈视频列表
 Route::get('/video/profession', 'VideoController@profession');//行业说
-Route::get('/video/star', 'VideoController@star');//大咖秀
 Route::get('/video/oneminu', 'VideoController@oneminu');//一分钟
 Route::get('/video/{id}', 'VideoController@videoInfo');//视频详情
 

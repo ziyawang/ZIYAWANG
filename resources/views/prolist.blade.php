@@ -29,7 +29,7 @@
                 <a type="12" href="javascript:;">固产转让</a>
                 <a type="4"  href="javascript:;">商业保理</a>
                 <a type="13" href="javascript:;">资产求购</a>
-                <a type="6"  href="javascript:;">融资借贷</a>
+                <!-- <a type="6"  href="javascript:;">融资借贷</a> -->
                 <a type="3"  href="javascript:;">法律服务</a>
                 <a type="9"  href="javascript:;">悬赏信息</a>
                 <a type="10" href="javascript:;">尽职调查</a>
@@ -123,7 +123,7 @@
             <div class="cover1">
                 <div class="cover_con">
                     <span>求购类型：</span>
-                    <span class="aa"><a href="javascript:;" unlimit="cleardiy">不限</a><a href="javascript:;" diy="AssetType">土地</a><a href="javascript:;" diy="AssetType">房产</a><a href="javascript:;" diy="AssetType">汽车</a></span>
+                    <span class="aa"><a href="javascript:;" unlimit="cleardiy">不限</a><a href="javascript:;" diy="AssetType">土地</a><a href="javascript:;" diy="AssetType">房产</a><a href="javascript:;" diy="AssetType">汽车</a><a href="javascript:;" diy="AssetType">其他</a></span>
                 </div>
                 <div class="cover_con">
                     <span>求购方：</span>
@@ -131,12 +131,12 @@
                 </div>
             </div>
             <!-- 融资借贷 -->
-            <div class="cover1">
+            <!-- <div class="cover1">
                 <div class="cover_con">
                     <span>方式：</span>
                     <span class="aa"><a href="javascript:;" unlimit="cleardiy">不限</a><a href="javascript:;" diy="AssetType">抵押</a><a href="javascript:;" diy="AssetType">质押</a><a href="javascript:;" diy="AssetType">租赁</a><a href="javascript:;" diy="AssetType">过桥</a><a href="javascript:;" diy="AssetType">信用</a></span>
                 </div>
-            </div>
+            </div> -->
             <!-- 法律服务 -->
             <div class="cover1">
                 <div class="cover_con">
@@ -564,5 +564,18 @@ function ajax() {
             }
             window.open("http://ziyawang.com/search/project?type=1&content=" + content,"status=yes,toolbar=yes, menubar=yes,location=yes"); 
         })
+        $('#content').focus(function(event){
+            $('#content').bind('keydown', function (e) {
+                var key = e.which;
+                if (key == 13) {
+                    var content = $('#content').val();
+                    if(content.length < 1){
+                        window.open("http://ziyawang.com/project","status=yes,toolbar=yes, menubar=yes,location=yes");
+                        return false;
+                    }
+                    window.open("http://ziyawang.com/search/project?type=1&content=" + content,"status=yes,toolbar=yes, menubar=yes,location=yes"); 
+                }
+            });
+        });
 </script>
 @endsection

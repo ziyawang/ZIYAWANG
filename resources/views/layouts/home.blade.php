@@ -13,6 +13,7 @@
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <script type="text/javascript" src="//s.union.360.cn/53727.js"></script>
         <script src="{{asset('/js/jquery.js')}}"></script>
         <script src="{{asset('/js/fs.js')}}"></script>
         <script src="{{asset('/js/jquery-session.js')}}"></script>

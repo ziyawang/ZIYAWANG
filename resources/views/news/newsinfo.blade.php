@@ -8,7 +8,7 @@
     </ul>
 </div>
 <!-- 主体 -->
-<div class="news wrap">
+<div class="news wrap newsDetails">
 <!-- 左侧 -->
     <div class="news_left1">
         <div class="news_bread"><a href="{{url('/')}}">首页</a>&gt;<a href="{{url('/news')}}">新闻中心</a>&gt;<span id="title"></span></div>
@@ -26,6 +26,8 @@
                 <!-- 分享 -->
             </span>
         </div>
+            <p class="prev_essay">上一篇：<a href="javascript:;" id="pre"></a></p>
+            <p class="next_essay">下一篇：<a href="javascript:;" id="next"></a></p>
     </div>
     <!-- 右侧新闻 -->
         <div class="news_right1">
@@ -148,15 +150,37 @@ $(function(){
 
     function news(tt) {
         var json = eval(tt); //数组 
-        var NewsTitle = json.NewsTitle;
-        var PublishTime = json.PublishTime;
-        var NewsAuthor = json.NewsAuthor;
-        var NewsBrief = json.Brief;
-        var NewsID = json.NewsID;
-        var NewsLogo = json.NewsLogo;      
-        var ViewCount = json.ViewCount;      
-        var NewsContent = json.NewsContent;      
-        var NewsLabel = json.NewsLabel; 
+        console.log(json)
+        var data = json.data;
+        var pre = json.pre;
+        if(pre){
+            var preid = pre.NewsID;
+            var pretitle = pre.NewsTitle;
+            $('#pre').attr('href','http://ziyawang.com/news/'+preid);
+            $('#pre').html(pretitle);
+        } else {
+            $('#pre').attr('href','javascript:;');
+            $('#pre').html('没有上一篇了');
+        }
+        var next = json.next;
+        if(next){
+            var nextid = next.NewsID;
+            var nexttitle = next.NewsTitle;
+            $('#next').attr('href','http://ziyawang.com/news/'+nextid);
+            $('#next').html(nexttitle);
+        } else {
+            $('#next').attr('href','javascript:;');
+            $('#next').html('没有下一篇了');
+        }
+        var NewsTitle = data.NewsTitle;
+        var PublishTime = data.PublishTime;
+        var NewsAuthor = data.NewsAuthor;
+        var NewsBrief = data.Brief;
+        var NewsID = data.NewsID;
+        var NewsLogo = data.NewsLogo;      
+        var ViewCount = data.ViewCount;      
+        var NewsContent = data.NewsContent;      
+        var NewsLabel = data.NewsLabel; 
         if(NewsLabel == 'zyxw'){
             NewsLabel = '资芽新闻';
         } else if(NewsLabel == 'cjzx'){
@@ -170,7 +194,6 @@ $(function(){
         document.title = NewsTitle + "-" + NewsLabel + '-资芽网';
         $('#title').html(NewsTitle);
         $('.news_details').html(html);
-
     }  
 
     function news1(tt) {

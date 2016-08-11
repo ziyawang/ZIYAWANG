@@ -288,5 +288,19 @@ $('.area a, .zhedie a').click(function(){
         window.open("http://ziyawang.com/search/service?type=4&content=" + content,"status=yes,toolbar=yes, menubar=yes,location=yes"); 
         // window.location = "{{url('/search/service')}}?type=4&content=" + content;
     })
+        $('#sercontent').focus(function(event){
+            $('#sercontent').bind('keydown', function (e) {
+                var key = e.which;
+                if (key == 13) {
+                    var content = $('#sercontent').val();
+                    if(content.length < 1){
+                            window.open("http://ziyawang.com/service","status=yes,toolbar=yes, menubar=yes,location=yes");
+                            return false;
+                        }
+                    window.open("http://ziyawang.com/search/service?type=4&content=" + content,"status=yes,toolbar=yes, menubar=yes,location=yes"); 
+                    // window.location = "{{url('/search/service')}}?type=4&content=" + content;
+                }
+            });
+        });
 </script>
 @endsection

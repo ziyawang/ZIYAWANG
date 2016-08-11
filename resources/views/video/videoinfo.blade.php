@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts.vhome')
 @section('content')
 <link type="text/css" rel="stylesheet" href="{{url('/css/video.css')}}" />
 <!--[if IE]><script src="http://api.html5media.info/1.1.4/html5media.min.js"></script> <![endif]-->
@@ -16,7 +16,7 @@
 </div> -->
 <div class="wrap videobg">
     <div class="video_search">
-        <div class="video_searchinp"><input type="text" placeholder="输入你想选择的视频，快来试试吧..." /><span><img src="/img/search_yel.png" /></span></div>
+        <div class="video_searchinp"><input type="text" id="content" placeholder="输入你想选择的视频，快来试试吧..." /><span id='search'><img src="/img/search_yel.png" /></span></div>
         <input class="video_searchbtn" type="button" value="搜索视频" />
     </div>
 </div>
@@ -24,11 +24,10 @@
 <div class="video_tab">
     <div class="wrap video_sel">
         <div class="vs_a">
-            <a href="{{url('/video')}}">推荐</a>
-            <a href="{{url('/video/homemade')}}">自制剧</a>
-            <a href="{{url('/video/profession')}}">行业说</a>
-            <a href="{{url('/video/star')}}">大咖秀</a>
-            <a href="{{url('/video/oneminu')}}">资芽一分钟</a>
+            <a id="tj" href="{{url('/video')}}">推荐</a>
+            <a id="zyhhh" href="{{url('/video/homemade')}}">资芽哈哈哈</a>
+            <a id="hys" href="{{url('/video/profession')}}">行业说</a>
+            <a id="zyyfz" href="{{url('/video/oneminu')}}">资芽一分钟</a>
         </div>
     </div>
     <!-- video视频 -->
@@ -42,7 +41,7 @@
             <h2 class="vids_title" id="title2"></h2>
             <!-- 视频video -->
             <div class="video_box" id="video1">
-                <video src="/videos/movie.mp4" controls autoplay></video>
+                <video src="" controls autoplay></video>
             </div>
             <!-- 视频下方小icon -->
             <div class="video_btn clearfix">
@@ -251,14 +250,16 @@ $(function(){
         var VideoLabel = json.VideoLabel;
         if(VideoLabel == 'zyyfz'){
             VideoLabel = '资芽一分钟';
+            $('#zyyfz').addClass('current');
         } else if(VideoLabel == 'hys'){
             VideoLabel = '行业说';
-        } else if(VideoLabel == 'dkx'){
-            VideoLabel = '大咖秀';
-        } else if(VideoLabel == 'zzj'){
-            VideoLabel = '自制剧';
+            $('#hys').addClass('current');
+        } else if(VideoLabel == 'zyhhh'){
+            VideoLabel = '资芽哈哈哈';
+            $('#zyhhh').addClass('current');
         } else if(VideoLabel == 'tj'){
             VideoLabel = '推荐';
+            $('#tj').addClass('current');
         }
         var VideoAuthor = json.VideoAuthor;
         var PublishTime = json.PublishTime;      
@@ -267,7 +268,7 @@ $(function(){
         var VideoLink = json.VideoLink;  
         var VideoID = window.location.pathname.replace(/[^0-9]/ig,"");    
 
-        var html = "<video poster='http://images.ziyawang.com" + VideoLogo + "' src='http://videos.ziyawang.com" + VideoLink + "' controls></video>"
+        var html = "<video poster='http://images.ziyawang.com" + VideoLogo + "' src='http://videos.ziyawang.com" + VideoLink + "' controls='controls' preload='auto'></video>"
         var duoshuo = "<div class='ds-thread' data-thread-key='" + VideoID + "' data-title='" + VideoTitle + "' data-url='http://ziyawang.com/video/" + VideoID + "'></div>"
         document.title = VideoTitle + '-' + VideoLabel +'-资芽视频';
         $('#title1').html(VideoLabel);
@@ -297,4 +298,28 @@ var duoshuoQuery = {short_name:"ziyawang"};
     })();
     </script>
 <!-- 多说公共JS代码 end -->
+
+<script>
+    $('#search,.video_searchbtn').click(function(){
+        var content = $('#content').val();
+        if(content.length < 1){
+            window.open("http://ziyawang.com/video","status=yes,toolbar=yes, menubar=yes,location=yes");
+            return false;
+        }
+        window.open("http://ziyawang.com/search/video?type=2&content=" + content,"status=yes,toolbar=yes, menubar=yes,location=yes"); 
+    })
+    $('#content').focus(function(event){
+        $('#content').bind('keydown', function (e) {
+            var key = e.which;
+            if (key == 13) {
+                var content = $('#content').val();
+                if(content.length < 1){
+                    window.open("http://ziyawang.com/video","status=yes,toolbar=yes, menubar=yes,location=yes");
+                    return false;
+                }
+                window.open("http://ziyawang.com/search/video?type=2&content=" + content,"status=yes,toolbar=yes, menubar=yes,location=yes"); 
+            }
+        });
+    });
+</script>
 @endsection
