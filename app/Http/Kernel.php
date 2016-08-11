@@ -27,11 +27,17 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
+<<<<<<< HEAD
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'cross' => \App\Http\Middleware\Cross::class,
         'access' => \App\Http\Middleware\Access::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'jwt.auth' => \Tymon\JWTAuth\Middleware\GetUserFromToken::class,
         'jwt.refresh' => \Tymon\JWTAuth\Middleware\RefreshToken::class
+=======
+        'login' => \App\Http\Middleware\UserLogin::class,
+        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
     ];
 }

@@ -4,7 +4,11 @@
     "gulp": "^3.8.8"
   },
   "dependencies": {
+<<<<<<< HEAD
     "laravel-elixir": "^2.0.0",
+=======
+    "laravel-elixir": "^4.0.0",
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
     "bootstrap-sass": "^3.0.0"
   }
 }

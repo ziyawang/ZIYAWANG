@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
+<<<<<<< HEAD
 use Mail;
 
 abstract class Controller extends BaseController
@@ -94,4 +95,11 @@ abstract class Controller extends BaseController
         $item->ViewCount += 1;
         $item->save();
     }
+=======
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+
+abstract class Controller extends BaseController
+{
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
 }

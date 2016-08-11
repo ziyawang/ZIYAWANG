@@ -35,7 +35,11 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next)
     {
         if ($this->auth->check()) {
+<<<<<<< HEAD
             return redirect('/home');
+=======
+            return redirect('/');
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
         }
 
         return $next($request);

@@ -3,7 +3,13 @@
 namespace App\Exceptions;
 
 use Exception;
+<<<<<<< HEAD
 use Symfony\Component\HttpKernel\Exception\HttpException;
+=======
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -15,6 +21,10 @@ class Handler extends ExceptionHandler
      */
     protected $dontReport = [
         HttpException::class,
+<<<<<<< HEAD
+=======
+        ModelNotFoundException::class,
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
     ];
 
     /**
@@ -39,11 +49,16 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+<<<<<<< HEAD
 //        return parent::render($request, $e);
         if ($e instanceof Tymon\JWTAuth\Exceptions\TokenExpiredException) {
             return response()->json(['token_expired'], $e->getStatusCode());
         } else if ($e instanceof Tymon\JWTAuth\Exceptions\TokenInvalidException) {
             return response()->json(['token_invalid'], $e->getStatusCode());
+=======
+        if ($e instanceof ModelNotFoundException) {
+            $e = new NotFoundHttpException($e->getMessage(), $e);
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
         }
 
         return parent::render($request, $e);

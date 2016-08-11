@@ -15,7 +15,11 @@ class Authenticate
     protected $auth;
 
     /**
+<<<<<<< HEAD
      * Create a new filter instance.
+=======
+     * Create a new middleware instance.
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
      *
      * @param  Guard  $auth
      * @return void

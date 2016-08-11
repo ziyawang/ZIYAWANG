@@ -23,8 +23,11 @@ class AuthController extends Controller
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+<<<<<<< HEAD
 
 protected $username = "phonenumber";
+=======
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
     /**
      * Create a new authentication controller instance.
      *

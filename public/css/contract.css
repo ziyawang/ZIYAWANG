@@ -1,0 +1,36 @@
+.find_service ul li{background:#ffda3f url(../img/junior_banner.jpg) no-repeat center top;height: 296px;overflow: hidden;}
+
+.contract{margin-bottom: 60px;}
+.contract_bread{padding-top: 40px;color: #333;font-size: 20px;padding-bottom: 15px;}
+.contract_bread a{color:#999;}
+.con_first,.con_twith,.con_third{overflow: hidden;border-top: 1px solid #ededed;}
+.con_first:last-child{border-bottom: 0 none;}
+.contract_icon{float: left;padding:31px 0 27px 31px;width:248px;text-align: center;}
+.contract_icon h2{font-size: 18px;color:#333;font-weight: bold;}
+.contract_icon p{color:#999;font-size: 12px;line-height: 24px;}
+.contract_list{float: left;width: 660px;position: relative;padding:43px 111px 0 150px;}
+.cl_law{width:660px;overflow: hidden;}
+.cl_lawfile{overflow: hidden;position: relative;left:0;}
+.cl_lawfile ul{float: left;width: 660px;}
+.cl_lawfile ul li,.pre_right ul li{height: 36px;line-height: 36px;border-bottom: 1px dotted #bfbfbf;background:url(../img/word.png) no-repeat 0 0;padding-left: 42px;position: relative;}
+.cl_lawfile ul li>a:first-child{display: inline-block;width: 540px;}
+.cl_lawfile ul li span{position: absolute;right:0;top: 0;color:#999;}
+.cl_lawfile ul li span a{margin-left: 5px;}
+.cl_lawfile ul li span a.current{color:#61c3d0;}
+.cl_lawfile ul li span a:first-child{margin-right: 5px;}
+.a_btn{position: absolute;top: 0;width: 22px;height:57px;top: 50%;margin-top: -28px;}
+.con_leftbtn{background:url(../img/con_left.png) no-repeat 0 0;left:70px;}
+.contract_list a.con_leftbtn:hover{background:url(../img/con_left.png) no-repeat 0 -57px;}
+.con_rightbtn{background:url(../img/con_right.png) no-repeat 0 0;right: 35px;}
+.con_rightbtn:hover{background:url(../img/con_right.png) no-repeat 0 -57px;}
+/*合同预览*/
+.preview{padding-bottom: 60px;overflow: hidden;}
+.pre_left{float: left;width: 498px;border: 1px solid #ededed;box-shadow: 1px 1px 5px #ddd;padding:0 120px;height: 834px;}
+.pre_left h2{text-align: center;padding:94px 0 35px;font-size: 18px;color:#333;}
+.pre_left p{text-indent: 2em;font-size: 16px;color:#333;line-height: 32px;}
+.pre_left p span{display: inline-block;width:25px;}
+.pre_right{float: right;width: 410px;}
+.pre_right h2{color:#333;font-size: 18px;border-bottom: 1px dotted #bfbfbf;height: 36px;line-height: 36px;}
+.sign{margin-left: 286px;margin-top: 40px;}
+.year{margin-left: 305px;}
+.pre_left p.year span{width: 20px;}

@@ -6,6 +6,7 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
+<<<<<<< HEAD
         "laravel/framework": "5.1.*",
         "dingo/api": "0.9.*@dev",
         "pingplusplus/pingpp-php": "dev-master",
@@ -13,6 +14,9 @@
         "nette/mail": "^2.4",
         "vergil-lai/uc-client": "dev-master",
         "doctrine/dbal": "^2.5"
+=======
+        "laravel/framework": "5.1.*"
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -34,6 +38,7 @@
         ]
     },
     "scripts": {
+<<<<<<< HEAD
         "post-install-cmd": [
             "php artisan clear-compiled",
             "php artisan optimize"
@@ -44,11 +49,24 @@
         "post-update-cmd": [
             "php artisan optimize"
         ],
+=======
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
         "post-root-package-install": [
             "php -r \"copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
             "php artisan key:generate"
+<<<<<<< HEAD
+=======
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan optimize"
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
         ]
     },
     "config": {

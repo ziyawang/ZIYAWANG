@@ -37,8 +37,13 @@ return [
 
         'database' => [
             'driver' => 'database',
+<<<<<<< HEAD
             'table' => 'jobs',
             'queue' => 'default',
+=======
+            'table'  => 'jobs',
+            'queue'  => 'default',
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
             'expire' => 60,
         ],
 
@@ -67,10 +72,17 @@ return [
         ],
 
         'redis' => [
+<<<<<<< HEAD
             'driver' => 'redis',
             'connection' => 'default',
             'queue'  => 'default',
             'expire' => 60,
+=======
+            'driver'     => 'redis',
+            'connection' => 'default',
+            'queue'      => 'default',
+            'expire'     => 60,
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
         ],
 
     ],
@@ -87,7 +99,12 @@ return [
     */
 
     'failed' => [
+<<<<<<< HEAD
         'database' => 'mysql', 'table' => 'failed_jobs',
+=======
+        'database' => env('DB_CONNECTION', 'mysql'),
+        'table'    => 'failed_jobs',
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
     ],
 
 ];

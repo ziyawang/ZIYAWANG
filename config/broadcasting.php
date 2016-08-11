@@ -33,6 +33,12 @@ return [
             'key' => env('PUSHER_KEY'),
             'secret' => env('PUSHER_SECRET'),
             'app_id' => env('PUSHER_APP_ID'),
+<<<<<<< HEAD
+=======
+            'options' => [
+                //
+            ],
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
         ],
 
         'redis' => [

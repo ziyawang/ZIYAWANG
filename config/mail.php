@@ -54,7 +54,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'from' => ['address' => 'zll920825@163.com', 'name' => '技术部'],
+=======
+    'from' => ['address' => null, 'name' => null],
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
 
     /*
     |--------------------------------------------------------------------------
@@ -119,6 +123,10 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'pretend' => false,
+=======
+    'pretend' => env('MAIL_PRETEND', false),
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
 
 ];

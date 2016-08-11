@@ -7,6 +7,7 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
+<<<<<<< HEAD
          stopOnFailure="false"
          syntaxCheck="false">
     <testsuites>
@@ -17,6 +18,20 @@
     <filter>
         <whitelist>
             <directory suffix=".php">app/</directory>
+=======
+         stopOnFailure="false">
+    <testsuites>
+        <testsuite name="Application Test Suite">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
+            <exclude>
+                <file>./app/Http/routes.php</file>
+            </exclude>
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
         </whitelist>
     </filter>
     <php>

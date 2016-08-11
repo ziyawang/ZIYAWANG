@@ -13,7 +13,11 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+<<<<<<< HEAD
         \App\Console\Commands\Inspire::class,
+=======
+        Commands\Inspire::class,
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
     ];
 
     /**

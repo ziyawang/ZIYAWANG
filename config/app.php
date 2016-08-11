@@ -39,7 +39,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'timezone' => 'PRC',
+=======
+    'timezone' => 'UTC',
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +99,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'log' => 'single',
+=======
+    'log' => env('APP_LOG', 'single'),
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
 
     /*
     |--------------------------------------------------------------------------
@@ -141,6 +149,7 @@ return [
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
+<<<<<<< HEAD
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
@@ -150,6 +159,12 @@ return [
 
         VergilLai\UcClient\ClientProvider::class,
 
+=======
+        App\Providers\AuthServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
+
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
     ],
 
     /*
@@ -178,9 +193,15 @@ return [
         'Eloquent'  => Illuminate\Database\Eloquent\Model::class,
         'Event'     => Illuminate\Support\Facades\Event::class,
         'File'      => Illuminate\Support\Facades\File::class,
+<<<<<<< HEAD
         'Hash'      => Illuminate\Support\Facades\Hash::class,
         'Input'     => Illuminate\Support\Facades\Input::class,
         'Inspiring' => Illuminate\Foundation\Inspiring::class,
+=======
+        'Gate'      => Illuminate\Support\Facades\Gate::class,
+        'Hash'      => Illuminate\Support\Facades\Hash::class,
+        'Input'     => Illuminate\Support\Facades\Input::class,
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
         'Lang'      => Illuminate\Support\Facades\Lang::class,
         'Log'       => Illuminate\Support\Facades\Log::class,
         'Mail'      => Illuminate\Support\Facades\Mail::class,
@@ -198,10 +219,13 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+<<<<<<< HEAD
         'JWTAuth'   => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
         'UcClient'  => VergilLai\UcClient\Facades\UcClient::class,
 
+=======
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
     ],
 
 ];

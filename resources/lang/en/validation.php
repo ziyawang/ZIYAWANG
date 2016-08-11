@@ -35,12 +35,21 @@ return [
     'digits'               => 'The :attribute must be :digits digits.',
     'digits_between'       => 'The :attribute must be between :min and :max digits.',
     'email'                => 'The :attribute must be a valid email address.',
+<<<<<<< HEAD
     'filled'               => 'The :attribute field is required.',
     'exists'               => 'The selected :attribute is invalid.',
+=======
+    'exists'               => 'The selected :attribute is invalid.',
+    'filled'               => 'The :attribute field is required.',
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
     'image'                => 'The :attribute must be an image.',
     'in'                   => 'The selected :attribute is invalid.',
     'integer'              => 'The :attribute must be an integer.',
     'ip'                   => 'The :attribute must be a valid IP address.',
+<<<<<<< HEAD
+=======
+    'json'                 => 'The :attribute must be a valid JSON string.',
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
     'max'                  => [
         'numeric' => 'The :attribute may not be greater than :max.',
         'file'    => 'The :attribute may not be greater than :max kilobytes.',
@@ -59,6 +68,10 @@ return [
     'regex'                => 'The :attribute format is invalid.',
     'required'             => 'The :attribute field is required.',
     'required_if'          => 'The :attribute field is required when :other is :value.',
+<<<<<<< HEAD
+=======
+    'required_unless'      => 'The :attribute field is required unless :other is in :values.',
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
     'required_with'        => 'The :attribute field is required when :values is present.',
     'required_with_all'    => 'The :attribute field is required when :values is present.',
     'required_without'     => 'The :attribute field is required when :values is not present.',

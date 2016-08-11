@@ -59,8 +59,13 @@ return [
     */
 
     'password' => [
+<<<<<<< HEAD
         'phone' => 'phones.password',
         'table' => 'password_resets',
+=======
+        'email'  => 'emails.password',
+        'table'  => 'password_resets',
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
         'expire' => 60,
     ],
 

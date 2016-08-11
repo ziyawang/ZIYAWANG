@@ -48,7 +48,11 @@ return [
 
         'sqlite' => [
             'driver'   => 'sqlite',
+<<<<<<< HEAD
             'database' => storage_path('database.sqlite'),
+=======
+            'database' => database_path('database.sqlite'),
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
             'prefix'   => '',
         ],
 
@@ -116,8 +120,14 @@ return [
         'cluster' => false,
 
         'default' => [
+<<<<<<< HEAD
             'host'     => '127.0.0.1',
             'port'     => 6379,
+=======
+            'host'     => env('REDIS_HOST', 'localhost'),
+            'password' => env('REDIS_PASSWORD', null),
+            'port'     => env('REDIS_PORT', 6379),
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
             'database' => 0,
         ],
 

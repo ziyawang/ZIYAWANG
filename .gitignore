@@ -1,1 +1,10 @@
 /vendor
+<<<<<<< HEAD
+=======
+/node_modules
+Homestead.yaml
+Homestead.json
+.env
+
+/vendor
+>>>>>>> 41aa23a07d02027e49ea70a65c2d9a47bbb0f18d
