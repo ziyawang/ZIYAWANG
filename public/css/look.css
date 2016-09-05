@@ -1,0 +1,21 @@
+.find_service ul li{background:#ffda3f url(../img/junior_banner.jpg) no-repeat center top;height: 296px;overflow: hidden;}
+.main_right h2 a{position: absolute;right:30px;bottom:10px;color:#095c67;font-size: 14px;line-height: 1.5;background:url(../img/up_arr.png) no-repeat right 3px;padding-right: 15px;}
+.main_right ul{}
+.main_right ul li{height:60px;padding:15px 0 15px 52px;border-bottom: 1px solid #ededed;position: relative;}
+.main_right ul li h3{font-weight: normal;color:#333;}
+.myorder img{width:60px;height:60px;border-radius:50%;position: absolute;top: 15px;left: 52px;}
+.myorder_abstr{margin:0 0 0 105px;display: block;width:50%;overflow: hidden;line-height: 30px;}
+.myorder_abstr span{display: block;width: 50%;float: left;overflow: hidden;white-space: nowrap;text-overflow:ellipsis;}
+.myorder_info{margin:0 0 0 105px;font-size: 12px;line-height: 22px;}
+.time{position: absolute;right:28px;top:15px;color:#999;font-size: 12px;text-align: center;}
+.cancel,.ing,.confirm{width: 84px;display: block;height: 24px;line-height: 24px;border-radius: 20px;font-size: 14px;word-spacing:5px; letter-spacing: 5px;font-weight: bold;text-align: center;position: absolute;right:22px;bottom:15px;}
+.cancel{background:#dad4ca;color:#fff;}
+.combine{width: 84px;display: block;height: 24px;line-height: 24px;background:#dad4ca;border-radius: 20px;color:#fff;font-size: 14px;font-weight: bold;}
+.ing{background:#ffa000;color:#fff;}
+.confirm{background:#ffa000;color:#fff;letter-spacing: 0;}
+.myorder .blue{color:#61c3d0;}
+.lo_collect{position: absolute;top: 50%;right: 150px;margin-top: -12px;}
+.lo_collect a{display:inline-block;width:28px;height:28px;margin-left: 30px;}
+.lo_collect .star{background:url(../img/fsicon.png) no-repeat 0px 0px;}
+.lo_collect .chat{background:url(../img/fsicon.png) no-repeat 0px -105px;}
+.lo_collect .star_cl{background:url(../img/xing_b.png) no-repeat 0 -3px;}

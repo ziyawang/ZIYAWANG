@@ -1,0 +1,21 @@
+.main_right .content_middle{float: none;}
+.main_right .service_ceti{margin-bottom: 30px;}
+.recommend .recommendTitle{padding: 0;border-bottom: 1px solid #d8d8d8;color:#121212;}
+.recommendTitle .changeAlot{position: absolute;right: 0;top: 0;font-size: 14px;}
+.changeAlot i{font-size: 15px;margin-right: 6px;float: left;margin-top: 1px;}
+.recommendCon ul{overflow: hidden;margin-top: 26px;margin-bottom: 75px;width: 1044px;}
+.recommendCon ul li{float: left;border: 2px dashed #d8d8d8;width: 270px;padding:24px 24px 40px;position: relative;margin-right: 26px;height: 435px;}
+.recommendCon ul .noMargin{margin-right: 0;}
+.recommendCon .reconTop{position: relative;}
+.reconTopTitle{display: block;color:#333;font-size: 18px;font-weight: bold;height: 54px;}
+.recImg{display: block;width: 270px;border: 1px solid #ccc;margin:20px auto;}
+.recImg img{width: 270px;height: 205px;}
+.reconDescription{margin-bottom: 20px;display: block;color:#121212;height: 42px;}
+.cue{color: #ffa000;font-size: 12px;position: absolute;right: 0;bottom: -3px;}
+.cue .iconfont{margin-right: 4px;}
+.cue .icon{float: left;margin-top: 2px;}
+.cue .visitors {margin-right: 14px;}
+.reconBottom{padding-bottom: 24px;}
+.reconBottom span{font-weight: bold;}
+.reconBottomCon{display: inline-block;width:87px;height: 26px;line-height: 26px;background: url(../img/btn01.png) no-repeat 0 -63px;padding-left: 15px;font-size: 16px;margin-right: 15px;}
+.lookMore{position: absolute;bottom: 24px;right: 24px;font-size: 16px;color:#000;font-weight: bold;}

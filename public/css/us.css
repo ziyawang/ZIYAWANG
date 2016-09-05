@@ -1,0 +1,38 @@
+.find_service ul li{background:#ffda3f url(../img/junior_banner.jpg) no-repeat center top;height: 296px;overflow: hidden;}
+.us{overflow: hidden;background:#f9f8f8;}
+.us_left{float: left;width: 227px;background:#f9f8f8;}
+.us_left .ul_title{font-size: 30px;color:#333;font-weight: normal;background:url(../img/us_title.png) no-repeat 24px 20px;padding:40px 0 20px 85px;border-bottom: 1px solid #c7caca;}
+.us_left ul li{border-bottom: 1px dashed #e5e5e5;font-size: 20px;height: 63px;line-height: 63px;text-align: center;}
+.us_left ul li.current{background:#eee url(../img/us.png) no-repeat;}
+.us_left ul li:last-child{border-bottom: none;}
+.us_right{float: right;width: 950px;background:#eee;padding-left:23px;}
+.us_right h2{background:url(../img/us_bar.jpg) no-repeat right top;;width: 900px;height: 60px;color:#fff;font-size: 24px;font-weight: normal;padding:40px 0 0 49px;}
+.us_info{padding-top: 25px;padding-left: 50px;font-size: 18px;color:#333;background:#eeede5;}
+.us_info p{padding-bottom: 25px;}
+.map img{border: 1px solid #e7e7e7;width:948px;margin-bottom: 12px;}
+/*法律声明*/
+.law_shengming{padding:0 50px;color:#333;margin-bottom: 20px;}
+.law_shengming p{text-indent: 2em;line-height: 24px;}
+.law_shengming h3{font-size: 18px;font-weight: normal;color:#000;padding:5px 0;}
+.law_shengming h4{font-size: 16px;font-weight: normal;color:#000;padding:5px 0;}
+.law_shengming p span{color:#f00;}
+/*关于我们*/
+.about_us{padding:50px 50px 0;color:#333;line-height: 36px;font-size: 18px;height: 439px;}
+.about_us p{text-indent: 2em;}
+/*app*/
+.topimg{background:url(../img/bg.jpg) no-repeat center top;clear:both;}
+.imglist { width:1200px; padding:0; margin:0 auto; clear:both; text-align:center; overflow:hidden;}
+.imglist li { padding:0; margin:0; font-size:0; text-align:center; float:left; position: relative;}
+.app_caption{position: absolute;bottom:0px;right:36px;font-size: 46px;}
+.app_caption em{color:#181818;}
+.app_caption span{color:#fff;display: block;text-align: left;}
+.downloadbtn{position: absolute;bottom: 0;right:262px;}
+.downloadbtn a{width: 332px;height: 67px;display: block;background:url(../img/android.png) no-repeat 0 0;margin-top: 42px;font-size: 26px;color:#3b3206;line-height: 67px;transition: all 0.2s;}
+.downloadbtn a em{padding:0 8px 0 54px;}
+.downloadbtn a:hover{background:url(../img/android.png) no-repeat 0 -73px;color:#eec507;}
+.downloadbtn .iphone{background:url(../img/iphone.png) no-repeat 0 0;}
+.downloadbtn .iphone:hover{background:url(../img/iphone.png) no-repeat 0 -73px;}
+.downloadbtn .iphone em{padding:0 22px 0 54px;}
+.scan{font-size: 50px;text-align: center;color:#181818;position: absolute;bottom: 0;right:18px;}
+.scan_img{display: block;width: 172px;height: 172px;border: 3px solid #514408;border-radius: 10px;background:#fff;}
+.scan_img img{display: block;margin:6px auto 0;}

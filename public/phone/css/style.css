@@ -1,0 +1,95 @@
+@charset "gb2312";
+/* CSS Document */
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {margin:0px;	padding:0px;font-size:12px;	font-family:"宋体",Arial, Helvetica, sans-serif;color:#4c4c4c;}
+table {border-collapse:collapse;}
+a img {border:0px;}
+address, caption, cite, code, dfn, em, th, var {font-style:normal;font-weight:normal;}
+ul, li {list-style:none;}
+h1, h2, h3, h4, h5, h6 {font-size:100%;	font-weight:normal;}
+input, button, textarea, select {font-family:inherit;font-size:12px;vertical-align:middle;}
+a {text-decoration:none;color:#4c4c4c;}/*outline:none;*/
+a:hover {text-decoration:none;}
+/****resetend***/
+.news_title_bg123{ background:url(../images/titleys.jpg) repeat-x top left; float:left; width:283px; margin:10px 0;}
+.news_title123{ margin: 0 auto;width:283px; height:30px; line-height:30px; text-align:center;}
+/*公共样式部分*/
+.clear {font-size: 0px;line-height: 0px;margin: 0px;padding: 0px;height: 0px;clear:both;visibility:hidden;}
+.fl {float:left;}
+.fr {float:right;}
+.clearfix:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+.clearfix{*zoom:1;}
+
+/**** homepage begin *****/
+
+body{ width:100%;background:#fff; font: normal 100% 宋体; color:#000;overflow-x:hidden;overflow-y:auto;}
+.banner{margin:0px auto; padding:0px; width:320px; height:104px;}
+
+/**** 产品展示 *****/
+.cplb-bg{ background:url(../images/cplb-bg.jpg) repeat-x left center; width:100%; height:34px;}
+.cplb-bg p{ color:#FFF; font-size:13px; font-weight:bold;font-family:"微软雅黑"; line-height:34px; padding-left:22px;}
+
+/*产品详细页 */
+.prok{ border:1px dashed #ccc; background:#f3f3f3; height:25px; padding-left:20px; line-height:25px; font-weight:bold; margin-bottom:10px;}
+.propic{ text-align:left; margin-bottom:10px;}
+.propic img{ width:280px; height:220px; padding:4px; border:1px dashed #ddd;}
+.protitle{ height:50px; line-height:50px; font-size:15px; font-weight:bold; color:#D7212D;}
+
+.cplb{ padding:12px 0px; margin:0 auto; width:300px;}
+.cplb1{ padding:13px 0; line-height:22px; width:280px; margin:0 auto;}
+.cplb1 p{ line-height:22px;}
+.cplb1 strong{ font-size:14px; font-weight:bold;}
+.ul.prolist{}
+ul.prolist li{ height:110px; width:140px; float:left;  margin-left:8px; margin-bottom:4px;}
+ul.prolist li a img{width:130px; height:105px;}
+
+
+#menu-foot{ background:url(../images/menu-bg.jpg) repeat-x left center; width:100%; height:38px; margin:0 auto;}
+.menu-foot{ width:300px;; margin:0px auto;}
+.menu-foot ul li{text-decoration:none;display:block; float:left; width:100px; line-height:38px; text-align:center; color:#FFFFFf;}
+.menu-foot ul li a{display:block; color:#fff; text-decoration:none;}
+.menu-foot ul li a:hover{color:#fff; text-decoration:none; background:#1c0004;width:100px;height:38px;}
+
+.mainbox {
+	overflow:hidden;
+	position:relative;
+}
+.flashbox {
+	overflow:hidden;
+	position:relative;
+}
+.imagebox {
+	text-align:right;
+	position:relative;
+	z-index:999;
+}
+.bitdiv {
+	display:inline-block;
+	width:18px;
+	height:18px;
+	margin:0 10px 10px 0px;
+	cursor:pointer;
+	float:right;
+}
+.defimg {
+	background-image:url(../images/02.png)
+}
+.curimg {
+	background-image:url(../images/01.png)
+}
+.bottomqq {position:fixed;   bottom:0;   left:0;   z-index:2000;right:0px;width:100%; height:49px;overflow:hidden;cursor:default; padding-top:-61px; background:#35080f; }
+.bottom1 {width:320px;margin: 0 auto;}
+.bottom1 a {float:left;width:135px;text-align:center; padding:5px 0 0 23px;color:#fff;height:44px;border-right: solid 1px #540e19;font-size:15px;}
+.bottom1 a img{ float:left; margin:0 16px;}
+.bottom1 a span{ float:left; line-height:44px;}
+.bottom1 a:hover {float:left;width:135px;text-align:center; padding:5px 0 0 23px;color:#fff;height:44px;background:#540e19; font-size:15px;}
+.grkai{ float:left; width:100%; height:49px;}
+
+.logo{ width:300px; margin:0px auto; text-align:center; font-size:20px; height:40px; line-height:40px; color:#000; font-family:"黑体";}
+.logo a{ color:#000;}
