@@ -1,4 +1,11 @@
 @extends('layouts.home')
+
+@section('seo')
+<title>资芽网找信息-海量不良资产信息服务平台</title>
+        <meta name="Keywords" content="资产求购,资产转让,融资需求,委外催收,不良资产信息平台,资芽网" />
+        <meta name="Description" content="资芽网找信息，汇集资产，债权等各类转让信息；保理担保，安全可靠；要催收，尽职调查与悬赏信息不能少，专业法律服务保障强；融资需求急，这里多信息；想要求购资产？还是资芽网找信息" />
+@endsection
+
 @section('content')
         <link rel="stylesheet" type="text/css" href="{{url('/css/infomation.css')}}" />
         <link rel="stylesheet" type="text/css" href="{{url('/css/infolist.css')}}" />
@@ -40,7 +47,7 @@
                             <div class="cltconRightCon">
                                 <div class="groupBox" id="diff">
                                 </div>
-                                <span class="theTime" id="PublishTime">2016-09-01</span>
+                                <span class="theTime" id="PublishTime"></span>
                                 <div id="PublishState">
                                 </div>
                                 <div class="phonetic">
@@ -82,18 +89,23 @@
             </div>
         </div>
 <!-- 弹层/start -->
-<div class="poplayer"></div>
-<!-- 联系人弹出层 -->
-<div class="poplayer1">
-    <a href="javascript:;" class="certain" id="connect">确定</a>
-</div>
-<!-- 聊天弹出层 -->
-<div class="poplayer2">
-    <a href="javascript:;" class="certain" id="app">确定</a>
-</div>
-<!-- 清单弹出层 -->
-<div class="poplayer3">
-    <a href="javascript:;" class="certain"></a>
+<div class="poplayer">
+    <!-- 联系人弹出层 -->
+    <div class="poplayer1">
+        <a href="javascript:;" class="certain confirmurl">确定</a>
+    </div>
+    <!-- 聊天弹出层 -->
+    <div class="poplayer2">
+        <a href="javascript:;" class="certain">确定</a>
+    </div>
+    <!-- 清单弹出层 -->
+    <div class="poplayer3">
+        <a href="javascript:;" class="certain confirmurl"></a>
+    </div>
+    <!-- 抢单弹出层 -->
+    <div class="poplayer4">
+        <a href="javascript:;" class="certain confirmurl"></a>
+    </div>
 </div>
 <!-- 弹层/end -->
 <script>
@@ -249,12 +261,17 @@ $(function () {
         var ConnectPhone  = json.PhoneNumber;
         var CollectFlag   = json.CollectFlag;    //收藏状态
         var RushFlag = json.RushFlag;    //抢单状态
+
+        document.title = TypeName + '-海量不良资产信息服务平台';
+
+
+
         if(CollectFlag == 1){
             $(".collect").children('i').addClass('red');
             $(".collect").children('span').html('已收藏');
         }
         if(PublishState == '0'){
-            PublishState = "<a href='javascript:;' class='applyOrder' id='rush'><span>申请抢单</span><i class='iconfont grab'>&#xe604;</i></a><span class='rushNumber'>" + RushCount + "</span>";
+            PublishState = "<a href='javascript:;' class='applyOrder' id='rush'><span>申请抢单</span><i class='iconfont grab'>&#xe604;</i></a><span class='rushNumber' title='已有" + RushCount + "人抢单'>" + RushCount + "</span>";
         } else if ( PublishState == '1') {
             PublishState = "<a href='javascript:;' class='overCooperation'><span>已合作</span><i class='iconfont grab'>&#xe600;</i></a>";
         }
@@ -268,6 +285,7 @@ $(function () {
 
         var TypeNumber = "<b>" + TypeName + "</b>" + ProjectNumber;
         $('#TypeNumber').html(TypeNumber);
+        $('#PublishTime').html(PublishTime);
         $('#avatar').attr('src', UserPicture);
         var ViewCollect = "<i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span>";
         $('#ViewCollect').html(ViewCollect);
@@ -370,7 +388,7 @@ $(function () {
             var role = $.cookie('role');
             if( role != 1) {
                 stop = true;
-                myFn('poplayer1');
+                // myFun('poplayer1');
                 return;
             }
             stop = false;
@@ -406,6 +424,12 @@ $(function () {
             if(stop){
                 return false;
             }
+
+            checkService();
+            if(stop){
+                myFun('poplayer4');
+                return false;
+            }
             rush();
         });
 
@@ -418,28 +442,26 @@ $(function () {
         });
 
         //声明方法
-        var myFn = function(box){
+        var myFun = function(box){
             $('.poplayer').show();
             $('.'+box).show();
         }
 
         //点击确定关闭弹出的查看联系人和查看语音信息
-        $('#connect').click(function(event) {
+        $('.confirmurl').click(function(event) {
             $(this).parent().hide();
             $('.poplayer').hide();
             window.open("http://ziyawang.com/ucenter/confirm","status=yes,toolbar=yes, menubar=yes,location=yes"); 
                 return false;
         });
-
-        //点击确定关闭弹出查看语音信息
-        $('#app').click(function(event) {
+        $('.certain').click(function(event) {
             $(this).parent().hide();
             $('.poplayer').hide();
         });
 
-        $('#sound').click(function(){
-            myFn('poplayer2')
-        })
+        $('.privateChat').click(function(event) {
+            myFun('poplayer2');
+        });   
 
         $("#check").click(function(){
             checkLogin();
@@ -448,6 +470,7 @@ $(function () {
             }
             checkService();
             if(stop){
+                myFun('poplayer1');
                 return false;
             }
             $("#check").html(ConnectPhone);
@@ -457,8 +480,11 @@ $(function () {
             if(stop){
                 return false;
             }
+
+
             checkService();
             if(stop){
+                myFun('poplayer3');
                 return false;
             }
             var url = $(this).attr('url');

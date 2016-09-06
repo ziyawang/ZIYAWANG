@@ -1,4 +1,11 @@
 @extends('layouts.home')
+
+@section('seo')
+<title>资芽网-全球不良资产超级综服平台</title>
+        <meta name="Keywords" content="资芽网,不良资产,不良资产处置,不良资产处置平台" />
+        <meta name="Description" content="资芽网是全球不良资产智能综服超级平台,吸引全国各类不良资产持有者，汇集各类不良资产信息及相关需求,整合海量不良资产处置服务机构与投资方,搭建多样化处置通道和不良资产综服生态产业体系,嵌入移动社交与视频直播,兼具媒体属性,实现大数据搜索引擎和人工智能,打造共享开放的全球不良资产智能综服超级平台。" />
+@endsection
+
 @section('content')
         <link type="text/css" rel="stylesheet" href="{{asset('/css/findservice.css')}}" />
 <!-- 二级banner -->

@@ -102,11 +102,12 @@
 .lookMore{position: absolute;bottom: 10px;right: 14px;font-size: 16px;color:#000;font-weight: bold;}
 .lookMore:hover{color:#ffa000;}
 .poplayer{width:100%;height:100%;background:rgba(0,0,0,0.6);position: fixed;top: 0;bottom: 0;left: 0;right: 0;z-index: 10;display: none;}
-.poplayer1,.poplayer3{width: 391px;height: 182px;background:url(../img/pop1.png) no-repeat;top: 50%;left:50%;margin:-91px 0 0 -180px;position: fixed;z-index: 11;display: none;}
-.poplayer1 a,.poplayer3 a{color:#703802;position: absolute;bottom:0px;left:135px;font-size: 16px;font-weight: bold;line-height: 28px;width: 120px;text-align: center;height:26px;}
+.poplayer1,.poplayer3,.poplayer4{width: 391px;height: 182px;background:url(../img/pop1.png) no-repeat;top: 50%;left:50%;margin:-91px 0 0 -180px;position: fixed;z-index: 11;display: none;}
+.poplayer1 a,.poplayer3,.poplayer4 a{color:#703802;position: absolute;bottom:0px;left:135px;font-size: 16px;font-weight: bold;line-height: 28px;width: 120px;text-align: center;height:26px;}
 .poplayer2{width: 342px;height: 183px;background:url(../img/pop2.png) no-repeat;top: 50%;left: 50%;margin:-91px 0 0 -171px;position:fixed;z-index: 12;display: none;}
 .poplayer2 a{color:#703802;position: absolute;bottom:0px;left:113px;font-size: 16px;font-weight: bold;line-height: 28px;width: 120px;text-align: center;}
 .poplayer3{background:url(../img/pop3.png) no-repeat;}
+.poplayer4{background:url(../img/pop4.png) no-repeat;}
 .clmleftProvince .moreIcon{cursor:pointer;}
 .moreArea{position: absolute;bottom: 28px;left:229px;background:#fff;padding:0 14px 14px;border: 1px solid #ccc;width: 220px;z-index: 2;display: none;}
 @-o-keyframes go{

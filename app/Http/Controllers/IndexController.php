@@ -91,6 +91,9 @@ class IndexController extends Controller
     //项目详情
     public function proInfo2()
     {
+        $path = './test.html';
+        $tmp = view('proinfo2')->__toString();
+        file_put_contents($path,$tmp);
         return view('proinfo2');
     }
 
@@ -103,13 +106,13 @@ class IndexController extends Controller
     //新闻列表
     public function newsList()
     {
-        return view('news.newslist');
+        return view('news.newslist2');
     }
 
     //资芽新闻
     public function zynewsList()
     {
-        return view('news.zynewslist');
+        return view('news.zynewslist2');
     }
 
     //行业新闻
@@ -127,6 +130,8 @@ class IndexController extends Controller
     //新闻详情
     public function newsInfo()
     {
+        
+        // return redirect(url('news.newsinfo').".html");
         return view('news.newsinfo');
     }
 
