@@ -61,3 +61,5 @@
 .prev_essay a:hover,.next_essay a:hover{color:#ffa000;}
 .prev_essay{padding:18px 22px 15px;}
 .next_essay{padding:0 22px 22px 22px;}
+/*分页显示*/
+.pages #Pagination .pagination .prev,.pages #Pagination .pagination .next{display: block!important;}

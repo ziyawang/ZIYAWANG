@@ -32,7 +32,7 @@
             <a href="{{url('/video')}}">推荐</a>
             <a href="{{url('/video/homemade')}}">资芽哈哈哈</a>
             <a href="{{url('/video/profession')}}">行业说</a>
-            <a href="{{url('/video/oneminu')}}" class="current">资芽一分钟</a>              
+            <a href="{{url('/video/oneminu')}}" class="current">资芽一分钟</a>             
         </div>
     </div>
     <div class="wrap vs_type">
@@ -46,11 +46,19 @@
             </div>
         <!-- 最新 -->
             <div class="vc">
-                <h2 class="tuijian new">最新发布</h2>
-                <ul id="latest">
+                <h2 class="tuijian new">资芽一分钟</h2>
+                <ul id="videolist">
                     
                 </ul>
             </div>
+            <!-- 公共分页/start -->
+            <div class="pages">
+                <div id="Pagination"></div>
+                <div class="searchPage">
+                  <span class="page-sum">共<strong class="allPage">15</strong>页</span>
+                </div>
+            </div>
+<!-- 公共分页/end -->
         </div>
         <div class="video_content"></div>
         <div class="video_content"></div>
@@ -59,6 +67,7 @@
 
 <script>
 $(function(){
+
     function LoadFunction() {  
         $("#spec01").html('加载中...');  
     }  
@@ -78,7 +87,7 @@ $(function(){
         return html;
     }
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/video/list?pagecount=8&VideoLabel=zyyfz&access_token=token',  
+        url: 'http://api.ziyawang.com/v1/video/list?pagecount=8&VideoLabel=zyyfz&order=1&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -88,11 +97,48 @@ $(function(){
         success: video //成功执行方法    
     })
 
+    $.ajax({  
+        url: 'http://api.ziyawang.com/v1/video/list?pagecount=8&VideoLabel=zyyfz&weight=1&access_token=token',  
+        type: 'GET',  
+        dataType: 'json',  
+        timeout: 5000,  
+        cache: false,  
+        beforeSend: LoadFunction, //加载执行方法    
+        error: erryFunction,  //错误执行方法    
+        success: videolist //成功执行方法    
+    })
+
     function video(tt) {
         var json = eval(tt); //数组 
         var data = json.data;
         var html = _queryVideo(data);
-        $('#recommend,#hot,#latest').html(html);
+        $('#hot').html(html);
+        //视频划过
+        $('.vc ul li').hover(function(){
+            $(this).find('.zhezhao').stop().fadeIn(500);
+            $(this).children('.vc_icon').stop().fadeIn(500);
+            $(this).stop().animate({'top':'-5px'},300);
+        },function(){
+            $(this).find('.zhezhao').stop().fadeOut(500);
+            $(this).children('.vc_icon').stop().fadeOut(500);
+            $(this).stop().animate({'top':'0px'},300);
+        })
+    }
+
+    function videolist(tt) {
+        var json = eval(tt); //数组 
+        var data = json.data;
+        var counts = json.counts;
+        var pages = json.pages;var current = json.currentpage-1;
+        //分页
+        $("#Pagination").pagination(pages,{current_page:current});
+        $(".page-sum").html("共<strong class='allPage'>" + pages + "</strong>页");
+        $('.pagination a').click(function(){
+            startpage = $(this).html();
+            ajax();
+        });
+        var html = _queryVideo(data);
+        $('#videolist').html(html);
         //视频划过
         $('.vc ul li').hover(function(){
             $(this).find('.zhezhao').stop().fadeIn(500);
@@ -105,6 +151,56 @@ $(function(){
         })
     }
 })
+
+function _queryVideo(data) {
+    var html = '';
+    $.each(data, function (index, item) {  
+        //循环获取数据    
+        var VideoTitle = data[index].VideoTitle;       //视频标题
+        var VideoLogo  = data[index].VideoLogo;     //视频图片
+        var VideoID    = data[index].VideoID;       //视频ID
+        var ViewCount  = data[index].ViewCount;       //播放次数
+        html = html + "<li class='videoli" + index + "'><a href='http://ziyawang.com/video/" + VideoID + "' class='hover_img'><img src='http://images.ziyawang.com" + VideoLogo + "' /><span class='zhezhao'></span></a><p class='vc_title'><a href='http://ziyawang.com/video/" + VideoID + "'>" + VideoTitle + "</a></p><p class='vc_condition'>已播放" + ViewCount + "次</p><a href='javascript:;' class='vc_icon'></a></li>";
+    });
+    return html;
+}
+
+var startpage = 1;
+function ajax(){
+    var data = 'startpage=' + startpage;
+    $.ajax({
+        url: 'http://api.ziyawang.com/v1/video/list?pagecount=8&VideoLabel=zyyfz&weight=1&access_token=token&' + data,  
+        type: 'GET',  
+        dataType: 'json',  
+        timeout: 5000,  
+        cache: false,  
+        success: function(tt){
+            var json = eval(tt); //数组 
+            var data = json.data;
+            var counts = json.counts;
+            var pages = json.pages;var current = json.currentpage-1;
+            //分页
+            $("#Pagination").pagination(pages,{current_page:current});
+            $(".page-sum").html("共<strong class='allPage'>" + pages + "</strong>页");
+            $('.pagination a').click(function(){
+                startpage = $(this).html();
+                ajax();
+            });
+            var html = _queryVideo(data);
+            $('#videolist').html(html);
+            //视频划过
+            $('.vc ul li').hover(function(){
+                $(this).find('.zhezhao').stop().fadeIn(500);
+                $(this).children('.vc_icon').stop().fadeIn(500);
+                $(this).stop().animate({'top':'-5px'},300);
+            },function(){
+                $(this).find('.zhezhao').stop().fadeOut(500);
+                $(this).children('.vc_icon').stop().fadeOut(500);
+                $(this).stop().animate({'top':'0px'},300);
+            })
+        }
+    })
+}
 
 
 </script>

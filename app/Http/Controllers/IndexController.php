@@ -91,9 +91,9 @@ class IndexController extends Controller
     //项目详情
     public function proInfo2()
     {
-        $path = './test.html';
-        $tmp = view('proinfo2')->__toString();
-        file_put_contents($path,$tmp);
+        // $path = './test.html';
+        // $tmp = view('proinfo2')->__toString();
+        // file_put_contents($path,$tmp);
         return view('proinfo2');
     }
 
@@ -118,13 +118,13 @@ class IndexController extends Controller
     //行业新闻
     public function hynewsList()
     {
-        return view('news.hynewslist');
+        return view('news.hynewslist2');
     }
 
     //财经新闻
     public function cjnewsList()
     {
-        return view('news.cjnewslist');
+        return view('news.cjnewslist2');
     }
 
     //新闻详情
@@ -132,7 +132,7 @@ class IndexController extends Controller
     {
         
         // return redirect(url('news.newsinfo').".html");
-        return view('news.newsinfo');
+        return view('news.newsinfo2');
     }
 
     //合同列表
@@ -199,18 +199,22 @@ class IndexController extends Controller
     }
 
     //图片上传
-    public function upload(){
-        $file = Input::file('Filedata');
-        $clientName = $file->getClientOriginalName();//获取文件名
-        $tmpName = $file->getFileName();//获取临时文件名
-        $realPath = $file->getRealPath();//缓存文件的绝对路径
-        $extension = $file->getClientOriginalExtension();//获取文件的后缀
-        $mimeType = $file->getMimeType();//文件类型
-        $newName = time(). mt_rand(1000,9999). '.'. $extension;//新文件名
-        $path = $file->move(dirname(base_path()).'/ziyaupload/images/user/',$newName);//移动绝对路径
-        $filePath = '/user/'.$newName;//存入数据库的相对路径
+    // public function upload(){
+    //     $file = Input::file('Filedata');
+    //     $clientName = $file->getClientOriginalName();//获取文件名
+    //     $tmpName = $file->getFileName();//获取临时文件名
+    //     $realPath = $file->getRealPath();//缓存文件的绝对路径
+    //     $extension = $file->getClientOriginalExtension();//获取文件的后缀
+    //     $mimeType = $file->getMimeType();//文件类型
+    //     $newName = time(). mt_rand(1000,9999). '.'. $extension;//新文件名
+    //     $path = $file->move(dirname(base_path()).'/ziyaupload/images/user/',$newName);//移动绝对路径
+    //     $filePath = '/user/'.$newName;//存入数据库的相对路径
 
-        return $filePath;
+    //     return $filePath;
+    // }
+    public function upload(){
+        error_reporting(E_ALL | E_STRICT);
+        $upload_handler = new \App\UploadHandler();
     }
 
     //文件

@@ -1,13 +1,13 @@
 @extends('layouts.home')
 
 @section('seo')
-<title>资芽新闻-资芽网</title>
+<title>资芽新闻-资芽新闻-资芽网</title>
         <meta name="Keywords" content="资芽网,不良资产,不良资产处置,不良资产处置平台" />
         <meta name="Description" content="资芽网是全球不良资产智能综服超级平台,吸引全国各类不良资产持有者，汇集各类不良资产信息及相关需求,整合海量不良资产处置服务机构与投资方,搭建多样化处置通道和不良资产综服生态产业体系,嵌入移动社交与视频直播,兼具媒体属性,实现大数据搜索引擎和人工智能,打造共享开放的全球不良资产智能综服超级平台。" />
 @endsection
-@section('content')
-    <link type="text/css" rel="stylesheet" href="{{url('/css/newsinfo.css')}}"/>
 
+@section('content')
+<link type="text/css" rel="stylesheet" href="{{url('/css/newsinfo.css')}}" />
 <!-- 二级banner -->
 <div class="find_service">
     <ul>
@@ -18,7 +18,7 @@
 <div class="content clearfix">
 <!-- 左侧 -->
     <div class="conLeft">
-        <div class="news_bread"><span class="newsIcon"></span>新闻中心</div>
+        <div class="news_bread"><span class="newsIcon"></span>资芽新闻</div>
         <div class="nl_content">
             <ul id="newslist">
                 
@@ -35,10 +35,10 @@
     </div>
     <div class="conRight">
         <div class="newsCom">
-            <h2 class="nrc_title"><a href="{{url('/zynews')}}">资芽新闻</a><span>COMPANY&nbsp;NEWS</span></h2>
-            <div class="nrc_fisrt" id="ziya1">
+            <h2 class="nrc_title"><a href="{{url('/cjnews')}}">财经资讯</a><span>FINANCIAL&nbsp;NEWS</span></h2>
+            <div class="nrc_fisrt" id="caijing1">
             </div>
-            <ul class="nrc_list" id="ziya2">
+            <ul class="nrc_list" id="caijing2">
             </ul>
         </div>
         <div class="newsCom">
@@ -48,15 +48,7 @@
             <ul class="nrc_list" id="hangye2">
             </ul>
         </div>
-        <div class="newsCom">
-            <h2 class="nrc_title"><a href="{{url('/cjnews')}}">财经资讯</a><span>FINANCIAL&nbsp;NEWS</span></h2>
-            <div class="nrc_fisrt" id="caijing1">
-            </div>
-            <ul class="nrc_list" id="caijing2">
-            </ul>
-        </div>
     </div>
-
 </div>
 <script>
 $(function(){
@@ -69,7 +61,7 @@ $(function(){
     var urlpage   = getQueryString("startpage")   ? getQueryString("startpage")  : 1;
 
     function LoadFunction() {  
-        // $("#spec01").html('加载中...');  
+        $("#spec01").html('加载中...');  
     }  
     function erryFunction() {  
         // alert("error");  
@@ -91,10 +83,10 @@ $(function(){
 
     //新闻 4个ajax
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/news/list?pagecount=6&access_token=token&startpage=' + urlpage,  
+        url: 'http://api.ziyawang.com/v1/news/list?pagecount=6&NewsLabel=zyxw&access_token=token&startpage=' + urlpage,  
         type: 'GET',  
         dataType: 'json',  
-        timeout: 5000, 
+        timeout: 5000,  
         cache: false,  
         beforeSend: LoadFunction, //加载执行方法    
         error: erryFunction,  //错误执行方法    
@@ -102,21 +94,10 @@ $(function(){
     })
 
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/news/list?pagecount=5&NewsLabel=zyxw&access_token=token',  
-        type: 'GET',  
-        dataType: 'json',  
-        timeout: 5000, 
-        cache: false,  
-        beforeSend: LoadFunction, //加载执行方法    
-        error: erryFunction,  //错误执行方法    
-        success: news1 //成功执行方法    
-    })
-
-    $.ajax({  
         url: 'http://api.ziyawang.com/v1/news/list?pagecount=5&NewsLabel=hydt&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
-        timeout: 5000, 
+        timeout: 5000,  
         cache: false,  
         beforeSend: LoadFunction, //加载执行方法    
         error: erryFunction,  //错误执行方法    
@@ -127,7 +108,7 @@ $(function(){
         url: 'http://api.ziyawang.com/v1/news/list?pagecount=5&NewsLabel=cjzx&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
-        timeout: 5000, 
+        timeout: 5000,  
         cache: false,  
         beforeSend: LoadFunction, //加载执行方法    
         error: erryFunction,  //错误执行方法    
@@ -159,7 +140,7 @@ $(function(){
             } else {
                 urlpage = fenyepage;
             }
-            var url = "http://ziyawang.com/news?startpage=" + urlpage;
+            var url = "http://ziyawang.com/zynews?startpage=" + urlpage;
             url = encodeURI(url);
             window.location.href= url;
         });
@@ -176,23 +157,9 @@ $(function(){
 
             html = html + "<li><a href='http://ziyawang.com/news/" + NewsID + "' class='nlc_img' title='" + NewsTitle + "'><img src='http://images.ziyawang.com" + NewsLogo + "'/></a><h2 class='nlc_title'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a></h2><span class='nlc_time'>发表于：" + PublishTime + "</span><p class='nlc_abstr'>" + NewsBrief.substr(0,100) + "...</p></li>"
         });
-        document.title = '新闻中心-资芽网';
         $('#newslist').html(html);
 
     }  
-
-    function news1(tt) {
-        var json = eval(tt); //数组 
-        var data = json.data;
-        var data1 = data[0];
-        var data2 = data.slice(1); 
-
-        var html1 = "<a href='http://ziyawang.com/news/" + data1.NewsID + "' class='nrc_img' title='" + data1.NewsTitle + "'><img src='http://images.ziyawang.com" + data1.NewsLogo + "' /></a><h2 class='nlc_title'><a href='http://ziyawang.com/news/" + data1.NewsID + "'>" + data1.NewsTitle + "</a></h2><p class='nrc_abstr'>" + data1.Brief.substr(0,50) + "...</p>"
-        var html2 = _queryNews(data2);
-        $('#ziya1').html(html1);
-        $('#ziya2').html(html2);
-    }  
-
     function news2(tt) {
         var json = eval(tt); //数组 
         var data = json.data;
@@ -217,5 +184,6 @@ $(function(){
         $('#caijing2').html(html2);
     }  
 });
+
 </script>
 @endsection

@@ -8,62 +8,45 @@
             <div class="su_pic">
                 <span>我的头像：</span>
                 <a href="javascript:;"><img src="http://images.ziyawang.com/user/defaltoux.jpg" id="avatar" /></a><span style="width:130px;color:#999;width:185px;">注：点击头像上传(小于1M)</span>
-<script src="{{asset('/org/uploadifive/jquery.uploadifive.min.js')}}" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="{{asset('/org/uploadifive/uploadifive.css')}}">
 <!-- 头像上传 -->
+<script src="{{asset('/org/jqupload/jquery.ui.widget.js')}}"></script>
+<script src="{{asset('/org/jqupload/jquery.iframe-transport.js')}}"></script>
+<script src="{{asset('/org/jqupload/jquery.fileupload.js')}}"></script>
+<div class="ec clearfix">
+    <div class="ec_right upload">
+        <input id="fileupload" type="file" name="files[]" data-url="{{url('/ucenter/upload')}}" multiple>
+        <div id="progress">
+            <div class="bar" style="width: 0%;"></div>
+        </div>
+        <!-- <a style="position: relative; top: 8px;" href="javascript:$('#list_upload').uploadifive('upload')"></a> -->
+    </div>
+</div>
 <style>
-    .uploadifive-button{top: 0px;left: -208px;opacity: 0;}
-    .perfect_info .mr_perfect span em{color: #f00;margin-right: 4px;}
-    #uploadifive-list_upload-queue{display: none;}
-    #uploadifive-list_upload{left: -280px;}
-    #repub{display: block;background: #e48013;width: 120px;text-align: center;height: 30px;line-height: 30px;border-radius: 20px;color: #fff;margin: 35px 0 0 350px;}
+    .bar {
+        height: 18px;
+        background: green;
+    }
 </style>
-            <div class="ec clearfix">
-                <div class="ec_right upload">
-                    <input id="list_upload" name="list_upload" type="file" multiple="true">
-                    <!-- <a style="position: relative; top: 8px;" href="javascript:$('#list_upload').uploadifive('upload')"></a> -->
-                </div>
-            </div>
 
-    <script type="text/javascript">
-        <?php $timestamp = time();?>
-        $(function() {
-
-            var token = $.cookie('token');
-
-            $.ajax({
-                url: 'http://api.ziyawang.com/v1/auth/me?access_token=token&token=' + token,
-                type: 'POST',
-                success:function(msg){
-                    var data = eval(msg);
-                    var picture = data.user.UserPicture;
-                    $('#avatar').attr('src', 'http://images.ziyawang.com'+picture);
-                }
+<script type="text/javascript">
+$(function () {
+    $('#fileupload').fileupload({
+        dataType: 'json',
+        done: function (e, data) {
+            $.each(data.result.files, function (index, file) {
+                $('<p/>').text(file.name).appendTo(document.body);
             });
-
-            $('#list_upload').uploadifive({
-                'buttonText'       : '上传头像',
-                'removeCompleted'  : false,
-                'auto'             : true,
-                'fileSizeLimit'    : 1024,
-                'uploadScript'     : "{{url('/ucenter/upload')}}",
-                'onUploadComplete' : function(file, data) {
-                    console.log(data); 
-                    $('#avatar').attr('src', 'http://images.ziyawang.com'+data);
-                    $.ajax({
-                        url: 'http://api.ziyawang.com/v1/auth/chpicture?access_token=token&token=' + token,
-                        data: {'UserPicture':data},
-                        type: 'POST',
-                        dataType:'json',
-                        success:function(msg){
-                            console.log(msg)
-                        }
-                    });
-                }
-            });
-
-        });
-    </script>
+        },
+        progressall: function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#progress .bar').css(
+                'width',
+                progress + '%'
+            );
+        }
+    });
+});
+</script>
 <!-- 头像上传 -->
             </div>
             <div class="linktel">
@@ -81,7 +64,7 @@
 <script>
     $(function(){
         var phone = $.cookie('phonenumber');
-        phone = phone.replace(/\'/g,"");
+        // phone = phone.replace(/\'/g,"");
         $('#phonenumber').html(phone);
     })
 </script>

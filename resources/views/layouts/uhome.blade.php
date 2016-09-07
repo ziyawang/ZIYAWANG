@@ -71,7 +71,7 @@
 $(function () {
     var token = $.cookie('token');
     if(!token){
-        window.location = "{{url('/login')}}";
+        // window.location = "{{url('/login')}}";
         return false;
     }
 
