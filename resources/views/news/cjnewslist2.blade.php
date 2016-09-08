@@ -35,7 +35,7 @@
     </div>
     <div class="conRight">
         <div class="newsCom">
-            <h2 class="nrc_title"><a href="{{url('/hynews')}}">行业动态</a><span>COMPANY&nbsp;NEWS</span></h2>
+            <h2 class="nrc_title"><a href="{{url('/hynews')}}">行业动态</a><span>INDUSTRY&nbsp;NEWS</span></h2>
             <div class="nrc_fisrt" id="hangye1">
             </div>
             <ul class="nrc_list" id="hangye2">
