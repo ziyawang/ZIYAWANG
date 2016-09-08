@@ -18,7 +18,7 @@
 <div class="content clearfix">
 <!-- 左侧 -->
     <div class="conLeft">
-        <div class="news_bread"><span class="newsIcon"></span>资芽新闻</div>
+        <div class="news_bread"><span class="newsIcon ziya"></span>资芽新闻</div>
         <div class="nl_content">
             <ul id="newslist">
                 
@@ -57,16 +57,13 @@ $(function(){
         var result = window.location.search.substr(1).match(reg);
         return result?decodeURIComponent(result[2]):null;
     }
-
     var urlpage   = getQueryString("startpage")   ? getQueryString("startpage")  : 1;
-
     function LoadFunction() {  
         $("#spec01").html('加载中...');  
     }  
     function erryFunction() {  
         // alert("error");  
     }  
-
     function _queryNews(data) {
         var html = '';
         $.each(data, function (index, item) {  
@@ -75,12 +72,10 @@ $(function(){
             var NewsLogo  = data[index].NewsLogo;        //新闻图片
             var NewsBrief = data[index].NewsBrief;       //新闻简介
             var NewsID    = data[index].NewsID;          //新闻ID
-
             html = html + "<li><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a></li>"
         });
         return html;
     }
-
     //新闻 4个ajax
     $.ajax({  
         url: 'http://api.ziyawang.com/v1/news/list?pagecount=6&NewsLabel=zyxw&access_token=token&startpage=' + urlpage,  
@@ -92,7 +87,6 @@ $(function(){
         error: erryFunction,  //错误执行方法    
         success: news //成功执行方法    
     })
-
     $.ajax({  
         url: 'http://api.ziyawang.com/v1/news/list?pagecount=5&NewsLabel=hydt&access_token=token',  
         type: 'GET',  
@@ -103,7 +97,6 @@ $(function(){
         error: erryFunction,  //错误执行方法    
         success: news2 //成功执行方法    
     }) 
-
     $.ajax({  
         url: 'http://api.ziyawang.com/v1/news/list?pagecount=5&NewsLabel=cjzx&access_token=token',  
         type: 'GET',  
@@ -114,7 +107,6 @@ $(function(){
         error: erryFunction,  //错误执行方法    
         success: news3 //成功执行方法    
     })
-
     function news(tt) {
         var json = eval(tt); //数组 
         var data = json.data;
@@ -131,7 +123,6 @@ $(function(){
         }
         $('.pagination a').click(function(){
             urlpage = parseInt(urlpage);
-
             var fenyepage = $(this).html();
             if(fenyepage == '上一页') {
                 urlpage -= 1;
@@ -146,7 +137,6 @@ $(function(){
         });
         var html = '';
         $.each(data, function (index, item) {
-
             var NewsTitle = data[index].NewsTitle;
             var PublishTime = data[index].PublishTime;
             var NewsAuthor = data[index].NewsAuthor;
@@ -154,36 +144,30 @@ $(function(){
             NewsBrief     = NewsBrief.substr(0,120) + "...";
             var NewsID = data[index].NewsID;
             var NewsLogo = data[index].NewsThumb;      
-
             html = html + "<li><a href='http://ziyawang.com/news/" + NewsID + "' class='nlc_img' title='" + NewsTitle + "'><img src='http://images.ziyawang.com" + NewsLogo + "'/></a><h2 class='nlc_title'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a></h2><span class='nlc_time'>发表于：" + PublishTime + "</span><p class='nlc_abstr'>" + NewsBrief.substr(0,100) + "...</p></li>"
         });
         $('#newslist').html(html);
-
     }  
     function news2(tt) {
         var json = eval(tt); //数组 
         var data = json.data;
         var data1 = data[0];
         var data2 = data.slice(1);        
-
         var html1 = "<a href='http://ziyawang.com/news/" + data1.NewsID + "' class='nrc_img' title='" + data1.NewsTitle + "'><img src='http://images.ziyawang.com" + data1.NewsLogo + "' /></a><h2 class='nlc_title'><a href='http://ziyawang.com/news/" + data1.NewsID + "'>" + data1.NewsTitle + "</a></h2><p class='nrc_abstr'>" + data1.Brief.substr(0,50) + "...</p>"
         var html2 = _queryNews(data2);
         $('#hangye1').html(html1);
         $('#hangye2').html(html2);
     }  
-
     function news3(tt) {
         var json = eval(tt); //数组 
         var data = json.data;
         var data1 = data[0];
         var data2 = data.slice(1);        
-
         var html1 = "<a href='http://ziyawang.com/news/" + data1.NewsID + "' class='nrc_img' title='" + data1.NewsTitle + "'><img src='http://images.ziyawang.com" + data1.NewsLogo + "' /></a><h2 class='nlc_title'><a href='http://ziyawang.com/news/" + data1.NewsID + "'>" + data1.NewsTitle + "</a></h2><p class='nrc_abstr'>" + data1.Brief.substr(0,50) + "...</p>"
         var html2 = _queryNews(data2);
         $('#caijing1').html(html1);
         $('#caijing2').html(html2);
     }  
 });
-
 </script>
 @endsection
