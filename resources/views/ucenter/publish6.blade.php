@@ -23,7 +23,10 @@
                         <option value="质押">质押</option>
                         <option value="租赁">租赁</option>
                         <option value="过桥">过桥</option>
-	        			<option value="信用">信用</option>
+                        <option value="信用">信用</option>
+                        <option value="股权">股权</option>
+                        <option value="担保">担保</option>
+	        			<option value="其他">其他</option>
 	        		</select>
 	        	</div>
         	</div>

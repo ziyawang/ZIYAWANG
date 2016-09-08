@@ -137,7 +137,7 @@
             <div class="cover1" id="type6">
                 <div class="cover_con">
                     <span>方式：</span>
-                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="AssetType">抵押</a><a href="javascript:;" diy="AssetType">质押</a><a href="javascript:;" diy="AssetType">租赁</a><a href="javascript:;" diy="AssetType">过桥</a><a href="javascript:;" diy="AssetType">信用</a></span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="AssetType">抵押</a><a href="javascript:;" diy="AssetType">质押</a><a href="javascript:;" diy="AssetType">租赁</a><a href="javascript:;" diy="AssetType">过桥</a><a href="javascript:;" diy="AssetType">信用</a><a href="javascript:;" diy="AssetType">股权</a><a href="javascript:;" diy="AssetType">担保</a><a href="javascript:;" diy="AssetType">其他</a></span>
                 </div>
             </div>
             <!-- 法律服务 -->
