@@ -464,11 +464,16 @@ $(function () {
         });   
 
         $("#check").click(function(){
+
             checkLogin();
             if(stop){
                 return false;
             }
-            checkService();
+
+            if( TypeID != 13 && TypeID != 15){
+                checkService();
+            }
+
             if(stop){
                 myFun('poplayer1');
                 return false;

@@ -199,10 +199,10 @@ $(function(){
             label = "<span class='newsBlue'>资芽新闻</span>/Company News";
         } else if(NewsLabel == 'cjzx'){
             NewsLabel = '财经资讯';
-            label = "<span class='newsBlue'>财经资讯</span>/FINANCIAL News";
+            label = "<span class='newsBlue'>财经资讯</span>/Financial News";
         } else if(NewsLabel == 'hydt'){
             NewsLabel = '行业动态';
-            label = "<span class='newsBlue'>行业动态</span>/INDUSTRY News";
+            label = "<span class='newsBlue'>行业动态</span>/Industry News";
         }  
         var html = "<h2 class='nd_title'>" + NewsTitle + "</h2> <p class='nd_info'>发表于：" + PublishTime + "&nbsp;&nbsp;&nbsp;&nbsp;阅读：" + ViewCount + "</p> <div class='nd_abstr'><strong>摘要：</strong>" + NewsBrief + "</div> <div class='newsContent'><p class='nd_content'>" + NewsContent + "</p> </div>"
 
