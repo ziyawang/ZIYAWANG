@@ -76,7 +76,7 @@
         </div>
     </div>
     <div class="xTitle">
-        <span>优质服务方</span>共1001条信息
+        <!-- <span>优质服务方</span>共0条信息 -->
     </div>
     <!-- waterfall -->
     <div class="infomation">
