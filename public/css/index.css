@@ -358,7 +358,7 @@ body{overflow-x: hidden;}
 .botbrands{position: absolute;bottom:60px;left:25px;}
 .botbrands a{display:inline-block;margin:0 10px;}
 /*.botbrands .website img{width: 96px;height: 36px;} */
-.botbrands img{opacity: 0.6;width: 110px;height: 40px;}
+.botbrands img{opacity: 0.6;width: 80px;height: 30px;}
 .botbrands a:hover img{opacity: 1;} 
 /*热线位置*/
 
