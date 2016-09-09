@@ -138,7 +138,7 @@ class IndexController extends Controller
     //合同列表
     public function contractList()
     {
-        return view('contractlist');
+        return view('contractlist2');
     }
 
     //合同详情
