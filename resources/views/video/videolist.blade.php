@@ -122,7 +122,8 @@ $(function(){
         var json = eval(tt); //数组 
         var data = json.data;
         // console.log(json)
-        var html = _queryVideo(data);
+        var data1 = data.slice(1);
+        var html = _queryVideo(data1);
         $('#weight').html(html);
         //视频划过
         $('.vc ul li').hover(function(){
