@@ -34,11 +34,11 @@
 	    		<!-- 导航 -->
 	    		<ul class="nav">
 	    			<li class="current"><a href="{{url('/')}}">首页</a>|</li>
-	    			<li><a href="{{url('/project')}}">找信息</a>|</li>
-	    			<li><a href="{{url('/service')}}">找服务</a>|</li>
-	    			<li><a href="{{url('/video')}}">资芽视频</a>|</li>
-	    			<li><a href="{{url('/news')}}">新闻中心</a>|</li>
-	    			<li><a href="{{url('/contract')}}">下载专区</a></li>
+	    			<li><a target="_blank" href="{{url('/project')}}">找信息</a>|</li>
+	    			<li><a target="_blank" href="{{url('/service')}}">找服务</a>|</li>
+	    			<li><a target="_blank" href="{{url('/video')}}">资芽视频</a>|</li>
+	    			<li><a target="_blank" href="{{url('/news')}}">新闻中心</a>|</li>
+	    			<li><a target="_blank" href="{{url('/contract')}}">下载专区</a></li>
 	    		</ul>
 	    		<!-- 登录注册 -->
 	    		<div class="login">

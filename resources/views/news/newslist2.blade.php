@@ -84,7 +84,7 @@ $(function(){
             var NewsBrief = data[index].NewsBrief;       //新闻简介
             var NewsID    = data[index].NewsID;          //新闻ID
 
-            html = html + "<li><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a></li>"
+            html = html + "<li><a target='_blank' href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a></li>"
         });
         return html;
     }
@@ -174,7 +174,7 @@ $(function(){
             var NewsID = data[index].NewsID;
             var NewsLogo = data[index].NewsThumb;      
 
-            html = html + "<li><a href='http://ziyawang.com/news/" + NewsID + "' class='nlc_img' title='" + NewsTitle + "'><img src='http://images.ziyawang.com" + NewsLogo + "'/></a><h2 class='nlc_title'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a></h2><span class='nlc_time'>发表于：" + PublishTime + "</span><p class='nlc_abstr'>" + NewsBrief.substr(0,100) + "...</p></li>"
+            html = html + "<li><a target='_blank' href='http://ziyawang.com/news/" + NewsID + "' class='nlc_img' title='" + NewsTitle + "'><img src='http://images.ziyawang.com" + NewsLogo + "'/></a><h2 class='nlc_title'><a target='_blank' href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a></h2><span class='nlc_time'>发表于：" + PublishTime + "</span><p class='nlc_abstr'>" + NewsBrief.substr(0,100) + "...</p></li>"
         });
         document.title = '新闻中心-资芽网';
         $('#newslist').html(html);
@@ -187,7 +187,7 @@ $(function(){
         var data1 = data[0];
         var data2 = data.slice(1); 
 
-        var html1 = "<a href='http://ziyawang.com/news/" + data1.NewsID + "' class='nrc_img' title='" + data1.NewsTitle + "'><img src='http://images.ziyawang.com" + data1.NewsLogo + "' /></a><h2 class='nlc_title'><a href='http://ziyawang.com/news/" + data1.NewsID + "'>" + data1.NewsTitle + "</a></h2><p class='nrc_abstr'>" + data1.Brief.substr(0,50) + "...</p>"
+        var html1 = "<a target='_blank' href='http://ziyawang.com/news/" + data1.NewsID + "' class='nrc_img' title='" + data1.NewsTitle + "'><img src='http://images.ziyawang.com" + data1.NewsLogo + "' /></a><h2 class='nlc_title'><a target='_blank' href='http://ziyawang.com/news/" + data1.NewsID + "'>" + data1.NewsTitle + "</a></h2><p class='nrc_abstr'>" + data1.Brief.substr(0,50) + "...</p>"
         var html2 = _queryNews(data2);
         $('#ziya1').html(html1);
         $('#ziya2').html(html2);
@@ -199,7 +199,7 @@ $(function(){
         var data1 = data[0];
         var data2 = data.slice(1);        
 
-        var html1 = "<a href='http://ziyawang.com/news/" + data1.NewsID + "' class='nrc_img' title='" + data1.NewsTitle + "'><img src='http://images.ziyawang.com" + data1.NewsLogo + "' /></a><h2 class='nlc_title'><a href='http://ziyawang.com/news/" + data1.NewsID + "'>" + data1.NewsTitle + "</a></h2><p class='nrc_abstr'>" + data1.Brief.substr(0,50) + "...</p>"
+        var html1 = "<a target='_blank' href='http://ziyawang.com/news/" + data1.NewsID + "' class='nrc_img' title='" + data1.NewsTitle + "'><img src='http://images.ziyawang.com" + data1.NewsLogo + "' /></a><h2 class='nlc_title'><a target='_blank' href='http://ziyawang.com/news/" + data1.NewsID + "'>" + data1.NewsTitle + "</a></h2><p class='nrc_abstr'>" + data1.Brief.substr(0,50) + "...</p>"
         var html2 = _queryNews(data2);
         $('#hangye1').html(html1);
         $('#hangye2').html(html2);
@@ -211,7 +211,7 @@ $(function(){
         var data1 = data[0];
         var data2 = data.slice(1);        
 
-        var html1 = "<a href='http://ziyawang.com/news/" + data1.NewsID + "' class='nrc_img' title='" + data1.NewsTitle + "'><img src='http://images.ziyawang.com" + data1.NewsLogo + "' /></a><h2 class='nlc_title'><a href='http://ziyawang.com/news/" + data1.NewsID + "'>" + data1.NewsTitle + "</a></h2><p class='nrc_abstr'>" + data1.Brief.substr(0,50) + "...</p>"
+        var html1 = "<a target='_blank' href='http://ziyawang.com/news/" + data1.NewsID + "' class='nrc_img' title='" + data1.NewsTitle + "'><img src='http://images.ziyawang.com" + data1.NewsLogo + "' /></a><h2 class='nlc_title'><a target='_blank' href='http://ziyawang.com/news/" + data1.NewsID + "'>" + data1.NewsTitle + "</a></h2><p class='nrc_abstr'>" + data1.Brief.substr(0,50) + "...</p>"
         var html2 = _queryNews(data2);
         $('#caijing1').html(html1);
         $('#caijing2').html(html2);
