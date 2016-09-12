@@ -113,30 +113,9 @@
             var html = _queryVideo(data);
             $('#hot').html(html);
             //视频划过
-            // mouseover videonav
-            $('.videoNav li').hover(function(){
-                $('span',this).stop().css('height','5px');
-                $('span',this).animate({
-                    left:'0',
-                    width:'100%',
-                    right:'0'
-                },200);
-            },function(){
-                if($(this).hasClass('current')){
-                    $('span',this).stop().animate({
-                        left:'0',
-                        width:'100%',
-                        right:'0'
-                    },200);
-                }else{
-                    $('span',this).stop().animate({
-                        left:'50%',
-                        width:'0'
-                    },200);
-                }
-            });
+            
             //mouseover shadow
-            $('.bestConLeft,.bestConRight ul li,.hotlistVideo ul li').hover(function() {
+            $('.hotlistVideo ul li').hover(function() {
                 $(this).find('.mask').stop().fadeToggle(500);
             });
         }
@@ -151,6 +130,9 @@
             var html2 = _queryVideo(data2);
             $('#weight').html(html2);
             //视频划过
+            $('.bestConLeft,.bestConRight ul li').hover(function() {
+                $(this).find('.mask').stop().fadeToggle(500);
+            });
         }
         
     });
@@ -176,5 +158,28 @@
             }
         });
     });
+
+    // mouseover videonav
+            $('.videoNav li').hover(function(){
+                $('span',this).stop().css('height','5px');
+                $('span',this).animate({
+                    left:'0',
+                    width:'100%',
+                    right:'0'
+                },200);
+            },function(){
+                if($(this).hasClass('current')){
+                    $('span',this).stop().animate({
+                        left:'0',
+                        width:'100%',
+                        right:'0'
+                    },200);
+                }else{
+                    $('span',this).stop().animate({
+                        left:'50%',
+                        width:'0'
+                    },200);
+                }
+            });
 </script>
 @endsection

@@ -88,7 +88,7 @@
         }
 
         $.ajax({  
-            url: 'http://api.ziyawang.com/v1/video/list?pagecount=8&VideoLabel=zyhhh&access_token=token&startpage=' + urlpage,  
+            url: 'http://api.ziyawang.com/v1/video/list?pagecount=16&VideoLabel=zyhhh&access_token=token&startpage=' + urlpage,  
             type: 'GET',  
             dataType: 'json',  
             timeout: 5000, 

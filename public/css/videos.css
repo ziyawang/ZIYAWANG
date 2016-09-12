@@ -55,7 +55,7 @@
 .scrollDiv{ width:6px;  position:absolute; top:0px; background:#f99e00; border-radius:10px;}
 .viDetailsTitle{float: left;color:#999;font-weight: bold;font-size: 24px;line-height: 70px;letter-spacing: 2px;}
 /*video 详情*/
-.content{width: 1200px;margin:0 auto;padding: 0 0 68px;}
+.content{width: 1200px;margin:0 auto;padding: 0 0 84px;}
 .conLeft{float: left;width: 834px;padding:40px 0 0 0;}
 /*.conLeft .video_box{width: 830px;height: 486px;background:#000;padding:23px 0 0 5px;}
 .conLeft .video_box video{display: block;width: 825px;height: 460px;}
@@ -118,7 +118,7 @@
 .videoNav .shadowBar{height:4px;width: 600px;position: absolute;left: 0;bottom: 0;background:-webkit-linear-gradient(top,#cecdcd,#e6e6e6);background:-ms-linear-gradient(top,#cecdcd,#e6e6e6);background:-moz-linear-gradient(top,#cecdcd,#e6e6e6);background:linear-gradient(top,#cecdcd,#e6e6e6);border-radius: 50px;}
 .videoNav ul {overflow: hidden;}
 .videoNav ul li{ height:74px; line-height:70px; float:left; padding:0 30px;position:relative;margin-right: 10px;}
-.videoNav ul li a{ color:#333;font-size:22px; text-decoration:none;font-weight: bold;}
+.videoNav ul li a{ color:#333;font-size:22px; text-decoration:none;/*font-weight: bold;*/}
 .videoNav ul li a:hover{ color:#333; text-decoration:none;}
 .videoNav ul li span{ display:block; position:absolute; width:0px; height:0px;  top:68px; left:50%;border-radius: 50px;background:-webkit-linear-gradient(top,#ffa000,#fe9f00,#a76700);background:-moz-linear-gradient(top,#ffa000,#fe9f00,#a76700);background:-ms-linear-gradient(top,#ffa000,#fe9f00,#a76700);background:linear-gradient(top,#ffa000,#fe9f00,#a76700);}
 .videoNav ul .current span{background:#ffa000;background:-webkit-linear-gradient(top,#ffa000,#fe9f00,#a76700);background:-ms-linear-gradient(top,#ffa000,#fe9f00,#a76700);background:-moz-linear-gradient(top,#ffa000,#fe9f00,#a76700);background:linear-gradient(top,#ffa000,#fe9f00,#a76700);width: 100%;height: 5px;left: 0;}
@@ -129,7 +129,7 @@
 .videoSearch .videoSearchinp span{position: absolute;top: 20px;right: 5px;width: 34px;height: 34px;border-radius: 50%;background: #ffa000;cursor: pointer;*+top:21px;}
 .videoSearch .videoSearchinp span img{display: block;margin: 8px auto 0;vertical-align: middle;}
 /*精品*/
-.bTitle{padding:0px 0 10px 36px;font-size: 24px;color:#333;letter-spacing: 2px;background:url(../img/good.png) no-repeat 0px 5px;margin:26px 0 10px;}
+.bTitle{padding:0px 0 10px 36px;font-size: 24px;color:#333;letter-spacing: 2px;background:url(../img/good.png) no-repeat 0px 5px;margin:26px 0 10px;font-weight: initial;}
 .bestCon{box-shadow: 0 0 8px #b2b2ae;padding:20px 20px 0;*+border: 1px solid #ccc;*+padding:20px 19px 0;border: 1px solid #ccc\0;padding:20px 19px 0\0;*+padding:20px;}
 .bestConLeft,.bestConRight{float: left;}
 .bestConLeft{width: 574px;}

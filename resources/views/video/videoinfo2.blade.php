@@ -60,7 +60,7 @@
                 </div>
                 <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
                 <a href="javascript:;" class="phone aTags"><i class="iconfont">&#xe60b;</i><span>手机看</span></a>
-                <a href="javascript:;" class="playcount aTags"><i class="iconfont">&#xe616;</i></a>
+                <a href="javascript:;" class="playcount aTags"><i class="iconfont">&#xe616;</i>次播放</a>
             </div>
         </div>
     </div>
@@ -522,9 +522,11 @@ var doc=document;
         $('#title1').html(VideoLabel);
         $('#title2').html(VideoTitle);
         $('.viDetailsConTopLeft').html(html);
-        $('.playcount').html("<i></i>" + ViewCount + "播放");
+        $('.playcount').html("<i class='iconfont'>&#xe616;</i>" + ViewCount + "播放");
         $('#zancount').html(ZanCount);
         $('#videoDes').html("<h3>视频简介</h3>" + VideoDes);
+        document.title = VideoTitle + '_资芽视频-不良资产领域第一视频平台';
+
     }
 });
 
