@@ -216,7 +216,6 @@
     .service_type{width: 900px;}
 </style>
 <script type="text/javascript" src="{{url('/js/select.js')}}"></script>
-<script type="text/javascript" src="{{url('/js/public.js')}}"></script>
 <script src="{{url('/js/Area.js')}}" type="text/javascript"></script>
 <script src="{{url('/js/AreaData_min.js')}}" type="text/javascript"></script>
 <script>
