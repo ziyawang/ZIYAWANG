@@ -140,6 +140,14 @@ $(function(){
     $('.collect').click(function(){
         checkLogin();  
         collect();
+        //收藏
+        if($(this).children('span').html()=='收藏'){
+            $(this).children('i').addClass('red');
+            $(this).children('span').html('已收藏');
+        }else{
+            $(this).children('i').removeClass('red');
+            $(this).children('span').html('收藏');
+        }
     })
     function LoadFunction() {  
         // $("#spec01").html('加载中...');  
