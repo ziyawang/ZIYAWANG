@@ -30,7 +30,7 @@
         <div class="wrap">
                 <div class="guide">
                     <a target="_blank" href="{{url('/ucenter/index')}}" class="personal">个人中心</a>
-                    <a href="" class="ziyaapp">APP下载<span class="ziya_ma"><img src="/img/ziyaapp.png" /></span></a>
+                    <a class="ziyaapp">APP下载<span class="ziya_ma"><img src="/img/ziyaapp.png" /></span></a>
                     <a href="javascript:;" class="weixin1">微信<span class="wx_ma"><img src="/img/wx.jpg" /></span></a>
                     <a href="#" class="weibo1">微博<span class="wb_ma"><img src="/img/wb.png" /></span></a>
                     <a target="_blank" href="{{url('/ucenter/mycollect')}}" class="mycol">我的收藏</a>

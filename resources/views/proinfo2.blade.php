@@ -1,9 +1,9 @@
 @extends('layouts.home')
 
 @section('seo')
-<title>资芽网找信息-海量不良资产信息服务平台</title>
+<title>找信息_不良资产信息平台-资芽网</title>
         <meta name="Keywords" content="资产求购,资产转让,融资需求,委外催收,不良资产信息平台,资芽网" />
-        <meta name="Description" content="资芽网找信息，汇集资产，债权等各类转让信息；保理担保，安全可靠；要催收，尽职调查与悬赏信息不能少，专业法律服务保障强；融资需求急，这里多信息；想要求购资产？还是资芽网找信息" />
+        <meta name="Description" content="资芽网找信息，汇集资产，债权等各类转让信息；商业保理，安全可靠；要催收，尽职调查与悬赏信息不能少，专业法律服务保障强；融资需求急，这里多信息；想要求购资产？还是资芽网找信息" />
 @endsection
 
 @section('content')
@@ -262,7 +262,7 @@ $(function () {
         var CollectFlag   = json.CollectFlag;    //收藏状态
         var RushFlag = json.RushFlag;    //抢单状态
 
-        document.title = TypeName + '-海量不良资产信息服务平台';
+        document.title = TypeName + '_不良资产信息平台-资芽网';
 
 
 

@@ -1,9 +1,9 @@
 @extends('layouts.home')
 
 @section('seo')
-<title>资芽网找服务-海量不良资产处置服务机构</title>
+<title>找服务_不良资产处置服务机构-资芽网</title>
         <meta name="Keywords" content="资产收购,投融资服务,法律服务,催收公司,不良资产处置服务机构,资芽网" />
-        <meta name="Description" content="资芽网找服务，海量处置服务机构任你选，保理担保公司，认证资质；投融资服务，解你资金之急；资产债权收购方，诚心交易；急着催收没途径？催收公司，尽职调查，法律服务，三管齐下，保你债务无忧。" />
+        <meta name="Description" content="资芽网找服务，海量处置服务机构任你选，保理公司，认证资质；投融资服务，解你资金之急；资产债权收购方，诚心交易；急着催收没途径？催收公司，尽职调查，法律服务，三管齐下，保你债务无忧。" />
 @endsection
 
 @section('content')
