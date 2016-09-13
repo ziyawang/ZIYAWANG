@@ -21,7 +21,7 @@
             <a href="{{url('/ucenter/pubpro/9')}}"><span class="sp8"></span>悬赏信息</a>
             <a href="{{url('/ucenter/pubpro/10')}}"><span class="sp9"></span>尽职调查</a>
             <a href="{{url('/ucenter/pubpro/2')}}"><span class="sp10"></span>委外催收</a>
-            <a href="{{url('/ucenter/pubpro/5')}}"><span class="sp11"></span>典当担保</a>
+            <!-- <a href="{{url('/ucenter/pubpro/5')}}"><span class="sp11"></span>典当担保</a> -->
             <a href="{{url('/ucenter/pubpro/15')}}"><span class="sp12"></span>投资需求</a>
         </div>
     </div>

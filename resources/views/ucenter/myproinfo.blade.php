@@ -181,6 +181,8 @@ $(function(){
             var BuyerNature   = ('BuyerNature' in json)   ? json.BuyerNature : null;
             var Informant     = ('Informant' in json)     ? json.Informant : null;
             var Buyer         = ('Buyer' in json)         ? json.Buyer : null;
+            var InvestType    = ('InvestType' in json)    ? json.InvestType : null;
+            var Year          = ('Year' in json)          ? json.Year : null;
 
             switch(TypeID)
                 {
@@ -225,6 +227,10 @@ $(function(){
 
                     case "14":
                         var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>金额：<em class='yellow_color'>" + TotalMoney + "万</em></span><span>地区：" + ProArea + "</span></p><p class='line_info'><span>类型：" + AssetType + "</span><span>转让价：<em class='yellow_color'>" + TransferMoney + "万</em></span></p>";
+                        break;
+
+                    case "15":
+                        var html = "<p class='line_info'><span>编号：" + ProjectNumber + "</span><span>投资方式：" + AssetType + "</span><span>投资类型：" + InvestType + "</span></p><p class='line_info'><span>地区：" + ProArea + "</span><span>预期回报率：" + Rate + "%</span><span>投资期限：" + Year + "年</span></p>";
                         break;
 
                 }

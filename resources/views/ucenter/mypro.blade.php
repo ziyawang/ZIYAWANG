@@ -96,6 +96,8 @@
                 var Informant     = ('Informant' in data[index])     ? data[index].Informant : null;
                 var Buyer         = ('Buyer' in data[index])         ? data[index].Buyer : null;
                 var RushCount     = ('RushCount' in data[index])     ? data[index].RushCount : null;
+                var InvestType    = ('InvestType' in data[index])    ? data[index].InvestType : null;
+                var Year          = ('Year' in data[index])          ? data[index].Year : null;
                 //循环获取数据
                 switch(TypeID)
                 {
@@ -139,6 +141,10 @@
 
                     case "14":
                         var html = "<li><h3>债权转让</h3><div class='myorder'><span class='myorder_icon'><img src='/img/img088.png' /></span><a href='" + url + "' class='myorder_abstr'><span>编号：" + ProjectNumber + "</span><span>类型：" + AssetType + "</span><span>地区：" + ProArea + "</span><span>金额：" + TotalMoney + "万</span><span>转让价：" + TransferMoney + "万</span></a><div class='myorder_info'><span class='ed'><em class='blue'>" + RushCount + "人</em>已抢单</span><span class='many'>浏览数：<i>" + ViewCount + "</i>人</span></div></div><p class='time'>" + PublishTime + "</p>" + PublishState + "</li>";
+                        break;
+
+                    case "15":
+                        var html = "<li><h3>投资需求</h3><div class='myorder'><span class='myorder_icon'><img src='/img/img066.png' height='40' width='40' alt='' /></span><a href='http://ziyawang.com/ucenter/mypro/"+ ProjectID +"' class='myorder_abstr'><span>编号：" + ProjectNumber + "</span><span>投资方式：" + AssetType + "</span><span>投资类型：" + InvestType + "</span><span>地区：" + ProArea + "</span><span>预期回报率：" + Rate + "%</span><span>投资期限：" + Year + "年</span></a><div class='myorder_info'><span class='ed'><em class='blue'>" + RushCount + "人</em>已抢单</span><span class='many'>浏览数：<i>" + ViewCount + "</i>人</span></div></div><p class='time'>" + PublishTime + "</p>" + PublishState + "</li>";
                         break;
                 }
                 $("#list").html($("#list").html() + html);  
@@ -223,6 +229,8 @@ function ajax() {
                 var Informant     = ('Informant' in data[index])     ? data[index].Informant : null;
                 var Buyer         = ('Buyer' in data[index])         ? data[index].Buyer : null;
                 var RushCount     = ('RushCount' in data[index])         ? data[index].RushCount : null;
+                var InvestType    = ('InvestType' in data[index])    ? data[index].InvestType : null;
+                var Year          = ('Year' in data[index])          ? data[index].Year : null;
                 //循环获取数据
                 switch(TypeID)
                 {
@@ -266,6 +274,10 @@ function ajax() {
 
                     case "14":
                         var html = "<li><h3>资产求购</h3><div class='myorder'><span class='myorder_icon'><img src='/img/img088.png' /></span><a href='" + url + "' class='myorder_abstr'><span>编号：" + ProjectNumber + "</span><span>类型：" + AssetType + "</span><span>地区：" + ProArea + "</span><span>金额：" + TotalMoney + "万</span><span>转让价：" + TransferMoney + "万</span></a><div class='myorder_info'><span class='ed'><em class='blue'>" + RushCount + "人</em>已抢单</span><span class='many'>浏览数：<i>" + ViewCount + "</i>人</span></div></div><p class='time'>" + PublishTime + "</p>" + PublishState + "</li>";
+                        break;
+
+                    case "15":
+                        var html = "<li><h3>投资需求</h3><div class='myorder'><span class='myorder_icon'><img src='/img/img066.png' height='40' width='40' alt='' /></span><a href='http://ziyawang.com/ucenter/mypro/"+ ProjectID +"' class='myorder_abstr'><span>编号：" + ProjectNumber + "</span><span>投资方式：" + AssetType + "</span><span>投资类型：" + InvestType + "</span><span>地区：" + ProArea + "</span><span>预期回报率：" + Rate + "%</span><span>投资期限：" + Year + "年</span></a><div class='myorder_info'><span class='ed'><em class='blue'>" + RushCount + "人</em>已抢单</span><span class='many'>浏览数：<i>" + ViewCount + "</i>人</span></div></div><p class='time'>" + PublishTime + "</p>" + PublishState + "</li>";
                         break;
 
                 }
