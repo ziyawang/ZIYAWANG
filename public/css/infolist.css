@@ -50,6 +50,7 @@
 .itemTopLeft .pledge{background:url(../img/icons.png) no-repeat -170px -50px;}/*典当*/
 .itemTopLeft .financing{background:url(../img/icons.png) no-repeat -226px -50px;}/*融资信息*/
 .itemTopLeft .guarantee{width:59px;background:url(../img/icons.png) no-repeat -282px -50px;}/*担保*/
+.itemTopLeft .invest{width:59px;background:url(../img/icons.png) no-repeat 3px -105px;;}/*投资需求*/
 .btnOrange em b{padding-left: 1em;}
 .itemTopLeft b{font-weight: normal;color:#999;font-size: 12px;display: block;width: 56px;text-align: center;}
 .itemTopLeft .guarant{width:59px;}
