@@ -85,12 +85,12 @@ $(function () {
 </script>
 <!-- 登录退出状态 -->
                 <ul class="nav">
-                    <li id="index"><a target="_blank" href="{{url('/')}}">首页</a>|</li>
-                    <li id="project"><a target="_blank" href="{{url('/project')}}">找信息</a>|</li>
-                    <li id="service"><a target="_blank" href="{{url('/service')}}">找服务</a>|</li>
-                    <li id="video"><a target="_blank" href="{{url('/video')}}">资芽视频</a>|</li>
-                    <li id="news"><a target="_blank" href="{{url('/news')}}">新闻中心</a>|</li>
-                    <li id="contract"><a target="_blank" href="{{url('/contract')}}">下载专区</a></li>
+                    <li id="index"><a href="{{url('/')}}">首页</a>|</li>
+                    <li id="project"><a href="{{url('/project')}}">找信息</a>|</li>
+                    <li id="service"><a href="{{url('/service')}}">找服务</a>|</li>
+                    <li id="video"><a href="{{url('/video')}}">资芽视频</a>|</li>
+                    <li id="news"><a href="{{url('/news')}}">新闻中心</a>|</li>
+                    <li id="contract"><a href="{{url('/contract')}}">下载专区</a></li>
                 </ul>
                 <div class="login after">
                     <h1 class="logo"><a href="{{url('/')}}"><img src="/img/logo2.png" height="79" width="205" alt="首页" /></a></h1>
