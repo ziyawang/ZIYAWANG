@@ -21,7 +21,7 @@
         <script type="text/javascript" src="{{url('/js/jquery.pagination.js')}}"></script>
         
     <script src="http://libs.cncdn.cn/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script>
-    <script>
+<script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");

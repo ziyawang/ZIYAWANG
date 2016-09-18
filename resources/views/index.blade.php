@@ -114,8 +114,8 @@
 					<ul>
 						<li><a href="{{url('/project?TypeID=1')}}">资产包转让</a><a href="{{url('/project?TypeID=13')}}">资产求购</a><a href="{{url('/project?TypeID=10')}}">尽职调查</a></li>
 						<li><a href="{{url('/project?TypeID=14')}}">债权转让</a><a href="{{url('/project?TypeID=6')}}">融资需求</a><a href="{{url('/project?TypeID=2')}}">委外催收</a></li>
-						<li><a href="{{url('/project?TypeID=12')}}">固产转让</a><a href="{{url('/project?TypeID=3')}}">法律服务</a><a href="{{url('/project?TypeID=5&AssetType=典当')}}">典当信息</a></li>
-						<li><a href="{{url('/project?TypeID=4')}}">商业保理</a><a href="{{url('/project?TypeID=9')}}">悬赏信息</a><a href="{{url('/project?TypeID=5&AssetType=担保')}}">担保信息</a></li> 
+						<li><a href="{{url('/project?TypeID=12')}}">固产转让</a><a href="{{url('/project?TypeID=3')}}">法律服务</a><!-- <a href="{{url('/project?TypeID=5&AssetType=典当')}}">典当信息</a> --><a href="{{url('/project?TypeID=15')}}">投资需求</a></li>
+						<li><a href="{{url('/project?TypeID=4')}}">商业保理</a><a href="{{url('/project?TypeID=9')}}">悬赏信息</a><!-- <a href="{{url('/project?TypeID=5&AssetType=担保')}}">担保信息</a> --></li> 
 					</ul>
 				</div>
 				<div class="classify_right">
