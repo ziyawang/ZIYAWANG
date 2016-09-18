@@ -144,7 +144,7 @@
                         break;
 
                     case "15":
-                        var html = "<li><h3>投资需求</h3><div class='myorder'><span class='myorder_icon'><img src='/img/img066.png' height='40' width='40' alt='' /></span><a href='http://ziyawang.com/ucenter/mypro/"+ ProjectID +"' class='myorder_abstr'><span>编号：" + ProjectNumber + "</span><span>投资方式：" + AssetType + "</span><span>投资类型：" + InvestType + "</span><span>地区：" + ProArea + "</span><span>预期回报率：" + Rate + "%</span><span>投资期限：" + Year + "年</span></a><div class='myorder_info'><span class='ed'><em class='blue'>" + RushCount + "人</em>已抢单</span><span class='many'>浏览数：<i>" + ViewCount + "</i>人</span></div></div><p class='time'>" + PublishTime + "</p>" + PublishState + "</li>";
+                        var html = "<li><h3>投资需求</h3><div class='myorder'><span class='myorder_icon'><img src='/img/img088.png' /></span><a href='" + url + "' class='myorder_abstr'><span>编号：" + ProjectNumber + "</span><span>投资方式：" + AssetType + "</span><span>投资类型：" + InvestType + "</span><span>地区：" + ProArea + "</span><span>预期回报率：" + Rate + "%</span><span>投资期限：" + Year + "年</span></a><div class='myorder_info'><span class='ed'><em class='blue'>" + RushCount + "人</em>已抢单</span><span class='many'>浏览数：<i>" + ViewCount + "</i>人</span></div></div><p class='time'>" + PublishTime + "</p>" + PublishState + "</li>";
                         break;
                 }
                 $("#list").html($("#list").html() + html);  
@@ -277,7 +277,7 @@ function ajax() {
                         break;
 
                     case "15":
-                        var html = "<li><h3>投资需求</h3><div class='myorder'><span class='myorder_icon'><img src='/img/img066.png' height='40' width='40' alt='' /></span><a href='http://ziyawang.com/ucenter/mypro/"+ ProjectID +"' class='myorder_abstr'><span>编号：" + ProjectNumber + "</span><span>投资方式：" + AssetType + "</span><span>投资类型：" + InvestType + "</span><span>地区：" + ProArea + "</span><span>预期回报率：" + Rate + "%</span><span>投资期限：" + Year + "年</span></a><div class='myorder_info'><span class='ed'><em class='blue'>" + RushCount + "人</em>已抢单</span><span class='many'>浏览数：<i>" + ViewCount + "</i>人</span></div></div><p class='time'>" + PublishTime + "</p>" + PublishState + "</li>";
+                        var html = "<li><h3>投资需求</h3><div class='myorder'><span class='myorder_icon'><img src='/img/img088.png' /></span><a href='" + url + "' class='myorder_abstr'><span>编号：" + ProjectNumber + "</span><span>投资方式：" + AssetType + "</span><span>投资类型：" + InvestType + "</span><span>地区：" + ProArea + "</span><span>预期回报率：" + Rate + "%</span><span>投资期限：" + Year + "年</span></a><div class='myorder_info'><span class='ed'><em class='blue'>" + RushCount + "人</em>已抢单</span><span class='many'>浏览数：<i>" + ViewCount + "</i>人</span></div></div><p class='time'>" + PublishTime + "</p>" + PublishState + "</li>";
                         break;
 
                 }
