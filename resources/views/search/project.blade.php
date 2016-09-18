@@ -109,6 +109,8 @@ $(function(){
         var Member        = ('Member' in data[index])        ? data[index].Member : null;
         var NewFlag       = ('NewFlag' in data[index])       ? data[index].NewFlag : null;
         var CollectFlag   = ('CollectFlag' in data[index])   ? data[index].CollectFlag : null;
+        var InvestType    = ('InvestType' in data[index])    ? data[index].InvestType : null;
+        var Year          = ('Year' in data[index])          ? data[index].Year : null;
         var noImg = '';
         if(PictureDes1.length < 1){
             noImg = 'noImg'
@@ -170,6 +172,10 @@ $(function(){
 
             case "14":
             var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='equitableAssignment'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>债权转让</a>" + newinfo + "</h2><p><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='totalPoint'><span class='btnOrange'><i class='iconfont'>&#xe60c;</i><em>总金额</em></span><strong>" + TotalMoney + "万</strong></p><p class='keyPoint'><span class='btnBlue'><i class='iconfont transfer'>&#xe608;</i><em>转让价</em></span><strong>" + TransferMoney + "万</strong></p><p class='remarks'><span>地区：" + ProArea + "</span></p><p class='remarks'><span>类型：" + AssetType + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+            break;
+
+            case "15":
+            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='invest'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>投资需求</a>" + newinfo + "</h2><p><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='totalPoint'><span class='btnOrange' style='width:118px;background:url(../img/btn01.png) no-repeat 0 -137px'><i class='iconfont transfer rewardRadio'>&#xe609;</i><em>预期回报率</em></span><strong>" + Rate + "%</strong></p><p class='keyPoint'><span class='btnYellow' style='background:url(../img/btn01.png) no-repeat 0 -170px'><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;投资期限</em></span><strong>" + Year + "年</strong></p><p class='remarks'><span>地区：" + ProArea + "</span></p><p class='remarks'><span>投资方式：" + InvestType + "</span></p><p class='remarks'><span>投资类型：" + AssetType + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
             break;
         }
         return html;
