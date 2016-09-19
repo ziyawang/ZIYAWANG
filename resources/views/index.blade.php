@@ -23,7 +23,7 @@
                     <a href="#" class="weibo1">微博<span class="wb_ma"><img src="/img/wb.png" /></span></a>
                     <a target="_blank" href="{{url('/ucenter/mycollect')}}" class="mycol">我的收藏</a>
                 </div>
-                <div class="brum_login">
+                <div class="brum_login" style="display:none">
                         <a href="{{url('/login')}}" class="viplog" target="_blank">会员登录</a>
                         <a href="{{url('/register')}}" class="freereg" target="_blank">免费注册</a>
                 </div>
@@ -41,8 +41,8 @@
 	    			<li><a href="{{url('/contract')}}">下载专区</a></li>
 	    		</ul>
 	    		<!-- 登录注册 -->
-	    		<div class="login">
-	    			<h1 class="logo"><a href="{{url('/')}}"><img src="/img/logo2.png" height="79" width="205" alt="首页" /></a></h1>
+	    		<div class="login" style="display:none">
+	    			<h1 class="logo"><a href="{{url('/')}}"><img src="/img/logo2.png" height="79" width="205" title="首页" /></a></h1>
 	    			<p class="logo_word">全球不良资产超级综服平台</p>
 	    			<div class="login_tab" style="position: relative;">
 	    				<span class="red" style="position: absolute;top:-20px;left:15px;color:#f00;"></span>
@@ -169,7 +169,7 @@
 <!--资芽视频-->
 	<div class="video">
 		<div class="wrap video_content">
-			<h3 class="new_more"><img src="/img/video_title.png" alt="资芽视频" /><a href="http://ziyawang.com/video">更多&nbsp;&gt;&gt;</a></h3>
+			<h3 class="new_more"><img src="/img/video_title.png" title="资芽视频" /><a href="http://ziyawang.com/video">更多&nbsp;&gt;&gt;</a></h3>
 </h3>
 			<div class="ul_video">
 				<ul id="video">
@@ -479,11 +479,13 @@ $(function () {
         $('.after_login').show();
         $('#phone').text(phonenumber);
         $('.login').addClass('after');
+        $('.login').show();
     } else {
         $('#unlogin').show();
         $('.brum_login').show();
         $('.after_login').hide();
         $('.personal').hide();
+        $('.login').show();
     }
 
     function _queryService(data) {
@@ -628,7 +630,7 @@ $(function () {
             var VideoTitle = data[index].VideoTitle;       //视频标题
             var VideoLogo  = data[index].VideoThumb;  	//视频图片
             var VideoID    = data[index].VideoID;  	    //视频ID
-            html = html + "<li class='videoli" + index + "'><a href='http://ziyawang.com/video/" + VideoID + "' target='_blank'><img src='http://images.ziyawang.com" + VideoLogo + "' /><span>" + VideoTitle + "</span><img class='pause' src='/img/play.png'></a></li>";
+            html = html + "<li class='videoli" + index + "'><a href='http://ziyawang.com/video/" + VideoID + "' target='_blank'><img title='" + VideoTitle + "' src='http://images.ziyawang.com" + VideoLogo + "' /><span>" + VideoTitle + "</span><img class='pause' src='/img/play.png'></a></li>";
         });
         return html;
     }
@@ -644,23 +646,23 @@ $(function () {
             switch(index)
                 {
                     case 0:
-                        html = html + "<li class='li1'><div class='n1 news_com'><div class='news_complete'><img src='http://images.ziyawang.com" + NewsLogo + "' /><a class='news_com_content' href='http://ziyawang.com/news/" + NewsID + "'><span>" + NewsTitle + "</span><p>" + NewsBrief.substr(0,100) + "</p></a><a href='http://ziyawang.com/news/" + NewsID + "' class='details'></a></div></div></li>";
+                        html = html + "<li class='li1'><div class='n1 news_com'><div class='news_complete'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com" + NewsLogo + "' /></a><a class='news_com_content' href='http://ziyawang.com/news/" + NewsID + "'><span>" + NewsTitle + "</span><p>" + NewsBrief.substr(0,100) + "</p></a><a href='http://ziyawang.com/news/" + NewsID + "' class='details'></a></div></div></li>";
                         break;
 
                     case 1:
-                    	html = html + "<li class='li2'><div class='n1'><div class='news_top m20'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,90) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div><div class='news_bottom'><a href='http://ziyawang.com/news/" + NewsID + "'><img src='http://images.ziyawang.com/" + NewsLogo + "' /><span>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
+                    	html = html + "<li class='li2'><div class='n1'><div class='news_top m20'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,90) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div><div class='news_bottom'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /><span>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
                     	break;
 
                    	case 2:
-                    	html = html + "<li class='li3'><div class='n1'><div class='news_bottom m20'><a href='http://ziyawang.com/news/" + NewsID + "'><img src='http://images.ziyawang.com/" + NewsLogo + "' /><span class='little_video'>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details white_details'></a></div><div class='news_top'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,80) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
+                    	html = html + "<li class='li3'><div class='n1'><div class='news_bottom m20'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /><span class='little_video'>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details white_details'></a></div><div class='news_top'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,80) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
                     	break;
 
                     case 3:
-                    	html = html +  "<li class='li4'><div class='n1 news_com'><div class='news_complete'><img src='http://images.ziyawang.com/" + NewsLogo + "' /><a class='news_com_content' href='http://ziyawang.com/news/" + NewsID + "'><span>" + NewsTitle + "</span><p>" + NewsBrief.substr(0,80) + "</p></a><a href='http://ziyawang.com/news/" + NewsID + "' class='details'></a></div></div></li>";
+                    	html = html +  "<li class='li4'><div class='n1 news_com'><div class='news_complete'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /></a><a class='news_com_content' href='http://ziyawang.com/news/" + NewsID + "'><span>" + NewsTitle + "</span><p>" + NewsBrief.substr(0,80) + "</p></a><a href='http://ziyawang.com/news/" + NewsID + "' class='details'></a></div></div></li>";
                     	break;
 
                     case 4:
-                    	html = html + "<li class='li5'><div class='n1'><div class='news_bottom m20'><a href='http://ziyawang.com/news/" + NewsID + "'><img src='http://images.ziyawang.com/" + NewsLogo + "' /><span class='little_video'>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details white_details'></a></div><div class='news_top'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,80) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
+                    	html = html + "<li class='li5'><div class='n1'><div class='news_bottom m20'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /><span class='little_video'>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details white_details'></a></div><div class='news_top'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,80) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
                     	break;
                 }
         });

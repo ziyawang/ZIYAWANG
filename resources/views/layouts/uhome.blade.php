@@ -29,7 +29,7 @@
                     <a href="#" class="weibo1">微博<span class="wb_ma"><img src="/img/wb.png" /></span></a>
                     <a target="_blank" href="{{url('/ucenter/mycollect')}}" class="mycol">我的收藏</a>
                 </div>
-                <div class="brum_login">
+                <div class="brum_login" style="display:none">
                         <a href="{{url('/login')}}" class="viplog" target="_blank">会员登录</a>
                         <a href="{{url('/register')}}" class="freereg" target="_blank">免费注册</a>
                 </div>
