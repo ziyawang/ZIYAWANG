@@ -1,6 +1,10 @@
 ﻿var area_array=[];
 var sub_array=[];
 area_array[0] = "请选择";
+area_array[10]="全国";
+sub_array[10]=[];
+sub_array[10][0]="请选择";
+sub_array[10][1000]="不限";
 area_array[11]="北京市";
 sub_array[11]=[];
 sub_array[11][0]="请选择";
