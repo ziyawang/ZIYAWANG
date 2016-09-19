@@ -80,7 +80,7 @@
                 var VideoLogo  = data[index].VideoLogo;     //视频图片
                 var VideoID    = data[index].VideoID;       //视频ID
                 var ViewCount  = data[index].ViewCount;       //播放次数
-                html = html + "<li> <div class='videoLiPic'> <a href='http://ziyawang.com/video/" + VideoID + "' class='videoLiPicAsign' title='" + VideoTitle + "'><img class='videoImg' src='http://images.ziyawang.com" + VideoLogo + "' /></a> <a href='http://ziyawang.com/video/" + VideoID + "' class='mask'></a> <span class='s_shadow'></span> </div> <div class='videoLiTitle'> <a href='http://ziyawang.com/video/" + VideoID + "' title='" + VideoTitle + "'>" + VideoTitle + "</a> <span>已播放" + ViewCount + "次</span> </div> </li>";
+                html = html + "<li> <div class='videoLiPic'> <a href='http://ziyawang.com/video/" + VideoID + "' class='videoLiPicAsign' title='" + VideoTitle + "'><img class='videoImg' title='" + VideoTitle + "' src='http://images.ziyawang.com" + VideoLogo + "' /></a> <a href='http://ziyawang.com/video/" + VideoID + "' class='mask'></a> <span class='s_shadow'></span> </div> <div class='videoLiTitle'> <a href='http://ziyawang.com/video/" + VideoID + "' title='" + VideoTitle + "'>" + VideoTitle + "</a> <span>已播放" + ViewCount + "次</span> </div> </li>";
             });
             return html;
         }
@@ -124,7 +124,7 @@
             var json = eval(tt); //数组 
             var data = json.data;
             var data1 = data[0];
-            var html1 = "<div class='bestVideo'> <a href='http://ziyawang.com/video/" + data1.VideoID + "' class='bigVideo' title='" + data1.VideoTitle + "'><img class='videoImg' src='http://images.ziyawang.com" + data1.VideoLogo + "' /></a> <a href='http://ziyawang.com/video/" + data1.VideoID + "' class='mask'></a> <span class='b_shadow'></span> </div> <div class='bestVideoTitle'> <a href='http://ziyawang.com/video/" + data1.VideoID + "' class='bigVideoTitle' title='" + data1.VideoTitle + "'>" + data1.VideoTitle + "</a> <span>已播放" + data1.ViewCount + "次</span> </div>";
+            var html1 = "<div class='bestVideo'> <a href='http://ziyawang.com/video/" + data1.VideoID + "' class='bigVideo' title='" + data1.VideoTitle + "'><img class='videoImg' title='" + data1.VideoTitle + "' src='http://images.ziyawang.com" + data1.VideoLogo + "' /></a> <a href='http://ziyawang.com/video/" + data1.VideoID + "' class='mask'></a> <span class='b_shadow'></span> </div> <div class='bestVideoTitle'> <a href='http://ziyawang.com/video/" + data1.VideoID + "' class='bigVideoTitle' title='" + data1.VideoTitle + "'>" + data1.VideoTitle + "</a> <span>已播放" + data1.ViewCount + "次</span> </div>";
             $('#bestvideo').html(html1);
             var data2 = data.slice(1);
             var html2 = _queryVideo(data2);

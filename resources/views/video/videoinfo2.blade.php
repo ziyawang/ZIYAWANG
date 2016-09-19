@@ -163,7 +163,7 @@ $(function(){
             var VideoLogo  = data[index].VideoLogo;     //视频图片
             var VideoID    = data[index].VideoID;       //视频ID
             var ViewCount  = data[index].ViewCount;       //播放次数
-            html = html + "<li class='videoli0'><a href='http://ziyawang.com/video/" + VideoID + "' class='imgBox'><img src='http://images.ziyawang.com/" + VideoLogo + "'></a><a href='http://ziyawang.com/video/" + VideoID + "' class='vr_title'>" + VideoTitle + "</a><p class='bofang'>已播放" + ViewCount + "次</p></li>";
+            html = html + "<li class='videoli0'><a href='http://ziyawang.com/video/" + VideoID + "' class='imgBox'><img title='" + VideoTitle + "' src='http://images.ziyawang.com/" + VideoLogo + "'></a><a href='http://ziyawang.com/video/" + VideoID + "' class='vr_title'>" + VideoTitle + "</a><p class='bofang'>已播放" + ViewCount + "次</p></li>";
         });
         return html;
     }
@@ -177,7 +177,7 @@ $(function(){
             var VideoID    = data[index].VideoID;       //视频ID
             var ViewCount  = data[index].ViewCount;       //播放次数
             // html = html + "<li class='videoli0'><a href='http://ziyawang.com/video/" + VideoID + "' class='imgBox'><img src='http://images.ziyawang.com/" + VideoLogo + "'></a><a href='http://ziyawang.com/video/" + VideoID + "' class='vr_title'>" + VideoTitle + "</a><p class='bofang'>已播放" + ViewCount + "次</p></li>";
-            html = html + "<li class='listSmall'> <div class='listSmallCon clearfix'> <div class='lscLeft'> <a href='http://ziyawang.com/video/" + VideoID + "' class='lscLeftImg' title='" + VideoTitle + "'> <img src='http://images.ziyawang.com/" + VideoThumb + "' /> <p class='borderOn'></p> </a> </div> <div class='lscRight'> <h2><a href='http://ziyawang.com/video/" + VideoID + "' title='" + VideoTitle + "'>" + VideoTitle + "</a></h2> <p class='playTimes'>已播放" + ViewCount + "次</p> </div> </div> </li>";
+            html = html + "<li class='listSmall'> <div class='listSmallCon clearfix'> <div class='lscLeft'> <a href='http://ziyawang.com/video/" + VideoID + "' class='lscLeftImg' title='" + VideoTitle + "'> <img title='" + VideoTitle + "' src='http://images.ziyawang.com/" + VideoThumb + "' /> <p class='borderOn'></p> </a> </div> <div class='lscRight'> <h2><a href='http://ziyawang.com/video/" + VideoID + "' title='" + VideoTitle + "'>" + VideoTitle + "</a></h2> <p class='playTimes'>已播放" + ViewCount + "次</p> </div> </div> </li>";
         });
         return html;
     }
@@ -518,7 +518,7 @@ var doc=document;
         var ZanCount = json.ZanCount;      
         var VideoLink = json.VideoLink;  
         var VideoID = window.location.pathname.replace(/[^0-9]/ig,"");    
-        var html = "<video poster='http://images.ziyawang.com" + VideoLogo + "' src='http://videos.ziyawang.com" + VideoLink + "' controls='controls' preload='auto'></video>";
+        var html = "<video title='" + VideoTitle + "' poster='http://images.ziyawang.com" + VideoLogo + "' src='http://videos.ziyawang.com" + VideoLink + "' controls='controls' preload='auto'></video>";
         $('#title1').html(VideoLabel);
         $('#title2').html(VideoTitle);
         $('.viDetailsConTopLeft').html(html);

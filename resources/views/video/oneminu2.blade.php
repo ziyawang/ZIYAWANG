@@ -82,7 +82,7 @@
                 var VideoLogo  = data[index].VideoLogo;     //视频图片
                 var VideoID    = data[index].VideoID;       //视频ID
                 var ViewCount  = data[index].ViewCount;       //播放次数
-                html = html + "<li> <div class='videoLiPic'> <a href='http://ziyawang.com/video/" + VideoID + "' class='videoLiPicAsign' title='" + VideoTitle + "'><img class='videoImg' src='http://images.ziyawang.com" + VideoLogo + "' /></a> <a href='http://ziyawang.com/video/" + VideoID + "' class='mask'></a> <span class='s_shadow'></span> </div> <div class='videoLiTitle'> <a href='http://ziyawang.com/video/" + VideoID + "' title='" + VideoTitle + "'>" + VideoTitle + "</a> <span>已播放" + ViewCount + "次</span> </div> </li>";
+                html = html + "<li> <div class='videoLiPic'> <a href='http://ziyawang.com/video/" + VideoID + "' class='videoLiPicAsign' title='" + VideoTitle + "'><img class='videoImg' title='" + VideoTitle + "' src='http://images.ziyawang.com" + VideoLogo + "' /></a> <a href='http://ziyawang.com/video/" + VideoID + "' class='mask'></a> <span class='s_shadow'></span> </div> <div class='videoLiTitle'> <a href='http://ziyawang.com/video/" + VideoID + "' title='" + VideoTitle + "'>" + VideoTitle + "</a> <span>已播放" + ViewCount + "次</span> </div> </li>";
             });
             return html;
         }

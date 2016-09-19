@@ -175,7 +175,7 @@ $(function () {
                 //     ServiceType = ServiceType.substr(0,10) + '...';
                 // }
                 var ServiceID = data[index].ServiceID;    //服务商ID
-                $("#match").html($("#match").html() + "<li><div class='reconTop'><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconTopTitle'>" + ServiceName + "</a><div class='cue'><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></div></div><a href='http://ziyawang.com/service/" + ServiceID + "' class='recImg'><img src='http://images.ziyawang.com" + ConfirmationP1 + "' /></a><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconDescription'>" + ServiceIntroduction + "</a><div class='reconBottom'><span class='reconBottomCon'>服务类型</span>" + ServiceType + "</div><a href='http://ziyawang.com/service/" + ServiceID + "' class='lookMore'>查看内容&nbsp;&gt;</a></li>"); 
+                $("#match").html($("#match").html() + "<li><div class='reconTop'><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconTopTitle'>" + ServiceName + "</a><div class='cue'><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></div></div><a href='http://ziyawang.com/service/" + ServiceID + "' class='recImg'><img title='" + ServiceName + "' src='http://images.ziyawang.com" + ConfirmationP1 + "' /></a><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconDescription'>" + ServiceIntroduction + "</a><div class='reconBottom'><span class='reconBottomCon'>服务类型</span>" + ServiceType + "</div><a href='http://ziyawang.com/service/" + ServiceID + "' class='lookMore'>查看内容&nbsp;&gt;</a></li>"); 
             });           
                    
         } //成功执行方法    
@@ -260,15 +260,15 @@ $(function () {
         $('.secondary').html(secondary);
         $("#ServiceIntroduction").html(ServiceIntroduction);
         if(ConfirmationP1.length >0 ) {
-            $('#ConfirmationP1').attr('src', 'http://images.ziyawang.com'+ConfirmationP1).show();
+            $('#ConfirmationP1').attr('src', 'http://images.ziyawang.com'+ConfirmationP1).attr('title', ServiceName).show();
         } else {
             $('#Confirmation').addClass('noImg');
         }
         if(ConfirmationP2.length >0 ) {
-            $('#ConfirmationP2').attr('src', 'http://images.ziyawang.com'+ConfirmationP2).show();
+            $('#ConfirmationP2').attr('src', 'http://images.ziyawang.com'+ConfirmationP2).attr('title', ServiceName).show();
         }
         if(ConfirmationP3.length >0 ) {
-            $('#ConfirmationP3').attr('src', 'http://images.ziyawang.com'+ConfirmationP3).show();
+            $('#ConfirmationP3').attr('src', 'http://images.ziyawang.com'+ConfirmationP3).attr('title', ServiceName).show();
         }
         var token = $.cookie('token');
         var ServiceID = window.location.pathname.replace(/[^0-9]/ig,"");
@@ -386,7 +386,7 @@ $('#change').click(function(){
                 //     ServiceType = ServiceType.substr(0,10) + '...';
                 // }
                 var ServiceID = data[index].ServiceID;    //服务商ID
-                $("#match").html($("#match").html() + "<li><div class='reconTop'><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconTopTitle'>" + ServiceName + "</a><div class='cue'><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></div></div><a href='http://ziyawang.com/service/" + ServiceID + "' class='recImg'><img src='http://images.ziyawang.com" + ConfirmationP1 + "' /></a><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconDescription'>" + ServiceIntroduction + "</a><div class='reconBottom'><span class='reconBottomCon'>服务类型</span>" + ServiceType + "</div><a href='http://ziyawang.com/service/" + ServiceID + "' class='lookMore'>查看内容&nbsp;&gt;</a></li>"); 
+                $("#match").html($("#match").html() + "<li><div class='reconTop'><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconTopTitle'>" + ServiceName + "</a><div class='cue'><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></div></div><a href='http://ziyawang.com/service/" + ServiceID + "' class='recImg'><img title='" + ServiceName + "' src='http://images.ziyawang.com" + ConfirmationP1 + "' /></a><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconDescription'>" + ServiceIntroduction + "</a><div class='reconBottom'><span class='reconBottomCon'>服务类型</span>" + ServiceType + "</div><a href='http://ziyawang.com/service/" + ServiceID + "' class='lookMore'>查看内容&nbsp;&gt;</a></li>"); 
             });           
                    
         } //成功执行方法    
