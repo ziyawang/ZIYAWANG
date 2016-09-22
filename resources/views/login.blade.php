@@ -67,7 +67,7 @@ var _hmt = _hmt || [];
     		var password = $(".sec_pwd").val();
 
     		// $(this).prop('disabled',true);
-    		$(this).val('登陆中...');
+    		$(this).val('登录中...');
     		$.ajax({
     			url:"http://api.ziyawang.com/v1/ie/auth/login",
     			// url:"http://api.ziyawang.com/v1/auth/login",
@@ -102,7 +102,7 @@ var _hmt = _hmt || [];
 	    		var password = $(".sec_pwd").val();
 
 	    		// $(this).prop('disabled',true);
-	    		$('#login').val('登陆中...');
+	    		$('#login').val('登录中...');
 	    		$.ajax({
 	    			url:"http://api.ziyawang.com/v1/ie/auth/login",
 	    			// url:"http://api.ziyawang.com/v1/auth/login",
