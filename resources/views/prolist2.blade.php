@@ -301,7 +301,7 @@ $(function(){
         var ProjectNumber = data[index].ProjectNumber;
         var PublishTime   = data[index].PublishTime;
         var ProArea       = data[index].ProArea;
-            ProArea       = ProArea.substr(0,3);
+            ProArea       = ProArea.split('-')[0];
         var WordDes       = data[index].WordDes;        
         if(WordDes.length > 36){
             WordDes       = WordDes.substr(0,33) + '...';

@@ -1,0 +1,577 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>用户中心</title>
+     <script type="text/javascript">document.domain="58.com";</script>
+<link rel="stylesheet" type="text/css" href="//c.58cdn.com.cn/ucenter/my/css/user_center_new_v20160815215421.css">
+<script type="text/javascript" src="//j1.58cdn.com.cn/ucenter/my/js/jquery-1.7.2.min_v20160426172207.js"></script>
+<link rel="shortcut icon" href="//img.58cdn.com.cn/n/tuan/v3/favicon.ico?v=20160516" type="image/x-icon" />
+
+<script type="text/javascript">try { var ____json4fe = { catentry: { dispid: '', name: '', listname: '39' }, locallist: { dispid: '1', name: '北京', listname: 'bj' }, modules: 'my'} } catch (e) { };</script>
+<script type="text/javascript" src="//j1.58cdn.com.cn/ucenter/my/js/boot_mypage_new_v20160526145147.js"></script>
+<script type="text/javascript" src="//j1.58cdn.com.cn/ucenter/my/js/topbar_new_v20160815200008.js"></script>
+<link rel="stylesheet" href="//c.58cdn.com.cn/ucenter/my/css/slide_btn_v20160422155919.css" />
+<link rel="stylesheet" href="//c.58cdn.com.cn/ucenter/my/css/alert_v20160530160030.css"/>
+<link rel="stylesheet" type="text/css" href="//c.58cdn.com.cn/ucenter/my/css/jiugongge_v20160504152302.css" />
+
+<script> var win = new GetToolTipWindow('tooltipdiv', 'keyword', '3', '1', '', true, 4); win.setSearchButton('searchbtn');</script>
+<script type="text/javascript">
+       function displayPhoneAlias(infoId, alias) {
+            var html = $('#phone_alias_button_' + infoId).html();
+            $.ajax('//my.58.com/phonealias/display/' + infoId + "/" + alias,{
+                dataType: 'json',
+                type: 'POST',
+                beforeSend: function(){$('#phone_alias_button_' + infoId).html('处理中...')},
+                error: function(){
+                    alert('显示失败');
+                    $('#phone_alias_button_' + infoId).html(html);
+                },
+                success: function(json) {
+                    if(json && json.code == 0) {
+                        $('#pao_container_' + infoId).html('小号：' + alias);
+                        $('#phone_alias_button_' + infoId).fadeOut();
+                    }else {
+                        alert('显示失败:' + json.msg);
+                        $('#phone_alias_button_' + infoId).html(html);
+                    }
+                }
+            });
+        }
+       
+
+      
+       
+</script>
+
+<script type="text/javascript">
+
+jQuery(function($){
+
+	//左侧菜单
+	$(".leftmenu-content li").click(function(){
+			var $subnav = $(this).children("ul");
+			var menu_id =  $(this).attr("id").substr(4);
+			var closed_menu_id = Cookie.getCookie(53914508 + "_closed_menu_id"); //cookie中获取折叠状态的左侧菜单，cookie值的格式为-menuId-menuId-menuId-
+			var opened_menu_id = Cookie.getCookie(53914508 + "_opened_menu_id"); //cookie中获取展开状态的左侧菜单，cookie值的格式为-menuId-menuId-menuId-
+			if($subnav && $subnav.is(":visible")){
+				//折叠菜单
+												
+				//cookie closed_menu_id中记录要折叠的菜单的menuId
+				if(closed_menu_id){//有已折叠状态的左侧菜单
+					if(closed_menu_id.indexOf("-"+ menu_id + "-")<0){
+						Cookie.setCookie(53914508 + "_closed_menu_id",closed_menu_id + menu_id +"-",{expireDays:30,path:"/",domain:"my.58.com"});
+				  }
+				}else{//没有已折叠状态的左侧菜单
+					  Cookie.setCookie(53914508 + "_closed_menu_id","-"+menu_id+ "-",{expireDays:30,path:"/",domain:"my.58.com"});
+				}
+				
+				//从cookie opened_menu_id中删除要折叠的菜单的menuId
+				if(opened_menu_id && opened_menu_id.indexOf("-" + menu_id + "-")>=0){
+					if(opened_menu_id.split("-"+menu_id+"-")[0] + "-" + opened_menu_id.split("-"+menu_id+"-")[1] == "-"){//判断cookie中的最后一个menuId
+						Cookie.setCookie(53914508 + "_opened_menu_id","",{expireDays:30,path:"/",domain:"my.58.com"});
+					}else{
+						Cookie.setCookie(53914508 + "_opened_menu_id",opened_menu_id.split("-"+menu_id+"-")[0] + "-" + opened_menu_id.split("-"+menu_id+"-")[1],{expireDays:30,path:"/",domain:"my.58.com"});
+					}
+				}
+			
+			}else{
+				 				 				
+				//从cookie中删除要展开的菜单的menuId
+					if(closed_menu_id && closed_menu_id.indexOf("-" + menu_id + "-")>=0){
+						if(closed_menu_id.split("-"+menu_id+"-")[0] + "-" + closed_menu_id.split("-"+menu_id+"-")[1] == "-"){//判断cookie中的最后一个menuId
+							Cookie.setCookie(53914508 + "_closed_menu_id","",{expireDays:30,path:"/",domain:"my.58.com"});
+						}else{
+							Cookie.setCookie(53914508 + "_closed_menu_id",closed_menu_id.split("-"+menu_id+"-")[0] + "-" + closed_menu_id.split("-"+menu_id+"-")[1],{expireDays:30,path:"/",domain:"my.58.com"});
+						}
+					}
+					
+					//cookie closed_menu_id中记录要展开的菜单的menuId
+					if(opened_menu_id){//有已展开状态的左侧菜单
+						if(opened_menu_id.indexOf("-"+ menu_id + "-")<0){
+							Cookie.setCookie(53914508 + "_opened_menu_id",opened_menu_id + menu_id +"-",{expireDays:30,path:"/",domain:"my.58.com"});
+					  }
+					}else{//没有已折叠状态的左侧菜单
+						  Cookie.setCookie(53914508 + "_opened_menu_id","-"+menu_id+ "-",{expireDays:30,path:"/",domain:"my.58.com"});
+					}
+				
+			}
+	});
+	
+	$(".leftmenu-content li a ").click(function(){
+		$("li").removeClass("li1-selected");
+		$(".leftmenu-content-ul li").removeClass("li-selected");
+		$(".leftmenu-content-slide-li1").removeClass("li1-selected");
+		$(".leftmenu-content-li2").removeClass("li1-selected");
+		var ul_temp = $(this).parent("li").parent("ul").attr("class");
+		if(ul_temp == "leftmenu-content-ul")
+			$(this).parent("li").addClass("li-selected");
+		else
+			$(this).parent("li").addClass("li1-selected");
+		$("#currentmenu_name").text("");
+		$("#currentmenu_name").append($(this).text());
+	});
+	
+})
+
+
+/**
+	*COOKIE相关 add by bsrn  
+	*
+*/
+ 
+		var Cookie=new Object();
+		var Cookie={
+			setCookie:function(){},
+			getCookie:function(){},
+			deleteCookie:function(){}
+		}
+		//setCookie
+		//name是要设置cookie的名字，value是要设置的值
+		//option 包括其他选项，是一个对象参数
+		Cookie.setCookie=function(name,value,option){
+			//用于存储负值给document.cookie的cookie格式字符串
+			var str=name+"="+escape(value);
+			if(option){
+				//如果设置了过期时间
+				if(option.expireDays){
+					var date=new Date();
+					var ms=option.expireDays*24*3600*1000;
+					date.setTime(date.getTime()+ms);
+					str+=";expires="+date.toGMTString();
+				}
+				if(option.path)str+=";path="+option.path;//设置访问路径
+				if(option.domain)str+=";domain="+option.domain;//设置访问主机
+				if(option.secure)str+=";true";//设置安全性
+			}
+			document.cookie=str;
+		}
+		//实现取Cookie值的方法
+		//name是指定Cookie的名字
+		Cookie.getCookie=function(cookieName){
+		var reg=new RegExp(cookieName+"=([^;]*);?");
+		if(reg.test(document.cookie)){
+			return decodeURIComponent(RegExp.$1);
+		}		
+	}
+		//实现删除Cookie 的方法
+		//name是指定的Cookie名称， 通过将expireDays属性指定为负数
+		Cookie.deleteCookie=function(name){
+			this.setCookie(name,"",{expireDays:-1,path:"/"});//将过期时间设置为过去来删除Cookie			
+			
+
+		}
+</script>
+
+     <script type="text/javascript">	 
+			var hashurl =  window.location.hash;
+			var menuurl="";
+			var menuReg=/^\/pro\/\w{2,30}\/(\w{1,30}\/)?$/; 
+			try{
+				if(hashurl!="" && hashurl.indexOf("#")>=0){
+					menuurl= decodeURI( hashurl.split("#")[1]);	 
+					if(menuurl!="" && menuurl.match(menuReg)){			
+						window.location.href=menuurl;
+					}
+				}			 
+			 }
+			catch(e){}			
+				
+			function getSubframe(){
+	            return document.getElementById("ContainerFrame");
+	        }
+			
+            function stateChangeIE(_frame) {
+                if (_frame.readyState == "complete") { ResizeFrame(_frame); }
+            }
+            var oldheight=0;
+            
+            function Statistics(){
+           		var hashurl =  window.location.hash;
+           		var statUrl;
+           		
+           		if(hashurl.split("#")[1]==undefined){
+           			url = window.location.href;
+           			statUrl =url.substring(url.indexOf("/pro")).split("?")[0];
+           		}else{
+           			statUrl = hashurl.split("#")[1];
+           		}
+           		try{
+               		_gaq.push(['_trackEvent', 'my', 'menu',statUrl]);
+           	 	}catch(e){}	
+            }
+            
+            function ResizeFrame(iframe) {
+                try {
+                	iframe=iframe||getSubframe();    
+                    	var height = Math.max(iframe.contentWindow.document.body.scrollHeight, iframe.contentWindow.document.documentElement.scrollHeight);
+                	
+                	height=Math.max(750,height);
+                    if(oldheight!=height){
+                		iframe.style.height = height + "px";
+                    }
+                    oldheight=height;
+                }
+                catch (ex) {}
+            }
+            setInterval("ResizeFrame()",1000);
+            
+            function isIE10(){
+			　　var flag = false;
+			　　try{
+			　　　　if(window.matchMedia("screen and (-ms-high-contrast: active), (-ms-high-contrast: none)").matches){
+			　　　　　　flag = true;
+			　　　　}
+			　　}catch(e){ }
+			
+			　　return flag;
+			}
+  </script>
+</head>
+<body>
+
+
+<!--顶部用户工具栏-->
+    <!--水平导航栏-->
+    <div id="topbar"></div>
+    <script>
+        boot.require('business.topbar',
+                function (frame, topbar) {
+                    topbar.init();
+                })
+    </script>
+     <!--水平导航栏-->
+    <div class="header-guide">
+        <div class="header-container">
+        	<img src="//img.58cdn.com.cn/logo/58/180_46/uc_logo.gif" onclick="window.open('http://www.58.com');clickLog('from=my_logo');" style="cursor:pointer" />
+            <ul class="header-ul" id="header-ul">
+            	             	 				 <li >
+					<a class="a1" href="/index?r=0.29780348832415426" target="_self" onclick="clickLog('from=my_tab_center')">个人中心</a>
+				 </li>
+				 			 	             	             	 <li >
+                    <div id="account-setting">
+                        <div class="account-setting-div"><a class="a1 header-li-dropdown" href="/pro/zhanghaoset/?r=0.44241849682206824" onclick="clickLog('from=my_tab_account')">账户设置<i class="icon"></i></a></div>
+                        <div class="account-dropdown-div" style="display:none">
+                            <div>
+                                <p class="title">安全设置</p>
+                                <p><a href="/pro/safeset/password" onclick="clickLog('from=my_tab_account_changepassword')">修改登录密码</a></p>
+                                <p><a href="/pro/safeset/authmobile" onclick="clickLog('from=my_tab_account_bindphone')">手机绑定</a></p>
+                                <p><a href="/pro/safeset/authmail" onclick="clickLog('from=my_tab_account_bindemail')">邮箱绑定</a></p>
+                            </div>
+                            <div>
+                                <p class="title">个人资料</p> 
+                                <p><a href="/pro/userdata" onclick="clickLog('from=my_tab_account_changephoto')">修改头像昵称</a></p>
+                                <p><a href="/pro/mycredit" onclick="clickLog('from=my_tab_account_credit')">信用明细</a></p>
+                                <p><a href="/pro/safeset/privacySet" onclick="clickLog('from=my_tab_account_setprivacy')">隐私保护</a></p>
+                            </div>
+                            <div class="last">
+                                <p class="title">账号绑定</p>
+                                <p><a href="/userbindlist" onclick="clickLog('from=my_tab_account_bindqq')">QQ</a></p>
+                                <p><a href="/userbindlist" onclick="clickLog('from=my_tab_account_bindsina')">新浪微博</a></p>
+                                <p><a href="/userbindlist" onclick="clickLog('from=my_tab_account_bindalipay')">支付宝</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            	 			 	             	 				 <li  class="header-selected" >
+					<a class="a1" href="/pro/balance/?r=0.8411417491999177" target="_self" onclick="clickLog('from=my_tab_fund')">我的资金</a>
+				 </li>
+				 			 	             
+            </ul>
+            <div class="header-search-div">
+                <form onsubmit="b_query();return false;">
+			        <div class="header-input-div" id="searchbar">
+			                        <span id="key">
+			                            <input type="text" id="keyword" name="key" class="header-input" onblur="win.closeToolTipWindow();" placeholder="搜索" autocomplete="off" onkeyup="win.GetContentData();"/>
+			                        </span>
+			            <input type="submit" class="header-input-search-bt" id="searchbtn" value="" onclick="clickLog('from=my_top_search_btn')">
+			        </div>
+			    </form>
+                
+                <a class="header-bt" href="http://post.58.com/t/" onclick="clickLog('from=my_post_btn');" target="_blank">发布信息</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="uc-content-div">
+	<script type="text/javascript">
+function gotoFuncPage(menuUrl,funcId,name,content){
+	var tj_log = "from=" + content ;
+	clickLog(tj_log);
+	 if($("#ContainerFrame").length>0){		 
+		 $("#ContainerFrame").attr("src","/func/"+funcId + "?r=" + Math.random());
+		 window.location.href="#"+menuUrl;
+		 window.title="58同城-"+name;
+		 document.title="58同城-"+name;		
+	 }else{		
+		 window.location.href=menuUrl+ "?r=" + Math.random();
+	 }	
+}
+</script>
+
+        <!--左侧垂直导航栏-->
+        <div class="leftmenu-div">
+            <div class="leftmenu-content">
+                <div class="leftmenu-content-header">
+                    <a href="/pro/balance/?r=0.8411417491999177"><span>我的资金</span></a>
+                </div>
+                <ul class="leftmenu-content-ul" >
+                            	              	<li class="leftmenu-content-slide-li" id="menu64"  onclick="clickLog('from=my_left_fund_jyb')">
+             	<span>58交易宝</span><i  				 		class="icon up"
+				    ></i>
+             		<ul class="leftmenu-content-ul1" 				 		style="display:block; position:relative;" 
+				    >
+             		              		 		                	<li id="menu67" >
+	                		                	<a id="47" 
+						 onclick="gotoFuncPage('/pro/balance/0/','47','我的交易宝','my_left_jyb_myjyb');" 
+						>						<span>我的交易宝</span>
+						</a>
+						
+												</li>
+					             		 		                	<li id="menu68" >
+	                		                	<a id="48" 
+						 onclick="gotoFuncPage('/pro/balanceflow/0/','48','交易宝明细','my_left_jyb_jybmx');" 
+						>						<span>交易宝明细</span>
+						</a>
+						
+												</li>
+					             		 		                	<li id="menu69" >
+	                		                	<a id="49" 
+						 onclick="gotoFuncPage('/pro/rechargeindex/0/','49','交易宝充值','my_left_jyb_jybcz');" 
+						>						<span>交易宝充值</span>
+						</a>
+						
+												</li>
+										</ul>
+	                </li>
+                              	             	              	<li class="leftmenu-content-slide-li" id="menu65"  onclick="clickLog('from=my_left_fund_yue')">
+             	<span>58余额</span><i  				    	class="icon up"
+				 	></i>
+             		<ul class="leftmenu-content-ul1" 				    	style="display:block; position:relative;"
+				 	>
+             		              		 		                	<li id="menu70" >
+	                		                	<a id="50" 
+						 onclick="gotoFuncPage('/pro/balance/1/','50','我的58余额','my_left_yue_myyue');" 
+						>						<span>我的58余额</span>
+						</a>
+						
+												</li>
+					             		 		                	<li id="menu71" >
+	                		                	<a id="51" 
+						 onclick="gotoFuncPage('/pro/balanceflow/1/','51','58余额明细','my_left_yue_yuemx');" 
+						>						<span>58余额明细</span>
+						</a>
+						
+												</li>
+					             		 		                	<li id="menu72"  class="li1-selected"  >
+	                		                	<a id="52" 
+						 onclick="gotoFuncPage('/pro/rechargeindex/1/','52','58余额充值','my_left_yue_yuecz');" 
+						>						<span>58余额充值</span>
+						</a>
+						
+												</li>
+										</ul>
+	                </li>
+                              	             	              	<li class="leftmenu-content-slide-li" id="menu66"  onclick="clickLog('from=my_left_fund_tg')">
+             	<span>推广余额</span><i  				 		class="icon up"
+				 	></i>
+             		<ul class="leftmenu-content-ul1" 				 		style="display:block; position:relative;"
+				 	>
+             		              		 		                	<li id="menu73" >
+	                		                	<a id="53" 
+						 onclick="gotoFuncPage('/pro/mybid/','53','我的推广余额','my_left_tg_mytg');" 
+						>						<span>我的推广余额</span>
+						</a>
+						
+												</li>
+					             		 		                	<li id="menu74" >
+	                		                	<a id="54" 
+						 onclick="gotoFuncPage('/pro/bidflow/','54','推广余额明细','my_left_tg_tgmx');" 
+						>						<span>推广余额明细</span>
+						</a>
+						
+												</li>
+					             		 		                	<li id="menu75" >
+	                		                	<a id="55" 
+						 onclick="gotoFuncPage('/pro/bidpay/','55','推广余额充值','my_left_tg_tgcz');" 
+						>						<span>推广余额充值</span>
+						</a>
+						
+												</li>
+					             		 		                	<li id="menu76" >
+	                		                	<a id="56" 
+						 onclick="gotoFuncPage('/pro/yueyxq/','56','余额有效期','my_left_tg_yueyxq');" 
+						>						<span>余额有效期</span>
+						</a>
+						
+												</li>
+					             		 		                	<li id="menu77" >
+	                		                	<a id="57" 
+						 onclick="gotoFuncPage('/pro/mycoupon/','57','我的优惠券','my_left_tg_coupon');" 
+						>						<span>我的优惠券</span>
+						</a>
+						
+												</li>
+										</ul>
+	                </li>
+                              	             	              	<li class="leftmenu-content-slide-li" id="menu106"  onclick="clickLog('from=my_left_fund_invoice')">
+             	<span>我的发票</span><i  				 		class="icon up"
+				 	></i>
+             		<ul class="leftmenu-content-ul1" 				 		style="display:block; position:relative;"
+				 	>
+             		              		 		                	<li id="menu150" >
+	                		                	<a id="119" 
+						 onclick="gotoFuncPage('/pro/invoiceindex/','119','发票管理','my_left_invoice_index');" 
+						>						<span>发票管理</span>
+						</a>
+						
+												</li>
+										</ul>
+	                </li>
+                              	              	 </ul>
+             	<div class="leftmenu-content-header tuiguang">
+                    <a onclick="clickLog('from=my_left_tgzx')" class="pointer" href="//tuiguang.58.com" target="_blank">推广中心</a>
+                    <i class="icon"></i>
+                </div>
+                <div class="leftmenu-life-tool-div">
+                    <div class="leftmenu-title">生活工具</div>
+                </div>
+                <div class="leftmenu-life-content">
+                    <div class="leftmenu-life-item">
+                    <a href="http://tools.58.com/phone.shtml" target="_blank" onclick="clickLog('from=my_tool_telphonefee');">
+                        <span class="icon phone"></span>
+                        <span>话费</span>
+                    </a>
+                    </div>
+                    <div class="leftmenu-life-item">
+                    <a href="http://tools.58.com/game.shtml" target="_blank" onclick="clickLog('from=my_tool_gamecard');">
+                        <span class="icon card"></span>
+                        <span>点卡</span>
+                    </a>
+                    </div>
+                    <div class="leftmenu-life-item">
+                    <a href="http://lieche.58.com/" target="_blank" onclick="clickLog('from=my_tool_train');">
+                        <span class="icon train"></span>
+                        <span>火车</span>
+                    </a>
+                    </div>
+                    <div class="leftmenu-life-item">
+                    <a href="http://jipiao.58.com/" target="_blank" onclick="clickLog('from=my_tool_airplane');">
+                        <span class="icon plane"></span>
+                        <span>飞机</span>
+                    </a>
+                    </div>
+                    <div class="leftmenu-life-item">
+                    <a href="http://tools.58.com/traffic.shtml" target="_blank" onclick="clickLog('from=my_tool_breakrules');">
+                        <span class="icon breakrule"></span>
+                        <span>违章</span>
+                    </a>
+                    </div>
+                    <div class="leftmenu-life-item">
+                    <a href="http://www.58.com/jdyd/" target="_blank" onclick="clickLog('from=my_tool_hotel');">
+                        <span class="icon hotel"></span>
+                        <span>酒店</span>
+                    </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="rightmenu-div">
+        	<a class="tousu-bt" href="http://about.58.com/feedback.html" target="_blank"  onclick="clickLog('from=my_complain');"></a>
+            <span id="currentmenu_name">58余额充值</span>
+
+        <iframe id="ContainerFrame" name="ContainerFrame"  onreadystatechange="stateChangeIE(this)"
+            onload="ResizeFrame(this);Statistics()"  scrolling="no"
+				frameborder="0" width="815px" height="750px"
+				src="//paycenter.58.com/rechargeindex?tab=1&PGTID=0d000000-0000-0702-382e-696f630e5ede&ClickID=1&r=0.3530369936021215"></iframe>
+    </div>
+    </div>
+<div class="footer">
+    <span class="blk">© 58.com</span>
+    <span class="red"><a href="http://about.58.com" target="_blank">联系客服</a></span>
+</div>
+<div class="syn_wx_mask"></div>
+<div class="syn_wx_con">
+	<a class="syn_wx_close" title="关闭"></a>
+	<div class="syn_wx_code"><img src=""></div>
+</div>
+<div id="job_doalog_mask" class="fe_window_mask" style=" position: fixed; height:100%; width:100%; _position:absolute;display: none"></div>
+<div id="job_doalog_content" class="fe_window" style=" display: none; left: 50%; margin: -135px 0px 0px -260px; top: 45%;">
+<div class="outer">
+	<div class="frame" style="width: 520px; height: 270px; padding: 8px;"></div>
+	<div class="contains" style="width: 520px; height: 270px; top: 8px; left: 8px;">
+		<div class="topbar" style="height: 34px;"><a id="job_doalog_closebtn" target="_self" class="closebtn" href="javascript:void(0);"></a><span id="fe_window_5990_title" class="title" style="">帖子刷新提示</span></div>
+		<iframe frameborder="0" onload="" class="fe_window_iframe" style="height: 236px; width: 100%; display: block;" scrolling="no" id="fe_window_5990_iframe" src="//j1.58cdn.com.cn/ucenter/my/html/codebck_v1.html" visible="false"></iframe>
+	</div>
+</div>
+</div>
+<!-- 孙悟空项目添加：删除帖子的弹窗 -->
+    <div id="swk-bg" class="swk-bg"></div>
+    <div id="swk-del" class="swk-del">
+        <span class="swk-close-btn"></span>
+        <dl>
+            <dt></dt>
+            <dd class="swk-p1">确定要删除吗？信息删除后</dd>
+            <dd class="swk-p2">发帖所付费用将在7个工作日内退还！</dd>
+            <dd class="swk-p3">确定删除本条信息吗？</dd>
+        </dl>
+        <div class="swk-delbtn clear">
+            <span class="swk-dbtn">确定</span><span class="swk-delcalcle">取消</span>
+        </div>
+    </div>
+<!-- 刷新按钮在某些类型帖子下弹窗不同提示 -->
+	<div class="zz-dl">
+	    <span class="zz-close-btn"></span>
+	    <p class="first-p">二手功能已失效，请下载58二手新产品</p>
+	    <p>——<span class="colore96">转转</span>发布商品，成交更快！</p>
+	    <img src="http://img.58cdn.com.cn/ershou/zz_erweima.png" alt="转转二维码" width="155" height="166" />
+	</div><div class="jgg-content" style="display:none">
+   <i id="jggClose" class="jgg-close"></i>
+   <input id="captcha_infoid" type="hidden" value="">
+   <input id="captcha_mobile" type="hidden" value="">
+   <input id="captcha_validateCodeKey" type="hidden" value="">
+   <div id="jggYzm" style="display:none">
+        <input id="captcha_type" type="hidden" name="captcha_type" value="600">
+        <input id="captcha_input" class="cptrHidden action_color" type="text" name="captcha_input" maxlength="6">
+        <span id="jggTitle" class="jgg-title"></span>
+        <div class="jgg-input-div"><input type="text" class="jgg-input" placeholder="请点击九宫格数字"></div>
+
+        <span id="jggTipSpan" class="jgg-tip-span" placeholder="请点击九宫格数字">请根据信息内容点击下面的图片<span id="jggResend" class="jgg-resend" style="display:none">重新获取</span><span id="jggTipCountSpan" class="jgg-tip-count-span">(<span id="timeCount"></span>秒后可重新发送)</span></span>
+        <table id="sqrTable" class="character">
+            <tbody>
+            <tr>
+                <td class="r1c1"></td>
+                <td class="r1c2"></td>
+                <td class="r1c3"></td>
+            </tr>
+            <tr>
+                <td class="r2c1"></td>
+                <td class="r2c2"></td>
+                <td class="r2c3"></td>
+            </tr>
+            <tr>
+                <td class="r3c1"></td>
+                <td class="r3c2"></td>
+                <td class="r3c3"></td>
+            </tr>
+            </tbody>
+        </table>
+        <a id="jggSubmit" class="jgg-submit">提交</a>
+    </div>
+    <div id="jggAudio" style="display:none">
+            <span id="jggAudioTitle" class="jgg-title">您发送的请求太多，客服一会儿会给你打电话，请提前想好怎么解释</span><a id="jggAudioUrl" href="javascript:void(0);" onclick="getAudioCaptcha();" style="color: #2c61cc;">获取验证码</a>
+            <span id="jggAudioTipCountSpan" class="jgg-tip-count-span">(<span id="audio-timeCount"></span>秒后可重新发送)</span>
+            <input type="text" id="jggAudioInput" class="jgg-audio-input">
+            <a id="jggAudioSubmit" class="jgg-audio-submit">确定</a>
+    </div>
+</div>   
+</body>
+<script type="text/javascript" src="//j1.58cdn.com.cn/ui7/post/pc/infoID4Pay_v20160817211355.js"></script>
+<script type="text/javascript" src="//j1.58cdn.com.cn/ucenter/my/js/user_center_new_v20160422160654.js"></script>
+<script type="text/javascript" src="//tracklog.58.com/referrer4.js"></script>
+<script type="text/javascript" src="//j1.58cdn.com.cn/ucenter/my/js/9gongge_v20160422160544.js"></script>
+</html>
