@@ -21,6 +21,15 @@
     </div>
 </div>
 <script type="text/javascript" src="{{url('/js/js.KinerCode.js')}}"></script>
+<script>
+$(function(){
+    var token = $.cookie('token');
+    if(!token){
+        window.location = "{{url('/login')}}";
+        return false;
+    }
+})
+</script>
 <script type="text/javascript">
     var inp = document.getElementById('inputCode');
     var code = document.getElementById('code');

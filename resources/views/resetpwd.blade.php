@@ -92,14 +92,14 @@ $(function(){
                 alert('两次密码不一样！');
                 return false;
             }
-            $(this).val('登陆中...');
+            $(this).val('登录中...');
             $.ajax({
                 url:"http://api.ziyawang.com/v1/ie/auth/resetpwd",
                 type:"GET",
                 data:"phonenumber=" + phonenumber + "&password=" + password + "&smscode=" + smscode + "&access_token=token",
                 // dataType:'json',
                 success:function(msg){
-                    alert(1);
+                    alert('重置密码成功');
                     console.log(msg);
                     if(msg.token){
                         var date = new Date();
