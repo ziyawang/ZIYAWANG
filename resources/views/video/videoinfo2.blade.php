@@ -9,6 +9,7 @@
 <link type="text/css" rel="stylesheet" href="{{url('/css/videos.css')}}" />
 <script src="{{asset('/js/fingerprint.js')}}"></script>
 <script src="{{asset('/js/jquery.md5.js')}}"></script>
+<script src="{{asset('/org/layer/layer.js')}}"></script>
 <!-- 二级banner -->
 <div class="find_service">
     <ul>
@@ -488,7 +489,7 @@ var doc=document;
 
     function video(tt) {
         var json = eval(tt); //数组 
-        console.log(json)
+        // console.log(json)
         var VideoTitle = json.VideoTitle;
         var VideoDes = json.VideoDes;
         var VideoLogo = json.VideoLogo;
@@ -676,6 +677,9 @@ $('#video1').bind('contextmenu',function() { return false; });
                         var count = parseInt($('.dianzan').children('span').html());
                         count++;
                         $('.dianzan').children('span').html(count);
+                    } else {
+                        // layer.msg('您已经点过赞啦~');
+                        layer.tips('您已经点过赞啦~', '.dianzan');
                     }
                 }
             });
@@ -699,6 +703,9 @@ $('#video1').bind('contextmenu',function() { return false; });
                         var count = parseInt($('.dianzan').children('span').html());
                         count++;
                         $('.dianzan').children('span').html(count);
+                    } else {
+                        // layer.msg('您已经点过赞啦~');
+                        layer.tips('您已经点过赞啦~', '.dianzan');
                     }
                 }
             });
