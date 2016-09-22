@@ -650,19 +650,31 @@ $(function () {
                         break;
 
                     case 1:
-                    	html = html + "<li class='li2'><div class='n1'><div class='news_top m20'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,90) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div><div class='news_bottom'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /><span>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
+                    	html = html + "<li class='li2'><div class='n1'><div class='news_top m20'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,90) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div>";
                     	break;
 
-                   	case 2:
-                    	html = html + "<li class='li3'><div class='n1'><div class='news_bottom m20'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /><span class='little_video'>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details white_details'></a></div><div class='news_top'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,80) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
+                    case 2:
+                    	html = html + "<div class='news_bottom'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /><span>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
                     	break;
 
-                    case 3:
-                    	html = html +  "<li class='li4'><div class='n1 news_com'><div class='news_complete'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /></a><a class='news_com_content' href='http://ziyawang.com/news/" + NewsID + "'><span>" + NewsTitle + "</span><p>" + NewsBrief.substr(0,80) + "</p></a><a href='http://ziyawang.com/news/" + NewsID + "' class='details'></a></div></div></li>";
+                   	case 3:
+                    	html = html + "<li class='li3'><div class='n1'><div class='news_bottom m20'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /><span class='little_video'>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details white_details'></a></div>";
                     	break;
 
                     case 4:
-                    	html = html + "<li class='li5'><div class='n1'><div class='news_bottom m20'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /><span class='little_video'>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details white_details'></a></div><div class='news_top'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,80) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
+                    	html = html + "<div class='news_top'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,80) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
+                    	break;
+
+                    case 5:
+                    	html = html +  "<li class='li4'><div class='n1 news_com'><div class='news_complete'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /></a><a class='news_com_content' href='http://ziyawang.com/news/" + NewsID + "'><span>" + NewsTitle + "</span><p>" + NewsBrief.substr(0,80) + "</p></a><a href='http://ziyawang.com/news/" + NewsID + "' class='details'></a></div></div></li>";
+                    	break;
+
+                    case 6:
+                    	html = html + "<li class='li5'><div class='n1'><div class='news_bottom m20'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /><span class='little_video'>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details white_details'></a></div>";
+                    	break;
+
+                    case 7:
+                    	html = html + "<div class='news_top'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,80) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
                     	break;
                 }
         });
@@ -1183,7 +1195,7 @@ $(function () {
 //     }
 //新闻 3个ajax
 	$.ajax({  
-        url: 'http://api.ziyawang.com/v1/news/list?pagecount=5&NewsLabel=zyxw&weight=1&access_token=token',  
+        url: 'http://api.ziyawang.com/v1/news/list?pagecount=8&NewsLabel=zyxw&weight=1&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
