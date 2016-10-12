@@ -1,0 +1,47 @@
+.find_service ul li{background:#ffda3f url(../img/junior_banner.jpg) no-repeat center top;height: 296px;overflow: hidden;}
+.revisionCon{width: 1230px; margin: 0 auto; background: url(../img/r_shadow.png) repeat-y right 0;}
+.revisionCon .ucLeft{min-height: 502px;}
+.revisionCon .ucleftMiddle{height: 74px;background:none;padding:22px 0 0;}
+.revisionImg{margin:0 auto;display: block;}
+.revisionCon .revisionList li a{width: 164px;padding-left: 6px;text-align: center;}
+.revisionTitle{border-bottom: 3px solid #c0c0c0; margin-top: 62px; font-weight: normal; color: #333; width: 892px;}
+.revisionTitle span{width: 108px;padding-left:25px;height: 32px;line-height: 32px;display: block;font-size: 18px;color:#333;letter-spacing: 3px;background:-webkit-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:-moz-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:-ms-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:-o-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:linear-gradient(top,#efefef,#f4f4f4,#ffffff);border:1px solid #c2c2c2;border-bottom: 0 none;border-radius: 10px 10px 0 0;box-shadow: 0 2px 0 #fff inset;}
+.revAbout{margin-top: 30px;padding: 14px 20px; width: 850px; border: 1px solid #c2c2c2; border-radius: 10px; position: relative; color: #333; font-size: 18px; line-height: 36px;letter-spacing: 1px;}
+.infoText{text-align: justify;}
+.revAbout:before{border: 16px solid transparent; border-bottom-color: #c2c2c2; position: absolute; top: -32px; left: 57px; content: ""; border-left-width: 8px; border-right-width: 8px;}
+.revAbout:after{border: 17px solid transparent; border-bottom-color: #fff; position: absolute; top: -31px; left: 57px; content: ""; border-left-width: 8px; border-right-width: 8px;}
+.map{width: 892px;height: 572px;padding:30px 0 66px;}
+.legalCon{width: 850px;border: 1px solid #c2c2c2;border-radius: 10px;font-size: 16px;padding:10px 20px;text-align: justify;color:#333;line-height: 36px;margin:30px 0 66px;}
+.legalCon p{text-indent: 2em;}
+.legalCon h3{font-size: 24px;line-height: 50px;font-weight: normal;}
+.legalCon h4{font-size: 18px;color:#999;line-height: 38px;font-weight: normal;}
+.legalCon p span{color:#ffa000;font-size: 18px;}
+.question{padding:20px;width: 850px;border: 1px solid #c2c2c2; border-radius: 10px;margin-top: 30px;color:#333;font-size: 18px;}
+.grayTitle{background:#d2d2d2;font-weight: bold;height: 46px;line-height: 46px;padding-left: 6px;}
+.suggestText{padding:25px 0;}
+.suggestText textarea{width: 634px;height: 78px;padding:6px;}
+.fileinput-button{display: inline-block;width: 154px;height: 34px;line-height:34px;border-radius: 30px;background:#ffa000;color:#fff;font-size: 16px;text-align: center;overflow: hidden;position: relative;white-space: nowrap;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;border: 1px solid #ffa000;cursor: pointer!important;font-weight: 600;letter-spacing: 1px;margin: -26px 0 0 40px;}
+.fileinput-button:hover{background:#fff;color:#ffa000;}
+.fileinput-button input{position: absolute; top: 0; right: 0; margin: 0; opacity: 0; -ms-filter: 'alpha(opacity=0)'; font-size: 200px !important; direction: ltr; cursor: pointer;width:auto;height:auto;}
+.satisfy{overflow: hidden;padding:12px 0;}
+.satisfy div{float: left;}
+.satisfyDeg1,.satisfyDeg6{width: 22%;}
+.satisfyDeg2,.satisfyDeg4,.satisfyDeg7{width: 21%;}
+.satisfyDeg3{width: 20%;}
+.satisfyDeg5{width: 16%;}
+.satisfyDeg8{width: 33.5%;}
+.satisfy input{width: 16px;height: 16px;float: left;margin: 6px 0 0 6px;}
+.satisfy label{padding:0 0 0 10px;}
+.mixSatisfy{background:#f4f4f4;padding: 6px 0 20px 0;margin-bottom: 30px;}
+.msTitle{font-weight: bold;padding:14px 0 0 6px;}
+.mixSatisfy .satisfy{padding:15px 0 0;}
+.alwaysTel{padding:26px 0 0;}
+.alwaysTel input{width: 842px;border: 1px solid #c2c2c2;height: 34px;line-height: 34px;padding:0 0 0 6px;}
+.btnBox{padding-top: 26px;}
+.btnBox .fabu{display: block;height: 38px;width: 138px;text-align: center;background:none;border:0 none;margin:0 auto;}
+.fabu span{width: 100px;height: 38px;background:#fdd000;box-shadow: 0 -5px 0px #d3a309 inset;border-radius: 2px;z-index: 2;line-height: 36px;letter-spacing: 2px;color:#000;font-weight: bold;padding-left: 8px;display: block;float: left;font-size: 16px;}
+.fabu .grab{width: 30px;height: 38px;background:#3c4042;box-shadow: 0 -5px 0px #323536 inset;border-radius: 0 2px 2px 0;z-index: 1;margin-left: -2px;line-height: 38px;color:#fff;font-size: 20px;-webkit-text-stroke-width: 0px;display: block;float: left;}
+.infoText .tint{color:#a0a0a0;font-size: 16px;}
+.grayTitle .tint{color:#6c6c6c;font-weight: normal;}
+.revAbout .colorServ{color:#ffad00;}
+.foot{position: relative;z-index: 2;}

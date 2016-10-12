@@ -80,17 +80,13 @@ $(function(){
 //==============8.31 new add
 //收藏==========start
 	$('.collect').click(function(event) {
-		var token = $.cookie('token');
-    	if(token){
-			if($(this).children('span').html()=='收藏'||$(this).children('span').html()=='取消收藏'){
-				$(this).children('i').addClass('red');
-				$(this).children('span').html('已收藏');
-			}else{
-				$(this).children('i').removeClass('red');
-				$(this).children('span').html('收藏');
-			}
-
-    	}
+		if($(this).children('span').html()=='收藏'||$(this).children('span').html()=='取消收藏'){
+			$(this).children('i').addClass('red');
+			$(this).children('span').html('已收藏');
+		}else{
+			$(this).children('i').removeClass('red');
+			$(this).children('span').html('取消收藏');
+		}
 		
 	});
 //收藏============end
@@ -103,23 +99,31 @@ $(function(){
 		$('.colorful').removeClass('colorRot');
 	});
 //================弹出层
-	// $('.certain').click(function(event) {
- //        $(this).parent().hide();
- //        $('.poplayer').hide();
- //    });
- //    //声明弹出方法
-	// var myFun = function(box){
- //        $('.poplayer').show();
- //        $('.'+box).show();
- //    }
- //    //
- //    // $('.lookConnection').click(function(event) {
- //    // 	myFun('poplayer1');
- //    // });
- //    $('.privateChat').click(function(event) {
- //    	myFun('poplayer2');
- //    });
+	$('.certain').click(function(event) {
+        $(this).parent().hide();
+        $('.poplayer').hide();
+    });
+    //声明弹出方法
+	var myFn = function(box){
+        $('.poplayer').show();
+        $('.'+box).show();
+    }
+    //
+    $('.lookConnection').click(function(event) {
+    	myFn('poplayer1');
+    });
+    $('.privateChat').click(function(event) {
+    	myFn('poplayer2');
+    });
+    $('.bill').click(function(event) {
+    	myFn('poplayer3');
+    });
 //弹出层==============end
+//鼠标滑过更多服务地区===========start
+	$('.moreIcon').hover(function() {
+		$('.moreArea').stop().toggle();
+	});
+//鼠标滑过更多服务地区========end
 	$('.acl').click(function(){
 		$(this).toggleClass('on');
 	})

@@ -81,7 +81,7 @@
 	    		</div>
 	    		<div class="arrow"></div>
 	    		<div class="hotline">服务热线：
-	    			<span>400-898-8557</span>
+	    			<span>010-56230557</span>
 	    		</div>
 		</div>
 	</div>
@@ -428,7 +428,7 @@
 		<div class="botbrands">
 	        <a class="website" id="_pingansec_bottomimagesmall_brand" href="http://si.trustutn.org/info?sn=671160812023618276847&certType=1" target="_blank"><img src="http://v.trustutn.org/images/cert/brand_bottom_small.jpg"/></a>
 	        <a  key ="579ebe15efbfb033fb17ed33"  logo_size="96x36"  logo_type="business"  href="http://www.anquan.org" ><script src="//static.anquan.org/static/outer/js/aq_auth.js"></script></a>
-	        <a href="http://webscan.360.cn/index/checkwebsite/url/www.ziyawang.com" target="_blank"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/9cb32b38475b891e54655e56518a3b9e"/></a>
+	        <a href="http://webscan.360.cn/index/checkwebsite/url/www.ziyawang.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/9cb32b38475b891e54655e56518a3b9e"/></a>
 	    </div>
 			<div class="nav_foot">
                 <a href="{{url('/')}}">首页</a>|<a href="{{url('/aboutus')}}">关于我们</a>|<a href="{{url('/connectus')}}">联系我们</a>|<a href="javascript:;">人才招聘</a>|<a href="javascript:;">商务合作</a>|<a href="{{url('/legal')}}">法律声明</a>
@@ -436,7 +436,7 @@
             </div>
 			<div class="conection">
 				<p class="con_ziya">联系资芽</p>
-				<p class="tel"><span></span>Tel：400 - 898 - 8557</p>
+				<p class="tel"><span></span>Tel：010 - 5623 0557</p>
 				<p class="fax"><span></span>Mail：ziyawang@ziyawang.com</p>
 				<p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社 · 中关村</p><p class="fs12">国际创客中心B2-C15</p>
 			</div>

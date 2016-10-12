@@ -210,6 +210,10 @@ var _hmt = _hmt || [];
             }
 
     		var phonenumber = $(".sec_tel").val();
+            if( phonenumber == '' || phonenumber.length != 11){
+                alert('请填写正确的手机号码！');
+                return false;
+            }
 
     		$.ajax({
     			url:"http://api.ziyawang.com/v1/ie/auth/getsmscode",
@@ -220,8 +224,13 @@ var _hmt = _hmt || [];
         			if(msg.status_code == 405){
         				alert('号码已经注册！');
         			}
+                    if(msg.status_code == '503'){
+                        alert('发送验证码失败，请稍候重试');
+                    }
         			if(msg.status_code == 200){
         				$(".get_test").attr('disabled',true);
+                        alert('发送验证码成功！');
+                        time();
         			}
         		}
     		});
@@ -233,10 +242,30 @@ var _hmt = _hmt || [];
     		var repwd = $(".sec_pwd2").val();
     		var smscode = $(".sec_test").val();
 
+            if( phonenumber == '' || phonenumber.length != 11){
+                alert('请填写正确的手机号码！');
+                return false;
+            }
+
+            if( password == ''){
+                alert('请填写正确的密码！');
+                return false;
+            }
+
+            if( password.length < 6 ){
+                alert('密码长度为6-16位！')
+                return false;
+            }
+
     		if ( password != repwd ) {
     			alert('两次密码不一样！');
     			return false;
     		}
+
+            if(smscode == ''){
+                alert('请填写正确的验证码！')
+                return false;
+            }
 
             $(this).val('注册中...');
 
@@ -246,17 +275,20 @@ var _hmt = _hmt || [];
     			data:"phonenumber=" + phonenumber + "&password=" + password + "&smscode=" + smscode + "&access_token=token",
     			dataType:'json',
     			success:function(msg){
-    				console.log(msg);
-    				if(msg.token){
-    					var date = new Date();
+    				// console.log(msg);
+                    if(msg.status_code == '402'){
+                        alert('验证码不正确，请重新输入');
+                        $('#register').val('注册');
+                        return false;
+                    }
+                    if(msg.token){
+                        var date = new Date();
                         date.setTime(date.getTime() + (120 * 60 * 1000));
-                        if(msg.token){
                             // console.log(msg.token);
-                            $.cookie('token', msg.token, { expires: date, path: '/', domain: '.ziyawang.com' });
-                            $.cookie('role', msg.role, { expires: date, path: '/', domain: '.ziyawang.com' });
-                            $.cookie('phonenumber', phonenumber, { expires: date, path: '/', domain: '.ziyawang.com' });
-                            window.location.href = "http://ziyawang.com/ucenter/index";
-    				    }
+                        $.cookie('token', msg.token, { expires: date, path: '/', domain: '.ziyawang.com' });
+                        $.cookie('role', msg.role, { expires: date, path: '/', domain: '.ziyawang.com' });
+                        $.cookie('phonenumber', phonenumber, { expires: date, path: '/', domain: '.ziyawang.com' });
+                        window.location.href = "http://ziyawang.com/ucenter/index";
                     }
     			}
     		});
@@ -265,7 +297,8 @@ var _hmt = _hmt || [];
     <script type="text/javascript">
     //获取验证码60秒倒计时
     var wait=60;  
-    function time(o) {  
+    function time() {  
+        var o = document.getElementById("btn");
         if (wait == 0) {  
             o.removeAttribute("disabled");            
             o.value="验证码";  
@@ -280,7 +313,7 @@ var _hmt = _hmt || [];
             1000)  
         }  
     }  
-    document.getElementById("btn").onclick=function(){time(this);}  
+    // document.getElementById("btn").onclick=function(){time(this);}  
 </script>
 </body>
 </html>

@@ -18,6 +18,7 @@
         <script type="text/javascript" src="{{url('/js/public.js')}}"></script>
     <script src="http://libs.cncdn.cn/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script>
         <script type="text/javascript" src="{{url('/js/jquery.pagination.js')}}"></script>
+        <script type="text/javascript" src="{{url('/org/layer/layer.js')}}"></script>
     </head>
     <body>
     <div class="header">
@@ -68,20 +69,6 @@
         $('.login').removeClass('after');
         window.location = "{{url('/')}}";
     });
-$(function () {
-    var token = $.cookie('token');
-    if(!token){
-        // window.location = "{{url('/login')}}";
-        return false;
-    }
-
-    var role = $.cookie('role');
-    if(role == 1){
-        $("#myrush").show();
-    }
-
-    $('#container').show();
-});
 </script>
 <!-- 登录退出状态 -->
                 <ul class="nav">
@@ -100,7 +87,7 @@ $(function () {
                 </div>
                 <div class="arrow"></div>
                 <div class="hotline">服务热线：
-                    <span>400-898-8557</span>
+                    <span>010-56230557</span>
                 </div>
         </div>
     </div>
@@ -110,22 +97,32 @@ $(function () {
             <li></li>
         </ul>
     </div>
-    <!-- 主体 -->
-    <div class="main wrap">
-    <!-- 左侧导航 -->
-        <div class="main_left">
-            <h2>个人中心</h2>
+<!-- 个人中心 -->
+<div class="userContent clearfix">
+    <!-- 个人中心侧边栏 -->
+    <div class="ucLeft">
+        <h2>个人中心</h2>
+        <div class="ucleftHead">
+            <a href="{{url('/ucenter/safe')}}"><img id="avatar" src="" /></a>
+            <span id="nickname"></span>
+        </div>
+        <!-- ps: 有新的系统消息时redTips显示，没有新消息时隐藏 -->
+        <div class="ucleftMiddle">
+            <a href="{{url('/ucenter/message')}}" class="sysInfo" title="系统消息"><i class="iconfont">&#xe61c;</i><span id="msg"></span></a>
+            <a href="{{url('/ucenter/money')}}" class="money" title="芽币金额"><span id="account"></span></a>
+        </div>
+        <div class="ucleftBottom">
             <ul>
-                <li id="index1"><a href="{{url('/ucenter/index')}}">系统消息</a></li>
-                <li id="helper"><a href="{{url('/ucenter/helper')}}">资芽助手</a></li>
-                <li id="pubpro"><a href="{{url('/ucenter/pubpro')}}">发布信息</a></li>
-                <li id="mypro"><a href="{{url('/ucenter/mypro')}}">我发布的</a></li>
-                <li id="mycoo"><a href="{{url('/ucenter/mycoo')}}">我合作的</a></li>
-                <li id="confirm"><a href="{{url('/ucenter/confirm')}}">服务方认证</a></li>
-                <li id="mycollect"><a href="{{url('/ucenter/mycollect')}}">我收藏的</a></li>
-                <li id="myrush" style="display:none"><a href="{{url('/ucenter/myrush')}}">我的抢单</a></li>
-                <li id="safe"><a href="{{url('/ucenter/safe')}}">安全中心</a></li>
+                <li id="pubpro"><a href="{{url('/ucenter/index')}}"><i class="iconfont">&#xe61e;</i>发布信息</a></li>
+                <li id="mypro"><a href="{{url('/ucenter/mypro')}}"><i class="iconfont">&#xe61a;</i>我的发布</a></li>
+                <li id="confirm"><a href="{{url('/ucenter/confirm')}}"><i class="iconfont">&#xe60f;</i>服务方认证</a></li>
+                <li id="myrush" style="display:none;"><a href="{{url('/ucenter/myrush')}}"><i class="iconfont">&#xe619;</i>我的约谈</a></li>
+                <li id="money"><a href="{{url('/ucenter/money')}}"><i class="iconfont chongzhi">&#xe61f;</i>充值中心</a></li>
+                <li id="safe"><a href="{{url('/ucenter/safe')}}"><i class="iconfont">&#xe61d;</i>安全中心</a></li>
+                <li id="mycollect"><a href="{{url('/ucenter/mycollect')}}"><i class="iconfont">&#xe61b;</i>我的收藏</a></li>
             </ul>
+        </div>
+    </div>
 <script>
     //导航样式
     $(function(){
@@ -136,11 +133,12 @@ $(function () {
         var mypro = $('#mypro');
         var mycoo = $('#mycoo');
         var confirm = $('#confirm');
+        var money = $('#money');
         var myrush = $('#myrush');
         var safe = $('#safe');
         var mycollect = $('#mycollect');
         if (Url.indexOf("index") >= 0) {
-            index1.addClass("current");
+            pubpro.addClass("current");
         } else if (Url.indexOf("helper") >= 0 ) {
             helper.addClass("current");
             
@@ -150,14 +148,14 @@ $(function () {
         } else if (Url.indexOf("mypro") >= 0) {
             mypro.addClass("current");
             
-        } else if (Url.indexOf("mycoo") >= 0) {
-            mycoo.addClass("current");
+        } else if (Url.indexOf("myrush") >= 0) {
+            myrush.addClass("current");
             
         } else if (Url.indexOf("confirm") >= 0) {
             confirm.addClass("current");
             
-        } else if (Url.indexOf("myrush") >= 0) {
-            myrush.addClass("current");
+        } else if (Url.indexOf("money") >= 0) {
+            money.addClass("current");
             
         } else if (Url.indexOf("safe") >= 0) {
             safe.addClass("current");
@@ -168,7 +166,48 @@ $(function () {
         }
     }); 
 </script>
-        </div>
+<script>
+$(function(){
+    var token = $.cookie('token');
+        // var token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzMyIsImlzcyI6Imh0dHA6XC9cL2FwaXRlc3Queml5YXdhbmcuY29tXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOiIxNDc0Nzk0NTQyIiwiZXhwIjoiMTQ3NTM5OTM0MiIsIm5iZiI6IjE0NzQ3OTQ1NDIiLCJqdGkiOiJmNmFhNDRhODA4ODBlZjAxNzE3NWJmYTZhNDczMWJiZCJ9.ho521A0Prh6LcNAPNcmQEF2H_VTQBXstSwf2m4yeXpA";
+
+    if(!token){
+        window.location = "{{url('/login')}}";
+        return false;
+    }
+    var role = $.cookie('role');
+    // console.log(role);
+    if(role == 1){
+        $("#myrush").show();
+    }
+
+    $('#container').show();
+    $.ajax({
+        url: 'http://api.ziyawang.com/v1/auth/me?access_token=token&token=' + token,
+        type: 'POST',
+        success:function(msg){
+            var data = eval(msg);
+            // console.log(data);
+            var picture = data.user.UserPicture;
+            var nickname = data.user.username;
+            if(nickname.length<1){
+                nickname = '未设置';
+            }
+            var account = data.user.Account;
+            var phonenumber = data.user.phonenumber;
+            var msgcount = data.MyMsgCount;
+            $('#avatar, #avatar1').attr('src', 'http://images.ziyawang.com'+picture);
+            $('#nickname, #nickname1').html(nickname);
+            $('#account').html(account);
+            $('#accounts').html(account);
+            if(msgcount>0){
+                $('#msg').addClass('redTips');
+            }
+            $('#_phonenumber').html('联系电话：'+phonenumber);
+        }
+    });
+})
+</script>
 
     @yield('content')
 
@@ -186,7 +225,7 @@ $(function () {
             </div>
             <div class="conection">
                 <p class="con_ziya">联系资芽</p>
-                <p class="tel"><span></span>Tel：400 - 898 - 8557</p>
+                <p class="tel"><span></span>Tel：010 - 5623 0557</p>
                 <p class="fax"><span></span>Mail：ziyawang@ziyawang.com</p>
                 <p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社 · 中关村</p><p class="fs12">国际创客中心B2-C15</p>
             </div>

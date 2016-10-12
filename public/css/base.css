@@ -15,7 +15,6 @@ a,button{cursor:pointer;}
 .clearfix:before,.clearfix:after{display:table;content:"";}
 .clearfix:after{clear:both;}
 .clearfix{zoom:1;}
-body{overflow-x: hidden;}
 .wrap{width: 1200px;margin:0 auto;position: relative;}
 /*footer*/
 .agree{font-size: 12px;color: #3a3a3a;}

@@ -1,22 +1,22 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{'/css/safe.css'}}" />
-<!-- 右侧详情 -->
-    <div class="main_right">
-        <h2>修改密码</h2>
-        <div class="su_changepwd">
-            <form action="">
-                <p><span class="cp_left"><em>*</em>新的登录密码：</span><input type="password" class="password" name="password"/></p>
-                <p><span class="cp_left"><em>*</em>请再一次输入密码：</span><input type="password" class="pwagain" /></p>
-                <p class="su_test">
-                    <span class="cp_left"><em>*</em>验证码：</span>
-                    <input type="text" class="yan_inp" id="inputCode" />
-                    <!-- <a href="javascript:;" class="yan"></a> -->
-                    <span id="code" class="mycode"></span><i class="error"></i>
-                    <!-- <span class="huan">看不清，<a href="javascript:;">换一张</a></span> -->
-                </p>
-                <input type="button" class="tijiao" id="pub" />
-            </form>
+<link type="text/css" rel="stylesheet" href="{{'/css/releasehome.css'}}" />
+    <!-- 右侧 -->
+    <div class="ucRight">
+        <div class="ucRightCon ucRightSafe">
+            <h3 class="selectiveType security"><span>安全中心</span></h3>
+            <div class="changePwdBox clearfix">
+                <form action="">
+                    <p><span class="cp_left"><em>*</em>新的登录密码：</span><input type="password" class="password" name="password"/><span class="orangeTips">请输入密码</span></p>
+                    <p><span class="cp_left"><em>*</em>请再一次输入密码：</span><input type="password" class="pwagain" /><span class="orangeTips">请输入密码</span></p>
+                    <p class="su_test">
+                        <span class="cp_left"><em>*</em>验证码：</span>
+                        <input type="text" class="yan_inp" id="inputCode" />
+                        <span id="code" class="mycode"></span><i class="error"></i>
+                    </p>
+                    <button class="fabu" type="button" id="pub"><span>确认修改</span><i class="iconfont grab">&#xe607;</i></button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
@@ -25,7 +25,7 @@
 $(function(){
     var token = $.cookie('token');
     if(!token){
-        window.location = "{{url('/login')}}";
+        // window.location = "{{url('/login')}}";
         return false;
     }
 })

@@ -37,7 +37,7 @@
             <div class="cltCon" id="ServiceIntroduction">
             </div>
         </div>
-        <div class="conleftMiddle clearfix">
+        <div class="conleftMiddle1 clearfix">
             <div class="clmLeft">
                 <div class="clmleftTitle">
                     Type Of Service
@@ -107,7 +107,7 @@
     </div>
     <div class="conRight">
         <div class="recommend">
-            <h2 class="recommendTitle"><i class="iconfont">&#xe612;</i>相关信息<a href="javascript:;" class="changeAlot" id="change">换一换</a></h2>
+            <h2 class="recommendTitle"><i class="iconfont">&#xe612;</i>相关服务<a href="javascript:;" class="changeAlot" id="change">换一换</a></h2>
             <div class="recommendCon">
                 <ul id="match">
                     
@@ -175,7 +175,7 @@ $(function () {
                 //     ServiceType = ServiceType.substr(0,10) + '...';
                 // }
                 var ServiceID = data[index].ServiceID;    //服务商ID
-                $("#match").html($("#match").html() + "<li><div class='reconTop'><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconTopTitle'>" + ServiceName + "</a><div class='cue'><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></div></div><a href='http://ziyawang.com/service/" + ServiceID + "' class='recImg'><img title='" + ServiceName + "' src='http://images.ziyawang.com" + ConfirmationP1 + "' /></a><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconDescription'>" + ServiceIntroduction + "</a><div class='reconBottom'><span class='reconBottomCon'>服务类型</span>" + ServiceType + "</div><a href='http://ziyawang.com/service/" + ServiceID + "' class='lookMore'>查看内容&nbsp;&gt;</a></li>"); 
+                $("#match").html($("#match").html() + "<li><div class='reconTop'><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconTopTitle'>" + ServiceName + "</a><div class='cue'><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></div></div><a href='http://ziyawang.com/service/" + ServiceID + "' class='recImg'><img title='" + ServiceName + "' src='http://images.ziyawang.com" + ConfirmationP1 + "' /></a><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconDescription'>" + ServiceIntroduction + "</a><div class='reconBottom'><span class='reconBottomCon'>服务类型</span>" + ServiceType + "</div><a href='http://ziyawang.com/service/" + ServiceID + "' class='lookMore'>查看内容&nbsp;&gt;</a></li>"); 
             });           
                    
         } //成功执行方法    
@@ -194,6 +194,7 @@ $(function () {
         // console.log(json) 
 
         var ServiceName = json.ServiceName;   //服务方头像 
+        var ConnectPerson = json.ConnectPerson;   //服务方联系人
         var UserPicture = json.UserPicture;   //服务方名称 
         var ViewCount = json.ViewCount;    //浏览次数
         var CollectCount = json.CollectCount;    //浏览次数
@@ -250,11 +251,11 @@ $(function () {
 
         $('#userpicture').attr('src','http://images.ziyawang.com'+UserPicture);
         $("#ServiceName").html('<b>'+ ServiceName + '</b>');
-        $('#ServiceNumber').html(ServiceNumber);
+        $('#ServiceNumber').html(ConnectPerson);
 
-        var orderLevel = "<span class='disc'></span><span class='already'><i class='iconfont'>&#xe60d;</i><em>已接" + CoNumber + "单</em></span><span class='levels'><i class='iconfont'>&#xe60e;</i><em>" + ServiceLevel + "</em></span>";
+        var orderLevel = "<span class='disc'></span><span class='already' id='already'><i><img src='/img/b_phone.png'></i><em>已约谈" + CoNumber + "次</em></span><span class='levels'><i class='iconfont'>&#xe60e;</i><em>" + ServiceLevel + "</em></span>";
         var location = "<span class='disc'></span><span class='locationCon'>所在地：</span>" + ServiceLocation;
-        var secondary = "<span class='disc'></span><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont hearts'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span>";
+        var secondary = "<span class='disc'></span><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont hearts' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span>";
         $('.orderLevel').html(orderLevel);
         $('.location').html(location);
         $('.secondary').html(secondary);
@@ -386,7 +387,7 @@ $('#change').click(function(){
                 //     ServiceType = ServiceType.substr(0,10) + '...';
                 // }
                 var ServiceID = data[index].ServiceID;    //服务商ID
-                $("#match").html($("#match").html() + "<li><div class='reconTop'><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconTopTitle'>" + ServiceName + "</a><div class='cue'><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></div></div><a href='http://ziyawang.com/service/" + ServiceID + "' class='recImg'><img title='" + ServiceName + "' src='http://images.ziyawang.com" + ConfirmationP1 + "' /></a><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconDescription'>" + ServiceIntroduction + "</a><div class='reconBottom'><span class='reconBottomCon'>服务类型</span>" + ServiceType + "</div><a href='http://ziyawang.com/service/" + ServiceID + "' class='lookMore'>查看内容&nbsp;&gt;</a></li>"); 
+                $("#match").html($("#match").html() + "<li><div class='reconTop'><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconTopTitle'>" + ServiceName + "</a><div class='cue'><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></div></div><a href='http://ziyawang.com/service/" + ServiceID + "' class='recImg'><img title='" + ServiceName + "' src='http://images.ziyawang.com" + ConfirmationP1 + "' /></a><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconDescription'>" + ServiceIntroduction + "</a><div class='reconBottom'><span class='reconBottomCon'>服务类型</span>" + ServiceType + "</div><a href='http://ziyawang.com/service/" + ServiceID + "' class='lookMore'>查看内容&nbsp;&gt;</a></li>"); 
             });           
                    
         } //成功执行方法    
