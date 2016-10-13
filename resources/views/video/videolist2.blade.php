@@ -6,7 +6,7 @@
         <meta name="Description" content="资芽视频是资芽网第一视频,行业专家释疑解惑,分享经验,培训学习,剖析热点话题;线上线下活动,同业互动,探索分析,交流共享,协作共赢,鼓励创新,普及法律常识,降低法律风险.推动不良资产行业,金融领域健康有序发展." />
 @endsection
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/videos.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/videos.css')}}?v=1.0.4" />
 <!-- 二级banner -->
 <div class="find_service">
     <ul>
@@ -62,6 +62,14 @@
             </ul>
         </div>
     </div>
+    <!-- 公共分页/start -->
+    <div class="pages">
+        <div id="Pagination"></div>
+            <div class="searchPage">
+            <span class="page-sum">共<strong class="allPage">0</strong>页</span>
+        </div>
+    </div>
+    <!-- 公共分页/end -->
 </div>
 <script type="text/javascript">
     $(function(){
@@ -80,7 +88,7 @@
                 var VideoLogo  = data[index].VideoLogo;     //视频图片
                 var VideoID    = data[index].VideoID;       //视频ID
                 var ViewCount  = data[index].ViewCount;       //播放次数
-                html = html + "<li> <div class='videoLiPic'> <a href='http://ziyawang.com/video/" + VideoID + "' class='videoLiPicAsign' title='" + VideoTitle + "'><img class='videoImg' title='" + VideoTitle + "' src='http://images.ziyawang.com" + VideoLogo + "' /></a> <a href='http://ziyawang.com/video/" + VideoID + "' class='mask'></a> <span class='s_shadow'></span> </div> <div class='videoLiTitle'> <a href='http://ziyawang.com/video/" + VideoID + "' title='" + VideoTitle + "'>" + VideoTitle + "</a> <span>已播放" + ViewCount + "次</span> </div> </li>";
+                html = html + "<li> <div class='videoLiPic'> <a href='http://ziyawang.com/video/" + VideoID + "' class='videoLiPicAsign' title='" + VideoTitle + "'><img class='videoImg' title='" + VideoTitle + "' src='http://images.ziyawang.com" + VideoLogo + "' /></a> <a href='http://ziyawang.com/video/" + VideoID + "' class='mask'></a><a href='http://ziyawang.com/video/" + VideoID + "'><span class='s_shadow'></span></a></div> <div class='videoLiTitle'> <a href='http://ziyawang.com/video/" + VideoID + "' title='" + VideoTitle + "'>" + VideoTitle + "</a> <span>已播放" + ViewCount + "次</span> </div> </li>";
             });
             return html;
         }
@@ -97,7 +105,7 @@
         })
 
         $.ajax({  
-            url: 'http://api.ziyawang.com/v1/video/list?pagecount=8&order=1&access_token=token',  
+            url: 'http://api.ziyawang.com/v1/video/list?pagecount=12&order=1&access_token=token',  
             type: 'GET',  
             dataType: 'json',  
             timeout: 5000, 
@@ -110,6 +118,27 @@
         function hot(tt) {
             var json = eval(tt); //数组 
             var data = json.data;
+            var counts = json.counts;
+            var pages = json.pages;
+            var current = json.currentpage-1;
+            //分页
+            $("#Pagination").pagination(pages,{current_page:current});
+            $(".page-sum").html("共<strong class='allPage'>" + pages + "</strong>页");
+            $('.pagination').children(":not(:first-child):not(:last-child)").click(function(){
+                startpage = $(this).html();
+                ajax();
+            });
+            $('.pagination .prev, .pagination .next').click(function(){
+                $('.pagination a').each(function(){
+                    if($(this).hasClass('current')){
+                        startpage = $(this).html();
+                        if(!isNaN(startpage)){
+                            return false;
+                        }
+                    }
+                })
+                ajax();
+            })
             var html = _queryVideo(data);
             $('#hot').html(html);
             //视频划过
@@ -124,7 +153,7 @@
             var json = eval(tt); //数组 
             var data = json.data;
             var data1 = data[0];
-            var html1 = "<div class='bestVideo'> <a href='http://ziyawang.com/video/" + data1.VideoID + "' class='bigVideo' title='" + data1.VideoTitle + "'><img class='videoImg' title='" + data1.VideoTitle + "' src='http://images.ziyawang.com" + data1.VideoLogo + "' /></a> <a href='http://ziyawang.com/video/" + data1.VideoID + "' class='mask'></a> <span class='b_shadow'></span> </div> <div class='bestVideoTitle'> <a href='http://ziyawang.com/video/" + data1.VideoID + "' class='bigVideoTitle' title='" + data1.VideoTitle + "'>" + data1.VideoTitle + "</a> <span>已播放" + data1.ViewCount + "次</span> </div>";
+            var html1 = "<div class='bestVideo'> <a href='http://ziyawang.com/video/" + data1.VideoID + "' class='bigVideo' title='" + data1.VideoTitle + "'><img class='videoImg' title='" + data1.VideoTitle + "' src='http://images.ziyawang.com" + data1.VideoLogo + "' /></a> <a href='http://ziyawang.com/video/" + data1.VideoID + "' class='mask'></a><a href='http://ziyawang.com/video/" + data1.VideoID + "'><span class='b_shadow'></span></a></div> <div class='bestVideoTitle'> <a href='http://ziyawang.com/video/" + data1.VideoID + "' class='bigVideoTitle' title='" + data1.VideoTitle + "'>" + data1.VideoTitle + "</a> <span>已播放" + data1.ViewCount + "次</span> </div>";
             $('#bestvideo').html(html1);
             var data2 = data.slice(1);
             var html2 = _queryVideo(data2);
@@ -160,26 +189,83 @@
     });
 
     // mouseover videonav
-            $('.videoNav li').hover(function(){
-                $('span',this).stop().css('height','5px');
-                $('span',this).animate({
-                    left:'0',
-                    width:'100%',
-                    right:'0'
-                },200);
-            },function(){
-                if($(this).hasClass('current')){
-                    $('span',this).stop().animate({
-                        left:'0',
-                        width:'100%',
-                        right:'0'
-                    },200);
-                }else{
-                    $('span',this).stop().animate({
-                        left:'50%',
-                        width:'0'
-                    },200);
-                }
+    $('.videoNav li').hover(function(){
+        $('span',this).stop().css('height','5px');
+        $('span',this).animate({
+            left:'0',
+            width:'100%',
+            right:'0'
+        },200);
+    },function(){
+        if($(this).hasClass('current')){
+            $('span',this).stop().animate({
+                left:'0',
+                width:'100%',
+                right:'0'
+            },200);
+        }else{
+            $('span',this).stop().animate({
+                left:'50%',
+                width:'0'
+            },200);
+        }
+    });
+
+function _queryVideo(data) {
+    var html = '';
+    $.each(data, function (index, item) {  
+        //循环获取数据    
+        var VideoTitle = data[index].VideoTitle;       //视频标题
+        var VideoLogo  = data[index].VideoLogo;     //视频图片
+        var VideoID    = data[index].VideoID;       //视频ID
+        var ViewCount  = data[index].ViewCount;       //播放次数
+        html = html + "<li> <div class='videoLiPic'> <a href='http://ziyawang.com/video/" + VideoID + "' class='videoLiPicAsign' title='" + VideoTitle + "'><img class='videoImg' title='" + VideoTitle + "' src='http://images.ziyawang.com" + VideoLogo + "' /></a> <a href='http://ziyawang.com/video/" + VideoID + "' class='mask'></a><a href='http://ziyawang.com/video/" + VideoID + "'><span class='s_shadow'></span></a></div> <div class='videoLiTitle'> <a href='http://ziyawang.com/video/" + VideoID + "' title='" + VideoTitle + "'>" + VideoTitle + "</a> <span>已播放" + ViewCount + "次</span> </div> </li>";
+    });
+    return html;
+}
+
+var startpage = 1;
+function ajax(){
+    var data = 'startpage=' + startpage;
+    $.ajax({
+        url: 'http://api.ziyawang.com/v1/video/list?pagecount=12&order=1&access_token=token&' + data,  
+        type: 'GET',  
+        dataType: 'json',  
+        timeout: 5000,  
+        cache: false,  
+        success: function(tt){
+            var json = eval(tt); //数组 
+            var data = json.data;
+            var counts = json.counts;
+            var pages = json.pages;
+            var current = json.currentpage-1;
+            //分页
+            $("#Pagination").pagination(pages,{current_page:current});
+            $(".page-sum").html("共<strong class='allPage'>" + pages + "</strong>页");
+            $('.pagination').children(":not(:first-child):not(:last-child)").click(function(){
+                startpage = $(this).html();
+                ajax();
             });
+            $('.pagination .prev, .pagination .next').click(function(){
+                $('.pagination a').each(function(){
+                    if($(this).hasClass('current')){
+                        startpage = $(this).html();
+                        if(!isNaN(startpage)){
+                            return false;
+                        }
+                    }
+                })
+                ajax();
+            })
+            var html = _queryVideo(data);
+            $('#hot').html(html);
+            //视频划过
+            //mouseover shadow
+            $('.hotlistVideo ul li').hover(function() {
+                $(this).find('.mask').stop().fadeToggle(500);
+            });
+        }
+    })
+}
 </script>
 @endsection

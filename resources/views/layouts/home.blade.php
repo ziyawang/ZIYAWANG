@@ -5,14 +5,15 @@
         
         @yield('seo')
 
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}" /> 
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=1.0.4" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}?v=1.0.4" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=1.0.4" /> 
 
 
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <script src="{{asset('/js/jquery.js')}}"></script>
         <script src="{{asset('/js/fs.js')}}"></script>
         <script src="{{url('/js/jquery.cookie.js')}}"></script>

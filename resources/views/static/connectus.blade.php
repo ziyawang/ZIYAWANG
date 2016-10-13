@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-        <link rel="stylesheet" type="text/css" href="{{url('/css/company.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{url('/css/company.css')}}?v=1.0.4" />
         <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=bKUsU7wpZp0gOKGF1PPK57X9xrROMsT7"></script>
     <!-- 二级banner -->
     <div class="find_service">

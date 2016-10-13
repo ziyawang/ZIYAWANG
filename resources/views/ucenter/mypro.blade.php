@@ -1,7 +1,7 @@
 @extends('layouts.uhome')
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.4" />
 <!-- 右侧详情 -->
     <div class="ucRight">
         <div class="ucRightCon ucRightList">
@@ -96,9 +96,11 @@
                 var CertifyState = data[index].CertifyState;
                 var WordDes = data[index].WordDes;
                 var url = "http://ziyawang.com/ucenter/mypro/"+ ProjectID;
+                var wait = '';
                 if(CertifyState == '0'){
-                    PublishState = "<a href='javascript:;' class='cancel'>待审核</a>"; 
+                    PublishState = "<a href='javascript:;' class='cancel wait'>待审核</a>"; 
                     url = "javascript:;"
+                    wait = 'class="wait"';
                 } else if(CertifyState == '2'){
                     PublishState = "<a href='javascript:;' class='cancel'>拒审核</a>"; 
                     url = "javascript:;"
@@ -132,49 +134,49 @@
                 switch(TypeID)
                 {
                     case "1":
-                        var html = "<li class='clearfix'><a href='" + url + "'><div class='pblLeft'><span class='pblef1'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>地区：<strong>" + ProArea + "</strong></span><span>来源：<strong>" + FromWhere + "</strong></span><span class='spanTag'>资产包类型：<strong>" + AssetType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>总金额：</strong>" + TotalMoney + "万</span><span></span><span><strong>转让价：</strong>" + TransferMoney + "万</span></div></div></a></li> ";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef1'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>地区：<strong>" + ProArea + "</strong></span><span>来源：<strong>" + FromWhere + "</strong></span><span class='spanTag'>资产包类型：<strong>" + AssetType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>总金额：</strong>" + TotalMoney + "万</span><span></span><span><strong>转让价：</strong>" + TransferMoney + "万</span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li> ";
                         break;
                     case "2":
-                        var html = "<li class='clearfix'><a href='" + url + "'><div class='pblLeft'><span class='pblef2'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span class='spanTags'>债务人所在地：<strong>" + ProArea + "</strong></span><span class='spanTags1'>状态：<strong>" + Status + "</strong></span><span class='spanTag'>类型：<strong>" + AssetType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>金额：</strong>" + TotalMoney + "万</span><span></span><span><strong>佣金比例：</strong>" + Rate + "</span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef2'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span class='spanTags'>债务人所在地：<strong>" + ProArea + "</strong></span><span class='spanTags1'>状态：<strong>" + Status + "</strong></span><span class='spanTag'>类型：<strong>" + AssetType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>金额：</strong>" + TotalMoney + "万</span><span></span><span><strong>佣金比例：</strong>" + Rate + "</span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li>";
                         break;
                     case "3":
-                        var html = "<li class='clearfix black'><a href='" + url + "'><div class='pblLeft'><span class='pblef3'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>类型：</strong>" + AssetType + "</span><span></span><span><strong>需求：</strong>" + Requirement + "</span></div></div></a></li>";
+                        var html = "<li class='clearfix black'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef3'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>类型：</strong>" + AssetType + "</span><span></span><span><strong>需求：</strong>" + Requirement + "</span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li>";
                         break;
 
                     case "4":
-                        var html = "<li class='clearfix'><a href='" + url + "'><div class='pblLeft'><span class='pblef4'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>地区：<strong>" + ProArea + "</strong></span><span>买方性质：<strong>" + BuyerNature + "</strong></span><span class='spanTag'></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>合同金额：</strong>" + TotalMoney + "万</span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef4'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>地区：<strong>" + ProArea + "</strong></span><span>买方性质：<strong>" + BuyerNature + "</strong></span><span class='spanTag'></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>合同金额：</strong>" + TotalMoney + "万</span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li>";
                         break;
 
                     // case "5":
-                    //     var html = "<li><h3>典当担保</h3><div class='myorder'><span class='myorder_icon'><img src='/img/img088.png' /></span><a href='" + url + "' class='myorder_abstr'><span>编号：" + ProjectNumber + "</span><span>类型：" + AssetType + "</span><span>地区：" + ProArea + "</span><span>金额：" + TotalMoney + "万</span></a><div class='myorder_info'><span class='ed'><em class='blue'>" + RushCount + "人</em>已抢单</span><span class='many'>浏览数：<i>" + ViewCount + "</i>人</span></div></div><p class='time'>" + PublishTime + "</p>" + PublishState + "</li>";
+                    //     var html = "<li><h3>典当担保</h3><div class='myorder'><span class='myorder_icon'><img src='/img/img088.png' /></span><a href='" + url + "'" + wait + " class='myorder_abstr'><span>编号：" + ProjectNumber + "</span><span>类型：" + AssetType + "</span><span>地区：" + ProArea + "</span><span>金额：" + TotalMoney + "万</span></a><div class='myorder_info'><span class='ed'><em class='blue'>" + RushCount + "人</em>已抢单</span><span class='many'>浏览数：<i>" + ViewCount + "</i>人</span></div></div><p class='time'>" + PublishTime + "</p>" + PublishState + "</li>";
                     //     break;
 
                     case "6":
-                        var html = "<li class='clearfix'><a href='" + url + "'><div class='pblLeft'><span class='pblef6'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>方式：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span class='spanTag'></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>金额：</strong>" + TotalMoney + "万</span><span></span><span><strong>回报率：</strong>" + Rate + "%</span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef6'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>方式：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span class='spanTag'></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>金额：</strong>" + TotalMoney + "万</span><span></span><span><strong>回报率：</strong>" + Rate + "%</span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li>";
                         break;
 
                     case "9":
-                        var html = "<li class='clearfix'><a href='" + url + "'><div class='pblLeft'><span class='pblef9'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span class='spanTag'></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>悬赏金额：</strong>" + TotalMoney + "万</span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef9'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span class='spanTag'></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>悬赏金额：</strong>" + TotalMoney + "万</span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li>";
                         break;
 
                     case "10":
-                        var html = "<li class='clearfix black'><a href='" + url + "'><div class='pblLeft'><span class='pblef10'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>地区：</strong>" + ProArea + "</span><span><strong>类型：</strong>" + AssetType + "</span><span><strong>被调查方：</strong>" + Informant + "</span></div></div></a></li>";
+                        var html = "<li class='clearfix black'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef10'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>地区：</strong>" + ProArea + "</span><span><strong>类型：</strong>" + AssetType + "</span><span><strong>被调查方：</strong>" + Informant + "</span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li>";
                         break;
 
                     case "12":
-                        var html = "<li class='clearfix'><a href='" + url + "'><div class='pblLeft'><span class='pblef12'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>标的物：<strong>" + Corpore + "万</strong></span><span>地区：<strong>" + ProArea + "万</strong></span><span class='spanTag'>类型：<strong>" + AssetType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>总金额：</strong>" + TotalMoney + "万</span><span></span><span><strong>转让价：</strong>" + TransferMoney + "万</span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef12'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>标的物：<strong>" + Corpore + "</strong></span><span>地区：<strong>" + ProArea + "万</strong></span><span class='spanTag'>类型：<strong>" + AssetType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>总金额：</strong>" + TotalMoney + "万</span><span></span><span><strong>转让价：</strong>" + TransferMoney + "万</span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li>";
                         break;
 
                     case "13":
-                        var html = "<li class='clearfix black'><a href='" + url + "'><div class='pblLeft'><span class='pblef13'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>地区：</strong>" + ProArea + "</span><span class='spanTag'><strong>类型：</strong>" + AssetType + "</span><span><strong>求购方：</strong>" + Buyer + "</span></div></div></a></li>";
+                        var html = "<li class='clearfix black'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef13'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>地区：</strong>" + ProArea + "</span><span class='spanTag'><strong>类型：</strong>" + AssetType + "</span><span><strong>求购方：</strong>" + Buyer + "</span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li>";
                         break;
 
                     case "14":
-                        var html = "<li class='clearfix'><a href='" + url + "'><div class='pblLeft'><span class='pblef14'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>地区：<strong>" + ProArea + "</strong></span><span>类型：<strong>" + AssetType + "</strong></span><span class='spanTag'></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>总金额：</strong>" + TotalMoney + "万</span><span></span><span><strong>转让价：</strong>3000.00万</span></div></div></a></li> ";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef14'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>地区：<strong>" + ProArea + "</strong></span><span>类型：<strong>" + AssetType + "</strong></span><span class='spanTag'></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>总金额：</strong>" + TotalMoney + "万</span><span></span><span><strong>转让价：</strong>" + TransferMoney + "万</span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li> ";
                         break;
 
                     case "15":
-                        var html = "<li class='clearfix'><a href='" + url + "'><div class='pblLeft'><span class='pblef15'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>地区：<strong>" + ProArea + "</strong></span><span>投资类型：<strong>" + AssetType + "</strong></span><span class='spanTag'>投资方式：<strong>" + InvestType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>预期回报率：</strong>" + Rate + "%</span><span></span><span><strong>投资期限：</strong>" + Year + "年</span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef15'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>地区：<strong>" + ProArea + "</strong></span><span>投资类型：<strong>" + AssetType + "</strong></span><span class='spanTag'>投资方式：<strong>" + InvestType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>预期回报率：</strong>" + Rate + "%</span><span></span><span><strong>投资期限：</strong>" + Year + "年</span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li>";
                         break;
                 }
                 $("#list").html($("#list").html() + html);  
@@ -190,7 +192,11 @@
             $(window).resize(function() {
                 var ucRighthei2 = $('.ucRight').height();
                 $('.ucLeft').css('height',ucRighthei2 + 'px');
-            });       
+            }); 
+
+            $('.wait').click(function(){
+                layer.msg('信息审核中，请等待！');
+            })      
         }  
     });  
 </script>

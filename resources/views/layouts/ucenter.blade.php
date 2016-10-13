@@ -6,12 +6,13 @@
         @yield('title')
 <meta name="Keywords" content="资芽网,不良资产,不良资产处置,不良资产处置平台" />
     <meta name="Description" content="资芽网是全球不良资产智能综服超级平台,吸引全国各类不良资产持有者，汇集各类不良资产信息及相关需求,整合海量不良资产处置服务机构与投资方,搭建多样化处置通道和不良资产综服生态产业体系,嵌入移动社交与视频直播,兼具媒体属性,实现大数据搜索引擎和人工智能,打造共享开放的全球不良资产智能综服超级平台。" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}" />
-        <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=1.0.4" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=1.0.4" />
+        <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.4" />
 <style>
     #uploadifive-picture_upload{height: 30px!important;line-height: 30px!important;border-radius: 25px;background: #e48013;color: #fff;}
     .img_box{padding-left: 170px;}

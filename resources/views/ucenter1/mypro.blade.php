@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/myorder.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/myorder.css')}}?v=1.0.4" />
 <!-- 右侧详情 -->
     <div class="main_right">
         <h2>我的发布<a href="#">时间</a></h2>

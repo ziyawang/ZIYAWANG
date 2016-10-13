@@ -27,7 +27,7 @@
                     <li><a href="javascript:;">人才招聘</a></li>
                     <li><a href="javascript:;">商务合作</a></li>
                     <li><a href="http://ziyawang.com/legal">法律声明</a></li>
-                    <li><a href="http://ziyawang.com/feedback">意见反馈</a></li>
+                    <li><a href="javascript:;">意见反馈</a></li>
                 </ul>
             </div>
         </div>

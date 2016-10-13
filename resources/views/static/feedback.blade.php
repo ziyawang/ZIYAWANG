@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-        <link rel="stylesheet" type="text/css" href="{{url('/css/company.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{url('/css/company.css')}}?v=1.0.4" />
     <!-- 二级banner -->
     <div class="find_service">
         <ul>

@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/system.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/system.css')}}?v=1.0.4" />
 <!-- 右侧详情 -->
     <div class="main_right">
         <h2 class="systeminfo">系统消息<span>(共<span id="counts">0</span>条，<em>未读消息</em><span id="readcounts">0</span>条)</span></h2>

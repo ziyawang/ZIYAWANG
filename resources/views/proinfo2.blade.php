@@ -7,8 +7,8 @@
 @endsection
 
 @section('content')
-        <link rel="stylesheet" type="text/css" href="{{url('/css/infomation.css')}}" />
-        <link rel="stylesheet" type="text/css" href="{{url('/css/infolist.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{url('/css/infomation.css')}}?v=1.0.4.1" />
+        <link rel="stylesheet" type="text/css" href="{{url('/css/infolist.css')}}?v=1.0.4" />
     
         <!-- 二级banner -->
         <div class="find_service">
@@ -66,12 +66,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="conleftMiddle" style="display:none" id="CompanyDes">
-                    <!-- <h2>备注信息</h2>
-                    <p>（1）房子户型是全南向的两居室，进门是客厅，房子的卧室和厨房都是朝南向的没有遮挡阳光十分充足，其中主卧室朝南带阳台，格局非常方正基本没有浪费的地方是单位成本价房，可以调档满五唯一，落户学区房</p>
-                    <p>（2）房子户型是全南向的两居室，进门是客厅，房子的卧室和厨房都是朝南向的没有遮挡阳光十分充足，其中主卧室朝南带阳台，格局非常方正基本没有浪费的地方是单位成本价房，可以调档满五唯一，落户学区房</p>
-                    <p>（3）房子户型是全南向的两居室，进门是客厅，房子的卧室和厨房都是朝南向的没有遮挡阳光十分充足，其中主卧室朝南带阳台，格局非常方正基本没有浪费的地方是单位成本价房，可以调档满五唯一，落户学区房</p>
-                 --></div>
+                <div class="conleftMiddle memo" style="display:none">
+                    <h2><span class="delinestar"></span><span class="excellent">备注信息</span></h2>
+                    <div id="CompanyDes">
+                        <!-- <p>（1）房子户型是全南向的两居室，进门是客厅，房子的卧室和厨房都是朝南向的没有遮挡阳光十分充足，其中主卧室朝南带阳台，格局非常方正基本没有浪费的地方是单位成本价房，可以调档满五唯一，落户学区房</p>
+                        <p>（2）房子户型是全南向的两居室，进门是客厅，房子的卧室和厨房都是朝南向的没有遮挡阳光十分充足，其中主卧室朝南带阳台，格局非常方正基本没有浪费的地方是单位成本价房，可以调档满五唯一，落户学区房</p>
+                        <p>（3）房子户型是全南向的两居室，进门是客厅，房子的卧室和厨房都是朝南向的没有遮挡阳光十分充足，其中主卧室朝南带阳台，格局非常方正基本没有浪费的地方是单位成本价房，可以调档满五唯一，落户学区房</p> -->
+                    </div>
+                </div>
                 <div class="conleftBottom">
                     <div class="clbTitle">凭证信息</div>
                     <!-- 有图 -->
@@ -108,25 +110,29 @@
     </div>
     <!-- 聊天弹出层 -->
     <div class="poplayer2">
-        <a href="javascript:;" class="certain"></a>
+        <a href="javascript:;" class="certain">确定</a>
     </div>
     <!-- 清单弹出层 -->
     <div class="poplayer3">
         <a href="javascript:;" class="certain confirmurl"></a>
     </div>
     <!-- 抢单弹出层 -->
-    <div class="poplayer4">
-        <a href="javascript:;" class="certain confirmurl"></a>
+    <div class="poplayer5">
+        <a href="javascript:;" class="certain confirmurl">确定</a>
     </div>
+    <!-- <div class="popPhoneNum" style="display: none;">
+        <div class="popNumDet"></div>
+        <a href="javascript:;" class="certain">确定</a>
+    </div> -->
 </div>
 <!-- 弹层/end -->
 <style>
-    .layui-layer{border-top: 8px solid #fdd000;padding: 0 40px 30px;background: #fff;}
+    .layui-layer{border-top: 8px solid #fdd000; width: 420px!important; padding: 0 40px 30px;background: #fff;}
     .layui-layer .layui-layer-title{color:#000;text-align: center; border-bottom: 2px solid #fdd000; padding: 26px 0 22px 25px; font-size: 30px; letter-spacing: 25px; margin-bottom: 15px;background: none;}
     .layui-layer-dialog .layui-layer-content{padding: 0;line-height: 36px;text-align: justify;font-size: 20px;color: #000;letter-spacing: 1px;}
     .layui-layer .layui-layer-btn{text-align: center;margin-top: 20px;}
     .layui-layer-btn{padding: 0;}
-    .layui-layer-btn a{padding: 6px 32px 10px; background: #f4f4f4; border-radius: 5px; border-right: 2px; color: #000; box-shadow: 0 -5px 0 #bababa inset; position: relative;border: 0 none;margin: 0;font-size: 20px;margin: 0 18px;}
+    .layui-layer-btn a{width: 104px;padding: 6px 0px 10px; background: #f4f4f4; border-radius: 5px; border-right: 2px; color: #000; box-shadow: 0 -5px 0 #bababa inset; position: relative;border: 0 none;margin: 0;font-size: 20px;margin: 0 18px;text-align: center;}
     .layui-layer-btn .layui-layer-btn1{}
     .layui-layer-btn .layui-layer-btn0,.layui-layer-btn a:hover{background: #fdd000;box-shadow: 0 -5px 0 #b69600 inset;color: #000;}
     .layui-layer-btn a:active{top: 1px;}
@@ -303,6 +309,7 @@ $(function () {
         }
         if(CompanyDes.length > 3){
             $("#CompanyDes").html(CompanyDes).show();
+            $('#CompanyDes').parent().show();
         }
         if(Member == '1'){
             $('#infotype').attr('src','/img/vip_pic.png').show();
@@ -323,7 +330,7 @@ $(function () {
             PublishState = "<a href='javascript:;' class='overCooperation'><span>已合作</span><i class='iconfont grab'>&#xe600;</i></a>";
         }
         if(PayFlag == 1){
-            PublishState = "<a href='javascript:;' class='overOrders' id='rush'><span id='shownumber'>已<em>约</em>谈</span><i class='iconfont grab'><img src='/img/chat_icon.gif' height='18' width='18' style='margin:8px 0 0 7px;' /></i></a><span class='rushNumber' title='已有" + RushCount + "人约谈'>" + RushCount + "</span>";
+            PublishState = "<a href='javascript:;' class='applyOrder'><span id='shownumber'>" + ConnectPhone + "</span><i class='iconfont grab'><img src='/img/chat_icon.gif' height='18' width='18' style='margin:8px 0 0 7px;' /></i></a><span class='rushNumber' title='已有" + RushCount + "人约谈'>" + RushCount + "</span>";
         }
         if(ConnectPhone == $.cookie('phonenumber')){
             PublishState = "<a href='http://ziyawang.com/ucenter/mypro/rushlist/" + ProjectID + "' class='lookOrders'><span>查看约谈人</span><i class='iconfont grab'>&#xe617;</i></a><span class='rushNumber' title='已有" + RushCount + "人约谈'>" + RushCount + "</span>";
@@ -430,7 +437,8 @@ $(function () {
         function checkLogin(){
             if(!token){
                 // window.location = "{{url('/login')}}";
-                window.open("http://ziyawang.com/login","status=yes,toolbar=yes, menubar=yes,location=yes"); 
+                window.open("http://ziyawang.com/login","status=yes,toolbar=yes, menubar=yes,location=yes");
+                layer.confirm('请先登录！', {title: '提示', btn: ['确定']}, function(){window.location.href="http://ziyawang.com/ucenter/money?ProjectID=" + ProjectID; });
                 stop = true;
                 return false;
             }
@@ -471,18 +479,21 @@ $(function () {
                     type:'POST',
                     dataType:'json',
                     success:function(msg){
+                        // alert(msg.status_code);
                         if(msg.status_code == 200){
                             $('#shownumber').html(ConnectPhone);
                             $('#rush').css('cursor','default').unbind('click'); 
-                            layer.msg('您可以联系对方啦！', {time:1000});
+                            layer.alert('联系电话：' + ConnectPhone, {title: '提示'});
+                            // $('.popNumDet').html('联系电话：' + ConnectPhone);
+                            // $('.popPhoneNum').show();
                         } else if(msg.status_code == 418) {
-                            layer.confirm('余额不足，请充值！', {title: '提示', btn: ['充值','取消']}, function(){window.open("http://ziyawang.com/ucenter/money?ProjectID=" + ProjectID,"status=yes,toolbar=yes, menubar=yes,location=yes"); });
+                            layer.confirm('余额不足，请充值！', {title: '提示', btn: ['充值','取消']}, function(){window.location.href="http://ziyawang.com/ucenter/money?ProjectID=" + ProjectID; });
                         }
                     }
                 });
 
             }, function(){
-                window.open("http://ziyawang.com/ucenter/money?ProjectID=" + ProjectID,"status=yes,toolbar=yes, menubar=yes,location=yes"); 
+                window.location.href="http://ziyawang.com/ucenter/money?ProjectID=" + ProjectID; 
             }, function(){
 
             });
@@ -496,14 +507,10 @@ $(function () {
 
             checkService();
             if(stop){
-                myFun('poplayer4');
+                myFun('poplayer5');
                 return false;
             }
-            if(PayFlag == 1) {
-               $('#shownumber').html(ConnectPhone);
-               $('#rush').css('cursor','default').unbind('click'); 
-               return;
-            }
+            
             rush();
         });
 

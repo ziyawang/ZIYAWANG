@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.4" />
 <!-- 右侧 -->
     <div class="ucRight">
         <div class="ucRightCon ucRightSafe perfectInfo">
@@ -129,11 +129,6 @@
                 </style>
                     <div class="up_ceti clearfix">
                     <span class="ucSpan"><em>*</em>上传相关凭证：</span>
-                    <div class="clearfix img_box">
-                        <div class="pictures"><img class="preview" id="P1" src="" style="display: none;"></div>
-                        <div class="pictures"><img class="preview" id="P2" src="" style="display: none;"></div>
-                        <div class="pictures"><img class="preview" id="P3" src="" style="display: none;"></div>
-                    </div>
                     <div class="ec_right upload">
                         <span class="fileinput-button">
                         <span>选择图片</span>
@@ -224,7 +219,7 @@
             $('#pub').hide();
             $('.ucSpan').html('<em>*</em>已传相关凭证：');
             $('.upload').remove();
-            $('.ecp_word').remove();
+            // $('.ecp_word').remove();
             $(".btnBox").append("<a class='fabu' href='http://ziyawang.com/ucenter/reconfirm' type='button'><span>重新填写</span><i class='iconfont grab'>&#xe607;</i></a>")
         }
 
@@ -263,15 +258,18 @@
                     var ConfirmationP2 = service.ConfirmationP2;
                     var ConfirmationP3 = service.ConfirmationP3;
                     if(ConfirmationP1.length >1 ) {
-                        $('#P1').attr('src', 'http://images.ziyawang.com'+ConfirmationP1).show();
+                        $('#ConfirmationP1').attr('src', 'http://images.ziyawang.com'+ConfirmationP1).show().siblings().remove();
+                        $('#ConfirmationP1').parent().show();
                     }
 
                     if(ConfirmationP2.length >1 ) {
-                        $('#P2').attr('src', 'http://images.ziyawang.com'+ConfirmationP2).show();
+                        $('#ConfirmationP2').attr('src', 'http://images.ziyawang.com'+ConfirmationP2).show().siblings().remove();
+                        $('#ConfirmationP1').parent().show();
                     }
 
                     if(ConfirmationP3.length >1 ) {
-                        $('#P3').attr('src', 'http://images.ziyawang.com'+ConfirmationP3).show();
+                        $('#ConfirmationP3').attr('src', 'http://images.ziyawang.com'+ConfirmationP3).show().siblings().remove();
+                        $('#ConfirmationP1').parent().show();
                     }
 
                     $('#avatar').attr('src','http://images.ziyawang.com'+UserPicture);
@@ -282,6 +280,15 @@
                     $('#ServiceLocation').html(ServiceLocation);
                     $('.st_details').html(ServiceType);
                     $('#ServiceArea').html(ServiceArea);
+
+                    //左侧边栏通栏
+                    var ucRighthei1 = $('.ucRight').height();//初始高度
+                    $('.ucLeft').css('height',ucRighthei1 + 'px');
+                    //窗口size改变
+                    $(window).resize(function() {
+                        var ucRighthei2 = $('.ucRight').height();
+                        $('.ucLeft').css('height',ucRighthei2 + 'px');
+                    });
                 }
             })
         }

@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.4" />
     <!-- 右侧 -->
     <div class="ucRight">
         <div class="ucRightCon recharge">
@@ -68,8 +68,8 @@
 
         var urlpage   = getQueryString("startpage") ? getQueryString("startpage") : 1;
         var Type      = getQueryString("Type")      ? getQueryString("Type")      : '';
-        var starttime = getQueryString("starttime") ? getQueryString("starttime").substr(0,10) : '';
-        var endtime   = getQueryString("endtime")   ? getQueryString("endtime").substr(0,10)   : '';
+        var starttime = getQueryString("starttime") ? getQueryString("starttime") : '';
+        var endtime   = getQueryString("endtime")   ? getQueryString("endtime")   : '';
 
         $(".transaction a").each(function(){
             if($(this).attr('Type') == Type){
@@ -78,11 +78,11 @@
         })
 
         if(starttime != ''){
-            $('#start').html(starttime);
+            $('#start').html(starttime.substr(0,10));
         }
 
         if(endtime != ''){
-            $('#end').html(endtime);
+            $('#end').html(endtime.substr(0,10));
         }
 
         $.ajax({  
@@ -245,7 +245,7 @@
             }
         })
         starttime = $('#start').html();
-        endtime = $('#end').html();
+        endtime = $('#end').html() + " 23:59:59";
         if($('#today').hasClass('on')){
             starttime = formatdate() + ' 00:00:00';
             endtime = formatDate();
@@ -266,7 +266,7 @@
     $('.detailtype').click(function(){
         Type = $(this).attr('Type');
         starttime = $('#start').html();
-        endtime = $('#end').html();
+        endtime = $('#end').html() + " 23:59:59";
         if($('#today').hasClass('on')){
             starttime = formatdate() + ' 00:00:00';
             endtime = formatDate();
@@ -279,6 +279,14 @@
             starttime = '';
             endtime = '';
         }
+        var url = 'http://ziyawang.com/ucenter/money/detail?pagecount=1&Type=' + Type + '&starttime=' + starttime + '&endtime=' + endtime;
+        url = encodeURI(url);
+        window.location.href= url;
+    });
+
+    $('#today').click(function(){
+        starttime = formatdate();
+        endtime = formatdate() + ' 23:59:59';
         var url = 'http://ziyawang.com/ucenter/money/detail?pagecount=1&Type=' + Type + '&starttime=' + starttime + '&endtime=' + endtime;
         url = encodeURI(url);
         window.location.href= url;

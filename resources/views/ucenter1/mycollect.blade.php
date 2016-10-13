@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-    <link type="text/css" rel="stylesheet" href="{{url('/css/findservice.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{url('/css/findservice.css')}}?v=1.0.4" />
 <!-- 右侧详情 -->
     <div class="main_right">
         <h2>我收藏的</h2>

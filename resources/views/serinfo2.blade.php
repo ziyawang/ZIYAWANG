@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <link rel="stylesheet" type="text/css" href="{{asset('/css/infomation.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/infomation.css')}}?v=1.0.4.2" />
 <!-- 二级banner -->
 <div class="find_service">
     <ul>
@@ -253,7 +253,7 @@ $(function () {
         $("#ServiceName").html('<b>'+ ServiceName + '</b>');
         $('#ServiceNumber').html(ConnectPerson);
 
-        var orderLevel = "<span class='disc'></span><span class='already' id='already'><i><img src='/img/b_phone.png'></i><em>已约谈" + CoNumber + "次</em></span><span class='levels'><i class='iconfont'>&#xe60e;</i><em>" + ServiceLevel + "</em></span>";
+        var orderLevel = "<span class='disc'></span><span class='levels'><i class='iconfont'>&#xe60e;</i><em>" + ServiceLevel + "</em></span>";
         var location = "<span class='disc'></span><span class='locationCon'>所在地：</span>" + ServiceLocation;
         var secondary = "<span class='disc'></span><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont hearts' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span>";
         $('.orderLevel').html(orderLevel);

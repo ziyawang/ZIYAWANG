@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.4" />
     <!-- 右侧 -->
     <div class="ucRight">
         <div class="ucRightCon recharge">
@@ -9,7 +9,7 @@
                 <em class="grayLine"></em>
             </h3>
             <div class="ucrightTop">
-                <div class="infoText"><strong>公告：</strong><b>【通知】</b>如您在支付过程中出现意外情况，请联系资芽客服，充值金额不可转账到退款或兑换为现金。<p><b>联系电话：</b>010-56230557</p></div>
+                <div class="infoText"><strong>公告：</strong><b>【通知】</b>如您在支付过程中出现意外情况，请联系资芽客服，充值金额不可转账到退款或兑换为现金。<p><b style="margin-left:0;">联系电话：</b>010-56230557</p></div>
             </div>
             <div class="amount">
                 <div class="amountTitle">
@@ -73,9 +73,11 @@
 </div>
 <div class="poplayer">
     <div class="popWx">
-        <div class="popWeixin" id="code"></div>
+        <div class="changeWeixin">
+            <div class="popWeixin" id="code"></div>
+        </div>
         <span class="weixinLittle"></span>
-        <div>扫描二维码完成支付</br>支付完成后请关闭二维码</div>
+        <div class="weixinTips"><strong>扫瞄二维码完成支付</strong>支付完成后请关闭二维码</div>
         <a href="javascript:;" class="closePop" title="关闭"></a>
     </div>
     <!-- 协议 -->

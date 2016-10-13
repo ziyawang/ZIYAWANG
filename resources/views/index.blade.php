@@ -5,13 +5,14 @@
 	<meta name="viewport" content="width=1492">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="360-site-verification" content="99c1119efa403c5080b1aee5da85cf4d" />
 	<meta name="baidu-tc-verification" content="f3b0a4c29cc8db2908b39b13b5844097" />
 	<title>资芽网-全球不良资产超级综服平台</title>
 	<meta name="Keywords" content="资芽网,不良资产,不良资产处置,不良资产处置平台" />
 	<meta name="Description" content="资芽网吸引全国各类不良资产持有者，汇集各类不良资产信息及相关需求,整合海量不良资产处置服务机构与投资方,搭建多样化处置通道和不良资产综服生态产业体系,嵌入移动社交与视频直播,兼具媒体属性,实现大数据搜索引擎和人工智能,打造共享开放的全球不良资产超级综服平台。" />
 	<meta name="baidu-site-verification" content="g4AlAGeFKg" />
-	<link type="text/css" rel="stylesheet" href="{{url('/css/index.css')}}" />
+	<link type="text/css" rel="stylesheet" href="{{url('/css/index.css')}}?v=1.0.4" />
 </head>
 <body>
 	<div class="header">

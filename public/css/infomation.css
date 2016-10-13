@@ -39,7 +39,7 @@
 .orderLevel i,.secondary i{margin-right: 5px;}
 .already {margin:0 14px 0 35px;color: #272536;font-size: 16px;}
 .already i{font-size: 18px;}
-.levels {color: #c9463b;font-size: 16px;}
+.levels {color: #c9463b;font-size: 16px; margin-left: 36px;}
 .levels i {font-size: 23px;}
 .location{position: absolute;top: 175px;right:3px;width: 255px;border-bottom: 2px solid #545454;font-size: 18px;color:#333;font-weight: bold;}
 .location .locationCon{font-size: 16px;color:#8c7e7e;margin-left: 28px;font-weight: normal;}
@@ -105,7 +105,7 @@
 .poplayer1,.poplayer3,.poplayer4{width: 391px;height: 182px;background:url(../img/pop1.png) no-repeat;top: 50%;left:50%;margin:-91px 0 0 -180px;position: fixed;z-index: 11;display: none;}
 .poplayer1 a,.poplayer3 a,.poplayer4 a{color:#703802;position: absolute;bottom:0px;left:135px;font-size: 16px;font-weight: bold;line-height: 28px;width: 120px;text-align: center;height:26px;}
 .poplayer2{width: 176px;height: 324px;background:url(../img/pop2.png) no-repeat;top: 50%;left: 50%;margin:-162px 0 0 -88px;position:fixed;z-index: 12;display: none;}
-.poplayer2 a{color:#703802;position: absolute;bottom:3px;left:30px;font-size: 16px;font-weight: bold;line-height: 28px;width: 120px;text-align: center;height: 30px;}
+.poplayer2 a{color:#703802;position: absolute;bottom:1px;left:30px;font-size: 16px;font-weight: bold;line-height: 28px;width: 120px;text-align: center;height: 30px;}
 .poplayer3{background:url(../img/pop3.png) no-repeat;}
 .poplayer4{background:url(../img/pop4.png) no-repeat;}
 .clmleftProvince .moreIcon{cursor:pointer;}
@@ -151,7 +151,7 @@
 .informations .infoStyles{border-bottom: 1px solid #fff;padding-bottom: 5px;height: 90px;}
 /*申请抢单*/
 .informations .applyOrder,.informations .overCooperation,.informations .overOrders,.informations .lookOrders{display: block;height: 38px;width: 138px;position: absolute;top: 52px;right:26px;text-align: center;}
-.informations .applyOrder span{/*padding-left: 18px;letter-spacing: 20px;*/width: 114px;height: 38px;background:#fdd000;box-shadow: 0 -5px 0px #d3a309 inset;border-radius: 2px;z-index: 2;line-height: 36px;position: absolute;top: 0px;right: 29px;color:#000;font-weight: bold;}
+.informations .applyOrder span{/*padding-left: 18px;letter-spacing: 20px;*/min-width: 95px;padding:0 7px;height: 38px;background:#fdd000;box-shadow: 0 -5px 0px #d3a309 inset;border-radius: 2px;z-index: 2;line-height: 36px;position: absolute;top: 0px;right: 29px;color:#000;font-weight: bold;}
 .informations .applyOrder .grab{width: 30px;height: 38px;background:#3c4042;box-shadow: 0 -5px 0px #323536 inset;border-radius: 0 2px 2px 0;z-index: 1;margin-left: -2px;line-height: 38px;position: absolute;top: 0px;right: 0px;color:#fff;font-size: 24px;-webkit-text-stroke-width: 0px;}
 .rushNumber{width: 18px;height: 18px;line-height:18px;border-radius: 20px;background:#b80202;position: absolute;right:19px;top: 44px;z-index: 3;font-size: 12px;text-align: center;color:#fff;}
 .informations .applyOrder span em{display: inline-block;margin-left: 16px;}
@@ -189,8 +189,10 @@
 .informations .supply{padding:12px 0 5px;}
 .informations .btnOrange em b{padding-left: 1em;}
 /*new 9.27*/
-.conleftMiddle{min-height: 160px;margin-bottom: 45px; width: 826px; box-shadow: 0px 0px 8px #ccc; padding: 32px 34px; font-size: 16px; color: #333; line-height: 30px; border: 1px solid #eee\0;text-align: justify;}
-.conleftMiddle h2{padding:0 0 0 48px;background:url(../img/newsinfo.png) no-repeat 12px -196px;font-size: 22px;margin-bottom: 12px;}
+.conleftMiddle{min-height: 85px;margin-bottom: 45px; width: 826px; box-shadow: 0px 0px 8px #ccc; padding: 32px 34px; font-size: 16px; color: #333; line-height: 30px; border: 1px solid #eee\0;text-align: justify;}
+.conleftMiddle h2{padding:0 0 0 24px;font-size: 28px;position: relative;width: 355px;border-bottom: 2px solid #d9e476;margin:-6px 0px 12px 25px;}
+.conleftMiddle .delinestar{position: absolute;width: 39px;height: 39px;background:url(../img/delinestar.png) no-repeat;left: -27px;top: 7px;}
+.excellent{padding-bottom: 12px;display: block;letter-spacing: 3px;}
 .shoufei,.mianfei,.chargePop{width: 420px;height: 275px;background:#fff;color:#000;font-weight: bold;font-size: 20px;position: fixed;top: 50%;left: 50%;margin:-90px 0 0 -220px;display: none;z-index: 11;border-top: 8px solid #fdd000;padding:0 40px;font-weight: normal;}
 .tishi{text-align: center;border-bottom: 2px solid #fdd000;padding:26px 0 22px 25px;font-size: 30px;letter-spacing: 25px;margin-bottom: 15px;}
 .rechargeInformation{line-height: 36px;text-align: justify;}
@@ -210,3 +212,9 @@
 #already i{float: left;margin: 8px 5px 0 35px;}
 #already i img{width: 19px;height: 19px;}
 .conleftMiddle{position: relative;}
+/*10-12 new add*/
+.popPhoneNum{width: 391px;height: 182px;background:url(../img/popphone_number.png) no-repeat;position: fixed;top: 50%;left: 50%;margin:-91px 0 0 -195px;}
+.popNumDet{position: absolute;bottom: 30px;left: 83px;color:#723a03;font-size: 18px;letter-spacing: 2px;}
+.popPhoneNum a{display: block;width: 125px;height: 29px;line-height: 29px;position: absolute;bottom: 0;left: 132px;color:#723a03;font-size: 16px;text-align: center;font-weight: bold;}
+.poplayer5{width:342px;height:183px;background:url(../img/pop5.png) no-repeat;top:50%;left:50%;margin:-92px 0 0 -171px;position:fixed;z-index:11;display:none;}
+.poplayer5 a{color:#703802;position: absolute;font-size: 16px;font-weight: bold;line-height: 28px;width: 120px;text-align: center;height:28px;bottom:0px;left:110px;}

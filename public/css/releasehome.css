@@ -24,14 +24,14 @@ body{background:#fff;}
 .ucrightBottom a .ucIcons9{background:url(../img/b_icons.png) no-repeat 15px -218px;margin-bottom: 15px;}
 .ucrightBottom a .ucIcons10{background:url(../img/b_icons.png) no-repeat -130px -218px;margin-bottom: 15px;}
 .ucrightBottom a .ucIcons11{background:url(../img/b_icons.png) no-repeat -260px -218px;margin-bottom: 15px;width: 120px;}
-.ucrightBottom a:hover{background:#d5d5d5;font-weight: bold;;}
+.ucrightBottom a:hover{background:#d5d5d5;font-weight: bold;}
 .ucrightBottom a:hover span{-webkit-transform: translate(0,7px); -moz-transform: translate(0,7px); -ms-transform: translate(0,7px); -o-transform: translate(0,7px); transform: translate(0,7px);}
 /*look information list of myrelease*/
 .ucRightList{padding:43px 0 66px;}
 .ucRightList .selectiveType{border-bottom: 3px solid #c0c0c0; font-weight: normal; color: #333; width: 892px;height: 35px;line-height: 35px;margin-top: 0;}
 .ucRightList .selectiveType span{font-weight: normal;font-size: 20px;color:#333;background:-webkit-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:-moz-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:-ms-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:-o-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:linear-gradient(top,#efefef,#f4f4f4,#ffffff);border:1px solid #c2c2c2;border-radius: 10px 10px 0 0;box-shadow: 0 2px 0 #fff inset;width: 142px;height: 34px;line-height: 34px;display: block;letter-spacing: 2px;padding:0 0 0 12px;}
 .publishList{width: 892px;}
-.publishList ul li{margin-top: 28px;border: 2px solid #d1d1d4;-webkit-transition: all .35s; -moz-transition: all .35s; -ms-transition: all .35s; -o-transition: all .35s; transition: all .35s;}
+.publishList ul li{margin-top: 39px;border: 2px solid #d1d1d4;-webkit-transition: all .35s; -moz-transition: all .35s; -ms-transition: all .35s; -o-transition: all .35s; transition: all .35s;}
 .publishList ul li:hover{border: 2px solid #ffa000;}
 .publishList ul li a{display: block;}
 .publishList ul li .pblLeft{float: left;text-align: center;background:#d1d1d4;width: 104px;height: 92px;margin-right: 26px;color:#333;}
@@ -110,7 +110,7 @@ body{background:#fff;}
 .ec_right select option{color: #333;}
 .ec_right select .grayColor{color:#999!important;}
 .ec_right textarea{width: 372px;height: 82px;border: 1px solid #e5e5e5;padding:3px;text-align: justify;}
-.ec_right .add_voice{padding:0 0 0 33px;width: 152px;height: 34px;line-height:34px;border:1px solid #ffa000;color: #ffa000;background:#fff;border-radius: 30px;font-size: 16px;letter-spacing: 1px;display: block;text-align: left;font-weight: bold;/*font-family: '黑体';*/}
+.ec_right .add_voice{padding:0 0 0 33px;width: 152px;height: 34px;line-height:34px;border:1px solid #ffa000;color: #ffa000;background:#fff;border-radius: 30px;font-size: 16px;letter-spacing: 1px;display: block;text-align: left;font-weight: bold;/*font-family: 'é»‘ä½“';*/}
 .ec_right .add_voice i{font-weight: normal;font-size: 22px;float: left;-webkit-text-stroke-width:0px;}
 .ec_right .add_voice:hover{background:#ffa000;color:#fff;}
 .ec_right .up_pic{width: 156px;height: 36px;line-height: 36px;color: #fff;border-radius: 30px;background: #ffca00;font-weight: bold;letter-spacing: 1px;}
@@ -128,7 +128,7 @@ body{background:#fff;}
 .vessel{box-shadow: 1px 1px 4px #ccc inset;width: 145px;height: 30px;background:#eee;float: left;}
 .city select{height: 32px;line-height: 32px;width: 108px;border: 1px solid #e5e5e5;color: #999;}
 .btnBox{padding:20px 0 0 0;/*border-top: 1px solid #c0c0c0;*/width: 892px;}
-.btnBox .fabu{display: block;height: 38px;width: 138px;text-align: center;background:none;border:0 none;margin:0 auto;}
+.btnBox .fabu{display: block;height: 38px;width: 142px;text-align: center;background:none;border:0 none;margin:0 auto;}
 .fabu span{width: 100px;height: 38px;background:#fbad1c;box-shadow: 0 -5px 0px #c07017 inset;border-radius: 2px;z-index: 2;line-height: 36px;letter-spacing: 2px;color:#000;font-weight: bold;padding-left: 8px;display: block;float: left;font-size: 16px;}
 .fabu .grab{width: 30px;height: 38px;background:#3c4042;box-shadow: 0 -5px 0px #323536 inset;border-radius: 0 2px 2px 0;z-index: 1;margin-left: -2px;line-height: 38px;color:#fff;font-size: 20px;-webkit-text-stroke-width: 0px;display: block;float: left;}
 /*safe center*/
@@ -243,13 +243,13 @@ body{background:#fff;}
 .paymodeDetails .pmdTwo .payweixin{background:url(../img/zhifu.png) no-repeat 0 0;}
 .paymodeDetails .pmdTwo .payalipay{background:url(../img/zhifu.png) no-repeat -127px 0;}
 .paymodeDetails .pmdTwo .netBank{background:url(../img/zhifu.png) no-repeat 0px -42px;}
-.rechargeConfirm{display: block;width: 130px;height: 36px;background:url(../img/zhifu.png) no-repeat -275px -44px;cursor:pointer;margin:18px 0 20px;}
+.rechargeConfirm{display: block;width: 130px;height: 36px;background:url(../img/zhifu.png) no-repeat -275px -44px;cursor:pointer;margin:18px 0 20px;border: 0 none;}
 .payProto{height: 20px;line-height: 20px;font-size: 12px;padding-bottom: 20px;}
 .payProto .paycheked{float: left;display: block;width: 13px;height: 20px;background:url(../img/zhifu.png) no-repeat -508px -25px;margin-right: 10px;}
 .payProto .active{background-position:-508px 1px;}
 .payProto span{color:#54657e;font-weight: bold;cursor:pointer;}
-.popWx{width: 260px;border: 2px solid #ccc;position: fixed;left: 50%;top: 50%;margin:-112px 0 0 -112px;background:#fff;text-align: center;border-radius: 3px;display: none;font-size: 20px;padding:0 0 27px;letter-spacing: 2px;}
-.popWeixin img{margin:30px auto 6px;width: 200px;height: 200px;}
+.popWx{width: 285px;border: 2px solid #ccc;position: fixed;left: 50%;top: 50%;margin: -160px 0 0 -145px;background:#fff;text-align: center;border-radius: 3px;display: none;font-size: 20px;padding:30px 0 27px;letter-spacing: 0px;}
+.popWeixin img{margin:0px auto 6px;width: 200px;height: 200px;}
 .weixinLittle{display: block;width: 125px;height: 33px;background:url(../img/zhifu.png) no-repeat 0 0;margin:0 auto;}
 .closePop{position: absolute;right: 0;top: 0;width: 22px;height: 22px;background:#b8b8b8 url(../img/zhifu.png) no-repeat -147px -46px;}
 /*yabi details*/
@@ -390,3 +390,10 @@ table tr td a:hover{color:#333;}*/
 .closeProto{right:-25px;top: -3px;}
 .congratulation .failure{background:none;}
 .fail p{padding: 0;}
+/*10-22 new add*/
+.publishList ul li{position: relative;}
+.uniqueTime{position: absolute;top: -31px;left: 0;font-size: 12px;color:#8b8b8b;}
+.lookChat .publishList li{margin-top: 28px;}
+.changeWeixin{width: 231px;height: 220px;background:url(../img/weixinbg.png) no-repeat;margin:0 auto;padding-top:15px;}
+.weixinTips{line-height: 35px;}
+.weixinTips strong{display: block;font-size:20px;color:#000;}

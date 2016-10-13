@@ -357,6 +357,8 @@ $(function(){
         var vip = '';
         if(Member == 1){
             vip = '<img src="img/vip_pic.png" class="vipPic" />';
+        } else if (Member == 2){
+            vip = '<img src="img/shoufei.png" class="vipPic" style="margin-top: -2px;" />';
         }
         var newinfo = '';
         if(NewFlag == 1){

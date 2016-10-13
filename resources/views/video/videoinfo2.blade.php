@@ -6,7 +6,7 @@
         <meta name="Description" content="资芽视频是资芽网第一视频,行业专家释疑解惑,分享经验,培训学习,剖析热点话题;线上线下活动,同业互动,探索分析,交流共享,协作共赢,鼓励创新,普及法律常识,降低法律风险.推动不良资产行业,金融领域健康有序发展." />
 @endsection
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/videos.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/videos.css')}}?v=1.0.4" />
 <script src="{{asset('/js/fingerprint.js')}}"></script>
 <script src="{{asset('/js/jquery.md5.js')}}"></script>
 <script src="{{asset('/org/layer/layer.js')}}"></script>

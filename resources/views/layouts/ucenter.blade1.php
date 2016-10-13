@@ -9,11 +9,11 @@
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/fsdetails.css')}}" />
-        <link type="text/css" rel="stylesheet" href="{{url('/css/relinfo.css')}}" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=1.0.4" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=1.0.4" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}?v=1.0.4" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/fsdetails.css')}}?v=1.0.4" />
+        <link type="text/css" rel="stylesheet" href="{{url('/css/relinfo.css')}}?v=1.0.4" />
 <style>
     #uploadifive-picture_upload{height: 30px!important;line-height: 30px!important;border-radius: 25px;background: #e48013;color: #fff;}
     .img_box{padding-left: 170px;}
@@ -97,7 +97,7 @@
                 </div>
         </div>
     </div>
-    <link type="text/css" rel="stylesheet" href="{{url('/css/relinfo.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{url('/css/relinfo.css')}}?v=1.0.4" />
 <!-- 二级banner -->
 <div class="find_service">
     <ul>
