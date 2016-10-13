@@ -381,7 +381,7 @@ var stop = false;
         var data = $('form').serialize();
         $(this).attr('disabled', true);
         $.ajax({
-            url:"http://api.ziyawang.com/v1/service/reconfirm?token="+token,
+            url:"http://api.ziyawang.com/v1/service/reconfirm?token=" + token + "&" + data,
             type:"POST",
             data:data,
             dataType:"json",

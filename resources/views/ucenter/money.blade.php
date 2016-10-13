@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.4" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.4.1" />
     <!-- 右侧 -->
     <div class="ucRight">
         <div class="ucRightCon recharge">
@@ -9,7 +9,7 @@
                 <em class="grayLine"></em>
             </h3>
             <div class="ucrightTop">
-                <div class="infoText"><strong>公告：</strong><b>【通知】</b>如您在支付过程中出现意外情况，请联系资芽客服，充值金额不可转账到退款或兑换为现金。<p><b style="margin-left:0;">联系电话：</b>010-56230557</p></div>
+                <div class="infoText"><strong>公告：</strong><b>【通知】</b>如您在支付过程中出现意外情况，请联系资芽客服，充值的芽币不可转账或兑换为现金。<p><b style="margin-left:0;">联系电话：</b>010-56230557</p></div>
             </div>
             <div class="amount">
                 <div class="amountTitle">
@@ -176,7 +176,7 @@
                 window.location.href = "http://ziyawang.com/project/" + ProjectID;
                 return false;
             }
-            location.reload([true]);
+            window.location.reload(); 
         });
         //协议弹窗
         $('.payProto span').click(function(event) {
@@ -219,9 +219,9 @@
             }
             var subject = '充值金额';
             $.ajax({
-                url:"http://api.ziyawang.com/v1/pay?token=" + token,
+                url:"http://api.ziyawang.com/v1/pay?access_token=token&amount=" + amount*100 + "&channel=" + channel + "&subject=" + subject + "&ProjectID=" + ProjectID + "&token=" + token,
                 type:"POST",
-                data:{'amount':amount*100,'channel':channel,'subject':subject,'access_token':'token', 'ProjectID': ProjectID},
+                data:{'amount':amount*100,'channel':channel,'subject':subject,'ProjectID': ProjectID},
                 dataType:'json',
                 success:function(msg){
                     var charge = eval(msg);

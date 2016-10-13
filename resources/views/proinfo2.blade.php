@@ -287,7 +287,7 @@ $(function () {
         var CollectCount  = json.CollectCount;
         var RushCount     = json.RushCount;
         var WordDes       = json.WordDes;
-        var CompanyDes    = json.CompanyDes;
+        var CompanyDes    = json.CompanyDesPC;
         var Publisher     = json.Publisher;
         var brief         = WordDes.substr(0,20) + "...";
         var VoiceDes      = json.VoiceDes;

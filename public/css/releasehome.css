@@ -239,7 +239,7 @@ body{background:#fff;}
 .paymodeCon .cur{display: block;}
 .paymodeDetails{display: none;}
 .paymodeDetails .pmdTwo a{display: inline-block;width: 125px;height: 33px;border: 1px solid #ccc;margin-right: 18px;}
-.paymodeDetails .pmdTwo .current{border-color: #ffad00;}
+.paymodeDetails .pmdTwo .current{border-color: #ffad00; border-width: 3px;}
 .paymodeDetails .pmdTwo .payweixin{background:url(../img/zhifu.png) no-repeat 0 0;}
 .paymodeDetails .pmdTwo .payalipay{background:url(../img/zhifu.png) no-repeat -127px 0;}
 .paymodeDetails .pmdTwo .netBank{background:url(../img/zhifu.png) no-repeat 0px -42px;}

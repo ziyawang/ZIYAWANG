@@ -257,7 +257,7 @@ $(function () {
             </form>
             </div>
                 <div class="btnBox">
-                    <button class="fabu" type="button"><span id="pub">确认发布</span><i class="iconfont grab">&#xe607;</i></button>
+                    <button class="fabu" id="pub" type="button"><span>确认发布</span><i class="iconfont grab">&#xe607;</i></button>
                 </div>
             </div>
         </div>
@@ -391,7 +391,6 @@ var stop = false;
 
     $('#pub').click(function(){
         _checkInput();
-
         //左侧边栏通栏
         var ucRighthei1 = $('.ucRight').height();//初始高度
         $('.ucLeft').css('height',ucRighthei1 + 'px');
@@ -417,9 +416,9 @@ var stop = false;
 
         // var token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzMyIsImlzcyI6Imh0dHA6XC9cL2FwaXRlc3Queml5YXdhbmcuY29tXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOiIxNDc0Nzk0NTQyIiwiZXhwIjoiMTQ3NTM5OTM0MiIsIm5iZiI6IjE0NzQ3OTQ1NDIiLCJqdGkiOiJmNmFhNDRhODA4ODBlZjAxNzE3NWJmYTZhNDczMWJiZCJ9.ho521A0Prh6LcNAPNcmQEF2H_VTQBXstSwf2m4yeXpA";
         $(this).attr('disabled', true);
-        console.log(data);
+        // console.log(data);
         $.ajax({
-            url:"http://api.ziyawang.com/v1/project/create?token="+token,
+            url:"http://api.ziyawang.com/v1/project/create?token=" + token + "&" + data,
             type:"POST",
             data:data,
             dataType:"json",
@@ -465,7 +464,7 @@ var stop = false;
 <script>
 $(function () {
     var token = $.cookie('token');
-        // var token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzMyIsImlzcyI6Imh0dHA6XC9cL2FwaXRlc3Queml5YXdhbmcuY29tXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOiIxNDc0Nzk0NTQyIiwiZXhwIjoiMTQ3NTM5OTM0MiIsIm5iZiI6IjE0NzQ3OTQ1NDIiLCJqdGkiOiJmNmFhNDRhODA4ODBlZjAxNzE3NWJmYTZhNDczMWJiZCJ9.ho521A0Prh6LcNAPNcmQEF2H_VTQBXstSwf2m4yeXpA";
+        // var token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiaHR0cDpcL1wvYXBpLnppeWF3YW5nLmNvbVwvdjFcL2F1dGhcL2xvZ2luIiwiaWF0IjoiMTQ3NjM0OTE0MCIsImV4cCI6IjIxMDcwNjkxNDAiLCJuYmYiOiIxNDc2MzQ5MTQwIiwianRpIjoiMmIxOWNkOGNmYjIzNDZkZWQyYmU4ZjgwMGJjNjY5NjMifQ.gWBZgej8Z7DKEP_h5yBltEQvZ_KqBfy_uUqZvvksiDY";
     if(!token){
         window.location = "{{url('/login')}}";
         return false;

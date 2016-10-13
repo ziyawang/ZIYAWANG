@@ -447,7 +447,7 @@ var stop = false;
         // var token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzMyIsImlzcyI6Imh0dHA6XC9cL2FwaXRlc3Queml5YXdhbmcuY29tXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOiIxNDc0Nzk0NTQyIiwiZXhwIjoiMTQ3NTM5OTM0MiIsIm5iZiI6IjE0NzQ3OTQ1NDIiLCJqdGkiOiJmNmFhNDRhODA4ODBlZjAxNzE3NWJmYTZhNDczMWJiZCJ9.ho521A0Prh6LcNAPNcmQEF2H_VTQBXstSwf2m4yeXpA";
         // console.log(data);
         $.ajax({
-            url:"http://api.ziyawang.com/v1/service/confirm?token="+token,
+            url:"http://api.ziyawang.com/v1/service/confirm?token="+ token + "&" + data,
             type:"POST",
             data:data,
             dataType:"json",

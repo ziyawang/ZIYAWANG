@@ -42,9 +42,10 @@ $(function () {
                 // console.log(file.name);
                 $("#avatar").attr('src','http://images.ziyawang.com/user/'+file.name).show();
                 $("#avatar1").attr('src','http://images.ziyawang.com/user/'+file.name);
+                var UserPicture = '/user/'+file.name;
                 $.ajax({
-                        url: 'http://api.ziyawang.com/v1/auth/chpicture?access_token=token&token=' + token,
-                        data: {'UserPicture':'/user/'+file.name},
+                        url: 'http://api.ziyawang.com/v1/auth/chpicture?access_token=token&UserPicture=' + UserPicture + '&token=' + token,
+                        data: {'UserPicture':UserPicture},
                         type: 'POST',
                         dataType:'json',
                         success:function(msg){
@@ -114,7 +115,7 @@ $(function () {
             else{
                 var username = $('.enterName').val();
                 $.ajax({
-                    url : "http://api.ziyawang.com/v1/auth/chusername?access_token=token&token=" + token,
+                    url : "http://api.ziyawang.com/v1/auth/chusername?access_token=token&username=" + username + "&token=" + token,
                     data : {'username' : username},
                     type : 'POST',
                     dataType : 'json',
