@@ -134,7 +134,7 @@
                 switch(TypeID)
                 {
                     case "1":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef1'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>地区：<strong>" + ProArea + "</strong></span><span>来源：<strong>" + FromWhere + "</strong></span><span class='spanTag'>资产包类型：<strong>" + AssetType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>总金额：</strong>" + TotalMoney + "万</span><span></span><span><strong>转让价：</strong>" + TransferMoney + "万</span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li> ";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef1'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>地区：<strong>" + ProArea + "</strong></span><span>来源：<strong>" + FromWhere + "</strong></span><span class='spanTag'>资产包类型：<strong>" + AssetType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>转让金额：</strong>" + TransferMoney + "万</span><span></span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li> ";
                         break;
                     case "2":
                         var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef2'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span class='spanTags'>债务人所在地：<strong>" + ProArea + "</strong></span><span class='spanTags1'>状态：<strong>" + Status + "</strong></span><span class='spanTag'>类型：<strong>" + AssetType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>金额：</strong>" + TotalMoney + "万</span><span></span><span><strong>佣金比例：</strong>" + Rate + "</span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li>";
@@ -164,7 +164,7 @@
                         break;
 
                     case "12":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef12'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>标的物：<strong>" + Corpore + "</strong></span><span>地区：<strong>" + ProArea + "万</strong></span><span class='spanTag'>类型：<strong>" + AssetType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>总金额：</strong>" + TotalMoney + "万</span><span></span><span><strong>转让价：</strong>" + TransferMoney + "万</span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef12'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>标的物：<strong>" + Corpore + "</strong></span><span>地区：<strong>" + ProArea + "万</strong></span><span class='spanTag'>类型：<strong>" + AssetType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>转让金额：</strong>" + TransferMoney + "万</span><span></span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li>";
                         break;
 
                     case "13":
@@ -172,7 +172,7 @@
                         break;
 
                     case "14":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef14'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>地区：<strong>" + ProArea + "</strong></span><span>类型：<strong>" + AssetType + "</strong></span><span class='spanTag'></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>总金额：</strong>" + TotalMoney + "万</span><span></span><span><strong>转让价：</strong>" + TransferMoney + "万</span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li> ";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef14'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>地区：<strong>" + ProArea + "</strong></span><span>类型：<strong>" + AssetType + "</strong></span><span class='spanTag'></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>转让金额：</strong>" + TransferMoney + "万</span><span></span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li> ";
                         break;
 
                     case "15":

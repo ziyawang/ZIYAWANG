@@ -364,7 +364,7 @@ $(function () {
         var Buyer         = ('Buyer' in json)         ? json.Buyer : null;
         var InvestType    = ('InvestType' in json)    ? json.InvestType : null;
         var Year          = ('Year' in json)          ? json.Year : null;
-        var Price          = ('Price' in json)          ? json.Price : null;
+        var Price         = ('Price' in json)        ? json.Price : null;
 
         var listhtml = '';
         switch(TypeID)
@@ -469,10 +469,7 @@ $(function () {
         }
 
         function rush() {
-            layer.confirm('该信息为收费资源，查看对方联系方式需消耗' + Price + '芽币，点击确认系统将自动扣除！', {
-                 title: '提示',
-                btn: ['确定','充值','取消'] //按钮
-            }, function(){
+            if(Price == 0){
                 token = token.replace(/\'/g,"");
                 $.ajax({
                     url:'http://api.ziyawang.com/v1/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
@@ -480,7 +477,7 @@ $(function () {
                     dataType:'json',
                     success:function(msg){
                         // alert(msg.status_code);
-                        if(msg.status_code == 200){
+                        if(msg.status_code == 200 || msg.status_code == 417){
                             $('#shownumber').html(ConnectPhone);
                             $('#rush').css('cursor','default').unbind('click'); 
                             layer.alert('联系电话：' + ConnectPhone, {title: '提示'});
@@ -491,13 +488,38 @@ $(function () {
                         }
                     }
                 });
+                return;
+            } else {
+                layer.confirm('该信息为收费资源，查看对方联系方式需消耗' + Price + '芽币，点击确认系统将自动扣除！', {
+                     title: '提示',
+                    btn: ['确定','充值','取消'] //按钮
+                }, function(){
+                    token = token.replace(/\'/g,"");
+                    $.ajax({
+                        url:'http://api.ziyawang.com/v1/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+                        type:'POST',
+                        dataType:'json',
+                        success:function(msg){
+                            // alert(msg.status_code);
+                            if(msg.status_code == 200){
+                                $('#shownumber').html(ConnectPhone);
+                                $('#rush').css('cursor','default').unbind('click'); 
+                                layer.alert('联系电话：' + ConnectPhone, {title: '提示'});
+                                // $('.popNumDet').html('联系电话：' + ConnectPhone);
+                                // $('.popPhoneNum').show();
+                            } else if(msg.status_code == 418) {
+                                layer.confirm('余额不足，请充值！', {title: '提示', btn: ['充值','取消']}, function(){window.location.href="http://ziyawang.com/ucenter/money?ProjectID=" + ProjectID; });
+                            }
+                        }
+                    });
 
-            }, function(){
-                window.location.href="http://ziyawang.com/ucenter/money?ProjectID=" + ProjectID; 
-            }, function(){
+                }, function(){
+                    window.location.href="http://ziyawang.com/ucenter/money?ProjectID=" + ProjectID; 
+                }, function(){
 
-            });
-            return;
+                });
+                return;
+            }
         }
         $("#rush").click(function(){
             checkLogin();

@@ -140,7 +140,7 @@
                 <div class="ec_right">
                     <textarea name="WordDes" id="" class="ec_textarea"></textarea>
                 </div>
-                <p class="ec_pleft ecp_text">提示：<br>为保护您的隐私，如您在描述中填写个人姓名、联系方式等信息，平台将做模糊处理。</p>
+                <p class="ec_pleft ecp_text">提示：（字数限制在500字以内）<br>为保护您的隐私，如您在描述中填写个人姓名、联系方式等信息，平台将做模糊处理。</p>
             </div>
             <!-- 语音描述 -->
             <div class="ec clearfix">
@@ -324,6 +324,7 @@ var stop = false;
         if($(this).val()=='null' || $(this).val()==0 || $(this).val()==undefined){
             $parent.append("<p class='error'>您还没选呢~</p>");
             stop = true;
+            return false;
         }
     })
     
@@ -337,6 +338,7 @@ var stop = false;
         if($(this).val()==""){
             $parent.append("<p class='error'>您还没填呢~</p>");
             stop = true;
+            return false;
         } 
     });
 

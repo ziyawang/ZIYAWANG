@@ -590,17 +590,6 @@ $(function(){
                                 loading.data("on",true).fadeOut();
                                 clearTimeout(time);
                             });
-                            //收藏按钮切换
-                            $('.storeup i').click(function() {
-                                var title = $(this).attr("title");
-                                if(title == '收藏'){
-                                    $(this).attr('title', '已收藏');
-                                    $(this).addClass('red');
-                                }else{
-                                    $(this).attr('title', '收藏');
-                                    $(this).removeClass('red');
-                                }
-                            });
                             
                             //鼠标滑过li
                             $('.item').hover(function() {
@@ -633,13 +622,21 @@ $(function(){
                                 });
                             }
 
-                            $(".heart").click(function(){
+                            $(".heart").unbind("click").click(function(){
                                 checkLogin();
                                 if(stop){
                                     return false;
                                 }
                                 var ProjectID = $(this).attr('ProjectID');
                                 collect(ProjectID);
+                                var title = $(this).attr("title");
+                                if(title == '收藏'){
+                                    $(this).attr('title', '已收藏');
+                                    $(this).addClass('red');
+                                }else{
+                                    $(this).attr('title', '收藏');
+                                    $(this).removeClass('red');
+                                }
                             });
                         },600)
                     }
@@ -657,19 +654,6 @@ $(function(){
                 return img.src;
             };
         };
-    
-
-        //收藏按钮切换
-        $('.storeup i').click(function() {
-            var title = $(this).attr("title");
-            if(title == '收藏'){
-                $(this).attr('title', '已收藏');
-                $(this).addClass('red');
-            }else{
-                $(this).attr('title', '收藏');
-                $(this).removeClass('red');
-            }
-        });
         
         //鼠标滑过li
         $('.item').hover(function() {
@@ -689,7 +673,7 @@ $(function(){
             stop = false;
         }
 
-        function collect(ProjectID) {
+        function collect1(ProjectID) {
             var token = $.cookie('token');
             $.ajax({
                 url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
@@ -708,7 +692,15 @@ $(function(){
                 return false;
             }
             var ProjectID = $(this).attr('ProjectID');
-            collect(ProjectID);
+            collect1(ProjectID);
+            var title = $(this).attr("title");
+            if(title == '收藏'){
+                $(this).attr('title', '已收藏');
+                $(this).addClass('red');
+            }else{
+                $(this).attr('title', '收藏');
+                $(this).removeClass('red');
+            }
         });
     }
 })
@@ -789,40 +781,6 @@ $('a[unlimit]').click(function(){
     diff = $(this).next().attr('diy');
     delete diffInfo[diff];
     ajax();
-});
-
-function checkLogin(){
-    var token = $.cookie('token');
-    if(!token){
-        // window.location = "{{url('/login')}}";
-         window.open("http://ziyawang.com/login","status=yes,toolbar=yes, menubar=yes,location=yes"); 
-        stop = true;
-        return false;
-    }
-    stop = false;
-}
-
-function collect(ProjectID) {
-    var token = $.cookie('token');
-    $.ajax({
-        url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
-        type:'POST',
-        data:'itemID=' + ProjectID + '&type=1',
-        dataType:'json',
-        success:function(msg){
-            alert('收藏成功！')
-        }
-    });
-}
-
-
-$(".heart").click(function(){
-    checkLogin();
-    if(stop){
-        return false;
-    }
-    var ProjectID = $(this).attr('ProjectID');
-    collect(ProjectID);
 });
 
 $('#confirm').click(function(){

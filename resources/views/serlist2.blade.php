@@ -352,18 +352,6 @@ $(function(){
                                 loading.data("on",true).fadeOut();
                                 clearTimeout(time);
                             });
-
-                            //收藏按钮切换
-                            $('.storeup i').click(function() {
-                                var title = $(this).attr("title");
-                                if(title == '收藏'){
-                                    $(this).attr('title', '已收藏');
-                                    $(this).addClass('red');
-                                }else{
-                                    $(this).attr('title', '收藏');
-                                    $(this).removeClass('red');
-                                }
-                            });
                             
                             //鼠标滑过li
                             $('.item').hover(function() {
@@ -396,13 +384,21 @@ $(function(){
                                 });
                             }
 
-                            $(".heart").click(function(){
+                            $(".heart").unbind("click").click(function(){
                                 checkLogin();
                                 if(stop){
                                     return false;
                                 }
                                 var ServiceID = $(this).attr('ServiceID');
                                 collect(ServiceID);
+                                var title = $(this).attr("title");
+                                if(title == '收藏'){
+                                    $(this).attr('title', '已收藏');
+                                    $(this).addClass('red');
+                                }else{
+                                    $(this).attr('title', '收藏');
+                                    $(this).removeClass('red');
+                                }
                             });
                         },600)
                     }
@@ -420,21 +416,6 @@ $(function(){
                 return img.src;
             };
         };
-
-
-
-
-        //收藏按钮切换
-        $('.storeup i').click(function() {
-            var title = $(this).attr("title");
-            if(title == '收藏'){
-                $(this).attr('title', '已收藏');
-                $(this).addClass('red');
-            }else{
-                $(this).attr('title', '收藏');
-                $(this).removeClass('red');
-            }
-        });
         
         //鼠标滑过li
         $('.item').hover(function() {
@@ -474,6 +455,14 @@ $(function(){
             }
             var ServiceID = $(this).attr('ServiceID');
             collect(ServiceID);
+            var title = $(this).attr("title");
+            if(title == '收藏'){
+                $(this).attr('title', '已收藏');
+                $(this).addClass('red');
+            }else{
+                $(this).attr('title', '收藏');
+                $(this).removeClass('red');
+            }
         });
     }  
 })
