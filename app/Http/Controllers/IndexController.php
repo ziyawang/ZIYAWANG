@@ -241,7 +241,7 @@ class IndexController extends Controller
     public function uploadFile(){
         error_reporting(E_ALL | E_STRICT);
         // $upload_handler = new \App\UploadHandler();
-        $upload_handler = new \App\UploadHandler(['upload_dir'=>dirname(base_path()).'/ziyaupload/images/user/', 'upload_url'=>dirname(base_path()).'/ziyaupload/images/user/']);
+        $upload_handler = new \App\UploadHandler(['upload_dir'=>dirname(base_path()).'/ziyaupload/files/', 'upload_url'=>dirname(base_path()).'/ziyaupload/files/']);
     }
 
 

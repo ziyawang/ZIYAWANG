@@ -93,6 +93,9 @@ Route::get('/ucenter/message','IndexController@message');//个人中心首页，
 //10.11新增意见反馈接口
 Route::get('/feedback', 'IndexController@feedback');//意见反馈
 
+//10.14新增活动报名路由
+Route::get('/enroll', 'ActivityController@enroll');
+
 
 
 

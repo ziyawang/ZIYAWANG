@@ -96,7 +96,7 @@ a,button{cursor:pointer;}
 .leftBtn,.rightBtn{ width:56px; height:56px; position:absolute; top:50%; margin:-28px 0 0 0;}
 .leftBtn{ background:url(../img/left_btn.png) no-repeat; left:10%;}
 .rightBtn{ background:url(../img/right_btn.png) no-repeat; right:10%;}
-.dot{overflow: hidden;position: absolute;bottom: 20px;left: 50%;margin-left: -27px;}
+.dot{overflow: hidden;position: absolute;bottom: 32px;left: 50%;margin-left: -27px;}
 .dot li{float: left;width: 8px;height: 8px;border-radius: 50%;background: rgba(255,255,255,0.5);margin: 0 5px;cursor: pointer;}
 .dot li.current{background: #fff;}
 /*找信息找服务*/

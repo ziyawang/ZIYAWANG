@@ -1,0 +1,48 @@
+body{background: #fff;color:#fff;}
+.enroll{width: 1200px;background:#2090AD;margin:0 auto;border-top: 18px solid #000;border-bottom: 18px solid #000;position: relative;}
+.entop{overflow: hidden;}
+.leftImg{float: left;padding:160px 0 0 0;width: 677px;}
+.rightImg{float: right;padding:28px 0 0 0;width: 390px;}
+.leftImg img,.rightImg img{width: 100%;max-width: 100%;}
+.entopTitle{font-weight: bold;text-align: justify;font-size: 44px;line-height: 52px;padding:15px 0 0 60px;}
+.leftContent{float: left;width: 680px;}
+.factor{padding: 35px 0 0 60px;font-size: 20px;line-height: 25px;text-align: justify;}
+.textBox{padding:25px 148px 60px 60px;}
+.inputBox{font-size: 20px;padding:10px 18px 18px;border: 3px solid #fff;}
+.inputBox input{background:none;border-bottom: 3px solid #fff;color:#fff;width: 370px;font-size: 18px;}
+.inputBox .companyName input{width: 330px;}
+.inputBox p{overflow: hidden;}
+.inputBox label{float: left;margin-top: 6px;}
+.clickSub{background:#FEDB3C;width: 210px;height: 44px;line-height: 44px;border: 0 none;font-size: 20px;color:#000;font-weight: bold;margin-top: 18px;}
+.proStyle{font-size: 34px;color:#E7B425;font-weight: bold;padding:0px 0 14px 60px;border-bottom: 4px solid #D7E376;position: relative;}
+.blackCircle{width: 55px;height: 55px;border-radius: 50px;position: absolute;bottom: -27px;background:#000;}
+.leftCircle{right: 0;}
+.proStyleCon{padding:40px 0 130px 60px;font-size: 20px;line-height: 25px;}
+.partin{padding:36px 0 0 60px;font-size: 20px;line-height: 25px;}
+.partin span{display: block;}
+.here{padding:320px 0 72px 80px;font-weight: bold;}
+.netAddr{font-size: 32px;line-height: 60px;}
+.netAddr i{font-size: 60px;}
+.here span{font-size: 62px;display: block;margin-top: -10px;}
+.rightContent{float: right;width: 520px;}
+.activity{font-size: 34px;color:#E7B425;font-weight: bold;padding:0px 84px 14px 0px;border-bottom: 4px solid #D7E376;position: relative;text-align: right;}
+.rightCircle{left:-55px;}
+.activityCon{padding:28px 80px 40px 22px;font-size: 20px;line-height: 25px;text-align: justify;}
+.highlight{padding:40px 0 170px 12px;font-size: 20px;line-height: 25px;}
+.sponsor{padding:36px 84px 110px 15px;font-size: 20px;line-height: 25px;}
+.sponsor p{text-align: justify;white-space:nowrap;letter-spacing: 1px;}
+.bottomImg{position: absolute;right: 0;bottom: 170px;}
+/*@media screen and (min-width:981px) and (max-width:1920px){
+    .enroll{width: 1200px;}
+    .leftImg{width: 677px;}
+    .rightImg{width: 390px;}
+    .entopTitle{font-size: 44px;line-height: 52px;padding:15px 0 0 60px;}
+}
+@media screen and (min-width:751px) and (max-width:1201px){
+    .enroll{width: 100%;}
+    .leftImg{width: 56%;}
+    .rightImg{width: 32.5%;}
+    .entopTitle{font-size: 38px;line-height: 42px;padding:15px 0 0 60px;}
+    .leftContent{width: 56.6%;}
+    .rightContent{width: 43.4%;}
+}*/

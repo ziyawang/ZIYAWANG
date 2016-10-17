@@ -438,7 +438,7 @@ $(function () {
             if(!token){
                 // window.location = "{{url('/login')}}";
                 window.open("http://ziyawang.com/login","status=yes,toolbar=yes, menubar=yes,location=yes");
-                layer.confirm('请先登录！', {title: '提示', btn: ['确定']}, function(){window.location.href="http://ziyawang.com/ucenter/money?ProjectID=" + ProjectID; });
+                layer.confirm('请先登录！', {title: '提示', btn: ['确定']}, function(){window.location.reload();});
                 stop = true;
                 return false;
             }
