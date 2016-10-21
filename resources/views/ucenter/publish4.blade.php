@@ -54,12 +54,3 @@
 @section('tips')
 相关凭证或照片，请上传图片，大小限制2M
 @endsection
-
-
-@section('pingzheng')
-    $("#nopz").html('');
-    if($('#pz').val() == ''){
-        $("#nopz").html('你还没有上传凭证呢~');
-        return;
-    }
-@endsection

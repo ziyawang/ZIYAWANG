@@ -36,7 +36,7 @@
                 <p>客服邮箱：service@ziyawang.com</p>
                 <p>邮政编码：100080</p>
                 <p>工作时间：周一至周五 早9:00-晚6:00</p>
-                <p>客服电话：010-56230557</p>
+                <p>客服电话：400-898-8557</p>
             </div>
             <div class="map">
                 <img src="img/map.jpg" />

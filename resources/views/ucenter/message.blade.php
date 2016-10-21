@@ -6,7 +6,7 @@
         <div class="ucRightCon ucRightSafe systemInformation">
             <h3 class="selectiveType security"><span>系统消息</span></h3>
             <div class="info_bar">
-                <input class="all check check_all" type="checkbox" /><button class="sign_read">标记所选为已读</button><button class="empty" id="delete">删除所选</button>
+                <input class="all check check_all" type="checkbox" id="checkAll" state='1'/><button class="sign_read">标记所选为已读</button><button class="empty" id="delete">删除所选</button>
                 <span class="sys_time">时间</span>
             </div>
         <div class="info_list">
@@ -43,7 +43,7 @@ $(function(){
             return false;
         }
         $.ajax({  
-            url: 'http://api.ziyawang.com/v1/getmessage?pagecount=6&startpage=1&access_token=token&token=' + token,  
+            url: 'http://apitest.ziyawang.com/v1/getmessage?pagecount=6&startpage=1&access_token=token&token=' + token,  
             type: 'POST',  
             dataType: 'json',  
             timeout: 5000,  
@@ -112,7 +112,7 @@ $(function(){
                 }
                 var TextID = $(this).find('input').val();
                 $.ajax({
-                    url: 'http://api.ziyawang.com/v1/readmessage?access_token=token&token=' + token,
+                    url: 'http://apitest.ziyawang.com/v1/readmessage?access_token=token&token=' + token,
                     type: 'POST',
                     data: {'TextID':TextID},
                     dataType: 'json',
@@ -133,7 +133,7 @@ var startpage = 1;
 function ajax(){
     var data = '&startpage=' + startpage;
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/getmessage?pagecount=6&access_token=token&token=' + token + data,  
+        url: 'http://apitest.ziyawang.com/v1/getmessage?pagecount=6&access_token=token&token=' + token + data,  
         type: 'POST',  
         dataType: 'json',  
         timeout: 5000,  
@@ -143,7 +143,7 @@ function ajax(){
         success: succFunction //成功执行方法    
     }); 
 
-    function LoadFunction() {  
+        function LoadFunction() {  
             $("#collectlist").html('加载中...');  
         }  
         function erryFunction() {  
@@ -202,7 +202,7 @@ function ajax(){
                 }
                 var TextID = $(this).find('input').val();
                 $.ajax({
-                    url: 'http://api.ziyawang.com/v1/readmessage?access_token=token&token=' + token,
+                    url: 'http://apitest.ziyawang.com/v1/readmessage?access_token=token&token=' + token,
                     type: 'POST',
                     data: {'TextID':TextID},
                     dataType: 'json',
@@ -213,6 +213,7 @@ function ajax(){
                 $(this).addClass('haveread');
                 $(this).closest('li').children('.system_details').stop().slideToggle();
             })
+
         }
 }
 
@@ -224,18 +225,19 @@ $('#delete').click(function(){
     };
     
      $.ajax({
-        url: 'http://api.ziyawang.com/v1/delmessage?access_token=token&token=' + token,
+        url: 'http://apitest.ziyawang.com/v1/delmessage?access_token=token&token=' + token,
         type: 'POST',
         data: {'TextID':TextID},
         dataType: 'json',
         success: function(msg){
             // console.log(msg);
-            for (var i = check.length - 1; i >= 0; i--) {
-                check[i].closest('li').remove();
-            };
-            var counts = $('#counts').html();
-            counts = counts - check.length;
-            $('#counts').html(counts);
+            // for (var i = check.length - 1; i >= 0; i--) {
+            //     check[i].closest('li').remove();
+            // };
+            // var counts = $('#counts').html();
+            // counts = counts - check.length;
+            // $('#counts').html(counts);
+            window.location.reload();
         }
     });
 })
@@ -247,7 +249,7 @@ $('#read').click(function(){
         TextID[i] = check[i].value;
     };
      $.ajax({
-        url: 'http://api.ziyawang.com/v1/readmessage?access_token=token&token=' + token,
+        url: 'http://apitest.ziyawang.com/v1/readmessage?access_token=token&token=' + token,
         type: 'POST',
         data: {'TextID':TextID},
         dataType: 'json',
@@ -261,6 +263,18 @@ $('#read').click(function(){
         }
     });
 })
+
+
+            $('#checkAll').click(function(){
+                var state = parseInt($(this).attr('state')); //0是全选1是取消
+                if(state == 0){
+                    $(".msgbox").prop("checked", false); 
+                    $(this).attr('state', '1');
+                } else {
+                    $(".msgbox").prop("checked", true); 
+                    $(this).attr('state', '0');
+                }
+            })
 
 
 </script>

@@ -9,7 +9,7 @@
                 <em class="grayLine"></em>
             </h3>
             <div class="ucrightTop">
-                <div class="infoText"><strong>公告：</strong><b>【通知】</b>如您在支付过程中出现意外情况，请联系资芽客服，充值的芽币不可转账或兑换为现金。<p><b style="margin-left:0;">联系电话：</b>010-56230557</p></div>
+                <div class="infoText"><strong>公告：</strong><b>【通知】</b>如您在支付过程中出现意外情况，请联系资芽客服，充值的芽币不可转账或兑换为现金。<p><b style="margin-left:0;">联系电话：</b>400-898-8557</p></div>
             </div>
             <div class="amount">
                 <div class="amountTitle">

@@ -1,9 +1,9 @@
 @extends('layouts.home')
 
 @section('seo')
-<title>搜索信息-资芽网找信息-海量不良资产信息服务平台</title>
+<title>找信息_不良资产信息平台-资芽网</title>
         <meta name="Keywords" content="资产求购,资产转让,融资需求,委外催收,不良资产信息平台,资芽网" />
-        <meta name="Description" content="资芽网找信息，汇集资产，债权等各类转让信息；保理担保，安全可靠；要催收，尽职调查与悬赏信息不能少，专业法律服务保障强；融资需求急，这里多信息；想要求购资产？还是资芽网找信息" />
+        <meta name="Description" content="资芽网找信息，汇集资产，债权等各类转让信息；商业保理，安全可靠；要催收，尽职调查与悬赏信息不能少，专业法律服务保障强；融资需求急，这里多信息；想要求购资产？还是资芽网找信息" />
 @endsection
 
 @section('content')
@@ -22,6 +22,211 @@
             </div>
         </div>
     </div>
+    <div class="conditionalFilter">
+        <div class="wrap">
+            <div class="vip_resource">
+                <span>信息级别：</span>
+                <div class="vr_content">
+                    <a Vip="null" class="current" href="javascript:;">不限</a><a Vip="0" href="javascript:;">普通</a><a Vip="1" href="javascript:;">VIP</a><a Vip="2" href="javascript:;">收费</a>
+                </div>
+            </div>
+            <div class="service_type infoservice">
+                <span>信息类型：</span>
+                <div class="des_ser">
+                    <a TypeID="null" class="current" href="javascript:;">不限</a>
+                    <a TypeID="1"  href="javascript:;">资产包转让</a>
+                    <a TypeID="14" href="javascript:;">债权转让</a>
+                    <a TypeID="12" href="javascript:;">固产转让</a>
+                    <a TypeID="4"  href="javascript:;">商业保理</a>
+                    <a TypeID="13" href="javascript:;">资产求购</a>
+                    <a TypeID="6"  href="javascript:;">融资需求</a>
+                    <a TypeID="3"  href="javascript:;">法律服务</a>
+                    <a TypeID="9"  href="javascript:;">悬赏信息</a>
+                    <a TypeID="10" href="javascript:;">尽职调查</a>
+                    <a TypeID="2"  href="javascript:;" class="special">委外催收</a>
+                    <!-- <a TypeID="5"  href="javascript:;">典当担保</a> -->
+                    <a TypeID="15" href="javascript:;">投资需求</a>
+                </div>
+            </div>
+            <div class="area">
+                <span>所在地区：</span>
+                <div class="showArea">
+                    <a href="javascript:;" class="current" ProArea="null">全国</a><a href="javascript:;" ProArea="北京">北京</a><a href="javascript:;" ProArea="上海">上海</a><a href="javascript:;" ProArea="广东">广东</a><a href="javascript:;" ProArea="江苏">江苏</a><a href="javascript:;" ProArea="山东">山东</a><a href="javascript:;" ProArea="浙江">浙江</a><a href="javascript:;" ProArea="河南">河南</a><a href="javascript:;" ProArea="河北">河北</a><a href="javascript:;" ProArea="辽宁">辽宁</a><a href="javascript:;" ProArea="四川">四川</a><a href="javascript:;" ProArea="湖北">湖北</a><a href="javascript:;" ProArea="湖南">湖南</a><a href="javascript:;" ProArea="福建">福建</a>
+                </div>
+            </div>
+            <div class="hs_change">
+                <span href="#" class="m1 active infomore">更多></span>
+                <span href="#" class="m2 infomore">收起</span>
+            </div>
+            <div class="zhedie">
+                <div class="hide">
+                <a href="javascript:;" ProArea="安徽">安徽</a>
+                <a href="javascript:;" ProArea="陕西">陕西</a>
+                <a href="javascript:;" ProArea="天津">天津</a>
+                <a href="javascript:;" ProArea="江西">江西</a>
+                <a href="javascript:;" ProArea="广西">广西</a>
+                <a href="javascript:;" ProArea="重庆">重庆</a>
+                <a href="javascript:;" ProArea="吉林">吉林</a>
+                <a href="javascript:;" ProArea="云南">云南</a>
+                <a href="javascript:;" ProArea="山西">山西</a>
+                <a href="javascript:;" ProArea="新疆">新疆</a>
+                <a href="javascript:;" ProArea="贵州">贵州</a>
+                <a href="javascript:;" ProArea="甘肃">甘肃</a>
+                <a href="javascript:;" ProArea="海南">海南</a>
+                <a href="javascript:;" ProArea="宁夏">宁夏</a>
+                <a href="javascript:;" ProArea="青海">青海</a>
+                <a href="javascript:;" ProArea="西藏">西藏</a>
+                <a href="javascript:;" ProArea="黑龙江">黑龙江</a>
+                <a href="javascript:;" ProArea="内蒙古">内蒙古</a>
+                </div>
+            </div>
+            <div class="deser_cover">
+            <div class="cover1"></div>
+            <!-- 资产包 -->
+            <div class="cover1" id="type1">
+                <div class="cover_con">
+                    <span>来源：</span>
+                    <span class="aa">
+                        <a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="FromWhere">银行</a><a href="javascript:;" diy="FromWhere">非银行金融机构</a><a href="javascript:;" diy="FromWhere">企业</a>
+                    </span>
+                </div>
+                <div class="cover_con">
+                    <span>资产包类型：</span>
+                    <span class="aa">
+                        <a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="AssetType">抵押</a><a href="javascript:;" diy="AssetType">信用</a><a href="javascript:;" diy="AssetType">综合类</a><a href="javascript:;" diy="AssetType">其他</a>
+                    </span>
+                </div>
+            </div>
+            <!-- 债权转让 -->
+            <div class="cover1" id="type14">
+                <div class="cover_con">
+                    <span>债权类型：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="AssetType">个人债权</a><a href="javascript:;" diy="AssetType">企业商帐</a><a href="javascript:;" diy="AssetType">其他</a></span>
+                </div>
+            </div>
+            <!-- 估产转让 -->
+            <div class="cover1" id="type12">
+                <div class="cover_con">
+                    <span>类型：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="AssetType">个人资产</a><a href="javascript:;" diy="AssetType">企业资产</a><a href="javascript:;" diy="AssetType">法拍资产</a></span>
+                </div>
+                <div class="cover_con">
+                    <span>标的对象：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="Corpore">土地</a><a href="javascript:;" diy="Corpore">房产</a><a href="javascript:;" diy="Corpore">汽车</a><a href="javascript:;" diy="Corpore">项目</a><a href="javascript:;" diy="Corpore">其他</a></span>
+                </div>
+            </div>            
+            <!-- 商业保理 -->
+            <div class="cover1" id="type4">
+                <div class="cover_con">
+                    <span>买方性质：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="BuyerNature">国企</a><a href="javascript:;" diy="BuyerNature">民企</a><a href="javascript:;" diy="BuyerNature">上市公司</a><a href="javascript:;" diy="BuyerNature">其他</a>
+                    </span>
+                </div>
+            </div>
+            <!-- 资产求购 -->
+            <div class="cover1" id="type13">
+                <div class="cover_con">
+                    <span>求购类型：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="AssetType">土地</a><a href="javascript:;" diy="AssetType">房产</a><a href="javascript:;" diy="AssetType">汽车</a><a href="javascript:;" diy="AssetType">其他</a></span>
+                </div>
+                <div class="cover_con">
+                    <span>求购方：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="Buyer">个人</a><a href="javascript:;" diy="Buyer">企业</a></span>
+                </div>
+            </div>
+            <!-- 融资需求 -->
+            <div class="cover1" id="type6">
+                <div class="cover_con">
+                    <span>方式：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="AssetType">抵押</a><a href="javascript:;" diy="AssetType">质押</a><a href="javascript:;" diy="AssetType">租赁</a><a href="javascript:;" diy="AssetType">过桥</a><a href="javascript:;" diy="AssetType">信用</a><a href="javascript:;" diy="AssetType">股权</a><a href="javascript:;" diy="AssetType">担保</a><a href="javascript:;" diy="AssetType">其他</a></span>
+                </div>
+            </div>
+            <!-- 法律服务 -->
+            <div class="cover1" id="type3">
+                <div class="cover_con">
+                    <span>类型：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="AssetType">民事</a><a href="javascript:;" diy="AssetType">经济</a><a href="javascript:;" diy="AssetType">刑事</a><a href="javascript:;" diy="AssetType">公司</a></span>
+                </div>
+            </div>
+            <!-- 悬赏信息 -->
+            <div class="cover1" id="type9">
+                <div class="cover_con">
+                    <span>类型：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="AssetType">找人</a><a href="javascript:;" diy="AssetType">找财产</a></span>
+                </div>
+            </div>
+            <!-- 尽职调查 -->
+            <div class="cover1" id="type10">
+                <div class="cover_con">
+                    <span>被调查方：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="Informant">企业</a><a href="javascript:;" diy="Informant">个人</a></span>
+                </div>
+                <div class="cover_con">
+                    <span>类型：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="AssetType">法律</a><a href="javascript:;" diy="AssetType">财务</a><a href="javascript:;" diy="AssetType">税务</a><a href="javascript:;" diy="AssetType">商业</a><a href="javascript:;" diy="AssetType">其他</a></span>
+                </div>
+            </div>
+            <!-- 委外催收 -->
+            <div class="cover1" id="type2">
+                <div class="cover_con">
+                    <span>状态：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="Status">未诉讼</a><a href="javascript:;" diy="Status">已诉讼</a>
+                    </span>
+                </div>
+                <div class="cover_con">
+                    <span>类型：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" class='defa01' diy="AssetType">个人债权</a><a href="javascript:;" class='defa02' diy="AssetType">银行贷款</a><a href="javascript:;" class='defa01' diy="AssetType">企业商帐</a><a href="javascript:;" class='defa01' diy="AssetType">其他</a>
+                    </span>
+                </div>
+                <div class="cover_con">
+                    <span>佣金比例：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" id='defa01' diy="Rate">5%-15%</a><a href="javascript:;" diy="Rate">15%-30%</a><a href="javascript:;" diy="Rate">30%-50%</a><a href="javascript:;" diy="Rate">50%以上</a>
+                    </span>
+                </div>
+            </div>
+            <!-- 典当担保 -->
+            <!-- <div class="cover1" id="type5">
+                <div class="cover_con">
+                    <span>类型：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="AssetType">典当</a><a href="javascript:;" diy="AssetType">担保</a></span>
+                </div>
+            </div> -->
+            <!-- 投资需求 -->
+            <div class="cover1" id="type15">
+                <div class="cover_con">
+                    <span>投资方式：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" diy="InvestType">债权</a><a href="javascript:;" diy="InvestType">股权</a><a href="javascript:;" diy="InvestType">其他</a>
+                    </span>
+                </div>
+                <div class="cover_con">
+                    <span>投资类型：</span>
+                    <span class="aa"><a href="javascript:;" class="current" unlimit="cleardiy">不限</a><a href="javascript:;" class='defa01' diy="AssetType">个人</a><a href="javascript:;" class='defa02' diy="AssetType">企业</a><a href="javascript:;" class='defa01' diy="AssetType">机构</a><a href="javascript:;" class='defa01' diy="AssetType">其他</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="xTitle">
+        <!-- <span>精选信息</span>共1001条信息 -->
+    </div>
+    <style>
+    .topPages{width: 1200px;margin: 0 auto;position: relative;top: -75px;}
+    .topPages .pageCon{display: block; position: absolute; right: 0; top: 0; float: right;}
+    .topPages .pages{left: auto;}
+    </style>
+    <!-- 公共分页/start -->
+    <div class="topPages">
+        <div class="pageCon" style="display:block">
+            <div class="pages">
+                <div id="Pagination1"></div>
+                <div class="searchPage">
+                  <span class="page-sum">共<strong class="allPage">0</strong>页</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 公共分页/end -->
     <!-- waterfall -->
     <div class="infomation">
         <div class="waterfull clearfloat" id="waterfull">
@@ -51,27 +256,59 @@
 $(function(){
 
     var token = $.cookie('token');
+    $('body').addClass('grey');
 
     function getQueryString(key){
         var reg = new RegExp("(^|&)"+key+"=([^&]*)(&|$)");
         var result = window.location.search.substr(1).match(reg);
         return result?decodeURIComponent(result[2]):null;
     }
-    var content = getQueryString("content");
+    var urlobj = {};
     var urlpage   = getQueryString("startpage")   ? getQueryString("startpage")  : 1;
     var startpage   = ( urlpage - 1 ) * 4 + 1;
-    $('#content').val(content);
-    $.ajax({  
-        url: 'http://api.ziyawang.com/v1/search?access_token=token&token=' + token,  
-        type: 'POST',  
-        dataType: 'json',  
-        data: {'type':'1', 'content': content, 'startpage': startpage, 'pagecount': '6'},
-        timeout: 5000,  
-        cache: false,  
-        beforeSend: LoadFunction, //加载执行方法    
-        error: erryFunction,  //错误执行方法    
-        success: succFunction //成功执行方法    
-    });  
+    urlobj['Vip']         = getQueryString("Vip")        ?getQueryString("Vip")        :undefined;
+    urlobj['TypeID']      = getQueryString("TypeID")     ?getQueryString("TypeID")     :undefined;
+    urlobj['ProArea']     = getQueryString("ProArea")    ?getQueryString("ProArea")    :undefined;
+    urlobj['FromWhere']   = getQueryString("FromWhere")  ?getQueryString("FromWhere")  :undefined;
+    urlobj['AssetType']   = getQueryString("AssetType")  ?getQueryString("AssetType")  :undefined;
+    urlobj['Corpore']     = getQueryString("Corpore")    ?getQueryString("Corpore")    :undefined;
+    urlobj['BuyerNature'] = getQueryString("BuyerNature")?getQueryString("BuyerNature"):undefined;
+    urlobj['Buyer']       = getQueryString("Buyer")      ?getQueryString("Buyer")      :undefined;
+    urlobj['Informant']   = getQueryString("Informant")  ?getQueryString("Informant")  :undefined;
+    urlobj['Rate']        = getQueryString("Rate")       ?getQueryString("Rate")       :undefined;
+    urlobj['Status']      = getQueryString("Status")     ?getQueryString("Status")     :undefined;
+    urlobj['InvestType']  = getQueryString("InvestType") ?getQueryString("InvestType") :undefined;
+    urlobj['Year']        = getQueryString("Year")       ?getQueryString("Year")       :undefined;
+    function query(obj) {
+        var string = '';
+        $.each(obj,function(n,value) {
+            if(n == 'TypeID') {
+                $('#type'+value).show();
+            }
+            if(n == 'ProArea') {
+                $('a[' + n + '=' + value + ']').parent().show();
+                $('.showArea a').removeClass('current');
+            }
+            if(value != undefined) {
+                string = string + '&' + n + '=' + value;
+                if(value.indexOf('%') < 0){
+                    $('a[' + n + '=' + value + ']').addClass('current').siblings().removeClass('current');
+                }
+                $.each($('.cover1 a'), function(){
+                    if($(this).html() == value){
+                        $(this).addClass('current').siblings().removeClass('current');
+                    }
+                })
+            }
+        });
+
+        return string;      
+    };
+    var urldata = query(urlobj);
+    if(urlobj['ProArea'] == undefined){
+        $('a[ProArea=null]').addClass('current');
+    }
+
     function querydata(data,index){
         var TypeID        = data[index].TypeID;
         var ProjectID     = data[index].ProjectID;
@@ -81,7 +318,7 @@ $(function(){
         var ProjectNumber = data[index].ProjectNumber;
         var PublishTime   = data[index].PublishTime;
         var ProArea       = data[index].ProArea;
-            ProArea       = ProArea.substr(0,3);
+            ProArea       = ProArea.split('-')[0];
         var WordDes       = data[index].WordDes;        
         if(WordDes.length > 36){
             WordDes       = WordDes.substr(0,33) + '...';
@@ -120,6 +357,8 @@ $(function(){
         var vip = '';
         if(Member == 1){
             vip = '<img src="img/vip_pic.png" class="vipPic" />';
+        } else if (Member == 2){
+            vip = '<img src="img/shoufei.png" class="vipPic" style="margin-top: -2px;" />';
         }
         var newinfo = '';
         if(NewFlag == 1){
@@ -182,6 +421,17 @@ $(function(){
         }
         return html;
     }
+// console.log(urldata)
+    $.ajax({  
+        url: 'http://api.ziyawang.com/v1/project/lists?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,
+        type: 'GET',  
+        dataType: 'json',  
+        timeout: 5000, 
+        cache: false,  
+        beforeSend: LoadFunction, //加载执行方法    
+        error: erryFunction,  //错误执行方法    
+        success: succFunction //成功执行方法    
+    }); 
 
     function LoadFunction() {  
         // $("#list").html('加载中...');  
@@ -193,17 +443,17 @@ $(function(){
 
     function succFunction(tt) {
 
-
-
         $("#list").html('');
         var json = eval(tt); //数组 
-        console.log(json);
+        // console.log(json);
         var counts = json.counts;
+        $(".xTitle").html('<span>精选信息</span>共' + counts + '条信息');
         var pages = json.pages;
-        pages = Math.ceil(pages/5);
-        var current = Math.ceil(json.currentpage/5) - 1;
+        pages = Math.ceil(pages/4);
+        var current = Math.ceil(json.currentpage/4) - 1;
         //分页
         $("#Pagination").pagination(pages,{current_page:current});
+        $("#Pagination1").pagination(pages,{current_page:current});
         $(".page-sum").html("共<strong class='allPage'>" + pages + "</strong>页");
         if(urlpage == 1){
             $('.prev').remove();
@@ -295,15 +545,14 @@ $(function(){
             itemArr[0]=$('#waterfull').find('.item').eq(itemNum-1).offset().top+$('#waterfull').find('.item').eq(itemNum-1)[0].offsetHeight;
             itemArr[1]=$('#waterfull').find('.item').eq(itemNum-2).offset().top+$('#waterfull').find('.item').eq(itemNum-1)[0].offsetHeight;
             itemArr[2]=$('#waterfull').find('.item').eq(itemNum-3).offset().top+$('#waterfull').find('.item').eq(itemNum-1)[0].offsetHeight;
-            var maxTop=Math.max.apply(null,itemArr);
+            var maxTop=Math.max.apply(null,itemArr) - 400;
             if(maxTop<$(window).height()+$(document).scrollTop()){
                 //加载更多数据
                 startpage += 1;
                 $.ajax({
-                    url: 'http://api.ziyawang.com/v1/search?access_token=token&token=' + token,  
-                    type: 'POST',  
+                    url: 'http://api.ziyawang.com/v1/project/lists?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,  
+                    type: 'GET',  
                     dataType: 'json',  
-                    data: {'type':'1', 'content': content, 'startpage': startpage, 'pagecount': '6'},  
                     timeout: 5000, 
                     asycn: false,
                     cache: false,  
@@ -313,7 +562,6 @@ $(function(){
                         var json = eval(tt);
                         sqlJson = json.data;
                         waterload(sqlJson);
-                            
                     } //成功执行方法  
                 });
                 loading.data("on",false).fadeIn(600);
@@ -342,7 +590,7 @@ $(function(){
                                 loading.data("on",true).fadeOut();
                                 clearTimeout(time);
                             });
-
+                            
                             //鼠标滑过li
                             $('.item').hover(function() {
                                 $(this).children('.storeup').stop().animate({'bottom':'0px'}, 200);
@@ -374,7 +622,7 @@ $(function(){
                                 });
                             }
 
-                            $(".heart").unbind('click').click(function(){
+                            $(".heart").unbind("click").click(function(){
                                 checkLogin();
                                 if(stop){
                                     return false;
@@ -390,7 +638,6 @@ $(function(){
                                     $(this).removeClass('red');
                                 }
                             });
-
                         },600)
                     }
                 };
@@ -426,7 +673,7 @@ $(function(){
             stop = false;
         }
 
-        function collect(ProjectID) {
+        function collect1(ProjectID) {
             var token = $.cookie('token');
             $.ajax({
                 url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
@@ -445,7 +692,7 @@ $(function(){
                 return false;
             }
             var ProjectID = $(this).attr('ProjectID');
-            collect(ProjectID);
+            collect1(ProjectID);
             var title = $(this).attr("title");
             if(title == '收藏'){
                 $(this).attr('title', '已收藏');
@@ -464,15 +711,32 @@ function getQuery(key){
     return result?decodeURIComponent(result[2]):null;
 }
 var startpage = getQuery('startpage');
-var content = getQuery('content');
+var Vip = getQuery('Vip');
+var ProArea = getQuery('ProArea');
+var TypeID = getQuery('TypeID');
+
+var diffInfo = {};
+    diffInfo['FromWhere']   = getQuery("FromWhere")  ?getQuery("FromWhere")  :undefined;
+    diffInfo['AssetType']   = getQuery("AssetType")  ?getQuery("AssetType")  :undefined;
+    diffInfo['Corpore']     = getQuery("Corpore")    ?getQuery("Corpore")    :undefined;
+    diffInfo['BuyerNature'] = getQuery("BuyerNature")?getQuery("BuyerNature"):undefined;
+    diffInfo['Buyer']       = getQuery("Buyer")      ?getQuery("Buyer")      :undefined;
+    diffInfo['Informant']   = getQuery("Informant")  ?getQuery("Informant")  :undefined;
+    diffInfo['Rate']        = getQuery("Rate")       ?getQuery("Rate")       :undefined;
+    $.each(diffInfo, function(n,value){
+        if(value == undefined){
+            delete diffInfo[n];
+        }
+    })
 
 function ajax(fenye) {
     if(fenye != undefined){
         startpage = fenye;
     }
-    var data = 'startpage=' + startpage + '&content=' + content + '&type=1';
+    var string = query(diffInfo);
+    var data = 'startpage=' + startpage + '&Vip=' + Vip + '&TypeID=' + TypeID + '&ProArea=' + ProArea + string;
     // console.log(data);
-    var url = "http://ziyawang.com/search/project?" + data;
+    var url = "http://ziyawang.com/project?" + data;
     url = encodeURI(url);
      window.location.href= url; 
 }
@@ -485,6 +749,37 @@ function query(obj) {
 };
 $('.pagination a').click(function(){
     startpage = $(this).html();
+    ajax();
+});
+$('.vip_resource .vr_content a').click(function(){
+    startpage = 1;
+    Vip = $(this).attr('Vip');
+    ajax();
+})
+$('.infoservice .des_ser a').click(function(){
+    startpage = 1;
+    TypeID = $(this).attr('TypeID');
+    diffInfo = {};
+    ajax();
+});
+$('.area a, .zhedie a').click(function(){
+    startpage = 1;
+    ProArea = $(this).attr('ProArea');
+    ajax();
+});
+
+$('a[diy]').click(function(){
+    startpage = 1;
+    var name = $(this).attr('diy');
+    var value = $(this).html();
+    diffInfo[name] = value;
+    ajax();
+});
+
+$('a[unlimit]').click(function(){
+    startpage = 1;
+    diff = $(this).next().attr('diy');
+    delete diffInfo[diff];
     ajax();
 });
 

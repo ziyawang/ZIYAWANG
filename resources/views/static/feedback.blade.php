@@ -35,7 +35,7 @@
                 <div class="revAbout">
                     <h2>资芽网”反馈问卷</h2>
                     <p class="infoText">亲爱的用户：<br />您对“资芽网”有任何建议，或者使用中遇到问题，请您在本页面反馈。 <span class="tint">第1页（共1页）</span></p>
-                    <p>请联系资芽客服中心：<span class="colorServ">010-56230557</span></p>
+                    <p>请联系资芽客服中心：<span class="colorServ">400-898-8557</span></p>
                 </div>
                 <div class="question">
                     <div class="grayTitle">请留下您对“资芽网’首页的意见和建议。（请填写）</div>

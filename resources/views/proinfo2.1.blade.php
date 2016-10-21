@@ -9,21 +9,7 @@
 @section('content')
         <link rel="stylesheet" type="text/css" href="{{url('/css/infomation.css')}}?v=1.0.4.1" />
         <link rel="stylesheet" type="text/css" href="{{url('/css/infolist.css')}}?v=1.0.4" />
-        <style>
-            .jubaoBox{padding:22px;background:#fff;width: 415px;position: fixed;top: 50%;left: 50%;margin:-290px 0 0 -207px;display: none;}
-            .jubao{background:#d5d5d5;padding:30px 40px 18px;}
-            .ziyaHot{margin-top: 20px; color: #666; font-size: 12px; text-align: center; letter-spacing: 1px;}
-            .jubao h3{text-align: center;color:#333;font-size: 24px;font-weight: normal;padding-bottom: 20px;border-bottom: 1px solid #fff;}
-            .reasons a{color:#4c4c4c;text-decoration: none;font-size: 18px;}
-            .reasons li{border-bottom: 1px dashed #fff;padding:16px 0;}
-            .reasons .rightCheck{float: right;width: 17px;height: 22px;background:url(/img/report.png) no-repeat 0px -18px;}
-            .reasons .cur .rightCheck{background:url(/img/report.png) no-repeat 0px 4px;}
-            .btns2{padding-top: 38px;overflow: hidden;}
-            .btns2 a{display: block;width: 154px;height: 38px;line-height: 33px;text-align: center;color:#454545;position: relative;font-size: 20px;text-decoration: none;}
-            .btns2 .btnConfirm{background:#fdd000;box-shadow: 0 -5px 0 #b69600 inset;color:#000;float: left;}
-            .quxiao{background:#fff;box-shadow: 0 -5px 0 #828282 inset;float: right;}
-            .btns2 a:active{top:1px;}
-        </style>
+    
         <!-- 二级banner -->
         <div class="find_service">
             <ul>
@@ -38,7 +24,6 @@
                         <p id="TypeNumber"></p>
                         <div class="shareandstore">
                             <!-- 分享 -->
-                            <a href="javascript:;" class="report">举报</a>
                             <div class="shareBox">
                                 <div class="jiathis_style_32x32">
                                     <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank" id="share_asign"></a>
@@ -135,24 +120,6 @@
     <div class="poplayer5">
         <a href="javascript:;" class="certain confirmurl">确定</a>
     </div>
-    <div class="jubaoBox">
-        <div class="jubao">
-            <h3>选择举报原因</h3>
-            <ul class="reasons">
-                <li reasonid='1'><a href="javascript:;">已合作或已处置</a><a href="javascript:;" class="rightCheck"></a></li>
-                <li reasonid='2'><a href="javascript:;">虚假信息</a><a href="javascript:;" class="rightCheck"></a></li>
-                <li reasonid='3'><a href="javascript:;">泄露私密</a><a href="javascript:;" class="rightCheck"></a></li>
-                <li reasonid='4'><a href="javascript:;">垃圾广告</a><a href="javascript:;" class="rightCheck"></a></li>
-                <li reasonid='5'><a href="javascript:;">人身攻击</a><a href="javascript:;" class="rightCheck"></a></li>
-                <li reasonid='6'><a href="javascript:;">无法联系</a><a href="javascript:;" class="rightCheck"></a></li>
-            </ul>
-            <div class="btns2">
-                <a href="javascript:;" class="btnConfirm" id="reportpub">确定</a>
-                <a href="javascript:;" class="quxiao" id="reportcancel">取消</a>
-            </div>
-            <p class="ziyaHot">资芽网全国服务热线&nbsp;&nbsp;400-898-8557</p>
-        </div>
-    </div>
     <!-- <div class="popPhoneNum" style="display: none;">
         <div class="popNumDet"></div>
         <a href="javascript:;" class="certain">确定</a>
@@ -179,7 +146,7 @@ $(function () {
 
     //信息详情
     $.ajax({  
-        url: 'http://apitest.ziyawang.com/v1/project/list/'+ ProjectID +'?access_token=token&token=' + token,  
+        url: 'http://api.ziyawang.com/v1/project/list/'+ ProjectID +'?access_token=token&token=' + token,  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -191,7 +158,7 @@ $(function () {
 
      //相关信息
     $.ajax({  
-        url: 'http://apitest.ziyawang.com/v1/match/project?access_token=token&ProjectID=' + ProjectID,  
+        url: 'http://api.ziyawang.com/v1/match/project?access_token=token&ProjectID=' + ProjectID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -333,19 +300,8 @@ $(function () {
         var CollectFlag   = json.CollectFlag;    //收藏状态
         var RushFlag = json.RushFlag;    //抢单状态
         var PayFlag = json.PayFlag;    //付费状态
-        var Price = json.Price;    //付费状态
 
         document.title = TypeName + '_不良资产信息平台-资芽网';
-        if(Price != '0' && PayFlag != 1 && ConnectPhone != $.cookie('phonenumber')){
-            layer.alert('该信息为收费资源，您还未支付！',function(){
-                window.location.href="http://ziyawang.com/project"; 
-            });
-            return;
-        } else if (Price != 0 && PayFlag == 1){
-            $('#shownumber').html(ConnectPhone);
-            $('#rush').css('cursor','default').unbind('click'); 
-            layer.alert('联系电话：' + ConnectPhone, {title: '提示'});
-        }
 
         if(TypeID == '13' || TypeID == '15'){
             $('#check').show();
@@ -502,7 +458,7 @@ $(function () {
         function collect() {
             token = token.replace(/\'/g,"");
             $.ajax({
-                url:'http://apitest.ziyawang.com/v1/collect?access_token=token&token='+token,
+                url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
                 type:'POST',
                 data:'itemID=' + ProjectID + '&type=1',
                 dataType:'json',
@@ -516,7 +472,7 @@ $(function () {
             if(Price == 0){
                 token = token.replace(/\'/g,"");
                 $.ajax({
-                    url:'http://apitest.ziyawang.com/v1/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+                    url:'http://api.ziyawang.com/v1/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
                     type:'POST',
                     dataType:'json',
                     success:function(msg){
@@ -540,7 +496,7 @@ $(function () {
                 }, function(){
                     token = token.replace(/\'/g,"");
                     $.ajax({
-                        url:'http://apitest.ziyawang.com/v1/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+                        url:'http://api.ziyawang.com/v1/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
                         type:'POST',
                         dataType:'json',
                         success:function(msg){
@@ -640,7 +596,7 @@ $('#change').click(function(){
     var ProjectID = window.location.pathname.replace(/[^0-9]/ig,"");
      //相关信息
     $.ajax({  
-        url: 'http://apitest.ziyawang.com/v1/match/project?access_token=token&ProjectID=' + ProjectID,  
+        url: 'http://api.ziyawang.com/v1/match/project?access_token=token&ProjectID=' + ProjectID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -748,55 +704,6 @@ $('#change').click(function(){
         } //成功执行方法    
     })   
 });
-
-
-$('.report').click(function(){
-    $('.poplayer').show();
-    $('.jubaoBox').show();
-})
-
-$('.reasons a').click(function(event) {
-    $(this).parent().toggleClass('cur');
-});
-
-$('#reportpub').click(function(){
-    var ReasonID = '';
-    $('.reasons li').each(function(){
-        if($(this).hasClass('cur')){
-            ReasonID = ReasonID + ',' + $(this).attr('reasonid');
-        }
-    })
-    if(ReasonID == ''){
-        alert('您还没有选择理由呢！');
-        return false;
-    }
-    var ProjectID = window.location.pathname.replace(/[^0-9]/ig,"");
-    var token = $.cookie('token');
-    $.ajax({
-        url: "http://apitest.ziyawang.com/v1/report?access_token=token&token=" + token,
-        type: "POST",
-        data: {'ItemID':ProjectID, 'Type':1, 'ReasonID':ReasonID, 'Channel':'PC'},
-        dataType: "json",
-        timeout: 5000,  
-        cache: false,
-        success: function(msg){
-            if(msg.status_code == "200"){
-                layer.msg("举报成功!客服人员将尽快进行处理",{title:'提示',shade: 0.6});
-                $('.poplayer').hide();
-                $('.jubaoBox').hide();
-            } else {
-                layer.msg("异常，请刷新重试！");
-                $('.poplayer').hide();
-                $('.jubaoBox').hide();
-            }
-        }
-    });
-})
-
-$('#reportcancel').click(function(){
-    $('.poplayer').hide();
-    $('.jubaoBox').hide();
-})
 
 
 </script>

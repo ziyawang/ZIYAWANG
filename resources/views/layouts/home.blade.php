@@ -105,7 +105,7 @@ var _hmt = _hmt || [];
                 </div>
                 <div class="arrow"></div>
                 <div class="hotline">服务热线：
-                    <span>010-56230557</span>
+                    <span>400-898-8557</span>
                 </div>
         </div>
     </div>
@@ -126,7 +126,7 @@ var _hmt = _hmt || [];
             </div>
             <div class="conection">
                 <p class="con_ziya">联系资芽</p>
-                <p class="tel"><span></span>Tel：010 - 5623 0557</p>
+                <p class="tel"><span></span>Tel：400 - 898 - 8557</p>
                 <p class="fax"><span></span>Mail：ziyawang@ziyawang.com</p>
                 <p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社·中关村</p><p class="fs12">国际创客中心B2-C15</p>
             </div>

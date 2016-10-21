@@ -110,7 +110,7 @@ body{background:#fff;}
 .ec_right select option{color: #333;}
 .ec_right select .grayColor{color:#999!important;}
 .ec_right textarea{width: 372px;height: 82px;border: 1px solid #e5e5e5;padding:3px;text-align: justify;}
-.ec_right .add_voice{padding:0 0 0 33px;width: 152px;height: 34px;line-height:34px;border:1px solid #ffa000;color: #ffa000;background:#fff;border-radius: 30px;font-size: 16px;letter-spacing: 1px;display: block;text-align: left;font-weight: bold;/*font-family: 'é»‘ä½“';*/}
+.ec_right .add_voice{padding:0 0 0 33px;width: 152px;height: 34px;line-height:34px;border:1px solid #ffa000;color: #ffa000;background:#fff;border-radius: 30px;font-size: 16px;letter-spacing: 1px;display: block;text-align: left;font-weight: bold;/*font-family: 'é»‘ä½“';*/ padding-left: 42px;}
 .ec_right .add_voice i{font-weight: normal;font-size: 22px;float: left;-webkit-text-stroke-width:0px;}
 .ec_right .add_voice:hover{background:#ffa000;color:#fff;}
 .ec_right .up_pic{width: 156px;height: 36px;line-height: 36px;color: #fff;border-radius: 30px;background: #ffca00;font-weight: bold;letter-spacing: 1px;}

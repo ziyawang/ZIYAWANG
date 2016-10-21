@@ -67,7 +67,7 @@
     							<input class="keydown_tel" type="text" placeholder="请输入手机号" />
     							<input class="psd2" type="password" placeholder="请输入密码" />	
 	    						<p>
-	    							<label for=""><input class="confirm_code" type="password" placeholder="请输入验证码" /></label>
+	    							<label for=""><input class="confirm_code" placeholder="请输入验证码" /></label>
 	    							<!-- <a href="javascript:;" class="testcode">验证码</a> -->
 	    							<label><input type="button" id="btn" value="验证码" class="testcode" /></label>
 	    						</p>
@@ -82,7 +82,7 @@
 	    		</div>
 	    		<div class="arrow"></div>
 	    		<div class="hotline">服务热线：
-	    			<span>010-56230557</span>
+	    			<span>400-898-8557</span>
 	    		</div>
 		</div>
 	</div>
@@ -325,7 +325,7 @@
 			<p>本网站在此依法做出特别声明如下：</p>
 			<p>1、本网站采取以下合理的方式提请用户注意本协议条款：（1）在本协议中本网站以明确的足以引起用户注意的加粗字体等合理方式提醒用户注意相关条款；（2）用户还应特别注意任何未明确以加粗字体等形式标记的，但含有“不承担”、“免除”“不得”“应该”“必须”“承诺”“保证”“无需”“同意”等形式用语的条款。该等条款的确认将导致用户在特定情况下的被动、不便或损失，包括但不限于本协议第二条、第三条、第四条、第五条、第六条、第七条、第八条、第九条等，请用户在确认同意本协议之前再次阅读上述条款。</p>
 			<p>2、用户与本网站确认上述条款非属于《中华人民共和国合同法》第40条规定的“免除其责任、加重对方责任、排除对方主要权利的”的条款，本网站尊重用户诉讼的权利，但相关诉讼由资芽所在地人民法院管辖，用户选择同意注册或访问本网站、使用本网站各项服务即视为双方对此约定达成了一致意见。</p>
-			<p>3、本网站采取以下方式向用户说明本协议相关条款：用户如有任何条款需要说明的，请立即停止注册或使用本网站，同时立即致电010-57129557。若用户未致电至本网站即视为同意该等条款，则双方在此确认本网站已依法履行了根据用户要求对相关条款进行说明的法定义务，本网站已给予用户充足的时间与充分的选择权来决定是否缔结本协议。</p>
+			<p>3、本网站采取以下方式向用户说明本协议相关条款：用户如有任何条款需要说明的，请立即停止注册或使用本网站，同时立即致电400-898-8557。若用户未致电至本网站即视为同意该等条款，则双方在此确认本网站已依法履行了根据用户要求对相关条款进行说明的法定义务，本网站已给予用户充足的时间与充分的选择权来决定是否缔结本协议。</p>
 			<p>4、鉴于本网站已依法明确了上述条款、履行了格式条款制订方的义务，用户点击注册或使用本网站各项服务，将被视为且应当被视为用户已经完全注意并同意了本协议所有条款，尤其是提醒用户注意条款的合法性及有效性，用户不应以本网站未对格式条款以合理方式提醒用户注意或未根据用户要求予以说明为由而声称或要求法院或其它任何第三方确认相关条款违法或无效。</p>
 			<h4>三、服务内容</h4>
 			<p>1、本网站运用自己的系统，根据用户提交的资料:</p>
@@ -439,7 +439,7 @@
             </div>
 			<div class="conection">
 				<p class="con_ziya">联系资芽</p>
-				<p class="tel"><span></span>Tel：010 - 5623 0557</p>
+				<p class="tel"><span></span>Tel：400 - 898 - 8557</p>
 				<p class="fax"><span></span>Mail：ziyawang@ziyawang.com</p>
 				<p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社 · 中关村</p><p class="fs12">国际创客中心B2-C15</p>
 			</div>
@@ -1329,7 +1329,7 @@ $(function () {
 		$.ajax({
 			url:"http://api.ziyawang.com/v1/ie/auth/register",
 			type:"GET",
-			data:"phonenumber=" + phonenumber + "&password=" + password + "&smscode=" + smscode + "&access_token=token",
+			data:"phonenumber=" + phonenumber + "&password=" + password + "&smscode=" + smscode + "&access_token=token&Channel=PC",
 			dataType:'json',
 			success:function(msg){
 				// console.log(msg);
@@ -1423,7 +1423,7 @@ $(function () {
     function checkService(){
         var role = $.cookie('role');
         if( role != 1) {
-            alert('请先认证成为服务方，即可查看联系方式！')
+            // alert('请先认证成为服务方，即可查看联系方式！')
             // window.location = "{{url('/ucenter/confirm')}}"; 
             window.open("http://ziyawang.com/ucenter/confirm","status=yes,toolbar=yes, menubar=yes,location=yes"); 
         stop = true;
@@ -1432,13 +1432,15 @@ $(function () {
     }
 
 	$('#freepub').click(function(){
+		stop = false;
 		checkLogin();
 		if(stop){
 			return false;
 		}
-		window.open("http://ziyawang.com/ucenter/pubpro","status=yes,toolbar=yes, menubar=yes,location=yes"); 
+		window.open("http://ziyawang.com/ucenter","status=yes,toolbar=yes, menubar=yes,location=yes"); 
 	})
 	$('#beservice').click(function(){
+		stop = false;
 		checkLogin();
         if(stop){
             return false;

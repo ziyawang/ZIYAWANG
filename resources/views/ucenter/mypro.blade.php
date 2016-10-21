@@ -1,5 +1,4 @@
 @extends('layouts.uhome')
-@extends('layouts.uhome')
 @section('content')
 <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.4" />
 <!-- 右侧详情 -->

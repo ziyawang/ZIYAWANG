@@ -20,6 +20,14 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
+<style>
+    .enrollError {
+        margin-left: 42px;
+        margin-top: -20px;
+        display: block;
+        color: red;
+    }
+</style>
 </head>
 <body>
     <div class="header">
@@ -38,10 +46,10 @@ var _hmt = _hmt || [];
                 <h2>忘记密码</h2>
                 <div class="sec_inp">
                     <form action="">
-                        <p><input type="text" placeholder="请输入手机号" class="sec_tel"></p>
-                        <p class="test_code"><input type="text" placeholder="请输入验证码" class="sec_test"><input type="button" style="width:110px;cursor: pointer;float:right;padding:0;" id="btn" value="获取验证码" class="get_test" /></p>
-                        <p><input type="password" placeholder="请设置新密码" class="sec_pwd"></p>
-                        <p><input type="password" placeholder="请再输入一次密码" class="sec_pwd2"></p>
+                        <p><input type="text" placeholder="请输入手机号" class="sec_tel" diy='1'></p>
+                        <p class="test_code"><input type="text" placeholder="请输入验证码" class="sec_test" diy='1'><input type="button" style="width:110px;cursor: pointer;float:right;padding:0;" id="btn" value="获取验证码" class="get_test" /></p>
+                        <p><input type="password" placeholder="请设置新密码" class="sec_pwd" diy='1'></p>
+                        <p><input type="password" placeholder="请再输入一次密码" class="sec_pwd2" diy='1'></p>
                         <p><input type="button" id="login" value="登录" class="reg_btn btn"></p>
                     </form>
                 </div>
@@ -59,70 +67,110 @@ var _hmt = _hmt || [];
 <script>
 
 $(function(){
-        var token = $.cookie('token');
-        if(token){
-            window.location.href = "http://ziyawang.com/ucenter/index";
+    var token = $.cookie('token');
+    if(token){
+        window.location.href = "http://ziyawang.com/ucenter/index";
+    }
+})
+
+function _checkInput(T){
+    var stop = false;
+    $("input[diy='1']").each(function(){
+        $parent=$(this).parent();
+        $parent.parent().find("span").remove();
+        if($(this).val()==""){
+            $parent.after("<span class='enrollError'>此项必填！</span>");
+            stop = true;
+            return false;
         }
-    })
-        $('.get_test').click(function(){
-            var phonenumber = $(".sec_tel").val();
-            $.ajax({
-                url:"http://api.ziyawang.com/v1/ie/auth/getsmscode",
-                type:"GET",
-                data:"phonenumber=" + phonenumber + "&access_token=token&action=login",
-                dataType:"json",
-                success:function(msg){
-                    if(msg.status_code == 406){
-                        alert('手机号码不存在！');
-                    }
-                    if(msg.status_code == 200){
-                        $(".get_test").attr('disabled',true);
-                    }
+    });
+
+    if(stop){
+        return;
+    }
+
+    permission = 1;
+}
+$('.get_test').click(function(){
+    var phonenumber = $(".sec_tel").val();
+    var reg = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
+    if(reg.test(phonenumber)){
+        $.ajax({
+            url:"http://api.ziyawang.com/v1/ie/auth/getsmscode",
+            type:"GET",
+            data:"phonenumber=" + phonenumber + "&access_token=token&action=login",
+            dataType:"json",
+            success:function(msg){
+                if(msg.status_code == 406){
+                    alert('手机号码不存在！');
                 }
-            });
-        });
-
-        $('#login').click(function(){
-            var phonenumber = $(".sec_tel").val();
-            var password = $(".sec_pwd").val();
-            var repwd = $(".sec_pwd2").val();
-            var smscode = $(".sec_test").val();
-
-            if ( password != repwd ) {
-                alert('两次密码不一样！');
-                return false;
+                if(msg.status_code == 200){
+                    $(".get_test").attr('disabled',true);
+                    time(this);  
+                }
             }
-            $(this).val('登录中...');
-            $.ajax({
-                url:"http://api.ziyawang.com/v1/ie/auth/resetpwd",
-                type:"GET",
-                data:"phonenumber=" + phonenumber + "&password=" + password + "&smscode=" + smscode + "&access_token=token",
-                // dataType:'json',
-                success:function(msg){
-                    alert('重置密码成功');
-                    console.log(msg);
-                    if(msg.token){
-                        var date = new Date();
-                        date.setTime(date.getTime() + (120 * 60 * 1000));
-                        if(msg.token){
-                            // console.log(msg.token);
-                            $.cookie('token', msg.token, { expires: date, path: '/', domain: '.ziyawang.com' });
-                            $.cookie('role', msg.role, { expires: date, path: '/', domain: '.ziyawang.com' });
-                            $.cookie('phonenumber', phonenumber, { expires: date, path: '/', domain: '.ziyawang.com' });
-                            window.location.href = "http://ziyawang.com/ucenter/index";
-                        }
-                    }
-                },
-                error: function (a, b, c) {
-                    console.log(b);
-                }
-            });
         });
+    } else {
+        alert('请填写正确的手机号！');
+    }
+});
+
+var permission = 0;
+$('#login').click(function(){
+    _checkInput();
+    if(permission != 1){
+        return;
+    }
+    var phonenumber = $(".sec_tel").val();
+    var password = $(".sec_pwd").val();
+    var repwd = $(".sec_pwd2").val();
+    var smscode = $(".sec_test").val();
+    var reg = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
+    if(!reg.test(phonenumber)){
+        alert('请填写正确的手机号！');
+        return false;
+    }
+    if ( password != repwd ) {
+        alert('两次密码不一样！');
+        return false;
+    }
+    $(this).val('登录中...');
+    $.ajax({
+        url:"http://api.ziyawang.com/v1/ie/auth/resetpwd",
+        type:"GET",
+        data:"phonenumber=" + phonenumber + "&password=" + password + "&smscode=" + smscode + "&access_token=token",
+        // dataType:'json',
+        success:function(msg){
+            console.log(msg);
+            if(msg.status_code == "402"){
+                alert('验证码错误，请重新输入！');
+                $('#login').val('登录');
+            }
+            if(msg.token){
+                alert('重置密码成功');
+                var date = new Date();
+                date.setTime(date.getTime() + (120 * 60 * 1000));
+                if(msg.token){
+                    // console.log(msg.token);
+                    $.cookie('token', msg.token, { expires: date, path: '/', domain: '.ziyawang.com' });
+                    $.cookie('role', msg.role, { expires: date, path: '/', domain: '.ziyawang.com' });
+                    $.cookie('phonenumber', phonenumber, { expires: date, path: '/', domain: '.ziyawang.com' });
+                    window.location.href = "http://ziyawang.com/ucenter/index";
+                }
+            }
+        },
+        error: function (a, b, c) {
+            // console.log(b);
+            $('#login').val('异常，请刷新重试！');
+        }
+    });
+});
 </script>
  <script type="text/javascript">
     //获取验证码60秒倒计时
     var wait=60;  
-    function time(o) {  
+    function time() {  
+        var o = document.getElementById("btn");
         if (wait == 0) {  
             o.removeAttribute("disabled");            
             o.value="验证码";  
@@ -137,5 +185,5 @@ $(function(){
             1000)  
         }  
     }  
-    document.getElementById("btn").onclick=function(){time(this);}  
+    
 </script>

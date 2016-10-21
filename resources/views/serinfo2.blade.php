@@ -8,6 +8,21 @@
 
 @section('content')
     <link rel="stylesheet" type="text/css" href="{{asset('/css/infomation.css')}}?v=1.0.4.2" />
+    <style>
+        .jubaoBox{padding:22px;background:#fff;width: 415px;position: fixed;top: 50%;left: 50%;margin:-290px 0 0 -207px;display: none;z-index: 9999;}
+        .jubao{background:#d5d5d5;padding:30px 40px 18px;}
+        .ziyaHot{margin-top: 20px; color: #666; font-size: 12px; text-align: center; letter-spacing: 1px;}
+        .jubao h3{text-align: center;color:#333;font-size: 24px;font-weight: normal;padding-bottom: 20px;border-bottom: 1px solid #fff;}
+        .reasons a{color:#4c4c4c;text-decoration: none;font-size: 18px;}
+        .reasons li{border-bottom: 1px dashed #fff;padding:16px 0;}
+        .reasons .rightCheck{float: right;width: 17px;height: 22px;background:url(/img/report.png) no-repeat 0px -18px;}
+        .reasons .cur .rightCheck{background:url(/img/report.png) no-repeat 0px 4px;}
+        .btns2{padding-top: 38px;overflow: hidden;}
+        .btns2 a{display: block;width: 154px;height: 38px;line-height: 33px;text-align: center;color:#454545;position: relative;font-size: 20px;text-decoration: none;}
+        .btns2 .btnConfirm{background:#fdd000;box-shadow: 0 -5px 0 #b69600 inset;color:#000;float: left;}
+        .quxiao{background:#fff;box-shadow: 0 -5px 0 #828282 inset;float: right;}
+        .btns2 a:active{top:1px;}
+    </style>
 <!-- 二级banner -->
 <div class="find_service">
     <ul>
@@ -22,6 +37,7 @@
                 <p id="ServiceName"><b></b></p>
                 <div class="shareandstore">
                     <!-- 分享 -->
+                    <a href="javascript:;" class="report">举报</a>
                     <div class="shareBox">
                         <div class="jiathis_style_32x32">
                             <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank" id="share_asign"></a>
@@ -45,18 +61,16 @@
                 </div>
                 <div class="clmleftCon">
                     <div class="clmleftClassify">
-                        <div class="classifyLeft">
-                            <span id="ServiceType01" class="zlltype">资产包收购</span>
+                        <div class="classifyLeft" id="ServiceType">
+                            <!-- <span id="ServiceType01" class="zlltype">资产包收购</span>
                             <span id="ServiceType03" class="zlltype">律师事务所</span>
                             <span id="ServiceType10" class="zlltype">尽职调查</span>
                             <span id="ServiceType12" class="zlltype">资产收购</span>
                             <span id="ServiceType04" class="zlltype">保理公司</span>
-                        </div>
-                        <div class="classifyRight">
                             <span id="ServiceType06" class="zlltype">投融资服务</span>
                             <span id="ServiceType05" class="zlltype">典当担保</span>
                             <span id="ServiceType14" class="zlltype">债权收购</span>
-                            <span id="ServiceType02" class="zlltype">催收机构</span>
+                            <span id="ServiceType02" class="zlltype">催收机构</span> -->
                         </div>
                     </div>
                     <div class="clmleftZone">
@@ -81,10 +95,11 @@
                     <div class="headBox">
                         <a href="javascript:;" class="headPortrait">
                             <img id="userpicture" src="" />
-                            <div class="zhe"></div>
-                            <span class="privateChat" id="sound"><i class="iconfont">&#xe613;</i>私聊</span>
+                            <!-- <div class="zhe"></div> -->
+                            
                         </a>
-                        <span class="identifier" id="ServiceNumber"></span>
+                        <span class="privateChat" id="sound"><i class="iconfont">&#xe613;</i>私聊</span>
+                        <!-- <span class="identifier" id="ServiceNumber"></span> -->
                     </div>
                 </div>
             </div>
@@ -126,15 +141,32 @@
 <div class="poplayer2">
     <a href="javascript:;" class="certain" id="app">确定</a>
 </div>
+<div class="jubaoBox">
+    <div class="jubao">
+        <h3>选择举报原因</h3>
+        <ul class="reasons">
+            <li reasonid='1'><a href="javascript:;">服务方描述与事实不符</a><a href="javascript:;" class="rightCheck"></a></li>
+            <li reasonid='2'><a href="javascript:;">虚假信息</a><a href="javascript:;" class="rightCheck"></a></li>
+            <li reasonid='3'><a href="javascript:;">泄露私密</a><a href="javascript:;" class="rightCheck"></a></li>
+            <li reasonid='4'><a href="javascript:;">垃圾广告</a><a href="javascript:;" class="rightCheck"></a></li>
+            <li reasonid='5'><a href="javascript:;">人身攻击</a><a href="javascript:;" class="rightCheck"></a></li>
+            <li reasonid='6'><a href="javascript:;">无法联系</a><a href="javascript:;" class="rightCheck"></a></li>
+        </ul>
+        <div class="btns2">
+            <a href="javascript:;" class="btnConfirm" id="reportpub">确定</a>
+            <a href="javascript:;" class="quxiao" id="reportcancel">取消</a>
+        </div>
+        资芽网全国服务热线&nbsp;&nbsp;400-898-8557
+    </div>
+</div>
 <!-- 弹层/end --><script>
 $(function () {
-
     var ServiceID = window.location.pathname.replace(/[^0-9]/ig,"");
     var token = $.cookie('token');
 
     //服务方详情
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/service/list/'+ ServiceID +'?access_token=token&token=' + token,  
+        url: 'http://apitest.ziyawang.com/v1/service/list/'+ ServiceID +'?access_token=token&token=' + token,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -146,7 +178,7 @@ $(function () {
     })
     //相关服务方
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/match/service?access_token=token&ServiceID=' + ServiceID,  
+        url: 'http://apitest.ziyawang.com/v1/match/service?access_token=token&ServiceID=' + ServiceID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -218,14 +250,12 @@ $(function () {
 
         //服务类型
         var typearr = new Array();
+        var typehtml = '';
         typearr = ServiceType.split('、');
         $(typearr).each(function(index){
-            $('span[class="zlltype"]').each(function(){
-                if( $(this).text() == typearr[index]){
-                    $(this).addClass('on');
-                }
-            })
+            typehtml += "<span class='on'>" + typearr[index] + "</span>"
         })
+        $('#ServiceType').html(typehtml);
 
         //服务方地区
         var areaarr = new Array();
@@ -251,7 +281,7 @@ $(function () {
 
         $('#userpicture').attr('src','http://images.ziyawang.com'+UserPicture);
         $("#ServiceName").html('<b>'+ ServiceName + '</b>');
-        $('#ServiceNumber').html(ConnectPerson);
+        // $('#ServiceNumber').html(ConnectPerson);
 
         var orderLevel = "<span class='disc'></span><span class='levels'><i class='iconfont'>&#xe60e;</i><em>" + ServiceLevel + "</em></span>";
         var location = "<span class='disc'></span><span class='locationCon'>所在地：</span>" + ServiceLocation;
@@ -271,94 +301,108 @@ $(function () {
         if(ConfirmationP3.length >0 ) {
             $('#ConfirmationP3').attr('src', 'http://images.ziyawang.com'+ConfirmationP3).attr('title', ServiceName).show();
         }
+
+        var clmLeftHei = $('.clmLeft').height()/2;
+        $('.clmLeft').css('margin-top', -clmLeftHei + 'px');
+        var top1 = $('.clmleftProvince').offset().top;
+        var top2 = $('.conleftMiddle1').offset().top;
+        var topHei = top1-top2+20;
+        // alert(top1)
+        $('.moreArea').css({'top':topHei+'px'});
         var token = $.cookie('token');
         var ServiceID = window.location.pathname.replace(/[^0-9]/ig,"");
         var stop = false;
 
         function checkLogin(){
-        if(!token){
-            // window.location = "{{url('/login')}}";
-            window.open("http://ziyawang.com/login","status=yes,toolbar=yes, menubar=yes,location=yes"); 
-            stop = true;
-            return false;
-        }
-    }
-
-    function matchFunction(tt) {
-        var json = eval(tt); //数组
-        // console.log(json)
-        return;
-        var ServiceName = json.ServiceName;   //服务方头像 
-        var UserPicture = json.UserPicture;   //服务方名称 
-        var ViewCount = json.ViewCount;    //浏览次数
-        var ServiceNumber = json.ServiceNumber;    //编号
-        var ServiceLocation = json.ServiceLocation;    //公司所在地 
-        var ServiceLevel = json.ServiceLevel;    //服务等级 
-        var ServiceArea = json.ServiceArea;    //服务地区
-        var ServiceType = json.ServiceType;    //服务类型
-        var CoNumber = json.CoNumber;    //已接单数
-        var ServiceID = json.ServiceID;    //服务商ID
-        var ServiceIntroduction = json.ServiceIntroduction;    //服务商简介
-        var ConfirmationP1 = json.ConfirmationP1;    //服务商资质
-    }
-
-    function collect() {
-
-        $.ajax({
-            url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
-            type:'POST',
-            data:'itemID=' + ServiceID + '&type=4',
-            dataType:'json',
-            success:function(msg){
-                // if($(".collect").children('span').html()=='收藏'||$(".collect").children('span').html()=='取消收藏'){
-                //     $(".collect").children('em').addClass('star_cl');
-                //     $(".collect").children('span').html('已收藏');
-                // }else{
-                //     $(".collect").children('em').removeClass('star_cl');
-                //     $(".collect").children('span').html('收藏');
-                // }
+            if(!token){
+                // window.location = "{{url('/login')}}";
+                window.open("http://ziyawang.com/login","status=yes,toolbar=yes, menubar=yes,location=yes"); 
+                stop = true;
+                return false;
             }
+        }
+
+        function matchFunction(tt) {
+            var json = eval(tt); //数组
+            // console.log(json)
+            return;
+            var ServiceName = json.ServiceName;   //服务方头像 
+            var UserPicture = json.UserPicture;   //服务方名称 
+            var ViewCount = json.ViewCount;    //浏览次数
+            var ServiceNumber = json.ServiceNumber;    //编号
+            var ServiceLocation = json.ServiceLocation;    //公司所在地 
+            var ServiceLevel = json.ServiceLevel;    //服务等级 
+            var ServiceArea = json.ServiceArea;    //服务地区
+            var ServiceType = json.ServiceType;    //服务类型
+            var CoNumber = json.CoNumber;    //已接单数
+            var ServiceID = json.ServiceID;    //服务商ID
+            var ServiceIntroduction = json.ServiceIntroduction;    //服务商简介
+            var ConfirmationP1 = json.ConfirmationP1;    //服务商资质
+        }
+
+        function collect() {
+
+            $.ajax({
+                url:'http://apitest.ziyawang.com/v1/collect?access_token=token&token='+token,
+                type:'POST',
+                data:'itemID=' + ServiceID + '&type=4',
+                dataType:'json',
+                success:function(msg){
+                    // if($(".collect").children('span').html()=='收藏'||$(".collect").children('span').html()=='取消收藏'){
+                    //     $(".collect").children('em').addClass('star_cl');
+                    //     $(".collect").children('span').html('已收藏');
+                    // }else{
+                    //     $(".collect").children('em').removeClass('star_cl');
+                    //     $(".collect").children('span').html('收藏');
+                    // }
+                }
+            });
+        }
+
+        $(".collect").click(function(){
+            checkLogin();
+            if(stop){
+                return false;
+            }
+            collect();
         });
-    }
 
-    $(".collect").click(function(){
-        checkLogin();
-        if(stop){
-            return false;
-        }
-        collect();
-    });
-
-    $("#check").click(function(){
-        checkLogin();
-        if(stop){
-            return false;
-        }
-        $("#check").html(ConnectPhone);
+        $("#check").click(function(){
+            // checkLogin();
+            if(stop){
+                return false;
+            }
+            $("#check").html(ConnectPerson + ':' + ConnectPhone);
+            $.ajax({
+                url:"http://apitest.ziyawang.com/v1/count/service?access_token=token&token=" + token,
+                type:"POST",
+                data:{"ServiceID":ServiceID, "Channel":"PC"}
+            })
+            $(this).unbind('click');
         });
     } 
 
-    //声明方法
-    var myFn = function(box){
-        $('.poplayer').show();
-        $('.'+box).show();
-    }
+        //声明方法
+        var myFn = function(box){
+            $('.poplayer').show();
+            $('.'+box).show();
+        }
 
-     //点击确定关闭弹出查看语音信息
-    $('#app').click(function(event) {
-        $(this).parent().hide();
-        $('.poplayer').hide();
+         //点击确定关闭弹出查看语音信息
+        $('#app').click(function(event) {
+            $(this).parent().hide();
+            $('.poplayer').hide();
+        });
+
+        $('#sound').click(function(){
+            myFn('poplayer2')
+        })
     });
-
-    $('#sound').click(function(){
-        myFn('poplayer2')
-    })
-});
 var ServiceID = window.location.pathname.replace(/[^0-9]/ig,"");
 $('#change').click(function(){
     //相关服务方
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/match/service?access_token=token&ServiceID=' + ServiceID,  
+        url: 'http://apitest.ziyawang.com/v1/match/service?access_token=token&ServiceID=' + ServiceID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -394,6 +438,54 @@ $('#change').click(function(){
     }) 
 });
 
+
+$('.report').click(function(){
+    $('.poplayer').show();
+    $('.jubaoBox').show();
+})
+
+$('.reasons a').click(function(event) {
+    $(this).parent().toggleClass('cur');
+});
+
+$('#reportpub').click(function(){
+    var ReasonID = '';
+    $('.reasons li').each(function(){
+        if($(this).hasClass('cur')){
+            ReasonID = ReasonID + ',' + $(this).attr('reasonid');
+        }
+    })
+    if(ReasonID == ''){
+        alert('您还没有选择理由呢！');
+        return false;
+    }
+    var ServiceID = window.location.pathname.replace(/[^0-9]/ig,"");
+    var token = $.cookie('token');
+    $.ajax({
+        url: "http://apitest.ziyawang.com/v1/report?access_token=token&token=" + token,
+        type: "POST",
+        data: {'ItemID':ServiceID, 'Type':2, 'ReasonID':ReasonID, 'Channel':'PC'},
+        dataType: "json",
+        timeout: 5000,  
+        cache: false,
+        success: function(msg){
+            if(msg.status_code == "200"){
+                layer.msg("举报成功!客服人员将尽快进行处理",{title:'提示',shade: 0.6});
+                $('.poplayer').hide();
+                $('.jubaoBox').hide();
+            } else {
+                layer.msg("异常，请刷新重试！");
+                $('.poplayer').hide();
+                $('.jubaoBox').hide();
+            }
+        }
+    });
+})
+
+$('#reportcancel').click(function(){
+    $('.poplayer').hide();
+    $('.jubaoBox').hide();
+})
 
 </script>
 @endsection
