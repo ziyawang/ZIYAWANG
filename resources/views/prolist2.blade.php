@@ -769,7 +769,7 @@ $(function(){
                                     checkService();
                                     if(stop){
                                         // myFun('poplayer5');
-                                        layer.msg('您需要先通过服务方认证才可查看收费类信息！')
+                    layer.open({content:"<p style='text-align: center;font-size: 24px; border-bottom: 3px solid #fdd000;padding-bottom:20px;'>提示</p><p style='font-size:20px;text-align: justify;padding: 35px 15px 0;'>您需要先通过服务方认证才可查看收费类信息！</p>", btn: ['认证','取消'], btn1:function(){window.location.href="http://ziyawang.com/ucenter/confirm";}});
                                         return false;
                                     }
                                     var price = parseInt($(this).parents('li').attr('price'));
@@ -930,7 +930,7 @@ $(function(){
                 checkService();
                 if(stop){
                     // myFun('poplayer5');
-                    layer.open({content:"<p>提示</p><p>您需要先通过服务方认证才可查看收费类信息！</p>", btn: ['认证','取消']}, function(){window.location.href="http://ziyawang.com/ucenter/confirm";}})
+                    layer.open({content:"<p style='text-align: center;font-size: 24px; border-bottom: 3px solid #fdd000;padding-bottom:20px;'>提示</p><p style='font-size:20px;text-align: justify;padding: 35px 15px 0;'>您需要先通过服务方认证才可查看收费类信息！</p>", btn: ['认证','取消'], btn1:function(){window.location.href="http://ziyawang.com/ucenter/confirm";}});
                     return false;
                 }
                 var price = parseInt($(this).parents('li').attr('price'));

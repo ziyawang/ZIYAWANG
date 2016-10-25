@@ -156,17 +156,30 @@
             <a href="javascript:;" class="btnConfirm" id="reportpub">确定</a>
             <a href="javascript:;" class="quxiao" id="reportcancel">取消</a>
         </div>
-        资芽网全国服务热线&nbsp;&nbsp;400-898-8557
+        <p class="ziyaHot">资芽网全国服务热线&nbsp;&nbsp;400-898-8557</p>
     </div>
 </div>
-<!-- 弹层/end --><script>
+<!-- 弹层/end -->
+<style>
+    .layui-layer{border-top: 8px solid #fdd000; width: 420px!important; padding: 0 40px 30px;background: #fff;}
+    .layui-layer .layui-layer-title{color:#000;text-align: center; border-bottom: 2px solid #fdd000; padding: 26px 0 22px 25px; font-size: 30px; letter-spacing: 25px; margin-bottom: 15px;background: none;}
+    .layui-layer-dialog .layui-layer-content{padding: 0;line-height: 36px;text-align: justify;font-size: 20px;color: #000;letter-spacing: 1px;}
+    .layui-layer .layui-layer-btn{text-align: center;margin-top: 20px;}
+    .layui-layer-btn{padding: 0;}
+    .layui-layer-btn a{width: 104px;padding: 6px 0px 10px; background: #f4f4f4; border-radius: 5px; border-right: 2px; color: #000; box-shadow: 0 -5px 0 #bababa inset; position: relative;border: 0 none;margin: 0;font-size: 20px;margin: 0 18px;text-align: center;}
+    .layui-layer-btn .layui-layer-btn1{}
+    .layui-layer-btn .layui-layer-btn0,.layui-layer-btn a:hover{background: #fdd000;box-shadow: 0 -5px 0 #b69600 inset;color: #000;}
+    .layui-layer-btn a:active{top: 1px;}
+    .layui-layer-setwin .layui-layer-close1{display: none;}
+</style>
+<script>
 $(function () {
     var ServiceID = window.location.pathname.replace(/[^0-9]/ig,"");
     var token = $.cookie('token');
 
     //服务方详情
     $.ajax({  
-        url: 'http://apitest.ziyawang.com/v1/service/list/'+ ServiceID +'?access_token=token&token=' + token,  
+        url: 'http://api.ziyawang.com/v1/service/list/'+ ServiceID +'?access_token=token&token=' + token,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -178,7 +191,7 @@ $(function () {
     })
     //相关服务方
     $.ajax({  
-        url: 'http://apitest.ziyawang.com/v1/match/service?access_token=token&ServiceID=' + ServiceID,  
+        url: 'http://api.ziyawang.com/v1/match/service?access_token=token&ServiceID=' + ServiceID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -343,7 +356,7 @@ $(function () {
         function collect() {
 
             $.ajax({
-                url:'http://apitest.ziyawang.com/v1/collect?access_token=token&token='+token,
+                url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
                 type:'POST',
                 data:'itemID=' + ServiceID + '&type=4',
                 dataType:'json',
@@ -374,7 +387,7 @@ $(function () {
             }
             $("#check").html(ConnectPerson + ':' + ConnectPhone);
             $.ajax({
-                url:"http://apitest.ziyawang.com/v1/count/service?access_token=token&token=" + token,
+                url:"http://api.ziyawang.com/v1/count/service?access_token=token&token=" + token,
                 type:"POST",
                 data:{"ServiceID":ServiceID, "Channel":"PC"}
             })
@@ -402,7 +415,7 @@ var ServiceID = window.location.pathname.replace(/[^0-9]/ig,"");
 $('#change').click(function(){
     //相关服务方
     $.ajax({  
-        url: 'http://apitest.ziyawang.com/v1/match/service?access_token=token&ServiceID=' + ServiceID,  
+        url: 'http://api.ziyawang.com/v1/match/service?access_token=token&ServiceID=' + ServiceID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -462,7 +475,7 @@ $('#reportpub').click(function(){
     var ServiceID = window.location.pathname.replace(/[^0-9]/ig,"");
     var token = $.cookie('token');
     $.ajax({
-        url: "http://apitest.ziyawang.com/v1/report?access_token=token&token=" + token,
+        url: "http://api.ziyawang.com/v1/report?access_token=token&token=" + token,
         type: "POST",
         data: {'ItemID':ServiceID, 'Type':2, 'ReasonID':ReasonID, 'Channel':'PC'},
         dataType: "json",

@@ -89,7 +89,7 @@
 <!--banner图-->
 	<div class="banner">
 		<ul>
-			<li><a target="_blank" href="{{url('/enroll')}}" class="img01" style="background:url(/img/banner4.jpg) no-repeat center 0;cursor:pointer;"></a></li>
+			<!-- <li><a target="_blank" href="{{url('/enroll')}}" class="img01" style="background:url(/img/banner4.jpg) no-repeat center 0;cursor:pointer;"></a></li> -->
 			<li><a href="javascript:;" class="img01"></a></li>
 			<li><a href="javascript:;" class="img02"></a></li>
 			<li><a target="_blank" href="{{url('/video')}}" class="img03" style="cursor:pointer"></a></li>
@@ -100,7 +100,7 @@
 		<!-- </div> -->
 		<ol class="dot">
 			<li class="current"></li>
-			<li></li>
+			<!-- <li></li> -->
 			<li></li>
 			<li></li>
 		</ol>

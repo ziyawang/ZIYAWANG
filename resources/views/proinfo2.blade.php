@@ -179,7 +179,7 @@ $(function () {
 
     //信息详情
     $.ajax({  
-        url: 'http://apitest.ziyawang.com/v1/project/list/'+ ProjectID +'?access_token=token&token=' + token,  
+        url: 'http://api.ziyawang.com/v1/project/list/'+ ProjectID +'?access_token=token&token=' + token,  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -191,7 +191,7 @@ $(function () {
 
      //相关信息
     $.ajax({  
-        url: 'http://apitest.ziyawang.com/v1/match/project?access_token=token&ProjectID=' + ProjectID,  
+        url: 'http://api.ziyawang.com/v1/match/project?access_token=token&ProjectID=' + ProjectID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -502,7 +502,7 @@ $(function () {
         function collect() {
             token = token.replace(/\'/g,"");
             $.ajax({
-                url:'http://apitest.ziyawang.com/v1/collect?access_token=token&token='+token,
+                url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
                 type:'POST',
                 data:'itemID=' + ProjectID + '&type=1',
                 dataType:'json',
@@ -516,7 +516,7 @@ $(function () {
             if(Price == 0){
                 token = token.replace(/\'/g,"");
                 $.ajax({
-                    url:'http://apitest.ziyawang.com/v1/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+                    url:'http://api.ziyawang.com/v1/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
                     type:'POST',
                     dataType:'json',
                     success:function(msg){
@@ -540,7 +540,7 @@ $(function () {
                 }, function(){
                     token = token.replace(/\'/g,"");
                     $.ajax({
-                        url:'http://apitest.ziyawang.com/v1/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+                        url:'http://api.ziyawang.com/v1/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
                         type:'POST',
                         dataType:'json',
                         success:function(msg){
@@ -640,7 +640,7 @@ $('#change').click(function(){
     var ProjectID = window.location.pathname.replace(/[^0-9]/ig,"");
      //相关信息
     $.ajax({  
-        url: 'http://apitest.ziyawang.com/v1/match/project?access_token=token&ProjectID=' + ProjectID,  
+        url: 'http://api.ziyawang.com/v1/match/project?access_token=token&ProjectID=' + ProjectID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -773,7 +773,7 @@ $('#reportpub').click(function(){
     var ProjectID = window.location.pathname.replace(/[^0-9]/ig,"");
     var token = $.cookie('token');
     $.ajax({
-        url: "http://apitest.ziyawang.com/v1/report?access_token=token&token=" + token,
+        url: "http://api.ziyawang.com/v1/report?access_token=token&token=" + token,
         type: "POST",
         data: {'ItemID':ProjectID, 'Type':1, 'ReasonID':ReasonID, 'Channel':'PC'},
         dataType: "json",

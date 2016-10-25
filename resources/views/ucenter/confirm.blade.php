@@ -225,6 +225,7 @@
 
         if(role == 1){
             $('.btnBox').remove();
+            $('.upload').remove();
         }
 
         //左侧边栏通栏
@@ -453,8 +454,9 @@ var stop = false;
             dataType:"json",
             success:function(msg){
                 if(msg.role){
-                    alert('后台会在24小时内对您所填资料进行审核，请耐心等待！')
-                    window.location = "{{url('/ucenter/index')}}"
+                    alert('后台会在24小时内对您所填资料进行审核，请耐心等待！');
+                    $.cookie('role', 2);
+                    window.location = "{{url('/ucenter/index')}}";
                 }
             }
         });

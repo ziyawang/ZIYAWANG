@@ -420,7 +420,7 @@ var stop = false;
         $(this).attr('disabled', true);
         // console.log(data);
         $.ajax({
-            url:"http://api.ziyawang.com/v1/project/create?token=" + token + "&" + data,
+            url:"http://api.ziyawang.com/v1/project/create?" + data,
             type:"POST",
             data:data,
             dataType:"json",

@@ -62,7 +62,7 @@ $(function(){
     var startpage   = ( urlpage - 1 ) * 4 + 1;
     $('#content').val(content);
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/search?access_token=token&token=' + token,  
+        url: 'http://api.ziyawang.com/v1/searchs?access_token=token&token=' + token,  
         type: 'POST',  
         dataType: 'json',  
         data: {'type':'1', 'content': content, 'startpage': startpage, 'pagecount': '6'},
@@ -300,7 +300,7 @@ $(function(){
                 //加载更多数据
                 startpage += 1;
                 $.ajax({
-                    url: 'http://api.ziyawang.com/v1/search?access_token=token&token=' + token,  
+                    url: 'http://api.ziyawang.com/v1/searchs?access_token=token&token=' + token,  
                     type: 'POST',  
                     dataType: 'json',  
                     data: {'type':'1', 'content': content, 'startpage': startpage, 'pagecount': '6'},  

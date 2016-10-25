@@ -296,7 +296,7 @@
             var data = $('#formPC').serialize();
             $(this).attr('disabled', true);
             $.ajax({
-                url:"http://apitest.ziyawang.com/v1/enroll?access_token=token&" + data,
+                url:"http://api.ziyawang.com/v1/enroll?access_token=token&" + data,
                 type:"POST",
                 data:data,
                 dataType:"json",
@@ -318,7 +318,7 @@
             var data = $('#formM').serialize();
             $(this).attr('disabled', true);
             $.ajax({
-                url:"http://apitest.ziyawang.com/v1/enroll?access_token=token&" + data,
+                url:"http://api.ziyawang.com/v1/enroll?access_token=token&" + data,
                 type:"POST",
                 data:data,
                 dataType:"json",
