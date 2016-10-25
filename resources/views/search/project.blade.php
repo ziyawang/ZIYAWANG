@@ -1,4 +1,11 @@
 @extends('layouts.home')
+
+@section('seo')
+<title>搜索信息-资芽网找信息-海量不良资产信息服务平台</title>
+        <meta name="Keywords" content="资产求购,资产转让,融资需求,委外催收,不良资产信息平台,资芽网" />
+        <meta name="Description" content="资芽网找信息，汇集资产，债权等各类转让信息；保理担保，安全可靠；要催收，尽职调查与悬赏信息不能少，专业法律服务保障强；融资需求急，这里多信息；想要求购资产？还是资芽网找信息" />
+@endsection
+
 @section('content')
     <link type="text/css" rel="stylesheet" href="{{asset('/css/infolist.css')}}">
     <!-- 二级banner -->
@@ -55,7 +62,7 @@ $(function(){
     var startpage   = ( urlpage - 1 ) * 4 + 1;
     $('#content').val(content);
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/search?access_token=token&token=' + token,  
+        url: 'http://api.ziyawang.com/v1/searchs?access_token=token&token=' + token,  
         type: 'POST',  
         dataType: 'json',  
         data: {'type':'1', 'content': content, 'startpage': startpage, 'pagecount': '6'},
@@ -81,9 +88,11 @@ $(function(){
         }
         var PublishState = data[index].PublishState;
         if(PublishState == '0'){
-            PublishState = "<p class='grabOne'><i class='iconfont'>&#xe604;</i><span>抢单中</span></p>";
+            // PublishState = "<p class='grabOne'><i class='iconfont'>&#xe604;</i><span>抢单中</span></p>";
+            PublishState = '';
         } else if ( PublishState == '1') {
-            PublishState = "<p class='cooperation'><i class='iconfont'>&#xe600;</i><span>已合作</span></p>";
+            // PublishState = "<p class='cooperation'><i class='iconfont'>&#xe600;</i><span>已合作</span></p>";
+            PublishState = '';
         }
 
         var FromWhere     = ('FromWhere' in data[index])     ? data[index].FromWhere : null;
@@ -102,6 +111,8 @@ $(function(){
         var Member        = ('Member' in data[index])        ? data[index].Member : null;
         var NewFlag       = ('NewFlag' in data[index])       ? data[index].NewFlag : null;
         var CollectFlag   = ('CollectFlag' in data[index])   ? data[index].CollectFlag : null;
+        var InvestType    = ('InvestType' in data[index])    ? data[index].InvestType : null;
+        var Year          = ('Year' in data[index])          ? data[index].Year : null;
         var noImg = '';
         if(PictureDes1.length < 1){
             noImg = 'noImg'
@@ -124,45 +135,49 @@ $(function(){
         switch(TypeID)
         {
             case "1":
-            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='assetPackage'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2 class='five'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>资产包转让</a>" + newinfo + "</h2><p><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='totalPoint'><span class='btnOrange'><i class='iconfont'>&#xe60c;</i><em>总金额</em></span><strong>" + TotalMoney + "万</strong></p><p class='keyPoint'><span class='btnBlue'><i class='iconfont transfer'>&#xe608;</i><em>转让价</em></span><strong>" + TransferMoney + "万</strong></p><p class='remarks'><span>地区：" + ProArea + "</span></p><p class='remarks'><span>来源：" + FromWhere + "</span></p><p class='remarks'><span>资产包类型：" + AssetType + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='assetPackage'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2 class='five'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>资产包转让</a>" + newinfo + "</h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img title='" + TypeName + '-' + WordDes.substr(0,20) + "' src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='totalPoint'><span class='btnOrange'><i class='iconfont'>&#xe60c;</i><em>总金额</em></span><strong>" + TotalMoney + "万</strong></p><p class='keyPoint'><span class='btnBlue'><i class='iconfont transfer'>&#xe608;</i><em>转让价</em></span><strong>" + TransferMoney + "万</strong></p><p class='remarks'><span>地区：" + ProArea + "</span></p><p class='remarks'><span>来源：" + FromWhere + "</span></p><p class='remarks'><span>资产包类型：" + AssetType + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
             break;
             case "2":
-            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='outsourcingCollection'></span><b class='outCollect'>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>委外催收</a>" + newinfo + "</h2><p><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='totalPoint'><span class='btnOrange'><i class='iconfont'>&#xe60c;</i><em>金<b>额</b></em></span><strong>" + TotalMoney + "万</strong></p><p class='keyPoint'><span class='btnYellow'><i class='iconfont transfer'>&#xe608;</i><em>佣金比例</em></span><strong>15%-30%</strong></p><p class='remarks'><span>债务人所在地：" + ProArea + "</span></p><p class='remarks'><span>状态：" + Status + "</span></p><p class='remarks'><span>类型：" + AssetType + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='outsourcingCollection'></span><b class='outCollect'>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>委外催收</a>" + newinfo + "</h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img title='" + TypeName + '-' + WordDes.substr(0,20) + "' src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='totalPoint'><span class='btnOrange'><i class='iconfont'>&#xe60c;</i><em>金<b>额</b></em></span><strong>" + TotalMoney + "万</strong></p><p class='keyPoint'><span class='btnYellow'><i class='iconfont transfer'>&#xe606;</i><em>佣金比例</em></span><strong>15%-30%</strong></p><p class='remarks'><span>债务人所在地：" + ProArea + "</span></p><p class='remarks'><span>状态：" + Status + "</span></p><p class='remarks'><span>类型：" + AssetType + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
             break;
             case "3":
-            var html = "<li class='item addMar " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='law'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>法律服务</a>" + newinfo + "</h2><p><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='keyPoint'><span class='btnYellow'><i class='iconfont colorWhite'>&#xe60c;</i><em>合同金额</em></span><strong>" + TotalMoney + "万</strong></p><p class='remarks'><span>类型：" + AssetType + "</span></p><p class='remarks'><span>需求：" + Requirement + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+            var html = "<li class='item addMar " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='law'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>法律服务</a>" + newinfo + "</h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img title='" + TypeName + '-' + WordDes.substr(0,20) + "' src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='remarks'><span>类型：" + AssetType + "</span></p><p class='remarks'><span>需求：" + Requirement + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
             break;
 
             case "4":
-            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='commercialFactoring'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>商业保理</a>" + newinfo + "</h2><p><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='keyPoint'><span class='btnYellow'><i class='iconfont colorWhite'>&#xe60c;</i><em>合同金额</em></span><strong>" + TotalMoney + "万</strong></p><p class='remarks'><span>地区：" + ProArea + "</span></p><p class='remarks'><span>买方性质：" + BuyerNature + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='commercialFactoring'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>商业保理</a>" + newinfo + "</h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img title='" + TypeName + '-' + WordDes.substr(0,20) + "' src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='keyPoint'><span class='btnYellow'><i class='iconfont colorWhite'>&#xe60c;</i><em>合同金额</em></span><strong>" + TotalMoney + "万</strong></p><p class='remarks'><span>地区：" + ProArea + "</span></p><p class='remarks'><span>买方性质：" + BuyerNature + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
             break;
 
             case "5":
-            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='guarantee'></span><b class='guarant'>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>典当担保</a>" + newinfo + "</h2><p><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='totalPoint moneyPoint'><span class='btnOrange'><i class='iconfont'>&#xe60c;</i><em>金<b>额</b></em></span><strong>" + TotalMoney + "万</strong></p><p class='remarks'><span>类型：" + AssetType + "</span></p><p class='remarks'><span>目标地区：" + ProArea + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='guarantee'></span><b class='guarant'>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>典当担保</a>" + newinfo + "</h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img title='" + TypeName + '-' + WordDes.substr(0,20) + "' src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='totalPoint moneyPoint'><span class='btnOrange'><i class='iconfont'>&#xe60c;</i><em>金<b>额</b></em></span><strong>" + TotalMoney + "万</strong></p><p class='remarks'><span>类型：" + AssetType + "</span></p><p class='remarks'><span>目标地区：" + ProArea + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
             break;
 
             case "6":
-            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='financing'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>融资需求</a>" + newinfo + "</h2><p><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='totalPoint'><span class='btnOrange'><i class='iconfont'>&#xe60c;</i><em>金<b>额</b></em></span><strong>" + TotalMoney + "万</strong></p><p class='keyPoint'><span class='btnBlue'><i class='iconfont transfer rewardRadio'>&#xe609;</i><em>回报率</em></span><strong>" + Rate + "%</strong></p><p class='remarks'><span>方式：" + AssetType + "</span></p><p class='remarks'><span>地区：" + ProArea + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='financing'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>融资需求</a>" + newinfo + "</h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img title='" + TypeName + '-' + WordDes.substr(0,20) + "' src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='totalPoint'><span class='btnOrange'><i class='iconfont'>&#xe60c;</i><em>金<b>额</b></em></span><strong>" + TotalMoney + "万</strong></p><p class='keyPoint'><span class='btnBlue'><i class='iconfont transfer rewardRadio'>&#xe609;</i><em>回报率</em></span><strong>" + Rate + "%</strong></p><p class='remarks'><span>方式：" + AssetType + "</span></p><p class='remarks'><span>地区：" + ProArea + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
             break;
 
             case "9":
-            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='rewardInfo'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>悬赏信息</a>" + newinfo + "</h2><p><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='totalPoint moneyPoint'><span class='btnOrange'><i class='iconfont'>&#xe60c;</i><em>金<b>额</b></em></span><strong>" + TotalMoney + "元</strong></p><p class='remarks'><span>类型：" + AssetType + "</span></p><p class='remarks'><span>目标地区：" + ProArea + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='rewardInfo'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>悬赏信息</a>" + newinfo + "</h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img title='" + TypeName + '-' + WordDes.substr(0,20) + "' src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='totalPoint moneyPoint'><span class='btnOrange'><i class='iconfont'>&#xe60c;</i><em>金<b>额</b></em></span><strong>" + TotalMoney + "元</strong></p><p class='remarks'><span>类型：" + AssetType + "</span></p><p class='remarks'><span>目标地区：" + ProArea + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
             break;
 
             case "10":
-            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='investigation'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>尽职调查</a>" + newinfo + "</h2><p><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords padBot'>" + WordDes + "</a><p class='remarks'><span>地区：" + ProArea + "</span></p><p class='remarks'><span>被调查方：" + Informant + "</span></p><p class='remarks'><span>类型：" + AssetType + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='investigation'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>尽职调查</a>" + newinfo + "</h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img title='" + TypeName + '-' + WordDes.substr(0,20) + "' src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords padBot'>" + WordDes + "</a><p class='remarks'><span>地区：" + ProArea + "</span></p><p class='remarks'><span>被调查方：" + Informant + "</span></p><p class='remarks'><span>类型：" + AssetType + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
             break;
 
             case "12":
-            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='fixedTransfer'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>固产转让</a>" + newinfo + "</h2><p><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='keyPoint'><span class='btnBlue'><i class='iconfont colorWhite'>&#xe608;</i><em>转让价</em></span><strong>" + TransferMoney + "万</strong></p><p class='remarks'><span>标的物：" + Corpore + "</span></p><p class='remarks'><span>地区：" + ProArea + "</span></p><p class='remarks'><span>类型：" + AssetType + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='fixedTransfer'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>固产转让</a>" + newinfo + "</h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img title='" + TypeName + '-' + WordDes.substr(0,20) + "' src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='keyPoint'><span class='btnBlue'><i class='iconfont colorWhite'>&#xe608;</i><em>转让价</em></span><strong>" + TransferMoney + "万</strong></p><p class='remarks'><span>标的物：" + Corpore + "</span></p><p class='remarks'><span>地区：" + ProArea + "</span></p><p class='remarks'><span>类型：" + AssetType + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
             break;
 
             case "13":
-            var html = "<li class='item addMar " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='assetPurchase'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>资产求购</a>" + newinfo + "</h2><p><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='remarks'><span>地区：" + ProArea + "</span></p><p class='remarks'><span>求购方：" + Buyer + "</span></p><p class='remarks'><span>类型：" + AssetType + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+            var html = "<li class='item addMar " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='assetPurchase'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>资产求购</a>" + newinfo + "</h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img title='" + TypeName + '-' + WordDes.substr(0,20) + "' src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='remarks'><span>地区：" + ProArea + "</span></p><p class='remarks'><span>求购方：" + Buyer + "</span></p><p class='remarks'><span>类型：" + AssetType + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
             break;
 
             case "14":
-            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='equitableAssignment'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>债权转让</a>" + newinfo + "</h2><p><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='totalPoint'><span class='btnOrange'><i class='iconfont'>&#xe60c;</i><em>总金额</em></span><strong>" + TotalMoney + "万</strong></p><p class='keyPoint'><span class='btnBlue'><i class='iconfont transfer'>&#xe608;</i><em>转让价</em></span><strong>" + TransferMoney + "万</strong></p><p class='remarks'><span>地区：" + ProArea + "</span></p><p class='remarks'><span>类型：" + AssetType + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='equitableAssignment'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>债权转让</a>" + newinfo + "</h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img title='" + TypeName + '-' + WordDes.substr(0,20) + "' src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='totalPoint'><span class='btnOrange'><i class='iconfont'>&#xe60c;</i><em>总金额</em></span><strong>" + TotalMoney + "万</strong></p><p class='keyPoint'><span class='btnBlue'><i class='iconfont transfer'>&#xe608;</i><em>转让价</em></span><strong>" + TransferMoney + "万</strong></p><p class='remarks'><span>地区：" + ProArea + "</span></p><p class='remarks'><span>类型：" + AssetType + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+            break;
+
+            case "15":
+            var html = "<li class='item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='invest'></span><b>" + ProjectNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"'>投资需求</a>" + newinfo + "</h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='cetification'><img title='" + TypeName + '-' + WordDes.substr(0,20) + "' src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/project/"+ ProjectID +"' class='descriptionInwords'>" + WordDes + "</a><p class='totalPoint'><span class='btnOrange' style='width:118px;background:url(../img/btn01.png) no-repeat 0 -137px'><i class='iconfont transfer rewardRadio'>&#xe609;</i><em>预期回报率</em></span><strong>" + Rate + "%</strong></p><p class='keyPoint'><span class='btnYellow' style='background:url(../img/btn01.png) no-repeat 0 -170px'><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;投资期限</em></span><strong>" + Year + "年</strong></p><p class='remarks'><span>地区：" + ProArea + "</span></p><p class='remarks'><span>投资方式：" + InvestType + "</span></p><p class='remarks'><span>投资类型：" + AssetType + "</span></p>" + PublishState + "</div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
             break;
         }
         return html;
@@ -285,7 +300,7 @@ $(function(){
                 //加载更多数据
                 startpage += 1;
                 $.ajax({
-                    url: 'http://api.ziyawang.com/v1/search?access_token=token&token=' + token,  
+                    url: 'http://api.ziyawang.com/v1/searchs?access_token=token&token=' + token,  
                     type: 'POST',  
                     dataType: 'json',  
                     data: {'type':'1', 'content': content, 'startpage': startpage, 'pagecount': '6'},  
@@ -327,17 +342,6 @@ $(function(){
                                 loading.data("on",true).fadeOut();
                                 clearTimeout(time);
                             });
-                            //收藏按钮切换
-                            $('.storeup i').click(function() {
-                                var title = $(this).attr("title");
-                                if(title == '收藏'){
-                                    $(this).attr('title', '已收藏');
-                                    $(this).addClass('red');
-                                }else{
-                                    $(this).attr('title', '收藏');
-                                    $(this).removeClass('red');
-                                }
-                            });
 
                             //鼠标滑过li
                             $('.item').hover(function() {
@@ -370,13 +374,21 @@ $(function(){
                                 });
                             }
 
-                            $(".heart").click(function(){
+                            $(".heart").unbind('click').click(function(){
                                 checkLogin();
                                 if(stop){
                                     return false;
                                 }
                                 var ProjectID = $(this).attr('ProjectID');
                                 collect(ProjectID);
+                                var title = $(this).attr("title");
+                                if(title == '收藏'){
+                                    $(this).attr('title', '已收藏');
+                                    $(this).addClass('red');
+                                }else{
+                                    $(this).attr('title', '收藏');
+                                    $(this).removeClass('red');
+                                }
                             });
 
                         },600)
@@ -395,19 +407,6 @@ $(function(){
                 return img.src;
             };
         };
-    
-
-        //收藏按钮切换
-        $('.storeup i').click(function() {
-            var title = $(this).attr("title");
-            if(title == '收藏'){
-                $(this).attr('title', '已收藏');
-                $(this).addClass('red');
-            }else{
-                $(this).attr('title', '收藏');
-                $(this).removeClass('red');
-            }
-        });
         
         //鼠标滑过li
         $('.item').hover(function() {
@@ -447,6 +446,14 @@ $(function(){
             }
             var ProjectID = $(this).attr('ProjectID');
             collect(ProjectID);
+            var title = $(this).attr("title");
+            if(title == '收藏'){
+                $(this).attr('title', '已收藏');
+                $(this).addClass('red');
+            }else{
+                $(this).attr('title', '收藏');
+                $(this).removeClass('red');
+            }
         });
     }
 })
@@ -479,39 +486,6 @@ function query(obj) {
 $('.pagination a').click(function(){
     startpage = $(this).html();
     ajax();
-});
-
-function checkLogin(){
-    var token = $.cookie('token');
-    if(!token){
-        // window.location = "{{url('/login')}}";
-         window.open("http://ziyawang.com/login","status=yes,toolbar=yes, menubar=yes,location=yes"); 
-        stop = true;
-        return false;
-    }
-    stop = false;
-}
-
-function collect(ProjectID) {
-    var token = $.cookie('token');
-    $.ajax({
-        url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
-        type:'POST',
-        data:'itemID=' + ProjectID + '&type=1',
-        dataType:'json',
-        success:function(msg){
-            alert('收藏成功！')
-        }
-    });
-}
-
-$(".heart").click(function(){
-    checkLogin();
-    if(stop){
-        return false;
-    }
-    var ProjectID = $(this).attr('ProjectID');
-    collect(ProjectID);
 });
 
 $('#confirm').click(function(){

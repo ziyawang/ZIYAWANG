@@ -12,6 +12,15 @@
     <script src="{{url('/js/jquery.cookie.js')}}"></script>
     <script src="{{asset('/js/fs.js')}}"></script>
     <script src="http://libs.cncdn.cn/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?68b543fbd583e0bc6eccb7d2adee8156";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 </head>
 <body>
 	<div class="header">
@@ -60,7 +69,7 @@
             <p>本网站在此依法做出特别声明如下：</p>
             <p>1、本网站采取以下合理的方式提请用户注意本协议条款：（1）在本协议中本网站以明确的足以引起用户注意的加粗字体等合理方式提醒用户注意相关条款；（2）用户还应特别注意任何未明确以加粗字体等形式标记的，但含有“不承担”、“免除”“不得”“应该”“必须”“承诺”“保证”“无需”“同意”等形式用语的条款。该等条款的确认将导致用户在特定情况下的被动、不便或损失，包括但不限于本协议第二条、第三条、第四条、第五条、第六条、第七条、第八条、第九条等，请用户在确认同意本协议之前再次阅读上述条款。</p>
             <p>2、用户与本网站确认上述条款非属于《中华人民共和国合同法》第40条规定的“免除其责任、加重对方责任、排除对方主要权利的”的条款，本网站尊重用户诉讼的权利，但相关诉讼由资芽所在地人民法院管辖，用户选择同意注册或访问本网站、使用本网站各项服务即视为双方对此约定达成了一致意见。</p>
-            <p>3、本网站采取以下方式向用户说明本协议相关条款：用户如有任何条款需要说明的，请立即停止注册或使用本网站，同时立即致电010-57129557。若用户未致电至本网站即视为同意该等条款，则双方在此确认本网站已依法履行了根据用户要求对相关条款进行说明的法定义务，本网站已给予用户充足的时间与充分的选择权来决定是否缔结本协议。</p>
+            <p>3、本网站采取以下方式向用户说明本协议相关条款：用户如有任何条款需要说明的，请立即停止注册或使用本网站，同时立即致电400-898-8557。若用户未致电至本网站即视为同意该等条款，则双方在此确认本网站已依法履行了根据用户要求对相关条款进行说明的法定义务，本网站已给予用户充足的时间与充分的选择权来决定是否缔结本协议。</p>
             <p>4、鉴于本网站已依法明确了上述条款、履行了格式条款制订方的义务，用户点击注册或使用本网站各项服务，将被视为且应当被视为用户已经完全注意并同意了本协议所有条款，尤其是提醒用户注意条款的合法性及有效性，用户不应以本网站未对格式条款以合理方式提醒用户注意或未根据用户要求予以说明为由而声称或要求法院或其它任何第三方确认相关条款违法或无效。</p>
             <h4>三、服务内容</h4>
             <p>1、本网站运用自己的系统，根据用户提交的资料:</p>
@@ -201,6 +210,10 @@
             }
 
     		var phonenumber = $(".sec_tel").val();
+            if( phonenumber == '' || phonenumber.length != 11){
+                alert('请填写正确的手机号码！');
+                return false;
+            }
 
     		$.ajax({
     			url:"http://api.ziyawang.com/v1/ie/auth/getsmscode",
@@ -211,8 +224,13 @@
         			if(msg.status_code == 405){
         				alert('号码已经注册！');
         			}
+                    if(msg.status_code == '503'){
+                        alert('发送验证码失败，请稍候重试');
+                    }
         			if(msg.status_code == 200){
         				$(".get_test").attr('disabled',true);
+                        alert('发送验证码成功！');
+                        time();
         			}
         		}
     		});
@@ -224,30 +242,53 @@
     		var repwd = $(".sec_pwd2").val();
     		var smscode = $(".sec_test").val();
 
+            if( phonenumber == '' || phonenumber.length != 11){
+                alert('请填写正确的手机号码！');
+                return false;
+            }
+
+            if( password == ''){
+                alert('请填写正确的密码！');
+                return false;
+            }
+
+            if( password.length < 6 ){
+                alert('密码长度为6-16位！')
+                return false;
+            }
+
     		if ( password != repwd ) {
     			alert('两次密码不一样！');
     			return false;
     		}
+
+            if(smscode == ''){
+                alert('请填写正确的验证码！')
+                return false;
+            }
 
             $(this).val('注册中...');
 
     		$.ajax({
     			url:"http://api.ziyawang.com/v1/ie/auth/register",
     			type:"GET",
-    			data:"phonenumber=" + phonenumber + "&password=" + password + "&smscode=" + smscode + "&access_token=token",
+    			data:"phonenumber=" + phonenumber + "&password=" + password + "&smscode=" + smscode + "&access_token=token&Channel=PC",
     			dataType:'json',
     			success:function(msg){
-    				console.log(msg);
-    				if(msg.token){
-    					var date = new Date();
+    				// console.log(msg);
+                    if(msg.status_code == '402'){
+                        alert('验证码不正确，请重新输入');
+                        $('#register').val('注册');
+                        return false;
+                    }
+                    if(msg.token){
+                        var date = new Date();
                         date.setTime(date.getTime() + (120 * 60 * 1000));
-                        if(msg.token){
                             // console.log(msg.token);
-                            $.cookie('token', msg.token, { expires: date, path: '/', domain: '.ziyawang.com' });
-                            $.cookie('role', msg.role, { expires: date, path: '/', domain: '.ziyawang.com' });
-                            $.cookie('phonenumber', phonenumber, { expires: date, path: '/', domain: '.ziyawang.com' });
-                            window.location.href = "http://ziyawang.com/ucenter/index";
-    				    }
+                        $.cookie('token', msg.token, { expires: date, path: '/', domain: '.ziyawang.com' });
+                        $.cookie('role', msg.role, { expires: date, path: '/', domain: '.ziyawang.com' });
+                        $.cookie('phonenumber', phonenumber, { expires: date, path: '/', domain: '.ziyawang.com' });
+                        window.location.href = "http://ziyawang.com/ucenter/index";
                     }
     			}
     		});
@@ -256,7 +297,8 @@
     <script type="text/javascript">
     //获取验证码60秒倒计时
     var wait=60;  
-    function time(o) {  
+    function time() {  
+        var o = document.getElementById("btn");
         if (wait == 0) {  
             o.removeAttribute("disabled");            
             o.value="验证码";  
@@ -271,7 +313,7 @@
             1000)  
         }  
     }  
-    document.getElementById("btn").onclick=function(){time(this);}  
+    // document.getElementById("btn").onclick=function(){time(this);}  
 </script>
 </body>
 </html>

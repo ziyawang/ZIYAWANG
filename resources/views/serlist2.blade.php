@@ -1,4 +1,11 @@
 @extends('layouts.home')
+
+@section('seo')
+<title>找服务_不良资产处置服务机构-资芽网</title>
+        <meta name="Keywords" content="资产收购,投融资服务,法律服务,催收公司,不良资产处置服务机构,资芽网" />
+        <meta name="Description" content="资芽网找服务，海量处置服务机构任你选，保理公司，认证资质；投融资服务，解你资金之急；资产债权收购方，诚心交易；急着催收没途径？催收公司，尽职调查，法律服务，三管齐下，保你债务无忧。" />
+@endsection
+
 @section('content')
 <link type="text/css" rel="stylesheet" href="{{asset('/css/servelist.css')}}">
     <!-- 二级banner -->
@@ -69,8 +76,25 @@
         </div>
     </div>
     <div class="xTitle">
-        <span>优质服务方</span>共1001条信息
+        <!-- <span>优质服务方</span>共0条信息 -->
     </div>
+    <style>
+    .topPages{width: 1200px;margin: 0 auto;position: relative;top: -75px;}
+    .topPages .pageCon{display: block; position: absolute; right: 0; top: 0; float: right;}
+    .topPages .pages{left: auto;}
+    </style>
+    <!-- 公共分页/start -->
+    <div class="topPages">
+        <div class="pageCon" style="display:block">
+            <div class="pages">
+                <div id="Pagination1"></div>
+                <div class="searchPage">
+                  <span class="page-sum">共<strong class="allPage">0</strong>页</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 公共分页/end -->
     <!-- waterfall -->
     <div class="infomation">
         <div class="waterfull clearfloat" id="waterfull">
@@ -80,7 +104,7 @@
         </div>
         <!-- loading按钮 -->
         <div id="imloading">
-        资芽正在给力加载中.....
+        <!-- 资芽正在给力加载中..... -->
         </div>
         <!-- 公共分页/start -->
         <div class="pageCon">
@@ -133,6 +157,7 @@ $(function(){
     function querydata(data,index){
         var UserPicture = data[index].UserPicture;   //服务方头像 
         var ServiceName = data[index].ServiceName;   //服务方名称 
+        var ConnectPerson = data[index].ConnectPerson;   //服务方联系人
         var ViewCount = data[index].ViewCount;    //浏览次数
         var ServiceNumber = data[index].ServiceNumber;    //编号
         var ServiceLocation = data[index].ServiceLocation;    //公司所在地 
@@ -155,7 +180,7 @@ $(function(){
         if(CollectFlag == 1){
             collectinfo = "<i class='iconfont heart red' title='已收藏' ServiceID='" + ServiceID + "'>&#xe601;</i>"
         }
-        var html = "<li class='item'><div class='itemTop'><div class='itemTopLeft'><span><img src='http://images.ziyawang.com" + UserPicture + "' /></span><b>" + ServiceNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"'>" + ServiceName + "</a></h2><p><i class='iconfont icon'>&#xe603;</i><span class='visitors'>" + ViewCount + "</span><i class='iconfont'>&#xe601;</i><span class='collectors'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='cetification'><img src='http://images.ziyawang.com" + ConfirmationP1 + "' /></a><div class='illustration'><span class='createTime'>" + PubTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='descriptionInwords'>" + ServiceIntroduction + "</a><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='serviceType'>服务类型</a><p class='concreteTypes'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"'>" + ServiceType + "</a></p><p class='remarks'><span>所在地：" + ServiceLocation + "</span></p><p class='remarks'><span>服务地区：" + ServiceArea + "</span></p><p class='servicerInfo'><span class='already'><i class='iconfont'>&#xe60d;</i><em>已接" + CoNumber + "单</em></span><span class='levels'><i class='iconfont'>&#xe60e;</i><em>" + ServiceLevel + "</em></span></p></div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+        var html = "<li class='item'><div class='itemTop'><div class='itemTopLeft'><span><img title='" + ServiceName + "' src='http://images.ziyawang.com" + UserPicture + "' /></span><b>" + ServiceNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' title='" + ServiceName + "(" + ConnectPerson + ")' href='http://ziyawang.com/service/"+ ServiceID +"'>" + ServiceName + "(" + ConnectPerson + ")</a></h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='cetification'><img title='" + ServiceName + "' src='http://images.ziyawang.com" + ConfirmationP1 + "' /></a><div class='illustration'><span class='createTime'>" + PubTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='descriptionInwords'>" + ServiceIntroduction + "</a><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='serviceType'>服务类型</a><p class='concreteTypes'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"'>" + ServiceType + "</a></p><p class='remarks'><span>所在地：" + ServiceLocation + "</span></p><p class='remarks'><span>服务地区：" + ServiceArea + "</span></p><p class='servicerInfo'><span class='levels'><i class='iconfont'>&#xe60e;</i><em>" + ServiceLevel + "</em></span></p></div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
         return html;
     }
 // console.log(urldata)
@@ -190,6 +215,7 @@ $(function(){
         var current = Math.ceil(json.currentpage/4) - 1;
         //分页
         $("#Pagination").pagination(pages,{current_page:current});
+        $("#Pagination1").pagination(pages,{current_page:current});
         $(".page-sum").html("共<strong class='allPage'>" + pages + "</strong>页");
         if(urlpage == 1){
             $('.prev').remove();
@@ -280,7 +306,7 @@ $(function(){
             itemArr[0]=$('#waterfull').find('.item').eq(itemNum-1).offset().top+$('#waterfull').find('.item').eq(itemNum-1)[0].offsetHeight;
             itemArr[1]=$('#waterfull').find('.item').eq(itemNum-2).offset().top+$('#waterfull').find('.item').eq(itemNum-1)[0].offsetHeight;
             itemArr[2]=$('#waterfull').find('.item').eq(itemNum-3).offset().top+$('#waterfull').find('.item').eq(itemNum-1)[0].offsetHeight;
-            var maxTop=Math.max.apply(null,itemArr);
+            var maxTop=Math.max.apply(null,itemArr) - 600;
             if(maxTop<$(window).height()+$(document).scrollTop()){
                 //加载更多数据
                 startpage += 1;
@@ -326,18 +352,6 @@ $(function(){
                                 loading.data("on",true).fadeOut();
                                 clearTimeout(time);
                             });
-
-                            //收藏按钮切换
-                            $('.storeup i').click(function() {
-                                var title = $(this).attr("title");
-                                if(title == '收藏'){
-                                    $(this).attr('title', '已收藏');
-                                    $(this).addClass('red');
-                                }else{
-                                    $(this).attr('title', '收藏');
-                                    $(this).removeClass('red');
-                                }
-                            });
                             
                             //鼠标滑过li
                             $('.item').hover(function() {
@@ -370,13 +384,21 @@ $(function(){
                                 });
                             }
 
-                            $(".heart").click(function(){
+                            $(".heart").unbind("click").click(function(){
                                 checkLogin();
                                 if(stop){
                                     return false;
                                 }
                                 var ServiceID = $(this).attr('ServiceID');
                                 collect(ServiceID);
+                                var title = $(this).attr("title");
+                                if(title == '收藏'){
+                                    $(this).attr('title', '已收藏');
+                                    $(this).addClass('red');
+                                }else{
+                                    $(this).attr('title', '收藏');
+                                    $(this).removeClass('red');
+                                }
                             });
                         },600)
                     }
@@ -394,21 +416,6 @@ $(function(){
                 return img.src;
             };
         };
-
-
-
-
-        //收藏按钮切换
-        $('.storeup i').click(function() {
-            var title = $(this).attr("title");
-            if(title == '收藏'){
-                $(this).attr('title', '已收藏');
-                $(this).addClass('red');
-            }else{
-                $(this).attr('title', '收藏');
-                $(this).removeClass('red');
-            }
-        });
         
         //鼠标滑过li
         $('.item').hover(function() {
@@ -448,6 +455,14 @@ $(function(){
             }
             var ServiceID = $(this).attr('ServiceID');
             collect(ServiceID);
+            var title = $(this).attr("title");
+            if(title == '收藏'){
+                $(this).attr('title', '已收藏');
+                $(this).addClass('red');
+            }else{
+                $(this).attr('title', '收藏');
+                $(this).removeClass('red');
+            }
         });
     }  
 })

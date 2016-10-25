@@ -1,3 +1,7 @@
+/*.selected_serve .info_ul li{background:url(../img/vip.png) no-repeat 800px 26px;}*/
+.info_ul li .visited{font-size: 12px;}
+.info_ul li .blue_color{margin-bottom: 21px;}
+.info_ul li .head_pic img{border-radius: 5px;}
 .head_pic{width:62px;height: 62px;border-radius: 0;margin:0 10px 0 19px;}
 .head_pic img{width:62px;height: 62px;}
 .findinfo_abstr{float: left;overflow: hidden;margin-left: 10px;width: 48%;}
@@ -8,17 +12,14 @@
 .info_ul .orders a{width: 105px;padding-left: 7px;letter-spacing: 6px;line-height: 24px;}
 .orders span{color:#999;font-size: 12px;display: block;text-align: center;margin-bottom: 2px;}
 .orders .combine{background: #dad4ca;border-radius: 20px;color: #fff;font-size: 14px;font-weight: bold;}
-.aa{position: absolute;margin-left:6em;left: 0px;}
+.aa{position: absolute;margin-left: 142px;left: 0px;}
 .aa a{padding: 0px 10px;margin: 0 3px;word-spacing: 5px;letter-spacing: 2px;white-space: nowrap;line-height: 26px;}
 .cover_con{position: relative;}
-.cover_con span:first-child{display: inline-block;width: 6em;text-align: right;}
+.cover_con span:first-child{display: inline-block;padding: 0 0 0 25px;width: 110px;text-align: right;}
 .cover1{display: none;}
 .aa a.current,.aa a:hover{background:#f0a22d;border-radius: 5px;color:#fff;}
 #defa01.bind,.aa .bind:hover{background:#ccc;border-radius: 5px;color:#666;cursor:default;}
 .service_ul .company_info{width:140px;}
 .selected_serve .info_ul li{background:none;padding:20px 0;}
-.info_ul li .visited{font-size: 12px;}
-.info_ul li .blue_color{margin-bottom: 21px;}
-.info_ul li .head_pic img{border-radius: 5px;border: 1px solid #dedede;}
 .new_icon{position:absolute;top:20px;left:165px;width:26px;height:19px;}
 .vip_icon{height: 38px;width: 122px;position: absolute;right:135px;bottom:1px;}

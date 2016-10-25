@@ -1,7 +1,7 @@
 @extends('layouts.home')
 @section('content')
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/findservice.css')}}" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/findinfo.css')}}" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/findservice.css')}}?v=1.0.4" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/findinfo.css')}}?v=1.0.4" />
         <script type="text/javascript" src="{{asset('/js/fs.js')}}"></script>
     <!-- 二级banner -->
     <div class="find_service">

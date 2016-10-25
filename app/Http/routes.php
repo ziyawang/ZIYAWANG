@@ -21,7 +21,7 @@ Route::get('/login', 'IndexController@login');//登录
 Route::get('/smslogin', 'IndexController@smslogin');//忘记密码
 Route::get('/resetpwd', 'IndexController@resetpwd');//找回密码
 Route::get('/project', 'IndexController@proList2');//找信息
-Route::get('/project/{id}', 'IndexController@proInfo2');//信息详情
+Route::any('/project/{id}', 'IndexController@proInfo2');//信息详情
 Route::get('/service', 'IndexController@serList2');//找信息
 Route::get('/service/{id}', 'IndexController@serInfo2');//信息详情
 
@@ -81,4 +81,21 @@ Route::get('/service2', 'IndexController@serList');//找信息
 Route::get('/project2', 'IndexController@proList');//找信息
 Route::get('/service2/{id}', 'IndexController@serInfo');//信息详情
 Route::get('/project2/{id}', 'IndexController@proInfo');//信息详情
+
+
+//9.23新增充值中心路由
+Route::get('/ucenter/money', 'IndexController@money');//信息详情
+Route::get('/ucenter/money/detail', 'IndexController@moneyDetail');//充值消费明细
+//充值成功跳转页面
+Route::any('/ucenter/money/success', 'IndexController@paySuccess');
+//系统消息
+Route::get('/ucenter/message','IndexController@message');//个人中心首页，默认为系统消息
+//10.11新增意见反馈接口
+Route::get('/feedback', 'IndexController@feedback');//意见反馈
+
+//10.14新增活动报名路由
+// Route::get('/enroll', 'ActivityController@enroll');
+
+
+
 

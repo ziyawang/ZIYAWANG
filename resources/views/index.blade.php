@@ -5,13 +5,14 @@
 	<meta name="viewport" content="width=1492">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="360-site-verification" content="99c1119efa403c5080b1aee5da85cf4d" />
 	<meta name="baidu-tc-verification" content="f3b0a4c29cc8db2908b39b13b5844097" />
 	<title>资芽网-全球不良资产超级综服平台</title>
 	<meta name="Keywords" content="资芽网,不良资产,不良资产处置,不良资产处置平台" />
 	<meta name="Description" content="资芽网吸引全国各类不良资产持有者，汇集各类不良资产信息及相关需求,整合海量不良资产处置服务机构与投资方,搭建多样化处置通道和不良资产综服生态产业体系,嵌入移动社交与视频直播,兼具媒体属性,实现大数据搜索引擎和人工智能,打造共享开放的全球不良资产超级综服平台。" />
 	<meta name="baidu-site-verification" content="g4AlAGeFKg" />
-	<link type="text/css" rel="stylesheet" href="{{url('/css/index.css')}}" />
+	<link type="text/css" rel="stylesheet" href="{{url('/css/index.css')}}?v=1.0.4" />
 </head>
 <body>
 	<div class="header">
@@ -23,7 +24,7 @@
                     <a href="#" class="weibo1">微博<span class="wb_ma"><img src="/img/wb.png" /></span></a>
                     <a target="_blank" href="{{url('/ucenter/mycollect')}}" class="mycol">我的收藏</a>
                 </div>
-                <div class="brum_login">
+                <div class="brum_login" style="display:none">
                         <a href="{{url('/login')}}" class="viplog" target="_blank">会员登录</a>
                         <a href="{{url('/register')}}" class="freereg" target="_blank">免费注册</a>
                 </div>
@@ -41,8 +42,8 @@
 	    			<li><a href="{{url('/contract')}}">下载专区</a></li>
 	    		</ul>
 	    		<!-- 登录注册 -->
-	    		<div class="login">
-	    			<h1 class="logo"><a href="{{url('/')}}"><img src="/img/logo2.png" height="79" width="205" alt="首页" /></a></h1>
+	    		<div class="login" style="display:none">
+	    			<h1 class="logo"><a href="{{url('/')}}"><img src="/img/logo2.png" height="79" width="205" title="首页" /></a></h1>
 	    			<p class="logo_word">全球不良资产超级综服平台</p>
 	    			<div class="login_tab" style="position: relative;">
 	    				<span class="red" style="position: absolute;top:-20px;left:15px;color:#f00;"></span>
@@ -66,7 +67,7 @@
     							<input class="keydown_tel" type="text" placeholder="请输入手机号" />
     							<input class="psd2" type="password" placeholder="请输入密码" />	
 	    						<p>
-	    							<label for=""><input class="confirm_code" type="password" placeholder="请输入验证码" /></label>
+	    							<label for=""><input class="confirm_code" placeholder="请输入验证码" /></label>
 	    							<!-- <a href="javascript:;" class="testcode">验证码</a> -->
 	    							<label><input type="button" id="btn" value="验证码" class="testcode" /></label>
 	    						</p>
@@ -88,9 +89,10 @@
 <!--banner图-->
 	<div class="banner">
 		<ul>
+			<!-- <li><a target="_blank" href="{{url('/enroll')}}" class="img01" style="background:url(/img/banner4.jpg) no-repeat center 0;cursor:pointer;"></a></li> -->
 			<li><a href="javascript:;" class="img01"></a></li>
 			<li><a href="javascript:;" class="img02"></a></li>
-			<li><a target="_blank" href="http://ziyawang.com/video" class="img03" style="cursor:pointer"></a></li>
+			<li><a target="_blank" href="{{url('/video')}}" class="img03" style="cursor:pointer"></a></li>
 		</ul>
 <!-- 		<div class="direction_btn"> -->
 			<a href="#" class="leftBtn"></a>
@@ -98,6 +100,7 @@
 		<!-- </div> -->
 		<ol class="dot">
 			<li class="current"></li>
+			<!-- <li></li> -->
 			<li></li>
 			<li></li>
 		</ol>
@@ -114,8 +117,8 @@
 					<ul>
 						<li><a href="{{url('/project?TypeID=1')}}">资产包转让</a><a href="{{url('/project?TypeID=13')}}">资产求购</a><a href="{{url('/project?TypeID=10')}}">尽职调查</a></li>
 						<li><a href="{{url('/project?TypeID=14')}}">债权转让</a><a href="{{url('/project?TypeID=6')}}">融资需求</a><a href="{{url('/project?TypeID=2')}}">委外催收</a></li>
-						<li><a href="{{url('/project?TypeID=12')}}">固产转让</a><a href="{{url('/project?TypeID=3')}}">法律服务</a><a href="{{url('/project?TypeID=5&AssetType=典当')}}">典当信息</a></li>
-						<li><a href="{{url('/project?TypeID=4')}}">商业保理</a><a href="{{url('/project?TypeID=9')}}">悬赏信息</a><a href="{{url('/project?TypeID=5&AssetType=担保')}}">担保信息</a></li> 
+						<li><a href="{{url('/project?TypeID=12')}}">固产转让</a><a href="{{url('/project?TypeID=3')}}">法律服务</a><!-- <a href="{{url('/project?TypeID=5&AssetType=典当')}}">典当信息</a> --><a href="{{url('/project?TypeID=15')}}">投资需求</a></li>
+						<li><a href="{{url('/project?TypeID=4')}}">商业保理</a><a href="{{url('/project?TypeID=9')}}">悬赏信息</a><!-- <a href="{{url('/project?TypeID=5&AssetType=担保')}}">担保信息</a> --></li> 
 					</ul>
 				</div>
 				<div class="classify_right">
@@ -169,7 +172,7 @@
 <!--资芽视频-->
 	<div class="video">
 		<div class="wrap video_content">
-			<h3 class="new_more"><img src="/img/video_title.png" alt="资芽视频" /><a href="http://ziyawang.com/video">更多&nbsp;&gt;&gt;</a></h3>
+			<h3 class="new_more"><img src="/img/video_title.png" title="资芽视频" /><a href="http://ziyawang.com/video">更多&nbsp;&gt;&gt;</a></h3>
 </h3>
 			<div class="ul_video">
 				<ul id="video">
@@ -322,7 +325,7 @@
 			<p>本网站在此依法做出特别声明如下：</p>
 			<p>1、本网站采取以下合理的方式提请用户注意本协议条款：（1）在本协议中本网站以明确的足以引起用户注意的加粗字体等合理方式提醒用户注意相关条款；（2）用户还应特别注意任何未明确以加粗字体等形式标记的，但含有“不承担”、“免除”“不得”“应该”“必须”“承诺”“保证”“无需”“同意”等形式用语的条款。该等条款的确认将导致用户在特定情况下的被动、不便或损失，包括但不限于本协议第二条、第三条、第四条、第五条、第六条、第七条、第八条、第九条等，请用户在确认同意本协议之前再次阅读上述条款。</p>
 			<p>2、用户与本网站确认上述条款非属于《中华人民共和国合同法》第40条规定的“免除其责任、加重对方责任、排除对方主要权利的”的条款，本网站尊重用户诉讼的权利，但相关诉讼由资芽所在地人民法院管辖，用户选择同意注册或访问本网站、使用本网站各项服务即视为双方对此约定达成了一致意见。</p>
-			<p>3、本网站采取以下方式向用户说明本协议相关条款：用户如有任何条款需要说明的，请立即停止注册或使用本网站，同时立即致电010-57129557。若用户未致电至本网站即视为同意该等条款，则双方在此确认本网站已依法履行了根据用户要求对相关条款进行说明的法定义务，本网站已给予用户充足的时间与充分的选择权来决定是否缔结本协议。</p>
+			<p>3、本网站采取以下方式向用户说明本协议相关条款：用户如有任何条款需要说明的，请立即停止注册或使用本网站，同时立即致电400-898-8557。若用户未致电至本网站即视为同意该等条款，则双方在此确认本网站已依法履行了根据用户要求对相关条款进行说明的法定义务，本网站已给予用户充足的时间与充分的选择权来决定是否缔结本协议。</p>
 			<p>4、鉴于本网站已依法明确了上述条款、履行了格式条款制订方的义务，用户点击注册或使用本网站各项服务，将被视为且应当被视为用户已经完全注意并同意了本协议所有条款，尤其是提醒用户注意条款的合法性及有效性，用户不应以本网站未对格式条款以合理方式提醒用户注意或未根据用户要求予以说明为由而声称或要求法院或其它任何第三方确认相关条款违法或无效。</p>
 			<h4>三、服务内容</h4>
 			<p>1、本网站运用自己的系统，根据用户提交的资料:</p>
@@ -426,7 +429,7 @@
 	<div class="foot">
 		<div class="footer">
 		<div class="botbrands">
-	        <a class="website" id="_pingansec_bottomimagesmall_brand" href="http://si.trustutn.org/info?sn=671160812023618276847&certType=1"><img src="http://v.trustutn.org/images/cert/brand_bottom_small.jpg"/></a>
+	        <a class="website" id="_pingansec_bottomimagesmall_brand" href="http://si.trustutn.org/info?sn=671160812023618276847&certType=1" target="_blank"><img src="http://v.trustutn.org/images/cert/brand_bottom_small.jpg"/></a>
 	        <a  key ="579ebe15efbfb033fb17ed33"  logo_size="96x36"  logo_type="business"  href="http://www.anquan.org" ><script src="//static.anquan.org/static/outer/js/aq_auth.js"></script></a>
 	        <a href="http://webscan.360.cn/index/checkwebsite/url/www.ziyawang.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/9cb32b38475b891e54655e56518a3b9e"/></a>
 	    </div>
@@ -479,11 +482,13 @@ $(function () {
         $('.after_login').show();
         $('#phone').text(phonenumber);
         $('.login').addClass('after');
+        $('.login').show();
     } else {
         $('#unlogin').show();
         $('.brum_login').show();
         $('.after_login').hide();
         $('.personal').hide();
+        $('.login').show();
     }
 
     function _queryService(data) {
@@ -628,7 +633,7 @@ $(function () {
             var VideoTitle = data[index].VideoTitle;       //视频标题
             var VideoLogo  = data[index].VideoThumb;  	//视频图片
             var VideoID    = data[index].VideoID;  	    //视频ID
-            html = html + "<li class='videoli" + index + "'><a href='http://ziyawang.com/video/" + VideoID + "' target='_blank'><img src='http://images.ziyawang.com" + VideoLogo + "' /><span>" + VideoTitle + "</span><img class='pause' src='/img/play.png'></a></li>";
+            html = html + "<li class='videoli" + index + "'><a href='http://ziyawang.com/video/" + VideoID + "' target='_blank'><img title='" + VideoTitle + "' src='http://images.ziyawang.com" + VideoLogo + "' /><span>" + VideoTitle + "</span><img class='pause' src='/img/play.png'></a></li>";
         });
         return html;
     }
@@ -644,23 +649,35 @@ $(function () {
             switch(index)
                 {
                     case 0:
-                        html = html + "<li class='li1'><div class='n1 news_com'><div class='news_complete'><img src='http://images.ziyawang.com" + NewsLogo + "' /><a class='news_com_content' href='http://ziyawang.com/news/" + NewsID + "'><span>" + NewsTitle + "</span><p>" + NewsBrief.substr(0,100) + "</p></a><a href='http://ziyawang.com/news/" + NewsID + "' class='details'></a></div></div></li>";
+                        html = html + "<li class='li1'><div class='n1 news_com'><div class='news_complete'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com" + NewsLogo + "' /></a><a class='news_com_content' href='http://ziyawang.com/news/" + NewsID + "'><span>" + NewsTitle + "</span><p>" + NewsBrief.substr(0,100) + "</p></a><a href='http://ziyawang.com/news/" + NewsID + "' class='details'></a></div></div></li>";
                         break;
 
                     case 1:
-                    	html = html + "<li class='li2'><div class='n1'><div class='news_top m20'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,90) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div><div class='news_bottom'><a href='http://ziyawang.com/news/" + NewsID + "'><img src='http://images.ziyawang.com/" + NewsLogo + "' /><span>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
+                    	html = html + "<li class='li2'><div class='n1'><div class='news_top m20'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,90) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div>";
                     	break;
 
-                   	case 2:
-                    	html = html + "<li class='li3'><div class='n1'><div class='news_bottom m20'><a href='http://ziyawang.com/news/" + NewsID + "'><img src='http://images.ziyawang.com/" + NewsLogo + "' /><span class='little_video'>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details white_details'></a></div><div class='news_top'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,80) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
+                    case 2:
+                    	html = html + "<div class='news_bottom'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /><span>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
                     	break;
 
-                    case 3:
-                    	html = html +  "<li class='li4'><div class='n1 news_com'><div class='news_complete'><img src='http://images.ziyawang.com/" + NewsLogo + "' /><a class='news_com_content' href='http://ziyawang.com/news/" + NewsID + "'><span>" + NewsTitle + "</span><p>" + NewsBrief.substr(0,80) + "</p></a><a href='http://ziyawang.com/news/" + NewsID + "' class='details'></a></div></div></li>";
+                   	case 3:
+                    	html = html + "<li class='li3'><div class='n1'><div class='news_bottom m20'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /><span class='little_video'>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details white_details'></a></div>";
                     	break;
 
                     case 4:
-                    	html = html + "<li class='li5'><div class='n1'><div class='news_bottom m20'><a href='http://ziyawang.com/news/" + NewsID + "'><img src='http://images.ziyawang.com/" + NewsLogo + "' /><span class='little_video'>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details white_details'></a></div><div class='news_top'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,80) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
+                    	html = html + "<div class='news_top'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,80) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
+                    	break;
+
+                    case 5:
+                    	html = html +  "<li class='li4'><div class='n1 news_com'><div class='news_complete'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /></a><a class='news_com_content' href='http://ziyawang.com/news/" + NewsID + "'><span>" + NewsTitle + "</span><p>" + NewsBrief.substr(0,80) + "</p></a><a href='http://ziyawang.com/news/" + NewsID + "' class='details'></a></div></div></li>";
+                    	break;
+
+                    case 6:
+                    	html = html + "<li class='li5'><div class='n1'><div class='news_bottom m20'><a href='http://ziyawang.com/news/" + NewsID + "'><img title='" + NewsTitle + "' src='http://images.ziyawang.com/" + NewsLogo + "' /><span class='little_video'>" + NewsTitle + "</span></a><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details white_details'></a></div>";
+                    	break;
+
+                    case 7:
+                    	html = html + "<div class='news_top'><a href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a><p>摘要：" + NewsBrief.substr(0,80) + "</p><a href='http://ziyawang.com/news/" + NewsID + "' title='详情' class='details'></a></div></div></li>";
                     	break;
                 }
         });
@@ -1181,7 +1198,7 @@ $(function () {
 //     }
 //新闻 3个ajax
 	$.ajax({  
-        url: 'http://api.ziyawang.com/v1/news/list?pagecount=5&NewsLabel=zyxw&weight=1&access_token=token',  
+        url: 'http://api.ziyawang.com/v1/news/list?pagecount=8&NewsLabel=zyxw&weight=1&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -1312,7 +1329,7 @@ $(function () {
 		$.ajax({
 			url:"http://api.ziyawang.com/v1/ie/auth/register",
 			type:"GET",
-			data:"phonenumber=" + phonenumber + "&password=" + password + "&smscode=" + smscode + "&access_token=token",
+			data:"phonenumber=" + phonenumber + "&password=" + password + "&smscode=" + smscode + "&access_token=token&Channel=PC",
 			dataType:'json',
 			success:function(msg){
 				// console.log(msg);
@@ -1406,7 +1423,7 @@ $(function () {
     function checkService(){
         var role = $.cookie('role');
         if( role != 1) {
-            alert('请先认证成为服务方，即可查看联系方式！')
+            // alert('请先认证成为服务方，即可查看联系方式！')
             // window.location = "{{url('/ucenter/confirm')}}"; 
             window.open("http://ziyawang.com/ucenter/confirm","status=yes,toolbar=yes, menubar=yes,location=yes"); 
         stop = true;
@@ -1415,13 +1432,15 @@ $(function () {
     }
 
 	$('#freepub').click(function(){
+		stop = false;
 		checkLogin();
 		if(stop){
 			return false;
 		}
-		window.open("http://ziyawang.com/ucenter/pubpro","status=yes,toolbar=yes, menubar=yes,location=yes"); 
+		window.open("http://ziyawang.com/ucenter","status=yes,toolbar=yes, menubar=yes,location=yes"); 
 	})
 	$('#beservice').click(function(){
+		stop = false;
 		checkLogin();
         if(stop){
             return false;

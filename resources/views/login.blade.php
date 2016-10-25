@@ -11,6 +11,15 @@
     <script src="{{url('/js/jquery.cookie.js')}}"></script>
     <script src="{{asset('/js/fs.js')}}"></script>
     <script src="http://libs.cncdn.cn/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script>
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?68b543fbd583e0bc6eccb7d2adee8156";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 </head>
 <body>
 	<div class="header">
@@ -58,7 +67,7 @@
     		var password = $(".sec_pwd").val();
 
     		// $(this).prop('disabled',true);
-    		$(this).val('登陆中...');
+    		$(this).val('登录中...');
     		$.ajax({
     			url:"http://api.ziyawang.com/v1/ie/auth/login",
     			// url:"http://api.ziyawang.com/v1/auth/login",
@@ -93,7 +102,7 @@
 	    		var password = $(".sec_pwd").val();
 
 	    		// $(this).prop('disabled',true);
-	    		$('#login').val('登陆中...');
+	    		$('#login').val('登录中...');
 	    		$.ajax({
 	    			url:"http://api.ziyawang.com/v1/ie/auth/login",
 	    			// url:"http://api.ziyawang.com/v1/auth/login",

@@ -1,0 +1,101 @@
+html {font-size: 30px;}
+html, body {-webkit-tap-highlight-color: transparent;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-family: Microsoft Yahei;}
+.phone{}
+@media (min-width: 400px) {
+html, body, textarea, button, input, select {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+}
+
+@media all and (max-width: 540px) {
+html, body, textarea, button, input, select {
+    font-size: 22px;
+}
+}
+@media all and (max-width: 480px) {
+html, body, textarea, button, input, select {
+    font-size: 20px;
+}
+}
+ @media all and (max-width: 420px) {
+html, body, textarea, button, input, select {
+    font-size: 18px;
+}
+}
+ @media all and (max-width: 380px) {
+html, body, textarea, button, input, select {
+    font-size: 16px;
+}
+}
+@media all and (max-width: 320px) {
+html, body, textarea, button, input, select {
+    font-size: 14px;
+}
+}
+@media all and (max-width: 260px) {
+html, body, textarea, button, input, select {
+    font-size: 12px;
+}
+}
+class MainClass {
+    static void Main() {
+
+    }
+} /*禁用iPhone中Safari的字号自动调整 */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+
+}
+/* 去除iPhone中默认的input样式  清除苹果浏览器的圆角表单*/
+input[type="submit"],
+
+input[type="reset"],
+
+input[type="button"],
+
+input{-webkit-appearance:none; resize: none;}
+/* 取消链接高亮  */
+body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,input,textarea,select,p,dl,dt,dd,a,img,button,form,table,th,tr,td,tbody,article, 
+aside, details,figcaption,figure,footer,header,hgroup, menu,nav,section{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0); }
+/* 设置HTML5元素为块 */
+article, aside, details,figcaption,figure,footer,header,hgroup, menu,nav,section {
+display: block;
+}
+/* 图片自适应 */
+img {
+max-width: 100%;
+height: auto;
+width:auto\9; /* ie8 */
+-ms-interpolation-mode:bicubic;/*为了照顾ie图片缩放失真*/
+}
+.phoneRev{background: #2190ad;color:#fff;font-size: 0.9rem;padding: 0.2rem 0;max-width: 750px;margin: 0 auto !important;}
+.phoneRev ul{padding-top: 1.2rem;border-top: 0.1rem solid #fff;}
+.fiveStar{overflow: hidden;height: auto;position: relative;/*padding-bottom: 0.87rem;*/}
+.bgXing{height: 23.866rem;width: 21.4333rem;background:url(../img/enphone4.png) no-repeat right 0;background-size: cover;position: absolute;right: 0;top: 0;}
+.meetInfo{position: relative;}
+.meeting{padding:1rem 0 0rem 1.5rem;position: relative;width: 100%;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-bottom: 0.1rem solid #fff;}
+/*.meetInfo dl{text-align: justify;position: relative;}
+.meetInfo dt{position: absolute;left: 0;top: 0;}
+.meetInfo dd{margin-left: 5em;}*/
+.phoneText{padding:0rem 2.0333rem 1.2rem 0.1667rem;}
+.phoneInput{border: 0.1rem solid #fff;padding:0.1rem 0.5rem 0.5rem;}
+.phoneInput p{position: relative;margin-bottom: 0.2rem;}
+.phoneInput p label{position: absolute;left: 0px;top: 0px;}
+.phoneAddiv{padding-left: 3em;display: block;}
+.phoneAddiv input{background:none;border-bottom: 0.1rem solid #fff;display: block;width: 100%;font-size: 0.8rem;color:#fff;}
+.companyName .phoneAddiv{padding-left: 5em;}
+.phoneSub{background:#fedb3c;border: 1px solid #fedb3c;display: block;width: 9.2rem;height: 1.9rem;margin-top: 0.7rem;font-weight: bold;}
+.eventHight{position: relative;}
+.yelTitle{font-size: 1.066rem;color:#e8b525;font-weight: bold;text-align: right;border-bottom: 0.18rem solid #D8E477;padding-right: 2rem;padding-bottom: 0.3rem;margin-left: 1.3rem;}
+.titleStar{position: absolute;top: 0.6rem;left: 0;width: 2.3333rem;height:2.3rem;}
+.highlightCon{padding:0.6rem 2rem 0.4rem 2.8rem;text-align: justify;}
+.shortCap{padding:0.6rem 2rem 1.7rem 2.8rem;}
+.highlightCon span{display: block;}
+.enphonebotPic{width: 13.8rem;height: 18.1667rem;float: right;margin-top: -4.4rem;}
+.enphoneBottom{top: -0.6rem;position: relative;}
+.enphoneBottom span{color:#fedb3c;font-size: 1.8rem;display: block;margin-top: -0.4rem;}
+.netUrl{font-size: 0.9rem;line-height: 1.8rem;}
+.netUrl i{font-size: 1.7rem;}
+.phone{display: none;}

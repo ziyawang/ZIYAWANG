@@ -2,23 +2,25 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>资芽网-全球不良资产超级综服平台</title>
-        <meta name="Keywords" content="资芽网,不良资产,不良资产处置,不良资产处置平台" />
-        <meta name="Description" content="资芽网是全球不良资产智能综服超级平台,吸引全国各类不良资产持有者，汇集各类不良资产信息及相关需求,整合海量不良资产处置服务机构与投资方,搭建多样化处置通道和不良资产综服生态产业体系,嵌入移动社交与视频直播,兼具媒体属性,实现大数据搜索引擎和人工智能,打造共享开放的全球不良资产智能综服超级平台。" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}" /> 
+        
+        @yield('seo')
+
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=1.0.4" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}?v=1.0.4" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=1.0.4" /> 
 
 
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <script src="{{asset('/js/jquery.js')}}"></script>
         <script src="{{asset('/js/fs.js')}}"></script>
         <script src="{{url('/js/jquery.cookie.js')}}"></script>
         <script type="text/javascript" src="{{url('/js/public.js')}}"></script>
         <script type="text/javascript" src="{{url('/js/contract.js')}}"></script>
         <script type="text/javascript" src="{{url('/js/jquery.pagination.js')}}"></script>
+        <script type="text/javascript" src="{{url('/org/layer/layer.js')}}"></script>
         
     <script src="http://libs.cncdn.cn/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script>
     <script>
@@ -44,7 +46,7 @@ var _hmt = _hmt || [];
                     <a href="#" class="weibo1">微博<span class="wb_ma"><img src="/img/wb.png" /></span></a>
                     <a target="_blank" href="{{url('/ucenter/mycollect')}}" class="mycol">我的收藏</a>
                 </div>
-                <div class="brum_login">
+                <div class="brum_login" style="display:none">
                         <a href="{{url('/login')}}" class="viplog" target="_blank">会员登录</a>
                         <a href="{{url('/register')}}" class="freereg" target="_blank">免费注册</a>
                 </div>
@@ -114,9 +116,9 @@ var _hmt = _hmt || [];
     <div class="foot">
         <div class="footer">
             <div class="botbrands">
-                <a class="website" id="_pingansec_bottomimagesmall_brand" href="http://si.trustutn.org/info?sn=671160812023618276847&certType=1"><img src="http://v.trustutn.org/images/cert/brand_bottom_small.jpg"/></a>
+                <a class="website" id="_pingansec_bottomimagesmall_brand" href="http://si.trustutn.org/info?sn=671160812023618276847&certType=1" target="_blank"><img src="http://v.trustutn.org/images/cert/brand_bottom_small.jpg"/></a>
                 <a  key ="579ebe15efbfb033fb17ed33"  logo_size="96x36"  logo_type="business"  href="http://www.anquan.org" ><script src="//static.anquan.org/static/outer/js/aq_auth.js"></script></a>
-                <a href="http://webscan.360.cn/index/checkwebsite/url/www.ziyawang.com"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/9cb32b38475b891e54655e56518a3b9e"/></a>
+                <a href="http://webscan.360.cn/index/checkwebsite/url/www.ziyawang.com" target="_blank"><img border="0" src="http://img.webscan.360.cn/status/pai/hash/9cb32b38475b891e54655e56518a3b9e"/></a>
             </div>
             <div class="nav_foot">
                 <a href="{{url('/')}}">首页</a>|<a href="{{url('/aboutus')}}">关于我们</a>|<a href="{{url('/connectus')}}">联系我们</a>|<a href="javascript:;">人才招聘</a>|<a href="javascript:;">商务合作</a>|<a href="{{url('/legal')}}">法律声明</a>

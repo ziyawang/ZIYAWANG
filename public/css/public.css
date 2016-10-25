@@ -1,4 +1,3 @@
-
 /*公共部分*/
 .header{height: 84px;background: #000;width:100%;}
 /*顶部小条*/
@@ -8,14 +7,16 @@
 .personal{background:url(../img/user.png) no-repeat left 3px;padding-left: 14px;display: none;}
 /*登录后显示个人中心*/
 .guide .personal.appear{display: block;}
-.weixin{background:url(../img/weixin.png) no-repeat left 3px;padding-left: 19px;}
-.weibo{background:url(../img/weibo.png) no-repeat left 3px;padding-left: 19px;}
-.mycol{background:url(../img/shouc.png) no-repeat left 3px;padding-left: 19px;}
 .ziyaapp{background:url(../img/phone_icon.png) no-repeat left 2px;padding-left: 19px;}
+.weixin1{background:url(../img/weixin.png) no-repeat left 3px;padding-left: 19px;}
+.weibo1{background:url(../img/weibo.png) no-repeat left 3px;padding-left: 19px;}
+.mycol{background:url(../img/shouc.png) no-repeat left 3px;padding-left: 19px;}
+
 .ziya_ma{position: absolute;top: 27px;right: 198px;z-index: 10;display: none;padding:5px 0 0 0;}
 .wx_ma{position: absolute;top: 27px;right:123px;display: none;z-index: 10;padding:5px 0 0 0;}
 .wb_ma img,.weixin1 img,.ziya_ma img{width: 80px;height: 80px;}
 .ziya_ma img{border: 3px solid #fff;}
+.wb_ma {position: absolute; top: 27px; right: 66px; z-index: 10; display: none; padding: 5px 0 0 0;}
 /*会员登录*/
 .brum_login{position: absolute;margin-top: 50px;right: -63px;top: 0;}
 .brum_login a{color:#fff;display:inline-block;width:60px;height: 19px;padding-left: 25px;margin-left: 9px;line-height: 19px;font-size: 12px;}
@@ -85,9 +86,6 @@
 .page .last{background: none;}
 /*收藏*/
 .lo_collect .star_cl,.abstract .share a em.star_cl,.collect .star_cl,.think .th_right .collect .star_cl{background:url(../img/xing_b.png) no-repeat 0 -3px;}
-/*{background:url(../img/xing_b.png) no-repeat 0 -3px;}
-{background:url(../img/xing_b.png) no-repeat 0 -3px;}
-{}*/
 /*资芽助手*/
 .help{position: relative;height:510px;border-bottom: none!important;padding-bottom: 0px!important;height:417px;margin-bottom: 0!important;}
 .ziya_help{position: absolute;left:77px;top: 165px;}
@@ -95,98 +93,30 @@
 .saoma{position: absolute;width: 120px;text-align: center;top: 205px;right:135px;font-size: 12px;color:#090404;}
 .saoma img{display: block;margin:0 auto; width: 115px;}
 /*分页插件*/
-.pages {
-  float: right;
-  margin: 30px 0 26px;
-}
-.pages #Pagination {
-  float: left;
-  overflow: hidden;
-}
-.pages #Pagination .pagination {
-  height: 32px;
-  text-align: right;
-  font-family: \u5b8b\u4f53,Arial;
-}
-.pages #Pagination .pagination a,
-.pages #Pagination .pagination span {
-  float: left;
-  display: inline;
-  padding: 2px 9px;
-  border: 1px solid #e6e6e6;
-  border-right: none;
-  background: #f6f6f6;
-  color: #666666;
-  font-family: \u5b8b\u4f53,Arial;
-  font-size: 14px;
-  cursor: pointer;
-}
-.pages #Pagination .pagination .current {
-  background: #ffac59;
-  color: #fff;
-}
-.pages #Pagination .pagination .prev,
-.pages #Pagination .pagination .next {
-  float: left;
-  padding: 2px 9px;
-  border: 1px solid #e6e6e6;
-  background: #f6f6f6;
-  color: #666666;
-  cursor: pointer;
-}
-.pages #Pagination .pagination .prev i,
-.pages #Pagination .pagination .next i {
-  display: inline-block;
-  width: 4px;
-  height: 11px;
-  margin-right: 5px;
-  background: url(../images/icon.fw.png) no-repeat;
-}
-.pages #Pagination .pagination .prev {
-  border-right: none;
-}
-.pages #Pagination .pagination .pagination-break {
-  padding: 3px 5px;
-  border: none;
-  border-left: 1px solid #e6e6e6;
-  background: none;
-  cursor: default;
-}
-.pages .searchPage {
-  float: left;
-  margin-top: 3px;
-}
-.pages .searchPage .page-sum {
-  padding: 11px 13px;
-  color: #999999;
-  font-family: \u5b8b\u4f53,Arial;
-  font-size: 14px;
-}
-.pages .searchPage .page-go {
-  padding: 8px 0;
-  color: #999999;
-  font-family: \u5b8b\u4f53,Arial;
-  font-size: 14px;
-  padding: 10px 0\9;
-  *padding: 6px 0;
-}
-.pages .searchPage .page-go input {
-  width: 21px;
-  height: 20px;
-  margin: 0 5px;
-  padding-left: 5px;
-  border: 1px solid #e4e4e4;
-}
-.pages .searchPage .page-btn {
-  margin: 9px 0 5px 5px;
-  padding: 2px 5px;
-  background: #ffac59;
-  border-radius: 2px;
-  color: #ffffff;
-  font-family: Arial, 'Microsoft YaHei';
-  font-size: 14px;
-  text-decoration: none;
-}
+.pages {float: right; margin: 30px 0 26px; } 
+.pages #Pagination1 {float: left; overflow: hidden; } 
+.pages #Pagination1 .pagination {height: 32px; text-align: right; font-family: \u5b8b\u4f53,Arial; } 
+.pages #Pagination1 .pagination a, .pages #Pagination1 .pagination span {float: left; display: inline; padding: 2px 9px; border: 1px solid #e6e6e6; border-right: none; background: #f6f6f6; color: #666666; font-family: \u5b8b\u4f53,Arial; font-size: 14px; cursor: pointer; } 
+.pages #Pagination1 .pagination .current {background: #ffac59; color: #fff; } 
+.pages #Pagination1 .pagination .prev, .pages #Pagination1 .pagination .next {float: left; padding: 2px 9px; border: 1px solid #e6e6e6; background: #f6f6f6; color: #666666; cursor: pointer; } 
+.pages #Pagination1 .pagination .prev i, .pages #Pagination1 .pagination .next i {display: inline-block; width: 4px; height: 11px; margin-right: 5px; background: url(../images/icon.fw.png) no-repeat; } 
+.pages #Pagination1 .pagination .prev {border-right: none; } 
+.pages #Pagination1 .pagination .pagination-break {padding: 3px 5px; border: none; border-left: 1px solid #e6e6e6; background: none; cursor: default; } 
+.topPages .pages #Pagination1 .pagination .prev, .topPages .pages #Pagination1 .pagination .next{display: block!important}
+.pages #Pagination {float: left; overflow: hidden; } 
+.pages #Pagination .pagination {height: 32px; text-align: right; font-family: \u5b8b\u4f53,Arial; } 
+.pages #Pagination .pagination a, .pages #Pagination .pagination span {float: left; display: inline; padding: 2px 9px; border: 1px solid #e6e6e6; border-right: none; background: #f6f6f6; color: #666666; font-family: \u5b8b\u4f53,Arial; font-size: 14px; cursor: pointer; } 
+.pages #Pagination .pagination .current {background: #ffac59; color: #fff; } 
+.pages #Pagination .pagination .prev, .pages #Pagination .pagination .next {float: left; padding: 2px 9px; border: 1px solid #e6e6e6; background: #f6f6f6; color: #666666; cursor: pointer; } 
+.pages #Pagination .pagination .prev i, .pages #Pagination .pagination .next i {display: inline-block; width: 4px; height: 11px; margin-right: 5px; background: url(../images/icon.fw.png) no-repeat; } 
+.pages #Pagination .pagination .prev {border-right: none; } 
+.pages #Pagination .pagination .pagination-break {padding: 3px 5px; border: none; border-left: 1px solid #e6e6e6; background: none; cursor: default; } 
+
+.pages .searchPage {float: left; margin-top: 3px; } 
+.pages .searchPage .page-sum {padding: 11px 13px; color: #999999; font-family: \u5b8b\u4f53,Arial; font-size: 14px; } 
+.pages .searchPage .page-go {padding: 8px 0; color: #999999; font-family: \u5b8b\u4f53,Arial; font-size: 14px; padding: 10px 0\9; *padding: 6px 0; } 
+.pages .searchPage .page-go input {width: 21px; height: 20px; margin: 0 5px; padding-left: 5px; border: 1px solid #e4e4e4; } 
+.pages .searchPage .page-btn {margin: 9px 0 5px 5px; padding: 2px 5px; background: #ffac59; border-radius: 2px; color: #ffffff; font-family: Arial, 'Microsoft YaHei'; font-size: 14px; text-decoration: none; } 
 /*底部*/
 .foot,footer{border-top:4px solid #F5D346;background: #3a3a3b;padding: 30px 0;}
 .footer{width: 1200px;margin: 0 auto;position: relative;overflow: hidden;}
@@ -217,7 +147,7 @@
 .botbrands{position: absolute;bottom:60px;left:25px;}
 .botbrands a{display:inline-block;margin:0 10px;}
 /*.botbrands .website img{width: 96px;height: 36px;} */
-.botbrands img{opacity: 0.6;width: 110px;height: 40px;}
+.botbrands img{opacity: 0.6;width: 80px;height: 30px;}
 .botbrands a:hover img{opacity: 1;} 
 /*屏幕尺寸变化热线位置*/
 
@@ -236,10 +166,16 @@
 .login_tab .red{font-size: 12px;}
 /*弹层样式*/
 .poplayer{width:100%;height:100%;background:rgba(0,0,0,0.6);position: fixed;top: 0;bottom: 0;left: 0;right: 0;z-index: 10;display: none;}
-    .poplayer1{width: 391px;height: 182px;background:url(../img/pop1.png) no-repeat;top: 50%;left:50%;margin:-91px 0 0 -180px;position: absolute;z-index: 11;display: none;}
+/*    .poplayer1{width: 391px;height: 182px;background:url(../img/pop1.png) no-repeat;top: 50%;left:50%;margin:-91px 0 0 -180px;position: absolute;z-index: 11;display: none;}
     .poplayer1 a{color:#703802;position: absolute;bottom:0px;left:135px;font-size: 16px;font-weight: bold;line-height: 28px;width: 120px;text-align: center;}
     .poplayer2{width: 342px;height: 183px;background:url(../img/pop2.png) no-repeat;top: 50%;left: 50%;margin:-91px 0 0 -171px;position:absolute;z-index: 12;display: none;}
-    .poplayer2 a{color:#703802;position: absolute;bottom:0px;left:113px;font-size: 16px;font-weight: bold;line-height: 28px;width: 120px;text-align: center;}
+    .poplayer2 a{color:#703802;position: absolute;bottom:0px;left:113px;font-size: 16px;font-weight: bold;line-height: 28px;width: 120px;text-align: center;}*/
+.poplayer1,.poplayer3,.poplayer4{width: 391px;height: 182px;background:url(../img/pop1.png) no-repeat;top: 50%;left:50%;margin:-91px 0 0 -180px;position: fixed;z-index: 11;display: none;}
+.poplayer1 a,.poplayer3,.poplayer4 a{color:#703802;position: absolute;bottom:0px;left:135px;font-size: 16px;font-weight: bold;line-height: 28px;width: 120px;text-align: center;height:26px;}
+.poplayer2{width: 342px;height: 183px;background:url(../img/pop2.png) no-repeat;top: 50%;left: 50%;margin:-91px 0 0 -171px;position:fixed;z-index: 12;display: none;}
+.poplayer2 a{color:#703802;position: absolute;bottom:0px;left:113px;font-size: 16px;font-weight: bold;line-height: 28px;width: 120px;text-align: center;}
+.poplayer3{background:url(../img/pop3.png) no-repeat;}
+.poplayer4{background:url(../img/pop4.png) no-repeat;}
 /*ie7兼容*/
 .header .wrap{position: relative;z-index: 2;}
 .banner{z-index: 1;}
@@ -252,3 +188,30 @@
 .guide{*+z-index: 3;}
 .friend .hezuo{*+top: 61px;}
 .friend ul{*+height: 204px;}
+/*2016.9.20 usercenter_v2 public part*/
+.userContent{width: 1230px;margin: 0 auto;background:url(../img/r_shadow.png) repeat-y right 0;}
+/*left*/
+.ucLeft{width: 197px;float: left;background:#f4f4f4;border-right: 3px solid #b8b8b8;border-left: 3px solid #b8b8b8;min-height: 700px;margin-left: 15px;}
+.ucLeft h2{padding-left:4px;width: 193px;height: 81px;line-height:81px;background:#757778;font-size: 30px;color:#fff;text-align: center;font-weight: normal;letter-spacing: 4px;}
+.ucleftHead{width: 200px;height: 110px;padding:20px 0;}
+.ucleftHead a{display: block;height: 77px;width: 77px;border: 2px solid #bec3c7;overflow: hidden;border-radius: 50%;margin:0px auto;}
+.ucleftHead a img{width: 80px;height: 80px;}
+.ucleftHead span{display: block;text-align: center;margin-top: 14px;color:#333;}
+.ucleftMiddle{height: 23px;background:#f2e1cf;border-bottom: 3px solid #ffad00;padding: 3px 0;}
+.ucleftMiddle a{display: block;float: left;}
+.ucleftMiddle .sysInfo{text-align: center;border-right: 1px solid #77797a;color: #272536;position: relative;width: 96px;}
+.ucleftMiddle .sysInfo .redTips{width: 6px;height: 6px;display: block;background:#e60012;border-radius: 20px;position: absolute;top: 3px;right: 37px;}
+.ucleftMiddle .money{padding-left: 40px;width: 60px;background:url(../img/yabi1.png) no-repeat 14px 3px;line-height: 25px;font-size: 16px;color:#242424;}
+.ucleftMiddle .money span{font-size: 12px;}
+.ucleftBottom{}
+.ucleftBottom ul .current,.ucleftBottom ul li:hover{background:#979fa7;border-radius: 4px;border-top: 0 none;padding:10px 0 9px;}
+.ucleftBottom ul .current+li,.ucleftBottom ul li:hover+li,.ucleftBottom ul li:first-child{border-top: 0 none;padding:10px 0 9px;}
+.ucleftBottom ul .current a,.ucleftBottom ul li:hover a{background:#757778;font-weight: 500;color:#fefefe;border-radius: 10px;}
+.ucleftBottom ul .current a i,.ucleftBottom ul li:hover a i{font-weight: normal;-webkit-text-stroke-width: 0px;}
+.ucleftBottom ul li:first-child.current,.ucleftBottom ul li:first-child:hover{border-radius: 1px 1px 4px 4px;}
+.ucleftBottom ul li{height: 34px;padding:9px 0;border-top: 1px dashed #c0c0c0;}
+.ucleftBottom ul li a{display: block;width: 152px;height: 34px;line-height: 34px;font-size: 18px;color:#333;margin:0 auto;padding-left:18px;letter-spacing: 3px;}
+.ucleftBottom ul li a i{margin-right: 10px;font-size: 20px;}
+.ucleftBottom ul li a .chongzhi{font-size: 24px;float: left;}
+.ucleftBottom ul li a .hezuo{float: left;height:26px;margin-top: 2px;}
+.ucRight{width: 960px;float: right;}

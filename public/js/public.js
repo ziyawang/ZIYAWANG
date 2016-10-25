@@ -23,13 +23,13 @@ $(function(){
 		$('.banner ul').stop().animate({'left':move + '%'},500);
 	}
 		
-	var timer01 = null;
-	timer01 = setInterval(myFn,3500);
+	var timerBan = null;
+	timerBan = setInterval(myFn,3500);
 	
 	$('.banner').hover(function(e) {
-	          clearInterval(timer01);
+	          clearInterval(timerBan);
 	},function(){
-		timer01 = setInterval(myFn,3500);
+		timerBan = setInterval(myFn,3500);
 	});
 		
 		
@@ -95,13 +95,13 @@ $(function(){
 	});
 //收藏============end
 //鼠标滑过头像效果=========start
-	$('.headBox').hover(function() {
-		$(this).find('img').css('opacity', '0.7');
-		$('.colorful').addClass('colorRot');
-	}, function() {
-		$(this).find('img').css('opacity', '1');
-		$('.colorful').removeClass('colorRot');
-	});
+	// $('.headBox').hover(function() {
+	// 	$(this).find('img').css('opacity', '0.7');
+	// 	$('.colorful').addClass('colorRot');
+	// }, function() {
+	// 	$(this).find('img').css('opacity', '1');
+	// 	$('.colorful').removeClass('colorRot');
+	// });
 //================弹出层
 	// $('.certain').click(function(event) {
  //        $(this).parent().hide();

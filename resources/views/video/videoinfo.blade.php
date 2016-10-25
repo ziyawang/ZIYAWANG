@@ -1,6 +1,12 @@
-@extends('layouts.vhome')
+@extends('layouts.home')
+
+@section('seo')
+<title>资芽视频-不良资产领域第一视频平台</title>
+        <meta name="Keywords" content="资芽视频,不良资产视频,不良资产行业视频,资芽网视频" />
+        <meta name="Description" content="资芽视频是资芽网第一视频,行业专家释疑解惑,分享经验,培训学习,剖析热点话题;线上线下活动,同业互动,探索分析,交流共享,协作共赢,鼓励创新,普及法律常识,降低法律风险.推动不良资产行业,金融领域健康有序发展." />
+@endsection
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/video.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/video.css')}}?v=1.0.4" />
 <script src="{{asset('/js/fingerprint.js')}}"></script>
 <script src="{{asset('/js/jquery.md5.js')}}"></script>
 <!--[if IE]><script src="http://api.html5media.info/1.1.4/html5media.min.js"></script> <![endif]-->
@@ -289,12 +295,13 @@ $(function(){
 
     function video(tt) {
         var json = eval(tt); //数组 
-        // console.log(json)
+        console.log(json)
         var VideoTitle = json.VideoTitle;
         var VideoDes = json.VideoDes;
         var VideoLogo = json.VideoLogo;
         var VideoLabel = json.VideoLabel;
         var CollectFlag = json.CollectFlag;
+console.log(VideoLabel.indexOf('zyyfz'))
         if(CollectFlag == 1){
             $('#iscollect').html('已收藏');
         }
@@ -318,7 +325,6 @@ $(function(){
         var ZanCount = json.ZanCount;      
         var VideoLink = json.VideoLink;  
         var VideoID = window.location.pathname.replace(/[^0-9]/ig,"");    
-
         var html = "<video poster='http://images.ziyawang.com" + VideoLogo + "' src='http://videos.ziyawang.com" + VideoLink + "' controls='controls' preload='auto'></video>";
         $('#title1').html(VideoLabel);
         $('#title2').html(VideoTitle);

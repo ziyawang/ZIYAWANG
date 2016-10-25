@@ -1,89 +1,153 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/safe.css')}}" />
-<!-- 右侧详情 -->
-    <div class="main_right safe_center">
-        <h2>安全中心</h2>
-        <div class="safe_user">
-            <div class="su_pic">
-                <span>我的头像：</span>
-                <a href="javascript:;"><img src="http://images.ziyawang.com/user/defaltoux.jpg" id="avatar" /></a><span style="width:130px;color:#999;width:185px;">注：点击头像上传(小于1M)</span>
-<script src="{{asset('/org/uploadifive/jquery.uploadifive.min.js')}}" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="{{asset('/org/uploadifive/uploadifive.css')}}">
-<!-- 头像上传 -->
-<style>
-    .uploadifive-button{top: 0px;left: -208px;opacity: 0;}
-    .perfect_info .mr_perfect span em{color: #f00;margin-right: 4px;}
-    #uploadifive-list_upload-queue{display: none;}
-    #uploadifive-list_upload{left: -280px;}
-    #repub{display: block;background: #e48013;width: 120px;text-align: center;height: 30px;line-height: 30px;border-radius: 20px;color: #fff;margin: 35px 0 0 350px;}
-</style>
-            <div class="ec clearfix">
-                <div class="ec_right upload">
-                    <input id="list_upload" name="list_upload" type="file" multiple="true">
-                    <!-- <a style="position: relative; top: 8px;" href="javascript:$('#list_upload').uploadifive('upload')"></a> -->
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.4" />
+    <!-- 右侧 -->
+    <div class="ucRight">
+        <div class="ucRightCon ucRightSafe">
+            <h3 class="selectiveType security"><span>安全中心</span></h3>
+            <div class="ucrightsafeBottom clearfix">
+                <div class="ucrbLeft">
+                    <p class="myavatar"><b class="label">我的头像：</b><span>注：点击头像<i>上传(小于1M)</i></span></p>
+                    <div class="nickname clearfix">
+                        <b class="label">昵称：</b>
+                        <div class="fl"><span id="nickname1">未设置</span><a href="javascript:;" class="nameChange">修改</a></div>
+                        <div class="fl textField" style="display:none">
+                            <input type="text" class="enterName" value="" /><a href="javascript:;" class="sureBtn">确定</a><a href="javascript:;" class="changeAgain">修改</a>
+                            <div class="clr"></div>
+                            <div class="prompt"><span id="error"></span></div>
+                            <!-- ps：昵称重复时对应文字 -->
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-    <script type="text/javascript">
-        <?php $timestamp = time();?>
-        $(function() {
-
-            var token = $.cookie('token');
-
-            $.ajax({
-                url: 'http://api.ziyawang.com/v1/auth/me?access_token=token&token=' + token,
-                type: 'POST',
-                success:function(msg){
-                    var data = eval(msg);
-                    var picture = data.user.UserPicture;
-                    $('#avatar').attr('src', 'http://images.ziyawang.com'+picture);
-                }
-            });
-
-            $('#list_upload').uploadifive({
-                'buttonText'       : '上传头像',
-                'removeCompleted'  : false,
-                'auto'             : true,
-                'fileSizeLimit'    : 1024,
-                'uploadScript'     : "{{url('/ucenter/upload')}}",
-                'onUploadComplete' : function(file, data) {
-                    console.log(data); 
-                    $('#avatar').attr('src', 'http://images.ziyawang.com'+data);
-                    $.ajax({
-                        url: 'http://api.ziyawang.com/v1/auth/chpicture?access_token=token&token=' + token,
-                        data: {'UserPicture':data},
+                <div class="ucrbRight">
+                    <div class="b_circle"></div>
+                    <div class="uploadAvatar">
+                        <span class="fileinput-button3">
+                            <span><img id="avatar1" src="" /></span>
+<!-- 头像上传 -->
+<script src="{{asset('/org/jqupload/js/jquery.ui.widget.js')}}"></script>
+<script src="{{asset('/org/jqupload/js/jquery.fileupload.js')}}"></script>
+<script src="{{asset('/org/jqupload/js/jquery.iframe-transport.js')}}"></script>
+<script src="{{asset('/org/jqupload/js/jquery.fileupload-process.js')}}"></script>
+<script src="{{asset('/org/jqupload/js/jquery.fileupload-validate.js')}}"></script>
+        <input id="fileupload" type="file" name="files[]" data-url="{{url('/ucenter/upload')}}" multiple accept="image/png, image/gif, image/jpg, image/jpeg">
+<script type="text/javascript">
+$(function () {
+    var token = $.cookie('token');
+    $('#fileupload').fileupload({
+        dataType: 'json',
+        maxNumberOfFiles : 1,
+        done: function (e, data) {
+            $.each(data.result.files, function (index, file) {
+                // console.log(file.name);
+                $("#avatar").attr('src','http://images.ziyawang.com/user/'+file.name).show();
+                $("#avatar1").attr('src','http://images.ziyawang.com/user/'+file.name);
+                var UserPicture = '/user/'+file.name;
+                $.ajax({
+                        url: 'http://api.ziyawang.com/v1/auth/chpicture?access_token=token&UserPicture=' + UserPicture + '&token=' + token,
+                        data: {'UserPicture':UserPicture},
                         type: 'POST',
                         dataType:'json',
                         success:function(msg){
-                            console.log(msg)
+                            layer.msg(msg.msg);
                         }
                     });
-                }
             });
-
-        });
-    </script>
+        }
+    });
+});
+</script>
 <!-- 头像上传 -->
-            </div>
-            <div class="linktel">
-                <span>联系人电话：</span>
-                <span id="phonenumber"></span>
-                <span class="authen">手机认证：<em>已认证</em></span>
-            </div>
-            <div class="changepwd">
-                <span>登录密码：</span>
-                <a href="{{url('/ucenter/safe/resetpwd')}}">修改</a>
+                        </span>
+                    </div>
+                    <span class="orange_circle"></span>
+                    <span class="blue_circle"></span>
+                    <span class="pink_circle"></span>
+                    <p class="contactNumber" id="_phonenumber"></p>
+                    <p class="changePwd">登录密码：<a href="{{url('/ucenter/safe/resetpwd')}}">修改</a></p>
+                    <p class="phoneCert">手机认证：<span>已认证</span></p>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<script>
+
+
+
+<script type="text/javascript">
     $(function(){
-        var phone = $.cookie('phonenumber');
-        phone = phone.replace(/\'/g,"");
-        $('#phonenumber').html(phone);
+        var token = $.cookie('token');
+        // var token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzMyIsImlzcyI6Imh0dHA6XC9cL2FwaXRlc3Queml5YXdhbmcuY29tXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOiIxNDc0Nzk0NTQyIiwiZXhwIjoiMTQ3NTM5OTM0MiIsIm5iZiI6IjE0NzQ3OTQ1NDIiLCJqdGkiOiJmNmFhNDRhODA4ODBlZjAxNzE3NWJmYTZhNDczMWJiZCJ9.ho521A0Prh6LcNAPNcmQEF2H_VTQBXstSwf2m4yeXpA";
+        if(!token){
+            window.location = "{{url('/login')}}";
+            return false;
+        }
+
+        //声明input昵称宽度随文字长度而变化
+        var textWidth = function(text){ 
+            var sensor = $('<pre>'+ text +'</pre>').css({display: 'none'}); 
+            $('body').append(sensor); 
+            var width = sensor.width()+20;
+            sensor.remove(); 
+            return width;
+        };
+        //左侧边栏通栏
+        var ucRighthei1 = $('.ucRight').height();//初始高度
+        $('.ucLeft').css('height',ucRighthei1 + 'px');
+        //窗口size改变
+        $(window).resize(function() {
+            var ucRighthei2 = $('.ucRight').height();
+            $('.ucLeft').css('height',ucRighthei2 + 'px');
+        });
+        //nickname 修改
+        $('.nameChange').click(function() {
+            $(this).parent().hide().next().show();
+        });
+        //click==============>昵称修改完点击确定
+        $('.sureBtn').click(function() {
+            if($('.enterName').val()==''){
+                $('.prompt span').html('请输入昵称');
+            }
+            else if($('.enterName').val().length > 16){
+                //$('.prompt').addClass('prompt-error');
+                $('.prompt span').html('昵称不可超过16个字');
+            }
+            else{
+                var username = $('.enterName').val();
+                $.ajax({
+                    url : "http://api.ziyawang.com/v1/auth/chusername?access_token=token&username=" + username + "&token=" + token,
+                    data : {'username' : username},
+                    type : 'POST',
+                    dataType : 'json',
+                    success : function(msg){
+                        var json = eval(msg);
+                        if(json.status_code == '419'){
+                            $('#error').html('此昵称已被其他用户抢注，请修改');
+                        } else if(json.status_code == '200'){
+                            $('.sureBtn').hide().next().show();
+                            $('.enterName').addClass('active').attr('readonly', 'readonly');
+                            $('.prompt span').html('');
+                            $('.enterName').width(textWidth($('.enterName').val()));
+                            $('#nickname').html(username);
+                        } else if(json.status_code == '420'){
+                            $('#error').html('未知错误，请稍后重试');
+                        }
+                    }
+                });
+            }
+        });
+        //再次修改昵称
+        $('.changeAgain').click(function() {
+            $('.enterName').removeClass('active').removeAttr('readonly');
+            $(this).hide().prev().show();
+            $('.enterName').width(textWidth($('.enterName').val()));
+        });
+        //获得焦点时昵称框的长度
+        $('.enterName').focus(function() {
+            if(typeof($(".enterName").attr("readonly"))=="undefined"){
+                $('.enterName').width('86px');
+            }
+        });
     })
 </script>
-<!-- 底部 -->
 @endsection
