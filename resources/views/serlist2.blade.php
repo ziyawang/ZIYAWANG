@@ -8,6 +8,9 @@
 
 @section('content')
 <link type="text/css" rel="stylesheet" href="{{asset('/css/servelist.css')}}">
+<style>
+    .item{cursor: pointer;}
+</style>
     <!-- 二级banner -->
     <div class="find_service">
         <ul>
@@ -180,7 +183,7 @@ $(function(){
         if(CollectFlag == 1){
             collectinfo = "<i class='iconfont heart red' title='已收藏' ServiceID='" + ServiceID + "'>&#xe601;</i>"
         }
-        var html = "<li class='item'><div class='itemTop'><div class='itemTopLeft'><span><img title='" + ServiceName + "' src='http://images.ziyawang.com" + UserPicture + "' /></span><b>" + ServiceNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' title='" + ServiceName + "(" + ConnectPerson + ")' href='http://ziyawang.com/service/"+ ServiceID +"'>" + ServiceName + "(" + ConnectPerson + ")</a></h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='cetification'><img title='" + ServiceName + "' src='http://images.ziyawang.com" + ConfirmationP1 + "' /></a><div class='illustration'><span class='createTime'>" + PubTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='descriptionInwords'>" + ServiceIntroduction + "</a><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='serviceType'>服务类型</a><p class='concreteTypes'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"'>" + ServiceType + "</a></p><p class='remarks'><span>所在地：" + ServiceLocation + "</span></p><p class='remarks'><span>服务地区：" + ServiceArea + "</span></p><p class='servicerInfo'><span class='levels'><i class='iconfont'>&#xe60e;</i><em>" + ServiceLevel + "</em></span></p></div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+        var html = "<li ServiceID='" + ServiceID + "' class='item'><div class='itemTop'><div class='itemTopLeft'><span><img title='" + ServiceName + "' src='http://images.ziyawang.com" + UserPicture + "' /></span><b>" + ServiceNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' title='" + ServiceName + "(" + ConnectPerson + ")' href='http://ziyawang.com/service/"+ ServiceID +"'>" + ServiceName + "(" + ConnectPerson + ")</a></h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='cetification'><img title='" + ServiceName + "' src='http://images.ziyawang.com" + ConfirmationP1 + "' /></a><div class='illustration'><span class='createTime'>" + PubTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='descriptionInwords'>" + ServiceIntroduction + "</a><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='serviceType'>服务类型</a><p class='concreteTypes'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"'>" + ServiceType + "</a></p><p class='remarks'><span>所在地：" + ServiceLocation + "</span></p><p class='remarks'><span>服务地区：" + ServiceArea + "</span></p><p class='servicerInfo'><span class='levels'><i class='iconfont'>&#xe60e;</i><em>" + ServiceLevel + "</em></span></p></div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
         return html;
     }
 // console.log(urldata)
@@ -400,6 +403,11 @@ $(function(){
                                     $(this).removeClass('red');
                                 }
                             });
+
+                            $('.item').unbind("click").click(function(){
+                                var ServiceID = $(this).attr('ServiceID');
+                                window.open("http://ziyawang.com/service/"+ServiceID,"status=yes,toolbar=yes, menubar=yes,location=yes"); 
+                            })
                         },600)
                     }
                 };
@@ -464,6 +472,11 @@ $(function(){
                 $(this).removeClass('red');
             }
         });
+
+        $('.item').click(function(){
+            var ServiceID = $(this).attr('ServiceID');
+            window.open("http://ziyawang.com/service/"+ServiceID,"status=yes,toolbar=yes, menubar=yes,location=yes"); 
+        })
     }  
 })
 

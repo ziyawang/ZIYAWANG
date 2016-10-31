@@ -17,7 +17,7 @@
         <script src="{{asset('/js/jquery.js')}}"></script>
         <script src="{{asset('/js/fs.js')}}"></script>
         <script src="{{url('/js/jquery.cookie.js')}}"></script>
-        <script type="text/javascript" src="{{url('/js/public.js')}}"></script>
+        <script type="text/javascript" src="{{url('/js/public.js')}}?v=1.0.4"></script>
         <script type="text/javascript" src="{{url('/js/contract.js')}}"></script>
         <script type="text/javascript" src="{{url('/js/jquery.pagination.js')}}"></script>
         <script type="text/javascript" src="{{url('/org/layer/layer.js')}}"></script>

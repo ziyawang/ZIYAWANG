@@ -166,6 +166,7 @@
 </style>
     <div class="ec clearfix">
         <span class="ec_left">
+            @yield('must')
             上传相关凭证：
         </span>
         <div class="ec_right upload">
@@ -425,8 +426,7 @@ var stop = false;
             data:data,
             dataType:"json",
             success:function(msg){
-                alert('发布成功，请等待审核！')
-                window.location = "{{url('/ucenter/mypro')}}"
+                layer.alert('发布成功，请等待审核，您也可以主动查看服务方。', {icon: 1,title:0,closeBtn:0,yes:function(){window.location = "{{url('/ucenter/mypro')}}"}});
             }
         });
     });

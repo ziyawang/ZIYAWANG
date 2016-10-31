@@ -6,7 +6,7 @@
         <div class="ucRightCon">
             <h2>发布信息</h2>
             <div class="ucrightTop">
-                <p class="infoText">为维护您的合法权益，您发布的信息中涉及姓名、企业名称以及所有证件等隐私信息，系统将作模糊处理, 只有服务方可查看，请放心填写。<span>提示：发布信息后，服务方会联系您，您也可以主动查看处置机构。</span></p>
+                <p class="infoText">为维护您的合法权益，保证您的隐私安全，您发布的信息中涉及姓名、企业名称及所有证件等隐私信息，系统将做模糊处理，处理后的信息，只有在资芽认证的服务方才可查看，请您放心填写。<span>提示：发布信息后，服务方会联系您，您也可以主动查看服务方相关信息。</span></p>
             </div>
             <h3 class="selectiveType"><span>选择类型</span></h3>
             <div class="ucrightBottom">

@@ -136,7 +136,7 @@
                             <input id="fileupload" type="file" name="files[]" data-url="{{url('/ucenter/upload')}}" multiple accept="image/png, image/gif, image/jpg, image/jpeg">
                             </span>                  
                         </div>
-                        <p class="ec_pleft ecp_word">注：营业执照、执业证及相关资质的扫描件或照片(照片大小请小于2M）</p>
+                        <p class="ec_pleft ecp_word">注：营业执照、执业证及相关资质的扫描件或照片，请上传图片，（图片大小限制２Ｍ）</p>
                     </div>
                     <p id="nopz" style="margin-left:170px;" class="error"></p>
                     <div class="clearfix img_box">
@@ -387,8 +387,7 @@ var stop = false;
             dataType:"json",
             success:function(msg){
                 if(msg.role){
-                    alert('后台会在24小时内对您所填资料进行审核，请耐心等待！')
-                    window.location = "{{url('/ucenter/index')}}"
+                    layer.alert('提交成功，后台会在24小时内对您所填资料进行审核，请耐心等待！', {icon: 1,title:0,closeBtn:0,yes:function(){window.location = "{{url('/ucenter/index')}}";}});
                 }
             }
         });

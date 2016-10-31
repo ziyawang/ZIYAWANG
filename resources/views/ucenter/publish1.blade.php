@@ -11,7 +11,7 @@
     <div class="ucRightCon re_ucright_con">
         <h2>资产包转让</h2>
         <div class="ucrightTop">
-            <p class="infoText"><span>请认真阅读以下文字：</span>服务方需要全面了解您发布的信息，请您认真填写。我们会保护您的隐私，关键信息我们会做模糊处理。带星号（*）的为必填项；您的信息填写越完整， 将会吸引更多服务方为您服务！</p>
+            <p class="infoText"><span>请认真阅读以下文字：</span>服务方需要全面了解您发布的信息，请您务必认真填写。我们会保护您的隐私，关键信息我们会做模糊处理。<span>提示：带星号（*）的为必填项；您的信息填写越完整，将会吸引更多服务方和您约谈，为您服务！</span></p>
         </div>
         <h3 class="selectiveType re_title"><span>介绍说明</span></h3>
         <div class="ucrightBottom">

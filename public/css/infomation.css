@@ -5,7 +5,8 @@
 .conLeft .conleftTop{background:url(../img/serve_0.png) no-repeat 0 -136px;width: 894px;}
 .conleftTop .cltTitle{font-weight: bold;color: #333;padding:0 0 0 21px;height:64px;position: relative;}
 .conleftTop .cltTitle p{font-size: 14px;line-height: 90px;}
-.conleftTop .cltTitle p b{float: left;font-size: 36px;line-height: 64px;margin-right: 20px;}
+.conleftTop .cltTitle p b{float: left;font-size: 36px;line-height: 64px;margin-right: 20px; }
+.conleftTop .cltTitle .serWidth{width: 615px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
 /*分享*/
 .conleftTop .cltTitle .shareandstore{position: absolute;right: 0;bottom: 0;font-size: 12px;font-weight: normal;line-height: 20px;}
 .shareandstore #share_asign{background: url(../img/s_share.png) no-repeat 6px 7px;}

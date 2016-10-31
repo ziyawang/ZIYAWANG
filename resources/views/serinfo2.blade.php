@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <link rel="stylesheet" type="text/css" href="{{asset('/css/infomation.css')}}?v=1.0.4.2" />
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/infomation.css')}}?v=1.0.5.3" />
     <style>
         .jubaoBox{padding:22px;background:#fff;width: 415px;position: fixed;top: 50%;left: 50%;margin:-290px 0 0 -207px;display: none;z-index: 9999;}
         .jubao{background:#d5d5d5;padding:30px 40px 18px;}
@@ -34,7 +34,7 @@
     <div class="conLeft">
         <div class="conleftTop">
             <div class="cltTitle">
-                <p id="ServiceName"><b></b></p>
+                <p id="ServiceName"><b class="serWidth"></b></p>
                 <div class="shareandstore">
                     <!-- 分享 -->
                     <a href="javascript:;" class="report">举报</a>
@@ -56,7 +56,7 @@
         <div class="conleftMiddle1 clearfix">
             <div class="clmLeft">
                 <div class="clmleftTitle">
-                    Type Of Service
+                    Type of Service
                     <p>服务类型</p>
                 </div>
                 <div class="clmleftCon">
@@ -293,7 +293,7 @@ $(function () {
         });
 
         $('#userpicture').attr('src','http://images.ziyawang.com'+UserPicture);
-        $("#ServiceName").html('<b>'+ ServiceName + '</b>');
+        $("#ServiceName").html('<b class="serWidth" title=' + ServiceName + '>'+ ServiceName + '</b>');
         // $('#ServiceNumber').html(ConnectPerson);
 
         var orderLevel = "<span class='disc'></span><span class='levels'><i class='iconfont'>&#xe60e;</i><em>" + ServiceLevel + "</em></span>";
