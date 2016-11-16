@@ -381,7 +381,7 @@ $(function () {
         });
 
         $("#check").click(function(){
-            // checkLogin();
+            checkLogin();
             if(stop){
                 return false;
             }
@@ -453,6 +453,12 @@ $('#change').click(function(){
 
 
 $('.report').click(function(){
+    var token = $.cookie('token');
+    if(!token){
+        // window.location = "{{url('/login')}}";
+        window.open("http://ziyawang.com/login","status=yes,toolbar=yes, menubar=yes,location=yes"); 
+        return false;
+    }
     $('.poplayer').show();
     $('.jubaoBox').show();
 })

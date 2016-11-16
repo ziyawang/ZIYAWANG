@@ -96,6 +96,12 @@ Route::get('/feedback', 'IndexController@feedback');//意见反馈
 //10.14新增活动报名路由
 // Route::get('/enroll', 'ActivityController@enroll');
 
+//11.14新增测评路由
+Route::get('/test/index', 'ActivityController@testIndex');//首页
+Route::get('/test/page', 'ActivityController@testPage');//问题页
+Route::get('/test/end', 'ActivityController@testEnd');//尾页
+Route::get('/test/result', 'ActivityController@testResult');//结果页
+
 
 
 

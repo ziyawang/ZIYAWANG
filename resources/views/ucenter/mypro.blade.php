@@ -163,7 +163,7 @@
                         break;
 
                     case "12":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef12'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>标的物：<strong>" + Corpore + "</strong></span><span>地区：<strong>" + ProArea + "万</strong></span><span class='spanTag'>类型：<strong>" + AssetType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>转让金额：</strong>" + TransferMoney + "万</span><span></span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef12'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>标的物：<strong>" + Corpore + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span class='spanTag'>类型：<strong>" + AssetType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>转让金额：</strong>" + TransferMoney + "万</span><span></span></div></div></a><span class='uniqueTime'>" + PublishTime + "</span></li>";
                         break;
 
                     case "13":

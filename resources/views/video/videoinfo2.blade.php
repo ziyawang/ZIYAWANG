@@ -70,12 +70,13 @@
     <div class="conLeft">
         <!-- 视频简介 --> 
         <div class="brief_content" id="videoDes">
-            <h3>视频简介</h3>专家讲解资金过桥的风险
+            <h3>视频简介</h3>
         </div>
         <!-- 视频填写评论 -->
         <div class="comment">
-            <h3>发表评论</h3>
+            <h3>发表评论<span style="font-weight:normal;font-size:14px;color:#666;">（<em id="text-count">字数限制：200</em>/200）</span></h3>
             <textarea name="" id="pinglun" class="review_txt">文明上网理性发言...</textarea>
+
             <button id="pub"><span>发表评论</span><i class="iconfont">&#xe607;</i></button>
         </div>
         <!-- 查看评论 -->
@@ -592,6 +593,18 @@ $('#video1').bind('contextmenu',function() { return false; });
         })
     }
 
+    /*字数限制*/  
+    $("#pinglun").on("input propertychange", function() {  
+        var $this = $(this),  
+            _val = $this.val(),  
+            count = "";  
+        if (_val.length > 200) {  
+            $this.val(_val.substring(0, 200));  
+        }  
+        count = 200 - $this.val().length;  
+        $("#text-count").text('字数限制：'+count);  
+    });  
+
     $('#pub').click(function(){
         var content = $('#pinglun').val();
         if(content == '' || content == '文明上网理性发言...'){
@@ -757,8 +770,5 @@ $('#video1').bind('contextmenu',function() { return false; });
 
     });
 
-</script>
-<script type="text/javascript">
-    
 </script>
 @endsection

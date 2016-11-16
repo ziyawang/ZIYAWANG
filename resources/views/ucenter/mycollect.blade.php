@@ -166,7 +166,7 @@
                                 break;
 
                             case "12":
-                                html = html + "<li class='clearfix'><a href='http://ziyawang.com/project/" + ItemID + "'><div class='pblLeft'><span class='pblef12'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>标的物：<strong>" + Corpore + "</strong></span><span>地区：<strong>" + ProArea + "万</strong></span><span class='spanTag'>类型：<strong>" + AssetType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>转让金额：</strong>" + TransferMoney + "万</span><span></span></div></div></a><span class='delete' title='取消收藏' onclick='cancel(this)' class='collect' id='" + ItemID + "' type='1'></span><span class='uniqueTime'>" + CollectTime + "</span></li>";
+                                html = html + "<li class='clearfix'><a href='http://ziyawang.com/project/" + ItemID + "'><div class='pblLeft'><span class='pblef12'></span>" + ProjectNumber + "</div><div class='pblMiddle'><span>标的物：<strong>" + Corpore + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span class='spanTag'>类型：<strong>" + AssetType + "</strong></span><span class='spanTagDet'>详情：" + WordDes + "</span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>转让金额：</strong>" + TransferMoney + "万</span><span></span></div></div></a><span class='delete' title='取消收藏' onclick='cancel(this)' class='collect' id='" + ItemID + "' type='1'></span><span class='uniqueTime'>" + CollectTime + "</span></li>";
                                 break;
 
                             case "13":

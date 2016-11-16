@@ -453,8 +453,13 @@ var stop = false;
             data:data,
             dataType:"json",
             success:function(msg){
+                var date = new Date();
+                date.setTime(date.getTime() + (120 * 60 * 1000));
                 if(msg.role){
-                layer.alert('提交成功，后台会在24小时内对您所填资料进行审核，请耐心等待！', {icon: 1,title:0,closeBtn:0,yes:function(){$.cookie('role', 2);
+                layer.alert('提交成功，后台会在24小时内对您所填资料进行审核，请耐心等待！', {icon: 1,title:0,closeBtn:0,yes:function(){
+                    $.removeCookie('role', { path: '/', domain: '.ziyawang.com' });
+                    // $.cookie('role', '', { expires: -1 , path: '/', domain: '.ziyawang.com' });
+                    $.cookie('role', 2, { expires: date, path: '/', domain: '.ziyawang.com' });
                     window.location = "{{url('/ucenter/index')}}";}});
                 }
             }

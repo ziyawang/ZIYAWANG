@@ -7,7 +7,7 @@
             <h3 class="selectiveType security"><span>安全中心</span></h3>
             <div class="ucrightsafeBottom clearfix">
                 <div class="ucrbLeft">
-                    <p class="myavatar"><b class="label">我的头像：</b><span>注：点击头像<i>上传(小于1M)</i></span></p>
+                    <p class="myavatar"><b class="label">我的头像：</b><span>注：点击头像<i>上传<span style="color:red;">(小于1M)</span></i></span></p>
                     <div class="nickname clearfix">
                         <b class="label">昵称：</b>
                         <div class="fl"><span id="nickname1">未设置</span><a href="javascript:;" class="nameChange">修改</a></div>
@@ -36,7 +36,7 @@ $(function () {
     var token = $.cookie('token');
     $('#fileupload').fileupload({
         dataType: 'json',
-        maxNumberOfFiles : 1,
+        maxFileSize: 1 * 1024 * 1024,
         done: function (e, data) {
             $.each(data.result.files, function (index, file) {
                 // console.log(file.name);
