@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>融资信息—股权</title>
+        <link rel="stylesheet" type="text/css" href="css/base.css" />
+        <link rel="stylesheet" type="text/css" href="css/public.css" />
+        <link rel="stylesheet" type="text/css" href="css/fixed.css" />
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/Area.js"></script>
+        <script type="text/javascript" src="js/AreaData_min.js"></script> 
+        <script type="text/javascript" src="js/select.js"></script>
+    </head>
+    <body>
+        <!-- header / start -->
+        
+        <!-- header / end -->
+        <div class="find_service">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+        <!-- user center / start -->
+        <div class="userContent clearfix">
+            <!-- left / start -->
+            <div class="ucLeft">
+                <h2>个人中心</h2>
+                <div class="ucleftHead">
+                    <a href="http://ziyawang.com/ucenter/safe"><img id="avatar" src="" /></a>
+                    <span id="nickname"></span>
+                </div>
+                <div class="ucleftMiddle">
+                    <a href="http://ziyawang.com/ucenter/message" class="sysInfo" title="系统消息"><i class="iconfont">&#xe61c;</i><span id="msg"></span></a>
+                    <a href="http://ziyawang.com/ucenter/money" class="money" title="芽币金额"><span id="account"></span></a>
+                </div>
+                <div class="ucleftBottom">
+                    <ul>
+                        <li id="pubpro"><a href="http://ziyawang.com/ucenter/index"><i class="iconfont">&#xe61e;</i>发布信息</a></li>
+                        <li id="mypro"><a href="http://ziyawang.com/ucenter/mypro"><i class="iconfont">&#xe61a;</i>我的发布</a></li>
+                        <li id="confirm"><a href="http://ziyawang.com/ucenter/confirm"><i class="iconfont">&#xe60f;</i>服务方认证</a></li>
+                        <li id="myrush" style="display:none;"><a href="http://ziyawang.com/ucenter/myrush"><i class="iconfont">&#xe619;</i>我的约谈</a></li>
+                        <li id="money"><a href="http://ziyawang.com/ucenter/money"><i class="iconfont chongzhi">&#xe61f;</i>充值中心</a></li>
+                        <li id="safe"><a href="http://ziyawang.com/ucenter/safe"><i class="iconfont">&#xe61d;</i>安全中心</a></li>
+                        <li id="mycollect"><a href="http://ziyawang.com/ucenter/mycollect"><i class="iconfont">&#xe61b;</i>我的收藏</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- left / end -->
+            <!-- right / start -->
+            <div class="finance">
+                <div class="finance-con">
+                    <h2 class="finance-title"><span>融资信息</span><a href="javascript:;" class="depute">委托发布</a></h2>
+                    <div class="finance-main">
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>请选择身份：</span>
+                            <select class="row-select">
+                                <option value="0">请选择</option>
+                                <option value="">项目持有者</option>
+                                <option value="">FA（中介）</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>项目所在地：</span>
+                            <span class="region">
+                                <select class="row-select" id="seachprov" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');"></select>
+                                <select class="row-select" id="seachcity"></select>
+                            </span>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>融资方式：</span>
+                            <span class="row-right">
+                                <div class="land">
+                                    <span class="inp-radio opts"><input type="radio" class="radios" id="land" /></span>
+                                    <label for="land" class="inp-label">债权融资</label>
+                                </div>
+                                <div class="house">
+                                    <span class="inp-radio opts checked"><input type="radio" class="radios" id="house" /></span>
+                                    <label for="house" class="inp-label">股权融资</label>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>融资金额：</span>
+                            <input type="text" class="inps" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">万元</span>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>出让股权比例：</span>
+                            <input type="text" class="inps" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">%</span>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>企业现状：</span>
+                            <span class="row-right">
+                                <div class="land">
+                                    <span class="inp-radio opts"><input type="radio" class="radios" id="prim" /></span>
+                                    <label for="prim" class="inp-label">初创期</label><em class="wem1"></em>
+                                </div>
+                                <div class="house">
+                                    <span class="inp-radio opts"><input type="radio" class="radios" id="grow" /></span>
+                                    <label for="grow" class="inp-label">成长期</label><em class="wem1"></em>
+                                </div>
+                                <div class="other">
+                                    <span class="inp-radio opts"><input type="radio" class="radios" id="another" /></span>
+                                    <label for="another" class="inp-label">其他</label>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>所属行业：</span>
+                            <select class="row-select">
+                                <option value="0">请选择</option>
+                                <option value="1">IT|通信|电子|互联网</option>
+                                <option value="2">金融业</option>
+                                <option value="3">房地产|建筑业</option>
+                                <option value="4">商业服务</option>
+                                <option value="5">贸易|批发|零售|租赁业</option>
+                                <option value="6">文体教育|工艺美术</option>
+                                <option value="7">生产|加工|制造</option>
+                                <option value="8">交通|运输|物流|仓储</option>
+                                <option value="9">服务业</option>
+                                <option value="10">文化|传媒|娱乐|体育</option>
+                                <option value="11">能源|矿产|环保</option>
+                                <option value="12">政府|非盈利机构</option>
+                                <option value="13">农|林|牧|渔|其他</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>资金用途：</span>
+                            <select class="row-select">
+                                <option value="0">请选择</option>
+                                <option value="1">经营</option>
+                                <option value="2">扩张</option>
+                                <option value="4">其他</option>
+                            </select>
+                        </div>
+                        <h3 class="subtitle">项目亮点</h3>
+                        <div class="spot">
+                            <div class="spot-row">
+                                <span class="inp-radio"><input type="checkbox" class="radios" id="check01" /></span>
+                                <label class="inp-label" for="check01">抵押物足值</label>
+                            </div>
+                            <div class="spot-row">
+                                <span class="inp-radio"><input type="checkbox" class="radios" id="check02" /></span>
+                                <label class="inp-label" for="check02">回报率高</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>文字描述：</span><span class="limit">（字数限制在500字以内）</span>
+                            <textarea name="" id="message" cols="30" rows="10" class="literal" onKeyUp="check(this);"></textarea>
+                        </div>
+                        <div class="row">
+                            <span class="row-left">语音描述：</span>
+                            <button class="add_voice" type="button">添加语音</button>
+                            <p class="dib">注：语音描述仅限于手机app</p>
+                        </div>
+                        <div class="row">
+                            <span class="row-left">上传图片：</span>
+                            <div class="upload">
+                                <span class="fileinput-button">
+                                    <em>上传凭证</em>
+                                    <input id="fileupload" type="file" name="files[]" data-url="http://ziyawang.com/ucenter/upload" multiple="" accept="image/png, image/gif, image/jpg, image/jpeg">
+                                </span>                  
+                            </div>
+                            <p class="dib">相关凭证或照片，请上传图片，大小限制2M</p>
+                        </div>
+                        <div class="img_box">
+                            <div class="pictures"><img class="preview" id="PictureDes1" src="" picname=""><span class="deleteBtn1 deleteImg" title="删除"></span></div>
+                            <div class="pictures"><img class="preview" id="PictureDes2" src="" picname=""><span class="deleteBtn2 deleteImg" title="删除"></span></div>
+                            <div class="pictures"><img class="preview" id="PictureDes3" src="" picname=""><span class="deleteBtn3 deleteImg" title="删除"></span></div>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>联系人姓名：</span>
+                            <input type="text" class="inps" placeholder="请输入">
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>联系电话：</span>
+                            <input type="text" class="inps" placeholder="请输入">
+                        </div>
+                        <button class="issue-btn">确 认 发 布</button>
+                    </div>
+                </div>
+            </div>
+            <!-- right / end -->
+        </div>
+        <!-- user center / end -->
+    </body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        $(".row-select").change(function() {
+            if($(this).children("option:selected").hasClass("grayColor")){
+                $(this).css({"color":"#999"});   
+            }else{
+                $(this).css({"color":"#333"});   
+            }
+        });
+        // debt stock switch
+        $('.opts').click(function() {
+            $(this).addClass('checked');
+            $(this).parent().siblings().children('.opts').removeClass('checked');
+            
+        });
+        // Spot 
+        $('.spot-row .inp-radio').click(function() {
+            $(this).toggleClass('checked');
+        });
+    })
+
+</script>

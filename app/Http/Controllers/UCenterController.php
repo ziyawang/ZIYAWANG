@@ -27,7 +27,7 @@ class UCenterController extends Controller
 
     public function pubPro($TypeID)
     {
-        return view("ucenter.publish$TypeID");
+        return view("publish.publish$TypeID");
     }
 
     public function mypro()

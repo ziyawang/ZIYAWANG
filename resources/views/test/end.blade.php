@@ -75,16 +75,16 @@
             data:{'Money':Money,'Area':Area,'AssetType':AssetType,'Type':Type,'Answer':Answer,'Channel':'PC','PhoneNumber':PhoneNumber},
             success:function(json){
                 if(json.status_code == '200'){
-                    $.removeCookie('money', { path: '/', domain: '.test.com' });
-                    $.removeCookie('area', { path: '/', domain: '.test.com' });
-                    $.removeCookie('assettype', { path: '/', domain: '.test.com' });
-                    $.removeCookie('type', { path: '/', domain: '.test.com' });
-                    $.removeCookie('answer', { path: '/', domain: '.test.com' });
+                    $.removeCookie('money', { path: '/', domain: '.ziyawang.com' });
+                    $.removeCookie('area', { path: '/', domain: '.ziyawang.com' });
+                    $.removeCookie('assettype', { path: '/', domain: '.ziyawang.com' });
+                    $.removeCookie('type', { path: '/', domain: '.ziyawang.com' });
+                    $.removeCookie('answer', { path: '/', domain: '.ziyawang.com' });
 
                     var date = new Date();
                     date.setTime(date.getTime() + (5 * 60 * 1000));
-                    $.cookie('result', json.result, { expires: date, path: '/', domain: '.test.com' });
-                    $.cookie('score', json.score, { expires: date, path: '/', domain: '.test.com' });
+                    $.cookie('result', json.result, { expires: date, path: '/', domain: '.ziyawang.com' });
+                    $.cookie('score', json.score, { expires: date, path: '/', domain: '.ziyawang.com' });
                     window.location.href = "{{url('/test/result')}}";
                 }
             }

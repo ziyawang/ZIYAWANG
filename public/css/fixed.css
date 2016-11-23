@@ -1,0 +1,107 @@
+.find_service ul li {background: #ffda3f url(../img/junior_banner.jpg) no-repeat center top;height: 296px;overflow: hidden;}
+/*fixed==start*/
+.fixed,.finance,.enterprise,.individual,.asset,.fore{width: 960px;float: right;}
+.fixed-con,.finance-con,.eprise-con,.indiv-con,.asset-con,.fore-con{padding: 46px 0 0;margin-bottom:50px;font-size: 16px;border-bottom: 1px solid #e6e6e6;}
+.fixed-title,.finance-title,.eprise-title,.indiv-title,.asset-title,.fore-title{font-size: 1.25em;color: #333;letter-spacing: 1px;margin-bottom: 28px;height: 35px;line-height: 1.5;border-bottom: 2px solid #e6e6e6;padding-left: 30px;}
+
+.must{color:#f00;display: inline-block;vertical-align: -2px;margin-right: 6px;}
+.depute{color:#ffa000;margin-left: 14px;font-weight: normal;font-size: 0.75em;border: 1px solid #ffa000;border-radius: 20px;padding: 0 10px;position: relative;}
+.depute:hover{color:#ffa000;box-shadow: 0 1px 3px #ccc;}
+.depute:active{top: 1px;}
+
+.row{margin-bottom: 20px;}
+.row-left{display: inline-block;width: 19.79%;text-align: right;line-height: 1.5;}
+.row-select,.inps{height: 32px;line-height: 1.5;width: 180px;border: 1px solid #e6e6e6;color: #999;font-size: 0.875em;outline: none;}
+.row-select option{color: #333;}
+.row-select .grayColor{color:#999!important;}
+.region .row-select{width:auto;min-width: 87px;margin-right: 1px;}
+.inps{width: 176px;padding-left: 4px;color:#333;}
+.tag{margin-left: 10px;}
+
+.row-right{display: inline-block;overflow: hidden;vertical-align: -6px;*+vertical-align:-2px;}
+.land,.house,.property,.stock,.other,.judged,.car{float: left;}
+.inp-radio{width: 14px;height: 14px;overflow: hidden;position: relative;background:url(../img/assess3.png) no-repeat 0 0;display: inline-block;vertical-align: middle;cursor: pointer;}
+.inp-label{cursor:pointer;margin-right: 15px;}
+.radios{opacity: 0;position: absolute;margin-left: -18px;}
+.checked{background-position: -15px 0;}
+
+.subtitle{font-size: 1.25em;color: #333;letter-spacing: 1px;margin-bottom: 28px;height: 35px;line-height: 1.5;padding-left: 30px;padding-top: 6px;}
+.sub-row{display: inline-block;width: 400px;margin-bottom: 30px;}
+.sub-row .row-left{width: 47.5%;}
+.sub-row:nth-child(odd) .row-left{width: 7em;}
+
+.spot{margin-left: 7.5em;width: 500px;}
+.spot-row{display: inline-block;width: 168px;margin-bottom: 30px;}
+
+.literal{display: block;margin:12px 0 25px 11.5%;width: 370px;height: 90px;padding: 3px 5px;border: 1px solid #e6e6e6;font-size: 0.875em;overflow-y: scroll;}
+.add_voice{width: 152px;height: 34px;line-height: 34px;border: 1px solid #ffa000;color: #ffa000;background: #fff;border-radius: 30px;display: inline-block;text-align: center;font-weight: bold;letter-spacing: 0.01em;}
+.dib{display: inline-block;font-size: 0.75em;color:#666;margin-left: 15px;letter-spacing: 0.02em;}
+.upload{display: inline-block;vertical-align: 0px;}
+.fileinput-button {display: inline-block;width: 154px;height: 34px;line-height: 34px;border-radius: 30px;background: #fff;color: #ffa000;text-align: center;overflow: hidden;position: relative;white-space: nowrap;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;border: 1px solid #ffa000;cursor: pointer!important;font-weight: 600;letter-spacing: 1px;}
+.fileinput-button input{position: absolute; top: 0; right: 0; margin: 0; opacity: 0; -ms-filter: 'alpha(opacity=0)'; font-size: 200px !important; direction: ltr; cursor: pointer;width: auto;height:auto;}
+.limit{font-size: 0.75em;color:#666;letter-spacing: 0.02em;}
+
+.issue-btn{width: 154px;height: 34px;line-height: 34px;background:#ffca00;border-radius: 30px;text-align: center;margin:55px 0 40px 390px;border: none;color:#fff;display: block;font-weight: bold;}
+.add_voice:hover,.fileinput-button:hover,.issue-btn:hover{box-shadow: 0 1px 2px #ccc;}
+.issue-btn:active{margin-top: 56px;}
+
+.img_box {padding-left: 19.8%;}
+.pictures {float: left;margin-right: 20px;display: none;position: relative;margin-bottom: 28px;}
+.pictures img {width: 150px;height: 150px;border: 1px solid #ccc;}
+.deleteImg {position: absolute;width: 22px;height: 22px;background: #b8b8b8 url(/img/zhifu.png) no-repeat -147px -46px;cursor: pointer;right: 0;top: 0;display: none;}
+.wem2{display: inline-block;width: 2em;}
+.wem3{display: inline-block;width: 3em;}
+/*fixed==end*/
+/*finance==start*/
+.finance-con .spot{width: 525px;}
+/*finance==end*/
+/*eprise==start*/
+.eprise-con .sub-row{display: block;width:auto;}
+.eprise-con .sub-row .row-left{width: 19.79%;}
+.eprise-con .spot-row{width:auto;}
+.eprise-con .spot-row:first-child .inp-label{margin-right: 49px;}
+.eprise-con .spot{margin-left: 5.8em;}
+.lawsuit{margin: 25px 0 25px 11%;}
+.nonlaw{margin-left: 11%;}
+.commis{border: 1px solid #e6e6e6;width: 86px;height: 32px;line-height: 32px;font-size: 0.875em;padding-left: 4px;margin-right: 10px;}
+.lawsuit .inp-label{margin-right: 3em;}
+.nonlaw .inp-label{margin-right: 1em;}
+.ratio{margin-right: 0.6em;}
+.eprise-con .land .inp-label,.eprise-con .house .inp-label{margin-right: 3em;}
+.wem1{display: inline-block;width: 1em;}
+/*eprise==end*/
+/*individual==start*/
+.indiv-con .sub-row:nth-child(odd) .row-left{width: 11em;}
+.indiv-con .spot-row:first-child{width: 166px;}
+.indiv-con .spot-row:first-child .inp-label{margin-right: 0px;}
+.wem29{width: 2.9em;display: inline-block;}
+/*individual==end*/
+/*asset==start*/
+.asset-con .sub-row{display: block;width: 100%;}
+.asset-con .sub-row .row-left{width: 19.79%;}
+.asset-con .select-time{width: auto;min-width: 88px;}
+.mortge{float: left;width: 320px;overflow: hidden;margin-left: 0.3em;}
+.mortge-row{float: left;margin-bottom: 20px;}
+.fl{float: left;}
+.mb0{margin-bottom: 0px;}
+.asset-con .spot-row{width: 166px;}
+.asset-con #seachprov{width: 180px;}
+.asset-con #seachcity{display: none;}
+/*asset==end*/
+/*fore*/
+.land .inp-label,.house .inp-label,.car .inp-label,.land:hover .inp-label,.house:hover .inp-label,.car:hover .inp-label{color:#333;}
+.fore .select-time{width:auto;min-width: 60px;}
+/*layer*/
+.deputeBox,.deputeSuc,.needDo{width: 410px;height: 220px;border-top: 3px solid #fdd000;padding:0 50px 0 40px;font-size: 16px;background:#fff;}
+.dep-title,.need-title{padding: 30px 0 24px;font-size: 18px;color:#000;text-align: justify;}
+.deputeBox .row-left{width: 39.02%;}
+.layer-depute .layui-layer-btn{overflow: hidden;padding: 0 50px 30px 40px;}
+.layer-depSuc .layui-layer-btn,.layer-submit .layui-layer-btn{overflow: hidden;padding: 20px 50px 50px 40px;}
+.layer-depute .layui-layer-btn a,.layer-depSuc .layui-layer-btn a,.layer-submit .layui-layer-btn a{width: 154px;height: 34px;line-height: 34px;text-align: center;background:#ffca00;font-weight: bold;padding: 0;border: none;border-radius: 30px;color:#fff;font-size: 16px;position: relative;}
+.layer-depute .layui-layer-btn0,.layer-depSuc .layui-layer-btn .layui-layer-btn0,.layer-submit .layui-layer-btn .layui-layer-btn0{float: left;}
+.layer-depute .layui-layer-btn1,.layer-depSuc .layui-layer-btn .layui-layer-btn1,.layer-submit .layui-layer-btn .layui-layer-btn1{float: right;}
+.layer-depute .layui-layer-btn a:hover,.layer-depSuc .layui-layer-btn a:hover,.layer-submit .layui-layer-btn a:hover{background:#ffa800;box-shadow: 0 1px 1px #7b3f00;}
+.layer-depute .layui-layer-btn a:active,.layer-depSuc .layui-layer-btn a:active,.layer-submit .layui-layer-btn a:active{top: 1px;}
+.deputeSuc{text-align: center;height: 125px;font-size: 18px;}
+.depute-top{padding: 30px 0 10px;}
+.needDo{height: 120px;}

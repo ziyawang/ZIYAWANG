@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>个人债权</title>
+        <link rel="stylesheet" type="text/css" href="css/base.css" />
+        <link rel="stylesheet" type="text/css" href="css/public.css" />
+        <link rel="stylesheet" type="text/css" href="css/fixed.css" />
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/Area.js"></script>
+        <script type="text/javascript" src="js/AreaData_min.js"></script> 
+        <script type="text/javascript" src="js/select.js"></script>
+    </head>
+    <body>
+        <!-- header / start -->
+        
+        <!-- header / end -->
+        <div class="find_service">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+        <!-- user center / start -->
+        <div class="userContent clearfix">
+            <!-- left / start -->
+            <div class="ucLeft">
+                <h2>个人中心</h2>
+                <div class="ucleftHead">
+                    <a href="http://ziyawang.com/ucenter/safe"><img id="avatar" src="" /></a>
+                    <span id="nickname"></span>
+                </div>
+                <div class="ucleftMiddle">
+                    <a href="http://ziyawang.com/ucenter/message" class="sysInfo" title="系统消息"><i class="iconfont">&#xe61c;</i><span id="msg"></span></a>
+                    <a href="http://ziyawang.com/ucenter/money" class="money" title="芽币金额"><span id="account"></span></a>
+                </div>
+                <div class="ucleftBottom">
+                    <ul>
+                        <li id="pubpro"><a href="http://ziyawang.com/ucenter/index"><i class="iconfont">&#xe61e;</i>发布信息</a></li>
+                        <li id="mypro"><a href="http://ziyawang.com/ucenter/mypro"><i class="iconfont">&#xe61a;</i>我的发布</a></li>
+                        <li id="confirm"><a href="http://ziyawang.com/ucenter/confirm"><i class="iconfont">&#xe60f;</i>服务方认证</a></li>
+                        <li id="myrush" style="display:none;"><a href="http://ziyawang.com/ucenter/myrush"><i class="iconfont">&#xe619;</i>我的约谈</a></li>
+                        <li id="money"><a href="http://ziyawang.com/ucenter/money"><i class="iconfont chongzhi">&#xe61f;</i>充值中心</a></li>
+                        <li id="safe"><a href="http://ziyawang.com/ucenter/safe"><i class="iconfont">&#xe61d;</i>安全中心</a></li>
+                        <li id="mycollect"><a href="http://ziyawang.com/ucenter/mycollect"><i class="iconfont">&#xe61b;</i>我的收藏</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- left / end -->
+            <!-- right / start -->
+            <div class="individual">
+                <div class="indiv-con">
+                    <h2 class="indiv-title"><span>个人债权</span><a href="javascript:;" class="depute">委托发布</a></h2>
+                    <div class="indiv-main">
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>请选择身份：</span>
+                            <select class="row-select">
+                                <option value="0">请选择</option>
+                                <option value="1">债权人</option>
+                                <option value="2">FA（中介）</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>总金额：</span>
+                            <input type="text" class="inps" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">万元（本加利）</span>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>逾期时间：</span>
+                            <input type="text" class="inps" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">月</span>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>处置方式及佣金：</span>
+                            <div class="lawsuit judicial">
+                                <span class="inp-radio"><input type="radio" class="radios" id="lawradio" /></span>
+                                <label for="lawradio" class="inp-label">诉讼</label>
+                                <span class="ratio">佣金比例</span>
+                                <input type="text" readonly="readonly" class="commis" placeholder="请输入" />%
+                            </div>
+                            <div class="nonlaw judicial">
+                                <span class="inp-radio"><input type="radio" class="radios" id="nonradio" /></span>
+                                <label for="nonradio" class="inp-label">非诉催收</label>
+                                <span class="ratio">佣金比例</span>
+                                <input type="text" readonly="readonly" class="commis" placeholder="请输入" />%
+                            </div>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>债权人所在地：</span>
+                            <span class="region">
+                                <select class="row-select" id="seachprov" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');"></select>
+                                <select class="row-select" id="seachcity"></select>
+                            </span>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>债务人所在地：</span>
+                            <span class="region">
+                                <select class="row-select" id="seachprov1" onChange="changeComplexProvince(this.value, sub_array, 'seachcity1', 'seachdistrict');"></select>
+                                <select class="row-select" id="seachcity1"></select>
+                            </span>
+                        </div>
+                        <h3 class="subtitle">其他</h3>
+                        <div class="sub-row">
+                            <span class="row-left">是否有担保：</span>
+                            <span class="row-right">
+                                <div class="land">
+                                    <span class="inp-radio"><input type="radio" class="radios" id="yes01" /></span>
+                                    <label for="yes01" class="inp-label">是</label><em class="wem29"></em>
+                                </div>
+                                <div class="house">
+                                    <span class="inp-radio"><input type="radio" class="radios" id="no01" /></span>
+                                    <label for="no01" class="inp-label">否</label>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="sub-row">
+                            <span class="row-left">是否有抵押：</span>
+                            <span class="row-right">
+                                <div class="land">
+                                    <span class="inp-radio"><input type="radio" class="radios" id="yes02" /></span>
+                                    <label for="yes02" class="inp-label">是</label><em class="wem29"></em>
+                                </div>
+                                <div class="house">
+                                    <span class="inp-radio"><input type="radio" class="radios" id="no02" /></span>
+                                    <label for="no02" class="inp-label">否</label>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="sub-row">
+                            <span class="row-left">债务人是否失联：</span>
+                            <span class="row-right">
+                                <div class="land">
+                                    <span class="inp-radio"><input type="radio" class="radios" id="yes03" /></span>
+                                    <label for="yes03" class="inp-label">是</label><em class="wem29"></em>
+                                </div>
+                                <div class="house">
+                                    <span class="inp-radio"><input type="radio" class="radios" id="no03" /></span>
+                                    <label for="no03" class="inp-label">否</label>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="sub-row">
+                            <span class="row-left">债务人是否有偿还能力：</span>
+                            <span class="row-right">
+                                <div class="land">
+                                    <span class="inp-radio"><input type="radio" class="radios" id="yes04" /></span>
+                                    <label for="yes04" class="inp-label">是</label><em class="wem29"></em>
+                                </div>
+                                <div class="house">
+                                    <span class="inp-radio"><input type="radio" class="radios" id="no04" /></span>
+                                    <label for="no04" class="inp-label">否</label>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="sub-row">
+                            <span class="row-left">相关凭证是否齐全：</span>
+                            <span class="row-right">
+                                <div class="land">
+                                    <span class="inp-radio"><input type="radio" class="radios" id="yes05" /></span>
+                                    <label for="yes05" class="inp-label">是</label><em class="wem29"></em>
+                                </div>
+                                <div class="house">
+                                    <span class="inp-radio"><input type="radio" class="radios" id="no05" /></span>
+                                    <label for="no05" class="inp-label">否</label>
+                                </div>
+                            </span>
+                        </div>
+                        <h3 class="subtitle">项目亮点</h3>
+                        <div class="spot">
+                            <div class="spot-row">
+                                <span class="inp-radio"><input type="checkbox" class="radios" id="check01" /></span>
+                                <label class="inp-label" for="check01">佣金比例高</label>
+                            </div>
+                            <div class="spot-row">
+                                <span class="inp-radio"><input type="checkbox" class="radios" id="check02" /></span>
+                                <label class="inp-label" for="check02">法律关系明确</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>文字描述：</span><span class="limit">（字数限制在500字以内）</span>
+                            <textarea name="" id="" cols="30" rows="10" class="literal"></textarea>
+                        </div>
+                        <div class="row">
+                            <span class="row-left">语音描述：</span>
+                            <button class="add_voice" type="button">添加语音</button>
+                            <p class="dib">注：语音描述仅限于手机app</p>
+                        </div>
+                        <div class="row">
+                            <span class="row-left">上传图片：</span>
+                            <div class="upload">
+                                <span class="fileinput-button">
+                                    <em>上传凭证</em>
+                                    <input id="fileupload" type="file" name="files[]" data-url="http://ziyawang.com/ucenter/upload" multiple="" accept="image/png, image/gif, image/jpg, image/jpeg">
+                                </span>                  
+                            </div>
+                            <p class="dib">合同/协议、借条/欠条、判决书原件的扫描件或照片，请上传图片，大小限制2M</p>
+                        </div>
+                        <div class="img_box">
+                            <div class="pictures"><img class="preview" id="PictureDes1" src="" picname=""><span class="deleteBtn1 deleteImg" title="删除"></span></div>
+                            <div class="pictures"><img class="preview" id="PictureDes2" src="" picname=""><span class="deleteBtn2 deleteImg" title="删除"></span></div>
+                            <div class="pictures"><img class="preview" id="PictureDes3" src="" picname=""><span class="deleteBtn3 deleteImg" title="删除"></span></div>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>联系人姓名：</span>
+                            <input type="text" class="inps" placeholder="请输入">
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>联系电话：</span>
+                            <input type="text" class="inps" placeholder="请输入">
+                        </div>
+                        <button class="issue-btn">确 认 发 布</button>
+                    </div>
+                </div>
+            </div>
+            <!-- right / end -->
+        </div>
+        <!-- user center / end -->
+    </body>
+</html>
+<script type="text/javascript">
+    $(function(){
+
+        initComplexArea('seachprov1', 'seachcity1', area_array, sub_array, '0', '0', '0');
+
+        $(".row-select").change(function() {
+            if($(this).children("option:selected").hasClass("grayColor")){
+                $(this).css({"color":"#999"});   
+            }else{
+                $(this).css({"color":"#333"});   
+            }
+        });
+        // The radio button switch about transfer and other
+        $('.sub-row .inp-radio').click(function() {
+            $(this).addClass('checked');
+            $(this).parent().siblings().children('.inp-radio').removeClass('checked');
+        });
+        // Spot 
+        $('.spot-row .inp-radio').click(function() {
+            $(this).toggleClass('checked');
+        });
+        // radio input
+        $('.judicial .inp-radio').click(function() {
+            $(this).toggleClass('checked');
+            if($(this).hasClass('checked')){
+                $(this).parent().children('.commis').removeAttr('readonly');
+            }else{
+                $(this).parent().children('.commis').attr('readonly', 'readonly');
+            }
+        });
+    })
+
+</script>

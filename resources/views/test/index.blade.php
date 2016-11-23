@@ -130,10 +130,10 @@
 
         var date = new Date();
         date.setTime(date.getTime() + (120 * 60 * 1000));
-        $.cookie('money', Money, { expires: date, path: '/', domain: '.test.com' });
-        $.cookie('area', Area, { expires: date, path: '/', domain: '.test.com' });
-        $.cookie('assettype', AssetType, { expires: date, path: '/', domain: '.test.com' });
-        $.cookie('type', Type, { expires: date, path: '/', domain: '.test.com' });
+        $.cookie('money', Money, { expires: date, path: '/', domain: '.ziyawang.com' });
+        $.cookie('area', Area, { expires: date, path: '/', domain: '.ziyawang.com' });
+        $.cookie('assettype', AssetType, { expires: date, path: '/', domain: '.ziyawang.com' });
+        $.cookie('type', Type, { expires: date, path: '/', domain: '.ziyawang.com' });
 
 
         if(Type == '个人'){

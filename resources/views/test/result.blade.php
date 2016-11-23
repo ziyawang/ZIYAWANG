@@ -14,8 +14,8 @@
         <div class="assess-start pb110 clearfix">
             <div class="assess-l">
                 <h2 class="assess-end">评估结果</h2>
-                <span class="better" id="score">评估分数：58分</span>
-                <div class="result" id="result">您的款项收回风险较大。或许一开始对债务方的条件就没有什么要求，或许各项条件发生了不利的变化您没有及时关注，从而导致债权实现困难。资芽网将为您提供最为专业的服务，希望能解您的燃眉之急。</div>
+                <span class="better" id="score"></span>
+                <div class="result" id="result"></div>
                 <div class="result-btn2">
                     <a href="javascript:;" class="assess-btn" id="return">重&nbsp;新&nbsp;评&nbsp;估</a>
                     <a href="javascript:;" class="assess-btn" id="pub">发&nbsp;布&nbsp;债&nbsp;权</a>
@@ -63,14 +63,14 @@
     })
 
     $('#return').click(function(){
-        $.removeCookie('score', { path: '/', domain: '.test.com' });
-        $.removeCookie('result', { path: '/', domain: '.test.com' });
+        $.removeCookie('score', { path: '/', domain: '.ziyawang.com' });
+        $.removeCookie('result', { path: '/', domain: '.ziyawang.com' });
         window.location.href = "{{url('/test/index')}}";
     })
 
     $('#pub').click(function(){
-        // $.removeCookie('score', { path: '/', domain: '.test.com' });
-        // $.removeCookie('result', { path: '/', domain: '.test.com' });
+        // $.removeCookie('score', { path: '/', domain: '.ziyawang.com' });
+        // $.removeCookie('result', { path: '/', domain: '.ziyawang.com' });
         var token = $.cookie('token');
         if(token){
             window.location.href = "{{url('/ucenter/index')}}"

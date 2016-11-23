@@ -40,8 +40,8 @@
                         <div class="imgBox">
                             <div class="imgContent">
                                 <img id="PictureDes1" src="" style="display:none">
-                                <img id="PictureDes1" src="" style="display:none">
-                                <img id="PictureDes1" src="" style="display:none">
+                                <img id="PictureDes2" src="" style="display:none">
+                                <img id="PictureDes3" src="" style="display:none">
                             </div>
                         </div>
                     </div>

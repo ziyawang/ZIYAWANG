@@ -199,7 +199,7 @@
         var str = JSON.stringify(json);
         var date = new Date();
         date.setTime(date.getTime() + (120 * 60 * 1000));
-        $.cookie('answer', str, { expires: date, path: '/', domain: '.test.com' });
+        $.cookie('answer', str, { expires: date, path: '/', domain: '.ziyawang.com' });
         window.location.href = "{{url('/test/page')}}" + '?type=bus&page=4';
     })
 </script>
