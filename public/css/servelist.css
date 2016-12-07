@@ -72,7 +72,7 @@
 .storeup{position: absolute;height:42px;bottom: -42px;left: 0;background:rgba(166,164,157,0.3);border-radius: 0 0 2px 2px;width:100%;line-height: 40px;text-align: right;*+background:#e5e5e5;}
 .storeup i{color:#85848b;margin-right: 14px;font-size: 28px;cursor:pointer;}
 .storeup .red{color:#f00;}
-#imloading{width:200px;height:30px;line-height:30px;font-size:16px;text-align:center;border-radius:25px;opacity:0.7;background:#fff;margin:10px auto 30px;color:#fff;display:none;}
+#imloading{width:200px;height:30px;line-height:30px;font-size:16px;text-align:center;border-radius:25px;opacity:0.7;background:#fff;margin:0 auto;color:#fff;display:none;}
 /*分页*/
 .pageCon{position: relative;left: 50%;top: 0;float: left;display: none;}
 .pages{height: 34px;overflow: hidden;position: relative;left: -50%;top: 0;*+float: left;}

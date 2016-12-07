@@ -9,9 +9,9 @@
 @section('content')
 <link type="text/css" rel="stylesheet" href="{{url('/css/news.css')}}?v=1.0.4" />
 <!-- 二级banner -->
-<div class="find_service">
+<div class="find_service temp">
     <ul>
-        <li></li>
+        <li><a href="{{url('/course')}}"></a></li>
     </ul>
 </div>
 <!-- 主体 -->

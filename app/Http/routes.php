@@ -20,8 +20,9 @@ Route::get('/register', 'IndexController@register');//注册
 Route::get('/login', 'IndexController@login');//登录
 Route::get('/smslogin', 'IndexController@smslogin');//忘记密码
 Route::get('/resetpwd', 'IndexController@resetpwd');//找回密码
-Route::get('/project', 'IndexController@proList2');//找信息
-Route::any('/project/{id}', 'IndexController@proInfo2');//信息详情
+// Route::get('/project', 'IndexController@proList2');//找信息
+// Route::any('/project/{id}', 'IndexController@proInfo2');//信息详情
+Route::any('/project/{type}/{id}', 'ProjectController@proInfo');//信息详情
 Route::get('/service', 'IndexController@serList2');//找信息
 Route::get('/service/{id}', 'IndexController@serInfo2');//信息详情
 
@@ -62,8 +63,8 @@ Route::get('/ucenter/reconfirm','UCenterController@reconfirm');//重新完善资
 Route::get('/ucenter/safe/resetpwd','UCenterController@resetpwd');//重置密码
 Route::get('/ucenter/myrush','UCenterController@myrush');//我的抢单
 Route::get('/ucenter/mypro','UCenterController@mypro');//我发布的
-Route::get('/ucenter/mypro/{id}','UCenterController@myproinfo');//我发布的信息详情
-Route::get('/ucenter/mypro/rushlist/{id}','UCenterController@rushlist');//查看抢单列表
+Route::get('/ucenter/mypro/{type}/{id}','UCenterController@myproinfo');//我发布的信息详情
+Route::get('/ucenter/rushlist/{id}','UCenterController@rushlist');//查看抢单列表
 Route::get('/ucenter/mycoo','UCenterController@mycoo');//我合作的
 Route::get('/ucenter/mycollect','UCenterController@mycollect');//我收藏的
 Route::get('/ucenter/safe','UCenterController@safe');//安全中心
@@ -94,7 +95,7 @@ Route::get('/ucenter/message','IndexController@message');//个人中心首页，
 Route::get('/feedback', 'IndexController@feedback');//意见反馈
 
 //10.14新增活动报名路由
-// Route::get('/enroll', 'ActivityController@enroll');
+Route::get('/enroll', 'ActivityController@enroll');
 
 //11.14新增测评路由
 Route::get('/test/index', 'ActivityController@testIndex');//首页
@@ -102,6 +103,18 @@ Route::get('/test/page', 'ActivityController@testPage');//问题页
 Route::get('/test/end', 'ActivityController@testEnd');//尾页
 Route::get('/test/result', 'ActivityController@testResult');//结果页
 
+
+
+//临时
+Route::get('/temp/question', 'IndexController@question');//结果页
+
+//11.29朱亮亮
+Route::get('/project','ProjectController@prolist');
+
+//山/12.02新增资芽网培训报名路由
+
+Route::get('/course', 'ActivityController@index');
+Route::get('/report', 'ActivityController@report');
 
 
 

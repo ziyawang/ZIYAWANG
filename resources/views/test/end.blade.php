@@ -14,12 +14,12 @@
         <div class="assess-start pb110 clearfix">
             <div class="assess-l">
                 <h2 class="assess-end">评估结束</h2>
-                <span class="better">请输入电话号码以便为您提供更专业的服务</span>
+                <span class="better">请输入手机号码，获取评估结果</span>
                 <input type="text" class="inps-phonenum" id="phonenumber" placeholder="请输入电话号码" />
                 <button id="pub" class="assess-btn assess-sure">确&nbsp;定</button>
             </div>
             <div class="mt35 assess-r">
-                <a href="javascript:;" class="assess-btn ma24">免&nbsp;费&nbsp;发&nbsp;布</a>
+                <a href="javascript:;" id="pub" class="assess-btn ma24">免&nbsp;费&nbsp;发&nbsp;布</a>
                 <a href="javascript:;" class="assess-btn ma24 online-serv">在&nbsp;线&nbsp;客&nbsp;服</a>
                 <span class="ma24 assess-hot">400-898-8557</span>
                 <div class="assess-img">
@@ -69,7 +69,7 @@
         var Answer = $.cookie('answer');
         var token = $.cookie('token');
         $.ajax({
-            url:"http://apitest.ziyawang.com/v1/test/result?access_token=token&token=" + token,
+            url:"http://api.ziyawang.com/v1/test/result?access_token=token&token=" + token,
             type:"POST",
             dataType:"json",
             data:{'Money':Money,'Area':Area,'AssetType':AssetType,'Type':Type,'Answer':Answer,'Channel':'PC','PhoneNumber':PhoneNumber},

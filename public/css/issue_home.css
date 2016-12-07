@@ -1,0 +1,22 @@
+.find_service ul li{background:#ffda3f url(../img/junior_banner.jpg) no-repeat center top;height: 296px;overflow: hidden;}
+/*right of release infomation*/
+.ucRightCon{padding:46px 0 46px;}
+.ucRight h2{font-size: 20px;color:#333;letter-spacing: 1px;font-weight: 600;margin-bottom: 28px;height: 32px;line-height: 32px;}
+.ucrightTop{position: relative;}
+.ucrightTop .infoText{padding:10px 15px;width: 860px;border: 1px solid #c2c2c2;border-radius: 10px;text-align: justify;color:#333;font-size: 16px;line-height: 28px;position: relative;}
+.ucrightTop .infoText:before{border: 16px solid transparent;border-bottom-color: #c2c2c2;position: absolute;top: -32px;left:32px;content:"";border-left-width: 8px;border-right-width: 8px;}
+.ucrightTop .infoText:after{border: 17px solid transparent;border-bottom-color: #fff;position: absolute;top: -31px;left:32px;content:"";border-left-width: 8px;border-right-width: 8px;}
+.ucrightTop .infoText span{display: block;color:#f00;}
+.selectiveType{border-bottom: 1px solid #c0c0c0;margin-top: 27px;font-weight: normal;color:#333;width: 892px;}
+.selectiveType span{width: 108px;padding-left:25px;height: 35px;line-height: 35px;display: block;font-size: 18px;color:#333;letter-spacing: 3px;background:-webkit-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:-moz-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:-ms-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:-o-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:linear-gradient(top,#efefef,#f4f4f4,#ffffff);border:1px solid #c2c2c2;border-bottom: 0 none;border-radius: 10px 10px 0 0;box-shadow: 0 2px 0 #fff inset;}
+.ucrightBottom{overflow: hidden;padding:21px 15px 0;}
+.ucrightBottom a{font-size: 16px;display: block;color:#333;float: left;width: 154px;height: 138px;border: 1px dashed #959595;border-radius: 5px;margin:0 30px 21px;text-align: center;padding:18px 0;-webkit-transition: all .35s; -moz-transition: all .35s; -ms-transition: all .35s; -o-transition: all .35s; transition: all .35s;}
+.ucrightBottom a span{display: block;height: 102px;width: 130px;margin:0 auto;-webkit-transition: all .35s; -moz-transition: all .35s; -ms-transition: all .35s; -o-transition: all .35s; transition: all .35s;}
+.ucrightBottom a .ucIcons1{background:url(../img/b_iconsv2.png) no-repeat 5px 0;margin-bottom: 15px;}
+.ucrightBottom a .ucIcons5{background:url(../img/b_iconsv2.png) no-repeat -122px 0;margin-bottom: 15px;}
+.ucrightBottom a .ucIcons3{background:url(../img/b_iconsv2.png) no-repeat -260px 0;margin-bottom: 15px;}
+.ucrightBottom a .ucIcons4{background:url(../img/b_iconsv2.png) no-repeat -384px -218px;margin-bottom: 15px;}
+.ucrightBottom a .ucIcons2{background:url(../img/b_iconsv2.png) no-repeat -124px -110px;margin-bottom: 15px;}
+.ucrightBottom a .ucIcons6{background:url(../img/b_iconsv2.png) no-repeat -256px -110px;margin-bottom: 15px;}
+.ucrightBottom a:hover{background:#d5d5d5;font-weight: bold;}
+.ucrightBottom a:hover span{-webkit-transform: translate(0,7px); -moz-transform: translate(0,7px); -ms-transform: translate(0,7px); -o-transform: translate(0,7px); transform: translate(0,7px);}

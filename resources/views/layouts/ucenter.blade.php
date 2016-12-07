@@ -10,9 +10,9 @@
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=1.0.4" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=1.0.4" />
-        <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.4" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=1.0.8" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=1.0.8" />
+        <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.8" />
 <style>
     #uploadifive-picture_upload{height: 30px!important;line-height: 30px!important;border-radius: 25px;background: #e48013;color: #fff;}
     .img_box{padding-left: 170px;}
@@ -68,6 +68,7 @@
         $.removeCookie('token', { path: '/', domain: '.ziyawang.com' });
         $.removeCookie('phonenumber', { path: '/', domain: '.ziyawang.com' });
         $.removeCookie('role', { path: '/', domain: '.ziyawang.com' });
+        $.removeCookie('userid', { path: '/', domain: '.ziyawang.com' });
         $('#unlogin').show();
         $('#after_login').hide();
         $('.personal').hide();
@@ -98,9 +99,9 @@
         </div>
     </div>
 <!-- 二级banner -->
-<div class="find_service">
+<div class="find_service temp">
     <ul>
-        <li></li>
+        <li><a href="{{url('/course')}}"></a></li>
     </ul>
 </div>
 <!-- 个人中心 -->

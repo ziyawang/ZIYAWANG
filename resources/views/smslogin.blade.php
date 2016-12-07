@@ -37,7 +37,9 @@
     				if(msg.token){
                         // console.log(msg.token);
                         $.cookie('token', msg.token, { expires: date, path: '/', domain: '.ziyawang.com' });
+                        $.cookie('role', msg.role, { expires: date, path: '/', domain: '.ziyawang.com' });
                         $.cookie('phonenumber', phonenumber, { expires: date, path: '/', domain: '.ziyawang.com' });
+                        $.cookie('userid', msg.UserID, { expires: date, path: '/', domain: '.ziyawang.com' });
                         window.location.href = "http://ziyawang.com/ucenter/index";
                     }
     			}

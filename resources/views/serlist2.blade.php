@@ -12,10 +12,10 @@
     .item{cursor: pointer;}
 </style>
     <!-- 二级banner -->
-    <div class="find_service">
-        <ul>
-            <li></li>
-        </ul>
+<div class="find_service temp">
+    <ul>
+        <li><a href="{{url('/course')}}"></a></li>
+    </ul>
         <div class="prompt_text">
         <div class="wrap bg">
         <div class="wrap prompt_text_content">
@@ -382,12 +382,12 @@ $(function(){
                                     data:'itemID=' + ServiceID + '&type=4',
                                     dataType:'json',
                                     success:function(msg){
-                                        alert(msg.msg)
                                     }
                                 });
                             }
 
-                            $(".heart").unbind("click").click(function(){
+                            $(".heart").unbind("click").click(function(e){
+                                e.stopPropagation();
                                 checkLogin();
                                 if(stop){
                                     return false;
@@ -451,12 +451,12 @@ $(function(){
                 data:'itemID=' + ServiceID + '&type=4',
                 dataType:'json',
                 success:function(msg){
-                    alert(msg.msg)
                 }
             });
         }
 
-        $(".heart").click(function(){
+        $(".heart").click(function(e){
+            e.stopPropagation();
             checkLogin();
             if(stop){
                 return false;
@@ -535,7 +535,7 @@ $('#pubpro').click(function(){
             return false;
         }
 
-        window.location = "{{url('/ucenter/pubpro')}}";
+        window.location = "{{url('/ucenter/index')}}";
     }) 
 
     </script>

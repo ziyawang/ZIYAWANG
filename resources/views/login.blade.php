@@ -82,6 +82,7 @@ var _hmt = _hmt || [];
     					$.cookie('token', msg.token, { expires: date, path: '/', domain: '.ziyawang.com' });
     					$.cookie('role', msg.role, { expires: date, path: '/', domain: '.ziyawang.com' });
     					$.cookie('phonenumber', phonenumber, { expires: date, path: '/', domain: '.ziyawang.com' });
+    					$.cookie('userid', msg.UserID, { expires: date, path: '/', domain: '.ziyawang.com' });
     					window.location.href = "http://ziyawang.com/ucenter/index";
     				} else {
     					$('#wrong').html('帐号或者密码不正确');
@@ -117,6 +118,7 @@ var _hmt = _hmt || [];
 	    					$.cookie('token', msg.token, { expires: date, path: '/', domain: '.ziyawang.com' });
 	    					$.cookie('role', msg.role, { expires: date, path: '/', domain: '.ziyawang.com' });
 	    					$.cookie('phonenumber', phonenumber, { expires: date, path: '/', domain: '.ziyawang.com' });
+    						$.cookie('userid', msg.userid, { expires: date, path: '/', domain: '.ziyawang.com' });
 	    					window.location.href = "http://ziyawang.com/ucenter/index";
 	    				} else {
 	    					$('#wrong').html('帐号或者密码不正确');

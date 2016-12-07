@@ -189,9 +189,9 @@
 .friend .hezuo{*+top: 61px;}
 .friend ul{*+height: 204px;}
 /*2016.9.20 usercenter_v2 public part*/
-.userContent{width: 1230px;margin: 0 auto;background:url(../img/r_shadow.png) repeat-y right 0;}
+.userContent{width: 1230px;margin: 0 auto;background:url(../img/r_shadow.png) repeat-y right 0;overflow: hidden;}
 /*left*/
-.ucLeft{width: 197px;float: left;background:#f4f4f4;border-right: 3px solid #b8b8b8;border-left: 3px solid #b8b8b8;min-height: 700px;margin-left: 15px;}
+.ucLeft{min-height:650px;width: 197px;float: left;background:#f4f4f4;border-right: 3px solid #b8b8b8;border-left: 3px solid #b8b8b8;margin-left: 15px;padding-bottom: 2000px;margin-bottom: -2000px;}
 .ucLeft h2{padding-left:4px;width: 193px;height: 81px;line-height:81px;background:#757778;font-size: 30px;color:#fff;text-align: center;font-weight: normal;letter-spacing: 4px;}
 .ucleftHead{width: 200px;height: 110px;padding:20px 0;}
 .ucleftHead a{display: block;height: 77px;width: 77px;border: 2px solid #bec3c7;overflow: hidden;border-radius: 50%;margin:0px auto;}

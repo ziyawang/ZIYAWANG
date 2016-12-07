@@ -329,13 +329,7 @@ body{background:#fff;}
 .td_check{width: 42px;text-align: right;display: block;float: left;}
 .td_email{width:40px; background:url(../img/email.png) no-repeat 15px -44px;display: block;float: left;height: 22px;}
 .td_word{white-space: nowrap;word-break: break-all;overflow: hidden;display: block;float: left;}
-/*table{width:100%;border:0;}
-.info_list .day,.info_list .week,.info_list .long{border-bottom: 1px solid #b2b2b2;padding:15px 0 5px 28px;}
-table .read{background:url(../img/email.png) no-repeat 15px -2px;}
-table tr{padding:10px 0;}
-table tr td{border-bottom: 1px solid #ededed;padding: 12px 0;}
-table tr td a{color:#333;display: block;width: 725px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
-table tr td a:hover{color:#333;}*/
+
 .info_list{font-size: 15px;}
 .line_info a {color: #333;}
 .info_list table tr:hover{background:#ffffe1;}
@@ -397,3 +391,20 @@ table tr td a:hover{color:#333;}*/
 .changeWeixin{width: 231px;height: 220px;background:url(../img/weixinbg.png) no-repeat;margin:0 auto;padding-top:15px;}
 .weixinTips{line-height: 35px;}
 .weixinTips strong{display: block;font-size:20px;color:#000;}
+/*2016-11-26============v3 mychat && myrelease && mycollect list*/
+.myCollections .selectiveType,.myChat .selectiveType,.myPub .selectiveType{margin-top: 0;}
+.publishList ul li .pblef1{width: 75px;height: 63px;background:url(../img/s_iconsv2.png) no-repeat 0 0;}
+.publishList ul li .pblef2{width: 75px;height: 60px;background:url(../img/s_iconsv2.png) no-repeat -122px 0;}
+.publishList ul li .pblef3{width: 72px;height: 60px;background:url(../img/s_iconsv2.png) no-repeat -238px 0;}
+.publishList ul li .pblef4{width: 72px;height: 60px;background:url(../img/s_iconsv2.png) no-repeat -362px 0;}
+.publishList ul li .pblef5{width: 70px;height: 60px;background:url(../img/s_iconsv2.png) no-repeat -478px 0;}
+.publishList ul li .pblef6{width: 66px;height: 60px;background:url(../img/s_iconsv2.png) no-repeat -600px 0;}
+/*2016-11-26============v3 yabi*/
+.diffPrice a{height: 63px;padding: 5px 1px 1px;}
+.diffPrice .noPref{height: 58px;padding: 10px 1px 1px;}
+.diffPrice .current a{height: 63px;padding: 4px 0 0;}
+.diffPrice .current .noPref{height: 58px;padding: 9px 0 0px;}
+.diffPrice a span em{height: 20px;background: url(../img/yabi_icon.png) no-repeat 2px 1px;}
+.diffPrice a span{line-height: 20px;}
+.diffPrice .noPref span{line-height: 24px;}
+.give{font-size: 12px;color:#ff2f2f;display: block;}

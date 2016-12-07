@@ -24,9 +24,9 @@
         .btns2 a:active{top:1px;}
     </style>
 <!-- 二级banner -->
-<div class="find_service">
+<div class="find_service temp">
     <ul>
-        <li></li>
+        <li><a href="{{url('/course')}}"></a></li>
     </ul>
 </div>
 <!-- 主体 -->

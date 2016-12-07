@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.4" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/issue_home.css')}}?v=1.0.5" />
     <!-- 右侧 -->
     <div class="ucRight">
         <div class="ucRightCon">
@@ -10,17 +10,12 @@
             </div>
             <h3 class="selectiveType"><span>选择类型</span></h3>
             <div class="ucrightBottom">
-                <a href="{{url('/ucenter/pubpro/1')}}"><span class="ucIcons1"></span>资产包转让</a>
-                <a href="{{url('/ucenter/pubpro/14')}}"><span class="ucIcons2"></span>债权转让</a>
-                <a href="{{url('/ucenter/pubpro/12')}}"><span class="ucIcons3"></span>固产转让</a>
-                <a href="{{url('/ucenter/pubpro/4')}}"><span class="ucIcons4"></span>商业保理</a>
-                <a href="{{url('/ucenter/pubpro/13')}}" class="extra"><span class="ucIcons5"></span>资产求购</a>
-                <a href="{{url('/ucenter/pubpro/6')}}"><span class="ucIcons6"></span>融资需求</a>
-                <a href="{{url('/ucenter/pubpro/3')}}"><span class="ucIcons7"></span>法律服务</a>
-                <a href="{{url('/ucenter/pubpro/9')}}"><span class="ucIcons8"></span>悬赏信息</a>
-                <a href="{{url('/ucenter/pubpro/10')}}"><span class="ucIcons9"></span>尽职调查</a>
-                <a href="{{url('/ucenter/pubpro/2')}}"><span class="ucIcons10"></span>委外催收</a>
-                <a href="{{url('/ucenter/pubpro/15')}}" class="extra"><span class="ucIcons11"></span>投资需求</a>
+                <a href="http://ziyawang.com/ucenter/pubpro/1"><span class="ucIcons1"></span>资产包</a>
+                <a href="http://ziyawang.com/ucenter/pubpro/17"><span class="ucIcons2"></span>融资信息</a>
+                <a href="http://ziyawang.com/ucenter/pubpro/12"><span class="ucIcons3"></span>固定资产</a>
+                <a href="http://ziyawang.com/ucenter/pubpro/18"><span class="ucIcons4"></span>企业商账</a>
+                <a href="http://ziyawang.com/ucenter/pubpro/19"><span class="ucIcons5"></span>个人债权</a>
+                <a href="http://ziyawang.com/ucenter/pubpro/21"><span class="ucIcons6"></span>法拍资产</a>
             </div>
         </div>
     </div>

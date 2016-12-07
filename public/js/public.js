@@ -24,12 +24,12 @@ $(function(){
 	}
 		
 	var timerBan = null;
-	timerBan = setInterval(myFn,3500);
+	timerBan = setInterval(myFn,7000);
 	
 	$('.banner').hover(function(e) {
 	          clearInterval(timerBan);
 	},function(){
-		timerBan = setInterval(myFn,3500);
+		timerBan = setInterval(myFn,7000);
 	});
 		
 		

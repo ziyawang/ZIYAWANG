@@ -11,9 +11,9 @@
 <script src="{{asset('/js/jquery.md5.js')}}"></script>
 <!--[if IE]><script src="http://api.html5media.info/1.1.4/html5media.min.js"></script> <![endif]-->
 <!-- 二级banner -->
-<div class="find_service">
+<div class="find_service temp">
     <ul>
-        <li></li>
+        <li><a href="{{url('/course')}}"></a></li>
     </ul>
 </div>
 <!-- 主体 -->

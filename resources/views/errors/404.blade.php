@@ -15,7 +15,7 @@
             <li class="li5"></li>
         </ul>
         <div class="wrongImg">
-            <img src="img/404.png" height="218" width="538" alt="404" />
+            <img src="/img/404.png" height="218" width="538" alt="404" />
             <div class="bad"><span>糟糕！</span>你要访问的页面跑到了火星</div>
             <div class="dao"><span id="five">5</span> 秒后自动帮您跳到首页</div>
             <a href="{{'/'}}" class="backhomeLink">www.ziyawang.com</a>

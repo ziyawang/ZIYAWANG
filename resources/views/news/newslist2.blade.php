@@ -9,9 +9,9 @@
     <link type="text/css" rel="stylesheet" href="{{url('/css/newsinfo.css')}}"/>
 
 <!-- 二级banner -->
-<div class="find_service">
+<div class="find_service temp">
     <ul>
-        <li></li>
+        <li><a href="{{url('/course')}}"></a></li>
     </ul>
 </div>
 <!-- 主体 -->
@@ -170,11 +170,11 @@ $(function(){
             var PublishTime = data[index].PublishTime;
             var NewsAuthor = data[index].NewsAuthor;
             var NewsBrief = data[index].Brief;
-            NewsBrief     = NewsBrief.substr(0,120) + "...";
+            // NewsBrief     = NewsBrief.substr(0,120) + "...";
             var NewsID = data[index].NewsID;
             var NewsLogo = data[index].NewsThumb;      
 
-            html = html + "<li><a target='_blank' href='http://ziyawang.com/news/" + NewsID + "' class='nlc_img' title='" + NewsTitle + "'><img src='http://images.ziyawang.com" + NewsLogo + "'/></a><h2 class='nlc_title'><a target='_blank' href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a></h2><span class='nlc_time'>发表于：" + PublishTime + "</span><p class='nlc_abstr'>" + NewsBrief.substr(0,100) + "...</p></li>"
+            html = html + "<li><a target='_blank' href='http://ziyawang.com/news/" + NewsID + "' class='nlc_img' title='" + NewsTitle + "'><img src='http://images.ziyawang.com" + NewsLogo + "'/></a><h2 class='nlc_title'><a target='_blank' href='http://ziyawang.com/news/" + NewsID + "'>" + NewsTitle + "</a></h2><span class='nlc_time'>发表于：" + PublishTime + "</span><p class='nlc_abstr'>" + NewsBrief + "</p></li>"
         });
         document.title = '新闻中心-资芽网';
         $('#newslist').html(html);

@@ -66,3 +66,11 @@
 .next_essay{padding:0 22px 22px 22px;}
 /*分页显示*/
 .pages #Pagination .pagination .prev,.pages #Pagination .pagination .next{display: block!important;}
+.disposal{padding: 14px; margin-bottom: 32px; box-shadow: 0px 0px 8px #c0bfbb; border: 1px solid #e6e5e3\0; border-radius: 3px;}
+.dis-title{border-bottom: 1px solid #58baca;color: #01a6bc;font-size: 16px;height: 35px;}
+.dis-title a{color: #01a6bc;}
+.dis-fir-tit{padding-top: 14px;}
+.dis-fir-tit a{font-size: 16px;color:#333;display: block;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.dis_abstr{font-size: 12px;color:#666;line-height: 24px;}
+.dis_list li{padding: 10px 0 10px 14px; border-bottom: 1px dotted #bfbfbf; background: url(../img/squre.png) no-repeat 0px 19px; width: 292px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.dis-time{margin-bottom: 20px;text-align: center;color:#666;}

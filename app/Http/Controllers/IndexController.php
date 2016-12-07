@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
+use DB;
 
 
 class IndexController extends Controller
@@ -89,11 +90,8 @@ class IndexController extends Controller
         return view('serinfo2');
     }
     //项目详情
-    public function proInfo2()
+    public function proInfo2($type,$id)
     {
-        // $path = './test.html';
-        // $tmp = view('proinfo2')->__toString();
-        // file_put_contents($path,$tmp);
         return view('proinfo2');
     }
 
@@ -262,5 +260,7 @@ class IndexController extends Controller
         return view('ucenter.message');
     }
 
-
+    public function question() {
+        return view('temp.question');
+    }
 }

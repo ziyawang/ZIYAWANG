@@ -9,18 +9,18 @@
 </style>
 <div class="ucRight">
     <div class="ucRightCon re_ucright_con">
-        <h2>资产包转让</h2>
+        <!-- <h2>资产包转让</h2>
         <div class="ucrightTop">
             <p class="infoText"><span>请认真阅读以下文字：</span>服务方需要全面了解您发布的信息，请您务必认真填写。我们会保护您的隐私，关键信息我们会做模糊处理。<span>提示：带星号（*）的为必填项；您的信息填写越完整，将会吸引更多服务方和您约谈，为您服务！</span></p>
         </div>
-        <h3 class="selectiveType re_title"><span>介绍说明</span></h3>
+        <h3 class="selectiveType re_title"><span>介绍说明</span></h3> -->
             <div class="asset">
                 <div class="asset-con">
                     <h2 class="asset-title"><span>资产包</span><a href="javascript:;" class="depute">委托发布</a></h2>
                     <div class="asset-main">
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>请选择身份：</span>
-                            <select name="Identity" class="row-select">
+                            <select name="Identity" class="row-select bitian">
                                 <option value="0">请选择</option>
                                 <option value="项目持有者">项目持有者</option>
                                 <option value="FA（中介）">FA（中介）</option>
@@ -28,7 +28,7 @@
                         </div>
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>资产包类型：</span>
-                            <select name="AssetType" class="row-select">
+                            <select name="AssetType" class="row-select bitian">
                                 <option value="0">请选择</option>
                                 <option value="抵押">抵押</option>
                                 <option value="信用">信用</option>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>来源：</span>
-                            <select name="FromWhere" class="row-select">
+                            <select name="FromWhere" class="row-select bitian">
                                 <option value="0">请选择</option>
                                 <option value="银行">银行</option>
                                 <option value="非银行机构">非银行机构</option>
@@ -49,17 +49,17 @@
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>地区：</span>
                             <span class="region">
-                                <select class="row-select" id="seachprov" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');"></select>
-                                <select class="row-select" id="seachcity"></select>
+                                <select class="row-select bitian" id="seachprov" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');"></select>
+                                <select class="row-select bitian" id="seachcity"></select>
                             </span>
                         </div>
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>总金额：</span>
-                            <input name="TotalMoney" type="text" class="inps" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">万元（本加利）</span>
+                            <input name="TotalMoney" type="text" class="inps bitian" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">万元（本加利）</span>
                         </div>
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>转让价：</span>
-                            <input name="TransferMoney" type="text" class="inps" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">万元</span>
+                            <input name="TransferMoney" type="text" class="inps bitian" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">万元</span>
                         </div>
                         <h3 class="subtitle">其他</h3>
                         <div class="row">
@@ -78,11 +78,11 @@
                             <span class="row-left">有无尽调报告：</span>
                             <span class="row-right">
                                 <div class="land">
-                                    <span class="inp-radio"><input type="radio" class="radios" id="yes01" value="1" name="Report" /></span>
+                                    <span class="inp-radio"><input type="radio" class="radios" id="yes01" value="有" name="Report" /></span>
                                     <label for="yes01" class="inp-label">有</label><em class="wem1"></em>
                                 </div>
                                 <div class="house">
-                                    <span class="inp-radio"><input type="radio" class="radios" id="no01" value="0" name="Report" /></span>
+                                    <span class="inp-radio"><input type="radio" class="radios" id="no01" value="无" name="Report" /></span>
                                     <label for="no01" class="inp-label">无</label>
                                 </div>
                             </span>
@@ -91,6 +91,7 @@
                             <span class="row-left">出表时间：</span>
                             <select name="year1" class="row-select select-time"></select>
                             <select name="month1" class="row-select select-time"></select>
+                            <select name="day1" class="row-select select-time"></select>
                         </div>
                         <div class="row clearfix mb0">
                             <span class="row-left fl">抵押物类型：</span>
@@ -141,11 +142,12 @@
 @section('list')
 <!-- 资产包清单上传 -->
 <input type="hidden" name="AssetList" id="qd">
+<input type="hidden" id="year" name="Time">
             <div class="row">
                 <span class="row-left"><em class="must">*</em>上传清单：</span>
                 <div class="upload">
                     <span class="fileinput-button">
-                                    <em>选择资料</em>
+                                    <em id="listname">选择资料</em>
                     <!-- The file input field used as target for the file upload widget -->
                     <input id="list_upload" type="file" name="files[]" data-url="{{url('/ucenter/uploadfile')}}" multiple >
                     </span>               
@@ -157,6 +159,8 @@
     <script type="text/javascript">
         <?php $timestamp = time();?>
         $(function() {
+         new YMDselect('year1','month1','day1');
+
             $('#list_upload').fileupload({
                 dataType: 'json',
                 limitMultiFileUploadSize : 10000,
@@ -177,11 +181,13 @@
         });
     </script>
 <!-- 资产包清单上传 -->
+</div>
+</div>
 
 @endsection
 
 @section('tips')
-部分清单复印件或照片，请上传图片，大小限制2M
+注：请上传部分清单复印件或照片，1-5张，每张大小限制2M
 @endsection
 
 
@@ -194,9 +200,17 @@
 @endsection
 
 @section('pingzheng')
-    //$("#nopz").html('');
-    //if($('#pz').val() == ''){
-    //    $("#nopz").html('你还没有上传凭证呢~');
-    //    return;
-    //}
+    $("#nopz").html('');
+    if($('#pz').val() == ''){
+        $("#nopz").html('你还没有上传凭证呢~');
+        return;
+    }
+@endsection
+@section('shijian')
+var year = $("select[name='year1']").val();
+var month = $("select[name='month1']").val();
+var day = $("select[name='day1']").val();
+if(year != 0 && month != 0 && day != 0){
+    $('#year').val(year+"年"+month+"月"+day+"日");
+}
 @endsection

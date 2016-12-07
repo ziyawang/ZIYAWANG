@@ -10,9 +10,9 @@
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=1.0.4" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=1.0.4" />
-        <link type="text/css" rel="stylesheet" href="{{url('/css/fixed.css')}}?v=1.0.4" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=1.0.8" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=1.0.8" />
+        <link type="text/css" rel="stylesheet" href="{{url('/css/fixed.css')}}?v=1.0.8.4" />
 <style>
     #uploadifive-picture_upload{height: 30px!important;line-height: 30px!important;border-radius: 25px;background: #e48013;color: #fff;}
     .img_box{padding-left: 170px;}
@@ -70,6 +70,7 @@
         $.removeCookie('token', { path: '/', domain: '.ziyawang.com' });
         $.removeCookie('phonenumber', { path: '/', domain: '.ziyawang.com' });
         $.removeCookie('role', { path: '/', domain: '.ziyawang.com' });
+        $.removeCookie('userid', { path: '/', domain: '.ziyawang.com' });
         $('#unlogin').show();
         $('#after_login').hide();
         $('.personal').hide();
@@ -100,9 +101,9 @@
         </div>
     </div>
 <!-- 二级banner -->
-<div class="find_service">
+<div class="find_service temp">
     <ul>
-        <li></li>
+        <li><a href="{{url('/course')}}"></a></li>
     </ul>
 </div>
 <!-- 个人中心 -->
@@ -125,13 +126,13 @@
                 <li id="mypro"><a href="{{url('/ucenter/mypro')}}"><i class="iconfont">&#xe61a;</i>我的发布</a></li>
                 <li id="confirm"><a href="{{url('/ucenter/confirm')}}"><i class="iconfont">&#xe60f;</i>服务方认证</a></li>
                 <li id="myrush" style="display:none"><a href="{{url('/ucenter/myrush')}}"><i class="iconfont">&#xe619;</i>我的约谈</a></li>
-                <li id=""><a href="{{url('/ucenter/pay')}}"><i class="iconfont chongzhi">&#xe61f;</i>充值中心</a></li>
+                <li id=""><a href="{{url('/ucenter/money')}}"><i class="iconfont chongzhi">&#xe61f;</i>充值中心</a></li>
                 <li id="safe"><a href="{{url('/ucenter/safe')}}"><i class="iconfont">&#xe61d;</i>安全中心</a></li>
                 <li id="mycollect"><a href="{{url('/ucenter/mycollect')}}"><i class="iconfont">&#xe61b;</i>我的收藏</a></li>
             </ul>
         </div>
     </div>
-    <form action="">
+    <form action="" class="pub-form">
 
     @yield('content')
 
@@ -140,7 +141,7 @@
 
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>文字描述：</span><span class="limit">（字数限制在500字以内）</span>
-                            <textarea name="" id="" cols="30" rows="10" class="literal"></textarea>
+                            <textarea name="WordDes" id="" cols="30" rows="10" class="literal"></textarea>
                         </div>
                         <div class="row">
                             <span class="row-left">语音描述：</span>
@@ -154,13 +155,8 @@
 <script src="{{asset('/org/jqupload/js/jquery.fileupload-process.js')}}"></script>
 <script src="{{asset('/org/jqupload/js/jquery.fileupload-validate.js')}}"></script>
 <!-- <div class="ec clearfix"> -->
-<style>
-    .pictures{float: left;margin-right: 20px;display: none;position: relative;margin-bottom: 28px;}
-    .pictures img{width: 150px;height: 150px;border: 1px solid #ccc;}
-    .deleteImg{position: absolute;width: 22px; height: 22px; background: #b8b8b8 url(/img/zhifu.png) no-repeat -147px -46px;cursor: pointer;right: 0;top: 0;display: none;}
-</style>
      <div class="row">
-        <span class="row-left">上传图片：</span>
+        <span class="row-left"><em class="must">*</em>上传图片：</span>
         <div class="upload">
             <span class="fileinput-button">
             <em>上传凭证</em>
@@ -175,24 +171,17 @@
         <div class="pictures"><img class="preview" id="PictureDes1" src="" picname=''><span class="deleteBtn1 deleteImg" title="删除"></span></div>
         <div class="pictures"><img class="preview" id="PictureDes2" src="" picname='' ><span class="deleteBtn2 deleteImg" title="删除"></span></div>
         <div class="pictures"><img class="preview" id="PictureDes3" src="" picname='' ><span class="deleteBtn3 deleteImg" title="删除"></span></div>
+        <div class="pictures"><img class="preview" id="PictureDes4" src="" picname='' ><span class="deleteBtn3 deleteImg" title="删除"></span></div>
+        <div class="pictures"><img class="preview" id="PictureDes5" src="" picname='' ><span class="deleteBtn3 deleteImg" title="删除"></span></div>
     </div>
 <!-- </div> -->
 <script type="text/javascript">
 $(function () {
-
-    //左侧边栏通栏
-    var ucRighthei1 = $('.ucRight').height();//初始高度
-    $('.ucLeft').css('height',ucRighthei1 + 'px');
-    //窗口size改变
-    $(window).resize(function() {
-        var ucRighthei2 = $('.ucRight').height();
-        $('.ucLeft').css('height',ucRighthei2 + 'px');
-    });
-
+    
     $('#fileupload').fileupload({
         dataType: 'json',
         formAcceptCharset :'utf-8',
-        maxNumberOfFiles : 3,
+        maxNumberOfFiles : 5,
         done: function (e, data) {
             $.each(data.result.files, function (index, file) {
                 // console.log(file.name);
@@ -202,14 +191,6 @@ $(function () {
                 $(".preview[src='']:first").attr({'src':encodeURI('http://images.ziyawang.com/user/'+file.name), 'picname':file.name}).parent().show();
                 $('#nopz').html('');
 
-                //左侧边栏通栏
-                var ucRighthei1 = $('.ucRight').height();//初始高度
-                $('.ucLeft').css('height',ucRighthei1 + 'px');
-                //窗口size改变
-                $(window).resize(function() {
-                    var ucRighthei2 = $('.ucRight').height();
-                    $('.ucLeft').css('height',ucRighthei2 + 'px');
-                });
             });
         }
     });
@@ -219,30 +200,28 @@ $(function () {
     $('.deleteImg').click(function(){
         $(this).prev().attr('src','');
         $(this).parent().hide();
+        var _this = this;
         layer.msg('删除成功，请重新上传');
         var url = "http://ziyawang.com/ucenter/upload?file=" + $(this).prev().attr('picname');
         $.ajax({
             'url':url,
-            'type': 'DELETE',
+            'type': 'GET',
             'success':function(msg){
+                var pid = $(_this).prev().attr('id');
+                $("input[name="+pid+"]").val('');
             }
         });
     })
 })
 </script>
 <!-- 头像上传 -->
-                        <div class="img_box">
-                            <div class="pictures"><img class="preview" id="PictureDes1" src="" picname=""><span class="deleteBtn1 deleteImg" title="删除"></span></div>
-                            <div class="pictures"><img class="preview" id="PictureDes2" src="" picname=""><span class="deleteBtn2 deleteImg" title="删除"></span></div>
-                            <div class="pictures"><img class="preview" id="PictureDes3" src="" picname=""><span class="deleteBtn3 deleteImg" title="删除"></span></div>
-                        </div>
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>联系人姓名：</span>
-                            <input type="text" class="inps" placeholder="请输入">
+                            <input type="text" class="inps bitian" placeholder="请输入" name="ConnectPerson">
                         </div>
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>联系电话：</span>
-                            <input type="text" class="inps" placeholder="请输入">
+                            <input type="text" class="inps bitian" placeholder="请输入" name="ConnectPhone">
                         </div>
 
 
@@ -260,13 +239,14 @@ $(function () {
                 <p><input type="hidden" name="PictureDes1" value="" id="pz"></p>
                 <p><input type="hidden" name="PictureDes2" value=""></p>
                 <p><input type="hidden" name="PictureDes3" value=""></p>
+                <p><input type="hidden" name="PictureDes4" value=""></p>
+                <p><input type="hidden" name="PictureDes5" value=""></p>
 
             </form>
             </div>
-                        <button class="issue-btn" id="pub">确 认 发 布</button>
                     </div>
                 </div>
-            </div>
+                        <button class="issue-btn" id="pub">确 认 发 布</button>
         </div>
             <!-- right / end -->
 </div>
@@ -279,14 +259,6 @@ $('.ec_input').blur(function(event) {
     $parent.find("p").remove();
     if($(this).val()==""){
         $parent.append("<p class='error'>您还没填呢~</p>");
-        //左侧边栏通栏
-        var ucRighthei1 = $('.ucRight').height();//初始高度
-        $('.ucLeft').css('height',ucRighthei1 + 'px');
-        //窗口size改变
-        $(window).resize(function() {
-            var ucRighthei2 = $('.ucRight').height();
-            $('.ucLeft').css('height',ucRighthei2 + 'px');
-        });
         return;
     }
 })
@@ -296,14 +268,6 @@ $('textarea').blur(function(envet){
     $parent.find("p").remove();
     if($(this).val()==""){
         $parent.append("<p class='error'>您还没填呢~</p>");
-        //左侧边栏通栏
-        var ucRighthei1 = $('.ucRight').height();//初始高度
-        $('.ucLeft').css('height',ucRighthei1 + 'px');
-        //窗口size改变
-        $(window).resize(function() {
-            var ucRighthei2 = $('.ucRight').height();
-            $('.ucLeft').css('height',ucRighthei2 + 'px');
-        });
         return;
     }
 })
@@ -323,15 +287,17 @@ function _checkInput(){
 var stop = false;
 
     $("select").each(function(){
-        $parent=$(this).parent();
-        $parent.find("p").remove();
-        if($(this).val()=='null' || $(this).val()==0 || $(this).val()==undefined){
-            if($(this).css('display') == 'none'){
-                return true;
+        if($(this).hasClass('bitian')){
+            $parent=$(this).parent();
+            $parent.find("p").remove();
+            if($(this).val()=='null' || $(this).val()==0 || $(this).val()==undefined){
+                if($(this).css('display') == 'none'){
+                    return true;
+                }
+                $parent.append("<p class='error'>您还没选呢~</p>");
+                stop = true;
+                return false;
             }
-            $parent.append("<p class='error'>您还没选呢~</p>");
-            stop = true;
-            return false;
         }
     })
     
@@ -340,13 +306,15 @@ var stop = false;
     }
 
     $(".ec_input").each(function(){
-        $parent=$(this).parent();
-        $parent.find("p").remove();
-        if($(this).val()==""){
-            $parent.append("<p class='error'>您还没填呢~</p>");
-            stop = true;
-            return false;
-        } 
+        if($(this).hasClass('bitian')){
+            $parent=$(this).parent();
+            $parent.find("p").remove();
+            if($(this).val()==""){
+                $parent.append("<p class='error'>您还没填呢~</p>");
+                stop = true;
+                return false;
+            } 
+        }
     });
 
     if(stop){
@@ -354,30 +322,28 @@ var stop = false;
     }
 
     $(".inps").each(function(){
-        $parent=$(this).parent();
-        $parent.find("p").remove();
-        if($(this).val()==""){
-            $parent.append("<p class='error'>您还没填呢~</p>");
-            stop = true;
-            return false;
-        } 
+        if($(this).hasClass('bitian')){
+            $parent=$(this).parent();
+            $parent.find("p").remove();
+            if($(this).val()==""){
+                $parent.append("<p class='error'>您还没填呢~</p>");
+                stop = true;
+                return false;
+            } 
+        }
     });
 
     if(stop){
         return;
     }
-    
+
+@yield('radio')
     $("textarea").parent().find("p").remove();
     if($("textarea").val() == ''){
         $("textarea").parent().append("<p class='error'>您还没填呢~</p>");
         return;
     }
 
-    // $("#nopz").html('');
-    // if($('#pz').val() == ''){
-    //     $("#nopz").html('你还没有上传凭证呢~');
-    //     return;
-    // }
 @yield('pingzheng')
 
 @yield('qingdan')
@@ -390,6 +356,16 @@ var stop = false;
             area = $("#seachcity").val();
         }else{
             area = $("#seachprov").val();
+        }
+        return area;
+    }
+
+    function getAreaIDtwo(){
+        var area = 0;          
+        if ($("#seachcity1").val() != "0"){
+            area = $("#seachcity1").val();
+        }else{
+            area = $("#seachprov1").val();
         }
         return area;
     }
@@ -414,43 +390,64 @@ var stop = false;
 
     $('#pub').click(function(){
         _checkInput();
-        //左侧边栏通栏
-        var ucRighthei1 = $('.ucRight').height();//初始高度
-        $('.ucLeft').css('height',ucRighthei1 + 'px');
-        //窗口size改变
-        $(window).resize(function() {
-            var ucRighthei2 = $('.ucRight').height();
-            $('.ucLeft').css('height',ucRighthei2 + 'px');
-        });
 
         if( permission != 1){
             return false;
         }
-        var token = $.cookie('token');
-        // token = token.replace(/\'/g,"");
-        $('#TypeID').val(getNum(window.location.pathname));
-        $('#token').val(token);
 
         var areaID = getAreaID();
         var ProArea =  getAreaNamebyID(areaID);
 
+@yield('zqr')
+@yield('shijian')
+        
         $('#ProArea').val(ProArea);
         var data = $('form').serialize();
-        console.log(data);
-        return false;
+        // console.log(data);
+        // return false;
 
         // var token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzMyIsImlzcyI6Imh0dHA6XC9cL2FwaXRlc3Queml5YXdhbmcuY29tXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOiIxNDc0Nzk0NTQyIiwiZXhwIjoiMTQ3NTM5OTM0MiIsIm5iZiI6IjE0NzQ3OTQ1NDIiLCJqdGkiOiJmNmFhNDRhODA4ODBlZjAxNzE3NWJmYTZhNDczMWJiZCJ9.ho521A0Prh6LcNAPNcmQEF2H_VTQBXstSwf2m4yeXpA";
-        $(this).attr('disabled', true);
+        $(this).prop('disabled', true);
+        var _this = this;
         // console.log(data);
-        $.ajax({
-            url:"http://api.ziyawang.com/v1/project/create?" + data,
-            type:"POST",
-            data:data,
-            dataType:"json",
-            success:function(msg){
-                layer.alert('发布成功，请等待审核，您也可以主动查看服务方。', {icon: 1,title:0,closeBtn:0,yes:function(){window.location = "{{url('/ucenter/mypro')}}"}});
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            area: '500px',
+            skin: 'layer-submit',
+            shadeClose: false,
+            content: '<div class="needDo"><div class="need-top">重要提示</div><div class="need-title">您是否对您发布的信息进行真实性承诺，承诺后更能吸引服务方主动联系您，更有助于达成您的需求。无论承诺与否都不影响您的正常发布。</div></div>',
+            btn: ['承 诺','不承诺'],
+            yes:function(){
+                $.ajax({
+                    url:"http://api.ziyawang.com/v1/test/project/create?" + data + "&Promise=承诺",
+                    type:"POST",
+                    data:data + "&Promise=承诺",
+                    dataType:"json",
+                    error:function(){
+                        $(_this).removeAttr('disabled');
+                    },
+                    success:function(msg){
+                        layer.alert('发布成功，请等待审核，您也可以主动查看服务方。', {icon: 1,title:0,closeBtn:0,yes:function(){window.location = "{{url('/ucenter/mypro')}}"}});
+                    }
+                });
+            },
+            btn2:function(){
+                $.ajax({
+                    url:"http://api.ziyawang.com/v1/test/project/create?" + data + "&Promise=承诺",
+                    type:"POST",
+                    data:data + "&Promise=不承诺",
+                    dataType:"json",
+                    error:function(){
+                        $(_this).removeAttr('disabled');
+                    },
+                    success:function(msg){
+                        layer.alert('发布成功，请等待审核，您也可以主动查看服务方。', {icon: 1,title:0,closeBtn:0,yes:function(){window.location = "{{url('/ucenter/mypro')}}"}});
+                    },
+                });
             }
-        });
+        })
     });
 
 
@@ -487,7 +484,20 @@ var stop = false;
 
 <script>
 $(function () {
-    new YMDselect('year1','month1');
+
+    $('.judicial .inp-radio').click(function() {
+        $(this).toggleClass('checked');
+        if($(this).hasClass('checked')){
+            $(this).parent().children('.hire').removeAttr('disabled');
+        }else{
+            $(this).parent().children('.hire').attr('disabled', 'disabled');
+        }
+    });
+    var token = $.cookie('token');
+    // token = token.replace(/\'/g,"");
+    $('#TypeID').val(getNum(window.location.pathname));
+    $('#token').val(token);
+    
     $(".row-select").change(function() {
         if($(this).children("option:selected").hasClass("grayColor")){
             $(this).css({"color":"#999"});   
@@ -508,21 +518,78 @@ $(function () {
     $('.spot-row .inp-radio').click(function() {
         $(this).toggleClass('checked');
     });
-    // radio input
-    $('.judicial .inp-radio').click(function() {
-        $(this).toggleClass('checked');
-        if($(this).hasClass('checked')){
-            $(this).parent().children('.commis').removeAttr('readonly');
+    
+    $(".row-select").change(function() {
+        if($(this).children("option:selected").hasClass("grayColor")){
+            $(this).css({"color":"#999"});   
         }else{
-            $(this).parent().children('.commis').attr('readonly', 'readonly');
+            $(this).css({"color":"#333"});   
         }
     });
+    // House land switch
+    $('.opts').click(function() {
+        $(this).addClass('checked');
+        $(this).parent().siblings().children('.opts').removeClass('checked');
+    });
+    // The radio button switch about transfer
+    $('.transfer .inp-radio').click(function() {
+        $(this).addClass('checked');
+        $(this).parent().siblings().children('.inp-radio').removeClass('checked');
+    });
 
+    // depute release
+    $('.depute').on('click',function(){
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 0,
+            area: '500px',
+            skin: 'layer-depute',
+            shadeClose: true,
+            content: '<div class="deputeBox"><div class="dep-title">请您留下姓名及联系方式，以便资芽网客服人员与您联系，帮您发布。客服电话：400-898-8557</div><div class="row"><span class="row-left"><em class="must">*</em>联系人姓名：</span><input id="ConnectPerson" type="text" class="inps" placeholder="请输入"></div><div class="row"><span class="row-left"><em class="must">*</em>联系电话：</span><input id="ConnectPhone" type="text" class="inps" placeholder="请输入"></div></div>',
+            btn: ['确 定','返 回'], 
+            btn1:function(){
+                var token = $.cookie('token');
+                var TypeID = $('#TypeID').val();
+                var ConnectPerson = $('#ConnectPerson').val();
+                var ConnectPhone = $('#ConnectPhone').val();
+                var Channel = 'PC';
+                if(!ConnectPhone || !ConnectPerson){
+                    layer.alert('请填写完整!');
+                    return false;
+                }
+                var data = {'token':token,'TypeID':TypeID,'ConnectPerson':ConnectPerson,'ConnectPhone':ConnectPhone,'Channel':Channel,'access_token':'token'};
+                $.ajax({
+                    url:"http://api.ziyawang.com/v1/v2/entrust?access_token=token&token="+token+"&TypeID="+TypeID+"&ConnectPhone="+ConnectPhone+"&ConnectPerson="+ConnectPerson+"&Channel="+Channel,
+                    type:"POST",
+                    data:data,
+                    dataType:"json",
+                    success:function(msg){
+                        if(msg.status_code == "200"){
+                            layer.open({
+                                type: 1,
+                                title: false,
+                                closeBtn: 0,
+                                area: '500px',
+                                skin: 'layer-depSuc',
+                                shadeClose: true,
+                                // content: '<div class="deputeSuc"><div class="depute-top">/(ㄒoㄒ)/~~ 信息提交失败了</div><div class="depute-wait">请您返回重新填写！</div></div>',        //提交失败时content内容
+                                content: '<div class="deputeSuc"><div class="depute-top">信息已提交</div><div class="depute-wait">请您耐心等待资芽网客服人员进行确认！</div></div>',
+                                btn:['返 回','首 页'], btn2:function(){
+                                    window.location.href='http://ziyawang.com/'
+                                }
+                            })
+                        }
+                    }
+                });
+            }
+        });
+    })
 
     var token = $.cookie('token');
         // var token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaXNzIjoiaHR0cDpcL1wvYXBpLnppeWF3YW5nLmNvbVwvdjFcL2F1dGhcL2xvZ2luIiwiaWF0IjoiMTQ3NjM0OTE0MCIsImV4cCI6IjIxMDcwNjkxNDAiLCJuYmYiOiIxNDc2MzQ5MTQwIiwianRpIjoiMmIxOWNkOGNmYjIzNDZkZWQyYmU4ZjgwMGJjNjY5NjMifQ.gWBZgej8Z7DKEP_h5yBltEQvZ_KqBfy_uUqZvvksiDY";
     if(!token){
-        // window.location = "{{url('/login')}}";
+        window.location = "{{url('/login')}}";
         return false;
     }
 
@@ -533,6 +600,9 @@ $(function () {
     }
 
     $('#container').show();
+
+
+
     $.ajax({
         url: 'http://api.ziyawang.com/v1/auth/me?access_token=token&token=' + token,
         type: 'POST',

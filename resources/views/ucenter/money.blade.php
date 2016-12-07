@@ -19,31 +19,58 @@
                 <div class="diffPrice">
                     <ul class="firstStage clearfix">
                         <li class="stage1 current">
-                            <a href="javascript:;"><span class="differentYabi1"><em></em>10芽币</span><span>充值：<strong>1</strong>元</span><i></i></a>
+                            <a href="javascript:;" class="noPref">
+                                <span class="differentYabi1"><em></em>10芽币</span>
+                                <span>充值：<strong class="ybsl">1</strong>元</span><i></i>
+                            </a>
                         </li>
                         <li class="stage1">
-                            <a href="javascript:;"><span class="differentYabi2"><em></em>120芽币</span><span>充值：<strong>12</strong>元</span><i></i></a>
+                            <a href="javascript:;" class="noPref">
+                                <span class="differentYabi2"><em></em>120芽币</span>
+                                <span>充值：<strong class="ybsl">12</strong>元</span><i></i>
+                            </a>
                         </li>
                         <li class="stage1">
-                            <a href="javascript:;"><span class="differentYabi3"><em></em>500芽币</span><span>充值：<strong>50</strong>元</span><i></i></a>
+                            <a href="javascript:;">
+                                <span class="differentYabi3"><em></em>500芽币</span>
+                                <strong class="give">（额外赠送50芽币）</strong>
+                                <span>充值：<strong class="ybsl">50</strong>元</span><i></i>
+                            </a>
                         </li>
                         <li class="stage1">
-                            <a href="javascript:;"><span class="differentYabi4"><em></em>1080芽币</span><span>充值：<strong>108</strong>元</span><i></i></a>
+                            <a href="javascript:;">
+                                <span class="differentYabi5"><em></em>1080芽币</span>
+                                <strong class="give">（额外赠送150芽币）</strong>
+                                <span>充值：<strong class="ybsl">108</strong>元</span><i></i>
+                            </a>
                         </li>
                         <li class="stage1">
-                            <a href="javascript:;"><span class="differentYabi5"><em></em>3880芽币</span><span>充值：<strong>388</strong>元</span><i></i></a>
+                            <a href="javascript:;">
+                                <span class="differentYabi6"><em></em>2880芽币</span>
+                                <strong class="give">（额外赠送580芽币）</strong>
+                                <span>充值：<strong class="ybsl">288</strong>元</span><i></i>
+                            </a>
                         </li>
                         <li class="stage1">
-                            <a href="javascript:;"><span class="differentYabi6"><em></em>5880芽币</span><span>充值：<strong>588</strong>元</span><i></i></a>
+                            <a href="javascript:;">
+                                <span class="differentYabi7"><em></em>5880芽币</span>
+                                <strong class="give">（额外赠送1500芽币）</strong>
+                                <span>充值：<strong class="ybsl">588</strong>元</span><i></i>
+                            </a>
                         </li>
                         <li class="stage1">
-                            <a href="javascript:;"><span class="differentYabi7"><em></em>12980芽币</span><span>充值：<strong>1298</strong>元</span><i></i></a>
+                            <a href="javascript:;">
+                                <span class="differentYabi8"><em></em>10980芽币</span>
+                                <strong class="give">（额外赠送3300芽币）</strong>
+                                <span>充值：<strong class="ybsl">1098</strong>元</span><i></i>
+                            </a>
                         </li>
                         <li class="stage1">
-                            <a href="javascript:;"><span class="differentYabi8"><em></em>39980芽币</span><span>充值：<strong>3998</strong>元</span><i></i></a>
-                        </li>
-                        <li class="stage1">
-                            <a href="javascript:;"><span class="differentYabi9"><em></em>64980芽币</span><span>充值：<strong>6498</strong>元</span><i></i></a>
+                            <a href="javascript:;">
+                                <span class="differentYabi9"><em></em>19980芽币</span>
+                                <strong class="give">（额外赠送7000芽币）</strong>
+                                <span>充值：<strong class="ybsl">1998</strong>元</span><i></i>
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -143,6 +170,7 @@
             return result?decodeURIComponent(result[2]):null;
         }
         var ProjectID   = getQueryString("ProjectID")   ? getQueryString("ProjectID")  : null;
+        var TypeID   = getQueryString("TypeID")   ? getQueryString("TypeID")  : null;
 
         //声明input昵称宽度随文字长度而变化
         var textWidth = function(text){ 
@@ -173,7 +201,7 @@
             $('.poplayer').hide();
             $('.popWx').hide();
             if(ProjectID){
-                window.location.href = "http://ziyawang.com/project/" + ProjectID;
+                window.location.href = "http://ziyawang.com/project/" + TypeID + "/" + ProjectID;
                 return false;
             }
             window.location.reload(); 
@@ -194,7 +222,7 @@
         //选中前三个价格
         $('.firstStage .stage1').click(function() {
             $(this).addClass('current').siblings().removeClass('current');
-            amount = $(this).find('strong').html();
+            amount = $(this).find('strong[class="ybsl"]').html();
         });
         //点击第四个出来的内容
         $('.selectedPrice li').click(function() {
@@ -219,7 +247,7 @@
             }
             var subject = '充值金额';
             $.ajax({
-                url:"http://api.ziyawang.com/v1/pay?access_token=token&amount=" + amount*100 + "&channel=" + channel + "&subject=" + subject + "&ProjectID=" + ProjectID + "&token=" + token,
+                url:"http://api.ziyawang.com/v1/v2/pay?access_token=token&amount=" + amount*100 + "&channel=" + channel + "&subject=" + subject + "&ProjectID=" + ProjectID + "&token=" + token,
                 type:"POST",
                 data:{'amount':amount*100,'channel':channel,'subject':subject,'ProjectID': ProjectID},
                 dataType:'json',

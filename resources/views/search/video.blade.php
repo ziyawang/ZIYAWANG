@@ -9,9 +9,9 @@
 @section('content')
 <link type="text/css" rel="stylesheet" href="{{url('/css/videos.css')}}?v=1.0.4" />
 <!-- 二级banner -->
-<div class="find_service">
+<div class="find_service temp">
     <ul>
-        <li></li>
+        <li><a href="{{url('/course')}}"></a></li>
     </ul>
 </div>
 <!-- 主体 -->
@@ -133,6 +133,9 @@ $(function(){
         });
         var html = _queryVideo(data);
         $('#videolist').html(html);
+        if(counts == "0"){
+            $("#videolist").html('<li style="font-size:16px;">抱歉没有找到您想要的结果！</li>');
+        }
         //视频划过
         // mouseover videonav
         $('.videoNav li').hover(function(){

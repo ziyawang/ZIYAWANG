@@ -154,7 +154,7 @@
                 <span class="page-num">3/5</span>
             </div>
             <div class="assess-r">
-                <a href="javascript:;" class="assess-btn ma24">免&nbsp;费&nbsp;发&nbsp;布</a>
+                <a href="javascript:;" id="pub" class="assess-btn ma24">免&nbsp;费&nbsp;发&nbsp;布</a>
                 <a href="javascript:;" class="assess-btn ma24 online-serv">在&nbsp;线&nbsp;客&nbsp;服</a>
                 <span class="ma24 assess-hot">400-898-8557</span>
                 <div class="assess-img">
@@ -169,6 +169,15 @@
     function numLimit(id,str) {
         id.value = str.replace(/[^\d.]/g,'');
     }
+    $('#pub').click(function(){
+        var token = $.cookie('token');
+        if(!token){
+            window.open("{{url('/login')}}","status=yes,toolbar=yes, menubar=yes,location=yes"); 
+            return false;
+        }
+
+        window.location = "{{url('/ucenter/index')}}";
+    })
     $(function(){
         $('.online-serv').click(function() {
             window.open('http://p.qiao.baidu.com/cps2/chatIndex?reqParam=%7B%22from%22%3A0%2C%22sid%22%3A%22-100%22%2C%22tid%22%3A%22-1%22%2C%22ttype%22%3A1%2C%22siteId%22%3A%229573093%22%2C%22userId%22%3A%2221573996%22%7D','_blank','width=600,height=600');

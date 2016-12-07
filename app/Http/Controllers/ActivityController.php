@@ -33,4 +33,12 @@ class ActivityController extends Controller
     function testResult(){
         return view('test.result');
     }
+
+    function index(){
+        return view('activity.index');
+    }
+
+    function report(){
+        return view('activity.report');
+    }
 }

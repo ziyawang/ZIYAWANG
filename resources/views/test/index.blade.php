@@ -49,7 +49,7 @@
                 <button type="button" class="assess-btn ml30" id="start">开&nbsp;始&nbsp;评&nbsp;估</button>
             </div>
             <div class="mt96 assess-r">
-                <a href="javascript:;" class="assess-btn ma24">免&nbsp;费&nbsp;发&nbsp;布</a>
+                <a href="javascript:;" id="pub" class="assess-btn ma24">免&nbsp;费&nbsp;发&nbsp;布</a>
                 <a href="javascript:;" class="assess-btn ma24 online-serv">在&nbsp;线&nbsp;客&nbsp;服</a>
                 <span class="ma24 assess-hot">400-898-8557</span>
                 <div class="assess-img">
@@ -64,6 +64,15 @@
     function numLimit(id,str) {
         id.value = str.replace(/[^\d.]/g,'');
     }
+    $('#pub').click(function(){
+        var token = $.cookie('token');
+        if(!token){
+            window.open("{{url('/login')}}","status=yes,toolbar=yes, menubar=yes,location=yes"); 
+            return false;
+        }
+
+        window.location = "{{url('/ucenter/index')}}";
+    })
     $(function(){
         $(".options select").change(function() {
             if($(this).children("option:selected").hasClass("grayColor")){

@@ -11,9 +11,9 @@
 <script src="{{asset('/js/jquery.md5.js')}}"></script>
 <script src="{{asset('/org/layer/layer.js')}}"></script>
 <!-- 二级banner -->
-<div class="find_service">
+<div class="find_service temp">
     <ul>
-        <li></li>
+        <li><a href="{{url('/course')}}"></a></li>
     </ul>
 </div>
 <!--视频导航 search框 -->
