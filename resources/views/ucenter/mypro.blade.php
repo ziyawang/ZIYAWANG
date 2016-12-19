@@ -142,7 +142,7 @@
                         break;
 
                     case "16":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef2'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>标的物类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>规划用途：<strong>" + Usefor + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>转让价：</strong>" + TransferMoney + "万元元</span><span></span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef2'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>标的物类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>规划用途：<strong>" + Usefor + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>转让价：</strong>" + TransferMoney + "万元</span><span></span></div></div></a></li>";
                         break;
 
                     case "17":
@@ -154,7 +154,7 @@
                         break;
 
                     case "19":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef5'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>处置方式：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>逾期时间：<strong>" + Month + "月</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>债权金额：</strong>" + Money + "万元</span><span></span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef5'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>处置方式：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>逾期时间：<strong>" + Month + "月</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>债权金额：</strong>" + TotalMoney + "万元</span><span></span></div></div></a></li>";
                         break;
 
                     case "20":
@@ -174,15 +174,6 @@
             if(counts == 0){
                 $("#list").html('抱歉，您还没有发布信息！');
             }
-          
-            //左侧边栏通栏
-            var ucRighthei1 = $('.ucRight').height();//初始高度
-            $('.ucLeft').css('height',ucRighthei1 + 'px');
-            //窗口size改变
-            $(window).resize(function() {
-                var ucRighthei2 = $('.ucRight').height();
-                $('.ucLeft').css('height',ucRighthei2 + 'px');
-            }); 
 
             $('.wait').click(function(){
                 layer.msg('信息审核中，请等待！');

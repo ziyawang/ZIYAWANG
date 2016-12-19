@@ -160,14 +160,6 @@
                                 $("input[name='" + name + "']").val('/user/' + file.name);
                                 $(".preview[src='']:first").attr({'src':encodeURI('http://images.ziyawang.com/user/'+file.name), 'picname':file.name}).parent().show();
                                 $('#nopz').html('');
-                                //左侧边栏通栏
-                                var ucRighthei1 = $('.ucRight').height();//初始高度
-                                $('.ucLeft').css('height',ucRighthei1 + 'px');
-                                //窗口size改变
-                                $(window).resize(function() {
-                                    var ucRighthei2 = $('.ucRight').height();
-                                    $('.ucLeft').css('height',ucRighthei2 + 'px');
-                                });
                             });
                         }
                     });
@@ -220,16 +212,6 @@
             // window.location = "http://ziyawang.com/ucenter"
         }  
     });
-
-    //左侧边栏通栏
-        var ucRighthei1 = $('.ucRight').height();//初始高度
-        $('.ucLeft').css('height',ucRighthei1 + 'px');
-        //窗口size改变
-        $(window).resize(function() {
-            var ucRighthei2 = $('.ucRight').height();
-            $('.ucLeft').css('height',ucRighthei2 + 'px');
-        });
-
     //得到地区码
     function getAreaID(){
         var area = 0;          

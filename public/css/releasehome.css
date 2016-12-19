@@ -286,7 +286,7 @@ body{background:#fff;}
 .tradeTitle .td3,.tradeUl li .td3{width: 90px;padding:0 18px;}
 .tradeUl li{overflow: hidden;color:#333;/*font-size: 16px;border-bottom: 1px solid #b8b8b8;*/padding:10px 0;}
 .tradeUl li:nth-child(even){background:#f5f5f5;}
-.tradeUl li span{display: block;float: left;text-align: center;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;}
+.tradeUl li span{display: block;float: left;text-align: center;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;height: 21px;}
 .tradeUl li .td1{text-align: left;}
 .tradeUl li .td3{color:#888;}
 /*password&&recharge change success*/
@@ -408,3 +408,30 @@ body{background:#fff;}
 .diffPrice a span{line-height: 20px;}
 .diffPrice .noPref span{line-height: 24px;}
 .give{font-size: 12px;color:#ff2f2f;display: block;}
+/*2016-12-13===========member system new add*/
+.member-list{padding:30px 0 30px 87px;}
+.member-list .current{border: 2px solid #ffad00;}
+.member-list .current i{display: block;}
+.member-fee{display: inline-block;width: 156px;height: 57px;line-height: 57px;border: 1px solid #c0c0c0;text-align: center;position: relative;margin: 0 20px;color:#000;font-size: 16px;}
+.member-fee i{display: none; position: absolute; width: 26px; height: 15px; background: url(../img/zhifu.png) no-repeat -485px -54px; bottom: 0; right: 0;}
+.member-icon{display: block;float: left;width: 40px;height: 34px;background:url(../img/member_icon.png) no-repeat 0 0;margin: 12px 8px 0 0;}
+.qi{background-position: -47px 0;}
+.gu{background-position: -94px 0;}
+.rong{background-position: -141px 0;}
+.ge{background-position: -188px 0;}
+.svip{background-position: -235px 0;}
+.member-sys .amountTitle{line-height: 56px;}
+.member-sys .amtLeft{width:auto;padding-left: 5px;}
+.member-title{font-weight: normal; color: #333; width: 892px; border-bottom: 3px solid #c0c0c0; margin-bottom: 30px;}
+.member-title a{width: 108px;padding-left:25px;height: 35px;line-height: 35px;display: block;font-size: 18px;color:#333;letter-spacing: 3px;background:-webkit-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:-moz-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:-ms-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:linear-gradient(top,#efefef,#f4f4f4,#ffffff);border:1px solid #c2c2c2;border-bottom: 0 none;border-radius: 10px 10px 0 0;box-shadow: 0 2px 0 #fff inset;}
+.member-sys .infoText:before,.member-sys .infoText:after{left:54px;}
+.member-record{width: 890px;border: 1px solid #b8b8b8;border-radius: 4px;padding-bottom: 25px;}
+.member-rec-top{font-size: 20px;color:#000;width: 850px;margin:0 auto;padding: 0 10px;border-bottom: 1px solid #b8b8b8;overflow: hidden;}
+.member-rec-lt{float: left;padding:20px 0 12px;}
+.member-back{float: right;width: 130px;height: 36px;background:url(../img/member_bg.png) no-repeat;margin-top: 15px;}
+.member-sys .tradeList{width: 870px;margin:0 auto;}
+.member-sys .tradeTitle{border-top: none;border-left: 1px solid #b8b8b8;border-right: 1px solid #b8b8b8;}
+.member-sys .tradeUl{border: 1px solid #d8d8d8;}
+.member-sys .td1,.member-sys .tradeUl .td1{width: 142px;padding: 0;text-align: center;}
+.member-sys .td2,.member-sys .tradeUl li .td2{width: 350px;}
+.member-sys .td3,.member-sys .tradeUl li .td3{width: 151px;}

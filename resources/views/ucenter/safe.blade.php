@@ -91,14 +91,6 @@ $(function () {
             sensor.remove(); 
             return width;
         };
-        //左侧边栏通栏
-        var ucRighthei1 = $('.ucRight').height();//初始高度
-        $('.ucLeft').css('height',ucRighthei1 + 'px');
-        //窗口size改变
-        $(window).resize(function() {
-            var ucRighthei2 = $('.ucRight').height();
-            $('.ucLeft').css('height',ucRighthei2 + 'px');
-        });
         //nickname 修改
         $('.nameChange').click(function() {
             $(this).parent().hide().next().show();

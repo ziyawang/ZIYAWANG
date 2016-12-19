@@ -16,7 +16,7 @@
                         return result?decodeURIComponent(result[2]):null;
                     }
                     var identity = getQueryString("identity")?getQueryString("identity"):"0";
-                    var area = (getQueryString("area") && getQueryString("area")==null)?getQueryString("area"):"0";
+                    var area = (getQueryString("area") && getQueryString("area")!=null)?getQueryString("area"):"0";
                     $('#seachprov').val(area.substr(0,2));
                     changeComplexProvince(area.substr(0,2), sub_array, 'seachcity', 'seachdistrict');
                     $('#seachcity').val(area);

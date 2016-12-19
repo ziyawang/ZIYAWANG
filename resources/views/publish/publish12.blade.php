@@ -16,7 +16,7 @@
                         return result?decodeURIComponent(result[2]):null;
                     }
                     var identity = getQueryString("identity")?getQueryString("identity"):"0";
-                    var area = (getQueryString("area") && getQueryString("area")==null)?getQueryString("area"):"0";
+                    var area = (getQueryString("area") && getQueryString("area")!=null)?getQueryString("area"):"0";
                     $('#seachprov').val(area.substr(0,2));
                     changeComplexProvince(area.substr(0,2), sub_array, 'seachcity', 'seachdistrict');
                     $('#seachcity').val(area);
@@ -47,11 +47,11 @@
                             <span class="row-right">
                                 <div class="house">
                                     <span class="inp-radio opts checked"><input name="AssetType" value="房产" type="radio" class="radios bitian" id="house" /></span>
-                                    <label for="house" class="inp-label">房产</label>
+                                    <label for="house" class="inp-label">房产</label><em class="wem2"></em>
                                 </div>
                                 <div class="land">
                                     <span class="inp-radio opts" id="tudi"><input name="AssetType" value="土地" type="radio" class="radios bitian" id="land" /></span>
-                                    <label for="land" class="inp-label">土地</label><em class="wem2"></em>
+                                    <label for="land" class="inp-label">土地</label>
                                 </div>
                             </span>
                             <script>

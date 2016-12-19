@@ -142,15 +142,6 @@
             })
 
             $("#billlist").html(html);
-
-            //左侧边栏通栏
-            var ucRighthei1 = $('.ucRight').height();//初始高度
-            $('.ucLeft').css('height',ucRighthei1 + 'px');
-            //窗口size改变
-            $(window).resize(function() {
-                var ucRighthei2 = $('.ucRight').height();
-                $('.ucLeft').css('height',ucRighthei2 + 'px');
-            });
         }
 
 
@@ -162,14 +153,6 @@
             sensor.remove(); 
             return width;
         };
-        //左侧边栏通栏
-        var ucRighthei1 = $('.ucRight').height();//初始高度
-        $('.ucLeft').css('height',ucRighthei1 + 'px');
-        //窗口size改变
-        $(window).resize(function() {
-            var ucRighthei2 = $('.ucRight').height();
-            $('.ucLeft').css('height',ucRighthei2 + 'px');
-        });
 
         $('.transaction a').click(function(event) {
             $(this).addClass('current').siblings().removeClass('current');

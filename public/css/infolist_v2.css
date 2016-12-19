@@ -131,7 +131,7 @@ textarea:-ms-input-placeholder {
 .paper{float: left;}
 .shijian{float: right;}
 /*v3========vip poplayer*/
-.member{padding: 30px 55px 5px;text-align: center;font-size: 20px;color:#000;border-top: 3px solid #fdd000;line-height: 35px;}
+.member{padding: 30px 50px 5px;text-align: center;font-size: 20px;color:#000;border-top: 3px solid #fdd000;line-height: 35px;}
 .layer-member .layui-layer-btn{text-align: center;padding-bottom: 25px;}
 .layer-member .layui-layer-btn .layui-layer-btn0{border-radius:5px;width: 154px;height: 44px;line-height: 44px;background:#fdd000;text-align: center;padding:0;border: none;font-size: 16px;}
 .layer-member .layui-layer-btn .layui-layer-btn0:hover{background:#ffa800;box-shadow: 0 1px 1px #7b3f00;}

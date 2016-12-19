@@ -484,7 +484,7 @@ input.findinp::-webkit-input-placeholder,.login_tab_content input::-webkit-input
 .moreInfo a{color:#3a3a3b;}
 .moreInfo a:hover{color:#bf1443;}
 /*vip poplayer*/
-.member{padding: 30px 55px 5px;text-align: center;font-size: 20px;color:#000;border-top: 3px solid #fdd000;line-height: 35px;}
+.member{padding: 30px 50px 5px;text-align: center;font-size: 20px;color:#000;border-top: 3px solid #fdd000;line-height: 35px;}
 .layer-member .layui-layer-btn{text-align: center;padding-bottom: 25px;}
 .layer-member .layui-layer-btn .layui-layer-btn0{width: 154px;height: 44px;line-height: 44px;background:#fdd000;border-radius: 20px;text-align: center;padding:0;border: none;font-size: 16px;border-radius: 5px}
 .layer-member .layui-layer-btn .layui-layer-btn0:hover{background:#ffa800;box-shadow: 0 1px 1px #7b3f00;}

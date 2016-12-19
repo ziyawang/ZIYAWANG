@@ -28,7 +28,7 @@
 .item .checked{background-position: -15px 0;}
 .item label{cursor:pointer;}
 .status,.multi{width: 14px;height: 14px;overflow: hidden;position: relative;background:url(../img/assess3.png) no-repeat 0 0;display: inline-block;vertical-align: middle;margin-right: 5px;cursor: pointer;}
-.radios{opacity: 0;position: absolute;margin-left: -15px;}
+.radios{opacity: 0;position: absolute;width: 100%;height: 100%;}
 .assess-btn2{padding-top: 45px;}
 .assess-btn2 a{display: inline-block;margin-right: 88px;margin-left: 16px;}
 .page-num{display: block;padding:40px 0 30px 215px;}
@@ -48,11 +48,11 @@
 .assess-btn:active{top:1px;}
 /*pub*/
 
-.assess-end{padding:30px 0 25px;text-align: center;font-size: 1.33em;color:#ff8909;letter-spacing: 0.2em;}
-.better{display: block;text-align: center;}
+.assess-end{padding:30px 90px 25px 0;text-align: center;font-size: 1.33em;color:#ff8909;letter-spacing: 0.2em;}
+.better{display: block;text-align: center;padding-right: 90px;}
 .inps-phonenum{margin:30px auto 35px;width: 210px;height: 32px;line-height: 32px;border: 1px solid #e6e6e6;display: block;font-size: 14px;padding-left: 6px;text-align: center;}
 .assess-sure{margin: 0 auto;}
 
-.result{padding: 20px 93px 50px 0;text-align: justify;line-height: 1.6;}
+.result{padding: 20px 93px 50px 0;text-align: justify;line-height: 1.6;text-indent: 2em;}
 .result-btn2{text-align: center;padding-right: 90px;}
 .result-btn2 a{display: inline-block;margin:0 82px;}

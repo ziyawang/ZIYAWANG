@@ -160,14 +160,6 @@
                                 $("input[name='" + name + "']").val('/user/' + file.name);
                                 $(".preview[src='']:first").attr({'src':encodeURI('http://images.ziyawang.com/user/'+file.name), 'picname':file.name}).parent().show();
                                 $('#nopz').html('');
-                                //左侧边栏通栏
-                                var ucRighthei1 = $('.ucRight').height();//初始高度
-                                $('.ucLeft').css('height',ucRighthei1 + 'px');
-                                //窗口size改变
-                                $(window).resize(function() {
-                                    var ucRighthei2 = $('.ucRight').height();
-                                    $('.ucLeft').css('height',ucRighthei2 + 'px');
-                                });
                             });
                         }
                     });
@@ -228,15 +220,6 @@
             $('.upload').remove();
         }
 
-        //左侧边栏通栏
-        var ucRighthei1 = $('.ucRight').height();//初始高度
-        $('.ucLeft').css('height',ucRighthei1 + 'px');
-        //窗口size改变
-        $(window).resize(function() {
-            var ucRighthei2 = $('.ucRight').height();
-            $('.ucLeft').css('height',ucRighthei2 + 'px');
-        });
-
         var token = $.cookie('token');
         if(role == 1 || role == 2 ){
             $.ajax({
@@ -281,15 +264,6 @@
                     $('#ServiceLocation').html(ServiceLocation);
                     $('.st_details').html(ServiceType);
                     $('#ServiceArea').html(ServiceArea);
-
-                    //左侧边栏通栏
-                    var ucRighthei1 = $('.ucRight').height();//初始高度
-                    $('.ucLeft').css('height',ucRighthei1 + 'px');
-                    //窗口size改变
-                    $(window).resize(function() {
-                        var ucRighthei2 = $('.ucRight').height();
-                        $('.ucLeft').css('height',ucRighthei2 + 'px');
-                    });
                 }
             })
         }

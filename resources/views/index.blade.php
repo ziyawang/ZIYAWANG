@@ -858,17 +858,41 @@ $(function () {
 	        var projectid = $(this).attr('projectid');
 	        var typeid = $(this).attr('typeid');
 	        var member = $(this).attr('member');
+	        var typename = $(this).attr('typename');
+            var right = $(this).attr('right');
+            var rightarr = new Array(); //定义一数组 
+                rightarr = right.split(","); //字符分割 
+            if(rightarr.indexOf(typeid)>-1){
+                window.open("http://ziyawang.com/project/"+typeid+"/"+projectid,"status=yes,toolbar=yes, menubar=yes,location=yes"); 
+                return false;
+            }
 	        if(member == 1){
+	        	checkLogin();
+		        if(stop){
+		            return false;
+		        }
+	            checkService();
+	            if(stop){
+	                // myFun('poplayer5');
+					if(member == 1){
+	                	layer.open({title:false,content:"<p style='text-align: center;font-size: 24px; border-bottom: 3px solid #fdd000;padding-bottom:20px;'>提示</p><p style='font-size:20px;text-align: justify;padding: 35px 15px 0;'>只有通过认证的服务方（开通会员）才可查看VIP信息 。</p>", btn: ['认证','取消'], btn1:function(){window.location.href="http://ziyawang.com/ucenter/confirm";}});
+	                } else if(member == 2){
+	                	layer.open({title:false,content:"<p style='text-align: center;font-size: 24px; border-bottom: 3px solid #fdd000;padding-bottom:20px;'>提示</p><p style='font-size:20px;text-align: justify;padding: 35px 15px 0;'>只有通过认证的服务方（消耗芽币）才可查看收费信息 。</p>", btn: ['认证','取消'], btn1:function(){window.location.href="http://ziyawang.com/ucenter/confirm";}});
+	                }
+	                stop = false;
+	                return false;
+	            }
                 layer.open({
                     type: 1,
                     title: false,
-                    closeBtn: 0,
+                    closeBtn: 1,
                     area: '500px',
                     skin: 'layer-member',
                     shadeClose: true,
-                    content: '<div class="member"><p>本条VIP信息只针对本类型会员免费开放，</p><p>详情请咨询会员专线：010-56052557</p></div>',
-                    btn: ['确 定'], btn1:function(){
-
+                    content: '<div class="member"><p>本条VIP信息只针对' + typename + '会员免费开放，</p><p>详情请咨询会员专线：010-56052557</p></div>',
+                    btn: ['去开通'], btn1:function(){
+                        window.open("http://ziyawang.com/ucenter/member","status=yes,toolbar=yes, menubar=yes,location=yes"); 
+                        return false;
                     }
                 });
                 return false;
@@ -900,7 +924,12 @@ $(function () {
 	            checkService();
 	            if(stop){
 	                // myFun('poplayer5');
-	                layer.open({title:false,content:"<p style='text-align: center;font-size: 24px; border-bottom: 3px solid #fdd000;padding-bottom:20px;'>提示</p><p style='font-size:20px;text-align: justify;padding: 35px 15px 0;'>只有通过认证的服务方（消耗芽币）才可查看收费信息 。</p>", btn: ['认证','取消'], btn1:function(){window.location.href="http://ziyawang.com/ucenter/confirm";}});
+	                if(member == 1){
+	                	layer.open({title:false,content:"<p style='text-align: center;font-size: 24px; border-bottom: 3px solid #fdd000;padding-bottom:20px;'>提示</p><p style='font-size:20px;text-align: justify;padding: 35px 15px 0;'>只有通过认证的服务方（开通会员）才可查看VIP信息 。</p>", btn: ['认证','取消'], btn1:function(){window.location.href="http://ziyawang.com/ucenter/confirm";}});
+	                } else if(member == 2){
+	                	layer.open({title:false,content:"<p style='text-align: center;font-size: 24px; border-bottom: 3px solid #fdd000;padding-bottom:20px;'>提示</p><p style='font-size:20px;text-align: justify;padding: 35px 15px 0;'>只有通过认证的服务方（消耗芽币）才可查看收费信息 。</p>", btn: ['认证','取消'], btn1:function(){window.location.href="http://ziyawang.com/ucenter/confirm";}});
+	                }
+	                stop = false;
 	                return false;
 	            }
 	            var account = parseInt($(this).attr('account'));
@@ -942,19 +971,26 @@ $(function () {
         var Price          = ('Price'          in data[index]) ? data[index].Price          : 0;
         var Member          = ('Member'          in data[index]) ? data[index].Member          : null;
         var Account          = ('Account'          in data[index]) ? data[index].Account          : 0;
+        var TypeName          = ('TypeName'          in data[index]) ? data[index].TypeName          : 0;
         var Picture   = ('PictureDes1'   in data[index]) ? data[index].PictureDes1   : null;
         if(!Picture){
         	Picture = "/erroy.png";
         }
         var PayFlag       = ('PayFlag'       in data[index]) ? data[index].PayFlag       : null;
         var userid       = ('userid'       in data[index]) ? data[index].userid       : null;
+        var right   = ('right'   in data[index]) ? data[index].right   : null;
+        if(right.length == 0 ){
+            right = "0";
+        }
         var priceattr = "price=" + Price;
         var projectidattr = " projectid=" + ProjectID;
         var protypeattr = " typeid=" + TypeID;
         var accountattr = " account=" + Account;
         var payflagattr = " payflag=" + PayFlag;
         var isselfattr = ' isself=0';
-        var memberattr = " member=0"
+        var memberattr = " member=0";
+        var rightattr = " right=" + right;
+        var typenameattr = " typename=" + TypeName;
         if(userid == $.cookie('userid')){
             isselfattr = ' isself=1';
         }
@@ -981,45 +1017,45 @@ $(function () {
         switch(TypeID)
         {
             case "1":
-            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + " class='listv2_item assetpack'><a href='javascript:;'><h3 class='typeTit'>资产包" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + TotalMoney + "万</span><div class='chracters_v2'><span class='charav2_span1'>" + FromWhere + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>" + AssetType + "</span></div><span class='watermark print2'></span></a></li>"
+            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + rightattr + typenameattr + " class='listv2_item assetpack'><a href='javascript:;'><h3 class='typeTit'>资产包" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + TotalMoney + "万</span><div class='chracters_v2'><span class='charav2_span1'>" + FromWhere + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>" + AssetType + "</span></div><span class='watermark print2'></span></a></li>"
             break;
             case "6":
-            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>融资信息" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + TotalMoney + "万</span><div class='chracters_v2'><span class='charav2_span1'>" + AssetType + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>股权融资</span></div><span class='watermark print3'></span></a></li>";
+            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + rightattr + typenameattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>融资信息" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + TotalMoney + "万</span><div class='chracters_v2'><span class='charav2_span1'>" + AssetType + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>股权融资</span></div><span class='watermark print3'></span></a></li>";
             break;
             case "12":
-            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>固定资产" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + TransferMoney + "万</span><div class='chracters_v2'><span class='charav2_span1'>房产</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>" + TransferType + "</span></div><span class='watermark print1'></span></a></li>";
+            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + rightattr + typenameattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>固定资产" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + TransferMoney + "万</span><div class='chracters_v2'><span class='charav2_span1'>房产</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>" + TransferType + "</span></div><span class='watermark print1'></span></a></li>";
             break;
 
             case "16":
-            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>固定资产" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + TransferMoney + "万</span><div class='chracters_v2'><span class='charav2_span1'>土地</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>" + TransferType + "</span></div><span class='watermark print1'></span></a></li>";
+            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + rightattr + typenameattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>固定资产" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + TransferMoney + "万</span><div class='chracters_v2'><span class='charav2_span1'>土地</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>" + TransferType + "</span></div><span class='watermark print1'></span></a></li>";
             break;
 
             case "17":
-            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>融资信息" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + TotalMoney + "万</span><div class='chracters_v2'><span class='charav2_span1'>" + AssetType + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>债权融资</span></div><span class='watermark print3'></span></a></li>";
+            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + rightattr + typenameattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>融资信息" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + Money + "万</span><div class='chracters_v2'><span class='charav2_span1'>" + AssetType + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>债权融资</span></div><span class='watermark print3'></span></a></li>";
             break;
 
             case "18":
-            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>企业商账" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + Money + "万</span><div class='chracters_v2'><span class='charav2_span1 widthem2'>" + Type + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>" + Rate + "</span></div><span class='watermark print4'></span></a></li>";
+            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + rightattr + typenameattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>企业商账" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + Money + "万</span><div class='chracters_v2'><span class='charav2_span1 widthem2'>" + Type + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>" + Rate + "</span></div><span class='watermark print4'></span></a></li>";
             break;
 
             case "19":
-            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>个人债权" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + TotalMoney + "万</span><div class='chracters_v2'><span class='charav2_span1 widthem2'>" + Type + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3 redChara'>" + Rate + "</span></div><span class='watermark print5'></span></a></li>";
+            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + rightattr + typenameattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>个人债权" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + TotalMoney + "万</span><div class='chracters_v2'><span class='charav2_span1 widthem2'>" + Type + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3 redChara'>" + Rate + "</span></div><span class='watermark print5'></span></a></li>";
             break;
 
             case "20":
-            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>法拍资产" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + Money + "万</span><div class='chracters_v2'><span class='charav2_span1'>" + AssetType + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>" + State + "</span></div><span class='watermark print6'></span></a></li>";
+            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + rightattr + typenameattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>法拍资产" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + Money + "万</span><div class='chracters_v2'><span class='charav2_span1'>" + AssetType + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>" + State + "</span></div><span class='watermark print6'></span></a></li>";
             break;
 
             case "21":
-            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>法拍资产" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + Money + "万</span><div class='chracters_v2'><span class='charav2_span1'>" + AssetType + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>" + State + "</span></div><span class='watermark print6'></span></a></li>";
+            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + rightattr + typenameattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>法拍资产" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + Money + "万</span><div class='chracters_v2'><span class='charav2_span1'>" + AssetType + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>" + State + "</span></div><span class='watermark print6'></span></a></li>";
             break;
 
             case "22":
-            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>法拍资产" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + Money + "万</span><div class='chracters_v2'><span class='charav2_span1'>" + AssetType + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>" + State + "</span></div><span class='watermark print6'></span></a></li>";
+            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + rightattr + typenameattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>法拍资产" + vip + "</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + Picture + "' /></span><span class='money_v2'>￥ " + Money + "万</span><div class='chracters_v2'><span class='charav2_span1'>" + AssetType + "</span><span class='charav2_span2'>" + ProArea + "</span><span class='charav2_span3'>" + State + "</span></div><span class='watermark print6'></span></a></li>";
             break;
 
             case "99":
-            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>处置公告</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + NewsLogo + "' /></span><div class='disposev2'>" + Brief + "</div><span class='tagBold'>" + NewsAuthor + "</span><span class='watermark print7'></span></a></li>";
+            var html = "<li " + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + rightattr + typenameattr + " class='listv2_item'><a href='javascript:;'><h3 class='typeTit'>处置公告</h3><span class='infoImgv2'><img src='http://images.ziyawang.com/" + NewsLogo + "' /></span><div class='disposev2'>" + Brief + "</div><span class='tagBold'>" + NewsAuthor + "</span><span class='watermark print7'></span></a></li>";
             break;
         }
         return html;

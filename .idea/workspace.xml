@@ -2,40 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e45ae94a-5e71-4256-9264-c3d0762d3791" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/publish/assetpackage.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/publish/business.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/publish/finance-debt.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/publish/finance-stock.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/publish/fixed-house.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/publish/fixes-land.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/publish/foreclosed-car.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/publish/foreclosed-house.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/publish/foreclosed-land.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/publish/individual.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/iconfont/iconfont.eot" afterPath="$PROJECT_DIR$/public/iconfont/iconfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/iconfont/iconfont.ttf" afterPath="$PROJECT_DIR$/public/iconfont/iconfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/iconfont/iconfont.woff" afterPath="$PROJECT_DIR$/public/iconfont/iconfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/b_icons.png" afterPath="$PROJECT_DIR$/public/img/b_icons.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/img/icons.png" afterPath="$PROJECT_DIR$/public/img/icons.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/IndexController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProjectController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/UCenterController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/UCenterController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/fixed.css" afterPath="$PROJECT_DIR$/public/css/fixed.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/newsinfo.css" afterPath="$PROJECT_DIR$/public/css/newsinfo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/public.css" afterPath="$PROJECT_DIR$/public/css/public.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/releasehome.css" afterPath="$PROJECT_DIR$/public/css/releasehome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/iconfont/demo.css" afterPath="$PROJECT_DIR$/public/iconfont/demo.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/iconfont/iconfont.css" afterPath="$PROJECT_DIR$/public/iconfont/iconfont.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/iconfont/iconfont.svg" afterPath="$PROJECT_DIR$/public/iconfont/iconfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/fs.js" afterPath="$PROJECT_DIR$/public/js/fs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/publish.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/publish.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/prolist2.blade.php" afterPath="$PROJECT_DIR$/resources/views/prolist2.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/publish/publish1.blade.php" afterPath="$PROJECT_DIR$/resources/views/publish/publish1.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/ucenter/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/ucenter/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/ucenter/money.blade.php" afterPath="$PROJECT_DIR$/resources/views/ucenter/money.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/ucenter/mycollect.blade.php" afterPath="$PROJECT_DIR$/resources/views/ucenter/mycollect.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/ucenter/mypro.blade.php" afterPath="$PROJECT_DIR$/resources/views/ucenter/mypro.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" />
     </list>
     <ignored path="ZIYAWANG.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,12 +23,12 @@
     <favorites_list name="ZIYAWANG" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="ProjectController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1863">
-              <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+            <state relative-caret-position="855">
+              <caret line="87" column="8" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -126,7 +93,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -201,13 +168,14 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../1101api" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -223,32 +191,33 @@
       <option name="presentableId" value="Default" />
       <updated>1480669054970</updated>
       <workItem from="1480669056247" duration="1732000" />
+      <workItem from="1481092667548" duration="19000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1732000" />
+    <option name="totallyTimeSpent" value="1751000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-10" y="1" width="1932" height="1056" extended-state="1" />
+    <frame x="-10" y="1" width="1932" height="1056" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -271,8 +240,18 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1863">
-          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="87" column="8" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>

@@ -122,4 +122,17 @@ class UCenterController extends Controller
         }
         return $arr;
     }
+
+    public function member(){
+        return view('member.member');
+    }
+
+    public function memberPay(Request $req){
+        $memberid = $req->id;
+        return view("member.memberpay",compact('memberid'));
+    }
+
+    public function memberDetail(){
+        return view("member.memberdetail");
+    }
 }

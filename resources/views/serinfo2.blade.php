@@ -91,7 +91,7 @@
                     </div>
                     <div class="secondary">
                     </div>
-                    <a href="javascript:;" class="lookConnection1" id="check">查看联系方式</a>
+                    <a href="javascript:;" class="lookConnection1" id="check">约谈</a>
                     <div class="headBox">
                         <a href="javascript:;" class="headPortrait">
                             <img id="userpicture" src="" />
@@ -256,6 +256,7 @@ $(function () {
         var ConfirmationP3 = json.ConfirmationP3;    //服务商资质
         var ConnectPhone = json.ConnectPhone;    //服务商联系方式
         var CollectFlag = json.CollectFlag;    //收藏状态
+        var insider = json.insider;    //收藏状态
         if(CollectFlag == 1){
             $('#collectinfo').html('<i class="iconfont heart red">&#xe601;</i><span>已收藏</span>')
         }
@@ -383,6 +384,10 @@ $(function () {
         $("#check").click(function(){
             checkLogin();
             if(stop){
+                return false;
+            }
+            if(insider != '1'){
+                layer.alert('该服务方未办理会员，无法查看其联系方式');
                 return false;
             }
             $("#check").html(ConnectPerson + ':' + ConnectPhone);

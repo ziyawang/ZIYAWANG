@@ -1,79 +1,96 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.4.1" />
-    <!-- 右侧 -->
+    <link rel="stylesheet" type="text/css" href="{{url('/css/releasehome.css')}}?v=2.0" />
     <div class="ucRight">
-        <div class="ucRightCon recharge">
-            <h3 class="selectiveType">
-                <a href="myyabi.html" class="current">我的芽币</a><a href="{{url('/ucenter/money/detail')}}">芽币明细</a>
-                <em class="grayLine"></em>
+        <div class="ucRightCon member-sys">
+            <h3 class="member-title">
+                <a href="javascript:;">会员中心</a>
             </h3>
             <div class="ucrightTop">
-                <div class="infoText"><strong>公告：</strong><b>【通知】</b>如您在支付过程中出现意外情况，如支付失败或充值失败，请及时联系资芽客服。充值的芽币不可转账或兑换现金，请按需充值。<p><b style="margin-left:0;">联系电话：</b>400-898-8557</p></div>
+                <div class="infoText"><strong>公告：</strong><b>【通知】</b>如您在支付过程中出现意外情况，如支付失败或充值失败，请及时联系资芽客服。<p><b style="margin-left:0;">联系电话：</b>400-898-8557</p></div>
             </div>
             <div class="amount">
+                @if($memberid == 1)
                 <div class="amountTitle">
-                    <span class="amtLeft">充值金额：<strong>（1元可换10芽币）</strong></span>
-                    <span class="amtRight">芽币余额：<strong id='accounts'></strong></span>
+                    <span class="amtLeft">您当前选择充值会员类型：</span>
+                    <span class="ge member-icon" title="个人债权"></span>
                 </div>
-                <div class="diffPrice">
-                    <ul class="firstStage clearfix">
-                        <li class="stage1 current">
-                            <a href="javascript:;" class="noPref">
-                                <span class="differentYabi1"><em></em>10芽币</span>
-                                <span>充值：<strong class="ybsl">1</strong>元</span><i></i>
-                            </a>
-                        </li>
-                        <li class="stage1">
-                            <a href="javascript:;" class="noPref">
-                                <span class="differentYabi2"><em></em>120芽币</span>
-                                <span>充值：<strong class="ybsl">12</strong>元</span><i></i>
-                            </a>
-                        </li>
-                        <li class="stage1">
-                            <a href="javascript:;">
-                                <span class="differentYabi3"><em></em>500芽币</span>
-                                <strong class="give">（额外赠送50芽币）</strong>
-                                <span>充值：<strong class="ybsl">50</strong>元</span><i></i>
-                            </a>
-                        </li>
-                        <li class="stage1">
-                            <a href="javascript:;">
-                                <span class="differentYabi5"><em></em>1080芽币</span>
-                                <strong class="give">（额外赠送150芽币）</strong>
-                                <span>充值：<strong class="ybsl">108</strong>元</span><i></i>
-                            </a>
-                        </li>
-                        <li class="stage1">
-                            <a href="javascript:;">
-                                <span class="differentYabi6"><em></em>2880芽币</span>
-                                <strong class="give">（额外赠送580芽币）</strong>
-                                <span>充值：<strong class="ybsl">288</strong>元</span><i></i>
-                            </a>
-                        </li>
-                        <li class="stage1">
-                            <a href="javascript:;">
-                                <span class="differentYabi7"><em></em>5880芽币</span>
-                                <strong class="give">（额外赠送1500芽币）</strong>
-                                <span>充值：<strong class="ybsl">588</strong>元</span><i></i>
-                            </a>
-                        </li>
-                        <li class="stage1">
-                            <a href="javascript:;">
-                                <span class="differentYabi8"><em></em>10980芽币</span>
-                                <strong class="give">（额外赠送3300芽币）</strong>
-                                <span>充值：<strong class="ybsl">1098</strong>元</span><i></i>
-                            </a>
-                        </li>
-                        <li class="stage1">
-                            <a href="javascript:;">
-                                <span class="differentYabi9"><em></em>19980芽币</span>
-                                <strong class="give">（额外赠送7000芽币）</strong>
-                                <span>充值：<strong class="ybsl">1998</strong>元</span><i></i>
-                            </a>
-                        </li>
-                    </ul>
+                <div class="member-list">
+                    <a href="{{url('/ucenter/member/pay?id=1')}}" class="current member-fee">季费：<span>998</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=2')}}" class="member-fee">年费：<span>2998</span>元<i></i></a>
                 </div>
+                @elseif($memberid == 2)
+                <div class="amountTitle">
+                    <span class="amtLeft">您当前选择充值会员类型：</span>
+                    <span class="ge member-icon" title="个人债权"></span>
+                </div>
+                <div class="member-list">
+                    <a href="{{url('/ucenter/member/pay?id=1')}}" class="member-fee">季费：<span>998</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=2')}}" class="current member-fee">年费：<span>2998</span>元<i></i></a>
+                </div>
+                @elseif($memberid == 3)
+                <div class="amountTitle">
+                    <span class="amtLeft">您当前选择充值会员类型：</span>
+                    <span class="rong member-icon" title="融资信息"></span>
+                </div>
+                <div class="member-list">
+                    <a href="{{url('/ucenter/member/pay?id=3')}}" class="current member-fee">季费：<span>998</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=4')}}" class="member-fee">年费：<span>2998</span>元<i></i></a>
+                </div>
+                @elseif($memberid == 4)
+                <div class="amountTitle">
+                    <span class="amtLeft">您当前选择充值会员类型：</span>
+                    <span class="rong member-icon" title="融资信息"></span>
+                </div>
+                <div class="member-list">
+                    <a href="{{url('/ucenter/member/pay?id=3')}}" class="member-fee">季费：<span>998</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=4')}}" class="current member-fee">年费：<span>2998</span>元<i></i></a>
+                </div>
+                @elseif($memberid == 5)
+                <div class="amountTitle">
+                    <span class="amtLeft">您当前选择充值会员类型：</span>
+                    <span class="gu member-icon" title="固定资产"></span>
+                </div>
+                <div class="member-list">
+                    <a href="{{url('/ucenter/member/pay?id=5')}}" class="current member-fee">季费：<span>3998</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=6')}}" class="member-fee">年费：<span>12000</span>元<i></i></a>
+                </div>
+                @elseif($memberid == 6)
+                <div class="amountTitle">
+                    <span class="amtLeft">您当前选择充值会员类型：</span>
+                    <span class="gu member-icon" title="固定资产"></span>
+                </div>
+                <div class="member-list">
+                    <a href="{{url('/ucenter/member/pay?id=5')}}" class="member-fee">季费：<span>3998</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=6')}}" class="current member-fee">年费：<span>12000</span>元<i></i></a>
+                </div>
+                @elseif($memberid == 7)
+                <div class="amountTitle">
+                    <span class="amtLeft">您当前选择充值会员类型：</span>
+                    <span class="bao member-icon" title="资产包"></span>
+                </div>
+                <div class="member-list">
+                    <a href="{{url('/ucenter/member/pay?id=7')}}" class="current member-fee">季费：<span>6498</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=8')}}" class="member-fee">年费：<span>70000</span>元<i></i></a>
+                </div>
+                @elseif($memberid == 8)
+                <div class="amountTitle">
+                    <span class="amtLeft">您当前选择充值会员类型：</span>
+                    <span class="bao member-icon" title="资产包"></span>
+                </div>
+                <div class="member-list">
+                    <a href="{{url('/ucenter/member/pay?id=7')}}" class="member-fee">季费：<span>6498</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=8')}}" class="current member-fee">年费：<span>70000</span>元<i></i></a>
+                </div>
+                @elseif($memberid == 9)
+                <div class="amountTitle">
+                    <span class="amtLeft">您当前选择充值会员类型：</span>
+                    <span class="qi member-icon" title="企业商账"></span>
+                </div>
+                <div class="member-list">
+                    <a href="{{url('/ucenter/member/pay?id=9')}}" class="current member-fee">季费：<span>1498</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=10')}}" class="member-fee">年费：<span>4998</span>元<i></i></a>
+                </div>
+                @elseif($memberid == 10)
+                <div class="amountTitle">
+                    <span class="amtLeft">您当前选择充值会员类型：</span>
+                    <span class="qi member-icon" title="企业商账"></span>
+                </div>
+                <div class="member-list">
+                    <a href="{{url('/ucenter/member/pay?id=9')}}" class="member-fee">季费：<span>1498</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=10')}}" class="current member-fee">年费：<span>4998</span>元<i></i></a>
+                </div>
+                @endif
                 <div class="paymode">
                     <div class="paymodeTitle">
                         <span class="payTips">支付方式：</span>
@@ -160,7 +177,6 @@
 <script type="text/javascript" src="{{url('/js/qrcode.min.js')}}"></script>
 <script type="text/javascript" src="{{url('/js/pingpp.js')}}"></script>
 <script type="text/javascript">
-
         var permission = true;
         var token = $.cookie('token');
 
@@ -169,17 +185,8 @@
             var result = window.location.search.substr(1).match(reg);
             return result?decodeURIComponent(result[2]):null;
         }
-        var ProjectID   = getQueryString("ProjectID")   ? getQueryString("ProjectID")  : null;
-        var TypeID   = getQueryString("TypeID")   ? getQueryString("TypeID")  : null;
-
-        //声明input昵称宽度随文字长度而变化
-        var textWidth = function(text){ 
-            var sensor = $('<pre>'+ text +'</pre>').css({display: 'none'}); 
-            $('body').append(sensor); 
-            var width = sensor.width()+20;
-            sensor.remove(); 
-            return width;
-        };
+        var payid   = getQueryString("id")   ? getQueryString("id")  : null;
+        var payname = $('.member-icon').attr('title');
         //协议同意与否
         $('.paycheked').click(function() {
             $(this).toggleClass('active');
@@ -192,11 +199,8 @@
         $('.closePop').click(function() {
             $('.poplayer').hide();
             $('.popWx').hide();
-            if(ProjectID){
-                window.location.href = "http://ziyawang.com/project/" + TypeID + "/" + ProjectID;
-                return false;
-            }
-            window.location.reload(); 
+            window.location.href = "{{url('/ucenter/member')}}";
+            return false;
         });
         //协议弹窗
         $('.payProto span').click(function(event) {
@@ -208,22 +212,8 @@
             $('.rechargeProto').hide();
         });
 
-        var amount = 1;
         var channel = "wx_pub_qr";
-        // var token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzMyIsImlzcyI6Imh0dHA6XC9cL2FwaXRlc3Queml5YXdhbmcuY29tXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOiIxNDc0Nzk0NTQyIiwiZXhwIjoiMTQ3NTM5OTM0MiIsIm5iZiI6IjE0NzQ3OTQ1NDIiLCJqdGkiOiJmNmFhNDRhODA4ODBlZjAxNzE3NWJmYTZhNDczMWJiZCJ9.ho521A0Prh6LcNAPNcmQEF2H_VTQBXstSwf2m4yeXpA";
-        //选中前三个价格
-        $('.firstStage .stage1').click(function() {
-            $(this).addClass('current').siblings().removeClass('current');
-            amount = $(this).find('strong[class="ybsl"]').html();
-        });
-        //点击第四个出来的内容
-        $('.selectedPrice li').click(function() {
-            var priceNum = $(this).index();
-            $('.hidePrice').eq(priceNum).css('display', 'block').siblings().hide();
-            $('.hidePrice').eq(priceNum).addClass('current').siblings().removeClass('current');
-            $('.stage2').removeClass('current');
-            amount = $(this).find('strong').html();
-        });
+
         //微信支付宝切换
         $('.pmdTwo a').click(function() {
             $(this).addClass('current').siblings().removeClass('current');
@@ -237,11 +227,10 @@
             if($('.payweixin').hasClass('current')){              
                 $('.rechargeConfirm').attr('disabled', true);
             }
-            var subject = '充值金额';
             $.ajax({
-                url:"http://api.ziyawang.com/v1/v2/pay?access_token=token&amount=" + amount*100 + "&channel=" + channel + "&subject=" + subject + "&ProjectID=" + ProjectID + "&token=" + token,
+                url:"http://api.ziyawang.com/v1/v2/pay?access_token=token&paytype=member&payid=" + payid + "&channel=" + channel + "&payname=" + payname + "&token=" + token,
                 type:"POST",
-                data:{'amount':amount*100,'channel':channel,'subject':subject,'ProjectID': ProjectID},
+                data:{'payid':payid,'channel':channel,'payname':payname,'token': token,'paytype':'member'},
                 dataType:'json',
                 success:function(msg){
                     var charge = eval(msg);
@@ -277,8 +266,8 @@
                 }
             });
         })
-
-
-
 </script>
 @endsection
+
+
+

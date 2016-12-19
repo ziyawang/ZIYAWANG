@@ -191,7 +191,7 @@
 /*2016.9.20 usercenter_v2 public part*/
 .userContent{width: 1230px;margin: 0 auto;background:url(../img/r_shadow.png) repeat-y right 0;overflow: hidden;}
 /*left*/
-.ucLeft{min-height:650px;width: 197px;float: left;background:#f4f4f4;border-right: 3px solid #b8b8b8;border-left: 3px solid #b8b8b8;margin-left: 15px;padding-bottom: 2000px;margin-bottom: -2000px;}
+.ucLeft{min-height:780px;width: 197px;float: left;background:#f4f4f4;border-right: 3px solid #b8b8b8;border-left: 3px solid #b8b8b8;margin-left: 15px;padding-bottom: 2000px;margin-bottom: -2000px;}
 .ucLeft h2{padding-left:4px;width: 193px;height: 81px;line-height:81px;background:#757778;font-size: 30px;color:#fff;text-align: center;font-weight: normal;letter-spacing: 4px;}
 .ucleftHead{width: 200px;height: 110px;padding:20px 0;}
 .ucleftHead a{display: block;height: 77px;width: 77px;border: 2px solid #bec3c7;overflow: hidden;border-radius: 50%;margin:0px auto;}
@@ -212,6 +212,7 @@
 .ucleftBottom ul li{height: 34px;padding:9px 0;border-top: 1px dashed #c0c0c0;}
 .ucleftBottom ul li a{display: block;width: 152px;height: 34px;line-height: 34px;font-size: 18px;color:#333;margin:0 auto;padding-left:18px;letter-spacing: 3px;}
 .ucleftBottom ul li a i{margin-right: 10px;font-size: 20px;}
-.ucleftBottom ul li a .chongzhi{font-size: 24px;float: left;}
+.ucleftBottom ul li a .chongzhi{font-size: 24px;float: left;margin-right: 6px;}
+.ucleftBottom ul li a .huiyuan{margin-right: 6px;}
 .ucleftBottom ul li a .hezuo{float: left;height:26px;margin-top: 2px;}
 .ucRight{width: 960px;float: right;}

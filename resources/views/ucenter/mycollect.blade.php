@@ -117,7 +117,7 @@
                 var TypeName          = ('TypeName' in data[index])          ? data[index].TypeName : null;
                 var Title          = ('Title' in data[index])          ? data[index].Title : null;
                 var AssetType          = ('AssetType' in data[index])          ? data[index].AssetType : null;
-                var ProArea          = ('AssetType' in data[index])          ? data[index].AssetType : null;
+                var ProArea          = ('ProArea' in data[index])          ? data[index].ProArea : null;
                 var FromWhere          = ('FromWhere' in data[index])          ? data[index].FromWhere : null;
                 var TotalMoney          = ('TotalMoney' in data[index])          ? data[index].TotalMoney : null;
                 var TransferMoney          = ('TransferMoney' in data[index])          ? data[index].TransferMoney : null;
@@ -148,7 +148,7 @@
                                 break;
 
                             case "16":
-                                html = html + "<li class='clearfix'><a href='http://ziyawang.com/project/" + ProType + "/" + ItemID + "'><div class='pblLeft'><span class='pblef2'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>标的物类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>规划用途：<strong>" + Usefor + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>转让价：</strong>" + TransferMoney + "万元元</span><span></span></div></div></a><span class='delete' title='取消收藏' onclick='cancel(this)' class='collect' id='" + ItemID + "' type='1'></span><span class='uniqueTime'>" + CollectTime + "</span></li>";
+                                html = html + "<li class='clearfix'><a href='http://ziyawang.com/project/" + ProType + "/" + ItemID + "'><div class='pblLeft'><span class='pblef2'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>标的物类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>规划用途：<strong>" + Usefor + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>转让价：</strong>" + TransferMoney + "万元</span><span></span></div></div></a><span class='delete' title='取消收藏' onclick='cancel(this)' class='collect' id='" + ItemID + "' type='1'></span><span class='uniqueTime'>" + CollectTime + "</span></li>";
                                 break;
 
                             case "17":
@@ -160,7 +160,7 @@
                                 break;
 
                             case "19":
-                                html = html + "<li class='clearfix'><a href='http://ziyawang.com/project/" + ProType + "/" + ItemID + "'><div class='pblLeft'><span class='pblef5'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>处置方式：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>逾期时间：<strong>" + Month + "月</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>债权金额：</strong>" + Money + "万元</span><span></span></div></div></a><span class='delete' title='取消收藏' onclick='cancel(this)' class='collect' id='" + ItemID + "' type='1'></span><span class='uniqueTime'>" + CollectTime + "</span></li>";
+                                html = html + "<li class='clearfix'><a href='http://ziyawang.com/project/" + ProType + "/" + ItemID + "'><div class='pblLeft'><span class='pblef5'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>处置方式：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>逾期时间：<strong>" + Month + "月</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>债权金额：</strong>" + TotalMoney + "万元</span><span></span></div></div></a><span class='delete' title='取消收藏' onclick='cancel(this)' class='collect' id='" + ItemID + "' type='1'></span><span class='uniqueTime'>" + CollectTime + "</span></li>";
                                 break;
 
                             case "20":
@@ -199,14 +199,6 @@
             html = "抱歉，您还没有收藏过信息，快去收藏吧！";
             }
             $('#collectlist').html(html);
-            //左侧边栏通栏
-            var ucRighthei1 = $('.ucRight').height();//初始高度
-            $('.ucLeft').css('height',ucRighthei1 + 'px');
-            //窗口size改变
-            $(window).resize(function() {
-                var ucRighthei2 = $('.ucRight').height();
-                $('.ucLeft').css('height',ucRighthei2 + 'px');
-            });
             //鼠标滑过li
             $('.myCollections ul li').hover(function() {
                 $(this).children('.delete').stop().slideToggle(250);

@@ -94,9 +94,26 @@ class ProjectController extends Controller
         $data->PictureDes = [$data->PictureDes1,$data->PictureDes2,$data->PictureDes3,$data->PictureDes4,$data->PictureDes5];
         $data->PictureDes = $this->_delnull($data->PictureDes);
         $data->CollectCount = DB::table('T_P_COLLECTION')->where(['Type'=>1, 'ItemID'=>$id])->count();
-        if(($data->Member == 1 && $data->PayFlag != 1) || ($data->Member == 2 && $data->PayFlag != 1) ){
-            if($data->UserID != $UserID){
-                return view('errors.forbidden');
+        $data->access = 0;
+
+        if(isset($phonenumber)){
+            $right = DB::table('users')->where('phonenumber',$phonenumber)->pluck('right');
+            $rightarr = explode(',', $right);
+            if(!in_array($type, $rightarr)){
+                if(($data->Member == 1 && $data->PayFlag != 1) || ($data->Member == 2 && $data->PayFlag != 1) ){
+                    if($data->UserID != $UserID){
+                        return view('errors.forbidden');
+                    }
+                }
+            }
+            $data->access = 1;
+        } else {
+            if(($data->Member == 1 && $data->PayFlag != 1) || ($data->Member == 2 && $data->PayFlag != 1) ){
+                if(isset($phonenumber)){
+                    if($data->UserID != $UserID){
+                        return view('errors.forbidden');
+                    }
+                }
             }
         }
         if($data->ConnectPhone == ''){

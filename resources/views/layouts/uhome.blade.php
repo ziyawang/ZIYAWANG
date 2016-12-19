@@ -5,9 +5,9 @@
         <title>资芽网-全球不良资产超级综服平台</title>
         <meta name="Keywords" content="资芽网,不良资产,不良资产处置,不良资产处置平台" />
         <meta name="Description" content="资芽网是全球不良资产智能综服超级平台,吸引全国各类不良资产持有者，汇集各类不良资产信息及相关需求,整合海量不良资产处置服务机构与投资方,搭建多样化处置通道和不良资产综服生态产业体系,嵌入移动社交与视频直播,兼具媒体属性,实现大数据搜索引擎和人工智能,打造共享开放的全球不良资产智能综服超级平台。" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=1.0.8" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=1.0.8" /> 
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}?v=1.0.8" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.0" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.0" /> 
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}?v=2.0" />
 
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -120,6 +120,7 @@
                 <li id="confirm"><a href="{{url('/ucenter/confirm')}}"><i class="iconfont">&#xe60f;</i>服务方认证</a></li>
                 <li id="myrush" style="display:none;"><a href="{{url('/ucenter/myrush')}}"><i class="iconfont">&#xe619;</i>我的约谈</a></li>
                 <li id="money"><a href="{{url('/ucenter/money')}}"><i class="iconfont chongzhi">&#xe61f;</i>充值中心</a></li>
+                <li id="member" style="display:none;"><a href="{{url('/ucenter/member')}}"><i class="iconfont huiyuan">&#xe6af;</i>会员中心</a></li>
                 <li id="safe"><a href="{{url('/ucenter/safe')}}"><i class="iconfont">&#xe61d;</i>安全中心</a></li>
                 <li id="mycollect"><a href="{{url('/ucenter/mycollect')}}"><i class="iconfont">&#xe61b;</i>我的收藏</a></li>
             </ul>
@@ -137,6 +138,7 @@
         var confirm = $('#confirm');
         var money = $('#money');
         var myrush = $('#myrush');
+        var member = $('#member');
         var safe = $('#safe');
         var mycollect = $('#mycollect');
         if (Url.indexOf("index") >= 0) {
@@ -164,6 +166,9 @@
             
         } else if (Url.indexOf("mycollect") >= 0) {
             mycollect.addClass("current");
+
+        } else if (Url.indexOf("member") >= 0) {
+            member.addClass("current");
             
         }
     }); 
@@ -181,11 +186,12 @@ $(function(){
     // console.log(role);
     if(role == 1){
         $("#myrush").show();
+        $("#member").show();
     }
 
     $('#container').show();
     $.ajax({
-        url: 'http://api.ziyawang.com/v1/auth/me?access_token=token&token=' + token,
+        url: 'http://api.ziyawang.com/v1/v2/auth/me?access_token=token&token=' + token,
         type: 'POST',
         success:function(msg){
             var data = eval(msg);
@@ -206,6 +212,40 @@ $(function(){
                 $('#msg').addClass('redTips');
             }
             $('#_phonenumber').html('联系电话：'+phonenumber);
+            var showrightarr = data.user.showrightarr;
+            var showhtml = '';
+            $.each(showrightarr,function(index,value){
+                // console.log(value[0]);
+                switch(value[0])
+                {
+                    case "资产包":
+                        showhtml += "<a href='javacript:;' class='bao' title='资产包' time='" + value[1].substr(0,10) + "'></a>"
+                        break;
+                    case "企业商账":
+                        showhtml += "<a href='javacript:;' class='qi' title='企业商账' time='" + value[1].substr(0,10) + "'></a>"
+                        break;
+                    case "固定资产":
+                        showhtml += "<a href='javacript:;' class='gu' title='固定资产' time='" + value[1].substr(0,10) + "'></a>"
+                        break;
+                    case "融资信息":
+                        showhtml += "<a href='javacript:;' class='rong' title='融资信息' time='" + value[1].substr(0,10) + "'></a>"
+                        break;
+                    case "个人债权":
+                        showhtml += "<a href='javacript:;' class='ge' title='个人债权' time='" + value[1].substr(0,10) + "'></a>"
+                        break;
+                }
+            })
+            $('#showright').html(showhtml);
+
+            $('.member-cur a').on('mouseover', function(event) {
+                event.preventDefault();
+                var that = this;
+                var time = $(this).attr('time');
+                layer.tips('<span>到期时间：' + time + '</span>',that,{
+                    tips: [1, '#fad68a'],
+                    time: 6000
+                });
+            });
         }
     });
 })

@@ -116,5 +116,10 @@ Route::get('/project','ProjectController@prolist');
 Route::get('/course', 'ActivityController@index');
 Route::get('/report', 'ActivityController@report');
 
+//12.17新增
+Route::any('/ucenter/member','UCenterController@member');
+Route::get('/ucenter/member/pay','UCenterController@memberPay');
+Route::get('/ucenter/member/detail','UCenterController@memberDetail');
+
 
 

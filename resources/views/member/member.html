@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>会员中心</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/member.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="layer/layer.js"></script>
+</head>
+<body>
+<!-- 二级banner -->
+<div class="find_service temp">
+    <ul>
+        <li><a href="http://ziyawang.com/course"></a></li>
+    </ul>
+</div>
+<!-- 个人中心 -->
+<div class="userContent clearfix">
+    <!-- 个人中心侧边栏 -->
+    <div class="ucLeft">
+        <h2>个人中心</h2>
+        <div class="ucleftHead">
+            <a href="http://ziyawang.com/ucenter/safe"><img id="avatar" src="" /></a>
+            <span id="nickname"></span>
+        </div>
+        <!-- ps: 有新的系统消息时redTips显示，没有新消息时隐藏 -->
+        <div class="ucleftMiddle">
+            <a href="http://ziyawang.com/ucenter/message" class="sysInfo" title="系统消息"><i class="iconfont">&#xe61c;</i><span id="msg"></span></a>
+            <a href="http://ziyawang.com/ucenter/money" class="money" title="芽币金额"><span id="account"></span></a>
+        </div>
+        <div class="ucleftBottom">
+            <ul>
+                <li id="pubpro"><a href="http://ziyawang.com/ucenter/index"><i class="iconfont">&#xe61e;</i>发布信息</a></li>
+                <li id="mypro"><a href="http://ziyawang.com/ucenter/mypro"><i class="iconfont">&#xe61a;</i>我的发布</a></li>
+                <li id="confirm"><a href="http://ziyawang.com/ucenter/confirm"><i class="iconfont">&#xe60f;</i>服务方认证</a></li>
+                <li id="myrush" style="display:none;"><a href="http://ziyawang.com/ucenter/myrush"><i class="iconfont">&#xe619;</i>我的约谈</a></li>
+                <li id="money"><a href="http://ziyawang.com/ucenter/money"><i class="iconfont chongzhi">&#xe61f;</i>充值中心</a></li>
+                <li id=""><a href="javacript:;"><i class="iconfont">&#xe6af;</i>会员中心</a></li>
+                <li id="safe"><a href="http://ziyawang.com/ucenter/safe"><i class="iconfont">&#xe61d;</i>安全中心</a></li>
+                <li id="mycollect"><a href="http://ziyawang.com/ucenter/mycollect"><i class="iconfont">&#xe61b;</i>我的收藏</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="ucRight">
+        <h3 class="member-tit"><span class="member-tit-cap">会员中心</span></h3>
+        <div class="member-tips">
+            <div class="member-tips-cap">注：根据您的需求可同时办理多个类型会员</div>
+        </div>
+        <div class="member-type">
+            <div class="member-type-tit clearfix">
+                <div class="member-cur clearfix">
+                    <span class="member-cur-cap">您当前会员类型：</span>
+                    <a href="javacript:;" class="bao" title="资产包"></a>
+                    <a href="javacript:;" class="qi" title="企业商账"></a>
+                    <a href="javacript:;" class="gu" title="固定资产"></a>
+                    <a href="javacript:;" class="rong" title="融资信息"></a>
+                    <a href="javacript:;" class="ge" title="个人债权"></a>
+                </div>
+                <a href="javacript:;" class="member-search">【充值查询】</a>
+            </div>
+            <div class="member-table">
+                <table>
+                    <thead class="member-head">
+                        <tr>
+                            <th class="mem1">会员类型</th>
+                            <th class="mem2">特权</th>
+                            <th class="mem3">收费标准</th>
+                            <th class="mem4"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="member-body">
+                        <tr>
+                            <td class="mem1"><span class="bao member-icon" title="资产包"></span><p>资产包</p></td>
+                            <td class="mem2">
+                                <a href="javacript:;" data-title="资产包" data-amount="6498" data-total="70000" data-time="月" class="member-privil">特权了解</a>
+                            </td>
+                            <td class="mem3">
+                                <a href="javacript:;" class="current member-fee">月度会员：6498元<i></i></a><a href="javacript:;" class="member-fee">年度会员：70000元<i></i></a>
+                            </td>
+                            <td class="mem4"><a href="bao.html" class="member-charge">充值</a></td>
+                        </tr>
+                        <tr>
+                            <td class="mem1"><span class="qi member-icon" title="企业商账"></span><p>企业商账</p></td>
+                            <td class="mem2">
+                                <a href="javacript:;" data-title="企业商账" data-amount="1498" data-total="4998" data-time="季" class="member-privil">特权了解</a>
+                            </td>
+                            <td class="mem3">
+                                <a href="javacript:;" class="current member-fee">季度会员：1498元<i></i></a><a href="javacript:;" class="member-fee">年度会员：4998元<i></i></a>
+                            </td>
+                            <td class="mem4"><a href="javacript:;" class="member-charge">充值</a></td>
+                        </tr>
+                        <tr>
+                            <td class="mem1"><span class="gu member-icon" title="固定资产"></span><p>固定资产</p></td>
+                            <td class="mem2">
+                                <a href="javacript:;" data-title="固定资产" data-amount="3998" data-total="12000" data-time="季" class="member-privil">特权了解</a>
+                            </td>
+                            <td class="mem3">
+                                <a href="javacript:;" class="current member-fee">季度会员：3998元<i></i></a><a href="javacript:;" class="member-fee">年度会员：12000元<i></i></a>
+                            </td>
+                            <td class="mem4"><a href="gu.html" class="member-charge">充值</a></td>
+                        </tr>
+                        <tr>
+                            <td class="mem1"><span class="rong member-icon" title="融资信息"></span><p>融资信息</p></td>
+                            <td class="mem2">
+                                <a href="javacript:;" data-title="融资信息" data-amount="998" data-total="2998" data-time="季" class="member-privil">特权了解</a>
+                            </td>
+                            <td class="mem3">
+                                <a href="javacript:;" class="current member-fee">季度会员：998元<i></i></a><a href="javacript:;" class="member-fee">年度会员：2998元<i></i></a>
+                            </td>
+                            <td class="mem4"><a href="javacript:;" class="member-charge">充值</a></td>
+                        </tr>
+                        <tr>
+                            <td class="mem1"><span class="ge member-icon" title="个人债权"></span><p>个人债权</p></td>
+                            <td class="mem2">
+                                <a href="javacript:;" data-title="个人债权" data-amount="998" data-total="2998" data-time="季" class="member-privil">特权了解</a>
+                            </td>
+                            <td class="mem3">
+                                <a href="javacript:;" class="current member-fee">季度会员：998元<i></i></a><a href="javacript:;" class="member-fee">年度会员：2998元<i></i></a>
+                            </td>
+                            <td class="mem4"><a href="javacript:;" class="member-charge">充值</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    $(function(){
+        $('.member-fee').click(function() {
+            $(this).addClass('current').siblings().removeClass('current');
+        });
+
+        $('.member-cur a').on('mouseover', function(event) {
+            event.preventDefault();
+            var that = this;
+            layer.tips('<span>到期时间：2016-12-13</span>',that,{
+                tips: [1, '#fad68a'],
+                time: 6000
+            });
+        });
+
+        $('.member-privil').on('click', function() {
+            var memberWord   = $(this).attr('data-title');
+            var memberAmount = $(this).attr('data-amount');
+            var memberTotal  = $(this).attr('data-total');
+            var memberTime   = $(this).attr('data-time');
+            layer.open({
+                type: 1,
+                title: false,
+                closeBtn: 0,
+                area: '900px',
+                skin: 'layer-member',
+                shadeClose: true,
+                content: '<div class="privilege"><div class="privilege-tit">'+ memberWord +'VIP特权</div><ul class="privilege-list"><li><img class="privilege-img" src="img/member_icon1.png"/><p class="privilege-rt"><strong>查看权限</strong><span>在会员期间内，可免费查看本网站所有'+ memberWord +'类VIP和收费信息。</span></p></li><li><img class="privilege-img" src="img/member_icon2.png"/><p class="privilege-rt"><strong>赠送芽币</strong><span>按办理会员的价格赠送芽币（例：'+ memberTime +'度会员'+ memberAmount +'元赠送'+ memberAmount +'芽币，年度会员'+ memberTotal +'元赠送'+ memberTotal +'芽币）。可方便您查看其他类型信息。</span></p></li><li><img class="privilege-img" src="img/member_icon3.png"/><p class="privilege-rt"><strong>定制推送</strong><span>系统会根据您的指定需求帮您筛选指定的'+ memberWord +'信息，并推送到您的系统消息或手机短信中（客服人员会主动联系您录入需求）。</span></p></li><li><img class="privilege-img" src="img/member_icon4.png"/><p class="privilege-rt"><strong>联系方式展示</strong><span>升级为会员后，您服务方的展示页面联系方式将公开，会有更多用户第一时间主动联系您。</span></p></li></ul></div>',
+                btn: ['确 定'],btn0:function(){
+
+                }
+            });
+        });
+
+    })
+</script>

@@ -10,9 +10,9 @@
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=1.0.8" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=1.0.8" />
-        <link type="text/css" rel="stylesheet" href="{{url('/css/fixed.css')}}?v=1.0.8.4" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.0" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.0" />
+        <link type="text/css" rel="stylesheet" href="{{url('/css/fixed.css')}}?v=2.0.4" />
 <style>
     #uploadifive-picture_upload{height: 30px!important;line-height: 30px!important;border-radius: 25px;background: #e48013;color: #fff;}
     .img_box{padding-left: 170px;}
@@ -127,6 +127,7 @@
                 <li id="confirm"><a href="{{url('/ucenter/confirm')}}"><i class="iconfont">&#xe60f;</i>服务方认证</a></li>
                 <li id="myrush" style="display:none"><a href="{{url('/ucenter/myrush')}}"><i class="iconfont">&#xe619;</i>我的约谈</a></li>
                 <li id=""><a href="{{url('/ucenter/money')}}"><i class="iconfont chongzhi">&#xe61f;</i>充值中心</a></li>
+                <li id="member" style="display:none;"><a href="{{url('/ucenter/member')}}"><i class="iconfont">&#xe6af;</i>会员中心</a></li>
                 <li id="safe"><a href="{{url('/ucenter/safe')}}"><i class="iconfont">&#xe61d;</i>安全中心</a></li>
                 <li id="mycollect"><a href="{{url('/ucenter/mycollect')}}"><i class="iconfont">&#xe61b;</i>我的收藏</a></li>
             </ul>
@@ -309,8 +310,9 @@ var stop = false;
         if($(this).hasClass('bitian')){
             $parent=$(this).parent();
             $parent.find("p").remove();
-            if($(this).val()==""){
+            if($.trim($(this).val())==""){
                 $parent.append("<p class='error'>您还没填呢~</p>");
+                $(this).val('');
                 stop = true;
                 return false;
             } 
@@ -325,8 +327,9 @@ var stop = false;
         if($(this).hasClass('bitian')){
             $parent=$(this).parent();
             $parent.find("p").remove();
-            if($(this).val()==""){
+            if($.trim($(this).val())==""){
                 $parent.append("<p class='error'>您还没填呢~</p>");
+                $(this).val('');
                 stop = true;
                 return false;
             } 
@@ -339,8 +342,9 @@ var stop = false;
 
 @yield('radio')
     $("textarea").parent().find("p").remove();
-    if($("textarea").val() == ''){
+    if($.trim($("textarea").val()) == ''){
         $("textarea").parent().append("<p class='error'>您还没填呢~</p>");
+        $("textarea").val('');
         return;
     }
 
@@ -597,6 +601,7 @@ $(function () {
     // console.log(role);
     if(role == 1){
         $("#myrush").show();
+        $("#member").show();
     }
 
     $('#container').show();

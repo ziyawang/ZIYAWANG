@@ -5,9 +5,9 @@
         
         @yield('seo')
 
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=1.0.8" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}?v=1.0.8" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=1.0.8" /> 
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.0" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}?v=2.0" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.0" /> 
 
 
         <meta name="viewport" content="width=1492">
@@ -17,7 +17,7 @@
         <script src="{{asset('/js/jquery.js')}}"></script>
         <script src="{{asset('/js/fs.js')}}"></script>
         <script src="{{url('/js/jquery.cookie.js')}}"></script>
-        <script type="text/javascript" src="{{url('/js/public.js')}}?v=1.0.8"></script>
+        <script type="text/javascript" src="{{url('/js/public.js')}}?v=2.0"></script>
         <script type="text/javascript" src="{{url('/js/contract.js')}}"></script>
         <script type="text/javascript" src="{{url('/js/jquery.pagination.js')}}"></script>
         <script type="text/javascript" src="{{url('/org/layer/layer.js')}}"></script>

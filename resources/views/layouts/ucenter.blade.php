@@ -10,9 +10,9 @@
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=1.0.8" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=1.0.8" />
-        <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.8" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.0" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.0" />
+        <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.0" />
 <style>
     #uploadifive-picture_upload{height: 30px!important;line-height: 30px!important;border-radius: 25px;background: #e48013;color: #fff;}
     .img_box{padding-left: 170px;}
@@ -125,6 +125,7 @@
                 <li id="confirm"><a href="{{url('/ucenter/confirm')}}"><i class="iconfont">&#xe60f;</i>服务方认证</a></li>
                 <li id="myrush" style="display:none"><a href="{{url('/ucenter/myrush')}}"><i class="iconfont">&#xe619;</i>我的约谈</a></li>
                 <li id=""><a href="{{url('/ucenter/pay')}}"><i class="iconfont chongzhi">&#xe61f;</i>充值中心</a></li>
+                <li id="member" style="display:none;"><a href="{{url('/ucenter/member')}}"><i class="iconfont">&#xe6af;</i>会员中心</a></li>
                 <li id="safe"><a href="{{url('/ucenter/safe')}}"><i class="iconfont">&#xe61d;</i>安全中心</a></li>
                 <li id="mycollect"><a href="{{url('/ucenter/mycollect')}}"><i class="iconfont">&#xe61b;</i>我的收藏</a></li>
             </ul>
@@ -189,15 +190,6 @@
 <script type="text/javascript">
 $(function () {
 
-    //左侧边栏通栏
-    var ucRighthei1 = $('.ucRight').height();//初始高度
-    $('.ucLeft').css('height',ucRighthei1 + 'px');
-    //窗口size改变
-    $(window).resize(function() {
-        var ucRighthei2 = $('.ucRight').height();
-        $('.ucLeft').css('height',ucRighthei2 + 'px');
-    });
-
     $('#fileupload').fileupload({
         dataType: 'json',
         formAcceptCharset :'utf-8',
@@ -211,14 +203,6 @@ $(function () {
                 $(".preview[src='']:first").attr({'src':encodeURI('http://images.ziyawang.com/user/'+file.name), 'picname':file.name}).parent().show();
                 $('#nopz').html('');
 
-                //左侧边栏通栏
-                var ucRighthei1 = $('.ucRight').height();//初始高度
-                $('.ucLeft').css('height',ucRighthei1 + 'px');
-                //窗口size改变
-                $(window).resize(function() {
-                    var ucRighthei2 = $('.ucRight').height();
-                    $('.ucLeft').css('height',ucRighthei2 + 'px');
-                });
             });
         }
     });
@@ -277,14 +261,6 @@ $('.ec_input').blur(function(event) {
     $parent.find("p").remove();
     if($(this).val()==""){
         $parent.append("<p class='error'>您还没填呢~</p>");
-        //左侧边栏通栏
-        var ucRighthei1 = $('.ucRight').height();//初始高度
-        $('.ucLeft').css('height',ucRighthei1 + 'px');
-        //窗口size改变
-        $(window).resize(function() {
-            var ucRighthei2 = $('.ucRight').height();
-            $('.ucLeft').css('height',ucRighthei2 + 'px');
-        });
         return;
     }
 })
@@ -294,14 +270,6 @@ $('textarea').blur(function(envet){
     $parent.find("p").remove();
     if($(this).val()==""){
         $parent.append("<p class='error'>您还没填呢~</p>");
-        //左侧边栏通栏
-        var ucRighthei1 = $('.ucRight').height();//初始高度
-        $('.ucLeft').css('height',ucRighthei1 + 'px');
-        //窗口size改变
-        $(window).resize(function() {
-            var ucRighthei2 = $('.ucRight').height();
-            $('.ucLeft').css('height',ucRighthei2 + 'px');
-        });
         return;
     }
 })
@@ -395,14 +363,6 @@ var stop = false;
 
     $('#pub').click(function(){
         _checkInput();
-        //左侧边栏通栏
-        var ucRighthei1 = $('.ucRight').height();//初始高度
-        $('.ucLeft').css('height',ucRighthei1 + 'px');
-        //窗口size改变
-        $(window).resize(function() {
-            var ucRighthei2 = $('.ucRight').height();
-            $('.ucLeft').css('height',ucRighthei2 + 'px');
-        });
 
         if( permission != 1){
             return false;
@@ -477,6 +437,7 @@ $(function () {
     // console.log(role);
     if(role == 1){
         $("#myrush").show();
+        $("#member").show();
     }
 
     $('#container').show();

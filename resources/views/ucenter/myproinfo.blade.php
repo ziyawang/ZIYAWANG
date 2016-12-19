@@ -98,15 +98,7 @@ $(function(){
                 }
                 var ServiceID = data[index].ServiceID;    //服务商ID
                 $("#match").html($("#match").html() + "<li><div class='reconTop'><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconTopTitle'>" + ServiceName + "</a><div class='cueRec'><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></div></div><a href='http://ziyawang.com/service/" + ServiceID + "' class='recImg'><img src='http://images.ziyawang.com" + ConfirmationP1 + "' /></a><a href='http://ziyawang.com/service/" + ServiceID + "' class='reconDescription'>" + ServiceIntroduction + "</a><div class='reconBottom'><span class='reconBottomCon'>服务类型</span>" + ServiceType + "</div><a href='http://ziyawang.com/service/" + ServiceID + "' class='lookMore'>查看内容&nbsp;&gt;</a></li>"); 
-            });    
-                    //左侧边栏通栏
-            var ucRighthei1 = $('.ucRight').height();//初始高度
-            $('.ucLeft').css('height',ucRighthei1 + 'px');
-            //窗口size改变
-            $(window).resize(function() {
-                var ucRighthei2 = $('.ucRight').height();
-                $('.ucLeft').css('height',ucRighthei2 + 'px');
-            });       
+            });     
                    
         } //成功执行方法    
     })   
