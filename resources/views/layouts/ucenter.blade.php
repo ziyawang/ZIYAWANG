@@ -10,9 +10,9 @@
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.0" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.0" />
-        <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.0" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.0.3.1" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.0.3" />
+        <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.0.3" />
 <style>
     #uploadifive-picture_upload{height: 30px!important;line-height: 30px!important;border-radius: 25px;background: #e48013;color: #fff;}
     .img_box{padding-left: 170px;}
@@ -101,7 +101,7 @@
 <!-- 二级banner -->
 <div class="find_service temp">
     <ul>
-        <li><a href="{{url('/course')}}"></a></li>
+        <li><a href="{{url('/ucenter/index')}}"></a></li>
     </ul>
 </div>
 <!-- 个人中心 -->
@@ -123,8 +123,9 @@
                 <li class="current" id="pubpro"><a href="{{url('/ucenter/index')}}"><i class="iconfont">&#xe61e;</i>发布信息</a></li>
                 <li id="mypro"><a href="{{url('/ucenter/mypro')}}"><i class="iconfont">&#xe61a;</i>我的发布</a></li>
                 <li id="confirm"><a href="{{url('/ucenter/confirm')}}"><i class="iconfont">&#xe60f;</i>服务方认证</a></li>
+                <li id="star"><a href="{{url('/ucenter/star')}}"><i class="iconfont">&#xe621;</i>星级认证</a></li>
                 <li id="myrush" style="display:none"><a href="{{url('/ucenter/myrush')}}"><i class="iconfont">&#xe619;</i>我的约谈</a></li>
-                <li id=""><a href="{{url('/ucenter/pay')}}"><i class="iconfont chongzhi">&#xe61f;</i>充值中心</a></li>
+                <li id="money"><a href="{{url('/ucenter/pay')}}"><i class="iconfont chongzhi">&#xe61f;</i>充值中心</a></li>
                 <li id="member" style="display:none;"><a href="{{url('/ucenter/member')}}"><i class="iconfont">&#xe6af;</i>会员中心</a></li>
                 <li id="safe"><a href="{{url('/ucenter/safe')}}"><i class="iconfont">&#xe61d;</i>安全中心</a></li>
                 <li id="mycollect"><a href="{{url('/ucenter/mycollect')}}"><i class="iconfont">&#xe61b;</i>我的收藏</a></li>
@@ -411,7 +412,7 @@ var stop = false;
                 <p class="con_ziya">联系资芽</p>
                 <p class="tel"><span></span>Tel：400 - 898 - 8557</p>
                 <p class="fax"><span></span>Mail：ziyawang@ziyawang.com</p>
-                <p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社 · 中关村</p><p class="fs12">国际创客中心B2-C15</p>
+                <p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社 · 中关村</p><p class="fs12">国际创客中心B2-F02</p>
             </div>
             <img src="/img/footer.png" class="erwei">
         </div>

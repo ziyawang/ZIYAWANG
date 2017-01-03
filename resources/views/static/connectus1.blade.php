@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-        <link rel="stylesheet" type="text/css" href="{{url('/css/us.css')}}?v=1.0.4" />
+        <link rel="stylesheet" type="text/css" href="{{url('/css/us.css')}}?v=2.0.3" />
     <!-- 二级banner -->
     <div class="find_service">
         <ul>
@@ -32,7 +32,7 @@
         <div class="us_right">
             <h2>联系我们</h2>
             <div class="us_info">
-                <p>联系地址：北京市海淀区中关村大街15-15号创业公社·中关村国际创客中心B2-C15</p>
+                <p>联系地址：北京市海淀区中关村大街15-15号创业公社·中关村国际创客中心B2-F02</p>
                 <p>客服邮箱：service@ziyawang.com</p>
                 <p>邮政编码：100080</p>
                 <p>工作时间：周一至周五 早9:00-晚6:00</p>

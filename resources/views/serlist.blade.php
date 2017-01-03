@@ -1,10 +1,10 @@
 @extends('layouts.home')
 @section('content')
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/findservice.css')}}?v=1.0.4" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/findservice.css')}}?v=2.0.3" />
 <!-- 二级banner -->
 <div class="find_service temp">
     <ul>
-        <li><a href="{{url('/course')}}"></a></li>
+        <li><a href="{{url('/ucenter/index')}}"></a></li>
     </ul>
     <div class="prompt_text">
         <div class="wrap bg">

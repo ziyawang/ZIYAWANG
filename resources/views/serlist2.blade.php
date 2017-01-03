@@ -7,14 +7,14 @@
 @endsection
 
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{asset('/css/servelist.css')}}">
+<link type="text/css" rel="stylesheet" href="{{asset('/css/serlist_v2.css')}}">
 <style>
     .item{cursor: pointer;}
 </style>
     <!-- 二级banner -->
 <div class="find_service temp">
     <ul>
-        <li><a href="{{url('/course')}}"></a></li>
+        <li><a href="{{url('/ucenter/index')}}"></a></li>
     </ul>
         <div class="prompt_text">
         <div class="wrap bg">
@@ -31,16 +31,31 @@
             <div class="service_type">
                 <span>服务方类型：</span>
                 <div class="des_ser">
+                    <a servicetype="null" class="current" href="javascript:;">不限</a>
+                    <a servicetype="01" href="javascript:;">收购资产包</a>
+                    <a servicetype="02" href="javascript:;">委外催收</a>
+                    <a servicetype="03" href="javascript:;">法律服务</a>
+                    <a servicetype="04" href="javascript:;">保理公司</a>
+                    <a servicetype="05" href="javascript:;">典当担保</a>
+                    <a servicetype="06" href="javascript:;">投融资服务</a>
+                    <a servicetype="10" href="javascript:;">尽职调查</a>
+                    <a servicetype="12" href="javascript:;">收购固产</a>
+                    <a servicetype="14" href="javascript:;" class="special">债权收购</a>
+                </div>
+                <!-- <div class="des_ser">
                     <a ServiceType="null" class="current" href="javascript:;">不限</a>
-                    <a ServiceType="01" href="javascript:;">资产包收购</a>
-                    <a ServiceType="02" href="javascript:;">催收机构</a>
-                    <a ServiceType="03" href="javascript:;">律师事务所</a>
-                    <a ServiceType="04" href="javascript:;">保理公司</a>
-                    <a ServiceType="05" href="javascript:;">典当担保</a>
+                    <a ServiceType="01" href="javascript:;">收购资产包</a>
+                    <a ServiceType="02" href="javascript:;">委外催收</a>
+                    <a ServiceType="03" href="javascript:;">法律服务</a>
                     <a ServiceType="06" href="javascript:;">投融资服务</a>
-                    <a ServiceType="10" href="javascript:;">尽职调查</a>
-                    <a ServiceType="12" href="javascript:;">资产收购</a>
-                    <a ServiceType="14" href="javascript:;" class="special">债权收购</a>
+                    <a ServiceType="12" href="javascript:;">收购固产</a>
+                </div> -->
+            </div>
+            <div class="service_level">
+                <span>服务方等级：</span>
+                <div class="des_ser">
+                    <a ServiceLevel="null" class="current" href="javascript:;">不限</a>
+                    <a ServiceLevel="1" href="javascript:;">会员</a>
                 </div>
             </div>
             <div class="area">
@@ -79,25 +94,18 @@
         </div>
     </div>
     <div class="xTitle">
-        <!-- <span>优质服务方</span>共0条信息 -->
-    </div>
-    <style>
-    .topPages{width: 1200px;margin: 0 auto;position: relative;top: -75px;}
-    .topPages .pageCon{display: block; position: absolute; right: 0; top: 0; float: right;}
-    .topPages .pages{left: auto;}
-    </style>
-    <!-- 公共分页/start -->
-    <div class="topPages">
-        <div class="pageCon" style="display:block">
-            <div class="pages">
-                <div id="Pagination1"></div>
-                <div class="searchPage">
-                  <span class="page-sum">共<strong class="allPage">0</strong>页</span>
+        <div class="fl" id="countsinfo"></div>
+        <div class="topPages">
+            <div class="pageCon" style="display:block">
+                <div class="pages">
+                    <div id="Pagination1"></div>
+                    <div class="searchPage">
+                      <span class="page-sum">共<strong class="allPage">0</strong>页</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- 公共分页/end -->
     <!-- waterfall -->
     <div class="infomation">
         <div class="waterfull clearfloat" id="waterfull">
@@ -138,6 +146,7 @@ $(function(){
     var startpage   = ( urlpage - 1 ) * 4 + 1;
     urlobj['ServiceArea'] = getQueryString("ServiceArea") ? getQueryString("ServiceArea") :undefined;
     urlobj['ServiceType'] = getQueryString("ServiceType") ? getQueryString("ServiceType") :undefined;
+    urlobj['ServiceLevel'] = getQueryString("ServiceLevel") ? getQueryString("ServiceLevel") :undefined;
     function query(obj) {
         var string = '';
         $.each(obj,function(n,value) {
@@ -183,12 +192,84 @@ $(function(){
         if(CollectFlag == 1){
             collectinfo = "<i class='iconfont heart red' title='已收藏' ServiceID='" + ServiceID + "'>&#xe601;</i>"
         }
-        var html = "<li ServiceID='" + ServiceID + "' class='item'><div class='itemTop'><div class='itemTopLeft'><span><img title='" + ServiceName + "' src='http://images.ziyawang.com" + UserPicture + "' /></span><b>" + ServiceNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' title='" + ServiceName + "(" + ConnectPerson + ")' href='http://ziyawang.com/service/"+ ServiceID +"'>" + ServiceName + "(" + ConnectPerson + ")</a></h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='cetification'><img title='" + ServiceName + "' src='http://images.ziyawang.com" + ConfirmationP1 + "' /></a><div class='illustration'><span class='createTime'>" + PubTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='descriptionInwords'>" + ServiceIntroduction + "</a><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='serviceType'>服务类型</a><p class='concreteTypes'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"'>" + ServiceType + "</a></p><p class='remarks'><span>所在地：" + ServiceLocation + "</span></p><p class='remarks'><span>服务地区：" + ServiceArea + "</span></p><p class='servicerInfo'><span class='levels'><i class='iconfont'>&#xe60e;</i><em>" + ServiceLevel + "</em></span></p></div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+
+        //会员展示
+        var showrightarr = data[index].showrightarr;
+        var showhtml = '';
+        $.each(showrightarr,function(index,value){
+            // console.log(value[0]);
+            switch(value[0])
+            {
+                case "资产包":
+                    showhtml += "<span class='bao' title='资产包VIP'></span>"
+                    break;
+                case "企业商账":
+                    showhtml += "<span class='qi' title='企业商账VIP'></span>"
+                    break;
+                case "固定资产":
+                    showhtml += "<span class='gu' title='固定资产VIP'></span>"
+                    break;
+                case "融资信息":
+                    showhtml += "<span class='rong' title='融资信息VIP'></span>"
+                    break;
+                case "个人债权":
+                    showhtml += "<span class='ge' title='个人债权VIP'></span>"
+                    break;
+            }
+        })
+        if(showhtml.length < 1){
+            showhtml = "<b>无</b>"
+        }
+        //认证展示
+        var showlevelarr = data[index].showlevelarr;
+        var levelhtml = '';
+        $.each(showlevelarr,function(index, value){
+            switch(index)
+            {
+                case "1":
+                    if(value == 2){
+                        levelhtml += "<span class='server-jin' title='保证金认证'></span>"
+                    } else {
+                        levelhtml += "<span class='jin' title='保证金认证'></span>"
+                    }
+                    break;
+                case "2":
+                    if(value == 2){
+                        levelhtml += "<span class='server-shidi' title='实地认证'></span>"
+                    } else {
+                        levelhtml += "<span class='shidi' title='实地认证'></span>"
+                    }
+                    break;
+                case "3":
+                    if(value == 2){
+                        levelhtml += "<span class='server-shipin' title='视频认证'></span>"
+                    } else {
+                        levelhtml += "<span class='shipin' title='视频认证'></span>"
+                    }
+                    break;
+                case "4":
+                    if(value == 2){
+                        levelhtml += "<span class='server-nuo' title='承诺书认证'></span>"
+                    } else {
+                        levelhtml += "<span class='nuo' title='承诺书认证'></span>"
+                    }
+                    break;
+                case "5":
+                    if(value == 2){
+                        levelhtml += "<span class='server-sanzh' title='三证认证'></span>"
+                    } else {
+                        levelhtml += "<span class='sanzh' title='三证认证'></span>"
+                    }
+                    break;
+            }
+        })
+
+        var html = "<li ServiceID='" + ServiceID + "' class='item'><a href='http://ziyawang.com/service/"+ ServiceID +"' target='_blank'><div class='itemTop'><div class='itemTopLeft'><img class='server-ava' title='" + ServiceName + "' src='http://images.ziyawang.com" + UserPicture + "'><b>" + ServiceNumber + "</b></div><div class='itemTopRight'><h2 title='" + ServiceName + "'>" + ServiceName + "(" + ConnectPerson + ")</h2><p><span class='visitors' title='浏览数'><i class='iconfont icon'>&#xe603;</i>" + ViewCount + "</span><span class='collectors' title='收藏数'><i class='iconfont'>&#xe601;</i>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><img class='cetification' title='" + ServiceName + "' src='http://images.ziyawang.com" + ConfirmationP1 + "'></div><div class='star-verify'><b class='star-verify-tit'>星级认证：</b><div class='server-star'> " + levelhtml + "</div></div><p class='serviceType'><b>服务类型：</b>" + ServiceType + "</p><p class='remarks'><b>服务地区：</b><span>" + ServiceArea + "</span></p><div class='member-type'><b class='star-verify-tit'>会员类型：</b><div class='member-type-icon'> " + showhtml + "</div></div></a><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
         return html;
     }
 // console.log(urldata)
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/service/list?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,  
+        url: 'http://api.ziyawang.com/v1/v2/service/list?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000, 
@@ -211,7 +292,7 @@ $(function(){
         var json = eval(tt); //数组 
         // console.log(json);
         var counts = json.counts;
-        $(".xTitle").html('<span>优质服务方</span>共' + counts + '条信息');
+        $("#countsinfo").html('<span>优质服务方</span>共' + counts + '条信息');
 
         var pages = json.pages;
         pages = Math.ceil(pages/4);
@@ -314,7 +395,7 @@ $(function(){
                 //加载更多数据
                 startpage += 1;
                 $.ajax({
-                    url: 'http://api.ziyawang.com/v1/service/list?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,   
+                    url: 'http://api.ziyawang.com/v1/v2/service/list?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,   
                     type: 'GET',  
                     dataType: 'json',  
                     timeout: 5000, 
@@ -488,12 +569,13 @@ function getQuery(key){
 var startpage = getQuery('startpage');
 var ServiceArea = getQuery('ServiceArea');
 var ServiceType = getQuery('ServiceType');
+var ServiceLevel = getQuery('ServiceLevel');
 
 function ajax(fenye) {
     if(fenye != undefined){
         startpage = fenye;
     }
-    var data = 'startpage=' + startpage + '&ServiceType=' + ServiceType + '&ServiceArea=' + ServiceArea;
+    var data = 'startpage=' + startpage + '&ServiceType=' + ServiceType + '&ServiceArea=' + ServiceArea + '&ServiceLevel=' + ServiceLevel;
     // console.log(data);
     var url = "http://ziyawang.com/service?" + data;
     url = encodeURI(url);
@@ -525,6 +607,11 @@ $('.service_type a').click(function(){
 $('.area .showArea a, .zhedie .hide a').click(function(){
     startpage = 1;
     ServiceArea = $(this).attr('ServiceArea');
+    ajax();
+});
+$('.service_level a').click(function(){
+    startpage = 1;
+    ServiceLevel = $(this).attr('ServiceLevel');
     ajax();
 });
 

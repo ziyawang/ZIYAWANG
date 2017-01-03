@@ -5,9 +5,9 @@
         <title>资芽网-全球不良资产超级综服平台</title>
         <meta name="Keywords" content="资芽网,不良资产,不良资产处置,不良资产处置平台" />
         <meta name="Description" content="资芽网是全球不良资产智能综服超级平台,吸引全国各类不良资产持有者，汇集各类不良资产信息及相关需求,整合海量不良资产处置服务机构与投资方,搭建多样化处置通道和不良资产综服生态产业体系,嵌入移动社交与视频直播,兼具媒体属性,实现大数据搜索引擎和人工智能,打造共享开放的全球不良资产智能综服超级平台。" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.0" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.0" /> 
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}?v=2.0" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.0.3.1" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.0.3" /> 
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}?v=2.0.3" />
 
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -189,7 +189,7 @@ $(function () {
                 <p class="con_ziya">联系资芽</p>
                 <p class="tel"><span></span>Tel：400 - 898 - 8557</p>
                 <p class="fax"><span></span>Mail：ziyawang@ziyawang.com</p>
-                <p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社 · 中关村</p><p class="fs12">国际创客中心B2-C15</p>
+                <p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社 · 中关村</p><p class="fs12">国际创客中心B2-F02</p>
             </div>
             <img src="/img/footer.png" class="erwei">
         </div>

@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-        <link rel="stylesheet" type="text/css" href="{{url('/css/company.css')}}?v=1.0.4" />
+        <link rel="stylesheet" type="text/css" href="{{url('/css/company.css')}}?v=2.0.3" />
         <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=bKUsU7wpZp0gOKGF1PPK57X9xrROMsT7"></script>
     <!-- 二级banner -->
     <div class="find_service">
@@ -35,7 +35,7 @@
             <div class="ucRight">
                 <div class="revisionTitle"><span>联系我们</span></div>
                 <div class="revAbout">
-                    <p>联系地址：北京市海淀区中关村大街15-15号创业公社·中关村国际创客中心B2-C15
+                    <p>联系地址：北京市海淀区中关村大街15-15号创业公社·中关村国际创客中心B2-F02
                     <p>客服邮箱：service@ziyawang.com</p>
                     <p>邮政编码：100080</p>
                     <p>工作时间：周一至周五 早9:00-晚6:00</p>
@@ -71,7 +71,7 @@
             }
             function addMapOverlay(){
               var markers = [
-                {content:"中关村大街15-15号创业公社 中关村国际创客中心B2-C15",title:"资芽（北京）网络科技有限公司",imageOffset: {width:-46,height:-21},position:{lat:39.988317,lng:116.320115}}
+                {content:"中关村大街15-15号创业公社 中关村国际创客中心B2-F02",title:"资芽（北京）网络科技有限公司",imageOffset: {width:-46,height:-21},position:{lat:39.988317,lng:116.320115}}
               ];
               for(var index = 0; index < markers.length; index++ ){
                 var point = new BMap.Point(markers[index].position.lng,markers[index].position.lat);

@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-    <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.4" />
+    <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.0.3" />
 <!-- 右侧详情 -->
 <div class="ucRight">
     <div class="ucRightCon ucRightSafe myCollections">

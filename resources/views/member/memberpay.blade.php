@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-    <link rel="stylesheet" type="text/css" href="{{url('/css/releasehome.css')}}?v=2.0" />
+    <link rel="stylesheet" type="text/css" href="{{url('/css/releasehome.css')}}?v=2.0.3" />
     <div class="ucRight">
         <div class="ucRightCon member-sys">
             <h3 class="member-title">
@@ -219,7 +219,7 @@
             $(this).addClass('current').siblings().removeClass('current');
             channel = $(this).attr('channel');
         });
-
+//12.21先停
         $('.rechargeConfirm').click(function(){
             if(!permission){
                 return;

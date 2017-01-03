@@ -20,9 +20,13 @@
 .member-table{padding: 23px 26px;font-size: 16px;}
 .member-table table{border-collapse:collapse;}
 .member-privil{display: inline-block;background:url(../img/member_btn1.png) no-repeat;text-align: center;color:#fff;line-height: 31px;width: 111px;height: 33px;cursor: pointer;}
-.member-charge{display: inline-block;background:url(../img/member_btn.png) no-repeat;width: 103px;height: 35px;line-height: 33px;text-align: center;color:#fff;}
-.member-privil:hover,.member-charge:hover{color:#fff;}
-.member-privil:active,.member-charge:active{margin-top: 2px;}
+.member-charge{background:url(../img/member_btn.png) no-repeat;}
+.member-review{background:url(../img/member_btn2.png) no-repeat;}
+.member-success{background:url(../img/member_btn3.png) no-repeat;}
+.member-failed{background:url(../img/member_btn4.png) no-repeat;}
+.member-charge,.member-review,.member-success,.member-failed{display: inline-block;width: 103px;height: 35px;line-height: 33px;text-align: center;color:#fff;}
+.member-privil:hover,.member-charge:hover,.member-review:hover,.member-success:hover,.member-failed:hover{color:#fff;}
+.member-privil:active,.member-charge:active,.member-review:active,.member-success:active,.member-failed:active{margin-top: 2px;}
 .member-fee{display: inline-block;width: 156px;height: 57px;line-height: 57px;border: 1px solid #c0c0c0;text-align: center;position: relative;margin: 0 10px;color:#000;}
 .member-fee i{display: none; position: absolute; width: 26px; height: 15px; background: url(../img/zhifu.png) no-repeat -485px -54px; bottom: 0; right: 0;}
 .member-body .current{border: 2px solid #ffad00;}
@@ -45,3 +49,25 @@
 .layer-member .layui-layer-btn{text-align: center;margin-top: -10px;padding-bottom: 30px;}
 .layer-member .layui-layer-btn .layui-layer-btn0{background:#ffca00;border: none;width: 124px;height: 34px;line-height: 34px;text-align: center;border-radius: 20px;font-weight: bold;font-size: 16px;}
 .layer-member .layui-layer-btn0:hover{background:#ffad00;box-shadow: 0 1px 0 #ccc;}
+/*server*/
+.server-star{float: left;overflow: hidden;margin-top: -5px;}
+.server-star a{display: block;float: left;width: 33px;height: 32px;background:url(../img/server_lticon_light.png) no-repeat 0 -40px;}
+.server-star .shidi{background-position: -36px -40px;}
+.server-star .shipin{background-position: -72px -40px;}
+.server-star .nuo{background-position: -110px -40px;}
+.server-star .sanzh{background-position: -147px -40px;}
+.server-star .server-jin{background-position: 0 0;}
+.server-star .server-shidi{background-position: -36px 0;}
+.server-star .server-shipin{background-position: -72px 0;}
+.server-star .server-nuo{background-position: -110px 0;}
+.server-star .server-sanzh{background-position: -147px 0;}
+.member-head .ser4{padding: 16px 0;}
+.ser1,.ser2,.ser3,.ser4{width: 152px;text-align: center;border-left: 1px solid #d8d8d8;border-right: 1px solid #d8d8d8;}
+.ser5{width: 200px;text-align: center;border-right: 1px solid #d8d8d8;}
+.ser3 span{display: block;width: 57px;height: 57px;background:url(../img/server_gticon.png) no-repeat 0 0;margin: 20px auto;}
+.ser3 .server-gt-shidi{background-position: 0 -59px;}
+.ser3 .server-gt-shipin{background-position: 0 -118px;}
+.ser3 .server-gt-nuo{background-position: 0 -177px;}
+.ser3 .server-gt-sanzh{background-position: 0 -236px;}
+.server-content{width: 710px;margin:0 auto;border-top: 1px solid #fdd000;text-align: justify;padding:30px 5px;font-size: 22px;color:#404040;letter-spacing: 1px;}
+.server-tips{width: 720px;margin:0 auto;color:#dd0000;font-size: 18px;padding-bottom: 25px;text-align: justify;}

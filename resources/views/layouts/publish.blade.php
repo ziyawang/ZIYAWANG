@@ -10,9 +10,9 @@
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.0" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.0" />
-        <link type="text/css" rel="stylesheet" href="{{url('/css/fixed.css')}}?v=2.0.4" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.0.3.1" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.0.3" />
+        <link type="text/css" rel="stylesheet" href="{{url('/css/fixed.css')}}?v=2.0.3.4" />
 <style>
     #uploadifive-picture_upload{height: 30px!important;line-height: 30px!important;border-radius: 25px;background: #e48013;color: #fff;}
     .img_box{padding-left: 170px;}
@@ -103,7 +103,7 @@
 <!-- 二级banner -->
 <div class="find_service temp">
     <ul>
-        <li><a href="{{url('/course')}}"></a></li>
+        <li><a href="{{url('/ucenter/index')}}"></a></li>
     </ul>
 </div>
 <!-- 个人中心 -->
@@ -473,7 +473,7 @@ var stop = false;
                 <p class="con_ziya">联系资芽</p>
                 <p class="tel"><span></span>Tel：400 - 898 - 8557</p>
                 <p class="fax"><span></span>Mail：ziyawang@ziyawang.com</p>
-                <p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社 · 中关村</p><p class="fs12">国际创客中心B2-C15</p>
+                <p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社 · 中关村</p><p class="fs12">国际创客中心B2-F02</p>
             </div>
             <img src="/img/footer.png" class="erwei">
         </div>

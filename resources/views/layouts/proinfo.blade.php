@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
 @yield('title')
-        <link rel="stylesheet" type="text/css" href="{{asset('/css/base.css')}}?v=2.0" />
-        <link rel="stylesheet" type="text/css" href="{{asset('/css/public.css')}}?v=2.0" />
-        <link rel="stylesheet" type="text/css" href="{{asset('/css/issueinfo.css')}}?v=2.0" />
+        <link rel="stylesheet" type="text/css" href="{{asset('/css/base.css')}}?v=2.0.3.1" />
+        <link rel="stylesheet" type="text/css" href="{{asset('/css/public.css')}}?v=2.0.3" />
+        <link rel="stylesheet" type="text/css" href="{{asset('/css/issueinfo.css')}}?v=2.0.3" />
         <script type="text/javascript" src="{{asset('/js/jquery.js')}}"></script>
         <script src="{{url('/js/jquery.cookie.js')}}"></script>
         <script type="text/javascript" src="{{asset('/org/layer/layer.js')}}"></script>
@@ -30,7 +30,7 @@
             .nocoverBg{width: 145px;height: 145px;background:url(/img/coverpop.png) no-repeat;margin:0 auto;display: block;}
             .noFree{font-size: 24px;color:#333;font-weight: bold;display: block;text-align: center;padding: 8px 0 20px;}
             /*.layui-layer-title{display: none;}*/
-            .layui-layer-title{height: 0;border-bottom: 0;}
+            /*.layui-layer-title{height: 0;border-bottom: 0;}*/
             .layui-layer-btn{padding-top: 20px!important;text-align: center;height: 60px;background: #fff;}
             .layui-layer-btn a{width: 108px;padding: 6px 0px 10px; background: #f4f4f4; border-radius: 5px; border-right: 2px; color: #000; box-shadow: 0 -5px 0 #bababa inset; position: relative;border: 0 none;margin: 0;font-size: 20px;margin: 0 20px;text-align: center;}
             .layui-layer-btn .layui-layer-btn1{}
@@ -120,7 +120,7 @@
         <!-- banner/start -->
 <div class="find_service temp">
     <ul>
-        <li><a href="{{url('/course')}}"></a></li>
+        <li><a href="{{url('/ucenter/index')}}"></a></li>
     </ul>
     </div>
     <!-- banner/end -->
@@ -175,7 +175,7 @@
                     <ul>
                         @if($data->PictureDes)
                         @foreach($data->PictureDes as $picture)
-                        <li><a href="javascript:;"><img src="http://images.ziyawang.com/{{$picture}}" /></a></li>
+                        <li><a href="javascript:;"><img src="http://images.ziyawang.com{{$picture}}" /></a></li>
                         @endforeach
                         @endif
                     </ul>
@@ -244,7 +244,7 @@
                 <p class="con_ziya">联系资芽</p>
                 <p class="tel"><span></span>Tel：400 - 898 - 8557</p>
                 <p class="fax"><span></span>Mail：ziyawang@ziyawang.com</p>
-                <p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社·中关村</p><p class="fs12">国际创客中心B2-C15</p>
+                <p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社·中关村</p><p class="fs12">国际创客中心B2-F02</p>
             </div>
             <img src="/img/footer.png" class="erwei">
         </div>
@@ -269,7 +269,7 @@
             } else if (Price != 0 && PayFlag == 1){
                 // $('#shownumber').html(ConnectPhone);
                 $('#rush').css('cursor','default').unbind('click'); 
-                layer.alert('联系电话：' + ConnectPhone, {title: '提示'});
+                layer.alert('联系电话：' + ConnectPhone, {title: false,closeBtn:0});
             }
         }
 
@@ -706,7 +706,7 @@ function collect() {
 
 function rush() {
     if(PayFlag == 1){
-        layer.alert('联系电话：' + ConnectPhone, {title: '提示'});
+        layer.alert('联系电话：' + ConnectPhone, {title: false,closeBtn:0});
         return false;
     }
     // if(Price == 0){
@@ -720,7 +720,7 @@ function rush() {
                 if(msg.status_code == 200 || msg.status_code == 417){
                     $('#shownumber').html(ConnectPhone);
                     $('#rush').css('cursor','default').unbind('click'); 
-                    layer.alert('联系电话：' + ConnectPhone, {title: '提示'});
+                    layer.alert('联系电话：' + ConnectPhone, {title: false,closeBtn:0});
                     // $('.popNumDet').html('联系电话：' + ConnectPhone);
                     // $('.popPhoneNum').show();
                 } else if(msg.status_code == 418) {

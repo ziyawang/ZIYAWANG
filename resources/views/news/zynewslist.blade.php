@@ -7,11 +7,11 @@
 @endsection
 
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/news.css')}}?v=1.0.4" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/news.css')}}?v=2.0.3" />
 <!-- 二级banner -->
 <div class="find_service temp">
     <ul>
-        <li><a href="{{url('/course')}}"></a></li>
+        <li><a href="{{url('/ucenter/index')}}"></a></li>
     </ul>
 </div>
 <!-- 主体 -->

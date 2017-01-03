@@ -342,17 +342,18 @@ body{background:#fff;}
 .system_details {padding: 0 0 0 83px; line-height: 26px; color: #666;display: none;}
 /*perfect information*/
 .mr_perfect{padding-top: 20px;font-size: 16px;}
-.linkman,.linktel,.perfect,.perfect_illu,.linkaddr,.service_zone,.service_type{padding:0 0 20px 0;}
+.linkman,.linktel,.perfect,.perfect_illu,.linkaddr,.service_zone,.service_type,.register-capital,.register-time,.company-scale{padding:0 0 20px 0;}
 .service_type{padding:0;}
-.linkman span,.linktel span,.perfect span,.perfect_illu span,.linkaddr span,.service_zone span,.service_type span{display: inline-block;width: 7em;}
-.linkman span em,.linktel span em,.perfect span em,.perfect_illu span em,.linkaddr span em,.service_zone span em,.service_type span em,.up_ceti span em{color:#f00;float: left;display: block;width: 1em;margin:3px 0 0 0;height:12px;}
+.linkman span,.linktel span,.perfect span,.perfect_illu span,.linkaddr span,.service_zone span,.service_type span,.register-capital span,.company-scale span{display: inline-block;width: 7em;}
+.linkman span em,.linktel span em,.perfect span em,.perfect_illu span em,.linkaddr span em,.service_zone span em,.service_type span em,.up_ceti span em,.register-capital span em,.register-time span em,.company-scale span em{color:#f00;float: left;display: block;width: 1em;margin:3px 0 0 0;height:12px;}
 .linkman span i,.linktel span i,.linkaddr span i{display: inline-block;text-align: right;width: 1em;}
-.perfect span i,.perfect_illu span i,.service_zone span i,.service_type span i{display: inline-block;text-align: right;width: 2em;}
-.perfect_illu span,.linkaddr span,.service_zone span,.service_type span{float: left;}
+.perfect span i,.perfect_illu span i,.service_zone span i,.service_type span i,.register-capital span i,.register-time span i,.company-scale span i{display: inline-block;text-align: right;width: 2em;}
+.perfect_illu span,.linkaddr span,.service_zone span,.service_type span,.register-time span{float: left;}
 .perfect_illu textarea{width:780px;height: 150px;padding:3px 5px;border: 1px solid #e5e5e5;}
 .linkman input,.linktel input{width: 170px;border: 1px solid #e5e5e5;padding:3px 5px;height: 26px;line-height: 26px;margin-left: -4px;}
-.perfect input{border: 1px solid #e5e5e5;padding:3px 5px;width: 350px;height: 26px;line-height: 26px;margin-left: -4px;}
-.sel_city select{border: 1px solid #e5e5e5;min-width: 85px;}
+.perfect input,.register-capital input,.company-scale input{border: 1px solid #e5e5e5;padding:3px 5px;width: 350px;height: 26px;line-height: 26px;margin-left: -4px;}
+.sel_city select,.select-time{border: 1px solid #e5e5e5;min-width: 85px;}
+.company-scale input,.register-capital input{width: 166px;}
 .coverpop{width:100%;height:100%;background:rgba(0,0,0,0.5);opacity:0.5;filter:alpha(opacity:50);position:fixed;top: 0;left:0;display: none;z-index: 999;}
 .service_zone{overflow: hidden;}
 .service_zone .zone{float: left;}
@@ -367,7 +368,7 @@ body{background:#fff;}
 .revoke{background:#ccc;}
 .choicebtn{position: absolute;right:10px;top: 5px;}
 .st_details{overflow: hidden;width: 710px;}
-.st_details label{float:left;width:15%;color:#333;padding-bottom: 20px;}
+.st_details label{float:left;color:#333;padding-bottom: 20px;margin-right: 32px;}
 .st_details label input{margin-right: 5px;vertical-align: middle;}
 .up_ceti .ucSpan{float: left;line-height: 36px;}
 .lookChat .selectiveType span{width: 122px;}
@@ -435,3 +436,28 @@ body{background:#fff;}
 .member-sys .td1,.member-sys .tradeUl .td1{width: 142px;padding: 0;text-align: center;}
 .member-sys .td2,.member-sys .tradeUl li .td2{width: 350px;}
 .member-sys .td3,.member-sys .tradeUl li .td3{width: 151px;}
+/*2016-12-22*/
+.server-icon{float: left;overflow: hidden;}
+.server-icon-single{display: block;float: left;width: 33px;height: 32px;background:url(../img/server_lticon_light.png) no-repeat 0 -40px;margin: 8px 5px 0 0;}
+.server-jin{background-position: 0 0;}
+.server-shidi{background-position: -36px 0;}
+.server-shipin{background-position: -72px 0;}
+.server-nuo{background-position: -110px 0;}
+.server-sanzh{background-position: -147px 0;}
+.server-money a{margin:0 0 20px 16px;}
+.implify{color:#d00;font-size: 16px;padding-left: 14px;}
+.member-sys .pl16{padding-left: 16px;}
+.up-and-down{padding-top: 32px;text-align: center;min-height: 650px;}
+.server-btn{display: block;margin:0 auto 18px;width: 129px;height: 34px;background:url(../img/updown.png) no-repeat 0 0;cursor: pointer;position: relative;overflow: hidden;}
+.server-btn:active{top:1px;}
+.upload-btn{background-position: 0 -34px;white-space: nowrap;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+.upload-btn input,.server-plus input{position: absolute; top: 0; right: 0; margin: 0; opacity: 0; -ms-filter: 'alpha(opacity=0)'; font-size: 200px !important; direction: ltr; cursor: pointer;width:auto;height:auto;}
+.img_box {padding: 28px 0 0 128px;}
+.up-and-down .pictures{margin: 20px auto 0; display: none; position: relative; margin-bottom: 8px;width: 300px;}
+.up-and-down img {width: 300px; height: auto; border: 1px solid #ccc;}
+.deleteImg {position: absolute; width: 22px; height: 22px; background: #b8b8b8 url(/img/zhifu.png) no-repeat -147px -46px; cursor: pointer; right: -1px; top: 0; display: none;}
+.plus-box{padding-bottom: 30px;}
+.server-plus{display: inline-block;width: 85px;height: 85px;background:url(../img/server-plus.png) no-repeat;white-space: nowrap;vertical-align: middle;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;overflow: hidden;cursor: pointer;position: relative;margin: 0 20px;}
+.server-upload-file{background-position: 0 -68px;margin-top: 20px;}
+.server-plus .pictures{width: 83px;height: 83px;margin:0;}
+.server-plus .pictures img{width: 83px;height: 83px;border-radius: 3px;}

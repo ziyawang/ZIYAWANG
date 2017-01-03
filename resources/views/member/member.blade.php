@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/member.css')}}?v=1.0.4.1" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/member.css')}}?v=2.0.3" />
     <div class="ucRight">
         <h3 class="member-tit"><span class="member-tit-cap">会员中心</span></h3>
         <div class="member-tips">

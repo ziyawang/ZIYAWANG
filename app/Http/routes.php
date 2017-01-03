@@ -23,8 +23,8 @@ Route::get('/resetpwd', 'IndexController@resetpwd');//找回密码
 // Route::get('/project', 'IndexController@proList2');//找信息
 // Route::any('/project/{id}', 'IndexController@proInfo2');//信息详情
 Route::any('/project/{type}/{id}', 'ProjectController@proInfo');//信息详情
-Route::get('/service', 'IndexController@serList2');//找信息
-Route::get('/service/{id}', 'IndexController@serInfo2');//信息详情
+Route::get('/service', 'IndexController@serList2');//找服务
+Route::get('/service/{id}', 'UserController@serInfo');//服务详情
 
 Route::get('/video', 'VideoController@videoList');//视频首页
 Route::get('/video/homemade', 'VideoController@homemade');//资芽哈哈哈视频列表
@@ -120,6 +120,12 @@ Route::get('/report', 'ActivityController@report');
 Route::any('/ucenter/member','UCenterController@member');
 Route::get('/ucenter/member/pay','UCenterController@memberPay');
 Route::get('/ucenter/member/detail','UCenterController@memberDetail');
+
+//12.25服务方认证
+Route::any('/ucenter/star','UCenterController@star');
+Route::get('/ucenter/star/pay','UCenterController@starPay');
+Route::get('/ucenter/star/sz','UCenterController@sz');
+Route::get('/ucenter/star/cns','UCenterController@cns');
 
 
 

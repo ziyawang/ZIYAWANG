@@ -115,7 +115,7 @@
 <!--banner图-->
 	<div class="banner">
 		<ul>
-			<li><a target="_blank" href="{{url('/course')}}" class="img04" style="cursor:pointer"></a></li>
+			<li><a target="_blank" href="{{url('/ucenter/index')}}" class="img04" style="cursor:pointer"></a></li>
 			<li><a href="javascript:;" class="img01"></a></li>
 			<li><a href="javascript:;" class="img02"></a></li>
 			<li><a target="_blank" href="{{url('/video')}}" class="img03" style="cursor:pointer"></a></li>
@@ -170,9 +170,9 @@
 				<div class="classify_left">
 					<h3>服务方类型</h3>
 					<ul>
-						<li><a href="{{url('/service?ServiceType=01')}}">资产包收购</a><a href="{{url('/service?ServiceType=02')}}">催收机构</a><a href="{{url('/service?ServiceType=12')}}">资产收购</a></li>
+						<li><a href="{{url('/service?ServiceType=01')}}">收购资产包</a><a href="{{url('/service?ServiceType=02')}}">委外催收</a><a href="{{url('/service?ServiceType=12')}}">收购固产</a></li>
 						<li><a href="{{url('/service?ServiceType=06')}}">投融资服务</a><a href="{{url('/service?ServiceType=10')}}">尽职调查</a><a href="{{url('/service?ServiceType=14')}}">债权收购</a></li>
-						<li><a href="{{url('/service?ServiceType=03')}}">律师事务所</a><a href="{{url('/service?ServiceType=05')}}">典当公司</a></li>
+						<li><a href="{{url('/service?ServiceType=03')}}">法律服务</a><a href="{{url('/service?ServiceType=05')}}">典当公司</a></li>
 						<li><a href="{{url('/service?ServiceType=04')}}">保理公司</a><a href="{{url('/service?ServiceType=05')}}">担保公司</a></li>
 					</ul>
 				</div>
@@ -434,7 +434,7 @@
 				<p class="con_ziya">联系资芽</p>
 				<p class="tel"><span></span>Tel：400 - 898 - 8557</p>
 				<p class="fax"><span></span>Mail：ziyawang@ziyawang.com</p>
-				<p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社 · 中关村</p><p class="fs12">国际创客中心B2-C15</p>
+				<p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社 · 中关村</p><p class="fs12">国际创客中心B2-F02</p>
 			</div>
 			<img src="/img/footer.png" class="erwei">
 		</div>

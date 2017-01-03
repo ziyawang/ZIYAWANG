@@ -1,6 +1,6 @@
 @extends('layouts.home')
 @section('content')
-        <link rel="stylesheet" type="text/css" href="{{url('/css/us.css')}}?v=1.0.4" />
+        <link rel="stylesheet" type="text/css" href="{{url('/css/us.css')}}?v=2.0.3" />
     <!-- 主体 -->
     <div class="box">
         <div class="topimg">

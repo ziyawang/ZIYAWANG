@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/safe.css')}}?v=1.0.4" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/safe.css')}}?v=2.0.3" />
 <!-- 右侧详情 -->
     <div class="main_right perfect_info">
         <h2>重新完善信息</h2>

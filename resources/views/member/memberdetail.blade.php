@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-    <link rel="stylesheet" type="text/css" href="{{url('/css/releasehome.css')}}?v=2.0.4" />
+    <link rel="stylesheet" type="text/css" href="{{url('/css/releasehome.css')}}?v=2.0.3.4" />
     <div class="ucRight">
         <div class="ucRightCon member-sys">
             <h3 class="member-title">

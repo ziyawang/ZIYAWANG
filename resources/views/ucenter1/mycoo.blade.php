@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/myorder.css')}}?v=1.0.4" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/myorder.css')}}?v=2.0.3" />
 <!-- 右侧详情 -->
     <div class="main_right">
         <h2>我合作的<a href="#">时间</a></h2>

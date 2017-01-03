@@ -9,7 +9,7 @@
                         <li><span>发布方身份：</span>{{$data->Identity}}</li>
                         <li><span>来源：</span>{{$data->FromWhere}}</li>
                         <li><span>资产包类型：</span>{{$data->AssetType}}</li>
-                        <li><span>地区</span>{{$data->ProArea}}</li>
+                        <li><span>地区：</span>{{$data->ProArea}}</li>
                     </ul>
                     <div class="bidprice nobdb">
                         <span class="yel-bg"><i class="iconfont">&#xe60c;</i>总金额</span>

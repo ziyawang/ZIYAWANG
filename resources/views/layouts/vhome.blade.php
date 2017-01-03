@@ -5,9 +5,9 @@
         <title>资芽视频-不良资产领域第一视频平台</title>
         <meta name="Keywords" content="资芽视频,不良资产视频,不良资产行业视频,资芽网视频" />
         <meta name="Description" content="资芽视频是资芽网第一视频,行业专家释疑解惑,分享经验,培训学习,剖析热点话题;线上线下活动,同业互动,探索分析,交流共享,协作共赢,鼓励创新,普及法律常识,降低法律风险.推动不良资产行业,金融领域健康有序发展." />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.0" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}?v=2.0" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.0" /> 
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.0.3.1" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}?v=2.0.3" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.0.3" /> 
 
 
         <meta name="viewport" content="width=1492">
@@ -128,7 +128,7 @@ var _hmt = _hmt || [];
                 <p class="con_ziya">联系资芽</p>
                 <p class="tel"><span></span>Tel：400 - 898 - 8557</p>
                 <p class="fax"><span></span>Mail：ziyawang@ziyawang.com</p>
-                <p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社 · 中关村</p><p class="fs12">国际创客中心B2-C15</p>
+                <p class="address fs12">总部地址：</p><p class="mb10 fs12">北京市海淀区中关村大街15-15号创业公社 · 中关村</p><p class="fs12">国际创客中心B2-F02</p>
             </div>
             <img src="/img/footer.png" class="erwei">
         </div>

@@ -8,7 +8,7 @@
 
 
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{asset('/css/servelist.css')}}">
+<link type="text/css" rel="stylesheet" href="{{asset('/css/serlist_v2.css')}}">
     <!-- 二级banner -->
     <div class="find_service">
         <ul>
@@ -101,7 +101,79 @@ $(function(){
         if(CollectFlag == 1){
             collectinfo = "<i class='iconfont heart red' title='已收藏' ServiceID='" + ServiceID + "'>&#xe601;</i>"
         }
-        var html = "<li class='item'><div class='itemTop'><div class='itemTopLeft'><span><img title='" + ServiceName + "' src='http://images.ziyawang.com" + UserPicture + "' /></span><b>" + ServiceNumber + "</b></div><div class='itemTopRight'><h2><a target='_blank' title='" + ServiceName + "(" + ConnectPerson + ")' href='http://ziyawang.com/service/"+ ServiceID +"'>" + ServiceName + "(" + ConnectPerson + ")</a></h2><p><i class='iconfont icon' title='浏览数'>&#xe603;</i><span class='visitors' title='浏览数'>" + ViewCount + "</span><i class='iconfont' title='收藏数'>&#xe601;</i><span class='collectors' title='收藏数'>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='cetification'><img title='" + ServiceName + "' src='http://images.ziyawang.com" + ConfirmationP1 + "' /></a><div class='illustration'><span class='createTime'>" + PubTime + "</span></div></div><div class='itemBottom'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='descriptionInwords'>" + ServiceIntroduction + "</a><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"' class='serviceType'>服务类型</a><p class='concreteTypes'><a target='_blank' href='http://ziyawang.com/service/"+ ServiceID +"'>" + ServiceType + "</a></p><p class='remarks'><span>所在地：" + ServiceLocation + "</span></p><p class='remarks'><span>服务地区：" + ServiceArea + "</span></p><p class='servicerInfo'><span class='levels'><i class='iconfont'>&#xe60e;</i><em>" + ServiceLevel + "</em></span></p></div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+
+        //会员展示
+        var showrightarr = data[index].showrightarr;
+        var showhtml = '';
+        $.each(showrightarr,function(index,value){
+            // console.log(value[0]);
+            switch(value[0])
+            {
+                case "资产包":
+                    showhtml += "<span class='bao' title='资产包VIP'></span>"
+                    break;
+                case "企业商账":
+                    showhtml += "<span class='gu' title='固定资产VIP'></span>"
+                    break;
+                case "固定资产":
+                    showhtml += "<span class='ge' title='个人债权VIP'></span>"
+                    break;
+                case "融资信息":
+                    showhtml += "<span class='qi' title='企业商账VIP'></span>"
+                    break;
+                case "个人债权":
+                    showhtml += "<span class='rong' title='融资信息VIP'></span>"
+                    break;
+            }
+        })
+        if(showhtml.length < 1){
+            showhtml = "<b>无</b>"
+        }
+        //认证展示
+        var showlevelarr = data[index].showlevelarr;
+        var levelhtml = '';
+        $.each(showlevelarr,function(index, value){
+            switch(index)
+            {
+                case "1":
+                    if(value == 2){
+                        levelhtml += "<span class='server-jin' title='保证金认证'></span>"
+                    } else {
+                        levelhtml += "<span class='jin' title='保证金认证'></span>"
+                    }
+                    break;
+                case "2":
+                    if(value == 2){
+                        levelhtml += "<span class='server-shidi' title='实地认证'></span>"
+                    } else {
+                        levelhtml += "<span class='shidi' title='实地认证'></span>"
+                    }
+                    break;
+                case "3":
+                    if(value == 2){
+                        levelhtml += "<span class='server-shipin' title='视频认证'></span>"
+                    } else {
+                        levelhtml += "<span class='shipin' title='视频认证'></span>"
+                    }
+                    break;
+                case "4":
+                    if(value == 2){
+                        levelhtml += "<span class='server-nuo' title='承诺书认证'></span>"
+                    } else {
+                        levelhtml += "<span class='nuo' title='承诺书认证'></span>"
+                    }
+                    break;
+                case "5":
+                    if(value == 2){
+                        levelhtml += "<span class='server-sanzh' title='三证认证'></span>"
+                    } else {
+                        levelhtml += "<span class='sanzh' title='三证认证'></span>"
+                    }
+                    break;
+            }
+        })
+
+        var html = "<li ServiceID='" + ServiceID + "' class='item'><a href='http://ziyawang.com/service/"+ ServiceID +"' target='_blank'><div class='itemTop'><div class='itemTopLeft'><img class='server-ava' title='" + ServiceName + "' src='http://images.ziyawang.com" + UserPicture + "'><b>" + ServiceNumber + "</b></div><div class='itemTopRight'><h2 title='" + ServiceName + "'>" + ServiceName + "(" + ConnectPerson + ")</h2><p><span class='visitors' title='浏览数'><i class='iconfont icon'>&#xe603;</i>" + ViewCount + "</span><span class='collectors' title='收藏数'><i class='iconfont'>&#xe601;</i>" + CollectCount + "</span></p></div></div><div class='itemMiddle'><img class='cetification' title='" + ServiceName + "' src='http://images.ziyawang.com" + ConfirmationP1 + "'></div><div class='star-verify'><b class='star-verify-tit'>星级认证：</b><div class='server-star'> " + levelhtml + "</div></div><p class='serviceType'><b>服务类型：</b>" + ServiceType + "</p><p class='remarks'><b>服务地区：</b><span>" + ServiceArea + "</span></p><div class='member-type'><b class='star-verify-tit'>会员类型：</b><div class='member-type-icon'> " + showhtml + "</div></div></a><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
         return html;
     }
 

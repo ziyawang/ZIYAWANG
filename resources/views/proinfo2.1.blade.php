@@ -7,8 +7,8 @@
 @endsection
 
 @section('content')
-        <link rel="stylesheet" type="text/css" href="{{url('/css/infomation.css')}}?v=1.0.4.1" />
-        <link rel="stylesheet" type="text/css" href="{{url('/css/infolist.css')}}?v=1.0.4" />
+        <link rel="stylesheet" type="text/css" href="{{url('/css/infomation.css')}}?v=2.0.3" />
+        <link rel="stylesheet" type="text/css" href="{{url('/css/infolist.css')}}?v=2.0.3" />
     
         <!-- 二级banner -->
         <div class="find_service">

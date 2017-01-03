@@ -1,12 +1,39 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=1.0.4" />
+<script src="http://ziyawang.com/js/YMDClass.js" type="text/javascript"></script>
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.0.3" />
 <!-- 右侧 -->
     <div class="ucRight">
         <div class="ucRightCon ucRightSafe perfectInfo">
             <h3 class="selectiveType security"><span>完善资料</span></h3>
             <form action="">
             <div class="mr_perfect">
+                <div class="perfect">
+                    <span><em>*</em>企业名称<i>：</i></span>
+                    <input type="text" value="" name="ServiceName" id="ServiceName"  diy='1' />
+                </div>
+                <div class="linkaddr">
+                    <span><em>*</em>企业所在地<i>：</i></span>
+                    <div class="sel_city" id="ServiceLocation">
+                        <select id="seachprov" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');"></select>
+                        <select id="seachcity"></select>
+                    </div>
+                </div>
+                <div class="company-scale">
+                    <span><em>*</em>企业规模<i>：</i></span>
+                    <input type="text" value="" name="Size"  diy='1' placeholder="请输入员工人数" />&nbsp;人
+                </div>
+                <div class="register-capital">
+                    <span><em>*</em>注册资金<i>：</i></span>
+                    <input type="text" value="" name="Founds"  diy='1' />&nbsp;万元
+                </div>
+                <div class="register-time">
+                    <span><em>*</em>注册时间<i>：</i></span>
+                    <div class="register-time-sel">
+                        <select name="year" class="select-time"></select>
+                        <select name="month" class="select-time"></select>
+                    </div>
+                </div>
                 <div class="linkman">
                     <span><em>*</em>联系人姓名<i>：</i></span>
                     <input type="text" value="" name="ConnectPerson" id="ConnectPerson"  diy='1' />
@@ -15,20 +42,9 @@
                     <span><em>*</em>联系人电话<i>：</i></span>
                     <input type="text" value="" name="ConnectPhone" id="ConnectPhone"  diy='1' />
                 </div>
-                <div class="perfect">
-                    <span><em>*</em>企业名称<i>：</i></span>
-                    <input type="text" value="" name="ServiceName" id="ServiceName"  diy='1' />
-                </div>
                 <div class="perfect_illu">
                     <span><em>*</em>企业简介<i>：</i></span>
                     <textarea name="ServiceIntroduction" id="ServiceIntroduction"></textarea>
-                </div>
-                <div class="linkaddr">
-                    <span><em>*</em>企业所在地<i>：</i></span>
-                    <div class="sel_city" id="ServiceLocation">
-                        <select id="seachprov" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');"></select>
-                        <select id="seachcity"></select>
-                    </div>
                 </div>
                 <div class="service_zone">
                     <span><em>*</em>服务地区<i>：</i></span>
@@ -101,16 +117,11 @@
                 <div class="service_type">
                     <span><em>*</em>服务类型<i>：</i></span>
                     <div class="st_details">
-                        <label for=""><input type="checkbox" name="ServiceType[]" value="01" />资产包收购</label>
-                        <label for=""><input type="checkbox" name="ServiceType[]" value="02" />催收机构</label>
-                        <label for=""><input type="checkbox" name="ServiceType[]" value="03" />律师事务所</label>
-                        <label for=""><input type="checkbox" name="ServiceType[]" value="04" />保理公司</label>
-                        <label for=""><input type="checkbox" name="ServiceType[]" value="06" />投融资服务</label>
-                        <label for=""><input type="checkbox" name="ServiceType[]" value="10" />尽职调查</label>
-                        <label for=""><input type="checkbox" name="ServiceType[]" value="12" />资产收购</label>
-                        <label for=""><input type="checkbox" name="ServiceType[]" value="05" />典当公司</label>
-                        <label for=""><input type="checkbox" name="ServiceType[]" value="05" />担保公司</label>
-                        <label for=""><input type="checkbox" name="ServiceType[]" value="14" />债权收购</label>
+                        <label for="server1"><input type="checkbox" name="ServiceType[]" value="01" id="server1" />收购资产包</label>
+                        <label for="server2"><input type="checkbox" name="ServiceType[]" value="02" id="server2" />委外催收</label>
+                        <label for="server3"><input type="checkbox" name="ServiceType[]" value="03" id="server3" />法律服务</label>
+                        <label for="server4"><input type="checkbox" name="ServiceType[]" value="12" id="server4" />收购固产</label>
+                        <label for="server5"><input type="checkbox" name="ServiceType[]" value="06" id="server5" />投融资服务</label>
                     </div>
                 </div>                
                 <!-- 头像上传 -->
@@ -195,6 +206,7 @@
             <p><input type="hidden" name="ConfirmationP2" value=""></p>
             <p><input type="hidden" name="ConfirmationP3" value=""></p>
             <p><input type="hidden" name="UserPicture" value=""></p>
+            <p><input type="hidden" id="year" name="RegTime"></p>
             </form>
         </div>
     </div>
@@ -205,6 +217,8 @@
 <script src="{{url('/js/AreaData_min.js')}}" type="text/javascript"></script>
 <script>
     $(function(){
+        new YMDselect('year','month');
+
         var role = $.cookie('role');
         if(role != 2){
             // $('#pub').css('disabled',true).val('资料审核中');
@@ -277,7 +291,7 @@ $('select').change(function(){
 
 var permission = 0;
 function _checkInput(){
-var stop = false;
+    var stop = false;
 
     $("input[diy='1']").each(function(){
         $parent=$(this).parent();
@@ -285,6 +299,7 @@ var stop = false;
         if($(this).val()==""){
             $parent.append("<p class='error1'>您还没填呢~</p>");
             stop = true;
+            return false;
         } 
     });
 
@@ -304,6 +319,7 @@ var stop = false;
         if($(this).val()=='null' || $(this).val()==0 || $(this).val()==undefined){
             $parent.append("<p class='error1' id='err'>您还没选呢~</p>");
             stop = true;
+            return false;
         }
     })
     
@@ -358,6 +374,11 @@ var stop = false;
         var areaID = getAreaID();
         var ServiceLocation =  getAreaNamebyID(areaID);
         $('#ServiceLocation1').val(ServiceLocation);
+        var year = $("select[name='year']").val();
+        var month = $("select[name='month']").val();
+        if(year != 0 && month != 0 ){
+            $('#year').val(year+"年"+month+"月");
+        }
         // var token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzMyIsImlzcyI6Imh0dHA6XC9cL2FwaXRlc3Queml5YXdhbmcuY29tXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOiIxNDc0Nzk0NTQyIiwiZXhwIjoiMTQ3NTM5OTM0MiIsIm5iZiI6IjE0NzQ3OTQ1NDIiLCJqdGkiOiJmNmFhNDRhODA4ODBlZjAxNzE3NWJmYTZhNDczMWJiZCJ9.ho521A0Prh6LcNAPNcmQEF2H_VTQBXstSwf2m4yeXpA";
         
         var data = $('form').serialize();

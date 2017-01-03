@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/look.css')}}?v=1.0.4" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/look.css')}}?v=2.0.3" />
 <!-- 右侧详情 -->
     <div class="main_right">
         <h2>查看抢单人<a href="#">时间</a></h2>

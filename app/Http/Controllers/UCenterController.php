@@ -135,4 +135,47 @@ class UCenterController extends Controller
     public function memberDetail(){
         return view("member.memberdetail");
     }
+
+    public function star(Request $request){
+        $cookie = explode(';',($request->header()['cookie'][0]));
+        foreach($cookie as $c){
+            if(strpos($c,'phonenumber')){
+                $arr = explode('=',$c);
+                $phonenumber = $arr[1];
+            }
+        }
+        if(!isset($phonenumber)){
+            return view('login');
+        }
+        $UserID = DB::table('users')->where('phonenumber',$phonenumber)->pluck('userid');
+        $star = ['1'=>$this->_starState($UserID,1),'2'=>$this->_starState($UserID,2),'3'=>$this->_starState($UserID,3),'4'=>$this->_starState($UserID,4),'5'=>$this->_starState($UserID,5)];
+
+        return view('star.index',compact('star'));
+    }
+
+    public function starPay(Request $req){
+        $starid = $req->id;
+        return view("star.starpay",compact('starid'));
+    }
+
+    //三证认证
+    public function sz(){
+        return view("star.sz");
+    }
+
+    //承诺书认证
+    public function cns(){
+        return view("star.cns");
+    }
+
+    //获取星级认证状态
+    protected function _starState($userid,$starid){
+        $tmp = DB::table('T_U_STAR')->where(['UserID'=>$userid, 'StarID'=>$starid])->count();
+        if($tmp > 0){
+            $temp = DB::table('T_U_STAR')->where(['UserID'=>$userid, 'StarID'=>$starid])->orderBy('State','desc')->first();
+            return $temp->State;
+        } else {
+            return 0;
+        }
+    }
 }

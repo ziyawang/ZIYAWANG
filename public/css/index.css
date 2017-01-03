@@ -92,7 +92,7 @@ a,button{cursor:pointer;}
 .banner .img01{display:block;background:url(../img/banner1.jpg) no-repeat center 0;}
 .banner .img02{display:block;background:url(../img/banner2.jpg) no-repeat center 0;}
 .banner .img03{display:block;background:url(../img/banner3.jpg) no-repeat center 0;}
-.banner .img04{display:block;background:url(../img/banner4.jpg) no-repeat center 0;}
+.banner .img04{display:block;background:url(../img/banner5.jpg) no-repeat center 0; background-size: cover;}
 /*.direction_btn{position: absolute;top: 50%;}*/
 .leftBtn,.rightBtn{ width:56px; height:56px; position:absolute; top:50%; margin:-28px 0 0 0;}
 .leftBtn{ background:url(../img/left_btn.png) no-repeat; left:10%;}
