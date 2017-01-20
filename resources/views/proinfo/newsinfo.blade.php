@@ -6,7 +6,7 @@
         <meta name="Description" content="资芽网是全球不良资产智能综服超级平台,吸引全国各类不良资产持有者，汇集各类不良资产信息及相关需求,整合海量不良资产处置服务机构与投资方,搭建多样化处置通道和不良资产综服生态产业体系,嵌入移动社交与视频直播,兼具媒体属性,实现大数据搜索引擎和人工智能,打造共享开放的全球不良资产智能综服超级平台。" />
 @endsection
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/newsinfo.css')}}?v=2.0.3" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/newsinfo.css')}}?v=2.1.0" />
 <!-- 二级banner -->
 <div class="find_service temp">
     <ul>
@@ -59,7 +59,7 @@ $(function(){
     function collect() {
         token = token.replace(/\'/g,"");
         $.ajax({
-            url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
+            url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
             type:'POST',
             data:'itemID=' + NewsID + '&type=3',
             dataType:'json',
@@ -95,7 +95,7 @@ $(function(){
 
     //新闻 4个ajax
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/news/list/' + NewsID + '?access_token=token&token=' + token,  
+        url: 'https://apis.ziyawang.com/zll/news/list/' + NewsID + '?access_token=token&token=' + token,  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -106,7 +106,7 @@ $(function(){
     })
 
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/news/list?pagecount=5&NewsLabel=czgg&access_token=token',  
+        url: 'https://apis.ziyawang.com/zll/news/list?pagecount=5&NewsLabel=czgg&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  

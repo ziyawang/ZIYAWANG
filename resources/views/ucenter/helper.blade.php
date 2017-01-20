@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/safe.css')}}?v=2.0.3" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/safe.css')}}?v=2.1.0" />
 <!-- 右侧详情 -->
     <div class="main_right help">
         <h2>资芽助手</h2>

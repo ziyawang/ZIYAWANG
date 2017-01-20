@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/member.css')}}?v=2.0.3" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/member.css')}}?v=2.1.0" />
     <div class="ucRight">
         <h3 class="member-tit"><span class="member-tit-cap">会员中心</span></h3>
         <div class="member-tips">
@@ -165,7 +165,7 @@
             }
             var subject = '充值金额';
             $.ajax({
-                url:"http://api.ziyawang.com/v1/v2/pay?access_token=token&amount=" + amount*100 + "&channel=" + channel + "&subject=" + subject + "&ProjectID=" + ProjectID + "&token=" + token,
+                url:"https://apis.ziyawang.com/zll/pay?access_token=token&amount=" + amount*100 + "&channel=" + channel + "&subject=" + subject + "&ProjectID=" + ProjectID + "&token=" + token,
                 type:"POST",
                 data:{'amount':amount*100,'channel':channel,'subject':subject,'ProjectID': ProjectID},
                 dataType:'json',

@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.0.3" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.0" />
     <!-- 右侧 -->
     <div class="ucRight">
         <div class="ucRightCon recharge">
@@ -86,7 +86,7 @@
         }
 
         $.ajax({  
-            url: 'http://api.ziyawang.com/v1/mybill?pagecount=8&startpage=' + urlpage + '&access_token=token&Type=' + Type + '&starttime=' + starttime + '&endtime=' + endtime + '&token=' + token,
+            url: 'https://apis.ziyawang.com/zll/mybill?pagecount=8&startpage=' + urlpage + '&access_token=token&Type=' + Type + '&starttime=' + starttime + '&endtime=' + endtime + '&token=' + token,
             type: 'POST',  
             dataType: 'json',  
             timeout: 5000,  

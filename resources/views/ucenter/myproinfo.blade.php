@@ -1,8 +1,8 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/infomation.css')}}?v=2.0.3" />
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.0.3" />
-<link type="text/css" rel="stylesheet" href="{{url('/css/recnew.css')}}?v=2.0.3" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/infomation.css')}}?v=2.1.0" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.0" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/recnew.css')}}?v=2.1.0" />
 
 <!-- 右侧详情 -->
     <div class="ucRight">
@@ -67,7 +67,7 @@ $(function(){
 
     //相关服务方
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/match/proser?access_token=token&ProjectID=' + ProjectID,  
+        url: 'https://apis.ziyawang.com/zll/match/proser?access_token=token&ProjectID=' + ProjectID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -108,7 +108,7 @@ $(function(){
 
 
     $.ajax({  
-         url: 'http://api.ziyawang.com/v1/project/list/'+ ProjectID +'?access_token=token&token=' + token,  
+         url: 'https://apis.ziyawang.com/zll/project/list/'+ ProjectID +'?access_token=token&token=' + token,  
          type: 'GET',  
          dataType: 'json',  
          timeout: 5000,  
@@ -276,7 +276,7 @@ var ProjectID = window.location.pathname.replace(/[^0-9]/ig,"");
 $('#change').click(function(){
     //相关服务方
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/match/proser?access_token=token&ProjectID=' + ProjectID,  
+        url: 'https://apis.ziyawang.com/zll/match/proser?access_token=token&ProjectID=' + ProjectID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  

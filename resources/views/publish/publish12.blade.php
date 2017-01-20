@@ -86,7 +86,7 @@
                         </div>
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>面积：</span>
-                            <input name="Area" type="text" class="inps bitian" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">平米</span>
+                            <input name="Area" type="text" class="inps bitian" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">平方米</span>
                         </div>
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>剩余使用年限：</span>
@@ -107,11 +107,19 @@
                         </div>
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>市场价格：</span>
-                            <input name="MarketPrice" type="text" class="inps bitian" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">万元</span>
+                            <input name="MarketPrice" type="text" class="inps bitian" placeholder="请输入数字" onkeyup="perprice(this,this.value)" /><span class="tag">万元</span>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must"></em>市场单价：</span>
+                            <span class="inps unit-price" style="display:inline-block;vertical-align:middle;"></span><span class="tag">万元/平方米</span>
                         </div>
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>转让价格：</span>
-                            <input name="TransferMoney" type="text" class="inps bitian" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">万元</span>
+                            <input name="TransferMoney" type="text" class="inps bitian" placeholder="请输入数字" onkeyup="perprice(this,this.value)" /><span class="tag">万元</span>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must"></em>转让单价：</span>
+                            <span class="inps unit-price" style="display:inline-block;vertical-align:middle;"></span><span class="tag">万元/平方米</span>
                         </div>
                         <h3 class="subtitle">其他</h3>
                         <div class="sub-row">

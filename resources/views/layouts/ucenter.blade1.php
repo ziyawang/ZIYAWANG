@@ -9,11 +9,11 @@
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.0.3.1" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.0.3" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}?v=2.0.3" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/fsdetails.css')}}?v=2.0.3" />
-        <link type="text/css" rel="stylesheet" href="{{url('/css/relinfo.css')}}?v=2.0.3" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.1.0.1" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.1.0" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}?v=2.1.0" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/fsdetails.css')}}?v=2.1.0" />
+        <link type="text/css" rel="stylesheet" href="{{url('/css/relinfo.css')}}?v=2.1.0" />
 <style>
     #uploadifive-picture_upload{height: 30px!important;line-height: 30px!important;border-radius: 25px;background: #e48013;color: #fff;}
     .img_box{padding-left: 170px;}
@@ -98,7 +98,7 @@
                 </div>
         </div>
     </div>
-    <link type="text/css" rel="stylesheet" href="{{url('/css/relinfo.css')}}?v=2.0.3" />
+    <link type="text/css" rel="stylesheet" href="{{url('/css/relinfo.css')}}?v=2.1.0" />
 <!-- 二级banner -->
 <div class="find_service temp">
     <ul>
@@ -336,7 +336,7 @@ var stop = false;
 
         $(this).attr('disabled', true);
         $.ajax({
-            url:"http://api.ziyawang.com/v1/project/create?token="+token,
+            url:"https://apis.ziyawang.com/zll/project/create?token="+token,
             type:"POST",
             data:data,
             dataType:"json",

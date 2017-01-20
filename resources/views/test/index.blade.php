@@ -1,6 +1,6 @@
 @extends('layouts.home')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/assess.css')}}?v=2.0.3" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/assess.css')}}?v=2.1.0" />
 <script src="{{asset('/js/Area.js')}}"></script>
 <script src="{{asset('/js/AreaData_min.js')}}"></script>
 <script src="{{asset('/js/select.js')}}"></script>

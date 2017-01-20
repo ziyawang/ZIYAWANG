@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.0.3" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.0" />
 <!-- 右侧详情 -->
     <div class="ucRight">
         <div class="ucRightCon ucRightSafe systemInformation">
@@ -43,7 +43,7 @@ $(function(){
             return false;
         }
         $.ajax({  
-            url: 'http://api.ziyawang.com/v1/getmessage?pagecount=6&startpage=1&access_token=token&token=' + token,  
+            url: 'https://apis.ziyawang.com/zll/getmessage?pagecount=6&startpage=1&access_token=token&token=' + token,  
             type: 'POST',  
             dataType: 'json',  
             timeout: 5000,  
@@ -112,7 +112,7 @@ $(function(){
                 }
                 var TextID = $(this).find('input').val();
                 $.ajax({
-                    url: 'http://api.ziyawang.com/v1/readmessage?access_token=token&token=' + token,
+                    url: 'https://apis.ziyawang.com/zll/readmessage?access_token=token&token=' + token,
                     type: 'POST',
                     data: {'TextID':TextID},
                     dataType: 'json',
@@ -133,7 +133,7 @@ var startpage = 1;
 function ajax(){
     var data = '&startpage=' + startpage;
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/getmessage?pagecount=6&access_token=token&token=' + token + data,  
+        url: 'https://apis.ziyawang.com/zll/getmessage?pagecount=6&access_token=token&token=' + token + data,  
         type: 'POST',  
         dataType: 'json',  
         timeout: 5000,  
@@ -202,7 +202,7 @@ function ajax(){
                 }
                 var TextID = $(this).find('input').val();
                 $.ajax({
-                    url: 'http://api.ziyawang.com/v1/readmessage?access_token=token&token=' + token,
+                    url: 'https://apis.ziyawang.com/zll/readmessage?access_token=token&token=' + token,
                     type: 'POST',
                     data: {'TextID':TextID},
                     dataType: 'json',
@@ -225,7 +225,7 @@ $('#delete').click(function(){
     };
     
      $.ajax({
-        url: 'http://api.ziyawang.com/v1/delmessage?access_token=token&token=' + token,
+        url: 'https://apis.ziyawang.com/zll/delmessage?access_token=token&token=' + token,
         type: 'POST',
         data: {'TextID':TextID},
         dataType: 'json',
@@ -249,7 +249,7 @@ $('#read').click(function(){
         TextID[i] = check[i].value;
     };
      $.ajax({
-        url: 'http://api.ziyawang.com/v1/readmessage?access_token=token&token=' + token,
+        url: 'https://apis.ziyawang.com/zll/readmessage?access_token=token&token=' + token,
         type: 'POST',
         data: {'TextID':TextID},
         dataType: 'json',

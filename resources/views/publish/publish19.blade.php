@@ -58,15 +58,15 @@
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>债权人所在地：</span>
                             <span class="region">
-                                <select class="row-select bitian" id="seachprov" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');"></select>
-                                <select class="row-select bitian" id="seachcity"></select>
+                                <select class="row-select bitian" id="seachprov1" onChange="changeComplexProvince(this.value, sub_array, 'seachcity1', 'seachdistrict');"></select>
+                                <select class="row-select bitian" id="seachcity1"></select>
                             </span>
                         </div>
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>债务人所在地：</span>
                             <span class="region">
-                                <select class="row-select bitian" id="seachprov1" onChange="changeComplexProvince(this.value, sub_array, 'seachcity1', 'seachdistrict');"></select>
-                                <select class="row-select bitian" id="seachcity1"></select>
+                                <select class="row-select bitian" id="seachprov" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');"></select>
+                                <select class="row-select bitian" id="seachcity"></select>
                             </span>
                         </div>
                         <h3 class="subtitle">其他</h3>

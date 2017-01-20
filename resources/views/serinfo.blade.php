@@ -1,6 +1,6 @@
 @extends('layouts.home')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{asset('/css/fsdetails.css')}}?v=2.0.3" />
+<link type="text/css" rel="stylesheet" href="{{asset('/css/fsdetails.css')}}?v=2.1.0" />
 <!-- 二级banner -->
 <div class="find_service temp">
     <ul>
@@ -74,7 +74,7 @@ $(function () {
 
     //服务方详情
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/service/list/'+ ServiceID +'?access_token=token&token=' + token,  
+        url: 'https://apis.ziyawang.com/zll/service/list/'+ ServiceID +'?access_token=token&token=' + token,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -86,7 +86,7 @@ $(function () {
     })
     //相关服务方
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/match/service?access_token=token&ServiceID=' + ServiceID,  
+        url: 'https://apis.ziyawang.com/zll/match/service?access_token=token&ServiceID=' + ServiceID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -202,7 +202,7 @@ $(function () {
     function collect() {
 
         $.ajax({
-            url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
+            url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
             type:'POST',
             data:'itemID=' + ServiceID + '&type=4',
             dataType:'json',

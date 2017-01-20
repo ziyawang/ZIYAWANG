@@ -6,7 +6,7 @@
         <meta name="Description" content="资芽视频是资芽网第一视频,行业专家释疑解惑,分享经验,培训学习,剖析热点话题;线上线下活动,同业互动,探索分析,交流共享,协作共赢,鼓励创新,普及法律常识,降低法律风险.推动不良资产行业,金融领域健康有序发展." />
 @endsection
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/videos.css')}}?v=2.0.3" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/videos.css')}}?v=2.1.0" />
 <script src="{{asset('/js/fingerprint.js')}}"></script>
 <script src="{{asset('/js/jquery.md5.js')}}"></script>
 <script src="{{asset('/org/layer/layer.js')}}"></script>
@@ -129,7 +129,7 @@ $(function(){
     function collect() {
         token = token.replace(/\'/g,"");
         $.ajax({
-            url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
+            url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
             type:'POST',
             data:'itemID=' + VideoID + '&type=2',
             dataType:'json',
@@ -186,7 +186,7 @@ $(function(){
 
     //评论 1个ajax
     $.ajax({
-        url:'http://api.ziyawang.com/v1/video/comment/list?pagecount=5&access_token=token',
+        url:'https://apis.ziyawang.com/zll/video/comment/list?pagecount=5&access_token=token',
         type:'GET',
         asycn: false,
         data:'VideoID=' + VideoID,
@@ -221,9 +221,9 @@ $(function(){
     })
 
     //视频 4个ajax
-    var url = 'http://api.ziyawang.com/v1/video/list/' + VideoID + '?access_token=token';
+    var url = 'https://apis.ziyawang.com/zll/video/list/' + VideoID + '?access_token=token';
     if(token){
-        url = 'http://api.ziyawang.com/v1/video/list/' + VideoID + '?access_token=token&token=' + token;
+        url = 'https://apis.ziyawang.com/zll/video/list/' + VideoID + '?access_token=token&token=' + token;
     }
     $.ajax({  
         url: url,  
@@ -237,7 +237,7 @@ $(function(){
     })
 
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/video/list?pagecount=8&order=1&access_token=token',  
+        url: 'https://apis.ziyawang.com/zll/video/list?pagecount=8&order=1&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -249,7 +249,7 @@ $(function(){
 
     //视频匹配
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/match/video/' + VideoID + '?pagecount=16&access_token=token',  
+        url: 'https://apis.ziyawang.com/zll/match/video/' + VideoID + '?pagecount=16&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -561,7 +561,7 @@ $('#video1').bind('contextmenu',function() { return false; });
     function ajax(){
         var data = 'startpage=' + startpage;
         $.ajax({
-            url: 'http://api.ziyawang.com/v1/video/comment/list?pagecount=5&VideoID=' + VideoID + '&access_token=token&' + data,  
+            url: 'https://apis.ziyawang.com/zll/video/comment/list?pagecount=5&VideoID=' + VideoID + '&access_token=token&' + data,  
             type: 'GET',  
             dataType: 'json',  
             timeout: 5000,  
@@ -614,7 +614,7 @@ $('#video1').bind('contextmenu',function() { return false; });
         var VideoID = window.location.pathname.replace(/[^0-9]/ig,"");
         if(token != undefined){
             $.ajax({
-                url:'http://api.ziyawang.com/v1/video/comment/create?access_token=token&token='+token,
+                url:'https://apis.ziyawang.com/zll/video/comment/create?access_token=token&token='+token,
                 type:'POST',
                 data:'VideoID=' + VideoID + '&Content=' + content,
                 dataType:'json',
@@ -625,7 +625,7 @@ $('#video1').bind('contextmenu',function() { return false; });
             });
         } else if( token == undefined){
             $.ajax({
-                url:'http://api.ziyawang.com/v1/video/comment/create?access_token=token',
+                url:'https://apis.ziyawang.com/zll/video/comment/create?access_token=token',
                 type:'POST',
                 data:'VideoID=' + VideoID + '&Content=' + content,
                 dataType:'json',
@@ -637,7 +637,7 @@ $('#video1').bind('contextmenu',function() { return false; });
         }
 
         $.ajax({
-            url:'http://api.ziyawang.com/v1/video/comment/list?pagecount=5&access_token=token',
+            url:'https://apis.ziyawang.com/zll/video/comment/list?pagecount=5&access_token=token',
             type:'GET',
             asycn: false,
             data:'VideoID=' + VideoID,
@@ -674,7 +674,7 @@ $('#video1').bind('contextmenu',function() { return false; });
         var VideoID = window.location.pathname.replace(/[^0-9]/ig,"");
         if(token != undefined){
             $.ajax({
-                url:'http://api.ziyawang.com/v1/video/zan?access_token=token&token='+token,
+                url:'https://apis.ziyawang.com/zll/video/zan?access_token=token&token='+token,
                 type:'POST',
                 data:'VideoID=' + VideoID,
                 dataType:'json',
@@ -700,7 +700,7 @@ $('#video1').bind('contextmenu',function() { return false; });
             var fingerprint = new Fingerprint({canvas: true}).get();
             var cookie = $.md5(fingerprint + VideoID);
             $.ajax({
-                url:'http://api.ziyawang.com/v1/video/zan?access_token=token',
+                url:'https://apis.ziyawang.com/zll/video/zan?access_token=token',
                 type:'POST',
                 data:'VideoID=' + VideoID + '&Cookie=' + cookie,
                 dataType:'json',

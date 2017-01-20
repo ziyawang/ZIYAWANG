@@ -1,7 +1,7 @@
 @extends('layouts.uhome')
 @section('content')
 <script src="http://ziyawang.com/js/YMDClass.js" type="text/javascript"></script>
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.0.3" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.0" />
 <!-- 右侧 -->
     <div class="ucRight">
         <div class="ucRightCon ucRightSafe perfectInfo">
@@ -21,11 +21,11 @@
                 </div>
                 <div class="company-scale">
                     <span><em>*</em>企业规模<i>：</i></span>
-                    <input type="text" value="" name="Size"  diy='1' placeholder="请输入员工人数" />&nbsp;人
+                    <input type="text" value="" placeholder="请输入员工人数" name="Size" id="Size"  diy='1'  onkeyup="numLimit(this,this.value)"/>&nbsp;人
                 </div>
                 <div class="register-capital">
                     <span><em>*</em>注册资金<i>：</i></span>
-                    <input type="text" value="" name="Founds"  diy='1' />&nbsp;万元
+                    <input type="text" value=""  name="Founds" id="Founds"  diy='1' onkeyup="numLimit(this,this.value)"/>&nbsp;万元
                 </div>
                 <div class="register-time">
                     <span><em>*</em>注册时间<i>：</i></span>
@@ -384,7 +384,7 @@ function _checkInput(){
         var data = $('form').serialize();
         $(this).attr('disabled', true);
         $.ajax({
-            url:"http://api.ziyawang.com/v1/service/reconfirm?token=" + token + "&" + data,
+            url:"https://apis.ziyawang.com/zll/service/reconfirm?token=" + token + "&" + data,
             type:"POST",
             data:data,
             dataType:"json",

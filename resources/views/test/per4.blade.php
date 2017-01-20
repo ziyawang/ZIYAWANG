@@ -1,6 +1,6 @@
 @extends('layouts.home')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/assess.css')}}?v=2.0.3" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/assess.css')}}?v=2.1.0" />
     <!-- banner / start -->
     <div class="banner-assess">
         <ul>

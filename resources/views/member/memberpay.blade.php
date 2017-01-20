@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-    <link rel="stylesheet" type="text/css" href="{{url('/css/releasehome.css')}}?v=2.0.3" />
+    <link rel="stylesheet" type="text/css" href="{{url('/css/releasehome.css')}}?v=2.1.0" />
     <div class="ucRight">
         <div class="ucRightCon member-sys">
             <h3 class="member-title">
@@ -228,7 +228,7 @@
                 $('.rechargeConfirm').attr('disabled', true);
             }
             $.ajax({
-                url:"http://api.ziyawang.com/v1/v2/pay?access_token=token&paytype=member&payid=" + payid + "&channel=" + channel + "&payname=" + payname + "&token=" + token,
+                url:"https://apis.ziyawang.com/zll/pay?access_token=token&paytype=member&payid=" + payid + "&channel=" + channel + "&payname=" + payname + "&token=" + token,
                 type:"POST",
                 data:{'payid':payid,'channel':channel,'payname':payname,'token': token,'paytype':'member'},
                 dataType:'json',

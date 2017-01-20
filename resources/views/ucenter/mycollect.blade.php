@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-    <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.0.3" />
+    <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.0" />
 <!-- 右侧详情 -->
 <div class="ucRight">
     <div class="ucRightCon ucRightSafe myCollections">
@@ -40,7 +40,7 @@
         var urlpage   = getQueryString("startpage")   ? getQueryString("startpage")  : 1;
 
         $.ajax({  
-            url: 'http://api.ziyawang.com/v1/collect/list?pagecount=6&startpage=' + urlpage + '&access_token=token&token=' + token,  
+            url: 'https://apis.ziyawang.com/zll/collect/list?pagecount=6&startpage=' + urlpage + '&access_token=token&token=' + token,  
             type: 'GET',  
             dataType: 'json',  
             timeout: 5000,  
@@ -224,7 +224,7 @@ function collect(id,type) {
     // var token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzMyIsImlzcyI6Imh0dHA6XC9cL2FwaXRlc3Queml5YXdhbmcuY29tXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOiIxNDc0Nzk0NTQyIiwiZXhwIjoiMTQ3NTM5OTM0MiIsIm5iZiI6IjE0NzQ3OTQ1NDIiLCJqdGkiOiJmNmFhNDRhODA4ODBlZjAxNzE3NWJmYTZhNDczMWJiZCJ9.ho521A0Prh6LcNAPNcmQEF2H_VTQBXstSwf2m4yeXpA";
 
     $.ajax({
-        url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
+        url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
         type:'POST',
         data:'itemID=' + id + '&type=' + type,
         dataType:'json',

@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.0.3" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.0" />
     <!-- 右侧 -->
     <div class="ucRight">
         <div class="ucRightCon ucRightSafe">
@@ -44,7 +44,7 @@ $(function () {
                 $("#avatar1").attr('src','http://images.ziyawang.com/user/'+file.name);
                 var UserPicture = '/user/'+file.name;
                 $.ajax({
-                        url: 'http://api.ziyawang.com/v1/auth/chpicture?access_token=token&UserPicture=' + UserPicture + '&token=' + token,
+                        url: 'https://apis.ziyawang.com/zll/auth/chpicture?access_token=token&UserPicture=' + UserPicture + '&token=' + token,
                         data: {'UserPicture':UserPicture},
                         type: 'POST',
                         dataType:'json',
@@ -107,7 +107,7 @@ $(function () {
             else{
                 var username = $('.enterName').val();
                 $.ajax({
-                    url : "http://api.ziyawang.com/v1/auth/chusername?access_token=token&username=" + username + "&token=" + token,
+                    url : "https://apis.ziyawang.com/zll/auth/chusername?access_token=token&username=" + username + "&token=" + token,
                     data : {'username' : username},
                     type : 'POST',
                     dataType : 'json',

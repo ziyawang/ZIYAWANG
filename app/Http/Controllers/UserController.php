@@ -80,7 +80,7 @@ class UserController extends Controller
         $service['UserPicture'] = $picture;
         $service['ServiceNumber'] = 'FW' . sprintf("%05d", $service['ServiceID']);
 
-        $service['PictureDes'] = [$service['ConfirmationP1'],$service['ConfirmationP1'],$service['ConfirmationP1']];
+        $service['PictureDes'] = [$service['ConfirmationP1'],$service['ConfirmationP2'],$service['ConfirmationP3']];
         $service['PictureDes'] = $this->_delnull($service['PictureDes']);
 
         $viewcount = DB::table('T_U_SERVICEINFO')->where('ServiceID',$id)->pluck('ViewCount');

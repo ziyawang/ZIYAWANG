@@ -32,6 +32,7 @@
                     <div class="bidprice">
                         <span class="yel-bg blue-bg"><i class="iconfont">&#xe608;</i>转让价</span>
                         <span class="cost">{{$data->TransferMoney}}</span><span class="unit">万元</span>
+                        <span style="display: block; width: 50%; float: right; margin-top: 16px; class="unit-price"">转让单价：<?php echo round(@($data->TransferMoney/$data->Area),2)?> 万元/平方米</span>
                     </div>
                     <div class="speech">语音描述：<i class="iconfont">&#xe620;</i><span class="listen">(下载资芽APP可发布及收听语音描述！) </span></div>
                     <a href="{{url('/ucenter/rushlist/'.$data->ProjectID)}}" class="persons">查看约谈人</a><span class="personCt" title="已有{{$data->RushCount}}人约谈">{{$data->RushCount}}</span>

@@ -438,12 +438,12 @@ body{background:#fff;}
 .member-sys .td3,.member-sys .tradeUl li .td3{width: 151px;}
 /*2016-12-22*/
 .server-icon{float: left;overflow: hidden;}
-.server-icon-single{display: block;float: left;width: 33px;height: 32px;background:url(../img/server_lticon_light.png) no-repeat 0 -40px;margin: 8px 5px 0 0;}
+.server-icon-single{display: block;float: left;width: 28px;height: 28px;background:url(../img/server_lticon_light_new.png) no-repeat 0 -40px;margin: 11px 5px 0 0;}
 .server-jin{background-position: 0 0;}
-.server-shidi{background-position: -36px 0;}
-.server-shipin{background-position: -72px 0;}
-.server-nuo{background-position: -110px 0;}
-.server-sanzh{background-position: -147px 0;}
+.server-shidi{background-position: -37px 0;}
+.server-shipin{background-position: -74px 0;}
+.server-nuo{background-position: -112px 0;}
+.server-sanzh{background-position: -149px 0;}
 .server-money a{margin:0 0 20px 16px;}
 .implify{color:#d00;font-size: 16px;padding-left: 14px;}
 .member-sys .pl16{padding-left: 16px;}

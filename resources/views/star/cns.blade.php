@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.0.3" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.0" />
     <div class="ucRight">
         <div class="ucRightCon member-sys">
             <h3 class="member-title">
@@ -36,7 +36,7 @@ $(function () {
                 $("#cns").attr('src','http://images.ziyawang.com/user/'+file.name).show();
                 var Resource = '/user/'+file.name;
                 $.ajax({
-                    url: 'http://api.ziyawang.com/v1/v2/pay?access_token=token&Resource=' + Resource + '&token=' + token + '&paytype=star&payid=4&payname=承诺书认证&channel=pc',
+                    url: 'https://apis.ziyawang.com/zll/pay?access_token=token&Resource=' + Resource + '&token=' + token + '&paytype=star&payid=4&payname=承诺书认证&channel=pc',
                     data: {'Resource':Resource,'paytype':'star','payid':4,'payname':'承诺书认证','channel':'pc'},
                     type: 'POST',
                     dataType:'json',

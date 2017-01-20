@@ -12,7 +12,7 @@
 	<meta name="Keywords" content="资芽网,不良资产,不良资产处置,不良资产处置平台" />
 	<meta name="Description" content="资芽网吸引全国各类不良资产持有者，汇集各类不良资产信息及相关需求,整合海量不良资产处置服务机构与投资方,搭建多样化处置通道和不良资产综服生态产业体系,嵌入移动社交与视频直播,兼具媒体属性,实现大数据搜索引擎和人工智能,打造共享开放的全球不良资产超级综服平台。" />
 	<meta name="baidu-site-verification" content="g4AlAGeFKg" />
-	<link type="text/css" rel="stylesheet" href="{{url('/css/index.css')}}?v=1.0.7" />
+	<link type="text/css" rel="stylesheet" href="{{url('/css/index.css')}}?v=2.1.0" />
 	<style>
 		.layerRecharge{width: 500px; height: 212px;}
 		.layerTop{background:#fdd000;overflow: hidden;padding:25px 0 25px 25px;}
@@ -218,7 +218,7 @@
 		</div>
 	</div>
 	<!-- 精选信息 -->
-	<h3 class="select_info_title wrap">精选信息</h3>
+	<h3 class="select_info_title wrap"><span>精选信息</span><a href="javascript:;" style="float:right;font-weight:normal;font-size:14px;margin-right:10px">更多&gt;&gt;</a></h3>
 	<div class="selected_info">
 		<div class="wrap">
             <ul class="list_v2">
@@ -259,7 +259,7 @@
 	<!-- 新闻 -->
 	<div class="news">
 		<div class="wrap home_title">
-			<a href="javascript:;" class="current">资芽新闻<em>Company News</em><span class="down_arr"></span></a>
+			<a href="http://ziyawang.com/zynews" class="current">资芽新闻<em>Company News</em><span class="down_arr"></span></a>
 			<a href="http://ziyawang.com/hynews" target="_blank">行业动态<em>Industry News</em><span class="down_arr"></span></a>
 			<a href="http://ziyawang.com/cjnews" target="_blank">财经资讯<em>Financial News</em><span class="down_arr"></span></a>
 		</div>
@@ -568,7 +568,7 @@ $(function () {
     }  
 //视频1个ajax
 	$.ajax({  
-        url: 'http://api.ziyawang.com/v1/video/list?pagecount=8&weight=1&access_token=token',  
+        url: 'https://apis.ziyawang.com/zll/video/list?pagecount=8&weight=1&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -628,7 +628,7 @@ $(function () {
 
 // 服务方3个ajax
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/service/list?pagecount=5&ServiceType=01&access_token=token',  
+        url: 'https://apis.ziyawang.com/zll/service/list?pagecount=5&ServiceType=01&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -639,7 +639,7 @@ $(function () {
     })
 
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/service/list?pagecount=5&ServiceType=03&access_token=token',  
+        url: 'https://apis.ziyawang.com/zll/service/list?pagecount=5&ServiceType=03&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -649,7 +649,7 @@ $(function () {
         success: service3 //成功执行方法    
     }) 
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/service/list?pagecount=5&ServiceType=02&access_token=token',  
+        url: 'https://apis.ziyawang.com/zll/service/list?pagecount=5&ServiceType=02&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -761,7 +761,7 @@ $(function () {
     }
 //新闻 3个ajax
 	$.ajax({  
-        url: 'http://api.ziyawang.com/v1/news/list?pagecount=8&NewsLabel=zyxw&weight=1&access_token=token',  
+        url: 'https://apis.ziyawang.com/zll/news/list?pagecount=8&NewsLabel=zyxw&weight=1&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -784,7 +784,7 @@ $(function () {
 
 //信息ajax
 	$.ajax({  
-        url: 'http://api.ziyawang.com/v1/v2/shouye?access_token=token&token='+token,  
+        url: 'https://apis.ziyawang.com/zll/shouye?access_token=token&token='+token,  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -808,7 +808,7 @@ $(function () {
 	        if(Price == 0){
 	            token = token.replace(/\'/g,"");
 	            $.ajax({
-	                url:'http://api.ziyawang.com/v1/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+	                url:'https://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
 	                type:'POST',
 	                dataType:'json',
 	                success:function(msg){
@@ -830,7 +830,7 @@ $(function () {
 	                btn: ['确定','充值','取消'], btn1:function(){
 	                // token = token.replace(/\'/g,"");
 	                $.ajax({
-	                    url:'http://api.ziyawang.com/v1/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+	                    url:'https://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
 	                    type:'POST',
 	                    dataType:'json',
 	                    success:function(msg){
@@ -1071,7 +1071,7 @@ $(function () {
     		$(this).val('登陆中...');
 
     		$.ajax({
-    			url:"http://api.ziyawang.com/v1/ie/auth/login",
+    			url:"https://apis.ziyawang.com/zll/ie/auth/login",
     			type:"GET",
     			data:"phonenumber=" + phonenumber + "&password=" + password  + "&access_token=token",
     			dataType:'json',
@@ -1099,7 +1099,7 @@ $(function () {
 		var phonenumber = $(".keydown_tel").val();
 
 		$.ajax({
-			url:"http://api.ziyawang.com/v1/ie/auth/getsmscode",
+			url:"https://apis.ziyawang.com/zll/ie/auth/getsmscode",
 			type:"GET",
     		data:"phonenumber=" + phonenumber + "&access_token=token&action=register",
     		dataType:"json",
@@ -1120,7 +1120,7 @@ $(function () {
 		var smscode = $(".confirm_code").val();
 
 		$.ajax({
-			url:"http://api.ziyawang.com/v1/ie/auth/register",
+			url:"https://apis.ziyawang.com/zll/ie/auth/register",
 			type:"GET",
 			data:"phonenumber=" + phonenumber + "&password=" + password + "&smscode=" + smscode + "&access_token=token&Channel=PC",
 			dataType:'json',

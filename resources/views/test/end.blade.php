@@ -1,6 +1,6 @@
 @extends('layouts.home')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/assess.css')}}?v=2.0.3" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/assess.css')}}?v=2.1.0" />
     <!-- banner / start -->
     <div class="banner-assess">
         <ul>
@@ -69,7 +69,7 @@
         var Answer = $.cookie('answer');
         var token = $.cookie('token');
         $.ajax({
-            url:"http://api.ziyawang.com/v1/test/result?access_token=token&token=" + token,
+            url:"https://apis.ziyawang.com/zll/test/result?access_token=token&token=" + token,
             type:"POST",
             dataType:"json",
             data:{'Money':Money,'Area':Area,'AssetType':AssetType,'Type':Type,'Answer':Answer,'Channel':'PC','PhoneNumber':PhoneNumber},

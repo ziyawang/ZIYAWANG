@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.0.3" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.0" />
     <!-- 右侧 -->
     <div class="ucRight">
         <div class="ucRightCon ucRightSafe lookChat">
@@ -34,7 +34,7 @@
 
         var urlpage   = getQueryString("startpage")   ? getQueryString("startpage")  : 1;
         $.ajax({  
-            url: 'http://api.ziyawang.com/v1/project/rushlist/' + ProjectID + '?pagecount=6&startpage=' + urlpage + '&access_token=token&token=' + token,  
+            url: 'https://apis.ziyawang.com/zll/project/rushlist/' + ProjectID + '?pagecount=6&startpage=' + urlpage + '&access_token=token&token=' + token,  
             type: 'GET',  
             dataType: 'json',  
             timeout: 5000,  

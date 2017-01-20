@@ -32,7 +32,7 @@
 .xTitle span{font-size: 20px;font-weight: bold;margin-right: 20px;color:#333;}
 /*waterfall*/
 .infomation{width:1210px;margin:0 auto;padding-bottom: 100px;}
-.infomation ul li{width:214px;margin:0 54px 40px 6px;padding:20px 20px 10px;box-shadow: 0 0 12px #d8d8d3;border-radius: 10px;*+border:1px solid #e4e4e4;border:1px solid #e4e4e4\0;*+padding:13px;padding:13px\0;overflow: hidden;position: relative;cursor: pointer;}
+.infomation ul li{width:248px;margin:0 26px 32px 6px;padding:14px;box-shadow: 0 0 12px #dcdbd7;border-radius: 2px;*+border:1px solid #e4e4e4;border:1px solid #e4e4e4\0;*+padding:13px;padding:13px\0;overflow: hidden;position: relative;cursor: pointer;background:#fff;}
 .infomation ul li:hover .cetification img{opacity:0.8;}
 .itemTop{overflow: hidden;padding-bottom: 5px;border-bottom: 1px solid #e9e9e8;}
 .itemTopLeft,.itemTopRight{float: left;}
@@ -58,8 +58,8 @@
 .itemTopRight .visitors{margin-right: 14px;}
 .itemTopRight i{float: left;margin-top: -3px;margin-right: 4px;}
 .collectors{display: inline-block;}
- .cetification{display: block;width: 214px;min-height: 150px;background:#666;border-radius: 2px;overflow: hidden;}
- .cetification img{width:212px;min-height: 150px;transition: all 0.3s;-webkit-transition: all 0.3s;-moz-transition: all 0.3s;-ms-transition: all 0.3s;-o-transition: all 0.3s;border: 1px solid #ccc;}
+ .cetification{display: block;width: 248px;min-height: 150px;background:#666;border-radius: 2px;overflow: hidden;}
+ .cetification img{width:246px;min-height: 150px;transition: all 0.3s;-webkit-transition: all 0.3s;-moz-transition: all 0.3s;-ms-transition: all 0.3s;-o-transition: all 0.3s;border: 1px solid #ccc;}
  .illustration{overflow: hidden;padding:12px 0 8px;}/*有图时*/
 
 .descriptionInwords,.gongaoTit{color:#333;font-size: 16px;font-weight: 600;display: block;height: 26px;line-height: 26px;margin-bottom: 10px;overflow: hidden;}

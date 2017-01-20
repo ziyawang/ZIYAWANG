@@ -7,7 +7,7 @@
                     <div class="triangle-left"></div>
                     <ul class="part">
                         <li><span>发布方身份：</span>{{$data->Identity}}</li>
-                        <li><span>面积：</span>{{$data->Area}}平米</li>
+                        <li><span>面积：</span>{{$data->Area}}平方米</li>
                         <li><span>地区：</span>{{$data->ProArea}}</li>
                         <li><span>剩余使用年限：</span>{{$data->Year}}年</li>
                         <li><span>标的物类型：</span>{{$data->AssetType}}</li>
@@ -17,6 +17,7 @@
                     <div class="bidprice">
                         <span class="yel-bg blue-bg"><i class="iconfont">&#xe608;</i>转让价</span>
                         <span class="cost">{{$data->TransferMoney}}</span><span class="unit">万元</span>
+                        <span style="display: block; width: 50%; float: right; margin-top: 16px; class="unit-price"">转让单价：<?php echo round(@($data->TransferMoney/$data->Area),2)?> 万元/平方米</span>
                     </div>
                     <div class="speech">语音描述：<i class="iconfont">&#xe620;</i><span class="listen">(下载资芽APP可发布及收听语音描述！) </span></div>
                 </div>

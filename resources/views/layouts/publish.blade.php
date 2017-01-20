@@ -10,9 +10,9 @@
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.0.3.1" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.0.3" />
-        <link type="text/css" rel="stylesheet" href="{{url('/css/fixed.css')}}?v=2.0.3.4" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.1.0.1" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.1.0" />
+        <link type="text/css" rel="stylesheet" href="{{url('/css/fixed.css')}}?v=2.1.0.4" />
 <style>
     #uploadifive-picture_upload{height: 30px!important;line-height: 30px!important;border-radius: 25px;background: #e48013;color: #fff;}
     .img_box{padding-left: 170px;}
@@ -425,7 +425,7 @@ var stop = false;
             btn: ['承 诺','不承诺'],
             yes:function(){
                 $.ajax({
-                    url:"http://api.ziyawang.com/v1/test/project/create?" + data + "&Promise=承诺",
+                    url:"https://apis.ziyawang.com/zll/test/project/create?" + data + "&Promise=承诺",
                     type:"POST",
                     data:data + "&Promise=承诺",
                     dataType:"json",
@@ -439,7 +439,7 @@ var stop = false;
             },
             btn2:function(){
                 $.ajax({
-                    url:"http://api.ziyawang.com/v1/test/project/create?" + data + "&Promise=承诺",
+                    url:"https://apis.ziyawang.com/zll/test/project/create?" + data + "&Promise=承诺",
                     type:"POST",
                     data:data + "&Promise=不承诺",
                     dataType:"json",
@@ -564,7 +564,7 @@ $(function () {
                 }
                 var data = {'token':token,'TypeID':TypeID,'ConnectPerson':ConnectPerson,'ConnectPhone':ConnectPhone,'Channel':Channel,'access_token':'token'};
                 $.ajax({
-                    url:"http://api.ziyawang.com/v1/v2/entrust?access_token=token&token="+token+"&TypeID="+TypeID+"&ConnectPhone="+ConnectPhone+"&ConnectPerson="+ConnectPerson+"&Channel="+Channel,
+                    url:"https://apis.ziyawang.com/zll/entrust?access_token=token&token="+token+"&TypeID="+TypeID+"&ConnectPhone="+ConnectPhone+"&ConnectPerson="+ConnectPerson+"&Channel="+Channel,
                     type:"POST",
                     data:data,
                     dataType:"json",
@@ -609,7 +609,7 @@ $(function () {
 
 
     $.ajax({
-        url: 'http://api.ziyawang.com/v1/auth/me?access_token=token&token=' + token,
+        url: 'https://apis.ziyawang.com/zll/auth/me?access_token=token&token=' + token,
         type: 'POST',
         success:function(msg){
             var data = eval(msg);

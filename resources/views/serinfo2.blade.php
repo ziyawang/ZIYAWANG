@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <link rel="stylesheet" type="text/css" href="{{asset('/css/issueinfo.css')}}?v=2.0.3" />
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/issueinfo.css')}}?v=2.1.0" />
     <style>
         .jubaoBox{padding:22px;background:#fff;width: 415px;position: fixed;top: 50%;left: 50%;margin:-290px 0 0 -207px;display: none;z-index: 9999;}
         .jubao{background:#d5d5d5;padding:30px 40px 18px;}
@@ -112,7 +112,7 @@
                         <ul class="loan-r fr">
                             <li><span>联系人：</span><span class="click-chat" id="check">&gt;点击约谈</span></li>
                             <li>
-                                <span>会员权限：</span>
+                                <span>会员类型：</span>
                                 <div class="member-type-icon">
                                 @if(!isset($service['showrightarr'][0]))
                                     <em>无</em>
@@ -235,7 +235,7 @@
             <div class="jubao">
                 <h3>选择举报原因</h3>
                 <ul class="reasons">
-                    <li reasonid="1"><a href="javascript:;">已合作或已处置</a><a href="javascript:;" class="rightCheck"></a></li>
+                    <li reasonid="1"><a href="javascript:;">服务方描述与事实不符</a><a href="javascript:;" class="rightCheck"></a></li>
                     <li reasonid="2"><a href="javascript:;">虚假信息</a><a href="javascript:;" class="rightCheck"></a></li>
                     <li reasonid="3"><a href="javascript:;">泄露私密</a><a href="javascript:;" class="rightCheck"></a></li>
                     <li reasonid="4"><a href="javascript:;">垃圾广告</a><a href="javascript:;" class="rightCheck"></a></li>
@@ -301,7 +301,7 @@ $(function () {
     var token = $.cookie('token');
     //相关服务方
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/match/service?access_token=token&ServiceID=' + ServiceID,  
+        url: 'https://apis.ziyawang.com/zll/match/service?access_token=token&ServiceID=' + ServiceID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -363,7 +363,7 @@ var ServiceID = window.location.pathname.replace(/[^0-9]/ig,"");
 $('#change').click(function(){
     //相关服务方
     $.ajax({  
-        url: 'http://api.ziyawang.com/v1/match/service?access_token=token&ServiceID=' + ServiceID,  
+        url: 'https://apis.ziyawang.com/zll/match/service?access_token=token&ServiceID=' + ServiceID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -415,7 +415,7 @@ function checkLogin(){
 
 function collect() {
     $.ajax({
-        url:'http://api.ziyawang.com/v1/collect?access_token=token&token='+token,
+        url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
         type:'POST',
         data:'itemID=' + ServiceID + '&type=4',
         dataType:'json',
@@ -450,7 +450,7 @@ $("#check").click(function(){
     }
     layer.alert('{{$service["ConnectPerson"]}}:{{$service["ConnectPhone"]}}',{title:false,closeBtn:0});
     $.ajax({
-        url:"http://api.ziyawang.com/v1/count/service?access_token=token&token=" + token,
+        url:"https://apis.ziyawang.com/zll/count/service?access_token=token&token=" + token,
         type:"POST",
         data:{"ServiceID":ServiceID, "Channel":"PC"}
     })
@@ -501,7 +501,7 @@ $('#reportpub').click(function(){
     var ServiceID = window.location.pathname.replace(/[^0-9]/ig,"");
     var token = $.cookie('token');
     $.ajax({
-        url: "http://api.ziyawang.com/v1/report?access_token=token&token=" + token,
+        url: "https://apis.ziyawang.com/zll/report?access_token=token&token=" + token,
         type: "POST",
         data: {'ItemID':ServiceID, 'Type':2, 'ReasonID':ReasonID, 'Channel':'PC'},
         dataType: "json",
