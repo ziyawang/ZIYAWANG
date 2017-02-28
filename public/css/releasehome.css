@@ -461,3 +461,5 @@ body{background:#fff;}
 .server-upload-file{background-position: 0 -68px;margin-top: 20px;}
 .server-plus .pictures{width: 83px;height: 83px;margin:0;}
 .server-plus .pictures img{width: 83px;height: 83px;border-radius: 3px;}
+/*20170228*/
+.arrow-icon{width: 73px;height: 74px;position: absolute;top: -2px;left: -2px;}

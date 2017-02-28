@@ -474,7 +474,7 @@ $(function(){
     }
 // console.log(urldata)
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/project/lists?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,
+        url: 'http://apis.ziyawang.com/zll/project/lists?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000, 
@@ -601,7 +601,7 @@ $(function(){
                 //加载更多数据
                 startpage += 1;
                 $.ajax({
-                    url: 'https://apis.ziyawang.com/zll/project/lists?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,  
+                    url: 'http://apis.ziyawang.com/zll/project/lists?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,  
                     type: 'GET',  
                     dataType: 'json',  
                     timeout: 5000, 
@@ -663,7 +663,7 @@ $(function(){
                             function collect(ProjectID) {
                                 var token = $.cookie('token');
                                 $.ajax({
-                                    url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
+                                    url:'http://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
                                     type:'POST',
                                     data:'itemID=' + ProjectID + '&type=1',
                                     dataType:'json',
@@ -709,7 +709,7 @@ $(function(){
                                 if(Price == 0){
                                     token = token.replace(/\'/g,"");
                                     $.ajax({
-                                        url:'https://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+                                        url:'http://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
                                         type:'POST',
                                         dataType:'json',
                                         success:function(msg){
@@ -735,7 +735,7 @@ $(function(){
                                         btn: ['确定','充值','取消'], btn1:function(){
                                         // token = token.replace(/\'/g,"");
                                         $.ajax({
-                                            url:'https://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+                                            url:'http://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
                                             type:'POST',
                                             dataType:'json',
                                             success:function(msg){
@@ -832,7 +832,7 @@ $(function(){
         function collect(ProjectID) {
             var token = $.cookie('token');
             $.ajax({
-                url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
+                url:'http://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
                 type:'POST',
                 data:'itemID=' + ProjectID + '&type=1',
                 dataType:'json',
@@ -877,7 +877,7 @@ $(function(){
             if(Price == 0){
                 token = token.replace(/\'/g,"");
                 $.ajax({
-                    url:'https://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+                    url:'http://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
                     type:'POST',
                     dataType:'json',
                     success:function(msg){
@@ -902,7 +902,7 @@ $(function(){
                     btn: ['确定','充值','取消'], btn1:function(){
                     // token = token.replace(/\'/g,"");
                     $.ajax({
-                        url:'https://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+                        url:'http://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
                         type:'POST',
                         dataType:'json',
                         success:function(msg){

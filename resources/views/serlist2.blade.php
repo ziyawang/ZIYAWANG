@@ -269,7 +269,7 @@ $(function(){
     }
 // console.log(urldata)
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/service/list?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,  
+        url: 'http://apis.ziyawang.com/zll/service/list?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000, 
@@ -395,7 +395,7 @@ $(function(){
                 //加载更多数据
                 startpage += 1;
                 $.ajax({
-                    url: 'https://apis.ziyawang.com/zll/service/list?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,   
+                    url: 'http://apis.ziyawang.com/zll/service/list?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,   
                     type: 'GET',  
                     dataType: 'json',  
                     timeout: 5000, 
@@ -458,7 +458,7 @@ $(function(){
                             function collect(ServiceID) {
                                 var token = $.cookie('token');
                                 $.ajax({
-                                    url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
+                                    url:'http://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
                                     type:'POST',
                                     data:'itemID=' + ServiceID + '&type=4',
                                     dataType:'json',
@@ -527,7 +527,7 @@ $(function(){
         function collect(ServiceID) {
             var token = $.cookie('token');
             $.ajax({
-                url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
+                url:'http://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
                 type:'POST',
                 data:'itemID=' + ServiceID + '&type=4',
                 dataType:'json',

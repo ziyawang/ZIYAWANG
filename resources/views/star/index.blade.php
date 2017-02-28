@@ -1,8 +1,14 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/member.css')}}?v=2.1.0" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/member.css')}}?v=2.1.3.1" />
         <div class="ucRight">
             <h3 class="member-tit"><span class="member-tit-cap">星级认证</span></h3>
+            <div class="clearfix limit-width" style="display:none">
+                <div class="member-tips">
+                    <div class="member-tips-cap">通过“服务方认证”后，可选择办理以下星级认证</div>
+                </div>
+                <a href="{{url('/ucenter/confirm')}}" class="goto">去认证（免费）</a>
+            </div>
             <div class="member-type">
                 <div class="member-type-tit clearfix">
                     <div class="member-cur clearfix">
@@ -159,6 +165,14 @@
     </div>
 <script type="text/javascript">
     $(function(){
+        var role = $.cookie('role');
+        if (role != 1){
+            $('.member-charge').css('background-image','url(../img/member_btn4.png)')
+            $('.member-charge').css('cursor','default')
+            $('.member-charge').attr('href','javascript:;')
+            $('.goto').css('display','block')
+            $('.limit-width').show()
+        }
         $('.member-privil').on('click', function() {
             var serCap = ["本认证是针对服务方在注册/使用资芽网过程中的一项行为认证标准，用以保证服务方以合法的操作行为使用本网站，不得盗取本网站的信息从事违法行为、牟取暴利，并保证所填写的相关信息真实有效。开通后将点亮本认证星级，并在服务方展示页面进行展示。" , "本认证是由本网站认证人员前往服务方所在地实地考察，并依据本网站实地认证标准现场取证（如：经营场所拍照、人员拍照、实地访谈等）、材料备档。开通认证成功后将点亮本认证星级，并在服务方展示页面进行展示。" , "本认证是由服务方按资芽网要求自主完成，需由服务方持拍摄设备（摄像机或手机）对服务方的经营场所（如：门头、企业名称、办公环境等）及相关员工，进行视频拍摄（一分钟以内），并同时口述相关拍摄内容（如：这是我们的员工、这是我们的前台或这是我们的会议室等），拍摄完成后，传与资芽网客服人员备档。开通认证成功后将点亮本认证星级，并在服务方展示页面进行展示。" , "本认证不收取任何费用，由服务方点击“开通”按钮，下载承诺书并签字盖章上传至本网站；开通认证成功后将点亮本认证星级，并在服务方展示页面进行展示。" , "本认证不收取任何费用，由服务方点击“开通”按钮，上传三证原件（营业执照、组织机构代码证、税务登记证）或三证合一证件原件；开通认证成功后将点亮本认证星级，并在服务方展示页面进行展示（本网站将做水印和模糊处理，请放心上传）。"];
             var serTips = ["注：保证金认证可在缴纳三个月后随时申请取消（取消认证后本网站将全额退还保证金）" , "注：实地认证成功后不可申请取消及退款（如遇地址变更等特殊原因可致电资芽网）" , "注：视频认证成功后不可申请取消及退款（如遇地址变更等特殊原因可致电资芽网）" , "注：承诺书认证成功后不可申请取消（如遇企业变更等特殊原因可致电资芽网）" , "注：三证认证成功后不可申请取消（如遇企业变更等特殊原因可致电资芽网）"];
@@ -180,13 +194,3 @@
     })
 </script>
 @endsection
-
-<?php 
-
-
-$arr = ['a'=>['b'=>'1','c'=>'2','d'=>'3'],'b'=>['b'=>'1','c'=>'2','d'=>'3'],'c'=>['b'=>'1','c'=>'2','d'=>'3']];
-foreach ($arr as $key => $value) {
-    $arr[$key]['d'] = 4;
-}
-
-?>

@@ -216,7 +216,7 @@ var _hmt = _hmt || [];
             }
 
     		$.ajax({
-    			url:"https://apis.ziyawang.com/zll/ie/auth/getsmscode",
+    			url:"http://apis.ziyawang.com/zll/ie/auth/getsmscode",
     			type:"GET",
         		data:"phonenumber=" + phonenumber + "&access_token=token&action=register",
         		dataType:"json",
@@ -270,7 +270,7 @@ var _hmt = _hmt || [];
             $(this).val('注册中...');
 
     		$.ajax({
-    			url:"https://apis.ziyawang.com/zll/ie/auth/register",
+    			url:"http://apis.ziyawang.com/zll/ie/auth/register",
     			type:"GET",
     			data:"phonenumber=" + phonenumber + "&password=" + password + "&smscode=" + smscode + "&access_token=token&Channel=PC",
     			dataType:'json',

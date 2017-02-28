@@ -67,7 +67,7 @@ $(function(){
 
     //相关服务方
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/match/proser?access_token=token&ProjectID=' + ProjectID,  
+        url: 'http://apis.ziyawang.com/zll/match/proser?access_token=token&ProjectID=' + ProjectID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -108,7 +108,7 @@ $(function(){
 
 
     $.ajax({  
-         url: 'https://apis.ziyawang.com/zll/project/list/'+ ProjectID +'?access_token=token&token=' + token,  
+         url: 'http://apis.ziyawang.com/zll/project/list/'+ ProjectID +'?access_token=token&token=' + token,  
          type: 'GET',  
          dataType: 'json',  
          timeout: 5000,  
@@ -276,7 +276,7 @@ var ProjectID = window.location.pathname.replace(/[^0-9]/ig,"");
 $('#change').click(function(){
     //相关服务方
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/match/proser?access_token=token&ProjectID=' + ProjectID,  
+        url: 'http://apis.ziyawang.com/zll/match/proser?access_token=token&ProjectID=' + ProjectID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  

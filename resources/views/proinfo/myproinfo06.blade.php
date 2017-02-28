@@ -19,6 +19,15 @@
                 <span class="pubSpan rzxx"></span>
             </div>
             <div class="fix-con fr">
+                @if($data->CooperateState == 1)                
+                <img src="{{asset('/img/connection.png')}}" alt="" class="info-state">
+                @elseif($data->CooperateState == 2)
+                    @if($data->TypeID == 6 || $data->TypeID == 17)
+                    <img src="{{asset('/img/disposaled.png')}}" alt="" class="info-state">
+                    @else
+                    <img src="{{asset('/img/complete.png')}}" alt="" class="info-state">
+                    @endif
+                @endif
                     <div class="triangle-left"></div>
                     <ul class="part">
                         <li><span>发布方身份：</span>{{$data->Identity}}</li>

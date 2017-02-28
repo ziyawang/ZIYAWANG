@@ -336,7 +336,7 @@ var stop = false;
 
         $(this).attr('disabled', true);
         $.ajax({
-            url:"https://apis.ziyawang.com/zll/project/create?token="+token,
+            url:"http://apis.ziyawang.com/zll/project/create?token="+token,
             type:"POST",
             data:data,
             dataType:"json",

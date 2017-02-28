@@ -568,7 +568,7 @@ $(function () {
     }  
 //视频1个ajax
 	$.ajax({  
-        url: 'https://apis.ziyawang.com/zll/video/list?pagecount=8&weight=1&access_token=token',  
+        url: 'http://apis.ziyawang.com/zll/video/list?pagecount=8&weight=1&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -628,7 +628,7 @@ $(function () {
 
 // 服务方3个ajax
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/service/list?pagecount=5&ServiceType=01&access_token=token',  
+        url: 'http://apis.ziyawang.com/zll/service/list?pagecount=5&ServiceType=01&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -639,7 +639,7 @@ $(function () {
     })
 
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/service/list?pagecount=5&ServiceType=03&access_token=token',  
+        url: 'http://apis.ziyawang.com/zll/service/list?pagecount=5&ServiceType=03&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -649,7 +649,7 @@ $(function () {
         success: service3 //成功执行方法    
     }) 
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/service/list?pagecount=5&ServiceType=02&access_token=token',  
+        url: 'http://apis.ziyawang.com/zll/service/list?pagecount=5&ServiceType=02&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -761,7 +761,7 @@ $(function () {
     }
 //新闻 3个ajax
 	$.ajax({  
-        url: 'https://apis.ziyawang.com/zll/news/list?pagecount=8&NewsLabel=zyxw&weight=1&access_token=token',  
+        url: 'http://apis.ziyawang.com/zll/news/list?pagecount=8&NewsLabel=zyxw&weight=1&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -784,7 +784,7 @@ $(function () {
 
 //信息ajax
 	$.ajax({  
-        url: 'https://apis.ziyawang.com/zll/shouye?access_token=token&token='+token,  
+        url: 'http://apis.ziyawang.com/zll/shouye?access_token=token&token='+token,  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -808,7 +808,7 @@ $(function () {
 	        if(Price == 0){
 	            token = token.replace(/\'/g,"");
 	            $.ajax({
-	                url:'https://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+	                url:'http://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
 	                type:'POST',
 	                dataType:'json',
 	                success:function(msg){
@@ -830,7 +830,7 @@ $(function () {
 	                btn: ['确定','充值','取消'], btn1:function(){
 	                // token = token.replace(/\'/g,"");
 	                $.ajax({
-	                    url:'https://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+	                    url:'http://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
 	                    type:'POST',
 	                    dataType:'json',
 	                    success:function(msg){
@@ -1071,7 +1071,7 @@ $(function () {
     		$(this).val('登陆中...');
 
     		$.ajax({
-    			url:"https://apis.ziyawang.com/zll/ie/auth/login",
+    			url:"http://apis.ziyawang.com/zll/ie/auth/login",
     			type:"GET",
     			data:"phonenumber=" + phonenumber + "&password=" + password  + "&access_token=token",
     			dataType:'json',
@@ -1099,7 +1099,7 @@ $(function () {
 		var phonenumber = $(".keydown_tel").val();
 
 		$.ajax({
-			url:"https://apis.ziyawang.com/zll/ie/auth/getsmscode",
+			url:"http://apis.ziyawang.com/zll/ie/auth/getsmscode",
 			type:"GET",
     		data:"phonenumber=" + phonenumber + "&access_token=token&action=register",
     		dataType:"json",
@@ -1120,7 +1120,7 @@ $(function () {
 		var smscode = $(".confirm_code").val();
 
 		$.ajax({
-			url:"https://apis.ziyawang.com/zll/ie/auth/register",
+			url:"http://apis.ziyawang.com/zll/ie/auth/register",
 			type:"GET",
 			data:"phonenumber=" + phonenumber + "&password=" + password + "&smscode=" + smscode + "&access_token=token&Channel=PC",
 			dataType:'json',

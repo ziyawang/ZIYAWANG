@@ -73,7 +73,7 @@ $(function(){
     var urlpage   = getQueryString("startpage")   ? getQueryString("startpage")  : 1;
     $('#content').val(content);
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/search?access_token=token',  
+        url: 'http://apis.ziyawang.com/zll/search?access_token=token',  
         type: 'POST',  
         dataType: 'json',  
         data: {'type':'2', 'content': content, 'pagecount': '8', 'startpage': urlpage},

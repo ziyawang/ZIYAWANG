@@ -105,7 +105,7 @@ $(function () {
         })
         resource = rtrim(resource);
         $.ajax({
-            url: 'https://apis.ziyawang.com/zll/pay?access_token=token&Resource=' + resource + '&token=' + token + '&paytype=star&payid=5&payname=三证认证&channel=pc',
+            url: 'http://apis.ziyawang.com/zll/pay?access_token=token&Resource=' + resource + '&token=' + token + '&paytype=star&payid=5&payname=三证认证&channel=pc',
             data: {'Resource':resource,'paytype':'star','payid':5,'payname':'三证认证','channel':'pc'},
             type: 'POST',
             dataType:'json',

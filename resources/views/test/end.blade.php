@@ -69,7 +69,7 @@
         var Answer = $.cookie('answer');
         var token = $.cookie('token');
         $.ajax({
-            url:"https://apis.ziyawang.com/zll/test/result?access_token=token&token=" + token,
+            url:"http://apis.ziyawang.com/zll/test/result?access_token=token&token=" + token,
             type:"POST",
             dataType:"json",
             data:{'Money':Money,'Area':Area,'AssetType':AssetType,'Type':Type,'Answer':Answer,'Channel':'PC','PhoneNumber':PhoneNumber},

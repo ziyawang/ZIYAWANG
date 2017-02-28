@@ -136,3 +136,6 @@ textarea:-ms-input-placeholder {
 .layer-member .layui-layer-btn .layui-layer-btn0{border-radius:5px;width: 154px;height: 44px;line-height: 44px;background:#fdd000;text-align: center;padding:0;border: none;font-size: 16px;}
 .layer-member .layui-layer-btn .layui-layer-btn0:hover{background:#ffa800;box-shadow: 0 1px 1px #7b3f00;}
 .layer-member .layui-layer-btn .layui-layer-btn0:active{margin-top: 1px;}
+/*2017-02-28*/
+.disposal-par{position: relative;}
+.disposal-state{width: 94px;height: 76px;position: absolute;bottom: 16px;right: -10px;}

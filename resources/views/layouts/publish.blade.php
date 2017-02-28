@@ -425,7 +425,7 @@ var stop = false;
             btn: ['承 诺','不承诺'],
             yes:function(){
                 $.ajax({
-                    url:"https://apis.ziyawang.com/zll/test/project/create?" + data + "&Promise=承诺",
+                    url:"http://apis.ziyawang.com/zll/test/project/create?" + data + "&Promise=承诺",
                     type:"POST",
                     data:data + "&Promise=承诺",
                     dataType:"json",
@@ -439,7 +439,7 @@ var stop = false;
             },
             btn2:function(){
                 $.ajax({
-                    url:"https://apis.ziyawang.com/zll/test/project/create?" + data + "&Promise=承诺",
+                    url:"http://apis.ziyawang.com/zll/test/project/create?" + data + "&Promise=承诺",
                     type:"POST",
                     data:data + "&Promise=不承诺",
                     dataType:"json",
@@ -564,7 +564,7 @@ $(function () {
                 }
                 var data = {'token':token,'TypeID':TypeID,'ConnectPerson':ConnectPerson,'ConnectPhone':ConnectPhone,'Channel':Channel,'access_token':'token'};
                 $.ajax({
-                    url:"https://apis.ziyawang.com/zll/entrust?access_token=token&token="+token+"&TypeID="+TypeID+"&ConnectPhone="+ConnectPhone+"&ConnectPerson="+ConnectPerson+"&Channel="+Channel,
+                    url:"http://apis.ziyawang.com/zll/entrust?access_token=token&token="+token+"&TypeID="+TypeID+"&ConnectPhone="+ConnectPhone+"&ConnectPerson="+ConnectPerson+"&Channel="+Channel,
                     type:"POST",
                     data:data,
                     dataType:"json",
@@ -609,7 +609,7 @@ $(function () {
 
 
     $.ajax({
-        url: 'https://apis.ziyawang.com/zll/auth/me?access_token=token&token=' + token,
+        url: 'http://apis.ziyawang.com/zll/auth/me?access_token=token&token=' + token,
         type: 'POST',
         success:function(msg){
             var data = eval(msg);

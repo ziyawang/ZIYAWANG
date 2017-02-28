@@ -74,7 +74,7 @@ $(function () {
 
     //服务方详情
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/service/list/'+ ServiceID +'?access_token=token&token=' + token,  
+        url: 'http://apis.ziyawang.com/zll/service/list/'+ ServiceID +'?access_token=token&token=' + token,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -86,7 +86,7 @@ $(function () {
     })
     //相关服务方
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/match/service?access_token=token&ServiceID=' + ServiceID,  
+        url: 'http://apis.ziyawang.com/zll/match/service?access_token=token&ServiceID=' + ServiceID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -202,7 +202,7 @@ $(function () {
     function collect() {
 
         $.ajax({
-            url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
+            url:'http://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
             type:'POST',
             data:'itemID=' + ServiceID + '&type=4',
             dataType:'json',

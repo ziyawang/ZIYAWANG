@@ -94,7 +94,7 @@
         }
 
         $.ajax({  
-            url: 'https://apis.ziyawang.com/zll/video/list?pagecount=5&weight=1&access_token=token',  
+            url: 'http://apis.ziyawang.com/zll/video/list?pagecount=5&weight=1&access_token=token',  
             type: 'GET',  
             dataType: 'json',  
             timeout: 5000, 
@@ -105,7 +105,7 @@
         })
 
         $.ajax({  
-            url: 'https://apis.ziyawang.com/zll/video/list?pagecount=12&order=1&access_token=token',  
+            url: 'http://apis.ziyawang.com/zll/video/list?pagecount=12&order=1&access_token=token',  
             type: 'GET',  
             dataType: 'json',  
             timeout: 5000, 
@@ -228,7 +228,7 @@ var startpage = 1;
 function ajax(){
     var data = 'startpage=' + startpage;
     $.ajax({
-        url: 'https://apis.ziyawang.com/zll/video/list?pagecount=12&order=1&access_token=token&' + data,  
+        url: 'http://apis.ziyawang.com/zll/video/list?pagecount=12&order=1&access_token=token&' + data,  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  

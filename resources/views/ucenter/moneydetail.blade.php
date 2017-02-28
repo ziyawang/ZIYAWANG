@@ -86,7 +86,7 @@
         }
 
         $.ajax({  
-            url: 'https://apis.ziyawang.com/zll/mybill?pagecount=8&startpage=' + urlpage + '&access_token=token&Type=' + Type + '&starttime=' + starttime + '&endtime=' + endtime + '&token=' + token,
+            url: 'http://apis.ziyawang.com/zll/mybill?pagecount=8&startpage=' + urlpage + '&access_token=token&Type=' + Type + '&starttime=' + starttime + '&endtime=' + endtime + '&token=' + token,
             type: 'POST',  
             dataType: 'json',  
             timeout: 5000,  

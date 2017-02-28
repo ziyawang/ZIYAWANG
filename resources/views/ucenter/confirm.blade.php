@@ -247,7 +247,7 @@
         var token = $.cookie('token');
         if(role == 1 || role == 2 ){
             $.ajax({
-                url:"https://apis.ziyawang.com/zll/auth/me?access_token=token&token="+token,
+                url:"http://apis.ziyawang.com/zll/auth/me?access_token=token&token="+token,
                 type:"POST",
                 dataType:'json',
                 success:function(msg){
@@ -465,7 +465,7 @@ var stop = false;
         // var token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzMyIsImlzcyI6Imh0dHA6XC9cL2FwaXRlc3Queml5YXdhbmcuY29tXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOiIxNDc0Nzk0NTQyIiwiZXhwIjoiMTQ3NTM5OTM0MiIsIm5iZiI6IjE0NzQ3OTQ1NDIiLCJqdGkiOiJmNmFhNDRhODA4ODBlZjAxNzE3NWJmYTZhNDczMWJiZCJ9.ho521A0Prh6LcNAPNcmQEF2H_VTQBXstSwf2m4yeXpA";
         // console.log(data);
         $.ajax({
-            url:"https://apis.ziyawang.com/zll/service/confirm?token="+ token + "&" + data,
+            url:"http://apis.ziyawang.com/zll/service/confirm?token="+ token + "&" + data,
             type:"POST",
             data:data,
             dataType:"json",

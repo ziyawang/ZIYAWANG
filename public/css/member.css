@@ -1,7 +1,7 @@
 .find_service ul li {background: #ffda3f url(../img/junior_banner.jpg) no-repeat center top;height: 296px;overflow: hidden;}
 .member-tit{font-weight: normal;color: #333;width: 892px;border-bottom: 3px solid #c0c0c0;margin-top: 42px;margin-bottom: 30px;}
 .member-tit-cap{width: 108px;padding-left:25px;height: 35px;line-height: 35px;display: block;font-size: 18px;color:#333;letter-spacing: 3px;background:-webkit-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:-moz-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:-ms-linear-gradient(top,#efefef,#f4f4f4,#ffffff);background:linear-gradient(top,#efefef,#f4f4f4,#ffffff);border:1px solid #c2c2c2;border-bottom: 0 none;border-radius: 10px 10px 0 0;box-shadow: 0 2px 0 #fff inset;}
-.member-tips{padding: 10px 0 10px 40px;width: 398px; border: 1px solid #c2c2c2; border-radius: 10px; text-align: justify; color: #333; font-size: 16px; line-height: 28px; position: relative;color:#ff3b3b;}
+.member-tips{float:left;padding: 10px 0 10px 26px;width: 398px; border: 1px solid #c2c2c2; border-radius: 10px; text-align: justify; color: #333; font-size: 16px; line-height: 28px; position: relative;color:#ff3b3b;}
 .member-tips:before{border: 16px solid transparent;border-bottom-color: #c2c2c2;position: absolute;top: -32px;left: 32px;content: "";border-left-width: 8px;border-right-width: 8px;left: 59px;}
 .member-tips:after{border: 17px solid transparent;border-bottom-color: #fff;position: absolute;top: -31px;left: 32px;content: "";border-left-width: 8px;border-right-width: 8px;left: 59px;}
 .member-type{width: 890px;border: 1px solid #ccc;border-radius: 5px;margin: 30px 0 60px;}
@@ -26,7 +26,7 @@
 .member-failed{background:url(../img/member_btn4.png) no-repeat;}
 .member-charge,.member-review,.member-success,.member-failed{display: inline-block;width: 103px;height: 35px;line-height: 33px;text-align: center;color:#fff;}
 .member-privil:hover,.member-charge:hover,.member-review:hover,.member-success:hover,.member-failed:hover{color:#fff;}
-.member-privil:active,.member-charge:active,.member-review:active,.member-success:active,.member-failed:active{margin-top: 2px;}
+.member-privil:active,.member-review:active,.member-success:active,.member-failed:active{margin-top: 2px;}
 .member-fee{display: inline-block;width: 156px;height: 57px;line-height: 57px;border: 1px solid #c0c0c0;text-align: center;position: relative;margin: 0 10px;color:#000;}
 .member-fee i{display: none; position: absolute; width: 26px; height: 15px; background: url(../img/zhifu.png) no-repeat -485px -54px; bottom: 0; right: 0;}
 .member-body .current{border: 2px solid #ffad00;}
@@ -72,4 +72,6 @@
 .ser3 .server-gt-sanzh{background-position: 0 -236px;}
 .server-content{width: 710px;margin:0 auto;border-top: 1px solid #fdd000;text-align: justify;padding:30px 5px;font-size: 22px;color:#404040;letter-spacing: 1px;}
 .server-tips{width: 720px;margin:0 auto;color:#dd0000;font-size: 18px;padding-bottom: 25px;text-align: justify;}
-
+.goto{display: none; margin-top: 7px;float:right;width: 160px; height: 36px; line-height: 36px; background: #ffad00; color: #fff; text-align: center; border-radius: 8px; font-size: 18px; box-shadow: 0 0 5px #ccc;}
+.limit-width{width: 892px;}
+.goto:hover{color:#fff;};

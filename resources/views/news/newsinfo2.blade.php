@@ -75,7 +75,7 @@ $(function(){
     function collect() {
         token = token.replace(/\'/g,"");
         $.ajax({
-            url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
+            url:'http://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
             type:'POST',
             data:'itemID=' + NewsID + '&type=3',
             dataType:'json',
@@ -112,7 +112,7 @@ $(function(){
 
     //新闻 4个ajax
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/news/list/' + NewsID + '?access_token=token&token=' + token,  
+        url: 'http://apis.ziyawang.com/zll/news/list/' + NewsID + '?access_token=token&token=' + token,  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -123,7 +123,7 @@ $(function(){
     })
 
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/news/list?pagecount=5&NewsLabel=zyxw&access_token=token',  
+        url: 'http://apis.ziyawang.com/zll/news/list?pagecount=5&NewsLabel=zyxw&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -134,7 +134,7 @@ $(function(){
     })
 
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/news/list?pagecount=5&NewsLabel=hydt&access_token=token',  
+        url: 'http://apis.ziyawang.com/zll/news/list?pagecount=5&NewsLabel=hydt&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -145,7 +145,7 @@ $(function(){
     }) 
 
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/news/list?pagecount=5&NewsLabel=cjzx&access_token=token',  
+        url: 'http://apis.ziyawang.com/zll/news/list?pagecount=5&NewsLabel=cjzx&access_token=token',  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  

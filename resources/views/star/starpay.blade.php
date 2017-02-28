@@ -175,7 +175,7 @@
                 $('.rechargeConfirm').attr('disabled', true);
             }
             $.ajax({
-                url:"https://apis.ziyawang.com/zll/pay?access_token=token&paytype=star&payid=" + payid + "&channel=" + channel + "&payname=" + payname + "&token=" + token,
+                url:"http://apis.ziyawang.com/zll/pay?access_token=token&paytype=star&payid=" + payid + "&channel=" + channel + "&payname=" + payname + "&token=" + token,
                 type:"POST",
                 data:{'payid':payid,'channel':channel,'payname':payname,'token': token,'paytype':'star'},
                 dataType:'json',

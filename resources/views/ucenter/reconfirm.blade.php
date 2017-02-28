@@ -384,7 +384,7 @@ function _checkInput(){
         var data = $('form').serialize();
         $(this).attr('disabled', true);
         $.ajax({
-            url:"https://apis.ziyawang.com/zll/service/reconfirm?token=" + token + "&" + data,
+            url:"http://apis.ziyawang.com/zll/service/reconfirm?token=" + token + "&" + data,
             type:"POST",
             data:data,
             dataType:"json",

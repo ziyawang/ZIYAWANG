@@ -239,7 +239,7 @@
             }
             var subject = '充值金额';
             $.ajax({
-                url:"https://apis.ziyawang.com/zll/pay?access_token=token&amount=" + amount*100 + "&channel=" + channel + "&subject=" + subject + "&ProjectID=" + ProjectID + "&token=" + token,
+                url:"http://apis.ziyawang.com/zll/pay?access_token=token&amount=" + amount*100 + "&channel=" + channel + "&subject=" + subject + "&ProjectID=" + ProjectID + "&token=" + token,
                 type:"POST",
                 data:{'amount':amount*100,'channel':channel,'subject':subject,'ProjectID': ProjectID},
                 dataType:'json',

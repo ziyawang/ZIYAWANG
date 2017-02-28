@@ -118,10 +118,10 @@
                 <li id="pubpro"><a href="{{url('/ucenter/index')}}"><i class="iconfont">&#xe61e;</i>发布信息</a></li>
                 <li id="mypro"><a href="{{url('/ucenter/mypro')}}"><i class="iconfont">&#xe61a;</i>我的发布</a></li>
                 <li id="confirm"><a href="{{url('/ucenter/confirm')}}"><i class="iconfont">&#xe60f;</i>服务方认证</a></li>
-                <li id="star" style="display:none;"><a href="{{url('/ucenter/star')}}"><i class="iconfont">&#xe621;</i>星级认证</a></li>
+                <li id="star"><a href="{{url('/ucenter/star')}}"><i class="iconfont">&#xe621;</i>星级认证</a></li>
                 <li id="myrush" style="display:none;"><a href="{{url('/ucenter/myrush')}}"><i class="iconfont">&#xe619;</i>我的约谈</a></li>
                 <li id="money"><a href="{{url('/ucenter/money')}}"><i class="iconfont chongzhi">&#xe61f;</i>充值中心</a></li>
-                <li id="member" style="display:none;"><a href="{{url('/ucenter/member')}}"><i class="iconfont huiyuan">&#xe6af;</i>会员中心</a></li>
+                <li id="member"><a href="{{url('/ucenter/member')}}"><i class="iconfont huiyuan">&#xe6af;</i>会员中心</a></li>
                 <li id="safe"><a href="{{url('/ucenter/safe')}}"><i class="iconfont">&#xe61d;</i>安全中心</a></li>
                 <li id="mycollect"><a href="{{url('/ucenter/mycollect')}}"><i class="iconfont">&#xe61b;</i>我的收藏</a></li>
             </ul>
@@ -197,11 +197,13 @@ $(function(){
 
     $('#container').show();
     $.ajax({
-        url: 'https://apis.ziyawang.com/zll/auth/me?access_token=token&token=' + token,
+        url: 'http://apis.ziyawang.com/zll/auth/me?access_token=token&token=' + token,
         type: 'POST',
         success:function(msg){
             var data = eval(msg);
-            // console.log(data);
+            var date = new Date();
+            date.setTime(date.getTime() + (120 * 60 * 1000));
+            $.cookie('role', data.role, { expires: date, path: '/', domain: '.ziyawang.com' });
             var picture = data.user.UserPicture;
             var nickname = data.user.username;
             if(nickname.length<1){
@@ -220,27 +222,31 @@ $(function(){
             $('#_phonenumber').html('联系电话：'+phonenumber);
             var showrightarr = data.user.showrightarr;
             var showhtml = '';
-            $.each(showrightarr,function(index,value){
-                // console.log(value[0]);
-                switch(value[0])
-                {
-                    case "资产包":
-                        showhtml += "<a href='javacript:;' class='bao' title='资产包' time='" + value[1].substr(0,10) + "'></a>"
-                        break;
-                    case "企业商账":
-                        showhtml += "<a href='javacript:;' class='qi' title='企业商账' time='" + value[1].substr(0,10) + "'></a>"
-                        break;
-                    case "固定资产":
-                        showhtml += "<a href='javacript:;' class='gu' title='固定资产' time='" + value[1].substr(0,10) + "'></a>"
-                        break;
-                    case "融资信息":
-                        showhtml += "<a href='javacript:;' class='rong' title='融资信息' time='" + value[1].substr(0,10) + "'></a>"
-                        break;
-                    case "个人债权":
-                        showhtml += "<a href='javacript:;' class='ge' title='个人债权' time='" + value[1].substr(0,10) + "'></a>"
-                        break;
-                }
-            })
+            if(showrightarr != undefined){
+                $.each(showrightarr,function(index,value){
+                    switch(value[0])
+                    {
+                        case "资产包":
+                            showhtml += "<a href='javacript:;' class='bao' title='资产包' time='" + value[1].substr(0,10) + "'></a>"
+                            break;
+                        case "企业商账":
+                            showhtml += "<a href='javacript:;' class='qi' title='企业商账' time='" + value[1].substr(0,10) + "'></a>"
+                            break;
+                        case "固定资产":
+                            showhtml += "<a href='javacript:;' class='gu' title='固定资产' time='" + value[1].substr(0,10) + "'></a>"
+                            break;
+                        case "融资信息":
+                            showhtml += "<a href='javacript:;' class='rong' title='融资信息' time='" + value[1].substr(0,10) + "'></a>"
+                            break;
+                        case "个人债权":
+                            showhtml += "<a href='javacript:;' class='ge' title='个人债权' time='" + value[1].substr(0,10) + "'></a>"
+                            break;
+                    }
+                })
+            }
+            if(showhtml == ''){
+                showhtml = '无'
+            }
             $('#showright').html(showhtml);
 
             $('#showright a').on('mouseover', function(event) {

@@ -37,7 +37,7 @@
 
         var urlpage   = getQueryString("startpage")   ? getQueryString("startpage")  : 1;
         $.ajax({  
-            url: 'https://apis.ziyawang.com/zll/project/mypro?pagecount=6&startpage=' + urlpage + '&access_token=token&token=' + token,  
+            url: 'http://apis.ziyawang.com/zll/project/mypro?pagecount=6&startpage=' + urlpage + '&access_token=token&token=' + token,  
             type: 'GET',  
             dataType: 'json',  
             timeout: 5000,  
@@ -114,59 +114,72 @@
                 }
                 var PublishTime = data[index].PublishTime;
 
-                var ProType          = ('ProType' in data[index])          ? data[index].ProType : null;
-                var Type          = ('Type' in data[index])          ? data[index].Type : null;
-                var TypeName          = ('TypeName' in data[index])          ? data[index].TypeName : null;
-                var Title          = ('Title' in data[index])          ? data[index].Title : null;
-                var AssetType          = ('AssetType' in data[index])          ? data[index].AssetType : null;
-                var ProArea          = ('ProArea' in data[index])          ? data[index].ProArea : null;
-                var FromWhere          = ('FromWhere' in data[index])          ? data[index].FromWhere : null;
-                var TotalMoney          = ('TotalMoney' in data[index])          ? data[index].TotalMoney : null;
-                var TransferMoney          = ('TransferMoney' in data[index])          ? data[index].TransferMoney : null;
-                var Usefor          = ('Usefor' in data[index])          ? data[index].Usefor : null;
-                var Money          = ('Money' in data[index])          ? data[index].Money : null;
-                var Month          = ('Month' in data[index])          ? data[index].Month : null;
-                var Area          = ('Area' in data[index])          ? data[index].Area : null;
-                //循环获取数据
+                var ProType       = ('ProType'       in data[index])          ? data[index].ProType       : null;
+                var Type          = ('Type'          in data[index])          ? data[index].Type          : null;
+                var TypeName      = ('TypeName'      in data[index])          ? data[index].TypeName      : null;
+                var Title         = ('Title'         in data[index])          ? data[index].Title         : null;
+                var AssetType     = ('AssetType'     in data[index])          ? data[index].AssetType     : null;
+                var ProArea       = ('ProArea'       in data[index])          ? data[index].ProArea       : null;
+                var FromWhere     = ('FromWhere'     in data[index])          ? data[index].FromWhere     : null;
+                var TotalMoney    = ('TotalMoney'    in data[index])          ? data[index].TotalMoney    : null;
+                var TransferMoney = ('TransferMoney' in data[index])          ? data[index].TransferMoney : null;
+                var Usefor        = ('Usefor'        in data[index])          ? data[index].Usefor        : null;
+                var Money         = ('Money'         in data[index])          ? data[index].Money         : null;
+                var Month         = ('Month'         in data[index])          ? data[index].Month         : null;
+                var Area          = ('Area'          in data[index])          ? data[index].Area          : null;
+                var CooperateState= ('CooperateState'in data[index])          ? data[index].CooperateState: null;
                 TypeID = TypeID+"";
+                //新加合作中亦已完成和处置成功
+                var cooperate = "";
+                if(CooperateState == "1"){
+                    cooperate = "<img src='/img/hezuozhong.png' class='arrow-icon' />"
+                }
+                if(CooperateState == "2"){
+                    if(TypeID == "6" || TypeID == "17"){
+                        cooperate = "<img src='/img/chuzhichenggon.png' class='arrow-icon' />"
+                    } else {
+                        cooperate = "<img src='/img/yiwancheng.png' class='arrow-icon' />"
+                    }
+                }
+                //循环获取数据
                 switch(TypeID)
                 {
                     case "1":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef1'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>来源：<strong>" + FromWhere + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>总金额：</strong>" + TotalMoney + "万元</span><span></span><span><strong>转让价：</strong>" + TransferMoney + "万元</span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + ">" + cooperate + "<div class='pblLeft'><span class='pblef1'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>来源：<strong>" + FromWhere + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span><strong>总金额：</strong>" + TotalMoney + "万元</span><span></span><span><strong>转让价：</strong>" + TransferMoney + "万元</span></div></div></a></li>";
                         break;
                     case "6":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef3'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>融资方式：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>资金用途：<strong>" + Usefor + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>融资金额：</strong>" + TotalMoney + "万元</span><span></span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + ">" + cooperate + "<div class='pblLeft'><span class='pblef3'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>融资方式：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>资金用途：<strong>" + Usefor + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>融资金额：</strong>" + TotalMoney + "万元</span><span></span></div></div></a></li>";
                         break;
                     case "12":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef2'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>标的物类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>规划用途：<strong>" + Usefor + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>转让价：</strong>" + TransferMoney + "万元</span><span></span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + ">" + cooperate + "<div class='pblLeft'><span class='pblef2'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>标的物类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>规划用途：<strong>" + Usefor + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>转让价：</strong>" + TransferMoney + "万元</span><span></span></div></div></a></li>";
                         break;
 
                     case "16":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef2'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>标的物类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>规划用途：<strong>" + Usefor + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>转让价：</strong>" + TransferMoney + "万元</span><span></span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + ">" + cooperate + "<div class='pblLeft'><span class='pblef2'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>标的物类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>规划用途：<strong>" + Usefor + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>转让价：</strong>" + TransferMoney + "万元</span><span></span></div></div></a></li>";
                         break;
 
                     case "17":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef3'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>融资方式：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>担保方式：<strong>" + Type + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>融资金额：</strong>" + Money + "万元</span><span></span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + ">" + cooperate + "<div class='pblLeft'><span class='pblef3'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>融资方式：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>担保方式：<strong>" + Type + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>融资金额：</strong>" + Money + "万元</span><span></span></div></div></a></li>";
                         break;
 
                     case "18":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef4'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>商账类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>逾期时间：<strong>" + Month + "月</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>债权金额：</strong>" + Money + "万元</span><span></span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + ">" + cooperate + "<div class='pblLeft'><span class='pblef4'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>商账类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>逾期时间：<strong>" + Month + "月</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>债权金额：</strong>" + Money + "万元</span><span></span></div></div></a></li>";
                         break;
 
                     case "19":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef5'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>处置方式：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>逾期时间：<strong>" + Month + "月</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>债权金额：</strong>" + TotalMoney + "万元</span><span></span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + ">" + cooperate + "<div class='pblLeft'><span class='pblef5'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>处置方式：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>逾期时间：<strong>" + Month + "月</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>债权金额：</strong>" + TotalMoney + "万元</span><span></span></div></div></a></li>";
                         break;
 
                     case "20":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef6'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>资产类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>面积：<strong>" + Area + "平方米</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>起拍价：</strong>" + Money + "万元</span><span></span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + ">" + cooperate + "<div class='pblLeft'><span class='pblef6'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>资产类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>面积：<strong>" + Area + "平方米</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>起拍价：</strong>" + Money + "万元</span><span></span></div></div></a></li>";
                         break;
 
                     case "21":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef6'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>资产类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>面积：<strong>" + Area + "平方米</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>起拍价：</strong>" + Money + "万元</span><span></span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + ">" + cooperate + "<div class='pblLeft'><span class='pblef6'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>资产类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>面积：<strong>" + Area + "平方米</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>起拍价：</strong>" + Money + "万元</span><span></span></div></div></a></li>";
                         break;
 
                     case "22":
-                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + "><div class='pblLeft'><span class='pblef6'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>资产类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>起拍价：</strong>" + Money + "万元</span><span></span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'" + wait + ">" + cooperate + "<div class='pblLeft'><span class='pblef6'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>资产类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>起拍价：</strong>" + Money + "万元</span><span></span></div></div></a></li>";
                         break;
                 }
                 $("#list").html($("#list").html() + html);  

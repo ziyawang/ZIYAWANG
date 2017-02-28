@@ -276,3 +276,4 @@ body{background:#fcfcfb;}
 .serve-role .loan-l{width: 55%;}
 .serve-role .loan-r{width: 45%;}
 .serve-role .loan-l-name{height: 30px;white-space: nowrap;overflow: hidden;text-overflow:ellipsis;}
+.info-state{position: absolute;width: 94px;height: 76px;top: 72px;right: 32px;}

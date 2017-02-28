@@ -69,8 +69,8 @@ var _hmt = _hmt || [];
     		// $(this).prop('disabled',true);
     		$(this).val('登录中...');
     		$.ajax({
-    			url:"https://apis.ziyawang.com/zll/ie/auth/login",
-    			// url:"https://apis.ziyawang.com/zll/auth/login",
+    			url:"http://apis.ziyawang.com/zll/ie/auth/login",
+    			// url:"http://apis.ziyawang.com/zll/auth/login",
     			type:"GET",
     			data:"phonenumber=" + phonenumber + "&password=" + password  + "&access_token=token",
     			dataType:'json',
@@ -105,8 +105,8 @@ var _hmt = _hmt || [];
 	    		// $(this).prop('disabled',true);
 	    		$('#login').val('登录中...');
 	    		$.ajax({
-	    			url:"https://apis.ziyawang.com/zll/ie/auth/login",
-	    			// url:"https://apis.ziyawang.com/zll/auth/login",
+	    			url:"http://apis.ziyawang.com/zll/ie/auth/login",
+	    			// url:"http://apis.ziyawang.com/zll/auth/login",
 	    			type:"GET",
 	    			data:"phonenumber=" + phonenumber + "&password=" + password  + "&access_token=token",
 	    			dataType:'json',

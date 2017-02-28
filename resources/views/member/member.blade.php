@@ -1,10 +1,13 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/member.css')}}?v=2.1.0" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/member.css')}}?v=2.1.3.1" />
     <div class="ucRight">
         <h3 class="member-tit"><span class="member-tit-cap">会员中心</span></h3>
-        <div class="member-tips">
-            <div class="member-tips-cap">注：根据您的需求可同时办理多个类型会员</div>
+        <div class="clearfix limit-width">
+            <div class="member-tips">
+                <div class="member-tips-cap">注：根据您的需求可同时办理多个类型会员</div>
+            </div>
+            <a href="{{url('/ucenter/confirm')}}" class="goto">去认证（免费）</a>
         </div>
         <div class="member-type">
             <div class="member-type-tit clearfix">
@@ -49,10 +52,10 @@
                         <tr>
                             <td class="mem1"><span class="gu member-icon" title="固定资产"></span><p>固定资产</p></td>
                             <td class="mem2">
-                                <span data-title="固定资产" data-amount="3998" data-total="12000" data-time="季" class="member-privil">特权了解</span>
+                                <span data-title="固定资产" data-amount="6498" data-total="70000" data-time="月" class="member-privil">特权了解</span>
                             </td>
                             <td class="mem3">
-                                <a url="{{url('/ucenter/member/pay?id=5')}}" href="javacript:;" class="member-fee">季度会员：3998元<i></i></a><a url="{{url('/ucenter/member/pay?id=6')}}" href="javacript:;" class="current member-fee">年度会员：12000元<i></i></a>
+                                <a url="{{url('/ucenter/member/pay?id=5')}}" href="javacript:;" class="member-fee">月度会员：6498元<i></i></a><a url="{{url('/ucenter/member/pay?id=6')}}" href="javacript:;" class="current member-fee">年度会员：70000元<i></i></a>
                             </td>
                             <td class="mem4"><a href="{{url('/ucenter/member/pay?id=6')}}" class="member-charge">开通</a></td>
                         </tr>
@@ -165,7 +168,7 @@
             }
             var subject = '充值金额';
             $.ajax({
-                url:"https://apis.ziyawang.com/zll/pay?access_token=token&amount=" + amount*100 + "&channel=" + channel + "&subject=" + subject + "&ProjectID=" + ProjectID + "&token=" + token,
+                url:"http://apis.ziyawang.com/zll/pay?access_token=token&amount=" + amount*100 + "&channel=" + channel + "&subject=" + subject + "&ProjectID=" + ProjectID + "&token=" + token,
                 type:"POST",
                 data:{'amount':amount*100,'channel':channel,'subject':subject,'ProjectID': ProjectID},
                 dataType:'json',
@@ -206,6 +209,16 @@
 </script>
 <script type="text/javascript">
     $(function(){
+        var role = $.cookie('role');
+        if (role != 1){
+            $('.member-charge').css('background-image','url(../img/member_btn4.png)')
+            $('.member-charge').css('cursor','default')
+            $('.member-charge').attr('href','javascript:;')
+            $('.member-fee').attr('url','javascript:;')
+            $('.goto').css('display','block')
+            $('.member-tips-cap').html('注：通过“服务方认证”后，可选择办理以下相关会员')
+        }
+
         $('.member-fee').click(function() {
             $(this).addClass('current').siblings().removeClass('current');
             var url = $(this).attr('url');

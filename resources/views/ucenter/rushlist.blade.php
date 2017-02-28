@@ -34,7 +34,7 @@
 
         var urlpage   = getQueryString("startpage")   ? getQueryString("startpage")  : 1;
         $.ajax({  
-            url: 'https://apis.ziyawang.com/zll/project/rushlist/' + ProjectID + '?pagecount=6&startpage=' + urlpage + '&access_token=token&token=' + token,  
+            url: 'http://apis.ziyawang.com/zll/project/rushlist/' + ProjectID + '?pagecount=6&startpage=' + urlpage + '&access_token=token&token=' + token,  
             type: 'GET',  
             dataType: 'json',  
             timeout: 5000,  

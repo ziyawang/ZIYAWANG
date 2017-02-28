@@ -383,7 +383,7 @@ var stop = false;
         $(this).attr('disabled', true);
         // console.log(data);
         $.ajax({
-            url:"https://apis.ziyawang.com/zll/project/create?" + data,
+            url:"http://apis.ziyawang.com/zll/project/create?" + data,
             type:"POST",
             data:data,
             dataType:"json",
@@ -443,7 +443,7 @@ $(function () {
 
     $('#container').show();
     $.ajax({
-        url: 'https://apis.ziyawang.com/zll/auth/me?access_token=token&token=' + token,
+        url: 'http://apis.ziyawang.com/zll/auth/me?access_token=token&token=' + token,
         type: 'POST',
         success:function(msg){
             var data = eval(msg);

@@ -17,7 +17,7 @@
         <script src="{{asset('/js/fs.js')}}"></script>
         <script src="{{url('/js/jquery.cookie.js')}}"></script>
         <script type="text/javascript" src="{{url('/js/public.js')}}"></script>
-    <script src="http://libs.cncdn.cn/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script>
+        <script src="http://libs.cncdn.cn/jquery-ajaxtransport-xdomainrequest/1.0.3/jquery.xdomainrequest.min.js"></script>
         <script type="text/javascript" src="{{url('/js/jquery.pagination.js')}}"></script>
         <script type="text/javascript" src="{{url('/org/layer/layer.js')}}"></script>
     </head>
@@ -185,7 +185,7 @@ $(function(){
 
     $('#container').show();
     $.ajax({
-        url: 'https://apis.ziyawang.com/zll/auth/me?access_token=token&token=' + token,
+        url: 'http://apis.ziyawang.com/zll/auth/me?access_token=token&token=' + token,
         type: 'POST',
         success:function(msg){
             var data = eval(msg);

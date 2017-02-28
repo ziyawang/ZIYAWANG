@@ -48,7 +48,7 @@
                     <span class="gu member-icon" title="固定资产"></span>
                 </div>
                 <div class="member-list">
-                    <a href="{{url('/ucenter/member/pay?id=5')}}" class="current member-fee">季费：<span>3998</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=6')}}" class="member-fee">年费：<span>12000</span>元<i></i></a>
+                    <a href="{{url('/ucenter/member/pay?id=5')}}" class="current member-fee">月费：<span>6498</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=6')}}" class="member-fee">年费：<span>70000</span>元<i></i></a>
                 </div>
                 @elseif($memberid == 6)
                 <div class="amountTitle">
@@ -56,7 +56,7 @@
                     <span class="gu member-icon" title="固定资产"></span>
                 </div>
                 <div class="member-list">
-                    <a href="{{url('/ucenter/member/pay?id=5')}}" class="member-fee">季费：<span>3998</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=6')}}" class="current member-fee">年费：<span>12000</span>元<i></i></a>
+                    <a href="{{url('/ucenter/member/pay?id=5')}}" class="member-fee">月费：<span>6498</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=6')}}" class="current member-fee">年费：<span>70000</span>元<i></i></a>
                 </div>
                 @elseif($memberid == 7)
                 <div class="amountTitle">
@@ -64,7 +64,7 @@
                     <span class="bao member-icon" title="资产包"></span>
                 </div>
                 <div class="member-list">
-                    <a href="{{url('/ucenter/member/pay?id=7')}}" class="current member-fee">季费：<span>6498</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=8')}}" class="member-fee">年费：<span>70000</span>元<i></i></a>
+                    <a href="{{url('/ucenter/member/pay?id=7')}}" class="current member-fee">月费：<span>6498</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=8')}}" class="member-fee">年费：<span>70000</span>元<i></i></a>
                 </div>
                 @elseif($memberid == 8)
                 <div class="amountTitle">
@@ -72,7 +72,7 @@
                     <span class="bao member-icon" title="资产包"></span>
                 </div>
                 <div class="member-list">
-                    <a href="{{url('/ucenter/member/pay?id=7')}}" class="member-fee">季费：<span>6498</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=8')}}" class="current member-fee">年费：<span>70000</span>元<i></i></a>
+                    <a href="{{url('/ucenter/member/pay?id=7')}}" class="member-fee">月费：<span>6498</span>元<i></i></a><a href="{{url('/ucenter/member/pay?id=8')}}" class="current member-fee">年费：<span>70000</span>元<i></i></a>
                 </div>
                 @elseif($memberid == 9)
                 <div class="amountTitle">
@@ -228,7 +228,7 @@
                 $('.rechargeConfirm').attr('disabled', true);
             }
             $.ajax({
-                url:"https://apis.ziyawang.com/zll/pay?access_token=token&paytype=member&payid=" + payid + "&channel=" + channel + "&payname=" + payname + "&token=" + token,
+                url:"http://apis.ziyawang.com/zll/pay?access_token=token&paytype=member&payid=" + payid + "&channel=" + channel + "&payname=" + payname + "&token=" + token,
                 type:"POST",
                 data:{'payid':payid,'channel':channel,'payname':payname,'token': token,'paytype':'member'},
                 dataType:'json',

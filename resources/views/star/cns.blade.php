@@ -36,7 +36,7 @@ $(function () {
                 $("#cns").attr('src','http://images.ziyawang.com/user/'+file.name).show();
                 var Resource = '/user/'+file.name;
                 $.ajax({
-                    url: 'https://apis.ziyawang.com/zll/pay?access_token=token&Resource=' + Resource + '&token=' + token + '&paytype=star&payid=4&payname=承诺书认证&channel=pc',
+                    url: 'http://apis.ziyawang.com/zll/pay?access_token=token&Resource=' + Resource + '&token=' + token + '&paytype=star&payid=4&payname=承诺书认证&channel=pc',
                     data: {'Resource':Resource,'paytype':'star','payid':4,'payname':'承诺书认证','channel':'pc'},
                     type: 'POST',
                     dataType:'json',

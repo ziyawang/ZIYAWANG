@@ -64,7 +64,7 @@ $(function(){
     var startpage   = ( urlpage - 1 ) * 4 + 1;
     $('#sercontent').val(content);
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/search?access_token=token&token=' + token,  
+        url: 'http://apis.ziyawang.com/zll/search?access_token=token&token=' + token,  
         type: 'POST',  
         dataType: 'json',  
         data: {'type':'4', 'content': content, 'startpage': startpage, 'pagecount': '6'},
@@ -113,16 +113,16 @@ $(function(){
                     showhtml += "<span class='bao' title='资产包VIP'></span>"
                     break;
                 case "企业商账":
-                    showhtml += "<span class='gu' title='固定资产VIP'></span>"
-                    break;
-                case "固定资产":
-                    showhtml += "<span class='ge' title='个人债权VIP'></span>"
-                    break;
-                case "融资信息":
                     showhtml += "<span class='qi' title='企业商账VIP'></span>"
                     break;
-                case "个人债权":
+                case "固定资产":
+                    showhtml += "<span class='gu' title='固定资产VIP'></span>"
+                    break;
+                case "融资信息":
                     showhtml += "<span class='rong' title='融资信息VIP'></span>"
+                    break;
+                case "个人债权":
+                    showhtml += "<span class='ge' title='个人债权VIP'></span>"
                     break;
             }
         })
@@ -292,7 +292,7 @@ $(function(){
                 //加载更多数据
                 startpage += 1;
                 $.ajax({
-                    url: 'https://apis.ziyawang.com/zll/search?access_token=token&token=' + token,  
+                    url: 'http://apis.ziyawang.com/zll/search?access_token=token&token=' + token,  
                     type: 'POST',  
                     dataType: 'json',  
                     data: {'type':'4', 'content': content, 'startpage': startpage, 'pagecount': '6'},
@@ -356,7 +356,7 @@ $(function(){
                             function collect(ServiceID) {
                                 var token = $.cookie('token');
                                 $.ajax({
-                                    url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
+                                    url:'http://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
                                     type:'POST',
                                     data:'itemID=' + ServiceID + '&type=4',
                                     dataType:'json',
@@ -420,7 +420,7 @@ $(function(){
         function collect(ServiceID) {
             var token = $.cookie('token');
             $.ajax({
-                url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
+                url:'http://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
                 type:'POST',
                 data:'itemID=' + ServiceID + '&type=4',
                 dataType:'json',

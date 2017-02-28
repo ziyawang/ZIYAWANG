@@ -47,7 +47,7 @@
         var urlpage   = getQueryString("startpage") ? getQueryString("startpage") : 1;
 
         $.ajax({  
-            url: 'https://apis.ziyawang.com/zll/pay/member/list?pagecount=8&startpage=' + urlpage + '&access_token=token&token=' + token,
+            url: 'http://apis.ziyawang.com/zll/pay/member/list?pagecount=8&startpage=' + urlpage + '&access_token=token&token=' + token,
             type: 'POST',  
             dataType: 'json',  
             timeout: 5000,  

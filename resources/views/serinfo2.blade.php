@@ -301,7 +301,7 @@ $(function () {
     var token = $.cookie('token');
     //相关服务方
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/match/service?access_token=token&ServiceID=' + ServiceID,  
+        url: 'http://apis.ziyawang.com/zll/match/service?access_token=token&ServiceID=' + ServiceID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -363,7 +363,7 @@ var ServiceID = window.location.pathname.replace(/[^0-9]/ig,"");
 $('#change').click(function(){
     //相关服务方
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/match/service?access_token=token&ServiceID=' + ServiceID,  
+        url: 'http://apis.ziyawang.com/zll/match/service?access_token=token&ServiceID=' + ServiceID,  
         type: 'GET',  
         dataType: 'json',
         asycn: false,  
@@ -410,12 +410,13 @@ function checkLogin(){
         stop = true;
         return false;
     }
+    stop = false;
 }
 
 
 function collect() {
     $.ajax({
-        url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
+        url:'http://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
         type:'POST',
         data:'itemID=' + ServiceID + '&type=4',
         dataType:'json',
@@ -450,7 +451,7 @@ $("#check").click(function(){
     }
     layer.alert('{{$service["ConnectPerson"]}}:{{$service["ConnectPhone"]}}',{title:false,closeBtn:0});
     $.ajax({
-        url:"https://apis.ziyawang.com/zll/count/service?access_token=token&token=" + token,
+        url:"http://apis.ziyawang.com/zll/count/service?access_token=token&token=" + token,
         type:"POST",
         data:{"ServiceID":ServiceID, "Channel":"PC"}
     })
@@ -501,7 +502,7 @@ $('#reportpub').click(function(){
     var ServiceID = window.location.pathname.replace(/[^0-9]/ig,"");
     var token = $.cookie('token');
     $.ajax({
-        url: "https://apis.ziyawang.com/zll/report?access_token=token&token=" + token,
+        url: "http://apis.ziyawang.com/zll/report?access_token=token&token=" + token,
         type: "POST",
         data: {'ItemID':ServiceID, 'Type':2, 'ReasonID':ReasonID, 'Channel':'PC'},
         dataType: "json",
