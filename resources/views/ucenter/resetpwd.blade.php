@@ -89,7 +89,7 @@ $(function(){
         var data = $('form').serialize();
         console.log(data);
         $.ajax({
-            url:"http://apis.ziyawang.com/zll/auth/chpwd?access_token=token&token="+token,
+            url:"https://apis.ziyawang.com/zll/auth/chpwd?access_token=token&token="+token,
             type:"POST",
             data:data,
             dataType:"json",

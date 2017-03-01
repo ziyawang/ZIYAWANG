@@ -1,6 +1,6 @@
 @extends('layouts.home')
 @section('content')
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/findservice.css')}}?v=2.1.0" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/findservice.css')}}?v=2.1.4.1" />
 <!-- 二级banner -->
 <div class="find_service temp">
     <ul>
@@ -117,7 +117,7 @@
 <script>
     $(function () {
         $.ajax({  
-            url: 'http://apis.ziyawang.com/zll/service/list?pagecount=10&startpage=1&access_token=token',  
+            url: 'https://apis.ziyawang.com/zll/service/list?pagecount=10&startpage=1&access_token=token',  
             type: 'GET',  
             dataType: 'json',  
             timeout: 5000, 
@@ -179,7 +179,7 @@ function ajax() {
     var data = 'startpage=' + startpage + '&ServiceType=' + ServiceType + '&ServiceArea=' + ServiceArea;
 
     $.ajax({  
-        url: 'http://apis.ziyawang.com/zll/service/list?access_token=token&pagecount=10&' + data,  
+        url: 'https://apis.ziyawang.com/zll/service/list?access_token=token&pagecount=10&' + data,  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000, 

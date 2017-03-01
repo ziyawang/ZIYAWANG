@@ -23,9 +23,9 @@
                 <img src="{{asset('/img/connection.png')}}" alt="" class="info-state">
                 @elseif($data->CooperateState == 2)
                     @if($data->TypeID == 6 || $data->TypeID == 17)
-                    <img src="{{asset('/img/disposaled.png')}}" alt="" class="info-state">
-                    @else
                     <img src="{{asset('/img/complete.png')}}" alt="" class="info-state">
+                    @else
+                    <img src="{{asset('/img/disposaled.png')}}" alt="" class="info-state">
                     @endif
                 @endif
                     <div class="triangle-left"></div>

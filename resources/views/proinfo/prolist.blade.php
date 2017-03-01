@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <link type="text/css" rel="stylesheet" href="{{asset('/css/infolist_v2.css')}}?v=2.1.0.1">
+    <link type="text/css" rel="stylesheet" href="{{asset('/css/infolist_v2.css')}}?v=2.1.4.1.1">
         <style type="text/css">
             .layerRecharge{width: 500px; height: 212px;}
             .layerTop{background:#fdd000;overflow: hidden;padding:25px 0 25px 25px;}
@@ -574,9 +574,9 @@ $(function(){
         }
         if(CooperateState == "2"){
             if(TypeID == "6" || TypeID == "17"){
-                cooperate = "<img src='/img/disposaled.png' class='disposal-state' />"
-            } else {
                 cooperate = "<img src='/img/complete.png' class='disposal-state' />"
+            } else {
+                cooperate = "<img src='/img/disposaled.png' class='disposal-state' />"
             }
         }
         //循环获取数据
@@ -607,7 +607,7 @@ $(function(){
             break;
 
             case "19":
-            var html = "<li " + coostateattr + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + rightattr + typenameattr + " class='rush item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='indivAssignment'></span></div><div class='itemTopRight'><h2><a href='javascript:;'>个人债权</a><b>" + ProjectNumber + "</b></h2><p><span class='visitors'><i class='iconfont icon'>&#xe603;</i>" + ViewCount + "</span><span class='collectors' title='收藏数'><i class='iconfont'>&#xe601;</i>" + CollectCount + "</span></p></div></div><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div><a href='javascript:;' title='" + Title + "' class='descriptionInwords'>" + Title + "</a><a href='javascript:;' class='cetification'><img title='" + TypeName + '-' + WordDes.substr(0,20) + "' src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='disposal-par'>" + cooperate + "<p class='keyPoint'><span class='btnBlue btnYel'><i class='iconfont colorWhite'>&#xe60c;</i><em>总金额</em></span><strong>" + TotalMoney + "万</strong></p><p class='remarks'>地区：<span>" + ProArea + "</span></p><p class='remarks'>处置方式：<span>" + law + "</span></p>><div class='spot'>" + lights + "</div></div<div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
+            var html = "<li " + coostateattr + priceattr + projectidattr + protypeattr + accountattr + payflagattr + isselfattr + memberattr + rightattr + typenameattr + " class='rush item " + noImg + "'><div class='itemTop'><div class='itemTopLeft'><span class='indivAssignment'></span></div><div class='itemTopRight'><h2><a href='javascript:;'>个人债权</a><b>" + ProjectNumber + "</b></h2><p><span class='visitors'><i class='iconfont icon'>&#xe603;</i>" + ViewCount + "</span><span class='collectors' title='收藏数'><i class='iconfont'>&#xe601;</i>" + CollectCount + "</span></p></div></div><div class='illustration'>" + vip + "<span class='createTime'>" + PublishTime + "</span></div><a href='javascript:;' title='" + Title + "' class='descriptionInwords'>" + Title + "</a><a href='javascript:;' class='cetification'><img title='" + TypeName + '-' + WordDes.substr(0,20) + "' src='http://images.ziyawang.com" + PictureDes1 + "' /></a><div class='disposal-par'>" + cooperate + "<p class='keyPoint'><span class='btnBlue btnYel'><i class='iconfont colorWhite'>&#xe60c;</i><em>总金额</em></span><strong>" + TotalMoney + "万</strong></p><p class='remarks'>地区：<span>" + ProArea + "</span></p><p class='remarks'>处置方式：<span>" + law + "</span></p><div class='spot'>" + lights + "</div></div><div class='storeup'><a href='javascript:;'>" + collectinfo + "</a></div></li>";
             break;
 
             case "20":
@@ -630,7 +630,7 @@ $(function(){
     }
 // console.log(urldata)
     $.ajax({  
-        url: 'http://apis.ziyawang.com/zll/project/list?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,
+        url: 'https://apis.ziyawang.com/zll/project/list?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000, 
@@ -756,7 +756,7 @@ $(function(){
                 //加载更多数据
                 startpage += 1;
                 $.ajax({
-                    url: 'http://apis.ziyawang.com/zll/project/list?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,  
+                    url: 'https://apis.ziyawang.com/zll/project/list?pagecount=6&access_token=token&startpage='+ startpage + urldata + '&token=' + token,  
                     type: 'GET',  
                     dataType: 'json',  
                     timeout: 5000, 
@@ -822,7 +822,7 @@ $(function(){
                                     type = 3;
                                 }
                                 $.ajax({
-                                    url:'http://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
+                                    url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
                                     type:'POST',
                                     data:'itemID=' + ProjectID + '&type=' + type,
                                     dataType:'json',
@@ -869,7 +869,7 @@ $(function(){
                                 if(Price == 0){
                                     token = token.replace(/\'/g,"");
                                     $.ajax({
-                                        url:'http://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+                                        url:'https://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
                                         type:'POST',
                                         dataType:'json',
                                         success:function(msg){
@@ -897,7 +897,7 @@ $(function(){
                                         btn: ['确定','充值','取消'], btn1:function(){
                                         // token = token.replace(/\'/g,"");
                                         $.ajax({
-                                            url:'http://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+                                            url:'https://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
                                             type:'POST',
                                             dataType:'json',
                                             success:function(msg){
@@ -1060,7 +1060,7 @@ $(function(){
                 type = 3;
             }
             $.ajax({
-                url:'http://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
+                url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
                 type:'POST',
                 data:'itemID=' + ProjectID + '&type=' + type,
                 dataType:'json',
@@ -1106,7 +1106,7 @@ $(function(){
             if(Price == 0){
                 token = token.replace(/\'/g,"");
                 $.ajax({
-                    url:'http://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+                    url:'https://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
                     type:'POST',
                     dataType:'json',
                     success:function(msg){
@@ -1131,7 +1131,7 @@ $(function(){
                     btn: ['确定','充值','取消'], btn1:function(){
                     // token = token.replace(/\'/g,"");
                     $.ajax({
-                        url:'http://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
+                        url:'https://apis.ziyawang.com/zll/app/consume?access_token=token&ProjectID=' + ProjectID + '&token=' + token,
                         type:'POST',
                         dataType:'json',
                         success:function(msg){

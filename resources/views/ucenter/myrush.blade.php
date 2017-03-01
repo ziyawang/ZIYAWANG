@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.0" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.4.1" />
 <!-- 右侧详情 -->
             <div class="ucRight">
                 <div class="ucRightCon ucRightList myChater">
@@ -38,7 +38,7 @@
 
         var urlpage   = getQueryString("startpage")   ? getQueryString("startpage")  : 1;
         $.ajax({  
-            url: 'http://apis.ziyawang.com/zll/project/myrush?pagecount=6&startpage=' + urlpage + '&access_token=token&token=' + token,  
+            url: 'https://apis.ziyawang.com/zll/project/myrush?pagecount=6&startpage=' + urlpage + '&access_token=token&token=' + token,  
             type: 'GET',  
             dataType: 'json',  
             timeout: 10000,  
@@ -135,9 +135,9 @@
                 }
                 if(CooperateState == "2"){
                     if(TypeID == "6" || TypeID == "17"){
-                        cooperate = "<img src='/img/chuzhichenggon.png' class='arrow-icon' />"
-                    } else {
                         cooperate = "<img src='/img/yiwancheng.png' class='arrow-icon' />"
+                    } else {
+                        cooperate = "<img src='/img/chuzhichenggon.png' class='arrow-icon' />"
                     }
                 }
                 //循环获取数据

@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
 
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.1.0.1" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}?v=2.1.0" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.1.0" /> 
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.1.4.1.1" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/index.css')}}?v=2.1.4.1" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.1.4.1" /> 
 
         <title>不良资产培训课程—资芽网首期不良资产培训</title>
         <meta name="Keywords" content=" 不良资产,不良资产课程,不良资产培训,不良资产培训课,不良资产培训课程" />
@@ -17,7 +17,7 @@
         <script src="{{asset('/js/jquery.js')}}"></script>
         <script src="{{asset('/js/fs.js')}}"></script>
         <script src="{{url('/js/jquery.cookie.js')}}"></script>
-        <script type="text/javascript" src="{{url('/js/public.js')}}?v=2.1.0"></script>
+        <script type="text/javascript" src="{{url('/js/public.js')}}?v=2.1.4.1"></script>
         <script type="text/javascript" src="{{url('/js/contract.js')}}"></script>
         <script type="text/javascript" src="{{url('/js/jquery.pagination.js')}}"></script>
         <script type="text/javascript" src="{{url('/org/layer/layer.js')}}"></script>

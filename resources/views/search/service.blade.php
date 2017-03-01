@@ -64,7 +64,7 @@ $(function(){
     var startpage   = ( urlpage - 1 ) * 4 + 1;
     $('#sercontent').val(content);
     $.ajax({  
-        url: 'http://apis.ziyawang.com/zll/search?access_token=token&token=' + token,  
+        url: 'https://apis.ziyawang.com/zll/search?access_token=token&token=' + token,  
         type: 'POST',  
         dataType: 'json',  
         data: {'type':'4', 'content': content, 'startpage': startpage, 'pagecount': '6'},
@@ -292,7 +292,7 @@ $(function(){
                 //加载更多数据
                 startpage += 1;
                 $.ajax({
-                    url: 'http://apis.ziyawang.com/zll/search?access_token=token&token=' + token,  
+                    url: 'https://apis.ziyawang.com/zll/search?access_token=token&token=' + token,  
                     type: 'POST',  
                     dataType: 'json',  
                     data: {'type':'4', 'content': content, 'startpage': startpage, 'pagecount': '6'},
@@ -356,7 +356,7 @@ $(function(){
                             function collect(ServiceID) {
                                 var token = $.cookie('token');
                                 $.ajax({
-                                    url:'http://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
+                                    url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
                                     type:'POST',
                                     data:'itemID=' + ServiceID + '&type=4',
                                     dataType:'json',
@@ -420,7 +420,7 @@ $(function(){
         function collect(ServiceID) {
             var token = $.cookie('token');
             $.ajax({
-                url:'http://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
+                url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
                 type:'POST',
                 data:'itemID=' + ServiceID + '&type=4',
                 dataType:'json',

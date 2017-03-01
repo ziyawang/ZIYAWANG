@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/videos.css')}}?v=2.1.0" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/videos.css')}}?v=2.1.4.1" />
 <!-- 二级banner -->
 <div class="find_service temp">
     <ul>
@@ -73,7 +73,7 @@ $(function(){
     var urlpage   = getQueryString("startpage")   ? getQueryString("startpage")  : 1;
     $('#content').val(content);
     $.ajax({  
-        url: 'http://apis.ziyawang.com/zll/search?access_token=token',  
+        url: 'https://apis.ziyawang.com/zll/search?access_token=token',  
         type: 'POST',  
         dataType: 'json',  
         data: {'type':'2', 'content': content, 'pagecount': '8', 'startpage': urlpage},

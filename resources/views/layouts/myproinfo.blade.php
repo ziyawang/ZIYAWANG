@@ -5,9 +5,9 @@
         <title>资芽网-全球不良资产超级综服平台</title>
         <meta name="Keywords" content="资芽网,不良资产,不良资产处置,不良资产处置平台" />
         <meta name="Description" content="资芽网是全球不良资产智能综服超级平台,吸引全国各类不良资产持有者，汇集各类不良资产信息及相关需求,整合海量不良资产处置服务机构与投资方,搭建多样化处置通道和不良资产综服生态产业体系,嵌入移动社交与视频直播,兼具媒体属性,实现大数据搜索引擎和人工智能,打造共享开放的全球不良资产智能综服超级平台。" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.1.0.1" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.1.0" /> 
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/issueinfo.css')}}?v=2.1.0" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.1.4.1.1" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.1.4.1" /> 
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/issueinfo.css')}}?v=2.1.4.1" />
 
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -185,7 +185,7 @@ $(function(){
 
     $('#container').show();
     $.ajax({
-        url: 'http://apis.ziyawang.com/zll/auth/me?access_token=token&token=' + token,
+        url: 'https://apis.ziyawang.com/zll/auth/me?access_token=token&token=' + token,
         type: 'POST',
         success:function(msg){
             var data = eval(msg);
@@ -212,6 +212,33 @@ $(function(){
 </script>
 
     @yield('content')
+    <div class="character">
+                <div class="triangle-left"></div>
+                <h3 class="charact-title fl"><img src="/img/captions.png" height="80" width="80" alt="" />文字描述</h3>
+                <div class="charact-con fr">
+                    {{$data->WordDes}}
+                </div>
+            </div>
+            @if(count($data->PictureDes)>0)
+            <div class="relevant">
+                <h3 class="charact-title">相关凭证</h3>
+                <div class="proof">
+                    <ul>
+                        @if($data->PictureDes)
+                        @foreach($data->PictureDes as $picture)
+                        <li><a href="javascript:;"><img src="http://images.ziyawang.com{{$picture}}" /></a></li>
+                        @endforeach
+                        @endif
+                    </ul>
+                    <a href="javascript:;" class="proof-l proof-btn"></a>
+                    <a href="javascript:;" class="proof-r proof-btn"></a>
+                </div>
+                    @if($data->Promise == "承诺")
+                    <div class="promise">重要提示：发布方本人已对本条信息的真实性进行承诺</div>
+                    @endif
+            </div>
+            @endif
+        </div>
         </div>
     </div>
 </div>
@@ -242,3 +269,43 @@ $(function(){
 
 
 </html>
+<script>
+    $(function(){
+        var proofKey = 0;
+        $('.proof ul li').eq(0).show(); 
+        var proofLi = $('.proof ul li').length;
+        var proofNum = proofLi - 1;
+        var proofFn = function(){
+            $('.proof ul li').eq(proofKey).fadeOut();
+            proofKey++;
+            if(proofKey > proofNum){
+                proofKey = 0;
+            }
+            $('.proof ul li').eq(proofKey).fadeIn();
+        }
+        var timer01 = null;
+        timer01 = setInterval(proofFn,5000);
+        $('.proof-r').click(function() {
+            proofFn();
+        });
+        $('.proof-l').click(function() {
+            $('.proof ul li').eq(proofKey).fadeOut();
+            proofKey--;
+            if(proofKey < 0){
+                proofKey = proofNum;
+            }
+            $('.proof ul li').eq(proofKey).fadeIn();
+        });
+        $('.proof').hover(function() {
+            if(proofLi > 1 ){
+                $('.proof-btn').stop().fadeIn('fast');
+            }
+            clearInterval(timer01);
+        }, function() {
+            if(proofLi > 1 ){
+                $('.proof-btn').stop().fadeOut('fast');
+            }
+            timer01 = setInterval(proofFn,5000);
+        });
+    })
+</script>

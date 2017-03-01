@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.0" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.4.1" />
     <div class="ucRight">
         <div class="ucRightCon member-sys">
             <h3 class="member-title">
@@ -105,7 +105,7 @@ $(function () {
         })
         resource = rtrim(resource);
         $.ajax({
-            url: 'http://apis.ziyawang.com/zll/pay?access_token=token&Resource=' + resource + '&token=' + token + '&paytype=star&payid=5&payname=三证认证&channel=pc',
+            url: 'https://apis.ziyawang.com/zll/pay?access_token=token&Resource=' + resource + '&token=' + token + '&paytype=star&payid=5&payname=三证认证&channel=pc',
             data: {'Resource':resource,'paytype':'star','payid':5,'payname':'三证认证','channel':'pc'},
             type: 'POST',
             dataType:'json',

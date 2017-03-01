@@ -17,7 +17,7 @@
     		var code = $("input[name='code']").val();
 
     		$.ajax({
-    			url:"http://apis.ziyawang.com/zll/auth/login",
+    			url:"https://apis.ziyawang.com/zll/auth/login",
     			type:"POST",
     			data:"phonenumber=" + phonenumber + "&password=" + password  + "&access_token=token",
     			dataType:'json',

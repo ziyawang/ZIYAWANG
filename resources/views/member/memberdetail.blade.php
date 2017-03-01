@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-    <link rel="stylesheet" type="text/css" href="{{url('/css/releasehome.css')}}?v=2.1.0.4" />
+    <link rel="stylesheet" type="text/css" href="{{url('/css/releasehome.css')}}?v=2.1.4.1.4" />
     <div class="ucRight">
         <div class="ucRightCon member-sys">
             <h3 class="member-title">
@@ -47,7 +47,7 @@
         var urlpage   = getQueryString("startpage") ? getQueryString("startpage") : 1;
 
         $.ajax({  
-            url: 'http://apis.ziyawang.com/zll/pay/member/list?pagecount=8&startpage=' + urlpage + '&access_token=token&token=' + token,
+            url: 'https://apis.ziyawang.com/zll/pay/member/list?pagecount=8&startpage=' + urlpage + '&access_token=token&token=' + token,
             type: 'POST',  
             dataType: 'json',  
             timeout: 5000,  

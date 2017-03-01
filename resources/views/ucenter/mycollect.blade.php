@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-    <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.0" />
+    <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.4.1" />
 <!-- 右侧详情 -->
 <div class="ucRight">
     <div class="ucRightCon ucRightSafe myCollections">
@@ -40,7 +40,7 @@
         var urlpage   = getQueryString("startpage")   ? getQueryString("startpage")  : 1;
 
         $.ajax({  
-            url: 'http://apis.ziyawang.com/zll/collect/list?pagecount=6&startpage=' + urlpage + '&access_token=token&token=' + token,  
+            url: 'https://apis.ziyawang.com/zll/collect/list?pagecount=6&startpage=' + urlpage + '&access_token=token&token=' + token,  
             type: 'GET',  
             dataType: 'json',  
             timeout: 5000,  
@@ -132,10 +132,10 @@
                     cooperate = "<img src='/img/hezuozhong.png' class='arrow-icon' />"
                 }
                 if(CooperateState == "2"){
-                    if(TypeID == "6" || TypeID == "17"){
-                        cooperate = "<img src='/img/chuzhichenggon.png' class='arrow-icon' />"
-                    } else {
+                    if(ProType == "6" || ProType == "17"){
                         cooperate = "<img src='/img/yiwancheng.png' class='arrow-icon' />"
+                    } else {
+                        cooperate = "<img src='/img/chuzhichenggon.png' class='arrow-icon' />"
                     }
                 }
                 var CollectTime   = ('CollectTime' in data[index])   ? data[index].CollectTime : null;
@@ -235,7 +235,7 @@ function collect(id,type) {
     // var token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzMyIsImlzcyI6Imh0dHA6XC9cL2FwaXRlc3Queml5YXdhbmcuY29tXC92MVwvYXV0aFwvbG9naW4iLCJpYXQiOiIxNDc0Nzk0NTQyIiwiZXhwIjoiMTQ3NTM5OTM0MiIsIm5iZiI6IjE0NzQ3OTQ1NDIiLCJqdGkiOiJmNmFhNDRhODA4ODBlZjAxNzE3NWJmYTZhNDczMWJiZCJ9.ho521A0Prh6LcNAPNcmQEF2H_VTQBXstSwf2m4yeXpA";
 
     $.ajax({
-        url:'http://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
+        url:'https://apis.ziyawang.com/zll/collect?access_token=token&token='+token,
         type:'POST',
         data:'itemID=' + id + '&type=' + type,
         dataType:'json',

@@ -96,7 +96,7 @@ $('.get_test').click(function(){
     var reg = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
     if(reg.test(phonenumber)){
         $.ajax({
-            url:"http://apis.ziyawang.com/zll/ie/auth/getsmscode",
+            url:"https://apis.ziyawang.com/zll/ie/auth/getsmscode",
             type:"GET",
             data:"phonenumber=" + phonenumber + "&access_token=token&action=login",
             dataType:"json",
@@ -136,7 +136,7 @@ $('#login').click(function(){
     }
     $(this).val('登录中...');
     $.ajax({
-        url:"http://apis.ziyawang.com/zll/ie/auth/resetpwd",
+        url:"https://apis.ziyawang.com/zll/ie/auth/resetpwd",
         type:"GET",
         data:"phonenumber=" + phonenumber + "&password=" + password + "&smscode=" + smscode + "&access_token=token",
         // dataType:'json',
