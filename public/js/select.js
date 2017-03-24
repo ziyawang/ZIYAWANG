@@ -82,6 +82,17 @@ function perprice(id,str) {
     var perprice = Math.round((price/area)*100)/100
     input.html(perprice);
 }
+
+function intrest(id,str) {
+    id.value = str.replace(/[^\d.]/g,'');
+    var price = $('input[name="Money"]').val();
+    var total = $('input[name="TotalMoney"]').val();
+    var input = $('.zllintrest');
+    var intrest = total-price
+    console.log(intrest);
+    input.val(intrest);
+}
+
 // v2 == ie support placeholder
 function placeholderSupport() {
     return 'placeholder' in document.createElement('input');

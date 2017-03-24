@@ -1,6 +1,6 @@
 @extends('layouts.home')
 @section('content')
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/findservice.css')}}?v=2.1.4.1" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/findservice.css')}}?v=2.1.7.1.1" />
 <!-- 二级banner -->
 <div class="find_service temp">
     <ul>

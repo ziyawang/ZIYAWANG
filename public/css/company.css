@@ -1,5 +1,5 @@
 .find_service ul li{background:#ffda3f url(../img/junior_banner.jpg) no-repeat center top;height: 296px;overflow: hidden;}
-.revisionCon{width: 1230px; margin: 0 auto; background: url(../img/r_shadow.png) repeat-y right 0;}
+.revisionCon{width: 1230px; margin: 0 auto; background: url(../img/r_shadow.png) repeat-y right 0;overflow:hidden;}
 .revisionCon .ucLeft{min-height: 502px;}
 .revisionCon .ucleftMiddle{height: 74px;background:none;padding:22px 0 0;}
 .revisionImg{margin:0 auto;display: block;}

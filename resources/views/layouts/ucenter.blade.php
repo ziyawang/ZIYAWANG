@@ -10,9 +10,9 @@
         <meta name="viewport" content="width=1492">
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.1.4.1.1" />
-        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.1.4.1" />
-        <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.4.1" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/base.css')}}?v=2.1.7.1.1.1" />
+        <link type="text/css" rel="stylesheet" href="{{asset('/css/public.css')}}?v=2.1.7.1.1" />
+        <link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.7.1.1" />
 <style>
     #uploadifive-picture_upload{height: 30px!important;line-height: 30px!important;border-radius: 25px;background: #e48013;color: #fff;}
     .img_box{padding-left: 170px;}

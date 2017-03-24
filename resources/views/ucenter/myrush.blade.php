@@ -1,6 +1,6 @@
 @extends('layouts.uhome')
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.4.1" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.7.1.1" />
 <!-- 右侧详情 -->
             <div class="ucRight">
                 <div class="ucRightCon ucRightList myChater">
@@ -134,7 +134,7 @@
                     cooperate = "<img src='/img/hezuozhong.png' class='arrow-icon' />"
                 }
                 if(CooperateState == "2"){
-                    if(TypeID == "6" || TypeID == "17"){
+                    if(TypeID == "6" || TypeID == "17" || TypeID == "20" || TypeID == "21" || TypeID == "22"){
                         cooperate = "<img src='/img/yiwancheng.png' class='arrow-icon' />"
                     } else {
                         cooperate = "<img src='/img/chuzhichenggon.png' class='arrow-icon' />"
@@ -150,7 +150,7 @@
                         var html = "<li class='clearfix'><a href='" + url + "'>" + cooperate + "<div class='pblLeft'><span class='pblef3'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>融资方式：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>资金用途：<strong>" + Usefor + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>融资金额：</strong>" + TotalMoney + "万元</span><span></span></div></div></a></li>";
                         break;
                     case "12":
-                        var html = "<li class='clearfix'><a href='" + url + "'>" + cooperate + "<div class='pblLeft'><span class='pblef2'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>标的物类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>规划用途：<strong>" + Usefor + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>转让价：</strong>" + TransferMoney + "万元</span><span></span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'>" + cooperate + "<div class='pblLeft'><span class='pblef2'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>标的物类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>转让价：</strong>" + TransferMoney + "万元</span><span></span></div></div></a></li>";
                         break;
 
                     case "16":
@@ -170,11 +170,11 @@
                         break;
 
                     case "20":
-                        var html = "<li class='clearfix'><a href='" + url + "'>" + cooperate + "<div class='pblLeft'><span class='pblef6'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>资产类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>面积：<strong>" + Area + "平方米</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>起拍价：</strong>" + Money + "万元</span><span></span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'>" + cooperate + "<div class='pblLeft'><span class='pblef6'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>资产类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>面积：<strong>" + Area + "平米</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>起拍价：</strong>" + Money + "万元</span><span></span></div></div></a></li>";
                         break;
 
                     case "21":
-                        var html = "<li class='clearfix'><a href='" + url + "'>" + cooperate + "<div class='pblLeft'><span class='pblef6'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>资产类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>面积：<strong>" + Area + "平方米</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>起拍价：</strong>" + Money + "万元</span><span></span></div></div></a></li>";
+                        var html = "<li class='clearfix'><a href='" + url + "'>" + cooperate + "<div class='pblLeft'><span class='pblef6'></span>" + TypeName + "</div><div class='pblMiddle'><span class='spanTagDet'>" + Title + "</span><span class='spanTag'>资产类型：<strong>" + AssetType + "</strong></span><span>地区：<strong>" + ProArea + "</strong></span><span>面积：<strong>" + Area + "平米</strong></span></div><div class='pblBtn'><span class='verticaLine'></span><div class='pblRight'><span></span><span><strong>起拍价：</strong>" + Money + "万元</span><span></span></div></div></a></li>";
                         break;
 
                     case "22":

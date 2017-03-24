@@ -54,5 +54,5 @@ input[type=button], input[type=submit], input[type=file], button {-webkit-appear
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;}
-.temp ul li a{display: block;background: #ffda3f url(../img/member.jpg) no-repeat center top;height: 296px;}
+.temp ul li a{display: block;background: #181526 url(../img/member.jpg) no-repeat center top;height: 296px;}
 .temp ul li{background: #ffda3f!important;}

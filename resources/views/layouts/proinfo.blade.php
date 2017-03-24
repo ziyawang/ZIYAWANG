@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8">
 @yield('title')
-        <link rel="stylesheet" type="text/css" href="{{asset('/css/base.css')}}?v=2.1.4.1.1" />
-        <link rel="stylesheet" type="text/css" href="{{asset('/css/public.css')}}?v=2.1.4.1" />
-        <link rel="stylesheet" type="text/css" href="{{asset('/css/issueinfo.css')}}?v=2.1.4.1" />
+        <link rel="stylesheet" type="text/css" href="{{asset('/css/base.css')}}?v=2.1.7.1.1.1" />
+        <link rel="stylesheet" type="text/css" href="{{asset('/css/public.css')}}?v=2.1.7.1.1" />
+        <link rel="stylesheet" type="text/css" href="{{asset('/css/issueinfo.css')}}?v=2.1.7.1.1" />
         <script type="text/javascript" src="{{asset('/js/jquery.js')}}"></script>
         <script src="{{url('/js/jquery.cookie.js')}}"></script>
         <script type="text/javascript" src="{{asset('/org/layer/layer.js')}}"></script>
@@ -47,6 +47,7 @@
     <body>
         <div class="rec" style="width:0;height:0;overflow:hidden;">
         <img src="/img/rec.jpg" height="420" width="420" alt="" />
+        <img src="http://images.ziyawang.com{{$data->PictureDet}}" id="bigpic" style="display:none">
         </div>
     <div class="header">
         <div class="wrap">
@@ -181,6 +182,45 @@
                     {{$data->WordDes}}
                 </div>
             </div>
+            @if($data->PictureDet)
+                    <img src="http://images.ziyawang.com{{$data->PictureDet}}" id="bigpic" style="display:none">
+            <div class="character">
+                <div class="triangle-left"></div>
+                <h3 class="charact-title fl"><img src="/img/desc.png" height="80" width="80" alt="" />项目详情</h3>
+                <div class="charact-con fr">
+                    <img src="http://images.ziyawang.com{{$data->PictureDet}}" class="desc-img" id="smallpic">
+                </div>
+            </div>
+            <style>
+            body{position: relative;}
+            .layui-layer-nobg{position: absolute!important;}
+            </style>
+            <script>
+            $('#smallpic').click(function(){
+                var width = document.getElementById('smallpic').naturalWidth;
+                var wh = $(window).height();
+                var height = document.getElementById('smallpic').naturalHeight;
+                if(height > wh){
+                    var imgHei =  $(window).scrollTop() + 100;
+                } else {
+                    var imgHei =  $(window).scrollTop() + (wh-height)/2;
+                }
+
+                layer.open({
+                  type: 1,
+                  fixed: false,
+                  title: false,
+                  closeBtn: 1,
+                  area: width,
+                  skin: 'layui-layer-nobg', //没有背景色
+                  shadeClose: true,
+                  move: true,
+                  content: $('#bigpic')
+                });
+                $('.layui-layer-nobg').css('top',imgHei + 'px')
+            })
+            </script>
+            @endif
             @if(count($data->PictureDes)>0)
             <div class="relevant">
                 <h3 class="charact-title">相关凭证</h3>
@@ -506,7 +546,7 @@
                     cooperate = "<img src='/img/connection.png' class='disposal-state' />"
                 }
                 if(CooperateState == "2"){
-                    if(TypeID == "6" || TypeID == "17"){
+                    if(TypeID == "6" || TypeID == "17" || TypeID == "20" || TypeID == "21" || TypeID == "22"){
                         cooperate = "<img src='/img/complete.png' class='disposal-state' />"
                     } else {
                         cooperate = "<img src='/img/disposaled.png' class='disposal-state' />"
@@ -608,6 +648,8 @@
             }
         }
         $(".item").click(function(){
+            alert(1);
+            return;
             var price = parseInt($(this).attr('price'));
             var projectid = $(this).attr('projectid');
             var typeid = $(this).attr('typeid');
@@ -1015,7 +1057,7 @@ $('#change').click(function(){
                     cooperate = "<img src='/img/connection.png' class='disposal-state' />"
                 }
                 if(CooperateState == "2"){
-                    if(TypeID == "6" || TypeID == "17"){
+                    if(TypeID == "6" || TypeID == "17" || TypeID == "20" || TypeID == "21" || TypeID == "22"){
                         cooperate = "<img src='/img/complete.png' class='disposal-state' />"
                     } else {
                         cooperate = "<img src='/img/disposaled.png' class='disposal-state' />"

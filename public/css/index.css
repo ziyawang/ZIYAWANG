@@ -149,8 +149,13 @@ a,button{cursor:pointer;}
 .video_content ul li{float: left;width: 12.5%;position: relative;margin-right: 28px;box-sizing: border-box;width: 279px;}
 .video_content ul li:nth-child(4n+4){margin-right: 0;}
 .video_content ul li a{-webkit-transition: all 0.5s;-moz-transition: all 0.5s;-ms-transition: all 0.5s;transition: all 0.5s;}
+/*2017-03-07*/
 .video_content ul li img{margin: 0px auto;border-top: 2px solid #ECA716;width: 279px;height: 186px;}
-.video_content ul li span{display: block;width: 279px;margin: 0 auto;text-align: center;height: 49px;line-height:49px;background: rgba(0,0,0,0.7);white-space: nowrap;text-overflow:ellipsis;overflow: hidden;font-size: 14px;color: #fff;position: relative;margin-top: -10px;z-index: 1;}
+.video-desc{padding: 15px 0;margin-top: -10px;background: rgba(0,0,0,0.7);position: relative;z-index: 1;}
+.video_content li span{display: block;width: 279px;margin: 0 auto;/*text-align: center;height: 49px;line-height:49px;*/text-indent:1em;white-space: nowrap;text-overflow:ellipsis;overflow: hidden;font-size: 14px;color: #fff;}
+.video_content .video-fee{color:#ffad00;font-size: 14px;padding-left: 28px;background: url(http://ziyawang.com/img/yabi1.png) no-repeat 16px 3px;line-height: 25px;}
+.video_content .free-video{background:none;color:#00b600;font-size: 14px;line-height: 25px;}
+/*2017-03-07*/
 .video_content ul li a:hover span{color: #f3c91f;}
 .video_content .direction_btn{position: initial;}
 .video_content .direction_btn a{margin: 0;}

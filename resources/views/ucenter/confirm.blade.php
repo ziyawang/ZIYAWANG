@@ -1,7 +1,7 @@
 @extends('layouts.uhome')
 @section('content')
 <script src="http://ziyawang.com/js/YMDClass.js" type="text/javascript"></script>
-<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.4.1" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/releasehome.css')}}?v=2.1.7.1.1" />
 <!-- 右侧 -->
     <div class="ucRight">
         <div class="ucRightCon ucRightSafe perfectInfo">

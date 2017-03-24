@@ -17,13 +17,23 @@
             <div class="asset">
                 <div class="asset-con">
                     <h2 class="asset-title"><span>资产包</span><a href="javascript:;" class="depute">委托发布</a></h2>
-                    <div class="asset-main">
+                    <div class="asset-main txtleft">
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>请选择身份：</span>
                             <select name="Identity" class="row-select bitian">
                                 <option value="0">请选择</option>
                                 <option value="项目持有者">项目持有者</option>
                                 <option value="FA（中介）">FA（中介）</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>卖家类型：</span>
+                            <select name="FromWhere" class="row-select bitian">
+                                <option value="0">请选择</option>
+                                <option value="银行">银行</option>
+                                <option value="非银行机构">非银行机构</option>
+                                <option value="企业">企业</option>
+                                <option value="其他">其他</option>
                             </select>
                         </div>
                         <div class="row">
@@ -37,16 +47,6 @@
                             </select>
                         </div>
                         <div class="row">
-                            <span class="row-left"><em class="must">*</em>来源：</span>
-                            <select name="FromWhere" class="row-select bitian">
-                                <option value="0">请选择</option>
-                                <option value="银行">银行</option>
-                                <option value="非银行机构">非银行机构</option>
-                                <option value="企业">企业</option>
-                                <option value="其他">其他</option>
-                            </select>
-                        </div>
-                        <div class="row">
                             <span class="row-left"><em class="must">*</em>地区：</span>
                             <span class="region">
                                 <select class="row-select bitian" id="seachprov" onChange="changeComplexProvince(this.value, sub_array, 'seachcity', 'seachdistrict');"></select>
@@ -55,89 +55,21 @@
                         </div>
                         <div class="row">
                             <span class="row-left"><em class="must">*</em>总金额：</span>
-                            <input name="TotalMoney" type="text" class="inps bitian" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">万元（本加利）</span>
+                            <input name="TotalMoney" type="text" class="inps bitian" placeholder="请输入数字" onkeyup="intrest(this,this.value)" /><span class="tag">万元（本加利）</span>
                         </div>
                         <div class="row">
-                            <span class="row-left"><em class="must">*</em>转让价：</span>
+                            <span class="row-left"><em class="must">*</em>本金：</span>
+                            <input name="Money" type="text" class="inps" placeholder="请输入数字" onkeyup="intrest(this,this.value)" /><span class="tag">万元</span>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>利息：</span>
+                            <input name="Rate" type="text" class="inps zllintrest" readonly="readonly"/><span class="tag">万元</span>
+                        </div>
+                        <div class="row">
+                            <span class="row-left"><em class="must">*</em>意向转让价：</span>
                             <input name="TransferMoney" type="text" class="inps bitian" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">万元</span>
                         </div>
-                        <h3 class="subtitle">其他</h3>
-                        <div class="row">
-                            <span class="row-left">本金：</span>
-                            <input name="Money" type="text" class="inps" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">万元</span>
-                        </div>
-                        <div class="row">
-                            <span class="row-left">利息：</span>
-                            <input name="Rate" type="text" class="inps" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">万元</span>
-                        </div>
-                        <div class="sub-row">
-                            <span class="row-left">户数：</span>
-                            <input name="Counts" type="text" class="inps" placeholder="请输入数字" onkeyup="numLimit(this,this.value)" /><span class="tag">户</span>
-                        </div>
-                        <div class="sub-row">
-                            <span class="row-left">有无尽调报告：</span>
-                            <span class="row-right">
-                                <div class="land">
-                                    <span class="inp-radio"><input type="radio" class="radios" id="yes01" value="有" name="Report" /></span>
-                                    <label for="yes01" class="inp-label">有</label><em class="wem1"></em>
-                                </div>
-                                <div class="house">
-                                    <span class="inp-radio"><input type="radio" class="radios" id="no01" value="无" name="Report" /></span>
-                                    <label for="no01" class="inp-label">无</label>
-                                </div>
-                            </span>
-                        </div>
-                        <div class="sub-row">
-                            <span class="row-left">出表时间：</span>
-                            <select name="year1" class="row-select select-time"></select>
-                            <select name="month1" class="row-select select-time"></select>
-                            <select name="day1" class="row-select select-time"></select>
-                        </div>
-                        <div class="row clearfix mb0">
-                            <span class="row-left fl">抵押物类型：</span>
-                            <div class="mortge">
-                                <div class="mortge-row">
-                                    <span class="inp-radio"><input type="checkbox" class="radios" id="check01" value="土地" name="Pawn[]"  /></span>
-                                    <label class="inp-label" for="check01">土地</label>
-                                </div>
-                                <div class="mortge-row">
-                                    <span class="inp-radio"><input type="checkbox" class="radios" id="check02" value="住宅" name="Pawn[]" /></span>
-                                    <label class="inp-label" for="check02">住宅</label>
-                                </div>
-                                <div class="mortge-row">
-                                    <span class="inp-radio"><input type="checkbox" class="radios" id="check03" value="商业" name="Pawn[]" /></span>
-                                    <label class="inp-label" for="check03">商业</label>
-                                </div>
-                                <div class="mortge-row">
-                                    <span class="inp-radio"><input type="checkbox" class="radios" id="check04" value="厂房" name="Pawn[]" /></span>
-                                    <label class="inp-label" for="check04">厂房</label>
-                                </div>
-                                <div class="mortge-row">
-                                    <span class="inp-radio"><input type="checkbox" class="radios" id="check05" value="设备" name="Pawn[]" /></span>
-                                    <label class="inp-label" for="check05">设备</label>
-                                </div>
-                                <div class="mortge-row">
-                                    <span class="inp-radio"><input type="checkbox" class="radios" id="check06" value="其他" name="Pawn[]" /></span>
-                                    <label class="inp-label" for="check06">其他</label>
-                                </div>
-                            </div>
-                        </div>
                         
-                        <h3 class="subtitle">项目亮点</h3>
-                        <div class="spot">
-                            <div class="spot-row">
-                                <span class="inp-radio"><input type="checkbox" class="radios" id="check07" value="抵押足值" name="ProLabel[]" /></span>
-                                <label class="inp-label" for="check07">抵押足值</label>
-                            </div>
-                            <div class="spot-row">
-                                <span class="inp-radio"><input type="checkbox" class="radios" id="check08" value="可拆包" name="ProLabel[]" /></span>
-                                <label class="inp-label" for="check08">可拆包</label>
-                            </div>
-                            <div class="spot-row">
-                                <span class="inp-radio"><input type="checkbox" class="radios" id="check09" value="一手包" name="ProLabel[]" /></span>
-                                <label class="inp-label" for="check09">一手包</label>
-                            </div>
-                        </div>
 @endsection
 @section('list')
 <!-- 资产包清单上传 -->
@@ -159,7 +91,6 @@
     <script type="text/javascript">
         <?php $timestamp = time();?>
         $(function() {
-         new YMDselect('year1','month1','day1');
 
             $('#list_upload').fileupload({
                 dataType: 'json',
@@ -205,12 +136,4 @@
         $("#nopz").html('你还没有上传凭证呢~');
         return;
     }
-@endsection
-@section('shijian')
-var year = $("select[name='year1']").val();
-var month = $("select[name='month1']").val();
-var day = $("select[name='day1']").val();
-if(year != 0 && month != 0 && day != 0){
-    $('#year').val(year+"年"+month+"月"+day+"日");
-}
 @endsection

@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <link type="text/css" rel="stylesheet" href="{{asset('/css/infolist_v2.css')}}?v=2.1.4.1.1">
+    <link type="text/css" rel="stylesheet" href="{{asset('/css/infolist_v2.css')}}?v=2.1.7.1.1.1">
         <style type="text/css">
             .layerRecharge{width: 500px; height: 212px;}
             .layerTop{background:#fdd000;overflow: hidden;padding:25px 0 25px 25px;}
@@ -573,7 +573,7 @@ $(function(){
             cooperate = "<img src='/img/connection.png' class='disposal-state' />"
         }
         if(CooperateState == "2"){
-            if(TypeID == "6" || TypeID == "17"){
+            if(TypeID == "6" || TypeID == "17" || TypeID == "20" || TypeID == "21" || TypeID == "22"){
                 cooperate = "<img src='/img/complete.png' class='disposal-state' />"
             } else {
                 cooperate = "<img src='/img/disposaled.png' class='disposal-state' />"

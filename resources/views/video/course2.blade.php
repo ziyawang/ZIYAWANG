@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
 @section('seo')
-<title>资芽哈哈哈-资芽视频-不良资产领域第一视频平台</title>
+<title>付费课程-资芽视频-不良资产领域第一视频平台</title>
         <meta name="Keywords" content="资芽视频,不良资产视频,不良资产行业视频,资芽网视频" />
         <meta name="Description" content="资芽视频是资芽网第一视频,行业专家释疑解惑,分享经验,培训学习,剖析热点话题;线上线下活动,同业互动,探索分析,交流共享,协作共赢,鼓励创新,普及法律常识,降低法律风险.推动不良资产行业,金融领域健康有序发展." />
 @endsection
@@ -29,9 +29,9 @@
             <ul>
                 <li><a href="http://ziyawang.com/video">推荐</a><span></span></li>
                 <li><a href="http://ziyawang.com/video/homemade">资芽哈哈哈</a><span></span></li>
-                <li class="current"><a href="http://ziyawang.com/video/profession">行业说</a><span></span></li>
+                <li><a href="http://ziyawang.com/video/profession">行业说</a><span></span></li>
                 <li><a href="http://ziyawang.com/video/oneminu">资芽一分钟</a><span></span></li>
-                <li><a href="http://ziyawang.com/video/course">付费课程</a><span></span></li>
+                <li class="current"><a href="http://ziyawang.com/video/course">付费课程</a><span></span></li>
             </ul> 
         </div>
         <div class="videoSearch">
@@ -44,8 +44,8 @@
 
 <div class="content">
     <!-- 行业说 -->
-    <div class="hotlist hys">
-        <h2 class="bTitle">行业说</h2>
+    <div class="hotlist ffk">
+        <h2 class="bTitle">付费课程</h2>
         <div class="hotlistVideo">
             <ul id="videolist">
             </ul>
@@ -80,8 +80,8 @@
                     dataType:'json',
                     success:function(msg){
                         if(msg.status_code == 200 || msg.status_code == 417){
-                            window.location.href="http://ziyawang.com/video/" + VideoID;
-                            // window.open("http://ziyawang.com/video/" + VideoID);
+                    window.location.href="http://ziyawang.com/video/" + VideoID;
+                    // window.open("http://ziyawang.com/video/" + VideoID);
                         } else if(msg.status_code == 418) {
                             layer.open({
                                 type: 1,
@@ -112,7 +112,7 @@
                     return false;
                 } else {
                     if(right != "0" || payflag == "1"){
-                        window.location.href="http://ziyawang.com/video/" + videoid;
+                    window.location.href="http://ziyawang.com/video/" + videoid;
                         // window.open("http://ziyawang.com/video/" + videoid);
                         return false;
                     } else {
@@ -171,7 +171,7 @@
         }
 
         $.ajax({  
-            url: 'https://apis.ziyawang.com/zll/video/list?pagecount=16&VideoLabel=hys&access_token=token&token=' + token + '&startpage=' + urlpage,  
+            url: 'https://apis.ziyawang.com/zll/video/list?pagecount=16&VideoLabel=ffkc&access_token=token&token=' + token + '&startpage=' + urlpage,  
             type: 'GET',  
             dataType: 'json',  
             timeout: 5000, 
@@ -210,6 +210,9 @@
                 window.location.href= url;
             });
             var html = _queryVideo(data);
+            if(counts ==  0){
+                html = "<li>暂无视频</li>"
+            }
             $('#videolist').html(html);
             //视频划过
             // mouseover videonav

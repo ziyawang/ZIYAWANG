@@ -189,7 +189,7 @@
 .friend .hezuo{*+top: 61px;}
 .friend ul{*+height: 204px;}
 /*2016.9.20 usercenter_v2 public part*/
-.userContent{width: 1230px;margin: 0 auto;background:url(../img/r_shadow.png) repeat-y right 0;overflow: hidden;}
+.userContent{width: 1230px;margin: 0 auto;/*background:url(../img/r_shadow.png) repeat-y right 0;*/overflow: hidden;}
 /*left*/
 .ucLeft{min-height:780px;width: 197px;float: left;background:#f4f4f4;border-right: 3px solid #b8b8b8;border-left: 3px solid #b8b8b8;margin-left: 15px;padding-bottom: 2000px;margin-bottom: -2000px;}
 .ucLeft h2{padding-left:4px;width: 193px;height: 81px;line-height:81px;background:#757778;font-size: 30px;color:#fff;text-align: center;font-weight: normal;letter-spacing: 4px;}

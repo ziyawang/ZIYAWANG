@@ -174,7 +174,7 @@ $(function(){
         var rushclass = '';
         var rushclasswords = "class='descriptionInwords'";
         var rushclasspics = "class='cetification'";
-        var priceattr = "price=" + Price;
+        var priceattr = " price=" + Price;
         var projectidattr = " projectid=" + ProjectID;
         var protypeattr = " typeid=" + TypeID;
         var accountattr = " account=" + Account;
@@ -235,7 +235,7 @@ $(function(){
             cooperate = "<img src='/img/connection.png' class='disposal-state' />"
         }
         if(CooperateState == "2"){
-            if(TypeID == "6" || TypeID == "17"){
+            if(TypeID == "6" || TypeID == "17" || TypeID == "20" || TypeID == "21" || TypeID == "22"){
                 cooperate = "<img src='/img/complete.png' class='disposal-state' />"
             } else {
                 cooperate = "<img src='/img/disposaled.png' class='disposal-state' />"

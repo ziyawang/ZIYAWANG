@@ -30,6 +30,7 @@ Route::get('/video', 'VideoController@videoList');//视频首页
 Route::get('/video/homemade', 'VideoController@homemade');//资芽哈哈哈视频列表
 Route::get('/video/profession', 'VideoController@profession');//行业说
 Route::get('/video/oneminu', 'VideoController@oneminu');//一分钟
+Route::get('/video/course', 'VideoController@course');//付费课程
 Route::get('/video/{id}', 'VideoController@videoInfo');//视频详情
 
 Route::get('/news', 'IndexController@newsList');//新闻列表
@@ -49,6 +50,7 @@ Route::get('/app', 'IndexController@app');//app下载页
 Route::get('/aboutus', 'IndexController@aboutus');//关于我们
 Route::get('/connectus', 'IndexController@connectus');//联系我们
 Route::get('/legal', 'IndexController@legal');//法律声明
+Route::get('/partner', 'IndexController@partner');//合作伙伴
 
 
 

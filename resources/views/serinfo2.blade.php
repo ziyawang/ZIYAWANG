@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <link rel="stylesheet" type="text/css" href="{{asset('/css/issueinfo.css')}}?v=2.1.4.1" />
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/issueinfo.css')}}?v=2.1.7.1.1" />
     <style>
         .jubaoBox{padding:22px;background:#fff;width: 415px;position: fixed;top: 50%;left: 50%;margin:-290px 0 0 -207px;display: none;z-index: 9999;}
         .jubao{background:#d5d5d5;padding:30px 40px 18px;}

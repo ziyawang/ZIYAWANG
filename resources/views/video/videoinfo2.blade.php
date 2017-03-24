@@ -6,7 +6,7 @@
         <meta name="Description" content="资芽视频是资芽网第一视频,行业专家释疑解惑,分享经验,培训学习,剖析热点话题;线上线下活动,同业互动,探索分析,交流共享,协作共赢,鼓励创新,普及法律常识,降低法律风险.推动不良资产行业,金融领域健康有序发展." />
 @endsection
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/videos.css')}}?v=2.1.4.1" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/videos.css')}}?v=2.1.7.1.1" />
 <script src="{{asset('/js/fingerprint.js')}}"></script>
 <script src="{{asset('/js/jquery.md5.js')}}"></script>
 <script src="{{asset('/org/layer/layer.js')}}"></script>
@@ -26,6 +26,7 @@
                 <li id="zyhhh"><a href="http://ziyawang.com/video/homemade">资芽哈哈哈</a><span></span></li>
                 <li id="hys"><a href="http://ziyawang.com/video/profession">行业说</a><span></span></li>
                 <li id="zyyfz"><a href="http://ziyawang.com/video/oneminu">资芽一分钟</a><span></span></li>
+                <li><a href="http://ziyawang.com/video/course">付费课程</a><span></span></li>
             </ul> 
         </div>
         <div class="videoSearch">
@@ -120,6 +121,69 @@
 $(function(){
     var VideoID = window.location.pathname.replace(/[^0-9]/ig,"");
     var token = $.cookie('token');
+
+    function rush(Price, VideoID, Account) {
+            var isenough = '';
+            if(Price > Account){
+                isenough = "(余额不足)";
+            }
+            layer.open({
+                type: 1,
+                area: ['500px'], //宽高
+                content: '<div class="layerRecharge"> <div class="layerTop"> <span class="coverBg"></span> <div class="captionTip"> <h3>该视频为付费视频</h3> <p class="needMoney">消耗芽币可观看视频</p> <p class="custom">消耗 ：<strong>' + Price + '</strong>芽币</p> <p class="custom">余额 ：<strong>' + Account + '</strong>芽币<span>' + isenough + '</span></p> </div> </div> </div>',
+                btn: ['确定','充值','取消'], btn1:function(){
+                $.ajax({
+                    url:'https://apis.ziyawang.com/zll/video/consume?access_token=token&VideoID=' + VideoID + '&token=' + token,
+                    type:'POST',
+                    dataType:'json',
+                    success:function(msg){
+                        if(msg.status_code == 200 || msg.status_code == 417){
+                            window.location.href="http://ziyawang.com/video/" + VideoID;
+                            // window.open("http://ziyawang.com/video/" + VideoID);
+                        } else if(msg.status_code == 418) {
+                            layer.open({
+                                type: 1,
+                                area: ['322px'], //宽高
+                                content: '<div class="layerNo"> <div class="layerNotop"> <span class="nocoverBg"></span> <span class="noFree">余额不足请充值！</span> </div></div>', btn: ['充值','取消'], btn1:function(){window.location.href="http://ziyawang.com/ucenter/money"; }, but2:function(){}});
+                        }
+                    }
+                });
+            }, btn2:function(){
+                window.open("http://ziyawang.com/ucenter/money");
+            }, close:function(){
+
+            }});
+            return;
+        }
+
+        function beforeRush(obj) {
+            var price = parseInt($(obj).attr('price'));
+            var videoid = $(obj).attr('videoid');
+            var member = $(obj).attr('member');
+            var right = $(obj).attr('right');
+            var account = $(obj).attr('account');
+            var payflag = $(obj).attr('payflag');
+
+            if(member != 0){
+                if(!token){
+                    window.open("http://ziyawang.com/login","status=yes,toolbar=yes, menubar=yes,location=yes");
+                    return false;
+                } else {
+                    if(right != "0" || payflag == "1"){
+                        window.location.href="http://ziyawang.com/video/" + videoid;
+                        // window.open("http://ziyawang.com/video/" + videoid);
+                        return false;
+                    } else {
+                        rush(price,videoid,account)
+                        return false;
+                    }
+                }
+            } else {
+                window.location.href="http://ziyawang.com/video/" + videoid;
+                // window.open("http://ziyawang.com/video/" + videoid);
+            }
+        }
+
     function checkLogin(){
         if(!token){
             window.location = "{{url('/login')}}";
@@ -165,7 +229,24 @@ $(function(){
             var VideoLogo  = data[index].VideoLogo;     //视频图片
             var VideoID    = data[index].VideoID;       //视频ID
             var ViewCount  = data[index].ViewCount;       //播放次数
-            html = html + "<li class='videoli0'><a href='http://ziyawang.com/video/" + VideoID + "' class='imgBox'><img title='" + VideoTitle + "' src='http://images.ziyawang.com/" + VideoLogo + "'></a><a href='http://ziyawang.com/video/" + VideoID + "' class='vr_title'>" + VideoTitle + "</a><p class='bofang'>已播放" + ViewCount + "次</p></li>";
+            var Price  = data[index].Price;       
+            var Account  = data[index].Account;       
+            var PayFlag  = data[index].PayFlag;       
+            var Member  = data[index].Member;       
+            var right  = data[index].right;       
+            var memberhtml = ""
+            if(Member == 0){
+                memberhtml = "<span class='free-video'>免费</span>"
+            } else {
+                memberhtml = "<span class='video-fee nobg'>" + Price + "芽币&nbsp;</span>"
+            }
+            var priceattr = " price=" + Price;
+            var videoidattr = " videoid=" + VideoID;
+            var accountattr = " account=" + Account;
+            var payflagattr = " payflag=" + PayFlag;
+            var memberattr = " member=" + Member;
+            var rightattr = " right=" + right;
+            html = html + "<li class='videoli0 rush' " + priceattr + videoidattr + accountattr + payflagattr + memberattr + rightattr + "><a href='javascript:;' class='imgBox'><img title='" + VideoTitle + "' src='http://images.ziyawang.com/" + VideoLogo + "'></a><a href='javascript:;' class='vr_title'>" + VideoTitle + "</a><p class='bofang'>" + memberhtml + " 已播放" + ViewCount + "次</p></li>";
         });
         return html;
     }
@@ -178,8 +259,26 @@ $(function(){
             var VideoThumb  = data[index].VideoThumb;     //视频图片
             var VideoID    = data[index].VideoID;       //视频ID
             var ViewCount  = data[index].ViewCount;       //播放次数
-            // html = html + "<li class='videoli0'><a href='http://ziyawang.com/video/" + VideoID + "' class='imgBox'><img src='http://images.ziyawang.com/" + VideoLogo + "'></a><a href='http://ziyawang.com/video/" + VideoID + "' class='vr_title'>" + VideoTitle + "</a><p class='bofang'>已播放" + ViewCount + "次</p></li>";
-            html = html + "<li class='listSmall'> <div class='listSmallCon clearfix'> <div class='lscLeft'> <a href='http://ziyawang.com/video/" + VideoID + "' class='lscLeftImg' title='" + VideoTitle + "'> <img title='" + VideoTitle + "' src='http://images.ziyawang.com/" + VideoThumb + "' /> <p class='borderOn'></p> </a> </div> <div class='lscRight'> <h2><a href='http://ziyawang.com/video/" + VideoID + "' title='" + VideoTitle + "'>" + VideoTitle + "</a></h2> <p class='playTimes'>已播放" + ViewCount + "次</p> </div> </div> </li>";
+
+            var Price  = data[index].Price;       
+            var Account  = data[index].Account;       
+            var PayFlag  = data[index].PayFlag;       
+            var Member  = data[index].Member;       
+            var right  = data[index].right;       
+            var memberhtml = ""
+            if(Member == 0){
+                memberhtml = "<span class='free-video'>免费</span>"
+            } else {
+                memberhtml = "<span class='video-fee nobg'>" + Price + "芽币&nbsp;</span>"
+            }
+            var priceattr = " price=" + Price;
+            var videoidattr = " videoid=" + VideoID;
+            var accountattr = " account=" + Account;
+            var payflagattr = " payflag=" + PayFlag;
+            var memberattr = " member=" + Member;
+            var rightattr = " right=" + right;
+            // html = html + "<li class='videoli0'><a href='javascript:;' class='imgBox'><img src='http://images.ziyawang.com/" + VideoLogo + "'></a><a href='javascript:;' class='vr_title'>" + VideoTitle + "</a><p class='bofang'>已播放" + ViewCount + "次</p></li>";
+            html = html + "<li class='listSmall rush' " + priceattr + videoidattr + accountattr + payflagattr + memberattr + rightattr + "> <div class='listSmallCon clearfix'> <div class='lscLeft'> <a href='javascript:;' class='lscLeftImg' title='" + VideoTitle + "'> <img title='" + VideoTitle + "' src='http://images.ziyawang.com/" + VideoThumb + "' /> <p class='borderOn'></p> </a> </div> <div class='lscRight'> <h2><a href='javascript:;' title='" + VideoTitle + "'>" + VideoTitle + "</a></h2> <p class='playTimes'>" + memberhtml + " 已播放" + ViewCount + "次</p> </div> </div> </li>";
         });
         return html;
     }
@@ -237,7 +336,7 @@ $(function(){
     })
 
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/video/list?pagecount=8&order=1&access_token=token',  
+        url: 'https://apis.ziyawang.com/zll/video/list?pagecount=8&order=1&access_token=token&token='+token,  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -249,7 +348,7 @@ $(function(){
 
     //视频匹配
     $.ajax({  
-        url: 'https://apis.ziyawang.com/zll/match/video/' + VideoID + '?pagecount=16&access_token=token',  
+        url: 'https://apis.ziyawang.com/zll/match/video/' + VideoID + '?pagecount=16&access_token=token&token='+token,  
         type: 'GET',  
         dataType: 'json',  
         timeout: 5000,  
@@ -286,6 +385,9 @@ $(function(){
         var data = json.data;
         var html = _queryMatchVideo(data);
         $('#content1').html(html);
+        $(".rush").click(function(){
+            beforeRush(this);  
+        })
 
 var doc=document;
     var _wheelData=-1;

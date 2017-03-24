@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-<link type="text/css" rel="stylesheet" href="{{url('/css/contract.css')}}?v=2.1.4.1" />
+<link type="text/css" rel="stylesheet" href="{{url('/css/contract.css')}}?v=2.1.7.1.1" />
 <!-- 二级banner -->
 <div class="find_service temp">
     <ul>

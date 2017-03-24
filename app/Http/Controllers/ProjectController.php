@@ -126,6 +126,18 @@ class ProjectController extends Controller
         $viewcount = DB::table('T_P_PROJECTINFO')->where('ProjectID',$id)->pluck('ViewCount');
         $viewcount += 1;
         DB::table('T_P_PROJECTINFO')->where('ProjectID',$id)->update(['ViewCount'=>$viewcount]);
+        if(isset($data->Money)){
+            $data->Money = ($data->Money == 0) ? "未填写" : $data->Money." 万元";
+        }
+        if(isset($data->Rate)){
+            $data->Rate = ($data->Rate == 0) ? "未填写" : $data->Rate." 万元";
+        }
+        if(isset($data->BuildArea)){
+            $data->BuildArea = ($data->BuildArea == 0) ? "未填写" : $data->BuildArea." 平米";
+        }
+        if(isset($data->FloorRatio)){
+            $data->FloorRatio = ($data->FloorRatio == 0) ? "未填写" : $data->FloorRatio;
+        }
         return view('proinfo.proinfo'.$type,compact('data'));
     }
 }

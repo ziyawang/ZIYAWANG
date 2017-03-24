@@ -163,6 +163,12 @@ class IndexController extends Controller
         return view('static.aboutus');
     }
 
+    //合作伙伴
+    public function partner()
+    {
+        return view('static.partner');
+    }
+
     //意见反馈
     public function feedback()
     {

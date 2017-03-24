@@ -12,7 +12,7 @@
             <div class="ucrightBottom">
                 <a href="http://ziyawang.com/ucenter/pubpro/1"><span class="ucIcons1"></span>资产包</a>
                 <a href="http://ziyawang.com/ucenter/pubpro/17"><span class="ucIcons2"></span>融资信息</a>
-                <a href="http://ziyawang.com/ucenter/pubpro/12"><span class="ucIcons3"></span>固定资产</a>
+                <a href="http://ziyawang.com/ucenter/pubpro/16"><span class="ucIcons3"></span>固定资产</a>
                 <a href="http://ziyawang.com/ucenter/pubpro/18"><span class="ucIcons4"></span>企业商账</a>
                 <a href="http://ziyawang.com/ucenter/pubpro/19"><span class="ucIcons5"></span>个人债权</a>
                 <a href="http://ziyawang.com/ucenter/pubpro/21"><span class="ucIcons6"></span>法拍资产</a>
